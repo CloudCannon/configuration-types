@@ -1,0 +1,17 @@
+{
+	"$schema": "../build/cloudcannon-config.json",
+
+	"timezone": "America/New_York",
+	"collections_config": {
+		"staff": {
+			"path": "content/staff",
+			"icon": "nature_people"
+		},
+		"pages": {
+			"path": "content",
+			"filter": {
+				"base": "all"
+			}
+		}
+	}
+}

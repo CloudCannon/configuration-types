@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../build/cloudcannon-config.json
+
+source: src
+timezone: America/New_York
+collections_config:
+  staff:
+    _enabled_editors:
+      - content
+      - visual
+    path: content/staff
+    filter:
+      exclude:
+        - secrets.yml
+_editables:
+  content:
+    correct_orientation: true
+    expandable: false
+    image_size_attributes: true
+    resize_style: contain
+_inputs:
+  my_text:
+    type: range
+    options:
