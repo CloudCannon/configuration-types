@@ -223,6 +223,10 @@ export interface Cascade extends ReducedCascade {
 	 * Contains input options for Editable Regions and the Content Editor.
 	 */
 	_editables?: Editables;
+
+	_array_structures?: Record<string, unknown>; // Legacy
+	_comments?: Record<string, string>; // Legacy
+	_options?: Record<string, Record<string, unknown>>; // Legacy
 }
 
 export type InputType =
@@ -490,13 +494,34 @@ export interface MultichoiceInput extends BaseInput<MultichoiceInputOptions> {
 }
 
 export interface ObjectInputOptions extends BaseInputOptions<EmptyTypeObject> {
+	/**
+	 * Changes the appearance and behavior of the input.
+	 */
 	subtype?: 'object' | 'mutable';
+	/**
+	 * Contains options for the "mutable" subtype.
+	 */
 	entries?: {
+		/**
+		 * Defines a limited set of keys that can exist on the data within an object input. This set is used when entries are added and renamed with `allow_create` enabled. Has no effect if `allow_create` is not enabled.
+		 */
 		allowed_keys?: string[];
+		/**
+		 * Limits available structures to specified keys.
+		 */
 		assigned_structures?: Record<string, string[]>;
+		/**
+		 * Provides data formats when adding entries to the data within this object input. When adding an entry, team members are prompted to choose from a number of values you have defined. Has no effect if `allow_create` is false. `entries.structures` applies to the entries within the object.
+		 */
 		structures?: string | Structure;
 	};
+	/**
+	 * The preview definition for changing the way data within an object input is previewed before being expanded. If the input has `structures`, the preview from the structure value is used instead.
+	 */
 	preview?: ObjectPreview;
+	/**
+	 * Provides data formats for value of this object. When choosing an item, team members are prompted to choose from a number of values you have defined. `structures` applies to the object itself.
+	 */
 	structures?: string | Structure;
 }
 
@@ -505,7 +530,13 @@ export interface ObjectInput extends BaseInput<ObjectInputOptions> {
 }
 
 export interface ArrayInputOptions extends BaseInputOptions<EmptyTypeArray> {
+	/**
+	 * The preview definition for changing the way data within an array input's items are previewed before being expanded. If the input has structures, the preview from the structure value is used instead.
+	 */
 	preview?: ObjectPreview;
+	/**
+	 * Provides data formats for value of this object. When choosing an item, team members are prompted to choose from a number of values you have defined.
+	 */
 	structures?: string | Structure;
 }
 
@@ -533,97 +564,251 @@ export type Input =
 	| ArrayInput;
 
 export interface ReducedPaths {
+	/**
+	 * Default location of newly uploaded site files.
+	 * @default 'uploads'
+	 */
 	uploads?: string;
+	/**
+	 * Filename template for newly uploaded site files.
+	 */
 	uploads_filename?: string;
+	/**
+	 * Default location of newly uploaded DAM files.
+	 * @default ''
+	 */
 	dam_uploads?: string;
+	/**
+	 * Filename template for newly uploaded DAM files.
+	 */
 	dam_uploads_filename?: string;
+	/**
+	 * Location of statically copied assets for DAM files. This prefix will be removed from the *DAM Uploads* path when CloudCannon outputs the URL of an asset.
+	 * @default ''
+	 */
 	dam_static?: string;
 }
 
 export interface Paths extends ReducedPaths {
+	/**
+	 * Location of assets that are statically copied to the output site. This prefix will be removed from the *Uploads* path when CloudCannon outputs the URL of an asset.
+	 */
 	static?: string;
+	/**
+	 * Parent folder of all collections.
+	 * @default ''
+	 */
 	collections?: string;
+	/**
+	 * Parent folder of all site data files.
+	 */
 	data?: string;
+	/**
+	 * Parent folder of all site layout files. *Only applies to Jekyll, Hugo, and Eleventy sites*.
+	 */
 	layouts?: string;
+	/**
+	 * Parent folder of all includes, partials, or shortcode files. *Only applies to Jekyll, Hugo, and Eleventy sites*.
+	 */
 	includes?: string;
 }
 
 export type FilterBase = 'none' | 'all' | 'strict';
 
 export interface Filter {
+	/**
+	 * Defines the initial set of visible files in the collection file list. Defaults to "all", or "strict" for the auto-discovered `pages` collection in Jekyll, Hugo, and Eleventy.
+	 */
 	base?: FilterBase;
+	/**
+	 * Add to the visible files set with `base`. Paths must be relative to the containing collection `path`.
+	 */
 	include?: string[];
+	/**
+	 * Remove from the visible files set with `base`. Paths must be relative to the containing collection `path`.
+	 */
 	exclude?: string[];
 }
 
 export interface Documentation {
+	/**
+	 * The "href" value of the link.
+	 */
 	url: string;
+	/**
+	 * The visible text used in the link.
+	 */
 	text?: string;
+	/**
+	 * The icon displayed next to the link.
+	 */
 	icon?: Icon;
 }
 
 interface PreviewKeyEntry {
+	/**
+	 * The key used to access the value used for the preview.
+	 */
 	key: string;
 }
 
 type PreviewEntry = Array<PreviewKeyEntry | string | boolean> | string | boolean;
 
-export interface PreviewGallery {
+interface TextPreviewable {
+	/**
+	 * Controls the main text shown per item.
+	 */
+	text?: PreviewEntry;
+}
+
+interface ImagePreviewable {
+	/**
+	 * Controls the image shown per item.
+	 */
 	image?: PreviewEntry;
+}
+
+interface SubtextPreviewable {
+	/**
+	 * Controls the supporting text shown per item.
+	 */
+	subtext?: PreviewEntry;
+}
+
+interface IconPreviewable {
+	/**
+	 * Controls the icon shown per item. Must result in a Material Icon name.
+	 */
 	icon?: PreviewEntry;
+}
+
+interface IconColorPreviewable {
+	/**
+	 * Controls the color of the icon.
+	 */
 	icon_color?: string;
+}
+
+export interface PreviewGallery
+	extends TextPreviewable,
+		ImagePreviewable,
+		IconPreviewable,
+		IconColorPreviewable {
+	/**
+	 * Controls how the gallery image is positioned within the gallery.
+	 */
 	fit?: 'padded' | 'cover' | 'contain' | 'cover-top';
 }
 
-export interface PreviewMetadata {
-	text?: PreviewEntry;
-	image?: PreviewEntry;
-	icon?: PreviewEntry;
-	icon_color?: string;
-}
+export interface PreviewMetadata
+	extends TextPreviewable,
+		ImagePreviewable,
+		IconPreviewable,
+		IconColorPreviewable {}
 
-export interface ObjectPreview {
-	text?: PreviewEntry;
-	icon?: PreviewEntry;
-	image?: PreviewEntry;
-	subtext?: PreviewEntry;
-}
+export interface ObjectPreview
+	extends TextPreviewable,
+		ImagePreviewable,
+		IconPreviewable,
+		SubtextPreviewable {}
 
-export interface SelectPreview {
-	text?: PreviewEntry;
-	icon?: PreviewEntry;
-}
+export interface SelectPreview extends TextPreviewable, IconPreviewable {}
 
-export interface Preview {
-	text?: PreviewEntry;
-	icon?: PreviewEntry;
-	subtext?: PreviewEntry;
-	icon_color?: string;
-	image?: PreviewEntry;
+export interface Preview
+	extends TextPreviewable,
+		ImagePreviewable,
+		IconPreviewable,
+		IconColorPreviewable,
+		SubtextPreviewable {
+	/**
+	 * Defines a list of items that can contain an image, icon, and text.
+	 */
 	metadata?: PreviewMetadata[];
+	/**
+	 * Details for large image/icon preview per item.
+	 */
 	gallery?: PreviewGallery;
 }
 
 export interface AddOption {
+	/**
+	 * The text displayed for the menu item. Defaults to using name from the matching schema if set.
+	 */
 	name?: string;
+	/**
+	 * The icon next to the text in the menu item. Defaults to using icon from the matching schema if set, then falls back to add.
+	 */
 	icon?: Icon;
+	/**
+	 * The editor to open the new file in. Defaults to an appropriate editor for new file's type if possible. If no default editor can be calculated, or the editor does not support the new file type, a warning is shown in place of the editor.
+	 */
 	editor?: EditorKey;
+	/**
+	 * Enforces a path for new files to be created in, regardless of path the user is currently navigated to within the collection file list. Relative to the path of the collection defined in collection. Defaults to the path within the collection the user is currently navigated to.
+	 */
 	base_path?: string;
+	/**
+	 * Sets which collection this action is creating a file in. This is used when matching the value for schema. Defaults to the containing collection these `add_options` are configured in.
+	 */
 	collection?: string;
+	/**
+	 * The schema that new files are created from with this action. This schema is not restricted to the containing collection, and is instead relative to the collection specified with collection. Defaults to default if schemas are configured for the collection.
+	 */
 	schema?: string;
+	/**
+	 * The path to a file used to populate the initial contents of a new file if no schemas are configured. We recommend using schemas, and this is ignored if a schema is available.
+	 */
 	default_content_file?: string;
 }
 
-export interface Schema extends Cascade {
-	path: string;
-	reorder_inputs?: boolean;
-	hide_extra_inputs?: boolean;
-	remove_empty_inputs?: boolean;
-	remove_extra_inputs?: boolean;
-	name?: string;
-	icon?: Icon;
+interface Previewable {
+	/**
+	 * Changes the way items are previewed in the CMS.
+	 */
 	preview?: Preview;
+}
+
+export interface Schema extends Cascade, Previewable {
+	/**
+	 * The path to the schema file. Relative to the root folder of the site.
+	 */
+	path: string;
+	/**
+	 * If true, inputs are sorted to match the schema when editing existing files. Inputs not in the schema are ordered after schema inputs, unless `remove_extra_inputs` is true.
+	 * @default true
+	 */
+	reorder_inputs?: boolean;
+	/**
+	 * Hides non-schema inputs in the schema file when editing existing files. Has no effect if `remove_extra_inputs` is true.
+	 * @default false
+	 */
+	hide_extra_inputs?: boolean;
+	/**
+	 * If checked, empty inputs will be removed from the source file on save. Removed inputs will be available for editing again, provided they are in the matching schema file.
+	 * @default false
+	 */
+	remove_empty_inputs?: boolean;
+	/**
+	 * If checked, inputs not present in the schema will be removed when editing existing files.
+	 * @default true
+	 */
+	remove_extra_inputs?: boolean;
+	/**
+	 * Displayed in the add menu when creating new files. Defaults to a formatted version of the key.
+	 */
+	name?: string;
+	/**
+	 * Displayed in the add menu when creating new files; also used as the icon for collection files if no other preview is found.
+	 * @default "notes"
+	 */
+	icon?: Icon;
+	/**
+	 * Controls where new files are saved.
+	 */
 	create?: Create;
+	/**
+	 * Preview your unbuilt pages (e.g. drafts) to another page's output URL. The Visual Editor will load that URL, where Data Bindings and Previews are available to render your new page without saving.
+	 */
 	new_preview_url?: string;
 }
 
@@ -642,7 +827,7 @@ export interface Create extends ReducedCascade {
 	publish_to?: string;
 }
 
-export interface CollectionConfig extends Cascade {
+export interface CollectionConfig extends Cascade, Previewable {
 	path?: string;
 	output?: boolean;
 	url?: string;
@@ -651,11 +836,13 @@ export interface CollectionConfig extends Cascade {
 	description?: string;
 	icon?: Icon;
 	documentation?: Documentation;
-	preview?: Preview;
 	sort?: Sort;
 	sort_options?: SortOption[];
 	singular_name?: string;
 	singular_key?: string;
+	/**
+	 * Changes the options presented in the add menu in the collection file list. Defaults to an automatically generated list from *Schemas*, or uses the first file in the collection if no schemas are configured.
+	 */
 	add_options?: AddOption[];
 	create?: Create;
 	disable_add?: boolean;
@@ -677,14 +864,14 @@ export interface Structure {
 	style?: 'select' | 'modal';
 }
 
-export interface StructureValue {
+export interface StructureValue extends Previewable {
+	id?: string;
 	default?: boolean;
 	description?: string;
 	icon?: Icon;
 	image?: string;
 	label?: string;
 	picker_preview?: Preview;
-	preview?: Preview;
 	tags?: string[];
 	value: any;
 }
@@ -721,7 +908,7 @@ export interface SourceEditor {
 	show_gutter?: boolean;
 }
 
-export interface Configuration extends Cascade {
+export interface DefaultConfiguration extends Cascade {
 	source?: string;
 	output?: string;
 	paths?: Paths;
@@ -741,15 +928,22 @@ export interface HugoCollectionConfig extends CollectionConfig {
 	parse_branch_index?: boolean;
 }
 
-export interface HugoConfiguration extends Omit<Configuration, 'output' | 'data_config'> {
+export interface HugoConfiguration extends Omit<DefaultConfiguration, 'output' | 'data_config'> {
 	collections_config?: Record<string, HugoCollectionConfig>;
 	data_config?: Record<string, boolean>;
 }
 
-export interface JekyllConfiguration extends Omit<Configuration, 'output' | 'data_config'> {
+export interface JekyllConfiguration extends Omit<DefaultConfiguration, 'output' | 'data_config'> {
 	data_config?: Record<string, boolean>;
 }
 
-export interface EleventyConfiguration extends Omit<Configuration, 'output' | 'data_config'> {
+export interface EleventyConfiguration
+	extends Omit<DefaultConfiguration, 'output' | 'data_config'> {
 	data_config?: Record<string, boolean>;
 }
+
+export type Configuration =
+	| DefaultConfiguration
+	| HugoConfiguration
+	| JekyllConfiguration
+	| EleventyConfiguration;

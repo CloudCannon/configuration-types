@@ -18,6 +18,12 @@ _editables:
     image_size_attributes: true
     resize_style: contain
 _inputs:
-  my_text:
-    type: range
+  my_input:
+    type: html
+    comment: hello
     options:
+      correct_orientation: true
+      expandable: false
+      image_size_attributes: true
+      resize_style: contain
+      bold: true
