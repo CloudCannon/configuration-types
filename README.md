@@ -3,7 +3,6 @@
 Contains types and generates JSON Schemas for the [CloudCannon](https://cloudcannon.com/) configuration file.
 
 [<img src="https://img.shields.io/npm/v/@cloudcannon%2Fconfiguration-types?logo=npm" alt="version badge">](https://www.npmjs.com/package/@cloudcannon%2Fconfiguration-types)
-[<img src="https://img.shields.io/npm/dt/@cloudcannon%2Fconfiguration-types" alt="downloads badge">](https://www.npmjs.com/package/@cloudcannon%2Fconfiguration-types)
 
 ## Run
 
