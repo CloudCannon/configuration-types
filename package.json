@@ -23,7 +23,8 @@
     "build:jekyll": "ts-json-schema-generator --path src/index.ts --type JekyllConfiguration > build/cloudcannon-config-jekyll.json",
     "build:hugo": "ts-json-schema-generator --path src/index.ts --type HugoConfiguration > build/cloudcannon-config-hugo.json",
     "build": "run-p build:*",
-    "prebuild": "mkdir -p build && rimraf --glob 'build/*.json'"
+    "prebuild": "mkdir -p build && rimraf --glob 'build/*.json'",
+    "test": "exit 0"
   },
   "types": "./src/main.d.ts",
   "publishConfig": {
