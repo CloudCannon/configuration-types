@@ -1,6 +1,6 @@
 {
   "name": "@cloudcannon/configuration-types",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Contains types and generates JSON Schemas for the CloudCannon configuration file.",
   "author": "CloudCannon <support@cloudcannon.com>",
   "license": "MIT",
