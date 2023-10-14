@@ -2,6 +2,21 @@
   "name": "@cloudcannon/configuration-types",
   "version": "0.0.0",
   "description": "Contains types and generates JSON Schemas for the CloudCannon configuration file.",
+  "author": "CloudCannon <support@cloudcannon.com>",
+  "license": "MIT",
+  "keywords": [
+    "static site generator",
+    "cloudcannon"
+  ],
+  "homepage": "https://github.com/CloudCannon/configuration-types#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CloudCannon/configuration-types.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CloudCannon/configuration-types/issues",
+    "email": "support@cloudcannon.com"
+  },
   "scripts": {
     "build:default": "ts-json-schema-generator --path src/index.ts --type Configuration > build/cloudcannon-config.json",
     "build:eleventy": "ts-json-schema-generator --path src/index.ts --type EleventyConfiguration > build/cloudcannon-config-eleventy.json",
@@ -10,10 +25,13 @@
     "build": "run-p build:*",
     "prebuild": "mkdir -p build && rimraf --glob 'build/*.json'"
   },
-  "author": "Ross Phillips <ross@cloudcannon.com>",
-  "main": "./src/main.d.ts",
   "types": "./src/main.d.ts",
-  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "src/**/*"
+  ],
   "dependencies": {
     "ts-json-schema-generator": "^1.3.0"
   },
