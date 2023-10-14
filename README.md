@@ -1,6 +1,6 @@
-# global-configuration-types
+# Configuration types
 
-Generates JSON Schemas for the CloudCannon configuration file.
+Contains types and generates JSON Schemas for the CloudCannon configuration file.
 
 ## Run
 
@@ -10,7 +10,7 @@ Install dependencies:
 npm i
 ```
 
-Create the JSON schema files:
+Build JSON schema files:
 
 ```sh
 npm run build

@@ -768,31 +768,11 @@ interface Previewable {
 	preview?: Preview;
 }
 
-export interface Schema extends Cascade, Previewable {
+export interface Schema extends Cascade, Previewable, Schemalike {
 	/**
 	 * The path to the schema file. Relative to the root folder of the site.
 	 */
 	path: string;
-	/**
-	 * If true, inputs are sorted to match the schema when editing existing files. Inputs not in the schema are ordered after schema inputs, unless `remove_extra_inputs` is true.
-	 * @default true
-	 */
-	reorder_inputs?: boolean;
-	/**
-	 * Hides non-schema inputs in the schema file when editing existing files. Has no effect if `remove_extra_inputs` is true.
-	 * @default false
-	 */
-	hide_extra_inputs?: boolean;
-	/**
-	 * If checked, empty inputs will be removed from the source file on save. Removed inputs will be available for editing again, provided they are in the matching schema file.
-	 * @default false
-	 */
-	remove_empty_inputs?: boolean;
-	/**
-	 * If checked, inputs not present in the schema will be removed when editing existing files.
-	 * @default true
-	 */
-	remove_extra_inputs?: boolean;
 	/**
 	 * Displayed in the add menu when creating new files. Defaults to a formatted version of the key.
 	 */
@@ -858,13 +838,36 @@ export interface CollectionGroup {
 	collections: string[];
 }
 
-export interface Structure {
+interface Schemalike {
+	/**
+	 * If true, inputs are sorted to match when editing. Extra inputs are ordered after expected inputs, unless `remove_extra_inputs` is true.
+	 * @default true
+	 */
+	reorder_inputs?: boolean;
+	/**
+	 * Hides unexpected inputs when editing. Has no effect if `remove_extra_inputs` is true.
+	 * @default false
+	 */
+	hide_extra_inputs?: boolean;
+	/**
+	 * If checked, empty inputs are removed from the source file on save. Removed inputs will be available for editing again, provided they are in the matching schema/structure.
+	 * @default false
+	 */
+	remove_empty_inputs?: boolean;
+	/**
+	 * If checked, extra inputs are removed when editing.
+	 * @default true
+	 */
+	remove_extra_inputs?: boolean;
+}
+
+export interface Structure extends Schemalike {
 	values: Array<StructureValue>;
 	id_key?: string;
 	style?: 'select' | 'modal';
 }
 
-export interface StructureValue extends Previewable {
+export interface StructureValue extends Previewable, Schemalike {
 	id?: string;
 	default?: boolean;
 	description?: string;
