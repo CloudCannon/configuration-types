@@ -26,7 +26,8 @@
     "prebuild": "mkdir -p build && rimraf --glob 'build/*.json'",
     "test": "exit 0"
   },
-  "types": "./src/main.d.ts",
+  "main": "./src/index.d.ts",
+  "types": "./src/index.d.ts",
   "publishConfig": {
     "access": "public"
   },
