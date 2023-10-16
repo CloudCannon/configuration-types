@@ -932,16 +932,19 @@ export interface HugoCollectionConfig extends CollectionConfig {
 }
 
 export interface HugoConfiguration extends Omit<DefaultConfiguration, 'output' | 'data_config'> {
+	collections_config_override?: boolean;
 	collections_config?: Record<string, HugoCollectionConfig>;
 	data_config?: Record<string, boolean>;
 }
 
 export interface JekyllConfiguration extends Omit<DefaultConfiguration, 'output' | 'data_config'> {
+	collections_config_override?: boolean;
 	data_config?: Record<string, boolean>;
 }
 
 export interface EleventyConfiguration
 	extends Omit<DefaultConfiguration, 'output' | 'data_config'> {
+	collections_config_override?: boolean;
 	data_config?: Record<string, boolean>;
 }
 
