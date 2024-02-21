@@ -18,10 +18,10 @@
     "email": "support@cloudcannon.com"
   },
   "scripts": {
-    "build:default": "ts-json-schema-generator --path src/index.ts --type Configuration > build/cloudcannon-config.json",
-    "build:eleventy": "ts-json-schema-generator --path src/index.ts --type EleventyConfiguration > build/cloudcannon-config-eleventy.json",
-    "build:jekyll": "ts-json-schema-generator --path src/index.ts --type JekyllConfiguration > build/cloudcannon-config-jekyll.json",
-    "build:hugo": "ts-json-schema-generator --path src/index.ts --type HugoConfiguration > build/cloudcannon-config-hugo.json",
+    "build:default": "ts-json-schema-generator --path src/index.d.ts --type Configuration > build/cloudcannon-config.json",
+    "build:eleventy": "ts-json-schema-generator --path src/index.d.ts --type EleventyConfiguration > build/cloudcannon-config-eleventy.json",
+    "build:jekyll": "ts-json-schema-generator --path src/index.d.ts --type JekyllConfiguration > build/cloudcannon-config-jekyll.json",
+    "build:hugo": "ts-json-schema-generator --path src/index.d.ts --type HugoConfiguration > build/cloudcannon-config-hugo.json",
     "build": "run-p build:*",
     "prebuild": "mkdir -p build && rimraf --glob 'build/*.json'",
     "test": "exit 0"

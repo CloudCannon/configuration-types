@@ -26,7 +26,7 @@ interface ImageResizeable {
 	 * Sets how uploaded image files are resized with a bounding box defined by width and height prior to upload. Has no effect when selecting existing images, or if width and height are unset.
 	 * @default 'contain'
 	 */
-	resize_style?: 'cover' | 'contain' | 'stretch';
+	resize_style?: 'cover' | 'contain' | 'stretch' | 'crop';
 	/**
 	 * Defines the width of the bounding box used in the image resizing process defined with resize_style.
 	 */
@@ -92,7 +92,7 @@ export interface BlockEditable extends ImageResizeable, TextEditable {
 	 */
 	embed?: boolean;
 	/**
-	 * Enables a drop down menu for structured text. Has options for "p", "h1", "h2", "h3", "h4", "h5", "h6", "pre", "address", and "div". Set as space separated options (e.g. "p h1 h2").
+	 * Enables a drop down menu for structured text. Has options for "p", "h1", "h2", "h3", "h4", "h5", "h6". Set as space separated options (e.g. "p h1 h2").
 	 */
 	format?: string;
 	/**
@@ -793,43 +793,133 @@ export interface Schema extends Cascade, Previewable, Schemalike {
 }
 
 export interface Sort {
+	/**
+	 * Defines what field contains the value to sort on inside each collection item's data.
+	 */
 	key: string;
+	/**
+	 * Controls which sort values come first.
+	 * @default ascending
+	 */
 	order?: SortOrder;
 }
 
 export interface SortOption extends Sort {
+	/**
+	 * The text to display in the sort option list. Defaults to a generated label from key and order.
+	 */
 	label?: string;
 }
 
 export interface Create extends ReducedCascade {
+	/**
+	 * The raw template to be processed when creating files. Relative to the containing collection's path.
+	 */
 	path: string;
+	/**
+	 * Adds to the available data placeholders coming from the file. Entry values follow the same format as path, and are processed sequentially before path. These values are not saved back to your file.
+	 */
 	extra_data?: Record<string, string>;
+	/**
+	 * Defines a target collection when publishing. When a file is published (currently only relevant to Jekyll), the target collection's create definition is used instead.
+	 */
 	publish_to?: string;
 }
 
 export interface CollectionConfig extends Cascade, Previewable {
+	/**
+	 * The top-most folder where the files in this collection are stored. It is relative to source. Each collection must have a unique path.
+	 */
 	path?: string;
+	/**
+	 * Whether or not files in this collection produce files in the build output.
+	 */
 	output?: boolean;
+	/**
+	 * Overrides how each file in the collection is read. Detected automatically from file extension if unset.
+	 */
+	parser?: 'csv' | 'front-matter' | 'json' | 'properties' | 'toml' | 'yaml';
+	/**
+	 * Used to build the url field for items in the collection. Similar to permalink in many SSGs. Defaults to ''
+	 */
 	url?: string;
+	/**
+	 * Controls which files are displayed in the collection list. Does not change which files are assigned to this collection.
+	 */
 	filter?: Filter | FilterBase;
+	/**
+	 * The display name of this collection. Used in headings and in the context menu for items in the collection. This is optional as CloudCannon auto-generates this from the collection key.
+	 */
 	name?: string;
+	/**
+	 * Text or Markdown to show above the collection file list.
+	 */
 	description?: string;
+	/**
+	 * Sets an icon to use alongside references to this collection.
+	 */
 	icon?: Icon;
+	/**
+	 * Provides a custom link for documentation for editors shown above the collection file list.
+	 */
 	documentation?: Documentation;
+	/**
+	 * Sets the default sorting for the collection file list. Defaults to the first option in sort_options, then falls back descending path. As an exception, defaults to descending date for blog-like collections.
+	 */
 	sort?: Sort;
+	/**
+	 * Controls the available options in the sort menu. Defaults to generating the options from the first item in the collection, falling back to ascending path and descending path.
+	 */
 	sort_options?: SortOption[];
+	/**
+	 * Overrides the default singular display name of the collection. This is displayed in the collection add menu and file context menu.
+	 */
 	singular_name?: string;
+	/**
+	 * Overrides the default singular input key of the collection. This is used for naming conventions for select and multiselect inputs.
+	 */
 	singular_key?: string;
 	/**
 	 * Changes the options presented in the add menu in the collection file list. Defaults to an automatically generated list from *Schemas*, or uses the first file in the collection if no schemas are configured.
 	 */
 	add_options?: AddOption[];
+	/**
+	 * The create path definition to control where new files are saved to inside this collection. Defaults to [relative_base_path]/{title|slugify}.md.
+	 */
 	create?: Create;
+	/**
+	 * Prevents users from adding new files in the collection file list if true.
+	 *
+	 * Defaults to true for the Jekyll, Hugo and Eleventy data collection in the base data folder only (data sub-folders act as non-output collections). Otherwise, defaults to false.
+	 */
 	disable_add?: boolean;
+	/**
+	 * Prevents users from adding new folders in the collection file list if true.
+	 *
+	 * Defaults to true for the Jekyll, Hugo and Eleventy data collection in the base data folder only (data sub-folders act as non-output collections). Otherwise, defaults to false.
+	 */
 	disable_add_folder?: boolean;
+	/**
+	 * Prevents users from renaming, moving and deleting files in the collection file list if true.
+	 *
+	 * Defaults to true for the Jekyll, Hugo and Eleventy data collection in the base data folder only (data sub-folders act as non-output collections). Otherwise, defaults to false.
+	 */
 	disable_file_actions?: boolean;
+	/**
+	 * Preview your unbuilt pages (e.g. drafts) to another page’s output URL. The Visual Editor will load that set preview URL and use the Data Bindings and Previews to render your new page without saving.
+	 *
+	 * For example new_preview_url: /about/ will load the /about/ URL on new or unbuilt pages in the Visual Editor.
+	 */
 	new_preview_url?: string;
+	/**
+	 * The set of schemas for this collection. Schemas are used when creating and editing files in this collection. Each entry corresponds to a schema that describes a data structure for this collection.
+	 *
+	 * The keys in this object should match the values used for schema_key inside each of this collection's files. default is a special entry and is used when a file has no schema.
+	 */
 	schemas?: Record<string, Schema>;
+	/**
+	 * The key used in each file to identify the schema that file uses. The value this key represents in each of this collection's files should match the keys in schemas. Defaults to _schema.
+	 */
 	schema_key?: string;
 }
 
@@ -885,11 +975,20 @@ export type SelectValues =
 	| Record<string, Record<string, any>>;
 
 export interface DataConfigEntry {
+	/**
+	 * The path to a file or folder of files containing data.
+	 */
 	path: string;
+	/**
+	 * Overrides how each file in the dataset is read. Detected automatically from file extension if unset.
+	 */
 	parser?: 'csv' | 'front-matter' | 'json' | 'properties' | 'toml' | 'yaml';
 }
 
 export interface Editor {
+	/**
+	 * The URL the editor opens to on clicking the dashboard "Edit Home" button.
+	 */
 	default_path: string;
 }
 
@@ -912,39 +1011,134 @@ export interface SourceEditor {
 }
 
 export interface DefaultConfiguration extends Cascade {
+	/**
+	 * Base path to your site source files, relative to the root folder.
+	 */
 	source?: string;
+	/**
+	 * Generates the integration file in another folder. Not applicable to Jekyll, Hugo, and Eleventy. Defaults to the root folder.
+	 */
 	output?: string;
+	/**
+	 * Global paths to common folders.
+	 */
 	paths?: Paths;
+	/**
+	 * Definitions for your collections, which are the sets of content files for your site grouped by folder. Entries are keyed by a chosen collection key, and contain configuration specific to that collection.
+	 */
 	collections_config?: Record<string, CollectionConfig>;
+	/**
+	 * Defines which collections are shown in the site navigation and how those collections are grouped.
+	 */
 	collection_groups?: Array<CollectionGroup>;
+	/**
+	 * The subpath where your output files are hosted.
+	 */
 	base_url?: string;
+	/**
+	 * Controls what data sets are available to populate select and multiselect inputs.
+	 */
 	data_config?: Record<string, DataConfigEntry>;
+	/**
+	 * Contains settings for the default editor actions on your site.
+	 */
 	editor?: Editor;
+	/**
+	 * Settings for the behavior and appearance of the Source Editor.
+	 */
 	source_editor?: SourceEditor;
 	/**
+	 * Contains settings for various Markdown engines.
+	 */
+	generator?: {
+		/**
+		 * Settings for various Markdown engines.
+		 */
+		metadata?: {
+			/**
+			 * The Markdown engine used on your site.
+			 */
+			markdown: 'kramdown' | 'commonmark' | 'commonmarkghpages' | 'goldmark' | 'markdown-it';
+			/**
+			 * Markdown options specific used when markdown is set to "kramdown".
+			 */
+			kramdown?: Record<string, any>;
+			/**
+			 * Markdown options specific used when markdown is set to "commonmark".
+			 */
+			commonmark?: Record<string, any>;
+			/**
+			 * Markdown options specific used when markdown is set to "commonmarkghpages".
+			 */
+			commonmarkghpages?: Record<string, any>;
+			/**
+			 * Markdown options specific used when markdown is set to "goldmark".
+			 */
+			goldmark?: Record<string, any>;
+			/**
+			 * Markdown options specific used when markdown is set to "markdown-it".
+			 */
+			'markdown-it'?: Record<string, any>;
+		};
+	};
+	/**
+	 * Specifies the time zone that dates are displayed and edited in. Also changes the suffix the date is persisted to the file with.
 	 * @default Etc/UTC
 	 */
 	timezone?: Timezone;
 }
 
-export interface HugoCollectionConfig extends CollectionConfig {
+export interface HugoCollectionConfig extends Omit<CollectionConfig, 'url' | 'parser'> {
+	/**
+	 * Controls whether branch index files (e.g. _index.md) are assigned to this collection or not.
+	 * The "pages" collection defaults this to true, and false otherwise.
+	 */
 	parse_branch_index?: boolean;
 }
 
 export interface HugoConfiguration extends Omit<DefaultConfiguration, 'output' | 'data_config'> {
-	collections_config_override?: boolean;
+	/**
+	 * Definitions for your collections, which are the sets of content files for your site grouped by folder. Entries are keyed by a chosen collection key, and contain configuration specific to that collection.
+	 */
 	collections_config?: Record<string, HugoCollectionConfig>;
+	/**
+	 * Prevents CloudCannon from automatically discovering collections for supported SSGs if true. Defaults to false.
+	 */
+	collections_config_override?: boolean;
+	/**
+	 * Controls what data sets are available to populate select and multiselect inputs.
+	 */
 	data_config?: Record<string, boolean>;
 }
 
 export interface JekyllConfiguration extends Omit<DefaultConfiguration, 'output' | 'data_config'> {
+	/**
+	 * Definitions for your collections, which are the sets of content files for your site grouped by folder. Entries are keyed by a chosen collection key, and contain configuration specific to that collection.
+	 */
+	collections_config?: Record<string, Omit<CollectionConfig, 'url' | 'parser'>>;
+	/**
+	 * Prevents CloudCannon from automatically discovering collections for supported SSGs if true. Defaults to false.
+	 */
 	collections_config_override?: boolean;
+	/**
+	 * Controls what data sets are available to populate select and multiselect inputs.
+	 */
 	data_config?: Record<string, boolean>;
 }
 
 export interface EleventyConfiguration
 	extends Omit<DefaultConfiguration, 'output' | 'data_config'> {
+	/**
+	 * Definitions for your collections, which are the sets of content files for your site grouped by folder. Entries are keyed by a chosen collection key, and contain configuration specific to that collection.
+	 */
+	collections_config?: Record<string, Omit<CollectionConfig, 'url' | 'parser'>>;
+	/**
+	 * Prevents CloudCannon from automatically discovering collections for supported SSGs if true. Defaults to false.
+	 */
 	collections_config_override?: boolean;
+	/**
+	 * Controls what data sets are available to populate select and multiselect inputs.
+	 */
 	data_config?: Record<string, boolean>;
 }
 
