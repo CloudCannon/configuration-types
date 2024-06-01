@@ -1300,7 +1300,7 @@ export type Configuration =
 	| JekyllConfiguration
 	| EleventyConfiguration;
 
-interface IntegrationOutput {
+interface WithIntegrationOutput {
 	/**
 	 * The error code encountered when attempting to create the integration output file.
 	 */
@@ -1332,7 +1332,13 @@ interface IntegrationOutput {
 	files?: Record<string, string>;
 }
 
-export interface DefaultIntegrationOutput extends DefaultConfiguration, IntegrationOutput {}
-export interface HugoIntegrationOutput extends HugoConfiguration, IntegrationOutput {}
-export interface JekyllIntegrationOutput extends JekyllConfiguration, IntegrationOutput {}
-export interface EleventyIntegrationOutput extends EleventyConfiguration, IntegrationOutput {}
+export interface DefaultIntegrationOutput extends DefaultConfiguration, WithIntegrationOutput {}
+export interface HugoIntegrationOutput extends HugoConfiguration, WithIntegrationOutput {}
+export interface JekyllIntegrationOutput extends JekyllConfiguration, WithIntegrationOutput {}
+export interface EleventyIntegrationOutput extends EleventyConfiguration, WithIntegrationOutput {}
+
+export type IntegrationOutput =
+	| DefaultIntegrationOutput
+	| HugoIntegrationOutput
+	| JekyllIntegrationOutput
+	| EleventyIntegrationOutput;
