@@ -1299,3 +1299,40 @@ export type Configuration =
 	| HugoConfiguration
 	| JekyllConfiguration
 	| EleventyConfiguration;
+
+interface IntegrationOutput {
+	/**
+	 * The error code encountered when attempting to create the integration output file.
+	 */
+	error?: 'NO_CONTENT' | string;
+	/**
+	 * The time this file was generated.
+	 */
+	time?: string;
+	/**
+	 * [DEPRECATED] The schema version of the integration output file.
+	 */
+	version?: string; // This refers to an old schema, replaced by the IntegrationOutput type.
+	/**
+	 * Details about the integration tool used to generate the integration output file.
+	 */
+	cloudcannon?: {
+		/**
+		 * Name of the integration tool used to generate the integration output file.
+		 */
+		name: string;
+		/**
+		 * Version of the integration tool used to generate the integration output file.
+		 */
+		version: string;
+	};
+	/**
+	 * Map of build file paths to MD5s.
+	 */
+	files?: Record<string, string>;
+}
+
+export interface DefaultIntegrationOutput extends DefaultConfiguration, IntegrationOutput {}
+export interface HugoIntegrationOutput extends HugoConfiguration, IntegrationOutput {}
+export interface JekyllIntegrationOutput extends JekyllConfiguration, IntegrationOutput {}
+export interface EleventyIntegrationOutput extends EleventyConfiguration, IntegrationOutput {}
