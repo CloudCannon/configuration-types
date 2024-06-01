@@ -1,16 +1,91 @@
+import Scrapbooker from '@cloudcannon/scrap-booker';
+
 import type { Icon } from './icon';
 import type { Timezone } from './timezone';
 import type { MimeType } from './mime-type';
 import type { Theme } from './theme';
 import type { Syntax } from './syntax';
+import type { SnippetConfig as ScrapbookerSnippetConfig } from '@cloudcannon/scrap-booker';
 
 export type { Icon, Timezone, MimeType, Theme, Syntax };
-
 export type InstanceValue = 'UUID' | 'NOW';
-
 export type EditorKey = 'visual' | 'content' | 'data';
-
 export type SortOrder = 'ascending' | 'descending' | 'asc' | 'desc';
+
+type SnippetImportKey = keyof typeof Scrapbooker.defaults;
+
+interface SnippetConfig
+	extends Omit<ScrapbookerSnippetConfig, 'preview' | 'picker_preview' | '_inputs'>,
+		ReducedCascade,
+		Previewable,
+		PickerPreviewable {}
+
+interface SnippetsImport<T> {
+	/**
+	 * The list of excluded snippets. If unset, all snippets are excluded unless defined in `included`.
+	 */
+	exclude?: Array<T>;
+	/**
+	 * The list of included snippets. If unset, all snippets are included unless defined in `excluded`.
+	 */
+	include?: Array<T>;
+}
+
+interface SnippetsImports {
+	/**
+	 * Default snippets for Hugo SSG.
+	 */
+	hugo?: SnippetsImport<keyof typeof Scrapbooker.defaults.hugo.snippets>;
+	/**
+	 * Default snippets for Jekyll SSG.
+	 */
+	jekyll?: SnippetsImport<keyof typeof Scrapbooker.defaults.jekyll.snippets>;
+	/**
+	 * Default snippets for MDX-based content.
+	 */
+	mdx?: SnippetsImport<keyof typeof Scrapbooker.defaults.mdx.snippets>;
+	/**
+	 * Default snippets for Eleventy SSG Liquid files.
+	 */
+	eleventy_liquid?: SnippetsImport<keyof typeof Scrapbooker.defaults.eleventy_liquid.snippets>;
+	/**
+	 * Default snippets for Eleventy SSG Nunjucks files.
+	 */
+	eleventy_nunjucks?: SnippetsImport<keyof typeof Scrapbooker.defaults.eleventy_nunjucks.snippets>;
+	/**
+	 * Default snippets for Markdoc-based content.
+	 */
+	markdoc?: SnippetsImport<keyof typeof Scrapbooker.defaults.markdoc.snippets>;
+	/**
+	 * Default snippets for content using Python markdown extensions.
+	 */
+	python_markdown_extensions?: SnippetsImport<
+		keyof typeof Scrapbooker.defaults.python_markdown_extensions.snippets
+	>;
+	/**
+	 * Default snippets for Docusaurus SSG.
+	 */
+	docusaurus_mdx?: SnippetsImport<keyof typeof Scrapbooker.defaults.docusaurus_mdx.snippets>;
+}
+
+interface WithSnippets {
+	/**
+	 * Configuration for custom snippets.
+	 */
+	// _snippets?: Record<string, SnippetConfig>;
+	/**
+	 * Provides control over which snippets are available to use and/or extend within `_snippets`.
+	 */
+	_snippets_imports?: true | SnippetsImports;
+	/**
+	 * Extended option used when creating more complex custom snippets.
+	 */
+	// _snippets_templates?: Record<string, SnippetConfig>;
+	/**
+	 * Extended option used when creating more complex custom snippets.
+	 */
+	// _snippets_definitions?: Record<string, SnippetConfig>;
+}
 
 interface ImageResizeable {
 	/**
@@ -45,6 +120,28 @@ interface ImageResizeable {
 	 * @default true
 	 */
 	image_size_attributes?: boolean;
+	/**
+	 * If you have one or more DAMs connected to your site, you can use this key to list which asset sources can be uploaded to and selected from.
+	 */
+	allowed_sources?: string[];
+	/**
+	 * Enable to skip the image resizing process configured for this input when selecting existing images.
+	 * @default false
+	 */
+	prevent_resize_existing_files?: boolean;
+	/**
+	 * Definitions for creating additional images of different sizes when uploading or selecting existing files.
+	 */
+	sizes?: {
+		/**
+		 * A number suffixed with "x" (relative size) or "w" (fixed width) for setting the dimensions of the image (e.g. 2x, 3x, 100w, 360w).
+		 */
+		size: 'string';
+		/**
+		 * A reference to another input that is given the path to this additional image file.
+		 */
+		target?: 'string';
+	};
 }
 
 export interface Editables {
@@ -197,6 +294,14 @@ export interface TextEditable extends WithReducedPaths {
 	 * Enables a control to undo recent edits. Undo is always enabled through standard OS-specific keyboard shortcuts.
 	 */
 	undo?: boolean;
+	/**
+	 * Defines if the content should be stripped of "custom markup". It is recommended to have this option turned on once you have all of your rich text options configured. Having `allow_custom_markup` turned on disables this option. Defaults to false.
+	 */
+	remove_custom_markup?: boolean;
+	/**
+	 * Defines if the content can contain "custom markup". It is not recommended to have this option turned on. Defaults to true for non-content editable regions, false otherwise.
+	 */
+	allow_custom_markup?: boolean;
 }
 
 export interface ReducedCascade {
@@ -223,10 +328,18 @@ export interface Cascade extends ReducedCascade {
 	 * Contains input options for Editable Regions and the Content Editor.
 	 */
 	_editables?: Editables;
-
-	_array_structures?: Record<string, unknown>; // Legacy
-	_comments?: Record<string, string>; // Legacy
-	_options?: Record<string, Record<string, unknown>>; // Legacy
+	/**
+	 * [DEPRECATED] Now known as _structures.
+	 */
+	_array_structures?: Record<string, unknown>;
+	/**
+	 * [DEPRECATED] Now part of _inputs.*.comment.
+	 */
+	_comments?: Record<string, string>;
+	/**
+	 * [DEPRECATED] Now part of _inputs.*.options.
+	 */
+	_options?: Record<string, Record<string, unknown>>;
 }
 
 export type InputType =
@@ -403,10 +516,6 @@ export interface RichTextInputOptions extends BaseInputOptions, ImageResizeable,
 	 */
 	allow_resize?: boolean;
 	/**
-	 * If you have one or more DAMs connected to your site, you can use this key to list which asset sources can be uploaded to and selected from.
-	 */
-	allowed_sources?: string[];
-	/**
 	 * Defines the initial height of this input in pixels (px).
 	 */
 	initial_height?: number;
@@ -458,11 +567,11 @@ export interface SelectInputOptions<EmptyType = EmptyTypeText> extends BaseInput
 	/**
 	 * Defines the values available to choose from. Optional, defaults to fetching values from the naming convention (e.g. colors or my_colors for data set colors).
 	 */
-	values: SelectValues;
+	values?: SelectValues;
 	/**
 	 * Defines the key used for mapping between saved values and objects in values. This changes how the input saves selected values to match. Defaults to checking for "id", "uuid", "path", "title", then "name". Has no effect unless values is an array of objects, the key is used instead for objects, and the value itself is used for primitive types.
 	 */
-	value_key: string;
+	value_key?: string;
 }
 
 export interface SelectInput extends BaseInput<SelectInputOptions> {
@@ -480,7 +589,7 @@ export interface ChoiceInputOptions<EmptyType = EmptyTypeText>
 	/**
 	 * The preview definition for changing the way selected and available options are displayed.
 	 */
-	preview: SelectPreview;
+	preview?: SelectPreview;
 }
 
 export interface ChoiceInput extends BaseInput<ChoiceInputOptions> {
@@ -565,6 +674,10 @@ export type Input =
 
 export interface ReducedPaths {
 	/**
+	 * Location of assets that are statically copied to the output site. This prefix will be removed from the *Uploads* path when CloudCannon outputs the URL of an asset.
+	 */
+	static?: string;
+	/**
 	 * Default location of newly uploaded site files.
 	 * @default 'uploads'
 	 */
@@ -590,10 +703,6 @@ export interface ReducedPaths {
 }
 
 export interface Paths extends ReducedPaths {
-	/**
-	 * Location of assets that are statically copied to the output site. This prefix will be removed from the *Uploads* path when CloudCannon outputs the URL of an asset.
-	 */
-	static?: string;
 	/**
 	 * Parent folder of all collections.
 	 * @default ''
@@ -768,6 +877,13 @@ interface Previewable {
 	preview?: Preview;
 }
 
+interface PickerPreviewable {
+	/**
+	 * Changes the way items are previewed in the CMS while being chosen.
+	 */
+	picker_preview?: Preview;
+}
+
 export interface Schema extends Cascade, Previewable, Schemalike {
 	/**
 	 * The path to the schema file. Relative to the root folder of the site.
@@ -924,7 +1040,13 @@ export interface CollectionConfig extends Cascade, Previewable {
 }
 
 export interface CollectionGroup {
+	/**
+	 * Short, descriptive label for this group of collections.
+	 */
 	heading: string;
+	/**
+	 * The collections shown in the sidebar for this group. Collections here are referenced by their key within `collections_config`.
+	 */
 	collections: string[];
 }
 
@@ -952,24 +1074,53 @@ interface Schemalike {
 }
 
 export interface Structure extends Schemalike {
+	/**
+	 * Defines what values are available to add when using this structure.
+	 */
 	values: Array<StructureValue>;
+	/**
+	 * Defines what key should be used to detect which structure an item is. If this key is not found in the existing structure, a comparison of key names is used. Defaults to "_type".
+	 */
 	id_key?: string;
+	/**
+	 * Defines whether options are shown to your editors in a select menu (select, default) or a modal pop up window (modal) when adding a new item.
+	 */
 	style?: 'select' | 'modal';
 }
 
-export interface StructureValue extends Previewable, Schemalike {
+export interface StructureValue extends Previewable, PickerPreviewable, Schemalike {
+	/**
+	 * A unique reference value used when referring to this structure value from the Object input's assigned_structures option.
+	 */
 	id?: string;
+	/**
+	 * If set to true, this item will be considered the default type for this structure. If the type of a value within a structure cannot be inferred based on its id_key or matching fields, then it will fall back to this item. If multiple items have default set to true, only the first item will be used.
+	 */
 	default?: boolean;
-	description?: string;
+	/**
+	 * An icon used when displaying the structure (defaults to either format_list_bulleted for items in arrays, or notes otherwise).
+	 */
 	icon?: Icon;
+	/**
+	 * Path to an image in your source files used when displaying the structure. Can be either a source (has priority) or output path.
+	 */
 	image?: string;
+	/**
+	 * Used as the main text in the interface for this value.
+	 */
 	label?: string;
-	picker_preview?: Preview;
+	/**
+	 * Used to group and filter items when selecting from a modal.
+	 */
 	tags?: string[];
+	/**
+	 * The actual value used when items are added after selection.
+	 */
 	value: any;
 }
 
 export type SelectValues =
+	| string
 	| Array<string>
 	| Record<string, string>
 	| Record<string, Record<string, any>>;
@@ -987,7 +1138,8 @@ export interface DataConfigEntry {
 
 export interface Editor {
 	/**
-	 * The URL the editor opens to on clicking the dashboard "Edit Home" button.
+	 * The URL used for the dashboard screenshot, and where the editor opens to when clicking the dashboard "Edit Home" button.
+	 * @default /
 	 */
 	default_path: string;
 }
@@ -1010,7 +1162,7 @@ export interface SourceEditor {
 	show_gutter?: boolean;
 }
 
-export interface DefaultConfiguration extends Cascade {
+export interface DefaultConfiguration extends Cascade, WithSnippets {
 	/**
 	 * Base path to your site source files, relative to the root folder.
 	 */
