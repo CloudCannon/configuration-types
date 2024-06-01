@@ -8,8 +8,8 @@ Contains TypeScript declarations and generates JSONSchema files for the [CloudCa
 
 - [Installation](#installation)
 - [Usage](#usage)
-	- [YAML and JSON](#yaml-and-json)
-	- [JavaScript](#javascript)
+  - [YAML and JSON](#yaml-and-json)
+  - [JavaScript](#javascript)
 - [Development](#development)
 - [License](#license)
 
@@ -44,14 +44,14 @@ Or the top-level `$schema` entry for JSON files:
 
 ```json
 {
-	"$schema": "https://raw.githubusercontent.com/CloudCannon/configuration-types/main/build/cloudcannon-config.json",
+  "$schema": "https://raw.githubusercontent.com/CloudCannon/configuration-types/main/build/cloudcannon-config.json",
 
-	"collections_config": {
-	  "posts": {
-	    "name": "Blog",
-	    "icon": "event"
-	  }
-	}
+  "collections_config": {
+    "posts": {
+      "name": "Blog",
+      "icon": "event"
+    }
+  }
 }
 ```
 
@@ -64,7 +64,7 @@ npm run ajv validate -s node_modules/@cloudcannon/configuration-types/cloudcanno
 
 ### JavaScript
 
-For a Common JS formatted configuration file (e.g. `/cloudcannon.config.cjs`), you can use a JSDoc comment to indicate the type of the module export:
+For a CommonJS formatted configuration file (e.g. `/cloudcannon.config.cjs`), you can use a JSDoc comment to indicate the type of the module export:
 
 ```javascript
 /** @type {import("@cloudcannon/configuration-types").DefaultConfiguration} */
@@ -103,10 +103,6 @@ Build JSONSchema files:
 ```sh
 npm run build
 ```
-
-Run tests:
-
-Not yet set up.
 
 ## License
 
