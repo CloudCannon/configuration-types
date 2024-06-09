@@ -1,5 +1,5 @@
 {
-  "$ref": "#/definitions/EleventyConfiguration",
+  "$ref": "#/definitions/DefaultConfiguration",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "AddOption": {
@@ -603,6 +603,206 @@
       },
       "type": "object"
     },
+    "CollectionConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "_array_structures": {
+          "additionalProperties": {},
+          "description": "[DEPRECATED] Now known as _structures.",
+          "markdownDescription": "[DEPRECATED] Now known as _structures.",
+          "type": "object"
+        },
+        "_comments": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "[DEPRECATED] Now part of _inputs.*.comment.",
+          "markdownDescription": "[DEPRECATED] Now part of _inputs.*.comment.",
+          "type": "object"
+        },
+        "_editables": {
+          "$ref": "#/definitions/Editables",
+          "description": "Contains input options for Editable Regions and the Content Editor.",
+          "markdownDescription": "Contains input options for Editable Regions and the Content Editor."
+        },
+        "_enabled_editors": {
+          "description": "Set a preferred editor and/or disable the others. The first value sets which editor opens by default, and the following values specify which editors are accessible.",
+          "items": {
+            "$ref": "#/definitions/EditorKey"
+          },
+          "markdownDescription": "Set a preferred editor and/or disable the others. The first value sets which editor opens by\ndefault, and the following values specify which editors are accessible.",
+          "type": "array"
+        },
+        "_inputs": {
+          "additionalProperties": {
+            "$ref": "#/definitions/Input"
+          },
+          "description": "Controls the behavior and appearance of your inputs in all data editing interfaces.",
+          "markdownDescription": "Controls the behavior and appearance of your inputs in all data editing interfaces.",
+          "type": "object"
+        },
+        "_options": {
+          "additionalProperties": {
+            "additionalProperties": {},
+            "type": "object"
+          },
+          "description": "[DEPRECATED] Now part of _inputs.*.options.",
+          "markdownDescription": "[DEPRECATED] Now part of _inputs.*.options.",
+          "type": "object"
+        },
+        "_select_data": {
+          "additionalProperties": {
+            "$ref": "#/definitions/SelectValues"
+          },
+          "description": "Fixed datasets that can be referenced by the _Values_ configuration for _Select_ and _Multiselect_ inputs.",
+          "markdownDescription": "Fixed datasets that can be referenced by the _Values_ configuration for _Select_ and\n_Multiselect_ inputs.",
+          "type": "object"
+        },
+        "_structures": {
+          "additionalProperties": {
+            "$ref": "#/definitions/Structure"
+          },
+          "description": "Structured values for editors adding new items to arrays and objects. Entries here can be referenced in the configuration for `array` or `object` inputs.",
+          "markdownDescription": "Structured values for editors adding new items to arrays and objects. Entries here can be\nreferenced in the configuration for `array` or `object` inputs.",
+          "type": "object"
+        },
+        "add_options": {
+          "description": "Changes the options presented in the add menu in the collection file list. Defaults to an automatically generated list from _Schemas_, or uses the first file in the collection if no schemas are configured.",
+          "items": {
+            "$ref": "#/definitions/AddOption"
+          },
+          "markdownDescription": "Changes the options presented in the add menu in the collection file list. Defaults to an\nautomatically generated list from _Schemas_, or uses the first file in the collection if no\nschemas are configured.",
+          "type": "array"
+        },
+        "create": {
+          "$ref": "#/definitions/Create",
+          "description": "The create path definition to control where new files are saved to inside this collection. Defaults to [relative_base_path]/{title|slugify}.md.",
+          "markdownDescription": "The create path definition to control where new files are saved to inside this collection.\nDefaults to [relative_base_path]/{title|slugify}.md."
+        },
+        "description": {
+          "description": "Text or Markdown to show above the collection file list.",
+          "markdownDescription": "Text or Markdown to show above the collection file list.",
+          "type": "string"
+        },
+        "disable_add": {
+          "description": "Prevents users from adding new files in the collection file list if true.\n\nDefaults to true for the Jekyll, Hugo and Eleventy data collection in the base data folder only (data sub-folders act as non-output collections). Otherwise, defaults to false.",
+          "markdownDescription": "Prevents users from adding new files in the collection file list if true.\n\nDefaults to true for the Jekyll, Hugo and Eleventy data collection in the base data folder only\n(data sub-folders act as non-output collections). Otherwise, defaults to false.",
+          "type": "boolean"
+        },
+        "disable_add_folder": {
+          "description": "Prevents users from adding new folders in the collection file list if true.\n\nDefaults to true for the Jekyll, Hugo and Eleventy data collection in the base data folder only (data sub-folders act as non-output collections). Otherwise, defaults to false.",
+          "markdownDescription": "Prevents users from adding new folders in the collection file list if true.\n\nDefaults to true for the Jekyll, Hugo and Eleventy data collection in the base data folder only\n(data sub-folders act as non-output collections). Otherwise, defaults to false.",
+          "type": "boolean"
+        },
+        "disable_file_actions": {
+          "description": "Prevents users from renaming, moving and deleting files in the collection file list if true.\n\nDefaults to true for the Jekyll, Hugo and Eleventy data collection in the base data folder only (data sub-folders act as non-output collections). Otherwise, defaults to false.",
+          "markdownDescription": "Prevents users from renaming, moving and deleting files in the collection file list if true.\n\nDefaults to true for the Jekyll, Hugo and Eleventy data collection in the base data folder only\n(data sub-folders act as non-output collections). Otherwise, defaults to false.",
+          "type": "boolean"
+        },
+        "documentation": {
+          "$ref": "#/definitions/Documentation",
+          "description": "Provides a custom link for documentation for editors shown above the collection file list.",
+          "markdownDescription": "Provides a custom link for documentation for editors shown above the collection file list."
+        },
+        "filter": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Filter"
+            },
+            {
+              "$ref": "#/definitions/FilterBase"
+            }
+          ],
+          "description": "Controls which files are displayed in the collection list. Does not change which files are assigned to this collection.",
+          "markdownDescription": "Controls which files are displayed in the collection list. Does not change which files are\nassigned to this collection."
+        },
+        "icon": {
+          "$ref": "#/definitions/Icon",
+          "description": "Sets an icon to use alongside references to this collection.",
+          "markdownDescription": "Sets an icon to use alongside references to this collection."
+        },
+        "name": {
+          "description": "The display name of this collection. Used in headings and in the context menu for items in the collection. This is optional as CloudCannon auto-generates this from the collection key.",
+          "markdownDescription": "The display name of this collection. Used in headings and in the context menu for items in the\ncollection. This is optional as CloudCannon auto-generates this from the collection key.",
+          "type": "string"
+        },
+        "new_preview_url": {
+          "description": "Preview your unbuilt pages (e.g. drafts) to another page’s output URL. The Visual Editor will load that set preview URL and use the Data Bindings and Previews to render your new page without saving.\n\nFor example new_preview_url: /about/ will load the /about/ URL on new or unbuilt pages in the Visual Editor.",
+          "markdownDescription": "Preview your unbuilt pages (e.g. drafts) to another page’s output URL. The Visual Editor will\nload that set preview URL and use the Data Bindings and Previews to render your new page\nwithout saving.\n\nFor example new_preview_url: /about/ will load the /about/ URL on new or unbuilt pages in the\nVisual Editor.",
+          "type": "string"
+        },
+        "output": {
+          "description": "Whether or not files in this collection produce files in the build output.",
+          "markdownDescription": "Whether or not files in this collection produce files in the build output.",
+          "type": "boolean"
+        },
+        "parser": {
+          "description": "Overrides how each file in the collection is read. Detected automatically from file extension if unset.",
+          "enum": [
+            "csv",
+            "front-matter",
+            "json",
+            "properties",
+            "toml",
+            "yaml"
+          ],
+          "markdownDescription": "Overrides how each file in the collection is read. Detected automatically from file extension\nif unset.",
+          "type": "string"
+        },
+        "path": {
+          "description": "The top-most folder where the files in this collection are stored. It is relative to source. Each collection must have a unique path.",
+          "markdownDescription": "The top-most folder where the files in this collection are stored. It is relative to source.\nEach collection must have a unique path.",
+          "type": "string"
+        },
+        "preview": {
+          "$ref": "#/definitions/Preview",
+          "description": "Changes the way items are previewed in the CMS.",
+          "markdownDescription": "Changes the way items are previewed in the CMS."
+        },
+        "schema_key": {
+          "description": "The key used in each file to identify the schema that file uses. The value this key represents in each of this collection's files should match the keys in schemas. Defaults to _schema.",
+          "markdownDescription": "The key used in each file to identify the schema that file uses. The value this key represents\nin each of this collection's files should match the keys in schemas. Defaults to _schema.",
+          "type": "string"
+        },
+        "schemas": {
+          "additionalProperties": {
+            "$ref": "#/definitions/Schema"
+          },
+          "description": "The set of schemas for this collection. Schemas are used when creating and editing files in this collection. Each entry corresponds to a schema that describes a data structure for this collection.\n\nThe keys in this object should match the values used for schema_key inside each of this collection's files. default is a special entry and is used when a file has no schema.",
+          "markdownDescription": "The set of schemas for this collection. Schemas are used when creating and editing files in\nthis collection. Each entry corresponds to a schema that describes a data structure for this\ncollection.\n\nThe keys in this object should match the values used for schema_key inside each of this\ncollection's files. default is a special entry and is used when a file has no schema.",
+          "type": "object"
+        },
+        "singular_key": {
+          "description": "Overrides the default singular input key of the collection. This is used for naming conventions for select and multiselect inputs.",
+          "markdownDescription": "Overrides the default singular input key of the collection. This is used for naming conventions\nfor select and multiselect inputs.",
+          "type": "string"
+        },
+        "singular_name": {
+          "description": "Overrides the default singular display name of the collection. This is displayed in the collection add menu and file context menu.",
+          "markdownDescription": "Overrides the default singular display name of the collection. This is displayed in the\ncollection add menu and file context menu.",
+          "type": "string"
+        },
+        "sort": {
+          "$ref": "#/definitions/Sort",
+          "description": "Sets the default sorting for the collection file list. Defaults to the first option in sort_options, then falls back descending path. As an exception, defaults to descending date for blog-like collections.",
+          "markdownDescription": "Sets the default sorting for the collection file list. Defaults to the first option in\nsort_options, then falls back descending path. As an exception, defaults to descending date for\nblog-like collections."
+        },
+        "sort_options": {
+          "description": "Controls the available options in the sort menu. Defaults to generating the options from the first item in the collection, falling back to ascending path and descending path.",
+          "items": {
+            "$ref": "#/definitions/SortOption"
+          },
+          "markdownDescription": "Controls the available options in the sort menu. Defaults to generating the options from the\nfirst item in the collection, falling back to ascending path and descending path.",
+          "type": "array"
+        },
+        "url": {
+          "description": "Used to build the url field for items in the collection. Similar to permalink in many SSGs. Defaults to ''",
+          "markdownDescription": "Used to build the url field for items in the collection. Similar to permalink in many SSGs.\nDefaults to ''",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "CollectionGroup": {
       "additionalProperties": false,
       "properties": {
@@ -754,6 +954,33 @@
       ],
       "type": "object"
     },
+    "DataConfigEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "parser": {
+          "description": "Overrides how each file in the dataset is read. Detected automatically from file extension if unset.",
+          "enum": [
+            "csv",
+            "front-matter",
+            "json",
+            "properties",
+            "toml",
+            "yaml"
+          ],
+          "markdownDescription": "Overrides how each file in the dataset is read. Detected automatically from file extension if\nunset.",
+          "type": "string"
+        },
+        "path": {
+          "description": "The path to a file or folder of files containing data.",
+          "markdownDescription": "The path to a file or folder of files containing data.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path"
+      ],
+      "type": "object"
+    },
     "DateInput": {
       "additionalProperties": false,
       "properties": {
@@ -823,85 +1050,7 @@
       },
       "type": "object"
     },
-    "Documentation": {
-      "additionalProperties": false,
-      "properties": {
-        "icon": {
-          "$ref": "#/definitions/Icon",
-          "description": "The icon displayed next to the link.",
-          "markdownDescription": "The icon displayed next to the link."
-        },
-        "text": {
-          "description": "The visible text used in the link.",
-          "markdownDescription": "The visible text used in the link.",
-          "type": "string"
-        },
-        "url": {
-          "description": "The \"href\" value of the link.",
-          "markdownDescription": "The \"href\" value of the link.",
-          "type": "string"
-        }
-      },
-      "required": [
-        "url"
-      ],
-      "type": "object"
-    },
-    "Editables": {
-      "additionalProperties": false,
-      "properties": {
-        "block": {
-          "$ref": "#/definitions/BlockEditable",
-          "description": "Contains input options for block Editable Regions.",
-          "markdownDescription": "Contains input options for block Editable Regions."
-        },
-        "content": {
-          "$ref": "#/definitions/BlockEditable",
-          "description": "Contains input options for the Content Editor.",
-          "markdownDescription": "Contains input options for the Content Editor."
-        },
-        "image": {
-          "$ref": "#/definitions/ImageEditable",
-          "description": "Contains input options for image Editable Regions.",
-          "markdownDescription": "Contains input options for image Editable Regions."
-        },
-        "link": {
-          "$ref": "#/definitions/LinkEditable",
-          "description": "Contains input options for link Editable Regions.",
-          "markdownDescription": "Contains input options for link Editable Regions."
-        },
-        "text": {
-          "$ref": "#/definitions/TextEditable",
-          "description": "Contains input options for text Editable Regions.",
-          "markdownDescription": "Contains input options for text Editable Regions."
-        }
-      },
-      "type": "object"
-    },
-    "Editor": {
-      "additionalProperties": false,
-      "properties": {
-        "default_path": {
-          "default": "/",
-          "description": "The URL used for the dashboard screenshot, and where the editor opens to when clicking the dashboard \"Edit Home\" button.",
-          "markdownDescription": "The URL used for the dashboard screenshot, and where the editor opens to when clicking the\ndashboard \"Edit Home\" button.",
-          "type": "string"
-        }
-      },
-      "required": [
-        "default_path"
-      ],
-      "type": "object"
-    },
-    "EditorKey": {
-      "enum": [
-        "visual",
-        "content",
-        "data"
-      ],
-      "type": "string"
-    },
-    "EleventyConfiguration": {
+    "DefaultConfiguration": {
       "additionalProperties": false,
       "properties": {
         "_array_structures": {
@@ -1611,199 +1760,15 @@
         },
         "collections_config": {
           "additionalProperties": {
-            "additionalProperties": false,
-            "properties": {
-              "_array_structures": {
-                "additionalProperties": {},
-                "description": "[DEPRECATED] Now known as _structures.",
-                "markdownDescription": "[DEPRECATED] Now known as _structures.",
-                "type": "object"
-              },
-              "_comments": {
-                "additionalProperties": {
-                  "type": "string"
-                },
-                "description": "[DEPRECATED] Now part of _inputs.*.comment.",
-                "markdownDescription": "[DEPRECATED] Now part of _inputs.*.comment.",
-                "type": "object"
-              },
-              "_editables": {
-                "$ref": "#/definitions/Editables",
-                "description": "Contains input options for Editable Regions and the Content Editor.",
-                "markdownDescription": "Contains input options for Editable Regions and the Content Editor."
-              },
-              "_enabled_editors": {
-                "description": "Set a preferred editor and/or disable the others. The first value sets which editor opens by default, and the following values specify which editors are accessible.",
-                "items": {
-                  "$ref": "#/definitions/EditorKey"
-                },
-                "markdownDescription": "Set a preferred editor and/or disable the others. The first value sets which editor opens by\ndefault, and the following values specify which editors are accessible.",
-                "type": "array"
-              },
-              "_inputs": {
-                "additionalProperties": {
-                  "$ref": "#/definitions/Input"
-                },
-                "description": "Controls the behavior and appearance of your inputs in all data editing interfaces.",
-                "markdownDescription": "Controls the behavior and appearance of your inputs in all data editing interfaces.",
-                "type": "object"
-              },
-              "_options": {
-                "additionalProperties": {
-                  "additionalProperties": {},
-                  "type": "object"
-                },
-                "description": "[DEPRECATED] Now part of _inputs.*.options.",
-                "markdownDescription": "[DEPRECATED] Now part of _inputs.*.options.",
-                "type": "object"
-              },
-              "_select_data": {
-                "additionalProperties": {
-                  "$ref": "#/definitions/SelectValues"
-                },
-                "description": "Fixed datasets that can be referenced by the _Values_ configuration for _Select_ and _Multiselect_ inputs.",
-                "markdownDescription": "Fixed datasets that can be referenced by the _Values_ configuration for _Select_ and\n_Multiselect_ inputs.",
-                "type": "object"
-              },
-              "_structures": {
-                "additionalProperties": {
-                  "$ref": "#/definitions/Structure"
-                },
-                "description": "Structured values for editors adding new items to arrays and objects. Entries here can be referenced in the configuration for `array` or `object` inputs.",
-                "markdownDescription": "Structured values for editors adding new items to arrays and objects. Entries here can be\nreferenced in the configuration for `array` or `object` inputs.",
-                "type": "object"
-              },
-              "add_options": {
-                "description": "Changes the options presented in the add menu in the collection file list. Defaults to an automatically generated list from _Schemas_, or uses the first file in the collection if no schemas are configured.",
-                "items": {
-                  "$ref": "#/definitions/AddOption"
-                },
-                "markdownDescription": "Changes the options presented in the add menu in the collection file list. Defaults to an\nautomatically generated list from _Schemas_, or uses the first file in the collection if no\nschemas are configured.",
-                "type": "array"
-              },
-              "create": {
-                "$ref": "#/definitions/Create",
-                "description": "The create path definition to control where new files are saved to inside this collection. Defaults to [relative_base_path]/{title|slugify}.md.",
-                "markdownDescription": "The create path definition to control where new files are saved to inside this collection.\nDefaults to [relative_base_path]/{title|slugify}.md."
-              },
-              "description": {
-                "description": "Text or Markdown to show above the collection file list.",
-                "markdownDescription": "Text or Markdown to show above the collection file list.",
-                "type": "string"
-              },
-              "disable_add": {
-                "description": "Prevents users from adding new files in the collection file list if true.\n\nDefaults to true for the Jekyll, Hugo and Eleventy data collection in the base data folder only (data sub-folders act as non-output collections). Otherwise, defaults to false.",
-                "markdownDescription": "Prevents users from adding new files in the collection file list if true.\n\nDefaults to true for the Jekyll, Hugo and Eleventy data collection in the base data folder only\n(data sub-folders act as non-output collections). Otherwise, defaults to false.",
-                "type": "boolean"
-              },
-              "disable_add_folder": {
-                "description": "Prevents users from adding new folders in the collection file list if true.\n\nDefaults to true for the Jekyll, Hugo and Eleventy data collection in the base data folder only (data sub-folders act as non-output collections). Otherwise, defaults to false.",
-                "markdownDescription": "Prevents users from adding new folders in the collection file list if true.\n\nDefaults to true for the Jekyll, Hugo and Eleventy data collection in the base data folder only\n(data sub-folders act as non-output collections). Otherwise, defaults to false.",
-                "type": "boolean"
-              },
-              "disable_file_actions": {
-                "description": "Prevents users from renaming, moving and deleting files in the collection file list if true.\n\nDefaults to true for the Jekyll, Hugo and Eleventy data collection in the base data folder only (data sub-folders act as non-output collections). Otherwise, defaults to false.",
-                "markdownDescription": "Prevents users from renaming, moving and deleting files in the collection file list if true.\n\nDefaults to true for the Jekyll, Hugo and Eleventy data collection in the base data folder only\n(data sub-folders act as non-output collections). Otherwise, defaults to false.",
-                "type": "boolean"
-              },
-              "documentation": {
-                "$ref": "#/definitions/Documentation",
-                "description": "Provides a custom link for documentation for editors shown above the collection file list.",
-                "markdownDescription": "Provides a custom link for documentation for editors shown above the collection file list."
-              },
-              "filter": {
-                "anyOf": [
-                  {
-                    "$ref": "#/definitions/Filter"
-                  },
-                  {
-                    "$ref": "#/definitions/FilterBase"
-                  }
-                ],
-                "description": "Controls which files are displayed in the collection list. Does not change which files are assigned to this collection.",
-                "markdownDescription": "Controls which files are displayed in the collection list. Does not change which files are\nassigned to this collection."
-              },
-              "icon": {
-                "$ref": "#/definitions/Icon",
-                "description": "Sets an icon to use alongside references to this collection.",
-                "markdownDescription": "Sets an icon to use alongside references to this collection."
-              },
-              "name": {
-                "description": "The display name of this collection. Used in headings and in the context menu for items in the collection. This is optional as CloudCannon auto-generates this from the collection key.",
-                "markdownDescription": "The display name of this collection. Used in headings and in the context menu for items in the\ncollection. This is optional as CloudCannon auto-generates this from the collection key.",
-                "type": "string"
-              },
-              "new_preview_url": {
-                "description": "Preview your unbuilt pages (e.g. drafts) to another page’s output URL. The Visual Editor will load that set preview URL and use the Data Bindings and Previews to render your new page without saving.\n\nFor example new_preview_url: /about/ will load the /about/ URL on new or unbuilt pages in the Visual Editor.",
-                "markdownDescription": "Preview your unbuilt pages (e.g. drafts) to another page’s output URL. The Visual Editor will\nload that set preview URL and use the Data Bindings and Previews to render your new page\nwithout saving.\n\nFor example new_preview_url: /about/ will load the /about/ URL on new or unbuilt pages in the\nVisual Editor.",
-                "type": "string"
-              },
-              "output": {
-                "description": "Whether or not files in this collection produce files in the build output.",
-                "markdownDescription": "Whether or not files in this collection produce files in the build output.",
-                "type": "boolean"
-              },
-              "path": {
-                "description": "The top-most folder where the files in this collection are stored. It is relative to source. Each collection must have a unique path.",
-                "markdownDescription": "The top-most folder where the files in this collection are stored. It is relative to source.\nEach collection must have a unique path.",
-                "type": "string"
-              },
-              "preview": {
-                "$ref": "#/definitions/Preview",
-                "description": "Changes the way items are previewed in the CMS.",
-                "markdownDescription": "Changes the way items are previewed in the CMS."
-              },
-              "schema_key": {
-                "description": "The key used in each file to identify the schema that file uses. The value this key represents in each of this collection's files should match the keys in schemas. Defaults to _schema.",
-                "markdownDescription": "The key used in each file to identify the schema that file uses. The value this key represents\nin each of this collection's files should match the keys in schemas. Defaults to _schema.",
-                "type": "string"
-              },
-              "schemas": {
-                "additionalProperties": {
-                  "$ref": "#/definitions/Schema"
-                },
-                "description": "The set of schemas for this collection. Schemas are used when creating and editing files in this collection. Each entry corresponds to a schema that describes a data structure for this collection.\n\nThe keys in this object should match the values used for schema_key inside each of this collection's files. default is a special entry and is used when a file has no schema.",
-                "markdownDescription": "The set of schemas for this collection. Schemas are used when creating and editing files in\nthis collection. Each entry corresponds to a schema that describes a data structure for this\ncollection.\n\nThe keys in this object should match the values used for schema_key inside each of this\ncollection's files. default is a special entry and is used when a file has no schema.",
-                "type": "object"
-              },
-              "singular_key": {
-                "description": "Overrides the default singular input key of the collection. This is used for naming conventions for select and multiselect inputs.",
-                "markdownDescription": "Overrides the default singular input key of the collection. This is used for naming conventions\nfor select and multiselect inputs.",
-                "type": "string"
-              },
-              "singular_name": {
-                "description": "Overrides the default singular display name of the collection. This is displayed in the collection add menu and file context menu.",
-                "markdownDescription": "Overrides the default singular display name of the collection. This is displayed in the\ncollection add menu and file context menu.",
-                "type": "string"
-              },
-              "sort": {
-                "$ref": "#/definitions/Sort",
-                "description": "Sets the default sorting for the collection file list. Defaults to the first option in sort_options, then falls back descending path. As an exception, defaults to descending date for blog-like collections.",
-                "markdownDescription": "Sets the default sorting for the collection file list. Defaults to the first option in\nsort_options, then falls back descending path. As an exception, defaults to descending date for\nblog-like collections."
-              },
-              "sort_options": {
-                "description": "Controls the available options in the sort menu. Defaults to generating the options from the first item in the collection, falling back to ascending path and descending path.",
-                "items": {
-                  "$ref": "#/definitions/SortOption"
-                },
-                "markdownDescription": "Controls the available options in the sort menu. Defaults to generating the options from the\nfirst item in the collection, falling back to ascending path and descending path.",
-                "type": "array"
-              }
-            },
-            "type": "object"
+            "$ref": "#/definitions/CollectionConfig"
           },
           "description": "Definitions for your collections, which are the sets of content files for your site grouped by folder. Entries are keyed by a chosen collection key, and contain configuration specific to that collection.  {@link  https://cloudcannon.com/documentation/ CloudCannon }  yes.\n\n```yaml collections_config:   posts:     icon: event_date ```",
           "markdownDescription": "Definitions for your collections, which are the sets of content files for your site grouped by\nfolder. Entries are keyed by a chosen collection key, and contain configuration specific to\nthat collection.  {@link  https://cloudcannon.com/documentation/ CloudCannon }  yes.\n\n```yaml\ncollections_config:\n  posts:\n    icon: event_date\n```",
           "type": "object"
         },
-        "collections_config_override": {
-          "description": "Prevents CloudCannon from automatically discovering collections for supported SSGs if true. Defaults to false.",
-          "markdownDescription": "Prevents CloudCannon from automatically discovering collections for supported SSGs if true.\nDefaults to false.",
-          "type": "boolean"
-        },
         "data_config": {
           "additionalProperties": {
-            "type": "boolean"
+            "$ref": "#/definitions/DataConfigEntry"
           },
           "description": "Controls what data sets are available to populate select and multiselect inputs.",
           "markdownDescription": "Controls what data sets are available to populate select and multiselect inputs.",
@@ -1870,6 +1835,11 @@
           },
           "type": "object"
         },
+        "output": {
+          "description": "Generates the integration file in another folder. Not applicable to Jekyll, Hugo, and Eleventy. Defaults to the root folder.",
+          "markdownDescription": "Generates the integration file in another folder. Not applicable to Jekyll, Hugo, and Eleventy.\nDefaults to the root folder.",
+          "type": "string"
+        },
         "paths": {
           "$ref": "#/definitions/Paths",
           "description": "Global paths to common folders.",
@@ -1886,7 +1856,6 @@
           "markdownDescription": "Settings for the behavior and appearance of the Source Editor."
         },
         "ssg": {
-          "const": "eleventy",
           "type": "string"
         },
         "timezone": {
@@ -1897,6 +1866,84 @@
         }
       },
       "type": "object"
+    },
+    "Documentation": {
+      "additionalProperties": false,
+      "properties": {
+        "icon": {
+          "$ref": "#/definitions/Icon",
+          "description": "The icon displayed next to the link.",
+          "markdownDescription": "The icon displayed next to the link."
+        },
+        "text": {
+          "description": "The visible text used in the link.",
+          "markdownDescription": "The visible text used in the link.",
+          "type": "string"
+        },
+        "url": {
+          "description": "The \"href\" value of the link.",
+          "markdownDescription": "The \"href\" value of the link.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "url"
+      ],
+      "type": "object"
+    },
+    "Editables": {
+      "additionalProperties": false,
+      "properties": {
+        "block": {
+          "$ref": "#/definitions/BlockEditable",
+          "description": "Contains input options for block Editable Regions.",
+          "markdownDescription": "Contains input options for block Editable Regions."
+        },
+        "content": {
+          "$ref": "#/definitions/BlockEditable",
+          "description": "Contains input options for the Content Editor.",
+          "markdownDescription": "Contains input options for the Content Editor."
+        },
+        "image": {
+          "$ref": "#/definitions/ImageEditable",
+          "description": "Contains input options for image Editable Regions.",
+          "markdownDescription": "Contains input options for image Editable Regions."
+        },
+        "link": {
+          "$ref": "#/definitions/LinkEditable",
+          "description": "Contains input options for link Editable Regions.",
+          "markdownDescription": "Contains input options for link Editable Regions."
+        },
+        "text": {
+          "$ref": "#/definitions/TextEditable",
+          "description": "Contains input options for text Editable Regions.",
+          "markdownDescription": "Contains input options for text Editable Regions."
+        }
+      },
+      "type": "object"
+    },
+    "Editor": {
+      "additionalProperties": false,
+      "properties": {
+        "default_path": {
+          "default": "/",
+          "description": "The URL used for the dashboard screenshot, and where the editor opens to when clicking the dashboard \"Edit Home\" button.",
+          "markdownDescription": "The URL used for the dashboard screenshot, and where the editor opens to when clicking the\ndashboard \"Edit Home\" button.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "default_path"
+      ],
+      "type": "object"
+    },
+    "EditorKey": {
+      "enum": [
+        "visual",
+        "content",
+        "data"
+      ],
+      "type": "string"
     },
     "EmptyTypeArray": {
       "enum": [
