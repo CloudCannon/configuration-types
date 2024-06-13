@@ -57,7 +57,7 @@ interface SnippetsImport<T> {
 	include?: Array<T>;
 }
 
-interface SnippetsImports {
+export interface SnippetsImports {
 	/**
 	 * Default snippets for Hugo SSG.
 	 */
