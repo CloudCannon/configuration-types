@@ -61,37 +61,37 @@ interface SnippetsImports {
 	/**
 	 * Default snippets for Hugo SSG.
 	 */
-	hugo?: SnippetsImport<keyof typeof Scrapbooker.defaults.hugo.snippets>;
+	hugo?: boolean | SnippetsImport<keyof typeof Scrapbooker.defaults.hugo.snippets>;
 	/**
 	 * Default snippets for Jekyll SSG.
 	 */
-	jekyll?: SnippetsImport<keyof typeof Scrapbooker.defaults.jekyll.snippets>;
+	jekyll?: boolean | SnippetsImport<keyof typeof Scrapbooker.defaults.jekyll.snippets>;
 	/**
 	 * Default snippets for MDX-based content.
 	 */
-	mdx?: SnippetsImport<keyof typeof Scrapbooker.defaults.mdx.snippets>;
+	mdx?: boolean | SnippetsImport<keyof typeof Scrapbooker.defaults.mdx.snippets>;
 	/**
 	 * Default snippets for Eleventy SSG Liquid files.
 	 */
-	eleventy_liquid?: SnippetsImport<keyof typeof Scrapbooker.defaults.eleventy_liquid.snippets>;
+	eleventy_liquid?: boolean | SnippetsImport<keyof typeof Scrapbooker.defaults.eleventy_liquid.snippets>;
 	/**
 	 * Default snippets for Eleventy SSG Nunjucks files.
 	 */
-	eleventy_nunjucks?: SnippetsImport<keyof typeof Scrapbooker.defaults.eleventy_nunjucks.snippets>;
+	eleventy_nunjucks?: boolean | SnippetsImport<keyof typeof Scrapbooker.defaults.eleventy_nunjucks.snippets>;
 	/**
 	 * Default snippets for Markdoc-based content.
 	 */
-	markdoc?: SnippetsImport<keyof typeof Scrapbooker.defaults.markdoc.snippets>;
+	markdoc?: boolean | SnippetsImport<keyof typeof Scrapbooker.defaults.markdoc.snippets>;
 	/**
 	 * Default snippets for content using Python markdown extensions.
 	 */
-	python_markdown_extensions?: SnippetsImport<
+	python_markdown_extensions?: boolean | SnippetsImport<
 		keyof typeof Scrapbooker.defaults.python_markdown_extensions.snippets
 	>;
 	/**
 	 * Default snippets for Docusaurus SSG.
 	 */
-	docusaurus_mdx?: SnippetsImport<keyof typeof Scrapbooker.defaults.docusaurus_mdx.snippets>;
+	docusaurus_mdx?: boolean | SnippetsImport<keyof typeof Scrapbooker.defaults.docusaurus_mdx.snippets>;
 }
 
 interface WithSnippets {
@@ -102,7 +102,7 @@ interface WithSnippets {
 	/**
 	 * Provides control over which snippets are available to use and/or extend within `_snippets`.
 	 */
-	_snippets_imports?: true | SnippetsImports;
+	_snippets_imports?: SnippetsImports;
 	/**
 	 * Extended option used when creating more complex custom snippets.
 	 */
