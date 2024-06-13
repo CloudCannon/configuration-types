@@ -73,11 +73,15 @@ export interface SnippetsImports {
 	/**
 	 * Default snippets for Eleventy SSG Liquid files.
 	 */
-	eleventy_liquid?: boolean | SnippetsImport<keyof typeof Scrapbooker.defaults.eleventy_liquid.snippets>;
+	eleventy_liquid?:
+		| boolean
+		| SnippetsImport<keyof typeof Scrapbooker.defaults.eleventy_liquid.snippets>;
 	/**
 	 * Default snippets for Eleventy SSG Nunjucks files.
 	 */
-	eleventy_nunjucks?: boolean | SnippetsImport<keyof typeof Scrapbooker.defaults.eleventy_nunjucks.snippets>;
+	eleventy_nunjucks?:
+		| boolean
+		| SnippetsImport<keyof typeof Scrapbooker.defaults.eleventy_nunjucks.snippets>;
 	/**
 	 * Default snippets for Markdoc-based content.
 	 */
@@ -85,13 +89,15 @@ export interface SnippetsImports {
 	/**
 	 * Default snippets for content using Python markdown extensions.
 	 */
-	python_markdown_extensions?: boolean | SnippetsImport<
-		keyof typeof Scrapbooker.defaults.python_markdown_extensions.snippets
-	>;
+	python_markdown_extensions?:
+		| boolean
+		| SnippetsImport<keyof typeof Scrapbooker.defaults.python_markdown_extensions.snippets>;
 	/**
 	 * Default snippets for Docusaurus SSG.
 	 */
-	docusaurus_mdx?: boolean | SnippetsImport<keyof typeof Scrapbooker.defaults.docusaurus_mdx.snippets>;
+	docusaurus_mdx?:
+		| boolean
+		| SnippetsImport<keyof typeof Scrapbooker.defaults.docusaurus_mdx.snippets>;
 }
 
 interface WithSnippets {
@@ -1025,7 +1031,8 @@ export interface AddOption {
 	 */
 	default_content_file?: string;
 	/**
-	 * The link that opens when the option is clicked. Can either be an external or internal link. If internal, the link is relative to the current site.
+	 * The link that opens when the option is clicked. Can either be an external or internal link. If
+	 * internal, the link is relative to the current site.
 	 */
 	href?: string;
 }
@@ -1385,7 +1392,8 @@ export interface CommitTemplate {
 	 */
 	template_string?: string;
 	/**
-	 * Sets the path for a file containing your commit template. The file path should be relative to the root directory.
+	 * Sets the path for a file containing your commit template. The file path should be relative to
+	 * the root directory.
 	 */
 	template_path?: string;
 	/**
