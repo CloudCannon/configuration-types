@@ -759,6 +759,10 @@ export interface AddOption {
 	 * The path to a file used to populate the initial contents of a new file if no schemas are configured. We recommend using schemas, and this is ignored if a schema is available.
 	 */
 	default_content_file?: string;
+	/**
+	 * The link that opens when the option is clicked. Can either be an external or internal link. If internal, the link is relative to the current site.
+	 */
+	href?: string;
 }
 
 interface Previewable {
@@ -911,6 +915,29 @@ export interface SourceEditor {
 	show_gutter?: boolean;
 }
 
+export interface CommitTemplate {
+	/**
+	 * Used to identify a commit template when multiple commit templates are available.
+	 */
+	label?: string;
+	/**
+	 * Set the string for the commit template. This will only be used if template_path is not set.
+	 */
+	template_string?: string;
+	/**
+	 * Sets the path for a file containing your commit template. The file path should be relative to the root directory.
+	 */
+	template_path?: string;
+	/**
+	 * Define inputs used to populate data placeholders in the commit template.
+	 */
+	_inputs?: Record<string, Input>;
+	/**
+	 * Define additional template strings, for building nested templates.
+	 */
+	extra_data?: Record<string, string>;
+}
+
 export interface DefaultConfiguration extends Cascade {
 	source?: string;
 	output?: string;
@@ -921,6 +948,7 @@ export interface DefaultConfiguration extends Cascade {
 	data_config?: Record<string, DataConfigEntry>;
 	editor?: Editor;
 	source_editor?: SourceEditor;
+	commit_templates?: Array<CommitTemplate>;
 	/**
 	 * @default Etc/UTC
 	 */
@@ -931,10 +959,15 @@ export interface HugoCollectionConfig extends CollectionConfig {
 	parse_branch_index?: boolean;
 }
 
-export interface HugoConfiguration extends Omit<DefaultConfiguration, 'output' | 'data_config'> {
+export interface HugoPaths extends Paths {
+	archetypes?: string;
+}
+
+export interface HugoConfiguration extends Omit<DefaultConfiguration, 'output' | 'data_config' | 'paths'> {
 	collections_config_override?: boolean;
 	collections_config?: Record<string, HugoCollectionConfig>;
 	data_config?: Record<string, boolean>;
+	paths?: HugoPaths;
 }
 
 export interface JekyllConfiguration extends Omit<DefaultConfiguration, 'output' | 'data_config'> {
