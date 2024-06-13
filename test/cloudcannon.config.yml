@@ -1,29 +1,81 @@
 # yaml-language-server: $schema=../build/cloudcannon-config.json
 
-source: src
-timezone: America/New_York
+data_config:
+  blog-tags: true
+
+generator:
+  metadata:
+    markdown: goldmark
+    goldmark:
+      renderer:
+        hardWraps: true
 collections_config:
-  staff:
+  pages:
+    icon: feed
+    disable_add_folder: true
+    output: true
+    path: content
+    schemas:
+      default:
+        path: schemas/page.html
+    _enabled_editors:
+      - visual
+  articles:
+    icon: article
+    path: content/blog
+    disable_add_folder: true
+    schemas:
+      default:
+        path: schemas/post.md
+    add_options:
+      - name: Add Article
+        editor: content
+        schema: default
     _enabled_editors:
       - content
       - visual
-    path: content/staff
-    filter:
-      exclude:
-        - secrets.yml
-_editables:
-  content:
-    correct_orientation: true
-    expandable: false
-    image_size_attributes: true
-    resize_style: contain
+  data:
+    output: false
+    path: data
+    icon: settings
+    disable_add: true
+    disable_add_folder: true
+    _enabled_editors:
+      - data
+
+collection_groups:
+  - heading: Pages
+    collections:
+      - pages
+  - heading: Blogging
+    collections:
+      - articles
+  - heading: Site Settings
+    collections:
+      - data
+
 _inputs:
-  my_input:
-    type: html
-    comment: hello
+  range:
+    type: range
     options:
-      correct_orientation: true
-      expandable: false
-      image_size_attributes: true
-      resize_style: contain
+      max: 1
+      min: 2
+      step: 5
+  content:
+    type: markdown
+  icon:
+    type: select
+    options:
+      values:
+        - ph-user-square
+  description:
+    type: markdown
+    options:
       bold: true
+
+_snippets_imports:
+  jekyll:
+    include:
+      - jekyll_raw
+      - jekyll_link
+      - jekyll_highlight

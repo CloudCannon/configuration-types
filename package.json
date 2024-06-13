@@ -1,7 +1,7 @@
 {
   "name": "@cloudcannon/configuration-types",
   "version": "0.0.3",
-  "description": "Contains types and generates JSON Schemas for the CloudCannon configuration file.",
+  "description": "Contains TypeScript declarations and generates JSONSchema files for the CloudCannon configuration file.",
   "author": "CloudCannon <support@cloudcannon.com>",
   "license": "MIT",
   "keywords": [
@@ -18,10 +18,11 @@
     "email": "support@cloudcannon.com"
   },
   "scripts": {
-    "build:default": "ts-json-schema-generator --path src/index.d.ts --type Configuration > build/cloudcannon-config.json",
-    "build:eleventy": "ts-json-schema-generator --path src/index.d.ts --type EleventyConfiguration > build/cloudcannon-config-eleventy.json",
-    "build:jekyll": "ts-json-schema-generator --path src/index.d.ts --type JekyllConfiguration > build/cloudcannon-config-jekyll.json",
-    "build:hugo": "ts-json-schema-generator --path src/index.d.ts --type HugoConfiguration > build/cloudcannon-config-hugo.json",
+    "build:unknown": "ts-json-schema-generator --markdown-description --path src/index.d.ts --type Configuration --out build/cloudcannon-config.json",
+    "build:default": "ts-json-schema-generator --markdown-description --path src/index.d.ts --type DefaultConfiguration --out build/cloudcannon-config-default.json",
+    "build:eleventy": "ts-json-schema-generator --markdown-description --path src/index.d.ts --type EleventyConfiguration --out build/cloudcannon-config-eleventy.json",
+    "build:jekyll": "ts-json-schema-generator --markdown-description --path src/index.d.ts --type JekyllConfiguration --out build/cloudcannon-config-jekyll.json",
+    "build:hugo": "ts-json-schema-generator --markdown-description --path src/index.d.ts --type HugoConfiguration --out build/cloudcannon-config-hugo.json",
     "build": "run-p build:*",
     "prebuild": "mkdir -p build && rimraf --glob 'build/*.json'",
     "test": "exit 0"
@@ -32,14 +33,18 @@
     "access": "public"
   },
   "files": [
-    "src/**/*"
+    "src/**/*",
+    "build/**/*"
   ],
   "dependencies": {
-    "ts-json-schema-generator": "^1.3.0"
+    "@cloudcannon/scrap-booker": "^1.1.8",
+    "ts-json-schema-generator": "^2.2.0"
   },
   "devDependencies": {
+    "@types/node": "^20.13.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "^3.0.3",
-    "rimraf": "^5.0.5"
+    "prettier": "^3.2.5",
+    "prettier-plugin-jsdoc": "^1.3.0",
+    "rimraf": "^5.0.7"
   }
 }
