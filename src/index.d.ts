@@ -57,7 +57,7 @@ interface SnippetsImport<T> {
 	include?: Array<T>;
 }
 
-interface SnippetsImports {
+export interface SnippetsImports {
 	/**
 	 * Default snippets for Hugo SSG.
 	 */
@@ -73,11 +73,15 @@ interface SnippetsImports {
 	/**
 	 * Default snippets for Eleventy SSG Liquid files.
 	 */
-	eleventy_liquid?: boolean | SnippetsImport<keyof typeof Scrapbooker.defaults.eleventy_liquid.snippets>;
+	eleventy_liquid?:
+		| boolean
+		| SnippetsImport<keyof typeof Scrapbooker.defaults.eleventy_liquid.snippets>;
 	/**
 	 * Default snippets for Eleventy SSG Nunjucks files.
 	 */
-	eleventy_nunjucks?: boolean | SnippetsImport<keyof typeof Scrapbooker.defaults.eleventy_nunjucks.snippets>;
+	eleventy_nunjucks?:
+		| boolean
+		| SnippetsImport<keyof typeof Scrapbooker.defaults.eleventy_nunjucks.snippets>;
 	/**
 	 * Default snippets for Markdoc-based content.
 	 */
@@ -85,13 +89,15 @@ interface SnippetsImports {
 	/**
 	 * Default snippets for content using Python markdown extensions.
 	 */
-	python_markdown_extensions?: boolean | SnippetsImport<
-		keyof typeof Scrapbooker.defaults.python_markdown_extensions.snippets
-	>;
+	python_markdown_extensions?:
+		| boolean
+		| SnippetsImport<keyof typeof Scrapbooker.defaults.python_markdown_extensions.snippets>;
 	/**
 	 * Default snippets for Docusaurus SSG.
 	 */
-	docusaurus_mdx?: boolean | SnippetsImport<keyof typeof Scrapbooker.defaults.docusaurus_mdx.snippets>;
+	docusaurus_mdx?:
+		| boolean
+		| SnippetsImport<keyof typeof Scrapbooker.defaults.docusaurus_mdx.snippets>;
 }
 
 interface WithSnippets {
@@ -490,6 +496,10 @@ export interface BaseInput<InputOptions = BaseInputOptions> {
 		 */
 		icon?: Icon;
 	};
+	/**
+	 * Provides a custom link for documentation for editors shown above input.
+	 */
+	documentation?: Documentation;
 	/**
 	 * Optionally changes the text above this input.
 	 */
@@ -1024,6 +1034,11 @@ export interface AddOption {
 	 * configured. We recommend using schemas, and this is ignored if a schema is available.
 	 */
 	default_content_file?: string;
+	/**
+	 * The link that opens when the option is clicked. Can either be an external or internal link. If
+	 * internal, the link is relative to the current site.
+	 */
+	href?: string;
 }
 
 interface Previewable {
@@ -1371,6 +1386,30 @@ export interface SourceEditor {
 	show_gutter?: boolean;
 }
 
+export interface CommitTemplate {
+	/**
+	 * Used to identify a commit template when multiple commit templates are available.
+	 */
+	label?: string;
+	/**
+	 * Set the string for the commit template. This will only be used if template_path is not set.
+	 */
+	template_string?: string;
+	/**
+	 * Sets the path for a file containing your commit template. The file path should be relative to
+	 * the root directory.
+	 */
+	template_path?: string;
+	/**
+	 * Define inputs used to populate data placeholders in the commit template.
+	 */
+	_inputs?: Record<string, Input>;
+	/**
+	 * Define additional template strings, for building nested templates.
+	 */
+	extra_data?: Record<string, string>;
+}
+
 export interface DefaultConfiguration extends Cascade, WithSnippets {
 	ssg?: string;
 	/**
@@ -1413,6 +1452,7 @@ export interface DefaultConfiguration extends Cascade, WithSnippets {
 	 * Settings for the behavior and appearance of the Source Editor.
 	 */
 	source_editor?: SourceEditor;
+	commit_templates?: Array<CommitTemplate>;
 	/**
 	 * Contains settings for various Markdown engines.
 	 */
@@ -1516,7 +1556,7 @@ export type Configuration =
 	| JekyllConfiguration
 	| EleventyConfiguration;
 
-type ParsedDataset =
+export type ParsedDataset =
 	| string[]
 	| Record<string, string>
 	| Record<string, Record<string, any>>
