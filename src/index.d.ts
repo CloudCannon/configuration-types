@@ -497,6 +497,10 @@ export interface BaseInput<InputOptions = BaseInputOptions> {
 		icon?: Icon;
 	};
 	/**
+	 * Provides a custom link for documentation for editors shown above input.
+	 */
+	documentation?: Documentation;
+	/**
 	 * Optionally changes the text above this input.
 	 */
 	label?: string;
@@ -1552,7 +1556,7 @@ export type Configuration =
 	| JekyllConfiguration
 	| EleventyConfiguration;
 
-type ParsedDataset =
+export type ParsedDataset =
 	| string[]
 	| Record<string, string>
 	| Record<string, Record<string, any>>
