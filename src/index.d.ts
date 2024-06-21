@@ -467,10 +467,6 @@ export interface BaseInputOptions<EmptyType = EmptyTypeText> {
 
 export interface BaseInput<InputOptions = BaseInputOptions> {
 	/**
-	 * Controls the type of input, changing how it is displayed and interacted with.
-	 */
-	type?: InputType;
-	/**
 	 * Changes the subtext below the _Label_. Has no default. Supports a limited set of Markdown:
 	 * links, bold, italic, subscript, superscript, and inline code elements are allowed.
 	 */
@@ -654,6 +650,7 @@ export interface RichTextInput extends BaseInput<RichTextInputOptions> {
 }
 
 export interface DateInputOptions extends BaseInputOptions {
+	minimal?: boolean;
 	/**
 	 * Specifies the time zone that dates are displayed and edited in. Also changes the suffix the
 	 * date is persisted to the file with. Defaults to the global `timezone`.
@@ -670,6 +667,11 @@ export interface FileInputOptions extends BaseInputOptions, WithReducedPaths {
 	 * Restricts which file types are available to select or upload to this input.
 	 */
 	accepts_mime_types?: MimeType[] | '*';
+	/**
+	 * If you have one or more DAMs connected to your site, you can use this key to list which asset
+	 * sources can be uploaded to and selected from.
+	 */
+	allowed_sources?: string[];
 }
 
 export interface FileInput extends BaseInput<FileInputOptions> {
@@ -800,8 +802,12 @@ export interface ArrayInput extends BaseInput<ArrayInputOptions> {
 	type: 'array';
 }
 
+export interface UnknownInput extends BaseInput<BaseInputOptions> {
+	type?: undefined | null;
+}
+
 export type Input =
-	| BaseInput
+	| UnknownInput
 	| TextInput
 	| CodeInput
 	| ColorInput
@@ -852,6 +858,10 @@ export interface ReducedPaths {
 	 * @default ''
 	 */
 	dam_static?: string;
+	/**
+	 * When set to true, CloudCannon will reference files relative to the path of the file they were uploaded to.
+	 */
+	uploads_use_relative_path?: boolean;
 }
 
 export interface Paths extends ReducedPaths {
