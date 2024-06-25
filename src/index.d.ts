@@ -1,4 +1,4 @@
-import Scrapbooker from '@cloudcannon/scrap-booker';
+import Scrapbooker from '@cloudcannon/snippet-types';
 
 import type { Icon } from './icon';
 import type { Timezone } from './timezone';
