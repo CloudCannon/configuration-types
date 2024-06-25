@@ -1410,8 +1410,26 @@ export interface CommitTemplate {
 	extra_data?: Record<string, string>;
 }
 
+export type SsgKey =
+	| 'hugo'
+	| 'jekyll'
+	| 'eleventy'
+	| 'astro'
+	| 'lume'
+	| 'mkdocs'
+	| 'nextjs'
+	| 'sveltekit'
+	| 'bridgetown'
+	| 'docusaurus'
+	| 'gatsby'
+	| 'hexo'
+	| 'nuxtjs'
+	| 'sphinx'
+	| 'static'
+	| 'unknown';
+
 export interface DefaultConfiguration extends Cascade, WithSnippets {
-	ssg?: string;
+	ssg?: SsgKey;
 	/**
 	 * Base path to your site source files, relative to the root folder.
 	 */
