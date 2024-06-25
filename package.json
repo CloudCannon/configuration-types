@@ -1,6 +1,6 @@
 {
   "name": "@cloudcannon/configuration-types",
-  "version": "0.0.3",
+  "version": "0.0.0",
   "description": "Contains TypeScript declarations and generates JSONSchema files for the CloudCannon configuration file.",
   "author": "CloudCannon <support@cloudcannon.com>",
   "license": "MIT",
@@ -37,7 +37,7 @@
     "build/**/*"
   ],
   "dependencies": {
-    "@cloudcannon/scrap-booker": "^1.1.8",
+    "@cloudcannon/snippet-types": "^1.1.11",
     "ts-json-schema-generator": "^2.2.0"
   },
   "devDependencies": {
