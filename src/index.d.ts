@@ -12,7 +12,7 @@ export type EditorKey = 'visual' | 'content' | 'data';
 export type SortOrder = 'ascending' | 'descending' | 'asc' | 'desc';
 
 // TODO: use SnippetConfig from @cloudcannon/scrap-booker when ParserConfig issue resolved.
-interface SnippetConfig extends ReducedCascade, Previewable, PickerPreviewable {
+export interface SnippetConfig extends ReducedCascade, Previewable, PickerPreviewable {
 	/**
 	 * Name of the snippet.
 	 */
@@ -184,12 +184,12 @@ interface ImageResizeable {
 		 * A number suffixed with "x" (relative size) or "w" (fixed width) for setting the dimensions of
 		 * the image (e.g. 2x, 3x, 100w, 360w).
 		 */
-		size: 'string';
+		size: string;
 		/**
 		 * A reference to another input that is given the path to this additional image file.
 		 */
-		target?: 'string';
-	};
+		target?: string;
+	}[];
 }
 
 export interface Editables {
@@ -466,6 +466,7 @@ export interface BaseInputOptions<EmptyType = EmptyTypeText> {
 }
 
 export interface BaseInput<InputOptions = BaseInputOptions> {
+	type?: InputType | undefined | null;
 	/**
 	 * Changes the subtext below the _Label_. Has no default. Supports a limited set of Markdown:
 	 * links, bold, italic, subscript, superscript, and inline code elements are allowed.
@@ -650,7 +651,6 @@ export interface RichTextInput extends BaseInput<RichTextInputOptions> {
 }
 
 export interface DateInputOptions extends BaseInputOptions {
-	minimal?: boolean;
 	/**
 	 * Specifies the time zone that dates are displayed and edited in. Also changes the suffix the
 	 * date is persisted to the file with. Defaults to the global `timezone`.
@@ -739,6 +739,14 @@ export interface MultichoiceInput extends BaseInput<MultichoiceInputOptions> {
 	type: 'multichoice';
 }
 
+export interface ObjectInputGroup {
+	heading?: string;
+	comment?: string;
+	collapsed?: boolean;
+	inputs?: string[];
+	documentation?: Documentation;
+}
+
 export interface ObjectInputOptions extends BaseInputOptions<EmptyTypeObject> {
 	/**
 	 * Changes the appearance and behavior of the input.
@@ -778,6 +786,21 @@ export interface ObjectInputOptions extends BaseInputOptions<EmptyTypeObject> {
 	 * itself.
 	 */
 	structures?: string | Structure;
+
+	/**
+	 * Allows you to group the inputs inside this object together without changing the data structure.
+	 */
+	groups?: ObjectInputGroup[];
+	
+	/**
+	 * Controls which order input groups and ungrouped inputs appear in.
+	 */
+	place_groups_below?: boolean;
+	
+	/**
+	 * Controls whether or not labels on mutable object entries are formatted.
+	 */
+	allow_label_formatting?: boolean;
 }
 
 export interface ObjectInput extends BaseInput<ObjectInputOptions> {
@@ -807,6 +830,7 @@ export interface UnknownInput extends BaseInput<BaseInputOptions> {
 }
 
 export type Input =
+	| BaseInput
 	| UnknownInput
 	| TextInput
 	| CodeInput
