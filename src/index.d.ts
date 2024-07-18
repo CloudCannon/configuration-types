@@ -1462,6 +1462,94 @@ export type SsgKey =
 	| 'static'
 	| 'unknown';
 
+export interface MarkdownSettings {
+	engine: 'kramdown' | 'commonmark';
+	extensions: {
+		/**
+		 * Output tables in Markdown format.
+		 */
+		table?: boolean;
+		/**
+		 * Output footnotes in Markdown format.
+		 */
+		footnote?: boolean;
+		/**
+		 * Output abbreviations in Markdown format.
+		 */
+		abbreviation?: boolean;
+		/**
+		 * Output definition lists in Markdown format.
+		 */
+		definition_list?: boolean;
+		/**
+		 * Output task lists in Markdown format.
+		 */
+		task_list?: boolean;
+		/**
+		 * Output strikes in wrapped in double tildes (e.g. ~~strike~~)
+		 */
+		strikethrough?: boolean;
+		/**
+		 * Output subscript in wrapped in tildes (e.g. ~sub~)
+		 */
+		subscript?: boolean;
+		/**
+		 * Output superscript in wrapped in carets (e.g. ^super^)
+		 */
+		superscript?: boolean;
+		/**
+		 * Generate IDs for headings
+		 */
+		heading_ids?: boolean;
+		/**
+		 * Save element attributes in Markdown format instead of converting to HTML.
+		 */
+		attributes?: boolean;
+	}
+	options: {
+		/**
+		 * Output HTML tags from source.
+		 */
+		html?: true;
+		/**
+		 * Use '/' to close single tags (<br />).
+		 */
+		xhtml?: true;
+		/**
+		 * Convert '\n' in paragraphs into <br>.
+		 */
+		breaks?: true;
+		/**
+		 * Autoconvert URL-like text to links.
+		 */
+		linkify?: true;
+		/**
+		 * Enable some language-neutral replacement + quotes beautification.
+		 */
+		typographer?: true;
+		/**
+		 * Double + single quotes replacement pairs, when typographer enabled and smartquotes on. For example, you can use '«»„“' for Russian, '„“‚‘' for German, and ['«\xA0', '\xA0»', '‹\xA0', '\xA0›'] for French (including nbsp).
+		 */
+		quotes?: string | string[];
+		/**
+		 * Output lists with an extra space in Markdown.
+		 */
+		spaced_lists?: true;
+		/**
+		 * Add linebreaks between sentences in Markdown.
+		 */
+		sentence_per_line?: true;
+		/**
+		 * Enable GFM mode.
+		 */
+		gfm?: true;
+		/**
+		 * Determines which style of code block fences to use.
+		 */
+		code_block_fences?: '```' | '~~~';
+	}
+}
+
 export interface DefaultConfiguration extends Cascade, WithSnippets {
 	ssg?: SsgKey;
 	/**
@@ -1508,37 +1596,7 @@ export interface DefaultConfiguration extends Cascade, WithSnippets {
 	/**
 	 * Contains settings for various Markdown engines.
 	 */
-	generator?: {
-		/**
-		 * Settings for various Markdown engines.
-		 */
-		metadata?: {
-			/**
-			 * The Markdown engine used on your site.
-			 */
-			markdown: 'kramdown' | 'commonmark' | 'commonmarkghpages' | 'goldmark' | 'markdown-it';
-			/**
-			 * Markdown options specific used when markdown is set to "kramdown".
-			 */
-			kramdown?: Record<string, any>;
-			/**
-			 * Markdown options specific used when markdown is set to "commonmark".
-			 */
-			commonmark?: Record<string, any>;
-			/**
-			 * Markdown options specific used when markdown is set to "commonmarkghpages".
-			 */
-			commonmarkghpages?: Record<string, any>;
-			/**
-			 * Markdown options specific used when markdown is set to "goldmark".
-			 */
-			goldmark?: Record<string, any>;
-			/**
-			 * Markdown options specific used when markdown is set to "markdown-it".
-			 */
-			'markdown-it'?: Record<string, any>;
-		};
-	};
+	markdown?: MarkdownSettings;
 	/**
 	 * Specifies the time zone that dates are displayed and edited in. Also changes the suffix the
 	 * date is persisted to the file with.
