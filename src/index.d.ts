@@ -791,12 +791,12 @@ export interface ObjectInputOptions extends BaseInputOptions<EmptyTypeObject> {
 	 * Allows you to group the inputs inside this object together without changing the data structure.
 	 */
 	groups?: ObjectInputGroup[];
-	
+
 	/**
 	 * Controls which order input groups and ungrouped inputs appear in.
 	 */
 	place_groups_below?: boolean;
-	
+
 	/**
 	 * Controls whether or not labels on mutable object entries are formatted.
 	 */
@@ -883,7 +883,8 @@ export interface ReducedPaths {
 	 */
 	dam_static?: string;
 	/**
-	 * When set to true, CloudCannon will reference files relative to the path of the file they were uploaded to.
+	 * When set to true, CloudCannon will reference files relative to the path of the file they were
+	 * uploaded to.
 	 */
 	uploads_use_relative_path?: boolean;
 }
@@ -1460,6 +1461,8 @@ export type SsgKey =
 	| 'nuxtjs'
 	| 'sphinx'
 	| 'static'
+	| 'other'
+	| 'legacy'
 	| 'unknown';
 
 export interface DefaultConfiguration extends Cascade, WithSnippets {
