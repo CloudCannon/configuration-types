@@ -124,14 +124,7 @@ interface ImageResizeable {
 	 * Sets the format images are converted to prior to upload. The extension of the file is updated
 	 * to match. Defaults to keeping the mime type of the uploaded file.
 	 */
-	mime_type?: 'image/jpeg' | 'image/png';
-	/**
-	 * Controls whether or not the JPEG headers defining how an image should be rotated before being
-	 * displayed is baked into images prior to upload.
-	 *
-	 * @default true
-	 */
-	correct_orientation?: boolean;
+	mime_type?: 'image/jpeg' | 'image/png' | 'image/webp';
 	/**
 	 * Sets how uploaded image files are resized with a bounding box defined by width and height prior
 	 * to upload. Has no effect when selecting existing images, or if width and height are unset.
