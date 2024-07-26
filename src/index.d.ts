@@ -1464,7 +1464,47 @@ export type SsgKey =
 
 export interface MarkdownSettings {
 	engine: 'kramdown' | 'commonmark';
-	extensions: {
+	options: {
+		/**
+		 * Output HTML tags from source.
+		 */
+		html?: boolean;
+		/**
+		 * Use '/' to close single tags (<br />).
+		 */
+		xhtml?: boolean;
+		/**
+		 * Convert '\n' in paragraphs into <br>.
+		 */
+		breaks?: boolean;
+		/**
+		 * Autoconvert URL-like text to links.
+		 */
+		linkify?: boolean;
+		/**
+		 * Enable some language-neutral replacement + quotes beautification.
+		 */
+		typographer?: boolean;
+		/**
+		 * Double + single quotes replacement pairs, when typographer enabled and smartquotes on. For example, you can use '«»„“' for Russian, '„“‚‘' for German, and ['«\xA0', '\xA0»', '‹\xA0', '\xA0›'] for French (including nbsp).
+		 */
+		quotes?: string | string[];
+		/**
+		 * Output lists with an extra space in Markdown.
+		 */
+		spaced_lists?: boolean;
+		/**
+		 * Add linebreaks between sentences in Markdown.
+		 */
+		sentence_per_line?: boolean;
+		/**
+		 * Enable GFM mode.
+		 */
+		gfm?: boolean;
+		/**
+		 * Determines which style of code block fences to use.
+		 */
+		code_block_fences?: '```' | '~~~';
 		/**
 		 * Output tables in Markdown format.
 		 */
@@ -1505,48 +1545,6 @@ export interface MarkdownSettings {
 		 * Save element attributes in Markdown format instead of converting to HTML.
 		 */
 		attributes?: boolean;
-	}
-	options: {
-		/**
-		 * Output HTML tags from source.
-		 */
-		html?: true;
-		/**
-		 * Use '/' to close single tags (<br />).
-		 */
-		xhtml?: true;
-		/**
-		 * Convert '\n' in paragraphs into <br>.
-		 */
-		breaks?: true;
-		/**
-		 * Autoconvert URL-like text to links.
-		 */
-		linkify?: true;
-		/**
-		 * Enable some language-neutral replacement + quotes beautification.
-		 */
-		typographer?: true;
-		/**
-		 * Double + single quotes replacement pairs, when typographer enabled and smartquotes on. For example, you can use '«»„“' for Russian, '„“‚‘' for German, and ['«\xA0', '\xA0»', '‹\xA0', '\xA0›'] for French (including nbsp).
-		 */
-		quotes?: string | string[];
-		/**
-		 * Output lists with an extra space in Markdown.
-		 */
-		spaced_lists?: true;
-		/**
-		 * Add linebreaks between sentences in Markdown.
-		 */
-		sentence_per_line?: true;
-		/**
-		 * Enable GFM mode.
-		 */
-		gfm?: true;
-		/**
-		 * Determines which style of code block fences to use.
-		 */
-		code_block_fences?: '```' | '~~~';
 	}
 }
 
