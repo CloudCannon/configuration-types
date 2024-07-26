@@ -44,8 +44,6 @@ export interface SnippetConfig extends ReducedCascade, Previewable, PickerPrevie
 	params?: Record<string, any>; // TODO: use ParserConfig from @cloudcannon/scrap-booker.
 }
 
-type SnippetImportKey = keyof typeof Scrapbooker.defaults;
-
 interface SnippetsImport<T> {
 	/**
 	 * The list of excluded snippets. If unset, all snippets are excluded unless defined in `include`.
@@ -1160,9 +1158,12 @@ export interface Create extends ReducedCascade {
 export interface CollectionConfig extends Cascade, Previewable {
 	/**
 	 * The top-most folder where the files in this collection are stored. It is relative to source.
-	 * Each collection must have a unique path.
 	 */
 	path?: string;
+	/**
+	 * Glob pattern(s) to include or exclude files from this collection. It is relative to `path`.
+	 */
+	glob?: string | string[];
 	/**
 	 * Whether or not files in this collection produce files in the build output.
 	 */
@@ -1390,6 +1391,13 @@ export interface DataConfigEntry {
 	parser?: 'csv' | 'front-matter' | 'json' | 'properties' | 'toml' | 'yaml';
 }
 
+export interface FileConfigEntry extends Cascade {
+	/**
+	 * The glob pattern(s) targeting a path to one or more files.
+	 */
+	glob: string | string[];
+}
+
 export interface Editor {
 	/**
 	 * The URL used for the dashboard screenshot, and where the editor opens to when clicking the
@@ -1499,6 +1507,10 @@ export interface DefaultConfiguration extends Cascade, WithSnippets {
 	 * Controls what data sets are available to populate select and multiselect inputs.
 	 */
 	data_config?: Record<string, DataConfigEntry>;
+	/**
+	 * Provides scope to configure at a file level, without adding configuration to files.
+	 */
+	file_config?: Record<string, FileConfigEntry>;
 	/**
 	 * Contains settings for the default editor actions on your site.
 	 */
@@ -1675,7 +1687,12 @@ interface WithIntegrationOutput {
 
 export interface DefaultIntegrationOutput extends DefaultConfiguration, WithIntegrationOutput {}
 export interface HugoIntegrationOutput extends HugoConfiguration, WithIntegrationOutput {}
-export interface JekyllIntegrationOutput extends JekyllConfiguration, WithIntegrationOutput {}
+export interface JekyllIntegrationOutput extends JekyllConfiguration, WithIntegrationOutput {
+	/**
+	 * @deprecated Do not use.
+	 */
+	defaults: any;
+}
 export interface EleventyIntegrationOutput extends EleventyConfiguration, WithIntegrationOutput {}
 
 export type IntegrationOutput =
