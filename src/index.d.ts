@@ -1503,22 +1503,6 @@ export interface MarkdownSettings {
 		 */
 		table?: boolean;
 		/**
-		 * Output footnotes in Markdown format.
-		 */
-		footnote?: boolean;
-		/**
-		 * Output abbreviations in Markdown format.
-		 */
-		abbreviation?: boolean;
-		/**
-		 * Output definition lists in Markdown format.
-		 */
-		definition_list?: boolean;
-		/**
-		 * Output task lists in Markdown format.
-		 */
-		task_list?: boolean;
-		/**
 		 * Output strikes in wrapped in double tildes (e.g. ~~strike~~)
 		 */
 		strikethrough?: boolean;
