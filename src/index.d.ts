@@ -1499,6 +1499,10 @@ export interface MarkdownSettings {
 		 */
 		code_block_fences?: '```' | '~~~';
 		/**
+		 * Render snippets as plain text within code blocks.
+		 */
+		escape_snippets_in_code_blocks?: boolean;
+		/**
 		 * Output tables in Markdown format.
 		 */
 		table?: boolean;
