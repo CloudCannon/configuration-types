@@ -1481,7 +1481,7 @@ export interface MarkdownSettings {
 		/**
 		 * Double + single quotes replacement pairs, when typographer enabled and smartquotes on. For example, you can use '«»„“' for Russian, '„“‚‘' for German, and ['«\xA0', '\xA0»', '‹\xA0', '\xA0›'] for French (including nbsp).
 		 */
-		quotes?: string | string[];
+		quotes?: string;
 		/**
 		 * Output lists with an extra space in Markdown.
 		 */
