@@ -67,7 +67,7 @@ npm run ajv validate -s node_modules/@cloudcannon/configuration-types/cloudcanno
 For a CommonJS formatted configuration file (e.g. `/cloudcannon.config.cjs`), you can use a JSDoc comment to indicate the type of the module export:
 
 ```javascript
-/** @type {import("@cloudcannon/configuration-types").DefaultConfiguration} */
+/** @type {import("@cloudcannon/configuration-types").Configuration} */
 const config = {
   collections_config: {
     posts: {
