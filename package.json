@@ -18,11 +18,11 @@
     "email": "support@cloudcannon.com"
   },
   "scripts": {
-    "build:unknown": "ts-json-schema-generator --markdown-description --path src/index.d.ts --type Configuration --out build/cloudcannon-config.json",
-    "build:default": "ts-json-schema-generator --markdown-description --path src/index.d.ts --type DefaultConfiguration --out build/cloudcannon-config-default.json",
-    "build:eleventy": "ts-json-schema-generator --markdown-description --path src/index.d.ts --type EleventyConfiguration --out build/cloudcannon-config-eleventy.json",
-    "build:jekyll": "ts-json-schema-generator --markdown-description --path src/index.d.ts --type JekyllConfiguration --out build/cloudcannon-config-jekyll.json",
-    "build:hugo": "ts-json-schema-generator --markdown-description --path src/index.d.ts --type HugoConfiguration --out build/cloudcannon-config-hugo.json",
+    "build:default": "ts-json-schema-generator --markdown-description --path src/index.d.ts --type Configuration --out build/cloudcannon-config.json",
+    "build:reader": "ts-json-schema-generator --markdown-description --path src/build-coupled.d.ts --type ReaderConfiguration --out build/cloudcannon-config-reader.json",
+    "build:eleventy": "ts-json-schema-generator --markdown-description --path src/build-coupled.d.ts --type EleventyConfiguration --out build/cloudcannon-config-eleventy.json",
+    "build:jekyll": "ts-json-schema-generator --markdown-description --path src/build-coupled.d.ts --type JekyllConfiguration --out build/cloudcannon-config-jekyll.json",
+    "build:hugo": "ts-json-schema-generator --markdown-description --path src/build-coupled.d.ts --type HugoConfiguration --out build/cloudcannon-config-hugo.json",
     "build": "run-p build:*",
     "prebuild": "mkdir -p build && rimraf --glob 'build/*.json'",
     "test": "exit 0"

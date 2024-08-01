@@ -1,14 +1,9 @@
 # yaml-language-server: $schema=../build/cloudcannon-config.json
 
 data_config:
-  blog-tags: true
+  blog-tags:
+    path: 'data/tags.yml'
 
-generator:
-  metadata:
-    markdown: goldmark
-    goldmark:
-      renderer:
-        hardWraps: true
 collections_config:
   pages:
     icon: feed
