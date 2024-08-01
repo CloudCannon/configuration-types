@@ -1455,6 +1455,22 @@ export type SsgKey =
 	| 'static'
 	| 'unknown';
 
+export type MarkdownAttributeElementBehaviour = 'none' | 'right' | 'space right' | 'below' | 'newline below';
+export interface MarkdownAttributeElementOptions {
+	inline?: MarkdownAttributeElementBehaviour;
+	block?: MarkdownAttributeElementBehaviour;
+	
+	ul?: MarkdownAttributeElementBehaviour;
+	ol?: MarkdownAttributeElementBehaviour;
+	li?: MarkdownAttributeElementBehaviour;
+	table?: MarkdownAttributeElementBehaviour;
+	tr?: MarkdownAttributeElementBehaviour;
+	td?: MarkdownAttributeElementBehaviour;
+	blockquote?: MarkdownAttributeElementBehaviour;
+	img?: MarkdownAttributeElementBehaviour;
+
+}
+
 export interface MarkdownSettings {
 	engine: 'kramdown' | 'commonmark';
 	options: {
@@ -1499,6 +1515,10 @@ export interface MarkdownSettings {
 		 */
 		code_block_fences?: '```' | '~~~';
 		/**
+		 * Determines whether 4 spaces on indentation should be read as a code block.
+		 */
+		treat_indentation_as_code?: boolean;
+		/**
 		 * Render snippets as plain text within code blocks.
 		 */
 		escape_snippets_in_code_blocks?: boolean;
@@ -1526,6 +1546,10 @@ export interface MarkdownSettings {
 		 * Save element attributes in Markdown format instead of converting to HTML.
 		 */
 		attributes?: boolean;
+		/** 
+		 * Define positioning behaviour of Markdown attributes for different elements.
+		 */ 
+		attribute_elements?: MarkdownAttributeElementOptions;
 	}
 }
 
