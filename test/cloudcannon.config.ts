@@ -1,19 +1,20 @@
-import type { JekyllConfiguration } from '../src';
+import type { Configuration } from '../src';
 
-const config: JekyllConfiguration = {
-  collections_config: {
-    posts: {
-      name: 'Posts',
-    },
-  },
-  _inputs: {
-    image: {
-      type: 'image',
-      options: {
-        width: 50,
-      },
-    },
-  },
+const config: Configuration = {
+	collections_config: {
+		posts: {
+			path: 'collections/blog',
+			name: 'Posts',
+		},
+	},
+	_inputs: {
+		image: {
+			type: 'image',
+			options: {
+				width: 50,
+			},
+		},
+	},
 };
 
 export default config;
