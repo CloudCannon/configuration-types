@@ -9,24 +9,24 @@ import type { Syntax } from './syntax';
 export type InstanceValue = 'UUID' | 'NOW';
 export type EditorKey = 'visual' | 'content' | 'data';
 export type SortOrder = 'ascending' | 'descending' | 'asc' | 'desc';
-export type MarkdownAttributeElementBehaviour = 'none' | 'right' | 'space right' | 'below' | 'newline below';
+export type AttributeListPosition = 'none' | 'right' | 'space right' | 'below' | 'newline below';
 
 export interface MarkdownAttributeElementOptions {
-	inline?: MarkdownAttributeElementBehaviour;
-	block?: MarkdownAttributeElementBehaviour;
-	ul?: MarkdownAttributeElementBehaviour;
-	ol?: MarkdownAttributeElementBehaviour;
-	li?: MarkdownAttributeElementBehaviour;
-	table?: MarkdownAttributeElementBehaviour;
-	tr?: MarkdownAttributeElementBehaviour;
-	td?: MarkdownAttributeElementBehaviour;
-	blockquote?: MarkdownAttributeElementBehaviour;
-	img?: MarkdownAttributeElementBehaviour;
+	inline?: AttributeListPosition;
+	block?: AttributeListPosition;
+	ul?: AttributeListPosition;
+	ol?: AttributeListPosition;
+	li?: AttributeListPosition;
+	table?: AttributeListPosition;
+	tr?: AttributeListPosition;
+	td?: AttributeListPosition;
+	blockquote?: AttributeListPosition;
+	img?: AttributeListPosition;
 
 }
 
 export interface MarkdownSettings {
-	engine: 'kramdown' | 'commonmark';
+	engine: 'commonmark' | 'kramdown';
 	options: {
 		/**
 		 * Output HTML tags from source.
