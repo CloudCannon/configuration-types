@@ -9,6 +9,103 @@ import type { Syntax } from './syntax';
 export type InstanceValue = 'UUID' | 'NOW';
 export type EditorKey = 'visual' | 'content' | 'data';
 export type SortOrder = 'ascending' | 'descending' | 'asc' | 'desc';
+export type AttributeListPosition = 'none' | 'right' | 'space right' | 'below' | 'newline below';
+
+export interface MarkdownAttributeElementOptions {
+	inline?: AttributeListPosition;
+	block?: AttributeListPosition;
+	ul?: AttributeListPosition;
+	ol?: AttributeListPosition;
+	li?: AttributeListPosition;
+	table?: AttributeListPosition;
+	tr?: AttributeListPosition;
+	td?: AttributeListPosition;
+	blockquote?: AttributeListPosition;
+	img?: AttributeListPosition;
+
+}
+
+export interface MarkdownSettings {
+	engine: 'commonmark' | 'kramdown';
+	options: {
+		/**
+		 * Output HTML tags from source.
+		 */
+		html?: boolean;
+		/**
+		 * Use '/' to close single tags (<br />).
+		 */
+		xhtml?: boolean;
+		/**
+		 * Convert '\n' in paragraphs into <br>.
+		 */
+		breaks?: boolean;
+		/**
+		 * Autoconvert URL-like text to links.
+		 */
+		linkify?: boolean;
+		/**
+		 * Enable some language-neutral replacement + quotes beautification.
+		 */
+		typographer?: boolean;
+		/**
+		 * Double + single quotes replacement pairs, when typographer enabled and smartquotes on. For example, you can use '«»„“' for Russian, '„“‚‘' for German, and ['«\xA0', '\xA0»', '‹\xA0', '\xA0›'] for French (including nbsp).
+		 */
+		quotes?: string;
+		/**
+		 * Output lists with an extra space in Markdown.
+		 */
+		spaced_lists?: boolean;
+		/**
+		 * Add linebreaks between sentences in Markdown.
+		 */
+		sentence_per_line?: boolean;
+		/**
+		 * Enable GFM mode.
+		 */
+		gfm?: boolean;
+		/**
+		 * Determines which style of code block fences to use.
+		 */
+		code_block_fences?: '```' | '~~~';
+		/**
+		 * Determines whether 4 spaces on indentation should be read as a code block.
+		 */
+		treat_indentation_as_code?: boolean;
+		/**
+		 * Render snippets as plain text within code blocks.
+		 */
+		escape_snippets_in_code_blocks?: boolean;
+		/**
+		 * Output tables in Markdown format.
+		 */
+		table?: boolean;
+		/**
+		 * Output strikes in wrapped in double tildes (e.g. ~~strike~~)
+		 */
+		strikethrough?: boolean;
+		/**
+		 * Output subscript in wrapped in tildes (e.g. ~sub~)
+		 */
+		subscript?: boolean;
+		/**
+		 * Output superscript in wrapped in carets (e.g. ^super^)
+		 */
+		superscript?: boolean;
+		/**
+		 * Generate IDs for headings
+		 */
+		heading_ids?: boolean;
+		/**
+		 * Save element attributes in Markdown format instead of converting to HTML.
+		 */
+		attributes?: boolean;
+		/** 
+		 * Define positioning behaviour of Markdown attributes for different elements.
+		 */ 
+		attribute_elements?: MarkdownAttributeElementOptions;
+	}
+}
 
 // TODO: use SnippetConfig from @cloudcannon/scrap-booker when ParserConfig issue resolved.
 export interface SnippetConfig extends ReducedCascade, Previewable, PickerPreviewable {
@@ -121,14 +218,7 @@ interface ImageResizeable {
 	 * Sets the format images are converted to prior to upload. The extension of the file is updated
 	 * to match. Defaults to keeping the mime type of the uploaded file.
 	 */
-	mime_type?: 'image/jpeg' | 'image/png';
-	/**
-	 * Controls whether or not the JPEG headers defining how an image should be rotated before being
-	 * displayed is baked into images prior to upload.
-	 *
-	 * @default true
-	 */
-	correct_orientation?: boolean;
+	mime_type?: 'image/jpeg' | 'image/png' | 'image/webp';
 	/**
 	 * Sets how uploaded image files are resized with a bounding box defined by width and height prior
 	 * to upload. Has no effect when selecting existing images, or if width and height are unset.
@@ -1493,37 +1583,7 @@ export interface Configuration extends Cascade, WithSnippets {
 	/**
 	 * Contains settings for various Markdown engines.
 	 */
-	generator?: {
-		/**
-		 * Settings for various Markdown engines.
-		 */
-		metadata?: {
-			/**
-			 * The Markdown engine used on your site.
-			 */
-			markdown: 'kramdown' | 'commonmark' | 'commonmarkghpages' | 'goldmark' | 'markdown-it';
-			/**
-			 * Markdown options specific used when markdown is set to "kramdown".
-			 */
-			kramdown?: Record<string, any>;
-			/**
-			 * Markdown options specific used when markdown is set to "commonmark".
-			 */
-			commonmark?: Record<string, any>;
-			/**
-			 * Markdown options specific used when markdown is set to "commonmarkghpages".
-			 */
-			commonmarkghpages?: Record<string, any>;
-			/**
-			 * Markdown options specific used when markdown is set to "goldmark".
-			 */
-			goldmark?: Record<string, any>;
-			/**
-			 * Markdown options specific used when markdown is set to "markdown-it".
-			 */
-			'markdown-it'?: Record<string, any>;
-		};
-	};
+	markdown?: MarkdownSettings;
 	/**
 	 * Specifies the time zone that dates are displayed and edited in. Also changes the suffix the
 	 * date is persisted to the file with.
