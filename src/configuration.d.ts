@@ -9,21 +9,12 @@ import type { Syntax } from './syntax';
 export type InstanceValue = 'UUID' | 'NOW';
 export type EditorKey = 'visual' | 'content' | 'data';
 export type SortOrder = 'ascending' | 'descending' | 'asc' | 'desc';
-export type AttributeListPosition = 'none' | 'right' | 'space right' | 'below' | 'newline below';
+export type AttributeListPosition = 'none' | 'right' | 'space right' | 'below' | 'newline below' | 'right-of-prefix';
 
-export interface MarkdownAttributeElementOptions {
+export type MarkdownAttributeElementOptions = {
 	inline?: AttributeListPosition;
 	block?: AttributeListPosition;
-	ul?: AttributeListPosition;
-	ol?: AttributeListPosition;
-	li?: AttributeListPosition;
-	table?: AttributeListPosition;
-	tr?: AttributeListPosition;
-	td?: AttributeListPosition;
-	blockquote?: AttributeListPosition;
-	img?: AttributeListPosition;
-
-}
+} & Partial<Record<keyof HTMLElementTagNameMap, AttributeListPosition>>;
 
 export interface MarkdownSettings {
 	engine: 'commonmark' | 'kramdown';
