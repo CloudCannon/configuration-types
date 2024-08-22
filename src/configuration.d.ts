@@ -9,7 +9,13 @@ import type { Syntax } from './syntax';
 export type InstanceValue = 'UUID' | 'NOW';
 export type EditorKey = 'visual' | 'content' | 'data';
 export type SortOrder = 'ascending' | 'descending' | 'asc' | 'desc';
-export type AttributeListPosition = 'none' | 'right' | 'space right' | 'below' | 'newline below' | 'right-of-prefix';
+export type AttributeListPosition =
+	| 'none'
+	| 'right'
+	| 'space right'
+	| 'below'
+	| 'newline below'
+	| 'right-of-prefix';
 
 export type MarkdownAttributeElementOptions = {
 	inline?: AttributeListPosition;
@@ -40,7 +46,9 @@ export interface MarkdownSettings {
 		 */
 		typographer?: boolean;
 		/**
-		 * Double + single quotes replacement pairs, when typographer enabled and smartquotes on. For example, you can use '«»„“' for Russian, '„“‚‘' for German, and ['«\xA0', '\xA0»', '‹\xA0', '\xA0›'] for French (including nbsp).
+		 * Double + single quotes replacement pairs, when typographer enabled and smartquotes on. For
+		 * example, you can use '«»„“' for Russian, '„“‚‘' for German, and ['«\xA0', '\xA0»', '‹\xA0',
+		 * '\xA0›'] for French (including nbsp).
 		 */
 		quotes?: string;
 		/**
@@ -91,11 +99,11 @@ export interface MarkdownSettings {
 		 * Save element attributes in Markdown format instead of converting to HTML.
 		 */
 		attributes?: boolean;
-		/** 
+		/**
 		 * Define positioning behaviour of Markdown attributes for different elements.
-		 */ 
+		 */
 		attribute_elements?: MarkdownAttributeElementOptions;
-	}
+	};
 }
 
 // TODO: use SnippetConfig from @cloudcannon/scrap-booker when ParserConfig issue resolved.
@@ -388,20 +396,20 @@ export interface BlockEditable extends ImageResizeable, TextEditable {
 	table?: boolean;
 }
 
-interface WithReducedPaths {
+interface WithPaths {
 	/**
 	 * Paths to where new asset files are uploaded to. They also set the default path when choosing
 	 * existing images, and linking to existing files. Each path is relative to global `source`.
 	 * Defaults to the global `paths`.
 	 */
-	paths?: ReducedPaths;
+	paths?: Paths;
 }
 
-export interface ImageEditable extends ImageResizeable, WithReducedPaths {}
+export interface ImageEditable extends ImageResizeable, WithPaths {}
 
-export interface LinkEditable extends WithReducedPaths {}
+export interface LinkEditable extends WithPaths {}
 
-export interface TextEditable extends WithReducedPaths {
+export interface TextEditable extends WithPaths {
 	/**
 	 * Enables a control to set selected text to bold.
 	 */
@@ -720,7 +728,7 @@ export interface RangeInput extends BaseInput<RangeInputOptions> {
 	type: 'range';
 }
 
-export interface UrlInputOptions extends BaseInputOptions, WithReducedPaths {}
+export interface UrlInputOptions extends BaseInputOptions, WithPaths {}
 
 export interface UrlInput extends BaseInput<UrlInputOptions> {
 	type: 'range';
@@ -753,7 +761,7 @@ export interface DateInput extends BaseInput<DateInputOptions> {
 	type: 'date' | 'datetime';
 }
 
-export interface FileInputOptions extends BaseInputOptions, WithReducedPaths {
+export interface FileInputOptions extends BaseInputOptions, WithPaths {
 	/**
 	 * Restricts which file types are available to select or upload to this input.
 	 */
@@ -940,7 +948,7 @@ export type Input =
 	| ObjectInput
 	| ArrayInput;
 
-export interface ReducedPaths {
+export interface Paths {
 	/**
 	 * Location of assets that are statically copied to the output site. This prefix will be removed
 	 * from the _Uploads_ path when CloudCannon outputs the URL of an asset.
@@ -978,26 +986,6 @@ export interface ReducedPaths {
 	 * uploaded to.
 	 */
 	uploads_use_relative_path?: boolean;
-}
-
-export interface Paths extends ReducedPaths {
-	/**
-	 * Parent folder of all collections.
-	 */
-	collections?: string;
-	/**
-	 * Parent folder of all site data files.
-	 */
-	data?: string;
-	/**
-	 * Parent folder of all site layout files. _Only applies to Jekyll, Hugo, and Eleventy sites_.
-	 */
-	layouts?: string;
-	/**
-	 * Parent folder of all includes, partials, or shortcode files. _Only applies to Jekyll, Hugo, and
-	 * Eleventy sites_.
-	 */
-	includes?: string;
 }
 
 export interface Documentation {
@@ -1278,11 +1266,6 @@ export interface CollectionConfig extends Cascade, Previewable {
 	 */
 	singular_name?: string;
 	/**
-	 * Overrides the default singular input key of the collection. This is used for naming conventions
-	 * for select and multiselect inputs.
-	 */
-	singular_key?: string;
-	/**
 	 * Changes the options presented in the add menu in the collection file list. Defaults to an
 	 * automatically generated list from _Schemas_, or uses the first file in the collection if no
 	 * schemas are configured.
@@ -1431,14 +1414,7 @@ export type SelectValues =
 	| Record<string, string>
 	| Record<string, Record<string, any>>;
 
-export interface Parseable {
-	/**
-	 * Overrides the format files are read. Detected automatically from file extension if unset.
-	 */
-	parser?: 'csv' | 'front-matter' | 'json' | 'properties' | 'toml' | 'yaml';
-}
-
-export interface DataConfigEntry extends Parseable {
+export interface DataConfigEntry {
 	/**
 	 * The path to a file or folder of files containing data.
 	 */
@@ -1523,19 +1499,14 @@ export type SsgKey =
 	| 'nuxtjs'
 	| 'sphinx'
 	| 'static'
-	| 'other'
 	| 'legacy'
-	| 'unknown';
+	| 'other';
 
-export interface Configuration extends Cascade, WithSnippets {
+export interface Configuration extends Cascade, WithSnippets, WithPaths {
 	/**
 	 * Base path to your site source files, relative to the root folder.
 	 */
 	source?: string;
-	/**
-	 * Global paths to common folders.
-	 */
-	paths?: Paths;
 	/**
 	 * Definitions for your collections, which are the sets of content files for your site grouped by
 	 * folder. Entries are keyed by a chosen collection key, and contain configuration specific to
