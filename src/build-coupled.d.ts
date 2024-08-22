@@ -1,4 +1,24 @@
-import { CollectionConfig, Configuration, Parseable } from './configuration';
+import { CollectionConfig, Configuration, DataConfigEntry, Paths } from './configuration';
+
+export interface BuildCoupledPaths extends Paths {
+	/**
+	 * Parent folder of all collections.
+	 */
+	collections?: string;
+	/**
+	 * Parent folder of all site data files.
+	 */
+	data?: string;
+	/**
+	 * Parent folder of all site layout files. _Only applies to Jekyll, Hugo, and Eleventy sites_.
+	 */
+	layouts?: string;
+	/**
+	 * Parent folder of all includes, partials, or shortcode files. _Only applies to Jekyll, Hugo, and
+	 * Eleventy sites_.
+	 */
+	includes?: string;
+}
 
 export type FilterBase = 'none' | 'all' | 'strict';
 
@@ -20,6 +40,13 @@ export interface Filter {
 	exclude?: string[];
 }
 
+interface Parseable {
+	/**
+	 * Overrides the format files are read. Detected automatically from file extension if unset.
+	 */
+	parser?: 'csv' | 'front-matter' | 'json' | 'properties' | 'toml' | 'yaml';
+}
+
 interface Filterable {
 	/**
 	 * Controls which files are displayed in the collection list. Does not change which files are
@@ -39,12 +66,20 @@ interface WithCollectionsConfigOverride {
 /**
  * The `collections_config` entry format for build-coupled non-Jekyll/Hugo/Eleventy sites.
  */
-export interface ReaderCollectionConfig extends CollectionConfig, Parseable, Filterable {}
+export interface ReaderCollectionConfig extends CollectionConfig, Parseable, Filterable {
+	/**
+	 * Overrides the default singular input key of the collection. This is used for naming conventions
+	 * for select and multiselect inputs.
+	 */
+	singular_key?: string;
+}
 
 /**
  * The configuration format for build-coupled non-Jekyll/Hugo/Eleventy sites.
  */
 export interface ReaderConfiguration extends Configuration {
+	paths?: BuildCoupledPaths;
+	data_config?: Record<string, DataConfigEntry & Parseable>;
 	collections_config?: Record<string, ReaderCollectionConfig>;
 	/**
 	 * Generates the integration file in another folder. Not applicable to Jekyll, Hugo, and Eleventy.
@@ -53,11 +88,19 @@ export interface ReaderConfiguration extends Configuration {
 	output?: string;
 }
 
-export interface BuildCoupledCollectionConfig extends Omit<CollectionConfig, 'url'>, Filterable {}
+export interface BuildCoupledCollectionConfig extends Omit<CollectionConfig, 'url'>, Filterable {
+	/**
+	 * Overrides the default singular input key of the collection. This is used for naming conventions
+	 * for select and multiselect inputs.
+	 */
+	singular_key?: string;
+}
 
 interface BuildCoupledConfiguration
 	extends Omit<Configuration, 'data_config'>,
-		WithCollectionsConfigOverride {}
+		WithCollectionsConfigOverride {
+	paths?: BuildCoupledPaths;
+}
 
 /**
  * The `collections_config` entry format for build-coupled Hugo sites.
