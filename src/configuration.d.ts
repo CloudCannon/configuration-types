@@ -621,6 +621,10 @@ export interface TextInputOptions extends BaseInputOptions {
 	 * Text shown when this input has no value.
 	 */
 	placeholder?: string;
+	/**
+	 * Icon shown beside the input.
+	 */
+	icon?: Icon;
 }
 
 export interface TextInput extends BaseInput<TextInputOptions> {
