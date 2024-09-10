@@ -1228,14 +1228,15 @@ export interface CollectionConfig extends Cascade, Previewable {
 	 */
 	glob?: string[] | string;
 	/**
-	 * Whether or not files in this collection produce files in the build output.
-	 */
-	output?: boolean;
-	/**
 	 * Used to build the url field for items in the collection. Similar to permalink in many SSGs.
-	 * Defaults to ''
+	 * Defaults to '', in which case CloudCannon will attempt to guess the output URLs for each file.
 	 */
 	url?: string;
+	/**
+	 * Prevents this collection from being assigned output URLs. Doing so will remove the
+	 * Visual Editor as a possible option, and hide any UI elements referring to the output URL for a file.
+	 */
+	disable_url?: boolean;
 	/**
 	 * The display name of this collection. Used in headings and in the context menu for items in the
 	 * collection. This is optional as CloudCannon auto-generates this from the collection key.
