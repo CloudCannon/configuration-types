@@ -854,7 +854,7 @@ export interface ObjectInputOptions extends BaseInputOptions<EmptyTypeObject> {
 	/**
 	 * Changes the appearance and behavior of the input.
 	 */
-	subtype?: 'object' | 'mutable';
+	subtype?: 'object' | 'mutable' | 'tabbed';
 	/**
 	 * Contains options for the "mutable" subtype.
 	 */
