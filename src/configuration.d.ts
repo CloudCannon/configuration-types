@@ -1204,7 +1204,7 @@ export interface Create extends ReducedCascade {
 	 * The raw template to be processed when creating files. Relative to the containing collection's
 	 * path.
 	 */
-	path: string;
+	path?: string;
 	/**
 	 * Adds to the available data placeholders coming from the file. Entry values follow the same
 	 * format as path, and are processed sequentially before path. These values are not saved back to
@@ -1233,10 +1233,15 @@ export interface CollectionConfig extends Cascade, Previewable {
 	 */
 	url?: string;
 	/**
-	 * Prevents this collection from being assigned output URLs. Doing so will remove the
-	 * Visual Editor as a possible option, and hide any UI elements referring to the output URL for a file.
+	 * Prevents this collection from being assigned output URLs. Doing so will remove the Visual
+	 * Editor as a possible option, and hide any UI elements referring to the output URL for a file.
 	 */
 	disable_url?: boolean;
+	/**
+	 * If set, includes files usually reserved for your SSG and developer tooling as part of this
+	 * collection. These files can then be filtered with `glob`.
+	 */
+	include_developer_files?: boolean;
 	/**
 	 * The display name of this collection. Used in headings and in the context menu for items in the
 	 * collection. This is optional as CloudCannon auto-generates this from the collection key.
