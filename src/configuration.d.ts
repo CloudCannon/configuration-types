@@ -1413,6 +1413,10 @@ export interface StructureValue extends Previewable, PickerPreviewable, Schemali
 	 */
 	tags?: string[];
 	/**
+	 * Allows you to group the inputs inside this object together without changing the data structure.
+	 */
+	groups?: ObjectInputGroup[];
+	/**
 	 * The actual value used when items are added after selection.
 	 */
 	value: any;
