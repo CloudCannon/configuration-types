@@ -787,7 +787,10 @@ export interface ImageInput extends BaseInput<ImageInputOptions> {
 	type: 'image';
 }
 
-export interface SelectInputOptions<EmptyType = EmptyTypeText> extends BaseInputOptions<EmptyType> {
+export interface SelectInputOptions<EmptyType = EmptyTypeText>
+	extends BaseInputOptions<EmptyType>,
+		Previewable,
+		PickerPreviewable {
 	/**
 	 * Allows new text values to be created at edit time.
 	 *
@@ -812,6 +815,14 @@ export interface SelectInputOptions<EmptyType = EmptyTypeText> extends BaseInput
 	 * instead for objects, and the value itself is used for primitive types.
 	 */
 	value_key?: string;
+	/**
+	 * Controls how selected items are rendered.
+	 */
+	view?: 'card' | 'text' | 'gallery' | 'gallery-left';
+	/**
+	 * Controls how selectable options are rendered.
+	 */
+	picker_view?: 'card' | 'text' | 'gallery' | 'gallery-left';
 }
 
 export interface SelectInput extends BaseInput<SelectInputOptions> {
@@ -825,12 +836,7 @@ export interface MultiselectInput extends BaseInput<MultiselectInputOptions> {
 }
 
 export interface ChoiceInputOptions<EmptyType = EmptyTypeText>
-	extends Omit<SelectInputOptions<EmptyType>, 'allow_create'> {
-	/**
-	 * The preview definition for changing the way selected and available options are displayed.
-	 */
-	preview?: SelectPreview;
-}
+	extends Omit<SelectInputOptions<EmptyType>, 'allow_create'> {}
 
 export interface ChoiceInput extends BaseInput<ChoiceInputOptions> {
 	type: 'choice';
@@ -850,7 +856,7 @@ export interface ObjectInputGroup {
 	documentation?: Documentation;
 }
 
-export interface ObjectInputOptions extends BaseInputOptions<EmptyTypeObject> {
+export interface ObjectInputOptions extends BaseInputOptions<EmptyTypeObject>, Previewable {
 	/**
 	 * Changes the appearance and behavior of the input.
 	 */
@@ -877,12 +883,6 @@ export interface ObjectInputOptions extends BaseInputOptions<EmptyTypeObject> {
 		 */
 		structures?: string | Structure;
 	};
-	/**
-	 * The preview definition for changing the way data within an object input is previewed before
-	 * being expanded. If the input has `structures`, the preview from the structure value is used
-	 * instead.
-	 */
-	preview?: ObjectPreview;
 	/**
 	 * Provides data formats for value of this object. When choosing an item, team members are
 	 * prompted to choose from a number of values you have defined. `structures` applies to the object
@@ -911,12 +911,6 @@ export interface ObjectInput extends BaseInput<ObjectInputOptions> {
 }
 
 export interface ArrayInputOptions extends BaseInputOptions<EmptyTypeArray> {
-	/**
-	 * The preview definition for changing the way data within an array input's items are previewed
-	 * before being expanded. If the input has structures, the preview from the structure value is
-	 * used instead.
-	 */
-	preview?: ObjectPreview;
 	/**
 	 * Provides data formats for value of this object. When choosing an item, team members are
 	 * prompted to choose from a number of values you have defined.
@@ -1055,6 +1049,7 @@ export interface PreviewGallery
 	extends TextPreviewable,
 		ImagePreviewable,
 		IconPreviewable,
+		IconColorPreviewable,
 		IconColorPreviewable {
 	/**
 	 * Controls how the gallery image is positioned within the gallery.
@@ -1067,14 +1062,6 @@ export interface PreviewMetadata
 		ImagePreviewable,
 		IconPreviewable,
 		IconColorPreviewable {}
-
-export interface ObjectPreview
-	extends TextPreviewable,
-		ImagePreviewable,
-		IconPreviewable,
-		SubtextPreviewable {}
-
-export interface SelectPreview extends TextPreviewable, IconPreviewable {}
 
 export interface Preview
 	extends TextPreviewable,
