@@ -904,6 +904,10 @@ export interface ObjectInputOptions extends BaseInputOptions<EmptyTypeObject>, P
 	 * Controls whether or not labels on mutable object entries are formatted.
 	 */
 	allow_label_formatting?: boolean;
+	/**
+	 * Controls how object previews are rendered.
+	 */
+	view?: 'card' | 'gallery' | 'gallery-left';
 }
 
 export interface ObjectInput extends BaseInput<ObjectInputOptions> {
