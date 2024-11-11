@@ -1408,6 +1408,14 @@ export interface StructureValue extends Previewable, PickerPreviewable, Schemali
 	 */
 	groups?: ObjectInputGroup[];
 	/**
+	 * Controls which order input groups and ungrouped inputs appear in.
+	 */
+	place_groups_below?: boolean;
+	/**
+	 * Show nested objects as tabs. Requires all top-level keys to be objects.
+	 */
+	tabbed?: boolean;
+	/**
 	 * The actual value used when items are added after selection.
 	 */
 	value: any;
