@@ -1598,6 +1598,9 @@ export type SsgKey =
 	| 'legacy'
 	| 'other';
 
+/**
+ * The base format for the configuration file.
+ */
 export interface Configuration extends Cascade, WithSnippets, WithPaths {
 	/**
 	 * Base path to your site source files, relative to the root folder.
