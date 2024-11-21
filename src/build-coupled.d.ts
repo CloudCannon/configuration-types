@@ -1,4 +1,4 @@
-import { CollectionConfig, Configuration, DataConfigEntry, Paths } from './configuration';
+import type { CollectionConfig, Configuration, DataConfigEntry, Paths } from './configuration';
 
 export interface BuildCoupledPaths extends Paths {
 	/**
@@ -145,15 +145,15 @@ interface ParsedCollectionItem {
 	/**
 	 * The path to the file this was parsed from.
 	 */
-	path: 'string';
+	path: string;
 	/**
 	 * The collection key this is assigned to. Matches keys in `collections_config`.
 	 */
-	collection: 'string';
+	collection: string;
 	/**
 	 * The URL this file is served at once built.
 	 */
-	url?: 'string';
+	url?: string;
 }
 
 interface WithIntegrationOutput {
@@ -191,7 +191,7 @@ interface WithIntegrationOutput {
 	/**
 	 * Map of collection keys to parsed collection files. Keys match keys in `collections_config`.
 	 */
-	collections?: Record<string, ParsedCollectionItem>;
+	collections?: Record<string, ParsedCollectionItem[]>;
 	/**
 	 * Map of build file paths to MD5s.
 	 */
@@ -215,7 +215,7 @@ export interface JekyllIntegrationOutput extends JekyllConfiguration, WithIntegr
 	/**
 	 * @deprecated Do not use.
 	 */
-	defaults: any;
+	defaults: unknown;
 }
 
 /**

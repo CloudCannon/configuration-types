@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=../build/cloudcannon-config.json
+# yaml-language-server: $schema=../dist/schema/cloudcannon-config.schema.json
 
 data_config:
   blog-tags:
@@ -8,7 +8,6 @@ collections_config:
   pages:
     icon: feed
     disable_add_folder: true
-    output: true
     path: content
     schemas:
       default:
@@ -30,7 +29,7 @@ collections_config:
       - content
       - visual
   data:
-    output: false
+    disable_url: true
     path: data
     icon: settings
     disable_add: true
