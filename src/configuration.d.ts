@@ -904,6 +904,10 @@ export interface ObjectInputOptions extends BaseInputOptions<EmptyTypeObject>, P
 	 * Controls whether or not labels on mutable object entries are formatted.
 	 */
 	allow_label_formatting?: boolean;
+	/**
+	 * Controls how object previews are rendered.
+	 */
+	view?: 'card' | 'gallery' | 'gallery-left';
 }
 
 export interface ObjectInput extends BaseInput<ObjectInputOptions> {
@@ -1403,6 +1407,14 @@ export interface StructureValue extends Previewable, PickerPreviewable, Schemali
 	 * Allows you to group the inputs inside this object together without changing the data structure.
 	 */
 	groups?: ObjectInputGroup[];
+	/**
+	 * Controls which order input groups and ungrouped inputs appear in.
+	 */
+	place_groups_below?: boolean;
+	/**
+	 * Show nested objects as tabs. Requires all top-level keys to be objects.
+	 */
+	tabbed?: boolean;
 	/**
 	 * The actual value used when items are added after selection.
 	 */
