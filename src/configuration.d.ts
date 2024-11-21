@@ -1,113 +1,18 @@
-import Scrapbooker from '@cloudcannon/snippet-types';
+import type Scrapbooker from '@cloudcannon/snippet-types';
 
 import type { Icon } from './icon';
 import type { Timezone } from './timezone';
 import type { MimeType } from './mime-type';
 import type { Theme } from './theme';
 import type { Syntax } from './syntax';
+import type { MarkdownSettings } from './markdown';
 
 export type InstanceValue = 'UUID' | 'NOW';
 export type EditorKey = 'visual' | 'content' | 'data';
 export type SortOrder = 'ascending' | 'descending' | 'asc' | 'desc';
-export type AttributeListPosition =
-	| 'none'
-	| 'right'
-	| 'space right'
-	| 'below'
-	| 'newline below'
-	| 'right-of-prefix';
-
-export type MarkdownAttributeElementOptions = {
-	inline?: AttributeListPosition;
-	block?: AttributeListPosition;
-} & Partial<Record<keyof HTMLElementTagNameMap, AttributeListPosition>>;
-
-export interface MarkdownSettings {
-	engine: 'commonmark' | 'kramdown';
-	options: {
-		/**
-		 * Output HTML tags from source.
-		 */
-		html?: boolean;
-		/**
-		 * Use '/' to close single tags (<br />).
-		 */
-		xhtml?: boolean;
-		/**
-		 * Convert '\n' in paragraphs into <br>.
-		 */
-		breaks?: boolean;
-		/**
-		 * Autoconvert URL-like text to links.
-		 */
-		linkify?: boolean;
-		/**
-		 * Enable some language-neutral replacement + quotes beautification.
-		 */
-		typographer?: boolean;
-		/**
-		 * Double + single quotes replacement pairs, when typographer enabled and smartquotes on. For
-		 * example, you can use '«»„“' for Russian, '„“‚‘' for German, and ['«\xA0', '\xA0»', '‹\xA0',
-		 * '\xA0›'] for French (including nbsp).
-		 */
-		quotes?: string;
-		/**
-		 * Output lists with an extra space in Markdown.
-		 */
-		spaced_lists?: boolean;
-		/**
-		 * Add linebreaks between sentences in Markdown.
-		 */
-		sentence_per_line?: boolean;
-		/**
-		 * Enable GFM mode.
-		 */
-		gfm?: boolean;
-		/**
-		 * Determines which style of code block fences to use.
-		 */
-		code_block_fences?: '```' | '~~~';
-		/**
-		 * Determines whether 4 spaces on indentation should be read as a code block.
-		 */
-		treat_indentation_as_code?: boolean;
-		/**
-		 * Render snippets as plain text within code blocks.
-		 */
-		escape_snippets_in_code_blocks?: boolean;
-		/**
-		 * Output tables in Markdown format.
-		 */
-		table?: boolean;
-		/**
-		 * Output strikes in wrapped in double tildes (e.g. ~~strike~~)
-		 */
-		strikethrough?: boolean;
-		/**
-		 * Output subscript in wrapped in tildes (e.g. ~sub~)
-		 */
-		subscript?: boolean;
-		/**
-		 * Output superscript in wrapped in carets (e.g. ^super^)
-		 */
-		superscript?: boolean;
-		/**
-		 * Generate IDs for headings
-		 */
-		heading_ids?: boolean;
-		/**
-		 * Save element attributes in Markdown format instead of converting to HTML.
-		 */
-		attributes?: boolean;
-		/**
-		 * Define positioning behaviour of Markdown attributes for different elements.
-		 */
-		attribute_elements?: MarkdownAttributeElementOptions;
-	};
-}
 
 // TODO: use SnippetConfig from @cloudcannon/scrap-booker when ParserConfig issue resolved.
-export interface SnippetConfig extends ReducedCascade, Previewable, PickerPreviewable {
+export interface SnippetConfig extends ReducedCascade, WithPreview, WithPickerPreview {
 	/**
 	 * Name of the snippet.
 	 */
@@ -139,58 +44,159 @@ export interface SnippetConfig extends ReducedCascade, Previewable, PickerPrevie
 	params?: Record<string, any>; // TODO: use ParserConfig from @cloudcannon/scrap-booker.
 }
 
-interface SnippetsImport<T> {
-	/**
-	 * The list of excluded snippets. If unset, all snippets are excluded unless defined in `include`.
-	 */
-	exclude?: T[];
-	/**
-	 * The list of included snippets. If unset, all snippets are included unless defined in `exclude`.
-	 */
-	include?: T[];
-}
-
 export interface SnippetsImports {
 	/**
 	 * Default snippets for Hugo SSG.
 	 */
-	hugo?: boolean | SnippetsImport<keyof typeof Scrapbooker.defaults.hugo.snippets>;
+	hugo?:
+		| boolean
+		| {
+				/**
+				 * The list of excluded snippets. If unset, all snippets are excluded unless defined in
+				 * `include`.
+				 */
+				exclude: Array<keyof typeof Scrapbooker.defaults.hugo.snippets>;
+		  }
+		| {
+				/**
+				 * The list of included snippets. If unset, all snippets are included unless defined in
+				 * `exclude`.
+				 */
+				include: Array<keyof typeof Scrapbooker.defaults.hugo.snippets>;
+		  };
 	/**
 	 * Default snippets for Jekyll SSG.
 	 */
-	jekyll?: boolean | SnippetsImport<keyof typeof Scrapbooker.defaults.jekyll.snippets>;
+	jekyll?:
+		| boolean
+		| {
+				/**
+				 * The list of excluded snippets. If unset, all snippets are excluded unless defined in
+				 * `include`.
+				 */
+				exclude: Array<keyof typeof Scrapbooker.defaults.jekyll.snippets>;
+		  }
+		| {
+				/**
+				 * The list of included snippets. If unset, all snippets are included unless defined in
+				 * `exclude`.
+				 */
+				include: Array<keyof typeof Scrapbooker.defaults.jekyll.snippets>;
+		  };
 	/**
 	 * Default snippets for MDX-based content.
 	 */
-	mdx?: boolean | SnippetsImport<keyof typeof Scrapbooker.defaults.mdx.snippets>;
+	mdx?:
+		| boolean
+		| {
+				/**
+				 * The list of excluded snippets. If unset, all snippets are excluded unless defined in
+				 * `include`.
+				 */
+				exclude: Array<keyof typeof Scrapbooker.defaults.mdx.snippets>;
+		  }
+		| {
+				/**
+				 * The list of included snippets. If unset, all snippets are included unless defined in
+				 * `exclude`.
+				 */
+				include: Array<keyof typeof Scrapbooker.defaults.mdx.snippets>;
+		  };
 	/**
 	 * Default snippets for Eleventy SSG Liquid files.
 	 */
 	eleventy_liquid?:
 		| boolean
-		| SnippetsImport<keyof typeof Scrapbooker.defaults.eleventy_liquid.snippets>;
+		| {
+				/**
+				 * The list of excluded snippets. If unset, all snippets are excluded unless defined in
+				 * `include`.
+				 */
+				exclude: Array<keyof typeof Scrapbooker.defaults.eleventy_liquid.snippets>;
+		  }
+		| {
+				/**
+				 * The list of included snippets. If unset, all snippets are included unless defined in
+				 * `exclude`.
+				 */
+				include: Array<keyof typeof Scrapbooker.defaults.eleventy_liquid.snippets>;
+		  };
 	/**
 	 * Default snippets for Eleventy SSG Nunjucks files.
 	 */
 	eleventy_nunjucks?:
 		| boolean
-		| SnippetsImport<keyof typeof Scrapbooker.defaults.eleventy_nunjucks.snippets>;
+		| {
+				/**
+				 * The list of excluded snippets. If unset, all snippets are excluded unless defined in
+				 * `include`.
+				 */
+				exclude: Array<keyof typeof Scrapbooker.defaults.eleventy_nunjucks.snippets>;
+		  }
+		| {
+				/**
+				 * The list of included snippets. If unset, all snippets are included unless defined in
+				 * `exclude`.
+				 */
+				include: Array<keyof typeof Scrapbooker.defaults.eleventy_nunjucks.snippets>;
+		  };
 	/**
 	 * Default snippets for Markdoc-based content.
 	 */
-	markdoc?: boolean | SnippetsImport<keyof typeof Scrapbooker.defaults.markdoc.snippets>;
+	markdoc?:
+		| boolean
+		| {
+				/**
+				 * The list of excluded snippets. If unset, all snippets are excluded unless defined in
+				 * `include`.
+				 */
+				exclude: Array<keyof typeof Scrapbooker.defaults.markdoc.snippets>;
+		  }
+		| {
+				/**
+				 * The list of included snippets. If unset, all snippets are included unless defined in
+				 * `exclude`.
+				 */
+				include: Array<keyof typeof Scrapbooker.defaults.markdoc.snippets>;
+		  };
 	/**
 	 * Default snippets for content using Python markdown extensions.
 	 */
 	python_markdown_extensions?:
 		| boolean
-		| SnippetsImport<keyof typeof Scrapbooker.defaults.python_markdown_extensions.snippets>;
+		| {
+				/**
+				 * The list of excluded snippets. If unset, all snippets are excluded unless defined in
+				 * `include`.
+				 */
+				exclude: Array<keyof typeof Scrapbooker.defaults.python_markdown_extensions.snippets>;
+		  }
+		| {
+				/**
+				 * The list of included snippets. If unset, all snippets are included unless defined in
+				 * `exclude`.
+				 */
+				include: Array<keyof typeof Scrapbooker.defaults.python_markdown_extensions.snippets>;
+		  };
 	/**
 	 * Default snippets for Docusaurus SSG.
 	 */
 	docusaurus_mdx?:
 		| boolean
-		| SnippetsImport<keyof typeof Scrapbooker.defaults.docusaurus_mdx.snippets>;
+		| {
+				/**
+				 * The list of excluded snippets. If unset, all snippets are excluded unless defined in
+				 * `include`.
+				 */
+				exclude: Array<keyof typeof Scrapbooker.defaults.docusaurus_mdx.snippets>;
+		  }
+		| {
+				/**
+				 * The list of included snippets. If unset, all snippets are included unless defined in
+				 * `exclude`.
+				 */
+				include: Array<keyof typeof Scrapbooker.defaults.docusaurus_mdx.snippets>;
+		  };
 }
 
 interface WithSnippets {
@@ -222,7 +228,7 @@ interface ImageResizeable {
 	 * Sets how uploaded image files are resized with a bounding box defined by width and height prior
 	 * to upload. Has no effect when selecting existing images, or if width and height are unset.
 	 *
-	 * @default 'contain'
+	 * @default contain
 	 */
 	resize_style?: 'cover' | 'contain' | 'stretch' | 'crop';
 	/**
@@ -494,6 +500,8 @@ export interface Cascade extends ReducedCascade {
 	/**
 	 * Set a preferred editor and/or disable the others. The first value sets which editor opens by
 	 * default, and the following values specify which editors are accessible.
+	 *
+	 * @uniqueItems
 	 */
 	_enabled_editors?: EditorKey[];
 	/**
@@ -557,14 +565,35 @@ export type EmptyTypeNumber = 'null' | 'number';
 export type EmptyTypeArray = 'null' | 'array';
 export type EmptyTypeObject = 'null' | 'object';
 
-export interface BaseInputOptions<EmptyType = EmptyTypeText> {
+interface WithEmptyTypeText {
 	/**
 	 * Set how an ‘empty’ value will be saved. Does not apply to existing empty values.
 	 */
-	empty_type?: EmptyType;
+	empty_type?: EmptyTypeText;
 }
 
-export interface BaseInput<InputOptions = BaseInputOptions> {
+interface WithEmptyTypeNumber {
+	/**
+	 * Set how an ‘empty’ value will be saved. Does not apply to existing empty values.
+	 */
+	empty_type?: EmptyTypeNumber;
+}
+
+interface WithEmptyTypeObject {
+	/**
+	 * Set how an ‘empty’ value will be saved. Does not apply to existing empty values.
+	 */
+	empty_type?: EmptyTypeObject;
+}
+
+interface WithEmptyTypeArray {
+	/**
+	 * Set how an ‘empty’ value will be saved. Does not apply to existing empty values.
+	 */
+	empty_type?: EmptyTypeArray;
+}
+
+export interface BaseInput {
 	type?: InputType | undefined | null;
 	/**
 	 * Changes the subtext below the _Label_. Has no default. Supports a limited set of Markdown:
@@ -618,13 +647,9 @@ export interface BaseInput<InputOptions = BaseInputOptions> {
 	 * @default true
 	 */
 	cascade?: boolean;
-	/**
-	 * Options that are specific to this `type` of input.
-	 */
-	options?: InputOptions;
 }
 
-export interface TextInputOptions extends BaseInputOptions {
+export interface TextInputOptions extends WithEmptyTypeText {
 	/**
 	 * Text shown when this input has no value.
 	 */
@@ -635,7 +660,7 @@ export interface TextInputOptions extends BaseInputOptions {
 	icon?: Icon;
 }
 
-export interface TextInput extends BaseInput<TextInputOptions> {
+export interface TextInput extends BaseInput {
 	type:
 		| 'text'
 		| 'email'
@@ -645,6 +670,11 @@ export interface TextInput extends BaseInput<TextInputOptions> {
 		| 'twitter'
 		| 'github'
 		| 'instagram';
+
+	/**
+	 * Options that are specific to this `type` of input.
+	 */
+	options?: TextInputOptions;
 }
 
 export interface TextareaInputOptions extends TextInputOptions {
@@ -654,11 +684,15 @@ export interface TextareaInputOptions extends TextInputOptions {
 	show_count?: boolean;
 }
 
-export interface TextareaInput extends BaseInput<TextareaInputOptions> {
+export interface TextareaInput extends BaseInput {
 	type: 'textarea';
+	/**
+	 * Options that are specific to this `type` of input.
+	 */
+	options?: TextareaInputOptions;
 }
 
-export interface CodeInputOptions extends BaseInputOptions, SourceEditor {
+export interface CodeInputOptions extends WithEmptyTypeText, SourceEditor {
 	/**
 	 * Sets the maximum number of visible lines for this input, effectively controlling maximum
 	 * height. When the containing text exceeds this number, the input becomes a scroll area.
@@ -681,11 +715,15 @@ export interface CodeInputOptions extends BaseInputOptions, SourceEditor {
 	syntax?: Syntax;
 }
 
-export interface CodeInput extends BaseInput<CodeInputOptions> {
+export interface CodeInput extends BaseInput {
 	type: 'code';
+	/**
+	 * Options that are specific to this `type` of input.
+	 */
+	options?: CodeInputOptions;
 }
 
-export interface ColorInputOptions extends BaseInputOptions {
+export interface ColorInputOptions extends WithEmptyTypeText {
 	/**
 	 * Sets what format the color value is saved as. Defaults to the naming convention, or HEX if that
 	 * is unset.
@@ -698,11 +736,15 @@ export interface ColorInputOptions extends BaseInputOptions {
 	alpha?: boolean;
 }
 
-export interface ColorInput extends BaseInput<ColorInputOptions> {
+export interface ColorInput extends BaseInput {
 	type: 'color';
+	/**
+	 * Options that are specific to this `type` of input.
+	 */
+	options?: ColorInputOptions;
 }
 
-export interface NumberInputOptions extends BaseInputOptions<EmptyTypeNumber> {
+export interface NumberInputOptions extends WithEmptyTypeNumber {
 	/**
 	 * The lowest value in the range of permitted values.
 	 */
@@ -718,8 +760,12 @@ export interface NumberInputOptions extends BaseInputOptions<EmptyTypeNumber> {
 	step?: number;
 }
 
-export interface NumberInput extends BaseInput<NumberInputOptions> {
+export interface NumberInput extends BaseInput {
 	type: 'number';
+	/**
+	 * Options that are specific to this `type` of input.
+	 */
+	options?: NumberInputOptions;
 }
 
 export interface RangeInputOptions extends NumberInputOptions {
@@ -728,17 +774,25 @@ export interface RangeInputOptions extends NumberInputOptions {
 	step: number;
 }
 
-export interface RangeInput extends BaseInput<RangeInputOptions> {
+export interface RangeInput extends BaseInput {
 	type: 'range';
+	/**
+	 * Options that are specific to this `type` of input.
+	 */
+	options?: RangeInputOptions;
 }
 
-export interface UrlInputOptions extends BaseInputOptions, WithPaths {}
+export interface UrlInputOptions extends WithEmptyTypeText, WithPaths {}
 
-export interface UrlInput extends BaseInput<UrlInputOptions> {
+export interface UrlInput extends BaseInput {
 	type: 'range';
+	/**
+	 * Options that are specific to this `type` of input.
+	 */
+	options?: UrlInputOptions;
 }
 
-export interface RichTextInputOptions extends BaseInputOptions, ImageResizeable, BlockEditable {
+export interface RichTextInputOptions extends WithEmptyTypeText, ImageResizeable, BlockEditable {
 	/**
 	 * Shows or hides the resize handler to vertically resize the input.
 	 */
@@ -749,11 +803,15 @@ export interface RichTextInputOptions extends BaseInputOptions, ImageResizeable,
 	initial_height?: number;
 }
 
-export interface RichTextInput extends BaseInput<RichTextInputOptions> {
+export interface RichTextInput extends BaseInput {
 	type: 'html' | 'markdown';
+	/**
+	 * Options that are specific to this `type` of input.
+	 */
+	options?: RichTextInputOptions;
 }
 
-export interface DateInputOptions extends BaseInputOptions {
+export interface DateInputOptions extends WithEmptyTypeText {
 	/**
 	 * Specifies the time zone that dates are displayed and edited in. Also changes the suffix the
 	 * date is persisted to the file with. Defaults to the global `timezone`.
@@ -761,11 +819,15 @@ export interface DateInputOptions extends BaseInputOptions {
 	timezone?: Timezone;
 }
 
-export interface DateInput extends BaseInput<DateInputOptions> {
+export interface DateInput extends BaseInput {
 	type: 'date' | 'datetime';
+	/**
+	 * Options that are specific to this `type` of input.
+	 */
+	options?: DateInputOptions;
 }
 
-export interface FileInputOptions extends BaseInputOptions, WithPaths {
+export interface FileInputOptions extends WithEmptyTypeText, WithPaths {
 	/**
 	 * Restricts which file types are available to select or upload to this input.
 	 */
@@ -777,20 +839,25 @@ export interface FileInputOptions extends BaseInputOptions, WithPaths {
 	allowed_sources?: string[];
 }
 
-export interface FileInput extends BaseInput<FileInputOptions> {
+export interface FileInput extends BaseInput {
 	type: 'file' | 'document';
+	/**
+	 * Options that are specific to this `type` of input.
+	 */
+	options?: FileInputOptions;
 }
 
 export interface ImageInputOptions extends FileInputOptions, ImageResizeable {}
 
-export interface ImageInput extends BaseInput<ImageInputOptions> {
+export interface ImageInput extends BaseInput {
 	type: 'image';
+	/**
+	 * Options that are specific to this `type` of input.
+	 */
+	options?: ImageInputOptions;
 }
 
-export interface SelectInputOptions<EmptyType = EmptyTypeText>
-	extends BaseInputOptions<EmptyType>,
-		Previewable,
-		PickerPreviewable {
+export interface SelectInputOptions extends WithPreview, WithPickerPreview {
 	/**
 	 * Allows new text values to be created at edit time.
 	 *
@@ -807,7 +874,7 @@ export interface SelectInputOptions<EmptyType = EmptyTypeText>
 	 * Defines the values available to choose from. Optional, defaults to fetching values from the
 	 * naming convention (e.g. colors or my_colors for data set colors).
 	 */
-	values?: SelectValues;
+	values?: string | SelectValues;
 	/**
 	 * Defines the key used for mapping between saved values and objects in values. This changes how
 	 * the input saves selected values to match. Defaults to checking for "id", "uuid", "path",
@@ -825,27 +892,38 @@ export interface SelectInputOptions<EmptyType = EmptyTypeText>
 	picker_view?: 'card' | 'text' | 'gallery' | 'gallery-left';
 }
 
-export interface SelectInput extends BaseInput<SelectInputOptions> {
+export interface SelectInput extends BaseInput {
 	type: 'select';
+	/**
+	 * Options that are specific to this `type` of input.
+	 */
+	options?: SelectInputOptions & WithEmptyTypeText;
 }
 
-export interface MultiselectInputOptions extends SelectInputOptions<EmptyTypeArray> {}
-
-export interface MultiselectInput extends BaseInput<MultiselectInputOptions> {
+export interface MultiselectInput extends BaseInput {
 	type: 'multiselect';
+	/**
+	 * Options that are specific to this `type` of input.
+	 */
+	options?: SelectInputOptions & WithEmptyTypeArray;
 }
 
-export interface ChoiceInputOptions<EmptyType = EmptyTypeText>
-	extends Omit<SelectInputOptions<EmptyType>, 'allow_create'> {}
+export interface ChoiceInputOptions extends Omit<SelectInputOptions, 'allow_create'> {}
 
-export interface ChoiceInput extends BaseInput<ChoiceInputOptions> {
+export interface ChoiceInput extends BaseInput {
 	type: 'choice';
+	/**
+	 * Options that are specific to this `type` of input.
+	 */
+	options?: ChoiceInputOptions & WithEmptyTypeText;
 }
 
-export interface MultichoiceInputOptions extends ChoiceInputOptions<EmptyTypeArray> {}
-
-export interface MultichoiceInput extends BaseInput<MultichoiceInputOptions> {
+export interface MultichoiceInput extends BaseInput {
 	type: 'multichoice';
+	/**
+	 * Options that are specific to this `type` of input.
+	 */
+	options?: ChoiceInputOptions & WithEmptyTypeArray;
 }
 
 export interface ObjectInputGroup {
@@ -856,7 +934,7 @@ export interface ObjectInputGroup {
 	documentation?: Documentation;
 }
 
-export interface ObjectInputOptions extends BaseInputOptions<EmptyTypeObject>, Previewable {
+export interface ObjectInputOptions extends WithEmptyTypeObject, WithPreview {
 	/**
 	 * Changes the appearance and behavior of the input.
 	 */
@@ -910,11 +988,15 @@ export interface ObjectInputOptions extends BaseInputOptions<EmptyTypeObject>, P
 	view?: 'card' | 'gallery' | 'gallery-left';
 }
 
-export interface ObjectInput extends BaseInput<ObjectInputOptions> {
+export interface ObjectInput extends BaseInput {
 	type: 'object';
+	/**
+	 * Options that are specific to this `type` of input.
+	 */
+	options?: ObjectInputOptions;
 }
 
-export interface ArrayInputOptions extends BaseInputOptions<EmptyTypeArray> {
+export interface ArrayInputOptions extends WithEmptyTypeArray {
 	/**
 	 * Provides data formats for value of this object. When choosing an item, team members are
 	 * prompted to choose from a number of values you have defined.
@@ -922,12 +1004,21 @@ export interface ArrayInputOptions extends BaseInputOptions<EmptyTypeArray> {
 	structures?: string | Structure;
 }
 
-export interface ArrayInput extends BaseInput<ArrayInputOptions> {
+export interface ArrayInput extends BaseInput {
 	type: 'array';
+	/**
+	 * Options that are specific to this `type` of input.
+	 */
+	options?: ArrayInputOptions;
 }
 
-export interface UnknownInput extends BaseInput<BaseInputOptions> {
+export interface UnknownInput extends BaseInput {
 	type?: undefined | null;
+
+	/**
+	 * Options that are specific to this `type` of input.
+	 */
+	options?: WithEmptyTypeText;
 }
 
 export type Input =
@@ -1014,35 +1105,35 @@ interface PreviewKeyEntry {
 
 type PreviewEntry = Array<PreviewKeyEntry | string | boolean> | string | boolean;
 
-interface TextPreviewable {
+interface WithTextPreview {
 	/**
 	 * Controls the main text shown per item.
 	 */
 	text?: PreviewEntry;
 }
 
-interface ImagePreviewable {
+interface WithImagePreview {
 	/**
 	 * Controls the image shown per item.
 	 */
 	image?: PreviewEntry;
 }
 
-interface SubtextPreviewable {
+interface WithSubtextPreview {
 	/**
 	 * Controls the supporting text shown per item.
 	 */
 	subtext?: PreviewEntry;
 }
 
-interface IconPreviewable {
+interface WithIconPreview {
 	/**
 	 * Controls the icon shown per item. Must result in a Material Icon name.
 	 */
 	icon?: PreviewEntry;
 }
 
-interface IconColorPreviewable {
+interface WithIconColorPreview {
 	/**
 	 * Controls the color of the icon.
 	 */
@@ -1050,11 +1141,10 @@ interface IconColorPreviewable {
 }
 
 export interface PreviewGallery
-	extends TextPreviewable,
-		ImagePreviewable,
-		IconPreviewable,
-		IconColorPreviewable,
-		IconColorPreviewable {
+	extends WithTextPreview,
+		WithImagePreview,
+		WithIconPreview,
+		WithIconColorPreview {
 	/**
 	 * Controls how the gallery image is positioned within the gallery.
 	 */
@@ -1062,17 +1152,17 @@ export interface PreviewGallery
 }
 
 export interface PreviewMetadata
-	extends TextPreviewable,
-		ImagePreviewable,
-		IconPreviewable,
-		IconColorPreviewable {}
+	extends WithTextPreview,
+		WithImagePreview,
+		WithIconPreview,
+		WithIconColorPreview {}
 
 export interface Preview
-	extends TextPreviewable,
-		ImagePreviewable,
-		IconPreviewable,
-		IconColorPreviewable,
-		SubtextPreviewable {
+	extends WithTextPreview,
+		WithImagePreview,
+		WithIconPreview,
+		WithIconColorPreview,
+		WithSubtextPreview {
 	/**
 	 * Defines a list of items that can contain an image, icon, and text.
 	 */
@@ -1128,21 +1218,44 @@ export interface AddOption {
 	href?: string;
 }
 
-interface Previewable {
+interface WithPreview {
 	/**
 	 * Changes the way items are previewed in the CMS.
 	 */
 	preview?: Preview;
 }
 
-interface PickerPreviewable {
+interface WithPickerPreview {
 	/**
 	 * Changes the way items are previewed in the CMS while being chosen.
 	 */
 	picker_preview?: Preview;
 }
 
-export interface Schema extends Cascade, Previewable, Schemalike {
+interface SchemaBase {
+	/**
+	 * If true, inputs are sorted to match when editing. Extra inputs are ordered after expected
+	 * inputs, unless `remove_extra_inputs` is true. Defaults to true.
+	 */
+	reorder_inputs?: boolean;
+	/**
+	 * Hides unexpected inputs when editing. Has no effect if `remove_extra_inputs` is true. Defaults
+	 * to false.
+	 */
+	hide_extra_inputs?: boolean;
+	/**
+	 * If checked, empty inputs are removed from the source file on save. Removed inputs will be
+	 * available for editing again, provided they are in the matching schema/structure. Defaults to
+	 * false.
+	 */
+	remove_empty_inputs?: boolean;
+	/**
+	 * If checked, extra inputs are removed when editing. Defaults to true.
+	 */
+	remove_extra_inputs?: boolean;
+}
+
+export interface Schema extends Cascade, WithPreview, SchemaBase {
 	/**
 	 * The path to the schema file. Relative to the root folder of the site.
 	 */
@@ -1153,9 +1266,7 @@ export interface Schema extends Cascade, Previewable, Schemalike {
 	name?: string;
 	/**
 	 * Displayed in the add menu when creating new files; also used as the icon for collection files
-	 * if no other preview is found.
-	 *
-	 * @default 'notes'
+	 * if no other preview is found. Defaults to notes.
 	 */
 	icon?: Icon;
 	/**
@@ -1209,7 +1320,7 @@ export interface Create extends ReducedCascade {
 	publish_to?: string;
 }
 
-export interface CollectionConfig extends Cascade, Previewable {
+export interface CollectionConfig extends Cascade, WithPreview {
 	/**
 	 * The top-most folder where the files in this collection are stored. It is relative to source.
 	 */
@@ -1326,36 +1437,7 @@ export interface CollectionGroup {
 	collections: string[];
 }
 
-interface Schemalike {
-	/**
-	 * If true, inputs are sorted to match when editing. Extra inputs are ordered after expected
-	 * inputs, unless `remove_extra_inputs` is true.
-	 *
-	 * @default true
-	 */
-	reorder_inputs?: boolean;
-	/**
-	 * Hides unexpected inputs when editing. Has no effect if `remove_extra_inputs` is true.
-	 *
-	 * @default false
-	 */
-	hide_extra_inputs?: boolean;
-	/**
-	 * If checked, empty inputs are removed from the source file on save. Removed inputs will be
-	 * available for editing again, provided they are in the matching schema/structure.
-	 *
-	 * @default false
-	 */
-	remove_empty_inputs?: boolean;
-	/**
-	 * If checked, extra inputs are removed when editing.
-	 *
-	 * @default true
-	 */
-	remove_extra_inputs?: boolean;
-}
-
-export interface Structure extends Schemalike {
+export interface Structure extends SchemaBase {
 	/**
 	 * Defines what values are available to add when using this structure.
 	 */
@@ -1372,7 +1454,7 @@ export interface Structure extends Schemalike {
 	style?: 'select' | 'modal';
 }
 
-export interface StructureValue extends Previewable, PickerPreviewable, Schemalike {
+export interface StructureValue extends WithPreview, WithPickerPreview, SchemaBase {
 	/**
 	 * A unique reference value used when referring to this structure value from the Object input's
 	 * assigned_structures option.
@@ -1418,14 +1500,15 @@ export interface StructureValue extends Previewable, PickerPreviewable, Schemali
 	/**
 	 * The actual value used when items are added after selection.
 	 */
-	value: any;
+	value: unknown;
 }
 
 export type SelectValues =
-	| string
 	| string[]
+	| Record<string, string>[]
 	| Record<string, string>
-	| Record<string, Record<string, any>>;
+	| Record<string, unknown>[]
+	| Record<string, unknown>;
 
 export interface DataConfigEntry {
 	/**
