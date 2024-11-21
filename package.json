@@ -23,7 +23,8 @@
     "lint": "npm run lint:tsc && npm run lint:format",
     "lint:tsc": "tsc --noEmit",
     "lint:format": "prettier -c src",
-    "format": "prettier -w src"
+    "format": "prettier -w src",
+    "test": "exit 0"
   },
   "main": "./src/index.d.ts",
   "types": "./src/index.d.ts",
