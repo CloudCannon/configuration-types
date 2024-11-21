@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=../dist/schema/cloudcannon-config.schema.json
+# yaml-language-server: $schema=../dist/cloudcannon-config.schema.json
 
 data_config:
   blog-tags:

@@ -1,5 +1,5 @@
 {
-	"$schema": "../dist/schema/cloudcannon-config.schema.json",
+	"$schema": "../dist/cloudcannon-config.schema.json",
 	"timezone": "America/New_York",
 	"collections_config": {
 		"staff": {

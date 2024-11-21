@@ -26,7 +26,7 @@ We plan to add the configuration schema to [JSON Schema Store](https://www.schem
 Alternatively, you can add a comment to the top of your file to use a specific schema for YAML files:
 
 ```yaml
-# yaml-language-server: $schema=https://raw.githubusercontent.com/CloudCannon/configuration-types/main/dist/schema/cloudcannon-config.schema.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/CloudCannon/configuration-types/main/dist/cloudcannon-config.schema.json
 
 collections_config:
   posts:
@@ -39,7 +39,7 @@ Or the top-level `$schema` entry for JSON files:
 
 ```json
 {
-  "$schema": "https://raw.githubusercontent.com/CloudCannon/configuration-types/main/dist/schema/cloudcannon-config.schema.json",
+  "$schema": "https://raw.githubusercontent.com/CloudCannon/configuration-types/main/dist/cloudcannon-config.schema.json",
 
   "collections_config": {
     "posts": {
