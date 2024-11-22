@@ -596,6 +596,10 @@ interface WithEmptyTypeArray {
 export interface BaseInput {
 	type?: InputType | undefined | null;
 	/**
+	 * Options that are specific to this `type` of input.
+	 */
+	options?: WithEmptyTypeText | WithEmptyTypeNumber | WithEmptyTypeObject | WithEmptyTypeArray;
+	/**
 	 * Changes the subtext below the _Label_. Has no default. Supports a limited set of Markdown:
 	 * links, bold, italic, subscript, superscript, and inline code elements are allowed.
 	 */
