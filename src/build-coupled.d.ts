@@ -137,11 +137,11 @@ export type EleventyConfiguration = JekyllConfiguration;
 export type ParsedDataset =
 	| string[]
 	| Record<string, string>
-	| Record<string, Record<string, any>>
-	| Record<string, any>[];
+	| Record<string, Record<string, unknown>>
+	| Record<string, unknown>[];
 
 interface ParsedCollectionItem {
-	[index: string]: any;
+	[index: string]: unknown;
 	/**
 	 * The path to the file this was parsed from.
 	 */
@@ -201,12 +201,12 @@ interface WithIntegrationOutput {
 /**
  * The output from build-coupled non-Jekyll/Hugo/Eleventy sites.
  */
-export interface IntegrationOutput extends Configuration, WithIntegrationOutput {}
+export type IntegrationOutput = Configuration & WithIntegrationOutput;
 
 /**
  * The output from build-coupled Hugo sites.
  */
-export interface HugoIntegrationOutput extends HugoConfiguration, WithIntegrationOutput {}
+export type HugoIntegrationOutput = HugoConfiguration & WithIntegrationOutput;
 
 /**
  * The output from build-coupled Jekyll sites.
@@ -221,4 +221,4 @@ export interface JekyllIntegrationOutput extends JekyllConfiguration, WithIntegr
 /**
  * The output from build-coupled Eleventy sites.
  */
-export interface EleventyIntegrationOutput extends EleventyConfiguration, WithIntegrationOutput {}
+export type EleventyIntegrationOutput = EleventyConfiguration & WithIntegrationOutput;

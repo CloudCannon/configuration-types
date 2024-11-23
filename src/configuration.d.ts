@@ -33,7 +33,7 @@ export interface SnippetConfig extends ReducedCascade, WithPreview, WithPickerPr
 	/**
 	 * The variables required for the selected template.
 	 */
-	definitions?: Record<string, any>;
+	definitions?: Record<string, unknown>;
 	/**
 	 * Alternate configurations for this snippet.
 	 */
@@ -41,7 +41,7 @@ export interface SnippetConfig extends ReducedCascade, WithPreview, WithPickerPr
 	/**
 	 * The parameters of this snippet.
 	 */
-	params?: Record<string, any>; // TODO: use ParserConfig from @cloudcannon/scrap-booker.
+	params?: Record<string, unknown>; // TODO: use ParserConfig from @cloudcannon/scrap-booker.
 }
 
 export interface SnippetsImports {
@@ -54,6 +54,8 @@ export interface SnippetsImports {
 				/**
 				 * The list of excluded snippets. If unset, all snippets are excluded unless defined in
 				 * `include`.
+				 *
+				 * @uniqueItems
 				 */
 				exclude: Array<keyof typeof Scrapbooker.defaults.hugo.snippets>;
 		  }
@@ -61,6 +63,8 @@ export interface SnippetsImports {
 				/**
 				 * The list of included snippets. If unset, all snippets are included unless defined in
 				 * `exclude`.
+				 *
+				 * @uniqueItems
 				 */
 				include: Array<keyof typeof Scrapbooker.defaults.hugo.snippets>;
 		  };
@@ -73,6 +77,8 @@ export interface SnippetsImports {
 				/**
 				 * The list of excluded snippets. If unset, all snippets are excluded unless defined in
 				 * `include`.
+				 *
+				 * @uniqueItems
 				 */
 				exclude: Array<keyof typeof Scrapbooker.defaults.jekyll.snippets>;
 		  }
@@ -80,6 +86,8 @@ export interface SnippetsImports {
 				/**
 				 * The list of included snippets. If unset, all snippets are included unless defined in
 				 * `exclude`.
+				 *
+				 * @uniqueItems
 				 */
 				include: Array<keyof typeof Scrapbooker.defaults.jekyll.snippets>;
 		  };
@@ -92,6 +100,8 @@ export interface SnippetsImports {
 				/**
 				 * The list of excluded snippets. If unset, all snippets are excluded unless defined in
 				 * `include`.
+				 *
+				 * @uniqueItems
 				 */
 				exclude: Array<keyof typeof Scrapbooker.defaults.mdx.snippets>;
 		  }
@@ -99,6 +109,8 @@ export interface SnippetsImports {
 				/**
 				 * The list of included snippets. If unset, all snippets are included unless defined in
 				 * `exclude`.
+				 *
+				 * @uniqueItems
 				 */
 				include: Array<keyof typeof Scrapbooker.defaults.mdx.snippets>;
 		  };
@@ -111,6 +123,8 @@ export interface SnippetsImports {
 				/**
 				 * The list of excluded snippets. If unset, all snippets are excluded unless defined in
 				 * `include`.
+				 *
+				 * @uniqueItems
 				 */
 				exclude: Array<keyof typeof Scrapbooker.defaults.eleventy_liquid.snippets>;
 		  }
@@ -118,6 +132,8 @@ export interface SnippetsImports {
 				/**
 				 * The list of included snippets. If unset, all snippets are included unless defined in
 				 * `exclude`.
+				 *
+				 * @uniqueItems
 				 */
 				include: Array<keyof typeof Scrapbooker.defaults.eleventy_liquid.snippets>;
 		  };
@@ -130,6 +146,8 @@ export interface SnippetsImports {
 				/**
 				 * The list of excluded snippets. If unset, all snippets are excluded unless defined in
 				 * `include`.
+				 *
+				 * @uniqueItems
 				 */
 				exclude: Array<keyof typeof Scrapbooker.defaults.eleventy_nunjucks.snippets>;
 		  }
@@ -137,6 +155,8 @@ export interface SnippetsImports {
 				/**
 				 * The list of included snippets. If unset, all snippets are included unless defined in
 				 * `exclude`.
+				 *
+				 * @uniqueItems
 				 */
 				include: Array<keyof typeof Scrapbooker.defaults.eleventy_nunjucks.snippets>;
 		  };
@@ -149,6 +169,8 @@ export interface SnippetsImports {
 				/**
 				 * The list of excluded snippets. If unset, all snippets are excluded unless defined in
 				 * `include`.
+				 *
+				 * @uniqueItems
 				 */
 				exclude: Array<keyof typeof Scrapbooker.defaults.markdoc.snippets>;
 		  }
@@ -156,6 +178,8 @@ export interface SnippetsImports {
 				/**
 				 * The list of included snippets. If unset, all snippets are included unless defined in
 				 * `exclude`.
+				 *
+				 * @uniqueItems
 				 */
 				include: Array<keyof typeof Scrapbooker.defaults.markdoc.snippets>;
 		  };
@@ -168,6 +192,8 @@ export interface SnippetsImports {
 				/**
 				 * The list of excluded snippets. If unset, all snippets are excluded unless defined in
 				 * `include`.
+				 *
+				 * @uniqueItems
 				 */
 				exclude: Array<keyof typeof Scrapbooker.defaults.python_markdown_extensions.snippets>;
 		  }
@@ -175,6 +201,8 @@ export interface SnippetsImports {
 				/**
 				 * The list of included snippets. If unset, all snippets are included unless defined in
 				 * `exclude`.
+				 *
+				 * @uniqueItems
 				 */
 				include: Array<keyof typeof Scrapbooker.defaults.python_markdown_extensions.snippets>;
 		  };
@@ -187,6 +215,8 @@ export interface SnippetsImports {
 				/**
 				 * The list of excluded snippets. If unset, all snippets are excluded unless defined in
 				 * `include`.
+				 *
+				 * @uniqueItems
 				 */
 				exclude: Array<keyof typeof Scrapbooker.defaults.docusaurus_mdx.snippets>;
 		  }
@@ -194,28 +224,11 @@ export interface SnippetsImports {
 				/**
 				 * The list of included snippets. If unset, all snippets are included unless defined in
 				 * `exclude`.
+				 *
+				 * @uniqueItems
 				 */
 				include: Array<keyof typeof Scrapbooker.defaults.docusaurus_mdx.snippets>;
 		  };
-}
-
-interface WithSnippets {
-	/**
-	 * Configuration for custom snippets.
-	 */
-	_snippets?: Record<string, SnippetConfig>;
-	/**
-	 * Provides control over which snippets are available to use and/or extend within `_snippets`.
-	 */
-	_snippets_imports?: SnippetsImports;
-	/**
-	 * Extended option used when creating more complex custom snippets.
-	 */
-	_snippets_templates?: Record<string, SnippetConfig>;
-	/**
-	 * Extended option used when creating more complex custom snippets.
-	 */
-	_snippets_definitions?: Record<string, SnippetConfig>;
 }
 
 interface ImageResizeable {
@@ -310,11 +323,15 @@ export interface Editables {
 export interface BlockEditable extends ImageResizeable, TextEditable {
 	/**
 	 * Enables a control to wrap blocks of text in block quotes.
+	 *
+	 * @default true
 	 */
 	blockquote?: boolean;
 	/**
 	 * Enables a control to insert an unordered list, or to convert selected blocks of text into a
 	 * unordered list.
+	 *
+	 * @default true
 	 */
 	bulletedlist?: boolean;
 	/**
@@ -325,37 +342,53 @@ export interface BlockEditable extends ImageResizeable, TextEditable {
 	center?: string;
 	/**
 	 * Enables a control to create an inline code element, containing any selected text.
+	 *
+	 * @default false
 	 */
 	code_inline?: boolean;
 	/**
 	 * Enables a control to insert a code block.
+	 *
+	 * @default false
 	 */
 	code_block?: boolean;
 	/**
 	 * Enables both block and inline code controls: `code_block` and `code_inline`.
+	 *
+	 * @default false
 	 */
 	code?: boolean;
 	/**
 	 * Enables a control to insert a region of raw HTML, including YouTube, Vimeo, Tweets, and other
 	 * media. Embedded content is sanitized to mitigate XSS risks, which includes removing style tags.
 	 * Embeds containing script tags are not loaded in the editor.
+	 *
+	 * @default false
 	 */
 	embed?: boolean;
 	/**
 	 * Enables a drop down menu for structured text. Has options for "p", "h1", "h2", "h3", "h4",
 	 * "h5", "h6". Set as space separated options (e.g. "p h1 h2").
+	 *
+	 * @default p h1 h2 h3 h4 h5 h6
 	 */
 	format?: string;
 	/**
 	 * Enables a control to insert a horizontal rule.
+	 *
+	 * @default false
 	 */
 	horizontalrule?: boolean;
 	/**
 	 * Enables a control to insert an image. The image can be uploaded, existing or an external link.
+	 *
+	 * @default true
 	 */
 	image?: boolean;
 	/**
 	 * Enables a control to increase indentation for numbered and unordered lists.
+	 *
+	 * @default false
 	 */
 	indent?: boolean;
 	/**
@@ -373,10 +406,14 @@ export interface BlockEditable extends ImageResizeable, TextEditable {
 	/**
 	 * Enables a control to insert a numbered list, or to convert selected blocks of text into a
 	 * numbered list.
+	 *
+	 * @default true
 	 */
 	numberedlist?: boolean;
 	/**
 	 * Enables a control to reduce indentation for numbered and unordered lists.
+	 *
+	 * @default false
 	 */
 	outdent?: boolean;
 	/**
@@ -387,6 +424,8 @@ export interface BlockEditable extends ImageResizeable, TextEditable {
 	right?: string;
 	/**
 	 * Enables a control to insert snippets, if any are available.
+	 *
+	 * @default true
 	 */
 	snippet?: boolean;
 	/**
@@ -398,6 +437,8 @@ export interface BlockEditable extends ImageResizeable, TextEditable {
 	/**
 	 * Enables a control to insert a table. Further options for table cells are available in the
 	 * context menu for cells within the editor.
+	 *
+	 * @default false
 	 */
 	table?: boolean;
 }
@@ -411,59 +452,81 @@ interface WithPaths {
 	paths?: Paths;
 }
 
-export interface ImageEditable extends ImageResizeable, WithPaths {}
+export type ImageEditable = ImageResizeable & WithPaths;
 
-export interface LinkEditable extends WithPaths {}
+export type LinkEditable = WithPaths;
 
 export interface TextEditable extends WithPaths {
 	/**
 	 * Enables a control to set selected text to bold.
+	 *
+	 * @default true
 	 */
 	bold?: boolean;
 	/**
 	 * Enables a control to copy formatting from text to other text. Only applies to formatting from
 	 * `bold`, `italic`, `underline`, `strike`, `subscript`, and `superscript`. Does not copy other
 	 * styles or formatting.
+	 *
+	 * @default false
 	 */
 	copyformatting?: boolean;
 	/**
 	 * Enables a control to italicize selected text.
+	 *
+	 * @default true
 	 */
 	italic?: boolean;
 	/**
 	 * Enables a control to create hyperlinks around selected text.
+	 *
+	 * @default true
 	 */
 	link?: boolean;
 	/**
 	 * Enables a control to redo recent edits undone with undo. Redo is always enabled through
 	 * standard OS-specific keyboard shortcuts.
+	 *
+	 * @default false
 	 */
 	redo?: boolean;
 	/**
 	 * Enables the control to remove formatting from text. Applies to formatting from `bold`,
 	 * `italic`, `underline`, `strike`, `subscript`, and `superscript`. Does not remove other styles
 	 * or formatting.
+	 *
+	 * @default true
 	 */
 	removeformat?: boolean;
 	/**
 	 * Enables a control to strike selected text.
+	 *
+	 * @default false
 	 */
 	strike?: boolean;
 	/**
 	 * Enables a control to set selected text to subscript.
+	 *
+	 * @default false
 	 */
 	subscript?: boolean;
 	/**
 	 * Enables a control to set selected text to superscript.
+	 *
+	 * @default false
 	 */
 	superscript?: boolean;
 	/**
 	 * Enables a control to underline selected text.
+	 *
+	 * @default false
 	 */
 	underline?: boolean;
 	/**
 	 * Enables a control to undo recent edits. Undo is always enabled through standard OS-specific
 	 * keyboard shortcuts.
+	 *
+	 * @default false
 	 */
 	undo?: boolean;
 	/**
@@ -511,17 +574,17 @@ export interface Cascade extends ReducedCascade {
 	/**
 	 * Now known as _structures.
 	 *
-	 * @deprecated Use _structures instead.
+	 * @deprecated Use `_structures` instead.
 	 */
 	_array_structures?: Record<string, unknown>;
 	/**
-	 * Now part of _inputs.*.comment.
+	 * Now part of `_inputs.*.comment`.
 	 *
 	 * @deprecated Use _inputs instead.
 	 */
 	_comments?: Record<string, string>;
 	/**
-	 * Now part of _inputs.*.options.
+	 * Now part of `_inputs.*.options`.
 	 *
 	 * @deprecated Use _inputs instead.
 	 */
@@ -558,43 +621,42 @@ export type InputType =
 	| 'choice'
 	| 'multichoice'
 	| 'object'
-	| 'array';
-
-export type EmptyTypeText = 'null' | 'string';
-export type EmptyTypeNumber = 'null' | 'number';
-export type EmptyTypeArray = 'null' | 'array';
-export type EmptyTypeObject = 'null' | 'object';
+	| 'array'
+	| 'auto';
 
 interface WithEmptyTypeText {
 	/**
 	 * Set how an ‘empty’ value will be saved. Does not apply to existing empty values.
 	 */
-	empty_type?: EmptyTypeText;
+	empty_type?: 'null' | 'string';
 }
 
 interface WithEmptyTypeNumber {
 	/**
 	 * Set how an ‘empty’ value will be saved. Does not apply to existing empty values.
 	 */
-	empty_type?: EmptyTypeNumber;
+	empty_type?: 'null' | 'number';
 }
 
 interface WithEmptyTypeObject {
 	/**
 	 * Set how an ‘empty’ value will be saved. Does not apply to existing empty values.
 	 */
-	empty_type?: EmptyTypeObject;
+	empty_type?: 'null' | 'object';
 }
 
 interface WithEmptyTypeArray {
 	/**
 	 * Set how an ‘empty’ value will be saved. Does not apply to existing empty values.
 	 */
-	empty_type?: EmptyTypeArray;
+	empty_type?: 'null' | 'array';
 }
 
 export interface BaseInput {
-	type?: InputType | undefined | null;
+	/**
+	 * Sets an input type, which controls how this input appears and behaves.
+	 */
+	type?: InputType;
 	/**
 	 * Options that are specific to this `type` of input.
 	 */
@@ -647,8 +709,6 @@ export interface BaseInput {
 	/**
 	 * Specifies whether or not this input configuration should be merged with any matching, less
 	 * specific configuration.
-	 *
-	 * @default true
 	 */
 	cascade?: boolean;
 }
@@ -684,6 +744,8 @@ export interface TextInput extends BaseInput {
 export interface TextareaInputOptions extends TextInputOptions {
 	/**
 	 * Shows a character counter below the input if enabled.
+	 *
+	 * @default false
 	 */
 	show_count?: boolean;
 }
@@ -773,9 +835,25 @@ export interface NumberInput extends BaseInput {
 }
 
 export interface RangeInputOptions extends NumberInputOptions {
-	min: number;
-	max: number;
-	step: number;
+	/**
+	 * The lowest value in the range of permitted values.
+	 *
+	 * @default 0
+	 */
+	min?: number;
+	/**
+	 * The greatest value in the range of permitted values.
+	 *
+	 * @default 10
+	 */
+	max?: number;
+	/**
+	 * A number that specifies the granularity that the value must adhere to, or the special value
+	 * any, which allows any decimal value between `max` and `min`.
+	 *
+	 * @default 1
+	 */
+	step?: number;
 }
 
 export interface RangeInput extends BaseInput {
@@ -799,10 +877,14 @@ export interface UrlInput extends BaseInput {
 export interface RichTextInputOptions extends WithEmptyTypeText, ImageResizeable, BlockEditable {
 	/**
 	 * Shows or hides the resize handler to vertically resize the input.
+	 *
+	 * @default false
 	 */
 	allow_resize?: boolean;
 	/**
 	 * Defines the initial height of this input in pixels (px).
+	 *
+	 * @default 320
 	 */
 	initial_height?: number;
 }
@@ -819,6 +901,8 @@ export interface DateInputOptions extends WithEmptyTypeText {
 	/**
 	 * Specifies the time zone that dates are displayed and edited in. Also changes the suffix the
 	 * date is persisted to the file with. Defaults to the global `timezone`.
+	 *
+	 * @default Etc/UTC
 	 */
 	timezone?: Timezone;
 }
@@ -931,16 +1015,36 @@ export interface MultichoiceInput extends BaseInput {
 }
 
 export interface ObjectInputGroup {
+	/**
+	 * The main text for the group shown when collapsed or expanded.
+	 */
 	heading?: string;
+	/**
+	 * Changes the subtext below the `heading`. Has no default. Supports a limited set of Markdown:
+	 * links, bold, italic, subscript, superscript, and inline code elements are allowed.
+	 */
 	comment?: string;
+	/**
+	 * Controls if this group is collapsed or expanded when first viewed.
+	 *
+	 * @default false
+	 */
 	collapsed?: boolean;
+	/**
+	 * The keys of each input in this group.
+	 */
 	inputs?: string[];
+	/**
+	 * Provides a custom link for documentation for editors shown above the collection file list.
+	 */
 	documentation?: Documentation;
 }
 
 export interface ObjectInputOptions extends WithEmptyTypeObject, WithPreview {
 	/**
 	 * Changes the appearance and behavior of the input.
+	 *
+	 * @default object
 	 */
 	subtype?: 'object' | 'mutable' | 'tabbed';
 	/**
@@ -971,19 +1075,20 @@ export interface ObjectInputOptions extends WithEmptyTypeObject, WithPreview {
 	 * itself.
 	 */
 	structures?: string | Structure;
-
 	/**
 	 * Allows you to group the inputs inside this object together without changing the data structure.
 	 */
 	groups?: ObjectInputGroup[];
-
 	/**
 	 * Controls which order input groups and ungrouped inputs appear in.
+	 *
+	 * @default false
 	 */
 	place_groups_below?: boolean;
-
 	/**
 	 * Controls whether or not labels on mutable object entries are formatted.
+	 *
+	 * @default false
 	 */
 	allow_label_formatting?: boolean;
 	/**
@@ -1017,8 +1122,7 @@ export interface ArrayInput extends BaseInput {
 }
 
 export interface UnknownInput extends BaseInput {
-	type?: undefined | null;
-
+	type?: 'auto' | undefined;
 	/**
 	 * Options that are specific to this `type` of input.
 	 */
@@ -1054,7 +1158,7 @@ export interface Paths {
 	/**
 	 * Default location of newly uploaded site files.
 	 *
-	 * @default 'uploads'
+	 * @default uploads
 	 */
 	uploads?: string;
 	/**
@@ -1063,8 +1167,6 @@ export interface Paths {
 	uploads_filename?: string;
 	/**
 	 * Default location of newly uploaded DAM files.
-	 *
-	 * @default ''
 	 */
 	dam_uploads?: string;
 	/**
@@ -1074,8 +1176,6 @@ export interface Paths {
 	/**
 	 * Location of statically copied assets for DAM files. This prefix will be removed from the _DAM
 	 * Uploads_ path when CloudCannon outputs the URL of an asset.
-	 *
-	 * @default ''
 	 */
 	dam_static?: string;
 	/**
@@ -1096,6 +1196,8 @@ export interface Documentation {
 	text?: string;
 	/**
 	 * The icon displayed next to the link.
+	 *
+	 * @default auto_stories
 	 */
 	icon?: Icon;
 }
@@ -1151,6 +1253,8 @@ export interface PreviewGallery
 		WithIconColorPreview {
 	/**
 	 * Controls how the gallery image is positioned within the gallery.
+	 *
+	 * @default padded
 	 */
 	fit?: 'padded' | 'cover' | 'contain' | 'cover-top';
 }
@@ -1177,50 +1281,56 @@ export interface Preview
 	gallery?: PreviewGallery;
 }
 
-export interface AddOption {
-	/**
-	 * The text displayed for the menu item. Defaults to using name from the matching schema if set.
-	 */
-	name?: string;
-	/**
-	 * The icon next to the text in the menu item. Defaults to using icon from the matching schema if
-	 * set, then falls back to add.
-	 */
-	icon?: Icon;
-	/**
-	 * The editor to open the new file in. Defaults to an appropriate editor for new file's type if
-	 * possible. If no default editor can be calculated, or the editor does not support the new file
-	 * type, a warning is shown in place of the editor.
-	 */
-	editor?: EditorKey;
-	/**
-	 * Enforces a path for new files to be created in, regardless of path the user is currently
-	 * navigated to within the collection file list. Relative to the path of the collection defined in
-	 * collection. Defaults to the path within the collection the user is currently navigated to.
-	 */
-	base_path?: string;
-	/**
-	 * Sets which collection this action is creating a file in. This is used when matching the value
-	 * for schema. Defaults to the containing collection these `add_options` are configured in.
-	 */
-	collection?: string;
-	/**
-	 * The schema that new files are created from with this action. This schema is not restricted to
-	 * the containing collection, and is instead relative to the collection specified with collection.
-	 * Defaults to default if schemas are configured for the collection.
-	 */
-	schema?: string;
-	/**
-	 * The path to a file used to populate the initial contents of a new file if no schemas are
-	 * configured. We recommend using schemas, and this is ignored if a schema is available.
-	 */
-	default_content_file?: string;
-	/**
-	 * The link that opens when the option is clicked. Can either be an external or internal link. If
-	 * internal, the link is relative to the current site.
-	 */
-	href?: string;
-}
+export type AddOption =
+	| {
+			/**
+			 * The text displayed for the menu item. Defaults to using name from the matching schema if
+			 * set.
+			 */
+			name?: string;
+			/**
+			 * The icon next to the text in the menu item. Defaults to using icon from the matching schema
+			 * if set, then falls back to add.
+			 */
+			icon?: Icon;
+			/**
+			 * The editor to open the new file in. Defaults to an appropriate editor for new file's type
+			 * if possible. If no default editor can be calculated, or the editor does not support the new
+			 * file type, a warning is shown in place of the editor.
+			 */
+			editor?: EditorKey;
+			/**
+			 * Enforces a path for new files to be created in, regardless of path the user is currently
+			 * navigated to within the collection file list. Relative to the path of the collection
+			 * defined in collection. Defaults to the path within the collection the user is currently
+			 * navigated to.
+			 */
+			base_path?: string;
+			/**
+			 * Sets which collection this action is creating a file in. This is used when matching the
+			 * value for schema. Defaults to the containing collection these `add_options` are configured
+			 * in.
+			 */
+			collection?: string;
+			/**
+			 * The schema that new files are created from with this action. This schema is not restricted
+			 * to the containing collection, and is instead relative to the collection specified with
+			 * collection. Defaults to default if schemas are configured for the collection.
+			 */
+			schema?: string;
+			/**
+			 * The path to a file used to populate the initial contents of a new file if no schemas are
+			 * configured. We recommend using schemas, and this is ignored if a schema is available.
+			 */
+			default_content_file?: string;
+	  }
+	| {
+			/**
+			 * The link that opens when the option is clicked. Can either be an external or internal link.
+			 * If internal, the link is relative to the current site.
+			 */
+			href: string;
+	  };
 
 interface WithPreview {
 	/**
@@ -1271,6 +1381,8 @@ export interface Schema extends Cascade, WithPreview, SchemaBase {
 	/**
 	 * Displayed in the add menu when creating new files; also used as the icon for collection files
 	 * if no other preview is found. Defaults to notes.
+	 *
+	 * @default notes
 	 */
 	icon?: Icon;
 	/**
@@ -1326,9 +1438,9 @@ export interface Create extends ReducedCascade {
 
 export interface CollectionConfig extends Cascade, WithPreview {
 	/**
-	 * The top-most folder where the files in this collection are stored. It is relative to source.
+	 * The top-most folder where the files in this collection are stored. It is relative to `source`.
 	 */
-	path?: string;
+	path: string;
 	/**
 	 * Glob pattern(s) to include or exclude files from this collection. It is relative to `path`.
 	 */
@@ -1359,6 +1471,8 @@ export interface CollectionConfig extends Cascade, WithPreview {
 	description?: string;
 	/**
 	 * Sets an icon to use alongside references to this collection.
+	 *
+	 * @default notes
 	 */
 	icon?: Icon;
 	/**
@@ -1454,6 +1568,8 @@ export interface Structure extends SchemaBase {
 	/**
 	 * Defines whether options are shown to your editors in a select menu (select, default) or a modal
 	 * pop up window (modal) when adding a new item.
+	 *
+	 * @default select
 	 */
 	style?: 'select' | 'modal';
 }
@@ -1469,6 +1585,8 @@ export interface StructureValue extends WithPreview, WithPickerPreview, SchemaBa
 	 * of a value within a structure cannot be inferred based on its id_key or matching fields, then
 	 * it will fall back to this item. If multiple items have default set to true, only the first item
 	 * will be used.
+	 *
+	 * @default false
 	 */
 	default?: boolean;
 	/**
@@ -1495,10 +1613,14 @@ export interface StructureValue extends WithPreview, WithPickerPreview, SchemaBa
 	groups?: ObjectInputGroup[];
 	/**
 	 * Controls which order input groups and ungrouped inputs appear in.
+	 *
+	 * @default false
 	 */
 	place_groups_below?: boolean;
 	/**
 	 * Show nested objects as tabs. Requires all top-level keys to be objects.
+	 *
+	 * @default false
 	 */
 	tabbed?: boolean;
 	/**
@@ -1565,7 +1687,7 @@ export interface CommitTemplate {
 	 */
 	label?: string;
 	/**
-	 * Set the string for the commit template. This will only be used if template_path is not set.
+	 * Set the string for the commit template. This will only be used if `template_path` is not set.
 	 */
 	template_string?: string;
 	/**
@@ -1583,77 +1705,108 @@ export interface CommitTemplate {
 	extra_data?: Record<string, string>;
 }
 
-export type SsgKey =
-	| 'hugo'
-	| 'jekyll'
-	| 'eleventy'
-	| 'astro'
-	| 'lume'
-	| 'mkdocs'
-	| 'nextjs'
-	| 'sveltekit'
-	| 'bridgetown'
-	| 'docusaurus'
-	| 'gatsby'
-	| 'hexo'
-	| 'nuxtjs'
-	| 'sphinx'
-	| 'static'
-	| 'legacy'
-	| 'other';
-
 /**
  * The base format for the configuration file.
  */
-export interface Configuration extends Cascade, WithSnippets, WithPaths {
+export interface Configuration extends Cascade, WithPaths {
 	/**
-	 * Base path to your site source files, relative to the root folder.
+	 * This key defines the base path for your source files, relative to the root folder of your
+	 * repository. Unless you use a nested folder as the source for your Site you can leave this key
+	 * empty or set it to `/`.
+	 *
+	 * By default, this key is empty.
+	 *
+	 * https://cloudcannon.com/documentation/articles/configuration-file-reference/#source
 	 */
 	source?: string;
 	/**
 	 * Definitions for your collections, which are the sets of content files for your site grouped by
 	 * folder. Entries are keyed by a chosen collection key, and contain configuration specific to
 	 * that collection.
+	 *
+	 * https://cloudcannon.com/documentation/articles/configuration-file-reference/#collections_config
 	 */
 	collections_config?: Record<string, CollectionConfig>;
 	/**
 	 * Defines which collections are shown in the site navigation and how those collections are
 	 * grouped.
+	 *
+	 * https://cloudcannon.com/documentation/articles/configuration-file-reference/#collections_groups
 	 */
 	collection_groups?: CollectionGroup[];
 	/**
 	 * The subpath where your output files are hosted.
+	 *
+	 * https://cloudcannon.com/documentation/articles/configuration-file-reference/#base_url
 	 */
 	base_url?: string;
 	/**
 	 * Controls what data sets are available to populate select and multiselect inputs.
+	 *
+	 * https://cloudcannon.com/documentation/articles/configuration-file-reference/#data_config
 	 */
 	data_config?: Record<string, DataConfigEntry>;
 	/**
 	 * Provides scope to configure at a file level, without adding configuration to files.
+	 *
+	 * https://cloudcannon.com/documentation/articles/configuration-file-reference/#file_config
 	 */
-	file_config?: Record<string, FileConfigEntry>;
+	file_config?: FileConfigEntry[];
 	/**
 	 * Contains settings for the default editor actions on your site.
+	 *
+	 * https://cloudcannon.com/documentation/articles/configuration-file-reference/#editor.default_path
 	 */
 	editor?: Editor;
 	/**
 	 * Settings for the behavior and appearance of the Source Editor.
+	 *
+	 * https://cloudcannon.com/documentation/articles/configuration-file-reference/#source_editor
 	 */
 	source_editor?: SourceEditor;
 	/**
 	 * Templates for commit messages when saving changes.
+	 *
+	 * https://cloudcannon.com/documentation/articles/configuration-file-reference/#commit_templates
 	 */
 	commit_templates?: CommitTemplate[];
 	/**
 	 * Contains settings for various Markdown engines.
+	 *
+	 * https://cloudcannon.com/documentation/articles/configuration-file-reference/#markdown
 	 */
 	markdown?: MarkdownSettings;
 	/**
 	 * Specifies the time zone that dates are displayed and edited in. Also changes the suffix the
 	 * date is persisted to the file with.
 	 *
+	 * https://cloudcannon.com/documentation/articles/configuration-file-reference/#timezone
+	 *
 	 * @default Etc/UTC
 	 */
 	timezone?: Timezone;
+	/**
+	 * Configuration for custom snippets.
+	 *
+	 * https://cloudcannon.com/documentation/articles/configuration-file-reference/#_snippets
+	 */
+	_snippets?: Record<string, SnippetConfig>;
+	/**
+	 * Provides control over which snippets are available to use and/or extend within `_snippets`.
+	 *
+	 * https://cloudcannon.com/documentation/articles/configuration-file-reference/#_snippets_imports
+	 */
+	_snippets_imports?: SnippetsImports;
+	/**
+	 * Extended option used when creating more complex custom snippets.
+	 *
+	 * https://cloudcannon.com/documentation/articles/configuration-file-reference/#_snippets_templates
+	 */
+	_snippets_templates?: Record<string, SnippetConfig>;
+	/**
+	 * Extended option used when creating more complex custom snippets.
+	 *
+	 * https://cloudcannon.com/documentation/articles/configuration-file-reference/#_snippets_definitions
+	 */
+	_snippets_definitions?: Record<string, SnippetConfig>;
 }
