@@ -49,6 +49,18 @@ collection_groups:
       - data
 
 _inputs:
+  image:
+    type: image
+    options:
+      accepts_mime_types: image/png,image/jpeg
+      mime_type: image/webp
+  images[*]:
+    type: image
+    options:
+      accepts_mime_types:
+        - image/png
+        - image/jpeg
+      mime_type: image/png
   range:
     type: range
     options:

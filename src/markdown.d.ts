@@ -14,6 +14,11 @@ export type MarkdownAttributeElementOptions = {
 };
 
 export interface MarkdownSettings {
+	/**
+	 * The flavor of Markdown to use to convert between HTML and Markdown.
+	 *
+	 * @default kramdown
+	 */
 	engine: 'commonmark' | 'kramdown';
 	options: {
 		/**
@@ -21,11 +26,11 @@ export interface MarkdownSettings {
 		 */
 		html?: boolean;
 		/**
-		 * Use '/' to close single tags (<br />).
+		 * Use `/` to close single tags (e.g. `<br />`).
 		 */
 		xhtml?: boolean;
 		/**
-		 * Convert '\n' in paragraphs into <br>.
+		 * Convert `\n` in paragraphs into `<br>`.
 		 */
 		breaks?: boolean;
 		/**
@@ -33,13 +38,13 @@ export interface MarkdownSettings {
 		 */
 		linkify?: boolean;
 		/**
-		 * Enable some language-neutral replacement + quotes beautification.
+		 * Enable some language-neutral replacement, as well as quotes beautification.
 		 */
 		typographer?: boolean;
 		/**
 		 * Double + single quotes replacement pairs, when typographer enabled and smartquotes on. For
-		 * example, you can use '«»„“' for Russian, '„“‚‘' for German, and ['«\xA0', '\xA0»', '‹\xA0',
-		 * '\xA0›'] for French (including nbsp).
+		 * example, you can use `'«»„“'` for Russian, `'„“‚‘'` for German, and `['«\xA0', '\xA0»',
+		 * '‹\xA0', '\xA0›']` for French (including `nbsp`).
 		 */
 		quotes?: string;
 		/**
@@ -71,19 +76,19 @@ export interface MarkdownSettings {
 		 */
 		table?: boolean;
 		/**
-		 * Output strikes in wrapped in double tildes (e.g. ~~strike~~)
+		 * Output strikes in wrapped in double tildes (e.g. `~~strike~~`).
 		 */
 		strikethrough?: boolean;
 		/**
-		 * Output subscript in wrapped in tildes (e.g. ~sub~)
+		 * Output subscript in wrapped in tildes (e.g. `~sub~`).
 		 */
 		subscript?: boolean;
 		/**
-		 * Output superscript in wrapped in carets (e.g. ^super^)
+		 * Output superscript in wrapped in carets (e.g. `^super^`).
 		 */
 		superscript?: boolean;
 		/**
-		 * Generate IDs for headings
+		 * Generate IDs for headings.
 		 */
 		heading_ids?: boolean;
 		/**
@@ -91,7 +96,7 @@ export interface MarkdownSettings {
 		 */
 		attributes?: boolean;
 		/**
-		 * Define positioning behaviour of Markdown attributes for different elements.
+		 * Define positioning behavior of Markdown attributes for different elements.
 		 */
 		attribute_elements?: MarkdownAttributeElementOptions;
 	};
