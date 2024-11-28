@@ -149,7 +149,7 @@ interface ParsedCollectionItem {
 	/**
 	 * The collection key this is assigned to. Matches keys in `collections_config`.
 	 */
-	collection: string;
+	collection?: string;
 	/**
 	 * The URL this file is served at once built.
 	 */

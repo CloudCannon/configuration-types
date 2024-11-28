@@ -1,11 +1,11 @@
 import type Scrapbooker from '@cloudcannon/snippet-types';
 
 import type { Icon } from './icon';
-import type { Timezone } from './timezone';
-import type { MimeType } from './mime-type';
-import type { Theme } from './theme';
-import type { Syntax } from './syntax';
 import type { MarkdownSettings } from './markdown';
+import type { MimeType } from './mime-type';
+import type { Syntax } from './syntax';
+import type { Theme } from './theme';
+import type { Timezone } from './timezone';
 
 export type InstanceValue = 'UUID' | 'NOW';
 export type EditorKey = 'visual' | 'content' | 'data';
@@ -26,6 +26,10 @@ export interface SnippetConfig extends ReducedCascade, WithPreview, WithPickerPr
 	 * this snippet as a block-level element in the content editor.
 	 */
 	inline?: boolean;
+	/**
+	 * Controls how selected items are rendered. Defaults to 'card', or 'inline' if `inline` is true.
+	 */
+	view?: 'card' | 'inline' | 'gallery';
 	/**
 	 * Whether this snippet treats whitespace as-is or not.
 	 */
@@ -571,24 +575,6 @@ export interface Cascade extends ReducedCascade {
 	 * Contains input options for Editable Regions and the Content Editor.
 	 */
 	_editables?: Editables;
-	/**
-	 * Now known as _structures.
-	 *
-	 * @deprecated Use `_structures` instead.
-	 */
-	_array_structures?: Record<string, unknown>;
-	/**
-	 * Now part of `_inputs.*.comment`.
-	 *
-	 * @deprecated Use _inputs instead.
-	 */
-	_comments?: Record<string, string>;
-	/**
-	 * Now part of `_inputs.*.options`.
-	 *
-	 * @deprecated Use _inputs instead.
-	 */
-	_options?: Record<string, Record<string, unknown>>;
 }
 
 export type InputType =
@@ -910,16 +896,18 @@ export interface DateInputOptions extends WithEmptyTypeText {
 export interface DateInput extends BaseInput {
 	type: 'date' | 'datetime';
 	/**
-	 * Options that are specific to this `type` of input.
+	 * Options that are specific to Date inputs.
 	 */
 	options?: DateInputOptions;
 }
 
 export interface FileInputOptions extends WithEmptyTypeText, WithPaths {
 	/**
-	 * Restricts which file types are available to select or upload to this input.
+	 * Restricts which file types are available to select or upload to this input. Accepted format is
+	 * an array or comma-separated string of MIME types. The special value '*' means any type is
+	 * accepted.
 	 */
-	accepts_mime_types?: MimeType[] | '*';
+	accepts_mime_types?: MimeType[] | string;
 	/**
 	 * If you have one or more DAMs connected to your site, you can use this key to list which asset
 	 * sources can be uploaded to and selected from.
@@ -930,17 +918,17 @@ export interface FileInputOptions extends WithEmptyTypeText, WithPaths {
 export interface FileInput extends BaseInput {
 	type: 'file' | 'document';
 	/**
-	 * Options that are specific to this `type` of input.
+	 * Options that are specific to File inputs.
 	 */
 	options?: FileInputOptions;
 }
 
-export interface ImageInputOptions extends FileInputOptions, ImageResizeable {}
+export type ImageInputOptions = FileInputOptions & ImageResizeable;
 
 export interface ImageInput extends BaseInput {
 	type: 'image';
 	/**
-	 * Options that are specific to this `type` of input.
+	 * Options that are specific to Image inputs.
 	 */
 	options?: ImageInputOptions;
 }
@@ -1574,7 +1562,7 @@ export interface Structure extends SchemaBase {
 	style?: 'select' | 'modal';
 }
 
-export interface StructureValue extends WithPreview, WithPickerPreview, SchemaBase {
+export interface StructureValue extends WithPreview, WithPickerPreview, SchemaBase, Cascade {
 	/**
 	 * A unique reference value used when referring to this structure value from the Object input's
 	 * assigned_structures option.
@@ -1627,6 +1615,17 @@ export interface StructureValue extends WithPreview, WithPickerPreview, SchemaBa
 	 * The actual value used when items are added after selection.
 	 */
 	value: unknown;
+	/**
+	 * Provides short descriptive text for editors shown in the Data Editor for expanded values
+	 * matching this Structure value. Has no default. Supports a limited set of Markdown: links, bold,
+	 * italic, subscript, superscript, and inline code elements are allowed.
+	 */
+	comment?: string;
+	/**
+	 * Provides a custom link for documentation for editors shown in the Data Editor for expanded
+	 * values matching this Structure value. Has no default.
+	 */
+	documentation?: Documentation;
 }
 
 export type SelectValues =
