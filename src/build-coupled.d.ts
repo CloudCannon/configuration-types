@@ -88,12 +88,18 @@ export interface ReaderConfiguration extends Configuration {
 	output?: string;
 }
 
-export interface BuildCoupledCollectionConfig extends Omit<CollectionConfig, 'url'>, Filterable {
+export interface BuildCoupledCollectionConfig
+	extends Omit<CollectionConfig, 'url' | 'path'>,
+		Filterable {
 	/**
 	 * Overrides the default singular input key of the collection. This is used for naming conventions
 	 * for select and multiselect inputs.
 	 */
 	singular_key?: string;
+	/**
+	 * The top-most folder where the files in this collection are stored. It is relative to `source`.
+	 */
+	path?: string;
 }
 
 interface BuildCoupledConfiguration

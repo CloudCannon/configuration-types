@@ -1269,56 +1269,63 @@ export interface Preview
 	gallery?: PreviewGallery;
 }
 
-export type AddOption =
-	| {
-			/**
-			 * The text displayed for the menu item. Defaults to using name from the matching schema if
-			 * set.
-			 */
-			name?: string;
-			/**
-			 * The icon next to the text in the menu item. Defaults to using icon from the matching schema
-			 * if set, then falls back to add.
-			 */
-			icon?: Icon;
-			/**
-			 * The editor to open the new file in. Defaults to an appropriate editor for new file's type
-			 * if possible. If no default editor can be calculated, or the editor does not support the new
-			 * file type, a warning is shown in place of the editor.
-			 */
-			editor?: EditorKey;
-			/**
-			 * Enforces a path for new files to be created in, regardless of path the user is currently
-			 * navigated to within the collection file list. Relative to the path of the collection
-			 * defined in collection. Defaults to the path within the collection the user is currently
-			 * navigated to.
-			 */
-			base_path?: string;
-			/**
-			 * Sets which collection this action is creating a file in. This is used when matching the
-			 * value for schema. Defaults to the containing collection these `add_options` are configured
-			 * in.
-			 */
-			collection?: string;
-			/**
-			 * The schema that new files are created from with this action. This schema is not restricted
-			 * to the containing collection, and is instead relative to the collection specified with
-			 * collection. Defaults to default if schemas are configured for the collection.
-			 */
-			schema?: string;
-			/**
-			 * The path to a file used to populate the initial contents of a new file if no schemas are
-			 * configured. We recommend using schemas, and this is ignored if a schema is available.
-			 */
-			default_content_file?: string;
-	  }
-	| {
-			/**
-			 * The link that opens when the option is clicked. Can either be an external or internal link.
-			 * If internal, the link is relative to the current site.
-			 */
-			href: string;
-	  };
+export type HrefAddOption = {
+	/**
+	 * The text displayed for the menu item.
+	 */
+	name?: string;
+	/**
+	 * The icon next to the text in the menu item.
+	 *
+	 * @default add
+	 */
+	icon?: Icon;
+	/**
+	 * The link that opens when the option is clicked. Can either be an external or internal link. If
+	 * internal, the link is relative to the current site.
+	 */
+	href: string;
+};
+
+export type AddOption = {
+	/**
+	 * The text displayed for the menu item. Defaults to using name from the matching schema if set.
+	 */
+	name?: string;
+	/**
+	 * The icon next to the text in the menu item. Defaults to using icon from the matching schema if
+	 * set, then falls back to add.
+	 */
+	icon?: Icon;
+	/**
+	 * The editor to open the new file in. Defaults to an appropriate editor for new file's type if
+	 * possible. If no default editor can be calculated, or the editor does not support the new file
+	 * type, a warning is shown in place of the editor.
+	 */
+	editor?: EditorKey;
+	/**
+	 * Enforces a path for new files to be created in, regardless of path the user is currently
+	 * navigated to within the collection file list. Relative to the path of the collection defined in
+	 * collection. Defaults to the path within the collection the user is currently navigated to.
+	 */
+	base_path?: string;
+	/**
+	 * Sets which collection this action is creating a file in. This is used when matching the value
+	 * for schema. Defaults to the containing collection these `add_options` are configured in.
+	 */
+	collection?: string;
+	/**
+	 * The schema that new files are created from with this action. This schema is not restricted to
+	 * the containing collection, and is instead relative to the collection specified with collection.
+	 * Defaults to default if schemas are configured for the collection.
+	 */
+	schema?: string;
+	/**
+	 * The path to a file used to populate the initial contents of a new file if no schemas are
+	 * configured. We recommend using schemas, and this is ignored if a schema is available.
+	 */
+	default_content_file?: string;
+};
 
 interface WithPreview {
 	/**
@@ -1488,7 +1495,7 @@ export interface CollectionConfig extends Cascade, WithPreview {
 	 * automatically generated list from _Schemas_, or uses the first file in the collection if no
 	 * schemas are configured.
 	 */
-	add_options?: AddOption[];
+	add_options?: (AddOption | HrefAddOption)[];
 	/**
 	 * The create path definition to control where new files are saved to inside this collection.
 	 * Defaults to [relative_base_path]/{title|slugify}.md.
