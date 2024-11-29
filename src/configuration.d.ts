@@ -853,7 +853,7 @@ export interface RangeInput extends BaseInput {
 export interface UrlInputOptions extends WithEmptyTypeText, WithPaths {}
 
 export interface UrlInput extends BaseInput {
-	type: 'range';
+	type: 'url';
 	/**
 	 * Options that are specific to this `type` of input.
 	 */
@@ -899,6 +899,14 @@ export interface DateInput extends BaseInput {
 	 * Options that are specific to Date inputs.
 	 */
 	options?: DateInputOptions;
+}
+
+export interface TimeInput extends BaseInput {
+	type: 'time';
+	/**
+	 * Options that are specific to Time inputs.
+	 */
+	options?: WithEmptyTypeText;
 }
 
 export interface FileInputOptions extends WithEmptyTypeText, WithPaths {
