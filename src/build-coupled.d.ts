@@ -103,9 +103,10 @@ export interface BuildCoupledCollectionConfig
 }
 
 interface BuildCoupledConfiguration
-	extends Omit<Configuration, 'data_config'>,
+	extends Omit<Configuration, 'data_config' | 'collections_config'>,
 		WithCollectionsConfigOverride {
 	paths?: BuildCoupledPaths;
+	collections_config?: BuildCoupledCollectionConfig;
 }
 
 /**
