@@ -796,6 +796,10 @@ export interface ColorInput extends BaseInput {
 	options?: ColorInputOptions;
 }
 
+export interface BooleanInput extends Omit<BaseInput, 'options'> {
+	type: 'checkbox' | 'switch';
+}
+
 export interface NumberInputOptions extends WithEmptyTypeNumber {
 	/**
 	 * The lowest value in the range of permitted values.
@@ -1119,10 +1123,6 @@ export interface ArrayInput extends BaseInput {
 
 export interface UnknownInput extends BaseInput {
 	type?: 'auto' | undefined;
-	/**
-	 * Options that are specific to this `type` of input.
-	 */
-	options?: WithEmptyTypeText;
 }
 
 export type Input =
@@ -1131,11 +1131,13 @@ export type Input =
 	| TextInput
 	| CodeInput
 	| ColorInput
+	| BooleanInput
 	| NumberInput
 	| RangeInput
 	| UrlInput
 	| RichTextInput
 	| DateInput
+	| TimeInput
 	| FileInput
 	| ImageInput
 	| SelectInput
