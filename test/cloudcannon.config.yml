@@ -9,6 +9,8 @@ collections_config:
     icon: feed
     disable_add_folder: true
     path: content
+    create:
+      path: '{title|slugify}.md'
     schemas:
       default:
         path: schemas/page.html
@@ -32,6 +34,8 @@ collections_config:
     disable_url: true
     path: data
     icon: settings
+    documentation:
+      url: https://example.com
     disable_add: true
     disable_add_folder: true
     _enabled_editors:
@@ -67,6 +71,14 @@ _inputs:
       max: 1
       min: 2
       step: 5
+  quote:
+    type: object
+    options:
+      structures:
+        values:
+          - value:
+              text:
+              icon:
   content:
     type: markdown
   icon:

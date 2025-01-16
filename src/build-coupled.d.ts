@@ -1,4 +1,5 @@
-import type { CollectionConfig, Configuration, DataConfigEntry, Paths } from './configuration';
+import type { CollectionConfig, Configuration, DataConfigEntry } from './configuration';
+import type { Paths } from './paths';
 
 export interface BuildCoupledPaths extends Paths {
 	/**
@@ -72,14 +73,38 @@ export interface ReaderCollectionConfig extends CollectionConfig, Parseable, Fil
 	 * for select and multiselect inputs.
 	 */
 	singular_key?: string;
+	/**
+	 * Specifies whether this collection's source files build to output files. Defaults to false.
+	 */
+	output?: boolean;
 }
 
 /**
  * The configuration format for build-coupled non-Jekyll/Hugo/Eleventy sites.
  */
-export interface ReaderConfiguration extends Configuration {
+export interface ReaderConfiguration extends Omit<Configuration, 'version'> {
+	/**
+	 * Controls which schema this file is validated against. Defaults to the latest schema.
+	 */
+	version: 'legacy-reader';
+	/**
+	 * Paths to where new asset files are uploaded to. They also set the default path when choosing
+	 * existing images, and linking to existing files. Each path is relative to global `source`.
+	 */
 	paths?: BuildCoupledPaths;
+	/**
+	 * Controls what data sets are available to populate select and multiselect inputs.
+	 *
+	 * https://cloudcannon.com/documentation/articles/configuration-file-reference/#data_config
+	 */
 	data_config?: Record<string, DataConfigEntry & Parseable>;
+	/**
+	 * Definitions for your collections, which are the sets of content files for your site grouped by
+	 * folder. Entries are keyed by a chosen collection key, and contain configuration specific to
+	 * that collection.
+	 *
+	 * https://cloudcannon.com/documentation/articles/configuration-file-reference/#collections_config
+	 */
 	collections_config?: Record<string, ReaderCollectionConfig>;
 	/**
 	 * Generates the integration file in another folder. Not applicable to Jekyll, Hugo, and Eleventy.
@@ -89,7 +114,7 @@ export interface ReaderConfiguration extends Configuration {
 }
 
 export interface BuildCoupledCollectionConfig
-	extends Omit<CollectionConfig, 'url' | 'path'>,
+	extends Omit<CollectionConfig, 'url' | 'path' | 'disable_url'>,
 		Filterable {
 	/**
 	 * Overrides the default singular input key of the collection. This is used for naming conventions
@@ -100,13 +125,34 @@ export interface BuildCoupledCollectionConfig
 	 * The top-most folder where the files in this collection are stored. It is relative to `source`.
 	 */
 	path?: string;
+	/**
+	 * Specifies whether this collection's source files build to output files. Defaults to false.
+	 */
+	output?: boolean;
 }
 
 interface BuildCoupledConfiguration
-	extends Omit<Configuration, 'data_config' | 'collections_config'>,
+	extends Omit<Configuration, 'data_config' | 'collections_config' | 'version'>,
 		WithCollectionsConfigOverride {
+	/**
+	 * Paths to where new asset files are uploaded to. They also set the default path when choosing
+	 * existing images, and linking to existing files. Each path is relative to global `source`.
+	 */
 	paths?: BuildCoupledPaths;
+	/**
+	 * Definitions for your collections, which are the sets of content files for your site grouped by
+	 * folder. Entries are keyed by a chosen collection key, and contain configuration specific to
+	 * that collection.
+	 *
+	 * https://cloudcannon.com/documentation/articles/configuration-file-reference/#collections_config
+	 */
 	collections_config?: BuildCoupledCollectionConfig;
+	/**
+	 * Controls what data sets are available to populate select and multiselect inputs.
+	 *
+	 * https://cloudcannon.com/documentation/articles/configuration-file-reference/#data_config
+	 */
+	data_config?: Record<string, boolean>;
 }
 
 /**
@@ -124,22 +170,66 @@ export interface HugoCollectionConfig extends BuildCoupledCollectionConfig {
  * The configuration format for build-coupled Hugo sites.
  */
 export interface HugoConfiguration extends BuildCoupledConfiguration {
+	/**
+	 * Controls which schema this file is validated against. Defaults to the latest schema.
+	 */
+	version: 'legacy-hugo';
+	/**
+	 * Definitions for your collections, which are the sets of content files for your site grouped by
+	 * folder. Entries are keyed by a chosen collection key, and contain configuration specific to
+	 * that collection.
+	 *
+	 * https://cloudcannon.com/documentation/articles/configuration-file-reference/#collections_config
+	 */
 	collections_config?: Record<string, HugoCollectionConfig>;
-	data_config?: Record<string, boolean>;
 }
 
 /**
  * The configuration format for build-coupled Jekyll sites.
  */
 export interface JekyllConfiguration extends BuildCoupledConfiguration {
+	/**
+	 * Controls which schema this file is validated against. Defaults to the latest schema.
+	 */
+	version: 'legacy-jekyll';
+	/**
+	 * Definitions for your collections, which are the sets of content files for your site grouped by
+	 * folder. Entries are keyed by a chosen collection key, and contain configuration specific to
+	 * that collection.
+	 *
+	 * https://cloudcannon.com/documentation/articles/configuration-file-reference/#collections_config
+	 */
 	collections_config?: Record<string, BuildCoupledCollectionConfig>;
-	data_config?: Record<string, boolean>;
 }
 
 /**
  * The configuration format for build-coupled Eleventy sites.
  */
-export type EleventyConfiguration = JekyllConfiguration;
+export interface EleventyConfiguration extends BuildCoupledConfiguration {
+	/**
+	 * Controls which schema this file is validated against. Defaults to the latest schema.
+	 */
+	version: 'legacy-eleventy';
+	/**
+	 * Definitions for your collections, which are the sets of content files for your site grouped by
+	 * folder. Entries are keyed by a chosen collection key, and contain configuration specific to
+	 * that collection.
+	 *
+	 * https://cloudcannon.com/documentation/articles/configuration-file-reference/#collections_config
+	 */
+	collections_config?: Record<string, BuildCoupledCollectionConfig>;
+}
+
+/**
+ * @discriminator version
+ */
+export type AnyLegacyConfiguration =
+	| HugoConfiguration
+	| JekyllConfiguration
+	| EleventyConfiguration
+	| ReaderConfiguration;
+
+export type AnyConfiguration = Configuration | AnyLegacyConfiguration;
 
 export type ParsedDataset =
 	| string[]
@@ -172,12 +262,6 @@ interface WithIntegrationOutput {
 	 * The time this file was generated.
 	 */
 	time?: string;
-	/**
-	 * The schema version of the integration output file.
-	 *
-	 * @deprecated No longer used.
-	 */
-	version?: string; // This refers to an old schema, replaced by the IntegrationOutput type.
 	/**
 	 * Details about the integration tool used to generate the integration output file.
 	 */

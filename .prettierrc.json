@@ -7,7 +7,9 @@
 		{
 			"files": "*",
 			"options": {
-				"jsdocCommentLineStrategy": "multiline"
+				"jsdocCommentLineStrategy": "multiline",
+				"jsdocPreferCodeFences": true,
+				"jsdocKeepUnParseAbleExampleIndent": true
 			}
 		}
 	]

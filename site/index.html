@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Validate configuration | CloudCannon</title>
+
+	<link href="style.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/ace-builds@1.36.5/css/ace.min.css" rel="stylesheet">
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧐</text></svg>">
+</head>
+<body>
+	<div class="controls">
+		<label>
+			Schema
+			<select id="schema">
+				<option value="latest" selected>Unified (latest)</option>
+				<option value="legacy-eleventy">Eleventy (legacy)</option>
+				<option value="legacy-hugo">Hugo (legacy)</option>
+				<option value="legacy-jekyll">Jekyll (legacy)</option>
+				<option value="legacy-reader">Reader (legacy)</option>
+			</select>
+		</label>
+
+		<label>
+			<input type="checkbox" id="validator">
+			Use AJV
+		</label>
+	</div>
+
+	<div>
+		<textarea id="input">version: newest
+source: src
+collections_config:
+  posts:
+    path: content/blog
+    icon: nature_person
+    create: 5000
+  data:
+    icon: date_usage
+_select_datasets:
+  colors:
+    - Red
+    - Green
+    - Blue
+_inputs:
+  date:
+    type: datetime
+    instance_value: now
+  who_knows:
+    comment: hello
+</textarea>
+	</div>
+
+	<div id="output"></div>
+
+	<script src="https://cdn.jsdelivr.net/npm/ace-builds@1.36.5/src-min-noconflict/ace.js"></script>
+	<script type="module" src="main.js"></script>
+</body>
+</html>
