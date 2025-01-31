@@ -5,7 +5,17 @@ interface PreviewKeyEntry {
 	key: string;
 }
 
-type PreviewEntry = Array<PreviewKeyEntry | string | boolean> | string | boolean;
+interface PreviewTemplateEntry {
+	/**
+	 * A template string containing various placeholders for the value used in the preview.
+	 */
+	template: string;
+}
+
+type PreviewEntry =
+	| Array<PreviewKeyEntry | PreviewTemplateEntry | string | boolean>
+	| string
+	| boolean;
 
 export interface WithTextPreview {
 	/**
