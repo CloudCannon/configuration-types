@@ -173,7 +173,7 @@ export interface CollectionConfig extends Cascade, WithPreview {
 	glob?: string[] | string;
 	/**
 	 * This key defines the output URL for files in a given Collection. CloudCannon uses the output
-	 * URL in the Visual Editor, and on your Testing Domain and Custom Domain.
+	 * URL in the Visual Editor, and when linking to your Testing Domain and Custom Domain.
 	 *
 	 * Values for this key can be a mix of plain text and template strings, and should begin with the
 	 * `/` character. Template strings can contain data placeholders and fixed placeholders, which
