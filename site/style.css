@@ -1,0 +1,87 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	display: flex;
+	gap: 20px;
+	height: 100%;
+	max-height: 100%;
+	padding: 0;
+	margin: 0;
+	line-height: 1.35;
+	font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+	font-weight: normal;
+}
+
+.controls {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: auto;
+	z-index: 9999;
+	background: #333;
+	color: white;
+	padding: 10px;
+	display: flex;
+	gap: 20px;
+	width: 100%;
+}
+
+h2 {
+	margin: 5px 0;
+	border-bottom: 2px solid #dfdfdf;
+	padding-bottom: 5px;
+}
+
+textarea,
+code {
+	font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+	font-weight: normal;
+	font-size: 0.8em;
+}
+
+textarea {
+	border: 2px solid #dfdfdf;
+	border-radius: 2px;
+	width: 100%;
+}
+
+body>div {
+	width: 50%;
+	max-height: 100%;
+	overflow: auto;
+}
+
+body>div textarea,
+body>div>ol {
+	min-width: 0;
+	max-height: 100%;
+	overflow: auto;
+}
+
+ol {
+	margin: 0;
+}
+
+p {
+	flex: 0 0 auto;
+	min-width: 0;
+}
+
+code {
+	background-color: #dfdfdf;
+	border-radius: 2px;
+	padding: 1px 3px;
+}
+
+pre.ace_editor {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	border-right: 2px solid #dfdfdf;
+}

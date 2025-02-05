@@ -1,1283 +1,14 @@
-import type Scrapbooker from '@cloudcannon/snippet-types';
-
+import type { Cascade, EditorKey, ReducedCascade } from './cascade';
+import type { Documentation } from './documentation';
 import type { Icon } from './icon';
+import type { Input } from './inputs';
 import type { MarkdownSettings } from './markdown';
-import type { MimeType } from './mime-type';
-import type { Syntax } from './syntax';
-import type { Theme } from './theme';
+import type { WithPaths } from './paths';
+import type { WithPreview } from './preview';
+import type { SnippetConfig, SnippetsImports } from './snippets';
+import type { SourceEditor } from './source-editor';
+import type { StructureBase } from './structures';
 import type { Timezone } from './timezone';
-
-export type InstanceValue = 'UUID' | 'NOW';
-export type EditorKey = 'visual' | 'content' | 'data';
-export type SortOrder = 'ascending' | 'descending' | 'asc' | 'desc';
-
-// TODO: use SnippetConfig from @cloudcannon/scrap-booker when ParserConfig issue resolved.
-export interface SnippetConfig extends ReducedCascade, WithPreview, WithPickerPreview {
-	/**
-	 * Name of the snippet.
-	 */
-	snippet?: string;
-	/**
-	 * The template that this snippet should inherit, out of the available Shortcode Templates.
-	 */
-	template?: string;
-	/**
-	 * Whether this snippet can appear inline (within a sentence). Defaults to false, which will treat
-	 * this snippet as a block-level element in the content editor.
-	 */
-	inline?: boolean;
-	/**
-	 * Controls how selected items are rendered. Defaults to 'card', or 'inline' if `inline` is true.
-	 */
-	view?: 'card' | 'inline' | 'gallery';
-	/**
-	 * Whether this snippet treats whitespace as-is or not.
-	 */
-	strict_whitespace?: boolean;
-	/**
-	 * The variables required for the selected template.
-	 */
-	definitions?: Record<string, unknown>;
-	/**
-	 * Alternate configurations for this snippet.
-	 */
-	alternate_formats?: SnippetConfig[];
-	/**
-	 * The parameters of this snippet.
-	 */
-	params?: Record<string, unknown>; // TODO: use ParserConfig from @cloudcannon/scrap-booker.
-}
-
-export interface SnippetsImports {
-	/**
-	 * Default snippets for Hugo SSG.
-	 */
-	hugo?:
-		| boolean
-		| {
-				/**
-				 * The list of excluded snippets. If unset, all snippets are excluded unless defined in
-				 * `include`.
-				 *
-				 * @uniqueItems
-				 */
-				exclude: Array<keyof typeof Scrapbooker.defaults.hugo.snippets>;
-		  }
-		| {
-				/**
-				 * The list of included snippets. If unset, all snippets are included unless defined in
-				 * `exclude`.
-				 *
-				 * @uniqueItems
-				 */
-				include: Array<keyof typeof Scrapbooker.defaults.hugo.snippets>;
-		  };
-	/**
-	 * Default snippets for Jekyll SSG.
-	 */
-	jekyll?:
-		| boolean
-		| {
-				/**
-				 * The list of excluded snippets. If unset, all snippets are excluded unless defined in
-				 * `include`.
-				 *
-				 * @uniqueItems
-				 */
-				exclude: Array<keyof typeof Scrapbooker.defaults.jekyll.snippets>;
-		  }
-		| {
-				/**
-				 * The list of included snippets. If unset, all snippets are included unless defined in
-				 * `exclude`.
-				 *
-				 * @uniqueItems
-				 */
-				include: Array<keyof typeof Scrapbooker.defaults.jekyll.snippets>;
-		  };
-	/**
-	 * Default snippets for MDX-based content.
-	 */
-	mdx?:
-		| boolean
-		| {
-				/**
-				 * The list of excluded snippets. If unset, all snippets are excluded unless defined in
-				 * `include`.
-				 *
-				 * @uniqueItems
-				 */
-				exclude: Array<keyof typeof Scrapbooker.defaults.mdx.snippets>;
-		  }
-		| {
-				/**
-				 * The list of included snippets. If unset, all snippets are included unless defined in
-				 * `exclude`.
-				 *
-				 * @uniqueItems
-				 */
-				include: Array<keyof typeof Scrapbooker.defaults.mdx.snippets>;
-		  };
-	/**
-	 * Default snippets for Eleventy SSG Liquid files.
-	 */
-	eleventy_liquid?:
-		| boolean
-		| {
-				/**
-				 * The list of excluded snippets. If unset, all snippets are excluded unless defined in
-				 * `include`.
-				 *
-				 * @uniqueItems
-				 */
-				exclude: Array<keyof typeof Scrapbooker.defaults.eleventy_liquid.snippets>;
-		  }
-		| {
-				/**
-				 * The list of included snippets. If unset, all snippets are included unless defined in
-				 * `exclude`.
-				 *
-				 * @uniqueItems
-				 */
-				include: Array<keyof typeof Scrapbooker.defaults.eleventy_liquid.snippets>;
-		  };
-	/**
-	 * Default snippets for Eleventy SSG Nunjucks files.
-	 */
-	eleventy_nunjucks?:
-		| boolean
-		| {
-				/**
-				 * The list of excluded snippets. If unset, all snippets are excluded unless defined in
-				 * `include`.
-				 *
-				 * @uniqueItems
-				 */
-				exclude: Array<keyof typeof Scrapbooker.defaults.eleventy_nunjucks.snippets>;
-		  }
-		| {
-				/**
-				 * The list of included snippets. If unset, all snippets are included unless defined in
-				 * `exclude`.
-				 *
-				 * @uniqueItems
-				 */
-				include: Array<keyof typeof Scrapbooker.defaults.eleventy_nunjucks.snippets>;
-		  };
-	/**
-	 * Default snippets for Markdoc-based content.
-	 */
-	markdoc?:
-		| boolean
-		| {
-				/**
-				 * The list of excluded snippets. If unset, all snippets are excluded unless defined in
-				 * `include`.
-				 *
-				 * @uniqueItems
-				 */
-				exclude: Array<keyof typeof Scrapbooker.defaults.markdoc.snippets>;
-		  }
-		| {
-				/**
-				 * The list of included snippets. If unset, all snippets are included unless defined in
-				 * `exclude`.
-				 *
-				 * @uniqueItems
-				 */
-				include: Array<keyof typeof Scrapbooker.defaults.markdoc.snippets>;
-		  };
-	/**
-	 * Default snippets for content using Python markdown extensions.
-	 */
-	python_markdown_extensions?:
-		| boolean
-		| {
-				/**
-				 * The list of excluded snippets. If unset, all snippets are excluded unless defined in
-				 * `include`.
-				 *
-				 * @uniqueItems
-				 */
-				exclude: Array<keyof typeof Scrapbooker.defaults.python_markdown_extensions.snippets>;
-		  }
-		| {
-				/**
-				 * The list of included snippets. If unset, all snippets are included unless defined in
-				 * `exclude`.
-				 *
-				 * @uniqueItems
-				 */
-				include: Array<keyof typeof Scrapbooker.defaults.python_markdown_extensions.snippets>;
-		  };
-	/**
-	 * Default snippets for Docusaurus SSG.
-	 */
-	docusaurus_mdx?:
-		| boolean
-		| {
-				/**
-				 * The list of excluded snippets. If unset, all snippets are excluded unless defined in
-				 * `include`.
-				 *
-				 * @uniqueItems
-				 */
-				exclude: Array<keyof typeof Scrapbooker.defaults.docusaurus_mdx.snippets>;
-		  }
-		| {
-				/**
-				 * The list of included snippets. If unset, all snippets are included unless defined in
-				 * `exclude`.
-				 *
-				 * @uniqueItems
-				 */
-				include: Array<keyof typeof Scrapbooker.defaults.docusaurus_mdx.snippets>;
-		  };
-}
-
-interface ImageResizeable {
-	/**
-	 * Sets the format images are converted to prior to upload. The extension of the file is updated
-	 * to match. Defaults to keeping the mime type of the uploaded file.
-	 */
-	mime_type?: 'image/jpeg' | 'image/png' | 'image/webp';
-	/**
-	 * Sets how uploaded image files are resized with a bounding box defined by width and height prior
-	 * to upload. Has no effect when selecting existing images, or if width and height are unset.
-	 *
-	 * @default contain
-	 */
-	resize_style?: 'cover' | 'contain' | 'stretch' | 'crop';
-	/**
-	 * Defines the width of the bounding box used in the image resizing process defined with
-	 * resize_style.
-	 */
-	width?: number;
-	/**
-	 * Defines the height of the bounding box used in the image resizing process defined with
-	 * resize_style.
-	 */
-	height?: number;
-	/**
-	 * Controls whether or not images can be upscaled to fit the bounding box during resize prior to
-	 * upload. Has no effect if files are not resized.
-	 *
-	 * @default false
-	 */
-	expandable?: boolean;
-	/**
-	 * Instructs the editor to save `width` and `height` attributes on the image elements. This can
-	 * prevent pop-in as a page loads.
-	 *
-	 * @default true
-	 */
-	image_size_attributes?: boolean;
-	/**
-	 * If you have one or more DAMs connected to your site, you can use this key to list which asset
-	 * sources can be uploaded to and selected from.
-	 */
-	allowed_sources?: string[];
-	/**
-	 * Enable to skip the image resizing process configured for this input when selecting existing
-	 * images.
-	 *
-	 * @default false
-	 */
-	prevent_resize_existing_files?: boolean;
-	/**
-	 * Definitions for creating additional images of different sizes when uploading or selecting
-	 * existing files.
-	 */
-	sizes?: {
-		/**
-		 * A number suffixed with "x" (relative size) or "w" (fixed width) for setting the dimensions of
-		 * the image (e.g. 2x, 3x, 100w, 360w).
-		 */
-		size: string;
-		/**
-		 * A reference to another input that is given the path to this additional image file.
-		 */
-		target?: string;
-	}[];
-}
-
-export interface Editables {
-	/**
-	 * Contains input options for the Content Editor.
-	 */
-	content?: BlockEditable;
-	/**
-	 * Contains input options for block Editable Regions.
-	 */
-	block?: BlockEditable;
-	/**
-	 * Contains input options for link Editable Regions.
-	 */
-	link?: LinkEditable;
-	/**
-	 * Contains input options for image Editable Regions.
-	 */
-	image?: ImageEditable;
-	/**
-	 * Contains input options for text Editable Regions.
-	 */
-	text?: TextEditable;
-}
-
-export interface BlockEditable extends ImageResizeable, TextEditable {
-	/**
-	 * Enables a control to wrap blocks of text in block quotes.
-	 *
-	 * @default true
-	 */
-	blockquote?: boolean;
-	/**
-	 * Enables a control to insert an unordered list, or to convert selected blocks of text into a
-	 * unordered list.
-	 *
-	 * @default true
-	 */
-	bulletedlist?: boolean;
-	/**
-	 * Enables a control to center align text by toggling a class name for a block of text. The value
-	 * is the class name the editor should add to align the text. The styles for this class need to be
-	 * listed in the `styles` file to take effect outside of the input.
-	 */
-	center?: string;
-	/**
-	 * Enables a control to create an inline code element, containing any selected text.
-	 *
-	 * @default false
-	 */
-	code_inline?: boolean;
-	/**
-	 * Enables a control to insert a code block.
-	 *
-	 * @default false
-	 */
-	code_block?: boolean;
-	/**
-	 * Enables both block and inline code controls: `code_block` and `code_inline`.
-	 *
-	 * @default false
-	 */
-	code?: boolean;
-	/**
-	 * Enables a control to insert a region of raw HTML, including YouTube, Vimeo, Tweets, and other
-	 * media. Embedded content is sanitized to mitigate XSS risks, which includes removing style tags.
-	 * Embeds containing script tags are not loaded in the editor.
-	 *
-	 * @default false
-	 */
-	embed?: boolean;
-	/**
-	 * Enables a drop down menu for structured text. Has options for "p", "h1", "h2", "h3", "h4",
-	 * "h5", "h6". Set as space separated options (e.g. "p h1 h2").
-	 *
-	 * @default p h1 h2 h3 h4 h5 h6
-	 */
-	format?: string;
-	/**
-	 * Enables a control to insert a horizontal rule.
-	 *
-	 * @default false
-	 */
-	horizontalrule?: boolean;
-	/**
-	 * Enables a control to insert an image. The image can be uploaded, existing or an external link.
-	 *
-	 * @default true
-	 */
-	image?: boolean;
-	/**
-	 * Enables a control to increase indentation for numbered and unordered lists.
-	 *
-	 * @default false
-	 */
-	indent?: boolean;
-	/**
-	 * Enables a control to justify text by toggling a class name for a block of text. The value is
-	 * the class name the editor should add to justify the text. The styles for this class need to be
-	 * listed in the `styles` file to take effect outside of the input.
-	 */
-	justify?: string;
-	/**
-	 * Enables a control to left align text by toggling a class name for a block of text. The value is
-	 * the class name the editor should add to align the text. The styles for this class need to be
-	 * listed in the `styles` file to take effect outside of the input.
-	 */
-	left?: string;
-	/**
-	 * Enables a control to insert a numbered list, or to convert selected blocks of text into a
-	 * numbered list.
-	 *
-	 * @default true
-	 */
-	numberedlist?: boolean;
-	/**
-	 * Enables a control to reduce indentation for numbered and unordered lists.
-	 *
-	 * @default false
-	 */
-	outdent?: boolean;
-	/**
-	 * Enables a control to right align text by toggling a class name for a block of text. The value
-	 * is the class name the editor should add to align the text. The styles for this class need to be
-	 * listed in the `styles` file to take effect outside of the input.
-	 */
-	right?: string;
-	/**
-	 * Enables a control to insert snippets, if any are available.
-	 *
-	 * @default true
-	 */
-	snippet?: boolean;
-	/**
-	 * Enables a drop down menu for editors to style selected text or blocks or text. Styles are the
-	 * combination of an element and class name. The value for this option is the path (either source
-	 * or build output) to the CSS file containing the styles.
-	 */
-	styles?: string;
-	/**
-	 * Enables a control to insert a table. Further options for table cells are available in the
-	 * context menu for cells within the editor.
-	 *
-	 * @default false
-	 */
-	table?: boolean;
-}
-
-interface WithPaths {
-	/**
-	 * Paths to where new asset files are uploaded to. They also set the default path when choosing
-	 * existing images, and linking to existing files. Each path is relative to global `source`.
-	 * Defaults to the global `paths`.
-	 */
-	paths?: Paths;
-}
-
-export type ImageEditable = ImageResizeable & WithPaths;
-
-export type LinkEditable = WithPaths;
-
-export interface TextEditable extends WithPaths {
-	/**
-	 * Enables a control to set selected text to bold.
-	 *
-	 * @default true
-	 */
-	bold?: boolean;
-	/**
-	 * Enables a control to copy formatting from text to other text. Only applies to formatting from
-	 * `bold`, `italic`, `underline`, `strike`, `subscript`, and `superscript`. Does not copy other
-	 * styles or formatting.
-	 *
-	 * @default false
-	 */
-	copyformatting?: boolean;
-	/**
-	 * Enables a control to italicize selected text.
-	 *
-	 * @default true
-	 */
-	italic?: boolean;
-	/**
-	 * Enables a control to create hyperlinks around selected text.
-	 *
-	 * @default true
-	 */
-	link?: boolean;
-	/**
-	 * Enables a control to redo recent edits undone with undo. Redo is always enabled through
-	 * standard OS-specific keyboard shortcuts.
-	 *
-	 * @default false
-	 */
-	redo?: boolean;
-	/**
-	 * Enables the control to remove formatting from text. Applies to formatting from `bold`,
-	 * `italic`, `underline`, `strike`, `subscript`, and `superscript`. Does not remove other styles
-	 * or formatting.
-	 *
-	 * @default true
-	 */
-	removeformat?: boolean;
-	/**
-	 * Enables a control to strike selected text.
-	 *
-	 * @default false
-	 */
-	strike?: boolean;
-	/**
-	 * Enables a control to set selected text to subscript.
-	 *
-	 * @default false
-	 */
-	subscript?: boolean;
-	/**
-	 * Enables a control to set selected text to superscript.
-	 *
-	 * @default false
-	 */
-	superscript?: boolean;
-	/**
-	 * Enables a control to underline selected text.
-	 *
-	 * @default false
-	 */
-	underline?: boolean;
-	/**
-	 * Enables a control to undo recent edits. Undo is always enabled through standard OS-specific
-	 * keyboard shortcuts.
-	 *
-	 * @default false
-	 */
-	undo?: boolean;
-	/**
-	 * Defines if the content should be stripped of "custom markup". It is recommended to have this
-	 * option turned on once you have all of your rich text options configured. Having
-	 * `allow_custom_markup` turned on disables this option. Defaults to false.
-	 */
-	remove_custom_markup?: boolean;
-	/**
-	 * Defines if the content can contain "custom markup". It is not recommended to have this option
-	 * turned on. Defaults to true for non-content editable regions, false otherwise.
-	 */
-	allow_custom_markup?: boolean;
-}
-
-export interface ReducedCascade {
-	/**
-	 * Controls the behavior and appearance of your inputs in all data editing interfaces.
-	 */
-	_inputs?: Record<string, Input>;
-	/**
-	 * Fixed datasets that can be referenced by the _Values_ configuration for _Select_ and
-	 * _Multiselect_ inputs.
-	 */
-	_select_data?: Record<string, SelectValues>;
-	/**
-	 * Structured values for editors adding new items to arrays and objects. Entries here can be
-	 * referenced in the configuration for `array` or `object` inputs.
-	 */
-	_structures?: Record<string, Structure>;
-}
-
-export interface Cascade extends ReducedCascade {
-	/**
-	 * Set a preferred editor and/or disable the others. The first value sets which editor opens by
-	 * default, and the following values specify which editors are accessible.
-	 *
-	 * @uniqueItems
-	 */
-	_enabled_editors?: EditorKey[];
-	/**
-	 * Contains input options for Editable Regions and the Content Editor.
-	 */
-	_editables?: Editables;
-}
-
-export type InputType =
-	| 'text'
-	| 'textarea'
-	| 'email'
-	| 'disabled'
-	| 'pinterest'
-	| 'facebook'
-	| 'twitter'
-	| 'github'
-	| 'instagram'
-	| 'code'
-	| 'checkbox'
-	| 'switch'
-	| 'color'
-	| 'number'
-	| 'range'
-	| 'url'
-	| 'html'
-	| 'markdown'
-	| 'date'
-	| 'datetime'
-	| 'time'
-	| 'file'
-	| 'image'
-	| 'document'
-	| 'select'
-	| 'multiselect'
-	| 'choice'
-	| 'multichoice'
-	| 'object'
-	| 'array'
-	| 'auto';
-
-interface WithEmptyTypeText {
-	/**
-	 * Set how an ‘empty’ value will be saved. Does not apply to existing empty values.
-	 */
-	empty_type?: 'null' | 'string';
-}
-
-interface WithEmptyTypeNumber {
-	/**
-	 * Set how an ‘empty’ value will be saved. Does not apply to existing empty values.
-	 */
-	empty_type?: 'null' | 'number';
-}
-
-interface WithEmptyTypeObject {
-	/**
-	 * Set how an ‘empty’ value will be saved. Does not apply to existing empty values.
-	 */
-	empty_type?: 'null' | 'object';
-}
-
-interface WithEmptyTypeArray {
-	/**
-	 * Set how an ‘empty’ value will be saved. Does not apply to existing empty values.
-	 */
-	empty_type?: 'null' | 'array';
-}
-
-export interface BaseInput {
-	/**
-	 * Sets an input type, which controls how this input appears and behaves.
-	 */
-	type?: InputType;
-	/**
-	 * Options that are specific to this `type` of input.
-	 */
-	options?: WithEmptyTypeText | WithEmptyTypeNumber | WithEmptyTypeObject | WithEmptyTypeArray;
-	/**
-	 * Changes the subtext below the _Label_. Has no default. Supports a limited set of Markdown:
-	 * links, bold, italic, subscript, superscript, and inline code elements are allowed.
-	 */
-	comment?: string;
-	/**
-	 * Adds an expandable section of rich text below the input.
-	 */
-	context?: {
-		/**
-		 * The rich text content shown when opened. Supports a limited set of Markdown.
-		 */
-		content?: string;
-		/**
-		 * Makes the content visible initially.
-		 */
-		open?: boolean;
-		/**
-		 * The text shown when not open. Defaults to "Context" if unset.
-		 */
-		title?: string;
-		/**
-		 * The icon shown when not open.
-		 */
-		icon?: Icon;
-	};
-	/**
-	 * Provides a custom link for documentation for editors shown above input.
-	 */
-	documentation?: Documentation;
-	/**
-	 * Optionally changes the text above this input.
-	 */
-	label?: string;
-	/**
-	 * Toggles the visibility of this input.
-	 *
-	 * @default false
-	 */
-	hidden?: boolean | string;
-	/**
-	 * Controls if and how the value of this input is instantiated when created. This occurs when
-	 * creating files, or adding array items containing the configured input.
-	 */
-	instance_value?: InstanceValue;
-	/**
-	 * Specifies whether or not this input configuration should be merged with any matching, less
-	 * specific configuration.
-	 */
-	cascade?: boolean;
-}
-
-export interface TextInputOptions extends WithEmptyTypeText {
-	/**
-	 * Text shown when this input has no value.
-	 */
-	placeholder?: string;
-	/**
-	 * Icon shown beside the input.
-	 */
-	icon?: Icon;
-}
-
-export interface TextInput extends BaseInput {
-	type:
-		| 'text'
-		| 'email'
-		| 'disabled'
-		| 'pinterest'
-		| 'facebook'
-		| 'twitter'
-		| 'github'
-		| 'instagram';
-
-	/**
-	 * Options that are specific to this `type` of input.
-	 */
-	options?: TextInputOptions;
-}
-
-export interface TextareaInputOptions extends TextInputOptions {
-	/**
-	 * Shows a character counter below the input if enabled.
-	 *
-	 * @default false
-	 */
-	show_count?: boolean;
-}
-
-export interface TextareaInput extends BaseInput {
-	type: 'textarea';
-	/**
-	 * Options that are specific to this `type` of input.
-	 */
-	options?: TextareaInputOptions;
-}
-
-export interface CodeInputOptions extends WithEmptyTypeText, SourceEditor {
-	/**
-	 * Sets the maximum number of visible lines for this input, effectively controlling maximum
-	 * height. When the containing text exceeds this number, the input becomes a scroll area.
-	 *
-	 * @default 30
-	 */
-	max_visible_lines?: number;
-	/**
-	 * Sets the minimum number of visible lines for this input, effectively controlling initial
-	 * height. When the containing text exceeds this number, the input grows line by line to the lines
-	 * defined by `max_visible_lines`.
-	 *
-	 * @default 10
-	 */
-	min_visible_lines?: number;
-	/**
-	 * Changes how the editor parses your content for syntax highlighting. Should be set to the
-	 * language of the code going into the input.
-	 */
-	syntax?: Syntax;
-}
-
-export interface CodeInput extends BaseInput {
-	type: 'code';
-	/**
-	 * Options that are specific to this `type` of input.
-	 */
-	options?: CodeInputOptions;
-}
-
-export interface ColorInputOptions extends WithEmptyTypeText {
-	/**
-	 * Sets what format the color value is saved as. Defaults to the naming convention, or HEX if that
-	 * is unset.
-	 */
-	format?: 'rgb' | 'hex' | 'hsl' | 'hsv';
-	/**
-	 * Toggles showing a control for adjusting the transparency of the selected color. Defaults to
-	 * using the naming convention, enabled if the input key ends with "a".
-	 */
-	alpha?: boolean;
-}
-
-export interface ColorInput extends BaseInput {
-	type: 'color';
-	/**
-	 * Options that are specific to this `type` of input.
-	 */
-	options?: ColorInputOptions;
-}
-
-export interface BooleanInput extends Omit<BaseInput, 'options'> {
-	type: 'checkbox' | 'switch';
-}
-
-export interface NumberInputOptions extends WithEmptyTypeNumber {
-	/**
-	 * The lowest value in the range of permitted values.
-	 */
-	min?: number;
-	/**
-	 * The greatest value in the range of permitted values.
-	 */
-	max?: number;
-	/**
-	 * A number that specifies the granularity that the value must adhere to, or the special value
-	 * any, which allows any decimal value between `max` and `min`.
-	 */
-	step?: number;
-}
-
-export interface NumberInput extends BaseInput {
-	type: 'number';
-	/**
-	 * Options that are specific to this `type` of input.
-	 */
-	options?: NumberInputOptions;
-}
-
-export interface RangeInputOptions extends NumberInputOptions {
-	/**
-	 * The lowest value in the range of permitted values.
-	 *
-	 * @default 0
-	 */
-	min?: number;
-	/**
-	 * The greatest value in the range of permitted values.
-	 *
-	 * @default 10
-	 */
-	max?: number;
-	/**
-	 * A number that specifies the granularity that the value must adhere to, or the special value
-	 * any, which allows any decimal value between `max` and `min`.
-	 *
-	 * @default 1
-	 */
-	step?: number;
-}
-
-export interface RangeInput extends BaseInput {
-	type: 'range';
-	/**
-	 * Options that are specific to this `type` of input.
-	 */
-	options?: RangeInputOptions;
-}
-
-export interface UrlInputOptions extends WithEmptyTypeText, WithPaths {}
-
-export interface UrlInput extends BaseInput {
-	type: 'url';
-	/**
-	 * Options that are specific to this `type` of input.
-	 */
-	options?: UrlInputOptions;
-}
-
-export interface RichTextInputOptions extends WithEmptyTypeText, ImageResizeable, BlockEditable {
-	/**
-	 * Shows or hides the resize handler to vertically resize the input.
-	 *
-	 * @default false
-	 */
-	allow_resize?: boolean;
-	/**
-	 * Defines the initial height of this input in pixels (px).
-	 *
-	 * @default 320
-	 */
-	initial_height?: number;
-}
-
-export interface RichTextInput extends BaseInput {
-	type: 'html' | 'markdown';
-	/**
-	 * Options that are specific to this `type` of input.
-	 */
-	options?: RichTextInputOptions;
-}
-
-export interface DateInputOptions extends WithEmptyTypeText {
-	/**
-	 * Specifies the time zone that dates are displayed and edited in. Also changes the suffix the
-	 * date is persisted to the file with. Defaults to the global `timezone`.
-	 *
-	 * @default Etc/UTC
-	 */
-	timezone?: Timezone;
-}
-
-export interface DateInput extends BaseInput {
-	type: 'date' | 'datetime';
-	/**
-	 * Options that are specific to Date inputs.
-	 */
-	options?: DateInputOptions;
-}
-
-export interface TimeInput extends BaseInput {
-	type: 'time';
-	/**
-	 * Options that are specific to Time inputs.
-	 */
-	options?: WithEmptyTypeText;
-}
-
-export interface FileInputOptions extends WithEmptyTypeText, WithPaths {
-	/**
-	 * Restricts which file types are available to select or upload to this input. Accepted format is
-	 * an array or comma-separated string of MIME types. The special value '*' means any type is
-	 * accepted.
-	 */
-	accepts_mime_types?: MimeType[] | string;
-	/**
-	 * If you have one or more DAMs connected to your site, you can use this key to list which asset
-	 * sources can be uploaded to and selected from.
-	 */
-	allowed_sources?: string[];
-}
-
-export interface FileInput extends BaseInput {
-	type: 'file' | 'document';
-	/**
-	 * Options that are specific to File inputs.
-	 */
-	options?: FileInputOptions;
-}
-
-export type ImageInputOptions = FileInputOptions & ImageResizeable;
-
-export interface ImageInput extends BaseInput {
-	type: 'image';
-	/**
-	 * Options that are specific to Image inputs.
-	 */
-	options?: ImageInputOptions;
-}
-
-export interface SelectInputOptions extends WithPreview, WithPickerPreview {
-	/**
-	 * Allows new text values to be created at edit time.
-	 *
-	 * @default false
-	 */
-	allow_create?: boolean;
-	/**
-	 * Provides an empty option alongside the options provided by values.
-	 *
-	 * @default true
-	 */
-	allow_empty?: boolean;
-	/**
-	 * Defines the values available to choose from. Optional, defaults to fetching values from the
-	 * naming convention (e.g. colors or my_colors for data set colors).
-	 */
-	values?: string | SelectValues;
-	/**
-	 * Defines the key used for mapping between saved values and objects in values. This changes how
-	 * the input saves selected values to match. Defaults to checking for "id", "uuid", "path",
-	 * "title", then "name". Has no effect unless values is an array of objects, the key is used
-	 * instead for objects, and the value itself is used for primitive types.
-	 */
-	value_key?: string;
-	/**
-	 * Controls how selected items are rendered.
-	 */
-	view?: 'card' | 'text' | 'gallery' | 'gallery-left';
-	/**
-	 * Controls how selectable options are rendered.
-	 */
-	picker_view?: 'card' | 'text' | 'gallery' | 'gallery-left';
-}
-
-export interface SelectInput extends BaseInput {
-	type: 'select';
-	/**
-	 * Options that are specific to this `type` of input.
-	 */
-	options?: SelectInputOptions & WithEmptyTypeText;
-}
-
-export interface MultiselectInput extends BaseInput {
-	type: 'multiselect';
-	/**
-	 * Options that are specific to this `type` of input.
-	 */
-	options?: SelectInputOptions & WithEmptyTypeArray;
-}
-
-export interface ChoiceInputOptions extends Omit<SelectInputOptions, 'allow_create'> {}
-
-export interface ChoiceInput extends BaseInput {
-	type: 'choice';
-	/**
-	 * Options that are specific to this `type` of input.
-	 */
-	options?: ChoiceInputOptions & WithEmptyTypeText;
-}
-
-export interface MultichoiceInput extends BaseInput {
-	type: 'multichoice';
-	/**
-	 * Options that are specific to this `type` of input.
-	 */
-	options?: ChoiceInputOptions & WithEmptyTypeArray;
-}
-
-export interface ObjectInputGroup {
-	/**
-	 * The main text for the group shown when collapsed or expanded.
-	 */
-	heading?: string;
-	/**
-	 * Changes the subtext below the `heading`. Has no default. Supports a limited set of Markdown:
-	 * links, bold, italic, subscript, superscript, and inline code elements are allowed.
-	 */
-	comment?: string;
-	/**
-	 * Controls if this group is collapsed or expanded when first viewed.
-	 *
-	 * @default false
-	 */
-	collapsed?: boolean;
-	/**
-	 * The keys of each input in this group.
-	 */
-	inputs?: string[];
-	/**
-	 * Provides a custom link for documentation for editors shown above the collection file list.
-	 */
-	documentation?: Documentation;
-}
-
-export interface ObjectInputOptions extends WithEmptyTypeObject, WithPreview {
-	/**
-	 * Changes the appearance and behavior of the input.
-	 *
-	 * @default object
-	 */
-	subtype?: 'object' | 'mutable' | 'tabbed';
-	/**
-	 * Contains options for the "mutable" subtype.
-	 */
-	entries?: {
-		/**
-		 * Defines a limited set of keys that can exist on the data within an object input. This set is
-		 * used when entries are added and renamed with `allow_create` enabled. Has no effect if
-		 * `allow_create` is not enabled.
-		 */
-		allowed_keys?: string[];
-		/**
-		 * Limits available structures to specified keys.
-		 */
-		assigned_structures?: Record<string, string[]>;
-		/**
-		 * Provides data formats when adding entries to the data within this object input. When adding
-		 * an entry, team members are prompted to choose from a number of values you have defined. Has
-		 * no effect if `allow_create` is false. `entries.structures` applies to the entries within the
-		 * object.
-		 */
-		structures?: string | Structure;
-	};
-	/**
-	 * Provides data formats for value of this object. When choosing an item, team members are
-	 * prompted to choose from a number of values you have defined. `structures` applies to the object
-	 * itself.
-	 */
-	structures?: string | Structure;
-	/**
-	 * Allows you to group the inputs inside this object together without changing the data structure.
-	 */
-	groups?: ObjectInputGroup[];
-	/**
-	 * Controls which order input groups and ungrouped inputs appear in.
-	 *
-	 * @default false
-	 */
-	place_groups_below?: boolean;
-	/**
-	 * Controls whether or not labels on mutable object entries are formatted.
-	 *
-	 * @default false
-	 */
-	allow_label_formatting?: boolean;
-	/**
-	 * Controls how object previews are rendered.
-	 */
-	view?: 'card' | 'gallery' | 'gallery-left';
-}
-
-export interface ObjectInput extends BaseInput {
-	type: 'object';
-	/**
-	 * Options that are specific to this `type` of input.
-	 */
-	options?: ObjectInputOptions;
-}
-
-export interface ArrayInputOptions extends WithEmptyTypeArray {
-	/**
-	 * Provides data formats for value of this object. When choosing an item, team members are
-	 * prompted to choose from a number of values you have defined.
-	 */
-	structures?: string | Structure;
-}
-
-export interface ArrayInput extends BaseInput {
-	type: 'array';
-	/**
-	 * Options that are specific to this `type` of input.
-	 */
-	options?: ArrayInputOptions;
-}
-
-export interface UnknownInput extends BaseInput {
-	type?: 'auto' | undefined;
-}
-
-export type Input =
-	| BaseInput
-	| UnknownInput
-	| TextInput
-	| CodeInput
-	| ColorInput
-	| BooleanInput
-	| NumberInput
-	| RangeInput
-	| UrlInput
-	| RichTextInput
-	| DateInput
-	| TimeInput
-	| FileInput
-	| ImageInput
-	| SelectInput
-	| MultiselectInput
-	| ChoiceInput
-	| MultichoiceInput
-	| ObjectInput
-	| ArrayInput;
-
-export interface Paths {
-	/**
-	 * Location of assets that are statically copied to the output site. This prefix will be removed
-	 * from the _Uploads_ path when CloudCannon outputs the URL of an asset.
-	 */
-	static?: string;
-	/**
-	 * Default location of newly uploaded site files.
-	 *
-	 * @default uploads
-	 */
-	uploads?: string;
-	/**
-	 * Filename template for newly uploaded site files.
-	 */
-	uploads_filename?: string;
-	/**
-	 * Default location of newly uploaded DAM files.
-	 */
-	dam_uploads?: string;
-	/**
-	 * Filename template for newly uploaded DAM files.
-	 */
-	dam_uploads_filename?: string;
-	/**
-	 * Location of statically copied assets for DAM files. This prefix will be removed from the _DAM
-	 * Uploads_ path when CloudCannon outputs the URL of an asset.
-	 */
-	dam_static?: string;
-	/**
-	 * When set to true, CloudCannon will reference files relative to the path of the file they were
-	 * uploaded to.
-	 */
-	uploads_use_relative_path?: boolean;
-}
-
-export interface Documentation {
-	/**
-	 * The "href" value of the link.
-	 */
-	url: string;
-	/**
-	 * The visible text used in the link.
-	 */
-	text?: string;
-	/**
-	 * The icon displayed next to the link.
-	 *
-	 * @default auto_stories
-	 */
-	icon?: Icon;
-}
-
-interface PreviewKeyEntry {
-	/**
-	 * The key used to access the value used for the preview.
-	 */
-	key: string;
-}
-
-type PreviewEntry = Array<PreviewKeyEntry | string | boolean> | string | boolean;
-
-interface WithTextPreview {
-	/**
-	 * Controls the main text shown per item.
-	 */
-	text?: PreviewEntry;
-}
-
-interface WithImagePreview {
-	/**
-	 * Controls the image shown per item.
-	 */
-	image?: PreviewEntry;
-}
-
-interface WithSubtextPreview {
-	/**
-	 * Controls the supporting text shown per item.
-	 */
-	subtext?: PreviewEntry;
-}
-
-interface WithIconPreview {
-	/**
-	 * Controls the icon shown per item. Must result in a Material Icon name.
-	 */
-	icon?: PreviewEntry;
-}
-
-interface WithIconColorPreview {
-	/**
-	 * Controls the color of the icon.
-	 */
-	icon_color?: string;
-}
-
-export interface PreviewGallery
-	extends WithTextPreview,
-		WithImagePreview,
-		WithIconPreview,
-		WithIconColorPreview {
-	/**
-	 * Controls how the gallery image is positioned within the gallery.
-	 *
-	 * @default padded
-	 */
-	fit?: 'padded' | 'cover' | 'contain' | 'cover-top';
-}
-
-export interface PreviewMetadata
-	extends WithTextPreview,
-		WithImagePreview,
-		WithIconPreview,
-		WithIconColorPreview {}
-
-export interface Preview
-	extends WithTextPreview,
-		WithImagePreview,
-		WithIconPreview,
-		WithIconColorPreview,
-		WithSubtextPreview {
-	/**
-	 * Defines a list of items that can contain an image, icon, and text.
-	 */
-	metadata?: PreviewMetadata[];
-	/**
-	 * Details for large image/icon preview per item.
-	 */
-	gallery?: PreviewGallery;
-}
 
 export type HrefAddOption = {
 	/**
@@ -1337,44 +68,7 @@ export type AddOption = {
 	default_content_file?: string;
 };
 
-interface WithPreview {
-	/**
-	 * Changes the way items are previewed in the CMS.
-	 */
-	preview?: Preview;
-}
-
-interface WithPickerPreview {
-	/**
-	 * Changes the way items are previewed in the CMS while being chosen.
-	 */
-	picker_preview?: Preview;
-}
-
-interface SchemaBase {
-	/**
-	 * If true, inputs are sorted to match when editing. Extra inputs are ordered after expected
-	 * inputs, unless `remove_extra_inputs` is true. Defaults to true.
-	 */
-	reorder_inputs?: boolean;
-	/**
-	 * Hides unexpected inputs when editing. Has no effect if `remove_extra_inputs` is true. Defaults
-	 * to false.
-	 */
-	hide_extra_inputs?: boolean;
-	/**
-	 * If checked, empty inputs are removed from the source file on save. Removed inputs will be
-	 * available for editing again, provided they are in the matching schema/structure. Defaults to
-	 * false.
-	 */
-	remove_empty_inputs?: boolean;
-	/**
-	 * If checked, extra inputs are removed when editing. Defaults to true.
-	 */
-	remove_extra_inputs?: boolean;
-}
-
-export interface Schema extends Cascade, WithPreview, SchemaBase {
+export interface Schema extends Cascade, WithPreview, StructureBase {
 	/**
 	 * The path to the schema file. Relative to the root folder of the site.
 	 */
@@ -1401,6 +95,8 @@ export interface Schema extends Cascade, WithPreview, SchemaBase {
 	 */
 	new_preview_url?: string;
 }
+
+export type SortOrder = 'ascending' | 'descending' | 'asc' | 'desc';
 
 export interface Sort {
 	/**
@@ -1443,107 +139,421 @@ export interface Create extends ReducedCascade {
 
 export interface CollectionConfig extends Cascade, WithPreview {
 	/**
-	 * The top-most folder where the files in this collection are stored. It is relative to `source`.
+	 * This key defines the folder path for the collection key in which it is nested.
+	 *
+	 * The value for this key is relative to your Site `source`. Each Collection must have a unique
+	 * path.
+	 *
+	 * This key has no default.
+	 *
+	 * https://cloudcannon.com/documentation/articles/collections-reference/#path
 	 */
 	path: string;
 	/**
-	 * Glob pattern(s) to include or exclude files from this collection. It is relative to `path`.
+	 * This key defines globs which filter the files visible in the _Collection browser_ for a given
+	 * Collection. Values in this array are relative to the Collection `path`.
+	 *
+	 * Globs can be positive (e.g. `*.yml`), or negative (e.g. `!**\/*.json`). Files are included in a
+	 * Collection if they match any positive globs and do not match any negative globs. If you do not
+	 * define any positive globs, CloudCannon will include all non-developer files in a Collection
+	 * unless they match a negative glob.
+	 *
+	 * For more information about developer files, please read our documentation on the
+	 * [`include_developer_files`](https://cloudcannon.com/documentation/articles/collections-reference/#include_developer_files)
+	 * key.
+	 *
+	 * Defining a negative glob for a Collection does not remove a file from the associated Collection
+	 * folder in your Git repository. Similarly, defining a positive glob for a file in a folder
+	 * outside your Collection path does not move the file.
+	 *
+	 * This key has no default.
+	 *
+	 * https://cloudcannon.com/documentation/articles/collections-reference/#glob
 	 */
 	glob?: string[] | string;
 	/**
-	 * Used to build the url field for items in the collection. Similar to permalink in many SSGs.
-	 * Defaults to '', in which case CloudCannon will attempt to guess the output URLs for each file.
+	 * This key defines the output URL for files in a given Collection. CloudCannon uses the output
+	 * URL in the Visual Editor, and when linking to your Testing Domain and Custom Domain.
+	 *
+	 * Values for this key can be a mix of plain text and template strings, and should begin with the
+	 * `/` character. Template strings can contain data placeholders and fixed placeholders, which
+	 * CloudCannon will replace with the data it references when generating the output URL.
+	 *
+	 * For more information about data placeholders and fixed placeholders, please read our
+	 * documentation on [configuring your template
+	 * strings](https://cloudcannon.com/documentation/articles/configure-your-template-strings/).
+	 *
+	 * This key has no default.
+	 *
+	 * https://cloudcannon.com/documentation/articles/collections-reference/#url
 	 */
 	url?: string;
 	/**
-	 * Prevents this collection from being assigned output URLs. Doing so will remove the Visual
-	 * Editor as a possible option, and hide any UI elements referring to the output URL for a file.
+	 * This key toggles whether CloudCannon will generate an output URL for a given Collection.
+	 *
+	 * Setting this key to `true` will prevent CloudCannon from generating an output URL for a
+	 * Collection.
+	 *
+	 * By default, this key is `false` (i.e., generate an output URL for this Collection).
+	 *
+	 * https://cloudcannon.com/documentation/articles/collections-reference/#disable_url
+	 *
+	 * @default false
 	 */
 	disable_url?: boolean;
 	/**
-	 * If set, includes files usually reserved for your SSG and developer tooling as part of this
-	 * collection. These files can then be filtered with `glob`.
+	 * This key toggles whether CloudCannon removes developer files from your _Collection browser_.
+	 * CloudCannon excludes files that probably shouldn't be edited in a CMS from your _Collection
+	 * browser_, for example files like `README.md` or `package.json`. CloudCannon excludes these
+	 * files even if you have configured globs to allow them.
+	 *
+	 * Setting this key to `true` will allow CloudCannon to show developer files, assuming they are
+	 * not filtered out by any configured globs.
+	 *
+	 * By default, this key is `false` (i.e., do not include developer files).
+	 *
+	 * https://cloudcannon.com/documentation/articles/collections-reference/#include_developer_files
+	 *
+	 * @default false
 	 */
 	include_developer_files?: boolean;
 	/**
-	 * The display name of this collection. Used in headings and in the context menu for items in the
-	 * collection. This is optional as CloudCannon auto-generates this from the collection key.
+	 * This key defines the display name for a Collection. The name appears in the _Site Navigation_
+	 * and at the top of the _Collection browser_. Changing the display name does not affect the
+	 * Collection key name.
+	 *
+	 * By default, CloudCannon uses the Collection key name in title case (i.e., `blog_files` becomes
+	 * "Blog Files").
+	 *
+	 * https://cloudcannon.com/documentation/articles/collections-reference/#name
 	 */
 	name?: string;
 	/**
-	 * Text or Markdown to show above the collection file list.
+	 * This key defines the description text that appears on the _Collection browser_ page. Collection
+	 * descriptions are useful for adding extra context for your team members.
+	 *
+	 * CloudCannon supports a limited selection of Markdown formatting for the value of this key:
+	 * links, bold, italic, subscript, superscript, and inline code.
+	 *
+	 * This key has no default.
+	 *
+	 * https://cloudcannon.com/documentation/articles/collections-reference/#description
 	 */
 	description?: string;
 	/**
-	 * Sets an icon to use alongside references to this collection.
+	 * This key defines the icon for a Collection. Collection icons appear in the _Site Navigation_
+	 * and are the default icon for Collection file Cards if you have not defined `preview.icon`.
+	 *
+	 * For more information about the preview icon, please read our documentation on the
+	 * [`preview`](https://cloudcannon.com/documentation/articles/configure-your-card-previews/) key.
+	 *
+	 * Values can be from [Google's Material Icons
+	 * library](https://fonts.google.com/icons?icon.set=Material+Icons&icon.style=Rounded).
+	 *
+	 * By default, CloudCannon uses `notes` with some exceptions (e.g., `data_usage` for the `data`
+	 * Collection).
+	 *
+	 * https://cloudcannon.com/documentation/articles/collections-reference/#icon
 	 *
 	 * @default notes
 	 */
 	icon?: Icon;
 	/**
-	 * Provides a custom link for documentation for editors shown above the collection file list.
+	 * This key defines the documentation link at the top of a _Collection browser_. Collection
+	 * documentation is useful for assisting your team members.
+	 *
+	 * The following nested keys are available:
+	 *
+	 * - `url` (required)
+	 * - `text`
+	 * - `icon`
+	 *
+	 * This key has no default.
+	 *
+	 * # Examples
+	 *
+	 * In this example, the documentation link for the `data` Collection goes to CloudCannon
+	 * Documentation.
+	 *
+	 * ```yaml
+	 * collections_config:
+	 *   data:
+	 *     documentation:
+	 *       url: https://cloudcannon.com/documentation/
+	 *       text: CloudCannon Documentation
+	 *       icon: star
+	 * ```
+	 *
+	 * https://cloudcannon.com/documentation/articles/collections-reference/#documentation
 	 */
 	documentation?: Documentation;
 	/**
-	 * Sets the default sorting for the collection file list. Defaults to the first option in
-	 * sort_options, then falls back descending path. As an exception, defaults to descending date for
-	 * blog-like collections.
+	 * This key defines how CloudCannon sorts your Collection files when you first open your
+	 * _Collection browser_. Configuring this key allows you to sort your Collection using a
+	 * structured data key in your files.
+	 *
+	 * The following nested keys are available:
+	 *
+	 * - `key` (required)
+	 * - `order`
+	 *
+	 * By default, CloudCannon sorts your Collection files alphabetically by filename in ascending
+	 * order by default. However, if you have configured the
+	 * [`sort_options`](https://cloudcannon.com/documentation/articles/collections-reference/#sort_options)
+	 * key, CloudCannon will use the first array item in `sort_options`.
+	 *
+	 * If you use the _Sort_ dropdown in your _Collection browser_ to order your Collection files,
+	 * CloudCannon will preferentially use your most recent sorting method over the value configured
+	 * in the `sort` key.
+	 *
+	 * https://cloudcannon.com/documentation/articles/collections-reference/#sort
 	 */
 	sort?: Sort;
 	/**
-	 * Controls the available options in the sort menu. Defaults to generating the options from the
-	 * first item in the collection, falling back to ascending path and descending path.
+	 * This key defines the options for the Sort dropdown in a _Collection browser_. Configuring sort
+	 * options for a Collection will remove CloudCannon's default sorting options from the _Sort_
+	 * dropdown.
+	 *
+	 * The following nested keys are available for each entry in the `sort_options` array:
+	 *
+	 * - `key` (required)
+	 * - `order`
+	 * - `label`
+	 *
+	 * By default, CloudCannon provides sorting options for path, file size, file creation time, and
+	 * last modified, in ascending and descending order. CloudCannon will also read data keys from
+	 * your early Collection files and provide options to sort by those key values.
+	 *
+	 * https://cloudcannon.com/documentation/articles/collections-reference/#sort_options
 	 */
 	sort_options?: SortOption[];
 	/**
-	 * Overrides the default singular display name of the collection. This is displayed in the
-	 * collection add menu and file context menu.
+	 * This key defines the singular noun for your Collection name. CloudCannon uses the singular noun
+	 * in the _+ Add_ button in the top right of the _Collection browser_ when you select the option
+	 * to add a new file. This is useful if your Collection name is an irregular plural (e.g.,
+	 * "syllabi" or "syllabuses" to "syllabus").
+	 *
+	 * By default, CloudCannon creates a singular noun from the key, usually by removing the `s`
+	 * character (e.g., "posts" to "post").
+	 *
+	 * This key has no default.
+	 *
+	 * https://cloudcannon.com/documentation/articles/collections-reference/#singular_name
 	 */
 	singular_name?: string;
 	/**
-	 * Changes the options presented in the add menu in the collection file list. Defaults to an
-	 * automatically generated list from _Schemas_, or uses the first file in the collection if no
-	 * schemas are configured.
+	 * This key defines the options available in the _+ Add_ button dropdown at the top right of your
+	 * _Collection browser_. Configuring add options for a Collection will remove CloudCannon's
+	 * default "Add a file" option from the _+ Add_ button dropdown.
+	 *
+	 * The following nested keys are available for each standard entry in `add_options`:
+	 *
+	 * - `name`
+	 * - `icon`
+	 * - `editor`
+	 * - `base_path`
+	 * - `collection`
+	 * - `schema`
+	 * - `default_content_file`
+	 *
+	 * The following nested keys are available for each URL entry in `add_options`:
+	 *
+	 * - `name`
+	 * - `icon`
+	 * - `href`
+	 *
+	 * By default, CloudCannon adds the "Add a file" and "Create new folder" options to the _+ Add_
+	 * dropdown. Additionally, any Schemas you have configured for a Collection will also appear in
+	 * the _+ Add_ dropdown. For more information on these options, please read our reference
+	 * documentation on
+	 * [`disable_add`](https://cloudcannon.com/documentation/articles/collections-reference/#disable_add),
+	 * [`disable_add_folder`](https://cloudcannon.com/documentation/articles/collections-reference/#disable_add_folder),
+	 * and [`schemas`](https://cloudcannon.com/documentation/articles/schemas-reference/#schemas).
+	 *
+	 * # Examples
+	 *
+	 * In this example, we want team members in the `_posts` Collection to create new files in the
+	 * `blog` subfolder of the `_drafts` Collection. CloudCannon will open these files in the [Content
+	 * Editor](https://cloudcannon.com/documentation/articles/the-content-editor/).
+	 *
+	 * ```yaml
+	 * collections_config:
+	 *   _posts:
+	 *     add_options:
+	 *       - name: Add draft blog
+	 *         icon: post_add
+	 *         editor: content
+	 *         base_path: /../_drafts/blog
+	 * ```
+	 *
+	 * In this example, the _+ Add_ button dropdown in the team _Collection browser_ has a link to the
+	 * Office Locations page on our live website.
+	 *
+	 * ```yaml
+	 * collections_config:
+	 *   team:
+	 *     add_options:
+	 *       - name: Office Locations
+	 *         icon: map
+	 *         href: /our-offices
+	 * ```
+	 *
+	 * https://cloudcannon.com/documentation/articles/collections-reference/#add_options
 	 */
 	add_options?: (AddOption | HrefAddOption)[];
 	/**
-	 * The create path definition to control where new files are saved to inside this collection.
-	 * Defaults to [relative_base_path]/{title|slugify}.md.
+	 * This key defines the path to which CloudCannon will save new files in a Collection. CloudCannon
+	 * generates "Create Paths" when you open the _Review changes_ modal.
+	 *
+	 * The following nested keys are available:
+	 *
+	 * - `path` (required)
+	 * - `extra_data`
+	 * - `publish_to`
+	 * - `_inputs`
+	 * - `_select_data`
+	 * - `_structures`
+	 *
+	 * This key has no default.
+	 *
+	 * For more information, please read our documentation on [Create
+	 * Paths](https://cloudcannon.com/documentation/articles/set-the-path-for-new-files/).
+	 *
+	 * # Examples
+	 *
+	 * In this example, CloudCannon will generate a Create Path for new files in the `blog` Collection
+	 * using the `date` and `title` structured data keys. For example, CloudCannon will generate a
+	 * create path of `blog/2024-10-31-spooky-getaway.md` for a file with the date 31st October 2024
+	 * and the title "Spooky Getaway".
+	 *
+	 * ```yaml
+	 * collections_config:
+	 *   blog:
+	 *     create:
+	 *       extra_data:
+	 *         filename: '{date|year}-{date|month}-{date|day}-{title}'
+	 *       path: '[relative_base_path]/{filename|slugify}.[ext]'
+	 * ```
+	 *
+	 * https://cloudcannon.com/documentation/articles/collections-reference/#create
 	 */
 	create?: Create;
 	/**
-	 * Prevents users from adding new files in the collection file list if true.
+	 * This key toggles whether team members can use the _+ Add_ button in the top right of the
+	 * _Collection browser_ to add files to a Collection. This key does not affect your ability to add
+	 * files using the _File browser_.
+	 *
+	 * Setting this key to `true` will prevent team members from adding new files through the
+	 * _Collection browser_.
+	 *
+	 * By default, this key is `false` (i.e., team members can add to the Collection) for most SSGs.
+	 * For Eleventy, Hugo, and Jekyll, this key defaults to `true` for the data Collection (all
+	 * subfolders in the `data` folder are non-output Collections).
+	 *
+	 * If both `disable_add` and `disable_add_folder` are set to `true`, and you have not defined any
+	 * other `add_options`, then the _+ Add_ button will not appear in the top right of the
+	 * _Collection browser_.
+	 *
+	 * https://cloudcannon.com/documentation/articles/collections-reference/#disable_add
 	 */
 	disable_add?: boolean;
 	/**
-	 * Prevents users from adding new folders in the collection file list if true.
+	 * This key toggles whether team members can use the _+ Add_ button in the top right of the
+	 * _Collection browser_ to add subfolders to a Collection. This key does not affect your ability
+	 * to add subfolders using the _File browser_.
+	 *
+	 * Setting this key to `true` will prevent team members from adding new subfolders through the
+	 * _Collection browser_.
+	 *
+	 * By default, this key is `false` (i.e., team members can add folders to the Collection) for most
+	 * SSGs. For Eleventy, Hugo, and Jekyll, this key defaults to `true` for the `data` Collection
+	 * (all subfolders in the `data` folder are non-output Collections).
+	 *
+	 * If both `disable_add` and `disable_add_folder` are set to `true`, and you have not defined any
+	 * other `add_options`, then the _+ Add_ button will not appear in the top right of the
+	 * _Collection browser_.
+	 *
+	 * https://cloudcannon.com/documentation/articles/collections-reference/#disable_add_folder
 	 */
 	disable_add_folder?: boolean;
 	/**
-	 * Prevents users from renaming, moving and deleting files in the collection file list if true.
+	 * This key toggles whether team members can use the _+ Add_ button in the top right of the
+	 * _Collection browser_ to add files to a Collection. This key does not affect your ability to add
+	 * files using the _File browser_.
+	 *
+	 * Setting this key to `true` will prevent team members from adding new files through the
+	 * _Collection browser_.
+	 *
+	 * By default, this key is `false` (i.e., team members can add to the Collection) for most SSGs.
+	 * For Eleventy, Hugo, and Jekyll, this key defaults to `true` for the `data` Collection (all
+	 * subfolders in the `data` folder are non-output Collections).
+	 *
+	 * If both `disable_add` and `disable_add_folder` are set to `true`, and you have not defined any
+	 * other `add_options`, then the _+ Add_ button will not appear in the top right of the
+	 * _Collection browser_.
+	 *
+	 * https://cloudcannon.com/documentation/articles/collections-reference/#disable_file_actions
 	 */
 	disable_file_actions?: boolean;
 	/**
-	 * Preview your unbuilt pages (e.g. drafts) to another page’s output URL. The Visual Editor will
-	 * load that set preview URL and use the Data Bindings and Previews to render your new page
-	 * without saving.
+	 * This key defines a new URL for previewing your unbuilt pages in the [Visual
+	 * Editor](https://cloudcannon.com/documentation/articles/the-visual-editor/). The Visual Editor
+	 * will load the new preview URL and use Data Bindings and Previews to render your page without
+	 * saving or building.
 	 *
-	 * For example new_preview_url: /about/ will load the /about/ URL on new or unbuilt pages in the
-	 * Visual Editor.
+	 * This key does not affect the URL for your [Testing
+	 * Domain](https://cloudcannon.com/documentation/articles/testing-domain/) or [Custom
+	 * Domain](https://cloudcannon.com/documentation/articles/what-is-a-custom-domain/).
+	 *
+	 * This key has no default.
+	 *
+	 * https://cloudcannon.com/documentation/articles/collections-reference/#new_preview_url
 	 */
 	new_preview_url?: string;
 	/**
-	 * The set of schemas for this collection. Schemas are used when creating and editing files in
-	 * this collection. Each entry corresponds to a schema that describes a data structure for this
-	 * collection.
+	 * This key defines which Schemas are available to populate files in this Collection. Defining a
+	 * Schema for a collection will add it to the _+ Add_ button dropdown at the top right of the
+	 * _Collection browser_.
 	 *
-	 * The keys in this object should match the values used for schema_key inside each of this
-	 * collection's files. default is a special entry and is used when a file has no schema.
+	 * The following nested keys are available for each Schema insdie schemas:
+	 *
+	 * - `path`
+	 * - `reorder_input`
+	 * - `hide_extra_inputs`
+	 * - `remove_empty_inputs`
+	 * - `remove_extra_inputs`
+	 * - `name`
+	 * - `icon`
+	 * - `preview`
+	 * - `_editables`
+	 * - `_enabled_editors`
+	 * - `_inputs`
+	 * - `_select_data`
+	 * - `_structures`
+	 * - `create`
+	 * - `new_preview_url`
+	 *
+	 * This key has no default. If undefined, clicking the _+ Add_ button to add a new file to a
+	 * Collection will clone the last file in the Collection and clear any markup content and the
+	 * values of any structured data keys.
+	 *
+	 * For more information, please read our documentation on
+	 * [Schemas](https://cloudcannon.com/documentation/articles/what-is-a-schema/).
+	 *
+	 * https://cloudcannon.com/documentation/articles/collections-reference/#schemas
 	 */
 	schemas?: Record<string, Schema>;
 	/**
-	 * The key used in each file to identify the schema that file uses. The value this key represents
-	 * in each of this collection's files should match the keys in schemas. Defaults to _schema.
+	 * This key defines the name for the structured data key that references the Schema a file uses.
+	 * CloudCannon automatically adds this key to the top of your file when you create it using a
+	 * Schema.
+	 *
+	 * Values which beginning with the `_` character are hidden from the Data Editor and the sidebar
+	 * of the Content and Visual Editors.
+	 *
+	 * By default, this key is `_schema`.
+	 *
+	 * https://cloudcannon.com/documentation/articles/collections-reference/#schema_key
 	 */
 	schema_key?: string;
 }
@@ -1559,98 +569,6 @@ export interface CollectionGroup {
 	 */
 	collections: string[];
 }
-
-export interface Structure extends SchemaBase {
-	/**
-	 * Defines what values are available to add when using this structure.
-	 */
-	values: StructureValue[];
-	/**
-	 * Defines what key should be used to detect which structure an item is. If this key is not found
-	 * in the existing structure, a comparison of key names is used. Defaults to "_type".
-	 */
-	id_key?: string;
-	/**
-	 * Defines whether options are shown to your editors in a select menu (select, default) or a modal
-	 * pop up window (modal) when adding a new item.
-	 *
-	 * @default select
-	 */
-	style?: 'select' | 'modal';
-}
-
-export interface StructureValue extends WithPreview, WithPickerPreview, SchemaBase, Cascade {
-	/**
-	 * A unique reference value used when referring to this structure value from the Object input's
-	 * assigned_structures option.
-	 */
-	id?: string;
-	/**
-	 * If set to true, this item will be considered the default type for this structure. If the type
-	 * of a value within a structure cannot be inferred based on its id_key or matching fields, then
-	 * it will fall back to this item. If multiple items have default set to true, only the first item
-	 * will be used.
-	 *
-	 * @default false
-	 */
-	default?: boolean;
-	/**
-	 * An icon used when displaying the structure (defaults to either format_list_bulleted for items
-	 * in arrays, or notes otherwise).
-	 */
-	icon?: Icon;
-	/**
-	 * Path to an image in your source files used when displaying the structure. Can be either a
-	 * source (has priority) or output path.
-	 */
-	image?: string;
-	/**
-	 * Used as the main text in the interface for this value.
-	 */
-	label?: string;
-	/**
-	 * Used to group and filter items when selecting from a modal.
-	 */
-	tags?: string[];
-	/**
-	 * Allows you to group the inputs inside this object together without changing the data structure.
-	 */
-	groups?: ObjectInputGroup[];
-	/**
-	 * Controls which order input groups and ungrouped inputs appear in.
-	 *
-	 * @default false
-	 */
-	place_groups_below?: boolean;
-	/**
-	 * Show nested objects as tabs. Requires all top-level keys to be objects.
-	 *
-	 * @default false
-	 */
-	tabbed?: boolean;
-	/**
-	 * The actual value used when items are added after selection.
-	 */
-	value: unknown;
-	/**
-	 * Provides short descriptive text for editors shown in the Data Editor for expanded values
-	 * matching this Structure value. Has no default. Supports a limited set of Markdown: links, bold,
-	 * italic, subscript, superscript, and inline code elements are allowed.
-	 */
-	comment?: string;
-	/**
-	 * Provides a custom link for documentation for editors shown in the Data Editor for expanded
-	 * values matching this Structure value. Has no default.
-	 */
-	documentation?: Documentation;
-}
-
-export type SelectValues =
-	| string[]
-	| Record<string, string>[]
-	| Record<string, string>
-	| Record<string, unknown>[]
-	| Record<string, unknown>;
 
 export interface DataConfigEntry {
 	/**
@@ -1674,27 +592,6 @@ export interface Editor {
 	 * @default /
 	 */
 	default_path: string;
-}
-
-export interface SourceEditor {
-	/**
-	 * Defines how many spaces lines are auto indented by, and/or how many spaces tabs are shown as.
-	 *
-	 * @default 2
-	 */
-	tab_size?: number;
-	/**
-	 * Changes the color scheme for syntax highlighting in the editor.
-	 *
-	 * @default monokai
-	 */
-	theme?: Theme;
-	/**
-	 * Toggles displaying line numbers and code folding controls in the editor.
-	 *
-	 * @default true
-	 */
-	show_gutter?: boolean;
 }
 
 export interface CommitTemplate {
@@ -1725,6 +622,10 @@ export interface CommitTemplate {
  * The base format for the configuration file.
  */
 export interface Configuration extends Cascade, WithPaths {
+	/**
+	 * Controls which schema this file is validated against. Defaults to the latest schema.
+	 */
+	version?: 'latest';
 	/**
 	 * This key defines the base path for your source files, relative to the root folder of your
 	 * repository. Unless you use a nested folder as the source for your Site you can leave this key
@@ -1775,7 +676,17 @@ export interface Configuration extends Cascade, WithPaths {
 	 */
 	editor?: Editor;
 	/**
-	 * Settings for the behavior and appearance of the Source Editor.
+	 * This key defines the appearance and behavior of the Source Editor. The following nested keys
+	 * are available:
+	 *
+	 * - `tab_size`
+	 * - `show_gutter`
+	 * - `theme`
+	 *
+	 * This key has no default.
+	 *
+	 * For more information, please read our documentation on the [Source
+	 * Editor](https://cloudcannon.com/documentation/articles/the-source-editor/).
 	 *
 	 * https://cloudcannon.com/documentation/articles/configuration-file-reference/#source_editor
 	 */

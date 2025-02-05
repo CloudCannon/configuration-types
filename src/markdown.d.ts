@@ -17,7 +17,7 @@ export interface MarkdownSettings {
 	/**
 	 * The flavor of Markdown to use to convert between HTML and Markdown.
 	 *
-	 * @default kramdown
+	 * @default commonmark
 	 */
 	engine: 'commonmark' | 'kramdown';
 	options: {
