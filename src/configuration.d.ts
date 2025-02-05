@@ -250,8 +250,8 @@ export interface CollectionConfig extends Cascade, WithPreview {
 	 * Values can be from [Google's Material Icons
 	 * library](https://fonts.google.com/icons?icon.set=Material+Icons&icon.style=Rounded).
 	 *
-	 * By default, CloudCannon uses the Material Icon with the closest name to your Collection key
-	 * name.
+	 * By default, CloudCannon uses `notes` with some exceptions (e.g., `data_usage` for the `data`
+	 * Collection).
 	 *
 	 * https://cloudcannon.com/documentation/articles/collections-reference/#icon
 	 *

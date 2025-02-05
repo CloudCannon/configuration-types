@@ -141,14 +141,14 @@ export interface TextInput extends BaseInput {
 	 * Sets an input type, which controls how this input appears and behaves.
 	 */
 	type:
-		| 'text'
-		| 'email'
-		| 'disabled'
-		| 'pinterest'
-		| 'facebook'
-		| 'twitter'
-		| 'github'
-		| 'instagram';
+	| 'text'
+	| 'email'
+	| 'disabled'
+	| 'pinterest'
+	| 'facebook'
+	| 'twitter'
+	| 'github'
+	| 'instagram';
 
 	/**
 	 * Options that are specific to this `type` of input.
@@ -301,7 +301,28 @@ export interface RangeInput extends BaseInput {
 	options?: RangeInputOptions;
 }
 
-export type UrlInputOptions = WithEmptyTypeText & WithPaths;
+export interface UrlInputOptions extends WithEmptyTypeText, WithPaths {
+	/**
+	 * Hides the option to link to a file. This does not prevent typing a file path in the input.
+	 *
+	 * @default false
+	 */
+	hide_link_to_file?: boolean;
+	/**
+	 * Hides the option to link to a page. This does not prevent typing a file's output URL in the
+	 * input.
+	 *
+	 * @default false
+	 */
+	hide_link_to_page?: boolean;
+	/**
+	 * Hides the option to link to an email address. This does not prevent typing a `mailto:` link in
+	 * the input.
+	 *
+	 * @default false
+	 */
+	hide_link_to_email_address?: boolean;
+}
 
 export interface UrlInput extends BaseInput {
 	/**
@@ -467,7 +488,7 @@ export interface MultiselectInput extends BaseInput {
 	options?: SelectInputOptions & WithEmptyTypeArray;
 }
 
-export interface ChoiceInputOptions extends Omit<SelectInputOptions, 'allow_create'> {}
+export interface ChoiceInputOptions extends Omit<SelectInputOptions, 'allow_create'> { }
 
 export interface ChoiceInput extends BaseInput {
 	/**
