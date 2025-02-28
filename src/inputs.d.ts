@@ -119,6 +119,13 @@ export interface BaseInput {
 	 */
 	instance_value?: InstanceValue;
 	/**
+	 * Prevents the default where inputs configured with an `instance_value` are rehydrated with a new
+	 * value when duplicated in the CMS.
+	 *
+	 * @default false
+	 */
+	disable_instance_value_rehydration?: boolean;
+	/**
 	 * Specifies whether or not this input configuration should be merged with any matching, less
 	 * specific configuration.
 	 */
@@ -141,14 +148,14 @@ export interface TextInput extends BaseInput {
 	 * Sets an input type, which controls how this input appears and behaves.
 	 */
 	type:
-	| 'text'
-	| 'email'
-	| 'disabled'
-	| 'pinterest'
-	| 'facebook'
-	| 'twitter'
-	| 'github'
-	| 'instagram';
+		| 'text'
+		| 'email'
+		| 'disabled'
+		| 'pinterest'
+		| 'facebook'
+		| 'twitter'
+		| 'github'
+		| 'instagram';
 
 	/**
 	 * Options that are specific to this `type` of input.
@@ -488,7 +495,7 @@ export interface MultiselectInput extends BaseInput {
 	options?: SelectInputOptions & WithEmptyTypeArray;
 }
 
-export interface ChoiceInputOptions extends Omit<SelectInputOptions, 'allow_create'> { }
+export interface ChoiceInputOptions extends Omit<SelectInputOptions, 'allow_create'> {}
 
 export interface ChoiceInput extends BaseInput {
 	/**
