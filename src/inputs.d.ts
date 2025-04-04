@@ -114,6 +114,12 @@ export interface BaseInput {
 	 */
 	hidden?: boolean | string;
 	/**
+	 * Toggles if this input can be edited.
+	 *
+	 * @default false
+	 */
+	disabled?: boolean | string;
+	/**
 	 * Controls if and how the value of this input is instantiated when created. This occurs when
 	 * creating files, or adding array items containing the configured input.
 	 */
