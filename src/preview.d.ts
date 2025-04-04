@@ -49,7 +49,11 @@ export interface WithIconColorPreview {
 	/**
 	 * Controls the color of the icon.
 	 */
-	icon_color?: string;
+	icon_color?: PreviewEntry;
+	/**
+	 * Controls the background color of the icon.
+	 */
+	icon_background_color?: PreviewEntry;
 }
 
 export interface WithPreview {
@@ -77,6 +81,10 @@ export interface PreviewGallery
 	 * @default padded
 	 */
 	fit?: 'padded' | 'cover' | 'contain' | 'cover-top';
+	/**
+	 * Controls the background color gallery area.
+	 */
+	background_color?: PreviewEntry;
 }
 
 export interface PreviewMetadata
