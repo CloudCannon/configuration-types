@@ -247,8 +247,8 @@ export interface CollectionConfig extends Cascade, WithPreview {
 	 * For more information about the preview icon, please read our documentation on the
 	 * [`preview`](https://cloudcannon.com/documentation/articles/configure-your-card-previews/) key.
 	 *
-	 * Values can be from [Google's Material Icons
-	 * library](https://fonts.google.com/icons?icon.set=Material+Icons&icon.style=Rounded).
+	 * Values are from [Google's Material
+	 * Symbols](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded).
 	 *
 	 * By default, CloudCannon uses `notes` with some exceptions (e.g., `data_usage` for the `data`
 	 * Collection).
