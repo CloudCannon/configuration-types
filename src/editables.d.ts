@@ -24,7 +24,7 @@ export interface Editables {
 	text?: TextEditable;
 }
 
-export interface BlockEditable extends ImageResizeable, TextEditable {
+export interface ToolbarOptions {
 	/**
 	 * Enables a control to wrap blocks of text in block quotes.
 	 *
@@ -145,7 +145,21 @@ export interface BlockEditable extends ImageResizeable, TextEditable {
 	 * @default false
 	 */
 	table?: boolean;
+	/**
+	 * Enables a control to join the selected block with the block above it.
+	 *
+	 * @default false
+	 */
+	join_above?: boolean;
+	/**
+	 * Enables a control to join the selected block with the block below it.
+	 *
+	 * @default false
+	 */
+	join_below?: boolean;
 }
+
+export type BlockEditable = ImageResizeable & TextEditable & ToolbarOptions;
 
 export type ImageEditable = ImageResizeable & WithPaths;
 
