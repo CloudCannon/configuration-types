@@ -14,6 +14,7 @@ export type * from './snippets';
 export type * from './source-editor';
 export type * from './structures';
 export type * from './timezone';
+export type * from './javascript-api';
 
 export type SsgKey =
 	| 'hugo'
