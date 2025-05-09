@@ -43,6 +43,12 @@ export interface SourceEditor {
 	 * @default true
 	 */
 	show_gutter?: boolean;
+	/**
+	 * Enables soft wrapping of the code.
+	 *
+	 * @default false
+	 */
+	softwrap?: boolean;
 }
 
 export type Theme =

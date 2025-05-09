@@ -19,7 +19,7 @@ export interface OpenCustomDataPanelOptions extends CloseCustomDataPanelOptions 
  * Interface defining the public JavaScript API for interacting with CloudCannon's Visual Editor.
  * This API provides methods for managing content, handling file operations, and controlling the editor's state.
  */
-export interface CloudCannonJavascriptAPI {
+export interface CloudCannonJavaScriptAPI {
 	/** Whether event handling is currently enabled */
 	eventsEnabled: boolean;
 	/** Whether the API should be installed globally */

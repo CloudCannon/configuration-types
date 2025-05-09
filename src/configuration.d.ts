@@ -616,6 +616,10 @@ export interface CommitTemplate {
 	 * Define additional template strings, for building nested templates.
 	 */
 	extra_data?: Record<string, string>;
+	/**
+	 * Sets the width of the text wrap in the editor.
+	 */
+	wrap_width?: number;
 }
 
 /**
@@ -697,6 +701,13 @@ export interface Configuration extends Cascade, WithPaths {
 	 * https://cloudcannon.com/documentation/articles/configuration-file-reference/#commit_templates
 	 */
 	commit_templates?: CommitTemplate[];
+
+	/**
+	 * The commit template to use when pulling changes from the upstream repository.
+	 *
+	 * https://cloudcannon.com/documentation/articles/configure-an-upstream-commit-message-template/
+	 */
+	upstream_commit_template?: string;
 	/**
 	 * Contains settings for various Markdown engines.
 	 *
@@ -736,4 +747,9 @@ export interface Configuration extends Cascade, WithPaths {
 	 * https://cloudcannon.com/documentation/articles/configuration-file-reference/#_snippets_definitions
 	 */
 	_snippets_definitions?: Record<string, SnippetConfig>;
+
+	/**
+	 * Prefetches files for the editor.
+	 */
+	prefetchFiles?: Record<string, string>;
 }
