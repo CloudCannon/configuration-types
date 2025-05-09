@@ -747,9 +747,4 @@ export interface Configuration extends Cascade, WithPaths {
 	 * https://cloudcannon.com/documentation/articles/configuration-file-reference/#_snippets_definitions
 	 */
 	_snippets_definitions?: Record<string, SnippetConfig>;
-
-	/**
-	 * Prefetches files for the editor.
-	 */
-	prefetchFiles?: Record<string, string>;
 }
