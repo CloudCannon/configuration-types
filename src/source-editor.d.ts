@@ -48,7 +48,7 @@ export interface SourceEditor {
 	 *
 	 * @default false
 	 */
-	softwrap?: boolean;
+	soft_wrap?: boolean;
 }
 
 export type Theme =
