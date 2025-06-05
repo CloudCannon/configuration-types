@@ -263,11 +263,27 @@ export interface ValueOptions {
 	keepMarkdownAsHTML?: boolean;
 }
 
+export interface FileNotFoundError extends Error {
+    message: 'File not found';
+}
+
+export interface CollectionNotFoundError extends Error {
+    message: 'Collection not found';
+}
+
 export interface CloudCannonJavaScriptV1APIFile {
+    /**
+     * The path of the file
+     */
+    path: string;
+
+    /**
+     * The key of the file
     /**
      * Gets the body content of a file
      * @param options - Optional configuration for the value retrieval
      * @returns Promise that resolves with the body content of the file
+     * @throws {FileNotFoundError} If the file is not found
      * @example
      * ```javascript
      * const value = await CloudCannon.content({ 
@@ -280,18 +296,21 @@ export interface CloudCannonJavaScriptV1APIFile {
     /**
      * Sets the raw content of a file
      * @param options - Configuration options for setting raw content
+     * @throws {FileNotFoundError} If the file is not found
      * @returns Promise that resolves when the raw content is set
      */
     set(options: any): Promise<void>;
 
     /**
      * Gets the metadata of a file
+     * @throws {FileNotFoundError} If the file is not found
      * @returns Promise that resolves with the metadata of the file
      */
     metadata(): Promise<any>;
 
     /**
      * Deletes a file
+     * @throws {FileNotFoundError} If the file is not found
      * @returns Promise that resolves when the file is deleted
      */
     delete(): Promise<void>;
@@ -299,6 +318,7 @@ export interface CloudCannonJavaScriptV1APIFile {
     /**
      * Moves a file
      * @param options - Configuration options for moving the file
+     * @throws {FileNotFoundError} If the file is not found
      * @returns Promise that resolves when the file is moved
      */
     move(options: any): Promise<CloudCannonJavaScriptV1APIFile>;
@@ -306,6 +326,7 @@ export interface CloudCannonJavaScriptV1APIFile {
     /**
      * Copies a file
      * @param options - Configuration options for copying the file
+     * @throws {FileNotFoundError} If the file is not found
      * @returns Promise that resolves when the file is copied
      */
     duplicate(options: any): Promise<CloudCannonJavaScriptV1APIFile>;
@@ -313,6 +334,7 @@ export interface CloudCannonJavaScriptV1APIFile {
     /**
      * Claims a lock on a file
      * @param options - Optional configuration for the lock
+     * @throws {FileNotFoundError} If the file is not found
      * @returns Promise that resolves with the lock status
      */
     claimLock(options?: LockOptions): Promise<{ readOnly: boolean }>;
@@ -320,6 +342,7 @@ export interface CloudCannonJavaScriptV1APIFile {
     /**
      * Releases a lock on a file
      * @param options - Optional configuration for the lock
+     * @throws {FileNotFoundError} If the file is not found
      * @returns Promise that resolves with the lock status
      */
     releaseLock(options?: LockOptions): Promise<{ readOnly: boolean }>;
@@ -331,6 +354,7 @@ export interface CloudCannonJavaScriptV1APIFile {
         /**
          * Gets the data of a file. This will be a JSON object. This is either the data from the file or the data from front matter.
          * @param options - Optional configuration for the value retrieval
+         * @throws {FileNotFoundError} If the file is not found
          * @returns Promise that resolves with the data of the file
          * @example
          * ```javascript
@@ -344,6 +368,7 @@ export interface CloudCannonJavaScriptV1APIFile {
         /**
          * Sets data for a specific field
          * @param options - Configuration options for setting data
+         * @throws {FileNotFoundError} If the file is not found
          * @returns Promise that resolves when the data is set
          * @example
          * ```javascript
@@ -358,6 +383,7 @@ export interface CloudCannonJavaScriptV1APIFile {
         /**
          * Initiates editing of a specific field. This will open a data panel for the field.
          * @param options - Configuration options for editing
+         * @throws {FileNotFoundError} If the file is not found
          * @example
          * ```javascript
          * CloudCannon.edit({ 
@@ -377,6 +403,7 @@ export interface CloudCannonJavaScriptV1APIFile {
         /**
          * Adds an item to an array field
          * @param options - Configuration options for adding an array item
+         * @throws {FileNotFoundError} If the file is not found
          * @returns Promise that resolves when the item is added
          * @example
          * ```javascript
@@ -392,6 +419,7 @@ export interface CloudCannonJavaScriptV1APIFile {
         /**
          * Removes an item from an array field
          * @param options - Configuration options for removing an array item
+         * @throws {FileNotFoundError} If the file is not found
          * @returns Promise that resolves when the item is removed
          * @example
          * ```javascript
@@ -406,6 +434,7 @@ export interface CloudCannonJavaScriptV1APIFile {
         /**
          * Moves an item within an array field
          * @param options - Configuration options for moving an array item
+         * @throws {FileNotFoundError} If the file is not found
          * @returns Promise that resolves when the item is moved
          * @example
          * ```javascript
@@ -427,6 +456,7 @@ export interface CloudCannonJavaScriptV1APIFile {
          * Gets the body content of a file. This is the content of the file without the front matter as a string.
          * @param options - Optional configuration for the value retrieval
          * @returns Promise that resolves with the body content of the file
+         * @throws {FileNotFoundError} If the file is not found
          * @example
          * ```javascript
          * const value = await CloudCannon.content({ 
@@ -439,6 +469,7 @@ export interface CloudCannonJavaScriptV1APIFile {
         /**
          * Sets the body content of a file
          * @param options - Configuration options for setting body content
+         * @throws {FileNotFoundError} If the file is not found
          * @returns Promise that resolves when the body content is set
          */
         set(options: any): Promise<void>;
@@ -446,6 +477,33 @@ export interface CloudCannonJavaScriptV1APIFile {
         addEventListener(event: 'change', callback: (event: any) => void): void;
         removeEventListener(event: 'change', callback: (event: any) => void): void;
     }
+}
+
+export interface CloudCannonJavaScriptV1APICollection {
+    /**
+     * Gets the items in a collection
+     * @throws {CollectionNotFoundError} If the collection is not found
+     * @returns Promise that resolves with the items in the collection
+     */
+    items(): Promise<CloudCannonJavaScriptV1APIFile[]>;
+
+    /**
+     * Gets the metadata of a file
+     * @throws {CollectionNotFoundError} If the collection is not found
+     * @returns Promise that resolves with the metadata of the file
+     */
+    metadata(): Promise<any>;
+
+    /**
+     * Adds an item to a collection or triggers an add modal if the provided items are not available.
+     * @param options - Configuration options for adding an item to a collection
+     * @throws {CollectionNotFoundError} If the collection is not found
+     * @returns Promise that resolves with the added item
+     */
+    add(options: any): Promise<CloudCannonJavaScriptV1APIFile>;
+
+    addEventListener(event: 'change' | 'delete' | 'create', callback: (event: any) => void): void;
+    removeEventListener(event: 'change' | 'delete' | 'create', callback: (event: any) => void): void;
 }
 
 export interface CloudCannonJavaScriptV1API {
@@ -485,7 +543,9 @@ export interface CloudCannonJavaScriptV1API {
     upload(file: File, inputConfig: RichTextInput | ImageInput | FileInput | undefined): Promise<string | undefined>;
 
     file(path: string): CloudCannonJavaScriptV1APIFile;
+    collection(key: string): CloudCannonJavaScriptV1APICollection;
+    files(): Promise<CloudCannonJavaScriptV1APIFile[]>;
 
-    // TODO: Add global events (change, delete, create)
-    // TODO: open file browser/collection browser
+    addEventListener(event: 'change' | 'delete' | 'create', callback: (event: any) => void): void;
+    removeEventListener(event: 'change' | 'delete' | 'create', callback: (event: any) => void): void;
 }
