@@ -1,13 +1,14 @@
-import type { Cascade } from './cascade';
-import type { SnippetConfig } from './snippets';
-import type { FileInput, ImageInput, RichTextInput } from './inputs';
+import type { Cascade } from "./cascade";
+import type { SnippetConfig } from "./snippets";
+import type { FileInput, ImageInput, RichTextInput } from "./inputs";
 
 export interface CloseCustomDataPanelOptions {
 	parentId: string;
 	id: string;
 }
 
-export interface OpenCustomDataPanelOptions extends CloseCustomDataPanelOptions {
+export interface OpenCustomDataPanelOptions
+	extends CloseCustomDataPanelOptions {
 	data: Record<string, any> | any[] | undefined;
 	position?: DOMRect;
 	title: string;
@@ -18,8 +19,9 @@ export interface OpenCustomDataPanelOptions extends CloseCustomDataPanelOptions 
 /**
  * Interface defining the public JavaScript API for interacting with CloudCannon's Visual Editor.
  * This API provides methods for managing content, handling file operations, and controlling the editor's state.
+ * @deprecated Use CloudCannonJavaScriptV1API instead
  */
-export interface CloudCannonJavaScriptAPI {
+export interface CloudCannonJavaScriptV0API {
 	/** Whether event handling is currently enabled */
 	eventsEnabled: boolean;
 	/** Whether the API should be installed globally */
@@ -96,7 +98,10 @@ export interface CloudCannonJavaScriptAPI {
 	 * @param inputConfig - Optional configuration for the input
 	 * @returns Promise that resolves with the path of the uploaded file
 	 */
-	uploadFile(file: File, inputConfig: RichTextInput | ImageInput | FileInput | undefined): Promise<string | undefined>;
+	uploadFile(
+		file: File,
+		inputConfig: RichTextInput | ImageInput | FileInput | undefined,
+	): Promise<string | undefined>;
 
 	/**
 	 * Adds an item to an array field
@@ -106,7 +111,12 @@ export interface CloudCannonJavaScriptAPI {
 	 * @param e - The mouse event that triggered the addition
 	 * @returns Promise that resolves when the item is added
 	 */
-	addArrayItem(slug: string, index: number | null, value: any, e: MouseEvent): Promise<void>;
+	addArrayItem(
+		slug: string,
+		index: number | null,
+		value: any,
+		e: MouseEvent,
+	): Promise<void>;
 
 	/**
 	 * Adds an item before a specific index in an array field
@@ -116,7 +126,12 @@ export interface CloudCannonJavaScriptAPI {
 	 * @param e - The mouse event that triggered the addition
 	 * @returns Promise that resolves when the item is added
 	 */
-	addArrayItemBefore(slug: string, index: number, value: any, e: MouseEvent): Promise<void>;
+	addArrayItemBefore(
+		slug: string,
+		index: number,
+		value: any,
+		e: MouseEvent,
+	): Promise<void>;
 
 	/**
 	 * Adds an item after a specific index in an array field
@@ -126,7 +141,12 @@ export interface CloudCannonJavaScriptAPI {
 	 * @param e - The mouse event that triggered the addition
 	 * @returns Promise that resolves when the item is added
 	 */
-	addArrayItemAfter(slug: string, index: number, value: any, e: MouseEvent): Promise<void>;
+	addArrayItemAfter(
+		slug: string,
+		index: number,
+		value: any,
+		e: MouseEvent,
+	): Promise<void>;
 
 	/**
 	 * Removes an item from an array field
@@ -177,4 +197,402 @@ export interface CloudCannonJavaScriptAPI {
 	 * @returns Promise that resolves with the Bookshop data
 	 */
 	loadLegacyBookshopInfo(): Promise<any>;
+}
+
+/**
+ * Options for setting data in the v2 API
+ */
+export interface LockOptions {
+}
+
+/**
+ * Options for setting data in the v2 API
+ */
+export interface SetOptions {
+	/** The identifier of the field to set */
+	slug: string;
+	/** The value to set */
+	value: any;
+}
+
+/**
+ * Options for editing a field in the v2 API
+ */
+export interface EditOptions {
+	/** The identifier of the field to edit */
+	slug: string;
+	/** Optional style information */
+	style?: string | null;
+	/** The mouse event that triggered the edit */
+	e: MouseEvent;
+}
+
+/**
+ * Options for array operations in the v2 API
+ */
+export interface ArrayOptions {
+	/** The identifier of the array field */
+	slug: string;
+}
+
+/**
+ * Options for adding an array item in the v2 API
+ */
+export interface AddArrayItemOptions extends ArrayOptions {
+	/** The position to insert at (null for end) */
+	index: number | null;
+	/**
+	 * The position to insert at (before or after)
+	 * @default 'before'
+	 */
+	position?: "before" | "after";
+	/** The value to insert */
+	value: any;
+	/** The mouse event that triggered the addition */
+	e: MouseEvent;
+}
+
+/**
+ * Options for moving an array item in the v2 API
+ */
+export interface MoveArrayItemOptions extends ArrayOptions {
+	/** The current index of the item */
+	index: number;
+	/** The target index for the item */
+	toIndex: number;
+}
+
+/**
+ * Options for moving an array item in the v2 API
+ */
+export interface RemoveArrayItemOptions extends ArrayOptions {
+	/** The current index of the item */
+	index: number;
+}
+
+/**
+ * Options for getting the current value in the v2 API
+ */
+export interface ValueOptions {
+	/**
+	 * CloudCannon works with HTML by default. Markdown is converted to HTML and back again while editing.
+	 * If true, any markdown inputs will be returned as an HTML string instead of Markdown.
+	 */
+	keepMarkdownAsHTML?: boolean;
+}
+
+export interface FileNotFoundError extends Error {
+	message: "File not found";
+}
+
+export interface CollectionNotFoundError extends Error {
+	message: "Collection not found";
+}
+
+export interface CloudCannonJavaScriptV1APIFile {
+	/**
+	 * The path of the file
+	 */
+	path: string;
+
+	/**
+	 * The key of the file
+	/**
+	 * Gets the body content of a file
+	 * @param options - Optional configuration for the value retrieval
+	 * @returns Promise that resolves with the body content of the file
+	 * @throws {FileNotFoundError} If the file is not found
+	 * @example
+	 * ```javascript
+	 * const value = await CloudCannon.content({
+	 *   keepMarkdownAsHTML: true,
+	 * });
+	 * ```
+	 */
+	get(options?: ValueOptions): Promise<string>;
+
+	/**
+	 * Sets the raw content of a file
+	 * @param options - Configuration options for setting raw content
+	 * @throws {FileNotFoundError} If the file is not found
+	 * @returns Promise that resolves when the raw content is set
+	 */
+	set(options: any): Promise<void>;
+
+	/**
+	 * Gets the metadata of a file
+	 * @throws {FileNotFoundError} If the file is not found
+	 * @returns Promise that resolves with the metadata of the file
+	 */
+	metadata(): Promise<any>;
+
+	/**
+	 * Deletes a file
+	 * @throws {FileNotFoundError} If the file is not found
+	 * @returns Promise that resolves when the file is deleted
+	 */
+	delete(): Promise<void>;
+
+	/**
+	 * Moves a file
+	 * @param options - Configuration options for moving the file
+	 * @throws {FileNotFoundError} If the file is not found
+	 * @returns Promise that resolves when the file is moved
+	 */
+	move(options: any): Promise<CloudCannonJavaScriptV1APIFile>;
+
+	/**
+	 * Copies a file
+	 * @param options - Configuration options for copying the file
+	 * @throws {FileNotFoundError} If the file is not found
+	 * @returns Promise that resolves when the file is copied
+	 */
+	duplicate(options: any): Promise<CloudCannonJavaScriptV1APIFile>;
+
+	/**
+	 * Claims a lock on a file
+	 * @param options - Optional configuration for the lock
+	 * @throws {FileNotFoundError} If the file is not found
+	 * @returns Promise that resolves with the lock status
+	 */
+	claimLock(options?: LockOptions): Promise<{ readOnly: boolean }>;
+
+	/**
+	 * Releases a lock on a file
+	 * @param options - Optional configuration for the lock
+	 * @throws {FileNotFoundError} If the file is not found
+	 * @returns Promise that resolves with the lock status
+	 */
+	releaseLock(options?: LockOptions): Promise<{ readOnly: boolean }>;
+
+	addEventListener(
+		event: "change" | "delete" | "create",
+		callback: (event: any) => void,
+	): void;
+	removeEventListener(
+		event: "change" | "delete" | "create",
+		callback: (event: any) => void,
+	): void;
+
+	data: {
+		/**
+		 * Gets the data of a file. This will be a JSON object. This is either the data from the file or the data from front matter.
+		 * @param options - Optional configuration for the value retrieval
+		 * @throws {FileNotFoundError} If the file is not found
+		 * @returns Promise that resolves with the data of the file
+		 * @example
+		 * ```javascript
+		 * const value = await CloudCannon.data({
+		 *   keepMarkdownAsHTML: true,
+		 * });
+		 * ```
+		 */
+		get(
+			options?: ValueOptions,
+		): Promise<Record<string, any> | any[] | undefined>;
+
+		/**
+		 * Sets data for a specific field
+		 * @param options - Configuration options for setting data
+		 * @throws {FileNotFoundError} If the file is not found
+		 * @returns Promise that resolves when the data is set
+		 * @example
+		 * ```javascript
+		 * await CloudCannon.set({
+		 *   slug: 'title',
+		 *   value: 'My Title',
+		 * });
+		 * ```
+		 */
+		set(options: SetOptions): Promise<any>;
+
+		/**
+		 * Initiates editing of a specific field. This will open a data panel for the field.
+		 * @param options - Configuration options for editing
+		 * @throws {FileNotFoundError} If the file is not found
+		 * @example
+		 * ```javascript
+		 * CloudCannon.edit({
+		 *   slug: 'title',
+		 *   style: 'panel',
+		 *   e: event,
+		 * });
+		 * ```
+		 */
+		edit(options: EditOptions): void;
+
+		/**
+		 * Uploads a file to an input
+		 */
+		upload(file: File, options: EditOptions): Promise<string | undefined>;
+
+		/**
+		 * Adds an item to an array field
+		 * @param options - Configuration options for adding an array item
+		 * @throws {FileNotFoundError} If the file is not found
+		 * @returns Promise that resolves when the item is added
+		 * @example
+		 * ```javascript
+		 * await CloudCannon.addArrayItem({
+		 *   slug: 'items',
+		 *   value: { title: 'New Item' },
+		 *   e: event,
+		 * });
+		 * ```
+		 */
+		addArrayItem(options: AddArrayItemOptions): Promise<void>;
+
+		/**
+		 * Removes an item from an array field
+		 * @param options - Configuration options for removing an array item
+		 * @throws {FileNotFoundError} If the file is not found
+		 * @returns Promise that resolves when the item is removed
+		 * @example
+		 * ```javascript
+		 * await CloudCannon.removeArrayItem({
+		 *   slug: 'items',
+		 *   index: 1,
+		 * });
+		 * ```
+		 */
+		removeArrayItem(options: RemoveArrayItemOptions): Promise<void>;
+
+		/**
+		 * Moves an item within an array field
+		 * @param options - Configuration options for moving an array item
+		 * @throws {FileNotFoundError} If the file is not found
+		 * @returns Promise that resolves when the item is moved
+		 * @example
+		 * ```javascript
+		 * await CloudCannon.moveArrayItem({
+		 *   slug: 'items',
+		 *   index: 1,
+		 *   toIndex: 2,
+		 * });
+		 * ```
+		 */
+		moveArrayItem(options: MoveArrayItemOptions): Promise<void>;
+
+		addEventListener(event: "change", callback: (event: any) => void): void;
+		removeEventListener(
+			event: "change",
+			callback: (event: any) => void,
+		): void;
+	};
+
+	content: {
+		/**
+		 * Gets the body content of a file. This is the content of the file without the front matter as a string.
+		 * @param options - Optional configuration for the value retrieval
+		 * @returns Promise that resolves with the body content of the file
+		 * @throws {FileNotFoundError} If the file is not found
+		 * @example
+		 * ```javascript
+		 * const value = await CloudCannon.content({
+		 *   keepMarkdownAsHTML: true,
+		 * });
+		 * ```
+		 */
+		get(options?: ValueOptions): Promise<string>;
+
+		/**
+		 * Sets the body content of a file
+		 * @param options - Configuration options for setting body content
+		 * @throws {FileNotFoundError} If the file is not found
+		 * @returns Promise that resolves when the body content is set
+		 */
+		set(options: any): Promise<void>;
+
+		addEventListener(event: "change", callback: (event: any) => void): void;
+		removeEventListener(
+			event: "change",
+			callback: (event: any) => void,
+		): void;
+	};
+}
+
+export interface CloudCannonJavaScriptV1APICollection {
+	/**
+	 * Gets the items in a collection
+	 * @throws {CollectionNotFoundError} If the collection is not found
+	 * @returns Promise that resolves with the items in the collection
+	 */
+	items(): Promise<CloudCannonJavaScriptV1APIFile[]>;
+
+	/**
+	 * Gets the metadata of a file
+	 * @throws {CollectionNotFoundError} If the collection is not found
+	 * @returns Promise that resolves with the metadata of the file
+	 */
+	metadata(): Promise<any>;
+
+	/**
+	 * Adds an item to a collection or triggers an add modal if the provided items are not available.
+	 * @param options - Configuration options for adding an item to a collection
+	 * @throws {CollectionNotFoundError} If the collection is not found
+	 * @returns Promise that resolves with the added item
+	 */
+	add(options: any): Promise<CloudCannonJavaScriptV1APIFile>;
+
+	addEventListener(
+		event: "change" | "delete" | "create",
+		callback: (event: any) => void,
+	): void;
+	removeEventListener(
+		event: "change" | "delete" | "create",
+		callback: (event: any) => void,
+	): void;
+}
+
+export interface CloudCannonJavaScriptV1API {
+	/**
+	 * Gets prefetched files
+	 * @returns Promise that resolves with a record of file blobs
+	 */
+	prefetchedFiles(): Promise<Record<string, Blob>>;
+
+	/**
+	 * Sets the loading state of the editor
+	 * @param loadingData - Optional loading state message
+	 * @returns Promise that resolves when loading state is updated
+	 */
+	setLoading(loadingData: string | undefined): Promise<any>;
+
+	/**
+	 * Opens a custom data panel for editing
+	 * @param options - Configuration options for the panel
+	 * @returns Promise that resolves when the panel is opened
+	 */
+	openCustomDataPanel(options: OpenCustomDataPanelOptions): Promise<void>;
+
+	/**
+	 * Closes a custom data panel
+	 * @param options - Configuration options for the panel to close
+	 * @returns Promise that resolves when the panel is closed
+	 */
+	closeCustomDataPanel(options: CloseCustomDataPanelOptions): Promise<void>;
+
+	/**
+	 * Uploads a file to the editor
+	 * @param file - The file to upload
+	 * @param inputConfig - Optional configuration for the input
+	 * @returns Promise that resolves with the path of the uploaded file
+	 */
+	upload(
+		file: File,
+		inputConfig: RichTextInput | ImageInput | FileInput | undefined,
+	): Promise<string | undefined>;
+
+	file(path: string): CloudCannonJavaScriptV1APIFile;
+	collection(key: string): CloudCannonJavaScriptV1APICollection;
+	files(): Promise<CloudCannonJavaScriptV1APIFile[]>;
+
+	addEventListener(
+		event: "change" | "delete" | "create",
+		callback: (event: any) => void,
+	): void;
+	removeEventListener(
+		event: "change" | "delete" | "create",
+		callback: (event: any) => void,
+	): void;
 }
