@@ -12,7 +12,7 @@
 	"homepage": "https://github.com/CloudCannon/configuration-types#readme",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/CloudCannon/configuration-types.git"
+		"url": "git+https://github.com/CloudCannon/configuration-types.git"
 	},
 	"bugs": {
 		"url": "https://github.com/CloudCannon/configuration-types/issues",
