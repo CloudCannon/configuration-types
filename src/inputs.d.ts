@@ -192,6 +192,27 @@ interface WithArrayValidation {
 	unique_on?: string;
 }
 
+export interface WithArrayControlOptions {
+	/**
+	 * Hides the add button, and context menu actions on each item for adding new items to this Input.
+	 *
+	 * @default false
+	 */
+	disable_add?: boolean;
+	/**
+	 * Hides the context menu actions on each item for removing them.
+	 *
+	 * @default false
+	 */
+	disable_remove?: boolean;
+	/**
+	 * Hides the controls on each item for moving them.
+	 *
+	 * @default false
+	 */
+	disable_reorder?: boolean;
+}
+
 interface WithEmptyTypeText {
 	/**
 	 * Set how an ‘empty’ value will be saved. Does not apply to existing empty values.
@@ -671,7 +692,10 @@ export interface UrlInput extends BaseInput {
 	options?: UrlInputOptions;
 }
 
-export interface SelectInputOptions extends WithPreview, WithPickerPreview {
+export interface SharedSelectInputOptions
+	extends WithPreview,
+		WithPickerPreview,
+		WithRequiredValidation {
 	/**
 	 * Allows new text values to be created at edit time.
 	 *
@@ -706,6 +730,8 @@ export interface SelectInputOptions extends WithPreview, WithPickerPreview {
 	picker_view?: 'card' | 'text' | 'gallery' | 'gallery-left';
 }
 
+export type SelectInputOptions = SharedSelectInputOptions & WithEmptyTypeText & WithTextValidation;
+
 export interface SelectInput extends BaseInput {
 	/**
 	 * Sets an input type, which controls how this input appears and behaves.
@@ -714,33 +740,13 @@ export interface SelectInput extends BaseInput {
 	/**
 	 * Options that are specific to Select Inputs.
 	 */
-	options?: SelectInputOptions & WithEmptyTypeText & WithTextValidation & WithRequiredValidation;
+	options?: SelectInputOptions;
 }
 
-export interface MultiselectInputOptions
-	extends WithEmptyTypeArray,
-		WithArrayValidation,
-		WithRequiredValidation {
-	/**
-	 * Hides the add button, and context menu actions on each array item for adding new items to this
-	 * Input.
-	 *
-	 * @default false
-	 */
-	disable_add?: boolean;
-	/**
-	 * Hides the context menu actions on each array item for removing them.
-	 *
-	 * @default false
-	 */
-	disable_remove?: boolean;
-	/**
-	 * Hides the controls on each array item for moving them.
-	 *
-	 * @default false
-	 */
-	disable_reorder?: boolean;
-}
+export type MultiselectInputOptions = SharedSelectInputOptions &
+	WithEmptyTypeArray &
+	WithArrayValidation &
+	WithArrayControlOptions;
 
 export interface MultiselectInput extends BaseInput {
 	/**
@@ -753,7 +759,8 @@ export interface MultiselectInput extends BaseInput {
 	options?: MultiselectInputOptions;
 }
 
-export type ChoiceInputOptions = Omit<SelectInputOptions, 'allow_create'>;
+export type SharedChoiceInputOptions = Omit<SharedSelectInputOptions, 'allow_create'>;
+export type ChoiceInputOptions = SharedChoiceInputOptions & WithEmptyTypeText & WithTextValidation;
 
 export interface ChoiceInput extends BaseInput {
 	/**
@@ -763,8 +770,12 @@ export interface ChoiceInput extends BaseInput {
 	/**
 	 * Options that are specific to Choice Inputs.
 	 */
-	options?: ChoiceInputOptions & WithEmptyTypeText & WithTextValidation & WithRequiredValidation;
+	options?: ChoiceInputOptions;
 }
+
+export type MultichoiceInputOptions = SharedChoiceInputOptions &
+	WithEmptyTypeArray &
+	WithArrayValidation;
 
 export interface MultichoiceInput extends BaseInput {
 	/**
@@ -774,7 +785,7 @@ export interface MultichoiceInput extends BaseInput {
 	/**
 	 * Options that are specific to Multichoice Inputs.
 	 */
-	options?: ChoiceInputOptions & WithEmptyTypeArray & WithArrayValidation & WithRequiredValidation;
+	options?: MultichoiceInputOptions;
 }
 
 export interface ObjectInputGroup {
@@ -877,31 +888,13 @@ export interface ObjectInput extends BaseInput {
 export interface ArrayInputOptions
 	extends WithEmptyTypeArray,
 		WithRequiredValidation,
-		WithArrayValidation {
+		WithArrayValidation,
+		WithArrayControlOptions {
 	/**
 	 * Provides data formats for value of this object. When choosing an item, team members are
 	 * prompted to choose from a number of values you have defined.
 	 */
 	structures?: string | Structure;
-	/**
-	 * Hides the add button, and context menu actions on each array item for adding new items to this
-	 * Input.
-	 *
-	 * @default false
-	 */
-	disable_add?: boolean;
-	/**
-	 * Hides the context menu actions on each array item for removing them.
-	 *
-	 * @default false
-	 */
-	disable_remove?: boolean;
-	/**
-	 * Hides the controls on each array item for moving them.
-	 *
-	 * @default false
-	 */
-	disable_reorder?: boolean;
 }
 
 export interface ArrayInput extends BaseInput {
