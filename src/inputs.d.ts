@@ -44,6 +44,154 @@ export type InputType =
 	| 'array'
 	| 'auto';
 
+interface WithRequiredValidation {
+	/**
+	 * This key toggles whether CloudCannon requires this Input to have a value. If set to true,
+	 * CloudCannon will require you to enter a value to save your changes, or discard your unsaved
+	 * changes.
+	 *
+	 * By default, this key is false (i.e, CloudCannon does not require this Input to have a value).
+	 */
+	required?: boolean;
+}
+
+interface WithTextValidation {
+	/**
+	 * This key defines the maximum string length, in characters, that CloudCannon will allow in an
+	 * Input. When configured, CloudCannon will warn you when an Input value is too long. If the Input
+	 * already contains a longer value, CloudCannon will require you to remove characters until the
+	 * Input contains a valid string to save your changes, or discard your unsaved changes.
+	 *
+	 * Value can be any non-negative integer. If this key is set to 0, CloudCannon requires the Input
+	 * to be empty. If `options.min_length` is also configured, this key cannot be a smaller number.
+	 *
+	 * This key has no default.
+	 *
+	 * To use this key in a Select Input, `options.allow_create` must be set to true.
+	 */
+	max_length?: number;
+	/**
+	 * This key defines the minimum string length, in characters, that CloudCannon will allow in an
+	 * Input. When configured, CloudCannon will warn you when an Input value is too short. If the
+	 * Input already contains a shorter value, CloudCannon will require you to add characters until
+	 * the Input contains a valid string to save your changes, or discard your unsaved changes.
+	 *
+	 * Value can be any positive integer. If `options.max_length` is also configured, this key cannot
+	 * be a greater number.
+	 *
+	 * This key has no default.
+	 *
+	 * To use this key in a Select Input, `options.allow_create` must be set to true.
+	 */
+	min_length?: number;
+	/**
+	 * This key defines a regular expression that the Input value must match. When configured,
+	 * CloudCannon will require you to enter a value that matches the REGEX pattern. If the Input
+	 * already contains an invalid value, CloudCannon will require you to enter a valid string to save
+	 * your changes, or discard your unsaved changes.
+	 *
+	 * Value must be a valid REGEX string.
+	 *
+	 * This key has no default.
+	 *
+	 * To use this key in a Select Input, `options.allow_create` must be set to true.
+	 */
+	pattern?: string;
+	/**
+	 * This key defines the message that explains which regular expression an Input will accept. This
+	 * key requires you to define `options.pattern`.
+	 *
+	 * This key has no default.
+	 */
+	pattern_message?: string;
+	/**
+	 * This key defines the flags (e.g. case-insensitive searching) for the regular expression set in
+	 * `options.pattern`. This key requires you to define `options.pattern`.
+	 *
+	 * The flags available match those a subset for [JavaScript regular
+	 * expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions#advanced_searching_with_flags).
+	 *
+	 * This key has no default.
+	 */
+	pattern_flags?: {
+		/**
+		 * `g` - Search globally.
+		 *
+		 * @default false
+		 */
+		global?: boolean;
+		/**
+		 * `i` - Case-insensitive.
+		 *
+		 * @default false
+		 */
+		ignore_case?: boolean;
+		/**
+		 * `m` - `^` and `$` match the start and end of each line rather than the entire string.
+		 *
+		 * @default false
+		 */
+		multiline?: boolean;
+		/**
+		 * `s` - `.` matches newline characters.
+		 *
+		 * @default false
+		 */
+		dot_all?: boolean;
+		/**
+		 * `u` - Pattern is treated as a sequence of Unicode code points.
+		 *
+		 * @default false
+		 */
+		unicode?: boolean;
+		/**
+		 * `v` - Extended `unicode` mode.
+		 *
+		 * @default false
+		 */
+		unicode_sets?: boolean;
+	};
+}
+
+interface WithArrayValidation {
+	/**
+	 * This key defines the maximum number of items CloudCannon will allow in an Input. When
+	 * configured, CloudCannon will prevent you from adding more items to this Input. If the Input
+	 * already contains more items, CloudCannon will require you to remove items until the Input
+	 * contains a valid number to save your changes, or discard your unsaved changes.
+	 *
+	 * Value can be any positive integer. If `options.min_items` is also configured, this key cannot
+	 * be a lesser number.
+	 *
+	 * This key has no default.
+	 */
+	max_items?: number;
+	/**
+	 * This key defines the minimum number of items CloudCannon will allow in an Input. When
+	 * configured, CloudCannon will prevent you from removing items from this Input below this value.
+	 * If the Input already contains fewer items, CloudCannon will require you to add items until the
+	 * Input contains a valid number to save your changes, or discard your unsaved changes.
+	 *
+	 * Value can be any positive integer. If `options.min_items` is also configured, this key cannot
+	 * be a greater number.
+	 *
+	 * This key has no default.
+	 */
+	min_items?: number;
+	/**
+	 * This key defines the JSON Path selector that CloudCannon should use to determine if the value
+	 * of an Input is unique. When configured, CloudCannon will require the value of the Input to be
+	 * unique compared to the value defined on the JSON Path. If the Input already contains a
+	 * non-unique value, CloudCannon will require you to change it to a valid value to save your
+	 * changes, or discard your unsaved changes.
+	 *
+	 * Value must be a valid JSON Path.
+	 *
+	 * This key has no default.
+	 */
+	unique_on?: string;
+}
+
 interface WithEmptyTypeText {
 	/**
 	 * Set how an ‘empty’ value will be saved. Does not apply to existing empty values.
@@ -138,7 +286,10 @@ export interface BaseInput {
 	cascade?: boolean;
 }
 
-export interface TextInputOptions extends WithEmptyTypeText {
+export interface TextInputOptions
+	extends WithEmptyTypeText,
+		WithTextValidation,
+		WithRequiredValidation {
 	/**
 	 * Text shown when this input has no value.
 	 */
@@ -154,17 +305,17 @@ export interface TextInput extends BaseInput {
 	 * Sets an input type, which controls how this input appears and behaves.
 	 */
 	type:
-	| 'text'
-	| 'email'
-	| 'disabled'
-	| 'pinterest'
-	| 'facebook'
-	| 'twitter'
-	| 'github'
-	| 'instagram';
+		| 'text'
+		| 'email'
+		| 'disabled'
+		| 'pinterest'
+		| 'facebook'
+		| 'twitter'
+		| 'github'
+		| 'instagram';
 
 	/**
-	 * Options that are specific to this `type` of input.
+	 * Options that are specific to Text Inputs.
 	 */
 	options?: TextInputOptions;
 }
@@ -184,12 +335,16 @@ export interface TextareaInput extends BaseInput {
 	 */
 	type: 'textarea';
 	/**
-	 * Options that are specific to this `type` of input.
+	 * Options that are specific to Textarea Inputs.
 	 */
 	options?: TextareaInputOptions;
 }
 
-export interface CodeInputOptions extends WithEmptyTypeText, SourceEditor {
+export interface CodeInputOptions
+	extends WithEmptyTypeText,
+		SourceEditor,
+		WithTextValidation,
+		WithRequiredValidation {
 	/**
 	 * Sets the maximum number of visible lines for this input, effectively controlling maximum
 	 * height. When the containing text exceeds this number, the input becomes a scroll area.
@@ -218,12 +373,15 @@ export interface CodeInput extends BaseInput {
 	 */
 	type: 'code';
 	/**
-	 * Options that are specific to this `type` of input.
+	 * Options that are specific to Code Inputs.
 	 */
 	options?: CodeInputOptions;
 }
 
-export interface ColorInputOptions extends WithEmptyTypeText {
+export interface ColorInputOptions
+	extends WithEmptyTypeText,
+		WithTextValidation,
+		WithRequiredValidation {
 	/**
 	 * Sets what format the color value is saved as. Defaults to the naming convention, or HEX if that
 	 * is unset.
@@ -242,7 +400,7 @@ export interface ColorInput extends BaseInput {
 	 */
 	type: 'color';
 	/**
-	 * Options that are specific to this `type` of input.
+	 * Options that are specific to Color Inputs.
 	 */
 	options?: ColorInputOptions;
 }
@@ -254,13 +412,29 @@ export interface BooleanInput extends Omit<BaseInput, 'options'> {
 	type: 'checkbox' | 'switch';
 }
 
-export interface NumberInputOptions extends WithEmptyTypeNumber {
+export interface NumberInputOptions extends WithEmptyTypeNumber, WithRequiredValidation {
 	/**
-	 * The lowest value in the range of permitted values.
+	 * This key defines the minimum numerical value CloudCannon will allow in an Input. When
+	 * configured, CloudCannon will prevent you from entering a lesser numerical value. If the Input
+	 * already contains a lesser numerical value, CloudCannon will require you to enter a valid value
+	 * to save your changes, or discard your unsaved changes.
+	 *
+	 * Value can be any integer. If `options.max` is also configured, this key cannot be a greater
+	 * number.
+	 *
+	 * This key has no default.
 	 */
 	min?: number;
 	/**
-	 * The greatest value in the range of permitted values.
+	 * This key defines the maximum numerical value CloudCannon will allow in an Input. When
+	 * configured, CloudCannon will prevent you from entering a greater numerical value. If the Input
+	 * already contains a greater numerical value, CloudCannon will require you to enter a valid value
+	 * to save your changes, or discard your unsaved changes.
+	 *
+	 * Value can be any integer. If `options.min` is also configured, this key cannot be a lesser
+	 * number.
+	 *
+	 * This key has no default.
 	 */
 	max?: number;
 	/**
@@ -276,20 +450,32 @@ export interface NumberInput extends BaseInput {
 	 */
 	type: 'number';
 	/**
-	 * Options that are specific to this `type` of input.
+	 * Options that are specific to this Number Inputs.
 	 */
 	options?: NumberInputOptions;
 }
 
 export interface RangeInputOptions extends NumberInputOptions {
 	/**
-	 * The lowest value in the range of permitted values.
+	 * This key defines the minimum numerical value CloudCannon will allow in an Input. When
+	 * configured, CloudCannon will prevent you from entering a lesser numerical value. If the Input
+	 * already contains a lesser numerical value, CloudCannon will require you to enter a valid value
+	 * to save your changes, or discard your unsaved changes.
+	 *
+	 * Value can be any integer. If `options.max` is also configured, this key cannot be a greater
+	 * number.
 	 *
 	 * @default 0
 	 */
 	min?: number;
 	/**
-	 * The greatest value in the range of permitted values.
+	 * This key defines the maximum numerical value CloudCannon will allow in an Input. When
+	 * configured, CloudCannon will prevent you from entering a greater numerical value. If the Input
+	 * already contains a greater numerical value, CloudCannon will require you to enter a valid value
+	 * to save your changes, or discard your unsaved changes.
+	 *
+	 * Value can be any integer. If `options.min` is also configured, this key cannot be a lesser
+	 * number.
 	 *
 	 * @default 10
 	 */
@@ -309,12 +495,17 @@ export interface RangeInput extends BaseInput {
 	 */
 	type: 'range';
 	/**
-	 * Options that are specific to this `type` of input.
+	 * Options that are specific to Range Inputs.
 	 */
 	options?: RangeInputOptions;
 }
 
-export interface RichTextInputOptions extends WithEmptyTypeText, ImageResizeable, BlockEditable {
+export interface RichTextInputOptions
+	extends WithEmptyTypeText,
+		ImageResizeable,
+		BlockEditable,
+		WithTextValidation,
+		WithRequiredValidation {
 	/**
 	 * Shows or hides the resize handler to vertically resize the input.
 	 *
@@ -335,7 +526,7 @@ export interface RichTextInput extends BaseInput {
 	 */
 	type: 'html' | 'markdown';
 	/**
-	 * Options that are specific to this `type` of input.
+	 * Options that are specific to Rich Text Inputs.
 	 */
 	options?: RichTextInputOptions;
 }
@@ -348,6 +539,30 @@ export interface DateInputOptions extends WithEmptyTypeText {
 	 * @default Etc/UTC
 	 */
 	timezone?: Timezone;
+	/**
+	 * This key defines the earliest date and time, inclusive, that CloudCannon will allow in an
+	 * Input. When configured, CloudCannon will prevent you from selecting an earlier date and time.
+	 * If the Input already contains an earlier date and time, CloudCannon will require you to change
+	 * it to a valid value to save your changes, or discard your unsaved changes.
+	 *
+	 * Value must be in ISO8601 format. If `options.end_before` is also configured, this key cannot be
+	 * a later date and time.
+	 *
+	 * This key has no default.
+	 */
+	start_from?: Date;
+	/**
+	 * This key defines the date and time, exclusive, that CloudCannon will allow in an Input. When
+	 * configured, CloudCannon will prevent you from selecting a later date and time. If the Input
+	 * already contains a later date and time, CloudCannon will require you to change it to a valid
+	 * value to save your changes, or discard your unsaved changes.
+	 *
+	 * Value must be in ISO8601 format. If options.start_from is also configured, this key cannot be
+	 * an earlier date and time.
+	 *
+	 * This key has no default.
+	 */
+	end_before?: Date;
 }
 
 export interface DateInput extends BaseInput {
@@ -369,10 +584,15 @@ export interface TimeInput extends BaseInput {
 	/**
 	 * Options that are specific to Time inputs.
 	 */
-	options?: WithEmptyTypeText;
+	options?: WithEmptyTypeText & WithRequiredValidation;
 }
 
-export interface FileInputOptions extends WithEmptyTypeText, WithPaths, ImageResizeable {
+export interface FileInputOptions
+	extends WithEmptyTypeText,
+		WithPaths,
+		ImageResizeable,
+		WithTextValidation,
+		WithRequiredValidation {
 	/**
 	 * Restricts which file types are available to select or upload to this input. Accepted format is
 	 * an array or comma-separated string of MIME types. The special value '*' means any type is
@@ -492,9 +712,34 @@ export interface SelectInput extends BaseInput {
 	 */
 	type: 'select';
 	/**
-	 * Options that are specific to this `type` of input.
+	 * Options that are specific to Select Inputs.
 	 */
-	options?: SelectInputOptions & WithEmptyTypeText;
+	options?: SelectInputOptions & WithEmptyTypeText & WithTextValidation & WithRequiredValidation;
+}
+
+export interface MultiselectInputOptions
+	extends WithEmptyTypeArray,
+		WithArrayValidation,
+		WithRequiredValidation {
+	/**
+	 * Hides the add button, and context menu actions on each array item for adding new items to this
+	 * Input.
+	 *
+	 * @default false
+	 */
+	disable_add?: boolean;
+	/**
+	 * Hides the context menu actions on each array item for removing them.
+	 *
+	 * @default false
+	 */
+	disable_remove?: boolean;
+	/**
+	 * Hides the controls on each array item for moving them.
+	 *
+	 * @default false
+	 */
+	disable_reorder?: boolean;
 }
 
 export interface MultiselectInput extends BaseInput {
@@ -503,12 +748,12 @@ export interface MultiselectInput extends BaseInput {
 	 */
 	type: 'multiselect';
 	/**
-	 * Options that are specific to this `type` of input.
+	 * Options that are specific to Multiselect Inputs.
 	 */
-	options?: SelectInputOptions & WithEmptyTypeArray;
+	options?: MultiselectInputOptions;
 }
 
-export interface ChoiceInputOptions extends Omit<SelectInputOptions, 'allow_create'> { }
+export type ChoiceInputOptions = Omit<SelectInputOptions, 'allow_create'>;
 
 export interface ChoiceInput extends BaseInput {
 	/**
@@ -516,9 +761,9 @@ export interface ChoiceInput extends BaseInput {
 	 */
 	type: 'choice';
 	/**
-	 * Options that are specific to this `type` of input.
+	 * Options that are specific to Choice Inputs.
 	 */
-	options?: ChoiceInputOptions & WithEmptyTypeText;
+	options?: ChoiceInputOptions & WithEmptyTypeText & WithTextValidation & WithRequiredValidation;
 }
 
 export interface MultichoiceInput extends BaseInput {
@@ -527,9 +772,9 @@ export interface MultichoiceInput extends BaseInput {
 	 */
 	type: 'multichoice';
 	/**
-	 * Options that are specific to this `type` of input.
+	 * Options that are specific to Multichoice Inputs.
 	 */
-	options?: ChoiceInputOptions & WithEmptyTypeArray;
+	options?: ChoiceInputOptions & WithEmptyTypeArray & WithArrayValidation & WithRequiredValidation;
 }
 
 export interface ObjectInputGroup {
@@ -558,7 +803,10 @@ export interface ObjectInputGroup {
 	documentation?: Documentation;
 }
 
-export interface ObjectInputOptions extends WithEmptyTypeObject, WithPreview {
+export interface ObjectInputOptions
+	extends WithEmptyTypeObject,
+		WithPreview,
+		WithRequiredValidation {
 	/**
 	 * Changes the appearance and behavior of the input.
 	 *
@@ -621,17 +869,39 @@ export interface ObjectInput extends BaseInput {
 	 */
 	type: 'object';
 	/**
-	 * Options that are specific to this `type` of input.
+	 * Options that are specific to Object Inputs.
 	 */
 	options?: ObjectInputOptions;
 }
 
-export interface ArrayInputOptions extends WithEmptyTypeArray {
+export interface ArrayInputOptions
+	extends WithEmptyTypeArray,
+		WithRequiredValidation,
+		WithArrayValidation {
 	/**
 	 * Provides data formats for value of this object. When choosing an item, team members are
 	 * prompted to choose from a number of values you have defined.
 	 */
 	structures?: string | Structure;
+	/**
+	 * Hides the add button, and context menu actions on each array item for adding new items to this
+	 * Input.
+	 *
+	 * @default false
+	 */
+	disable_add?: boolean;
+	/**
+	 * Hides the context menu actions on each array item for removing them.
+	 *
+	 * @default false
+	 */
+	disable_remove?: boolean;
+	/**
+	 * Hides the controls on each array item for moving them.
+	 *
+	 * @default false
+	 */
+	disable_reorder?: boolean;
 }
 
 export interface ArrayInput extends BaseInput {
@@ -640,7 +910,7 @@ export interface ArrayInput extends BaseInput {
 	 */
 	type: 'array';
 	/**
-	 * Options that are specific to this `type` of input.
+	 * Options that are specific to Array Inputs.
 	 */
 	options?: ArrayInputOptions;
 }
