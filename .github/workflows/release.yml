@@ -66,7 +66,7 @@ jobs:
         run: ls -R dist
 
       - name: Stable Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v2.2.2
         if: startsWith(github.ref, 'refs/tags/') && env.NPM_TAG == 'latest'
         with:
           files: |
@@ -75,7 +75,7 @@ jobs:
           GITHUB_TOKEN: ${{ steps.get_workflow_token.outputs.token }}
 
       - name: Prerelease
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v2.2.2
         if: startsWith(github.ref, 'refs/tags/') && env.NPM_TAG != 'latest'
         with:
           prerelease: true
@@ -115,7 +115,7 @@ jobs:
         with:
           tag: ${{ env.NPM_TAG }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          registry: 'https://npm.pkg.github.com'
+          registry: "https://npm.pkg.github.com"
 
       - name: Publish external
         uses: JS-DevTools/npm-publish@v3
