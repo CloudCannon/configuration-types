@@ -154,14 +154,14 @@ export interface TextInput extends BaseInput {
 	 * Sets an input type, which controls how this input appears and behaves.
 	 */
 	type:
-		| 'text'
-		| 'email'
-		| 'disabled'
-		| 'pinterest'
-		| 'facebook'
-		| 'twitter'
-		| 'github'
-		| 'instagram';
+	| 'text'
+	| 'email'
+	| 'disabled'
+	| 'pinterest'
+	| 'facebook'
+	| 'twitter'
+	| 'github'
+	| 'instagram';
 
 	/**
 	 * Options that are specific to this `type` of input.
@@ -314,40 +314,6 @@ export interface RangeInput extends BaseInput {
 	options?: RangeInputOptions;
 }
 
-export interface UrlInputOptions extends WithEmptyTypeText, WithPaths {
-	/**
-	 * Hides the option to link to a file. This does not prevent typing a file path in the input.
-	 *
-	 * @default false
-	 */
-	hide_link_to_file?: boolean;
-	/**
-	 * Hides the option to link to a page. This does not prevent typing a file's output URL in the
-	 * input.
-	 *
-	 * @default false
-	 */
-	hide_link_to_page?: boolean;
-	/**
-	 * Hides the option to link to an email address. This does not prevent typing a `mailto:` link in
-	 * the input.
-	 *
-	 * @default false
-	 */
-	hide_link_to_email_address?: boolean;
-}
-
-export interface UrlInput extends BaseInput {
-	/**
-	 * Sets an input type, which controls how this input appears and behaves.
-	 */
-	type: 'url';
-	/**
-	 * Options that are specific to this `type` of input.
-	 */
-	options?: UrlInputOptions;
-}
-
 export interface RichTextInputOptions extends WithEmptyTypeText, ImageResizeable, BlockEditable {
 	/**
 	 * Shows or hides the resize handler to vertically resize the input.
@@ -406,7 +372,7 @@ export interface TimeInput extends BaseInput {
 	options?: WithEmptyTypeText;
 }
 
-export interface FileInputOptions extends WithEmptyTypeText, WithPaths {
+export interface FileInputOptions extends WithEmptyTypeText, WithPaths, ImageResizeable {
 	/**
 	 * Restricts which file types are available to select or upload to this input. Accepted format is
 	 * an array or comma-separated string of MIME types. The special value '*' means any type is
@@ -418,30 +384,71 @@ export interface FileInputOptions extends WithEmptyTypeText, WithPaths {
 	 * sources can be uploaded to and selected from.
 	 */
 	allowed_sources?: string[];
+	/**
+	 * Disables the context menu option and the drop area for uploading files.
+	 *
+	 * @default false
+	 */
+	disable_upload_file?: boolean;
+	/**
+	 * Prevents typing into the text input, while still allowing context menu options to change the
+	 * value.
+	 *
+	 * @default false
+	 */
+	disable_direct_input?: boolean;
+	/**
+	 * Prevents file uploads inside the "Select existing file/image" file browser modal window.
+	 *
+	 * @default false
+	 */
+	disable_upload_file_in_file_browser?: boolean;
 }
 
 export interface FileInput extends BaseInput {
 	/**
 	 * Sets an input type, which controls how this input appears and behaves.
 	 */
-	type: 'file' | 'document';
+	type: 'file' | 'document' | 'image';
 	/**
-	 * Options that are specific to File inputs.
+	 * Options that are specific to File, Image and Document inputs.
 	 */
 	options?: FileInputOptions;
 }
 
-export type ImageInputOptions = FileInputOptions & ImageResizeable;
+export interface UrlInputOptions extends FileInputOptions {
+	/**
+	 * Hides the options to link to an existing file, and upload a new file. This does not prevent
+	 * typing a file path in the input.
+	 *
+	 * @default false
+	 */
+	hide_link_to_file?: boolean;
+	/**
+	 * Hides the option to link to a page. This does not prevent typing a file's output URL in the
+	 * input.
+	 *
+	 * @default false
+	 */
+	hide_link_to_page?: boolean;
+	/**
+	 * Hides the option to link to an email address. This does not prevent typing a `mailto:` link in
+	 * the input.
+	 *
+	 * @default false
+	 */
+	hide_link_to_email_address?: boolean;
+}
 
-export interface ImageInput extends BaseInput {
+export interface UrlInput extends BaseInput {
 	/**
 	 * Sets an input type, which controls how this input appears and behaves.
 	 */
-	type: 'image';
+	type: 'url';
 	/**
-	 * Options that are specific to Image inputs.
+	 * Options that are specific to URL inputs.
 	 */
-	options?: ImageInputOptions;
+	options?: UrlInputOptions;
 }
 
 export interface SelectInputOptions extends WithPreview, WithPickerPreview {
@@ -501,7 +508,7 @@ export interface MultiselectInput extends BaseInput {
 	options?: SelectInputOptions & WithEmptyTypeArray;
 }
 
-export interface ChoiceInputOptions extends Omit<SelectInputOptions, 'allow_create'> {}
+export interface ChoiceInputOptions extends Omit<SelectInputOptions, 'allow_create'> { }
 
 export interface ChoiceInput extends BaseInput {
 	/**
@@ -667,12 +674,11 @@ export type KnownInput =
 	| BooleanInput
 	| NumberInput
 	| RangeInput
-	| UrlInput
 	| RichTextInput
 	| DateInput
 	| TimeInput
 	| FileInput
-	| ImageInput
+	| UrlInput
 	| SelectInput
 	| MultiselectInput
 	| ChoiceInput
