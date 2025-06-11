@@ -552,7 +552,7 @@ export interface RichTextInput extends BaseInput {
 	options?: RichTextInputOptions;
 }
 
-export interface DateInputOptions extends WithEmptyTypeText {
+export interface DateInputOptions extends WithEmptyTypeText, WithRequiredValidation {
 	/**
 	 * Specifies the time zone that dates are displayed and edited in. Also changes the suffix the
 	 * date is persisted to the file with. Defaults to the global `timezone`.
