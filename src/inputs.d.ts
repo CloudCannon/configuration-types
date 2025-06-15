@@ -489,6 +489,13 @@ export interface NumberInputOptions extends WithEmptyTypeNumber, WithRequiredVal
 	 */
 	min?: number;
 	/**
+	 * This key defines the message that explains why an Input needs to have a minimum numerical
+	 * value. This key requires you to define `options.min`.
+	 *
+	 * This key has no default.
+	 */
+	min_message?: string;
+	/**
 	 * This key defines the maximum numerical value CloudCannon will allow in an Input. When
 	 * configured, CloudCannon will prevent you from entering a greater numerical value. If the Input
 	 * already contains a greater numerical value, CloudCannon will require you to enter a valid value
@@ -500,6 +507,13 @@ export interface NumberInputOptions extends WithEmptyTypeNumber, WithRequiredVal
 	 * This key has no default.
 	 */
 	max?: number;
+	/**
+	 * This key defines the message that explains why an Input needs to have a maximum numerical
+	 * value. This key requires you to define `options.max`.
+	 *
+	 * This key has no default.
+	 */
+	max_message?: string;
 	/**
 	 * A number that specifies the granularity that the value must adhere to, or the special value
 	 * any, which allows any decimal value between `max` and `min`.
