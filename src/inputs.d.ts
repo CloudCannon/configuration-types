@@ -54,7 +54,8 @@ interface WithRequiredValidation {
 	 */
 	required?: boolean;
 	/**
-	 * This key defines the message that explains why an Input is required. This key requires you to define `options.required`.
+	 * This key defines the message that explains why an Input is required. This key requires you to
+	 * define `options.required`.
 	 *
 	 * This key has no default.
 	 */
@@ -77,8 +78,8 @@ interface WithTextValidation {
 	 */
 	max_length?: number;
 	/**
-	 * This key defines the message that explains which maximum string length an Input will accept. This
-	 * key requires you to define `options.max_length`.
+	 * This key defines the message that explains which maximum string length an Input will accept.
+	 * This key requires you to define `options.max_length`.
 	 *
 	 * This key has no default.
 	 */
@@ -98,8 +99,8 @@ interface WithTextValidation {
 	 */
 	min_length?: number;
 	/**
-	 * This key defines the message that explains which minimum string length an Input will accept. This
-	 * key requires you to define `options.min_length`.
+	 * This key defines the message that explains which minimum string length an Input will accept.
+	 * This key requires you to define `options.min_length`.
 	 *
 	 * This key has no default.
 	 */
@@ -187,8 +188,8 @@ interface WithArrayValidation {
 	 */
 	max_items?: number;
 	/**
-	 * This key defines the message that explains why an Input needs to have a maximum number of items. This
-	 * key requires you to define `options.max_items`.
+	 * This key defines the message that explains why an Input needs to have a maximum number of
+	 * items. This key requires you to define `options.max_items`.
 	 *
 	 * This key has no default.
 	 */
@@ -206,8 +207,8 @@ interface WithArrayValidation {
 	 */
 	min_items?: number;
 	/**
-	 * This key defines the message that explains why an Input needs to have a minimum number of items. This
-	 * key requires you to define `options.min_items`.
+	 * This key defines the message that explains why an Input needs to have a minimum number of
+	 * items. This key requires you to define `options.min_items`.
 	 *
 	 * This key has no default.
 	 */
@@ -225,7 +226,8 @@ interface WithArrayValidation {
 	 */
 	unique_on?: string;
 	/**
-	 * This key defines the message that explains why an Input needs to be unique. This key requires you to define `options.unique_on`.
+	 * This key defines the message that explains why an Input needs to be unique. This key requires
+	 * you to define `options.unique_on`.
 	 *
 	 * This key has no default.
 	 */
@@ -613,7 +615,8 @@ export interface DateInputOptions extends WithEmptyTypeText, WithRequiredValidat
 	 */
 	start_from?: Date;
 	/**
-	 * This key defines the message that explains why an Input needs to have a start date. This key requires you to define `options.start_from`.
+	 * This key defines the message that explains why an Input needs to have a start date. This key
+	 * requires you to define `options.start_from`.
 	 *
 	 * This key has no default.
 	 */
@@ -631,7 +634,8 @@ export interface DateInputOptions extends WithEmptyTypeText, WithRequiredValidat
 	 */
 	end_before?: Date;
 	/**
-	 * This key defines the message that explains why an Input needs to have an end date. This key requires you to define `options.end_before`.
+	 * This key defines the message that explains why an Input needs to have an end date. This key
+	 * requires you to define `options.end_before`.
 	 *
 	 * This key has no default.
 	 */
@@ -673,9 +677,11 @@ export interface FileInputOptions
 	 */
 	accepts_mime_types?: MimeType[] | string;
 	/**
-	 * This key defines the maximum file size, in kilobytes, that CloudCannon will allow in an Input. When
-	 * configured, CloudCannon will prevent you from uploading a file larger than the specified size. If the Input
-	 * already contains a file larger than the specified size, CloudCannon will require you to change it to a valid value to save your changes, or discard your unsaved changes.
+	 * This key defines the maximum file size, in kilobytes, that CloudCannon will allow in an Input.
+	 * When configured, CloudCannon will prevent you from uploading a file larger than the specified
+	 * size. If the Input already contains a file larger than the specified size, CloudCannon will
+	 * require you to change it to a valid value to save your changes, or discard your unsaved
+	 * changes.
 	 *
 	 * Value can be any positive integer.
 	 */
