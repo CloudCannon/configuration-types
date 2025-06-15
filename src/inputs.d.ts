@@ -53,6 +53,13 @@ interface WithRequiredValidation {
 	 * By default, this key is false (i.e, CloudCannon does not require this Input to have a value).
 	 */
 	required?: boolean;
+	/**
+	 * This key defines the message that explains why an Input is required. This key requires you to
+	 * define `options.required`.
+	 *
+	 * This key has no default.
+	 */
+	required_message?: string;
 }
 
 interface WithTextValidation {
@@ -71,6 +78,13 @@ interface WithTextValidation {
 	 */
 	max_length?: number;
 	/**
+	 * This key defines the message that explains which maximum string length an Input will accept.
+	 * This key requires you to define `options.max_length`.
+	 *
+	 * This key has no default.
+	 */
+	max_length_message?: string;
+	/**
 	 * This key defines the minimum string length, in characters, that CloudCannon will allow in an
 	 * Input. When configured, CloudCannon will warn you when an Input value is too short. If the
 	 * Input already contains a shorter value, CloudCannon will require you to add characters until
@@ -84,6 +98,13 @@ interface WithTextValidation {
 	 * To use this key in a Select Input, `options.allow_create` must be set to true.
 	 */
 	min_length?: number;
+	/**
+	 * This key defines the message that explains which minimum string length an Input will accept.
+	 * This key requires you to define `options.min_length`.
+	 *
+	 * This key has no default.
+	 */
+	min_length_message?: string;
 	/**
 	 * This key defines a regular expression that the Input value must match. When configured,
 	 * CloudCannon will require you to enter a value that matches the REGEX pattern. If the Input
@@ -167,6 +188,13 @@ interface WithArrayValidation {
 	 */
 	max_items?: number;
 	/**
+	 * This key defines the message that explains why an Input needs to have a maximum number of
+	 * items. This key requires you to define `options.max_items`.
+	 *
+	 * This key has no default.
+	 */
+	max_items_message?: string;
+	/**
 	 * This key defines the minimum number of items CloudCannon will allow in an Input. When
 	 * configured, CloudCannon will prevent you from removing items from this Input below this value.
 	 * If the Input already contains fewer items, CloudCannon will require you to add items until the
@@ -179,6 +207,13 @@ interface WithArrayValidation {
 	 */
 	min_items?: number;
 	/**
+	 * This key defines the message that explains why an Input needs to have a minimum number of
+	 * items. This key requires you to define `options.min_items`.
+	 *
+	 * This key has no default.
+	 */
+	min_items_message?: string;
+	/**
 	 * This key defines the JSON Path selector that CloudCannon should use to determine if the value
 	 * of an Input is unique. When configured, CloudCannon will require the value of the Input to be
 	 * unique compared to the value defined on the JSON Path. If the Input already contains a
@@ -190,6 +225,13 @@ interface WithArrayValidation {
 	 * This key has no default.
 	 */
 	unique_on?: string;
+	/**
+	 * This key defines the message that explains why an Input needs to be unique. This key requires
+	 * you to define `options.unique_on`.
+	 *
+	 * This key has no default.
+	 */
+	unique_on_message?: string;
 }
 
 export interface WithArrayControlOptions {
@@ -573,6 +615,13 @@ export interface DateInputOptions extends WithEmptyTypeText, WithRequiredValidat
 	 */
 	start_from?: Date;
 	/**
+	 * This key defines the message that explains why an Input needs to have a start date. This key
+	 * requires you to define `options.start_from`.
+	 *
+	 * This key has no default.
+	 */
+	start_from_message?: string;
+	/**
 	 * This key defines the date and time, exclusive, that CloudCannon will allow in an Input. When
 	 * configured, CloudCannon will prevent you from selecting a later date and time. If the Input
 	 * already contains a later date and time, CloudCannon will require you to change it to a valid
@@ -584,6 +633,13 @@ export interface DateInputOptions extends WithEmptyTypeText, WithRequiredValidat
 	 * This key has no default.
 	 */
 	end_before?: Date;
+	/**
+	 * This key defines the message that explains why an Input needs to have an end date. This key
+	 * requires you to define `options.end_before`.
+	 *
+	 * This key has no default.
+	 */
+	end_before_message?: string;
 }
 
 export interface DateInput extends BaseInput {
@@ -620,6 +676,23 @@ export interface FileInputOptions
 	 * accepted.
 	 */
 	accepts_mime_types?: MimeType[] | string;
+	/**
+	 * This key defines the maximum file size, in kilobytes, that CloudCannon will allow in an Input.
+	 * When configured, CloudCannon will prevent you from uploading a file larger than the specified
+	 * size. If the Input already contains a file larger than the specified size, CloudCannon will
+	 * require you to change it to a valid value to save your changes, or discard your unsaved
+	 * changes.
+	 *
+	 * Value can be any positive integer.
+	 */
+	max_file_size?: number;
+	/**
+	 * This key defines the message that explains why an Input needs to have a maximum file size. This
+	 * key requires you to define `options.max_file_size`.
+	 *
+	 * This key has no default.
+	 */
+	max_file_size_message?: string;
 	/**
 	 * If you have one or more DAMs connected to your site, you can use this key to list which asset
 	 * sources can be uploaded to and selected from.
