@@ -832,8 +832,7 @@ export interface SelectInput extends BaseInput {
 
 export type MultiselectInputOptions = SharedSelectInputOptions &
 	WithEmptyTypeArray &
-	WithArrayValidation &
-	WithArrayControlOptions;
+	WithArrayValidation;
 
 export interface MultiselectInput extends BaseInput {
 	/**
