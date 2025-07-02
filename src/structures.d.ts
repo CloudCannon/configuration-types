@@ -1,4 +1,4 @@
-import type { Cascade } from './cascade';
+import type { ReducedCascade } from './cascade';
 import type { Documentation } from './documentation';
 import type { Icon } from './icon';
 import type { ObjectInputGroup } from './inputs';
@@ -46,7 +46,7 @@ export interface Structure extends StructureBase {
 	style?: 'select' | 'modal';
 }
 
-export interface StructureValue extends WithPreview, WithPickerPreview, StructureBase, Cascade {
+export interface StructureValue extends WithPreview, WithPickerPreview, StructureBase, ReducedCascade {
 	/**
 	 * A unique reference value used when referring to this structure value from the Object input's
 	 * assigned_structures option.
