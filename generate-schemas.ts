@@ -14,26 +14,26 @@ const schemas = [
 		filename: 'cloudcannon-config.latest.schema.json',
 		id: 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-config.latest.schema.json',
 	},
-	// {
-	// 	schema: JekyllConfigurationSchema,
-	// 	filename: 'cloudcannon-config.legacy-jekyll.schema.json',
-	// 	id: 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-config.legacy-jekyll.schema.json',
-	// },
-	// {
-	// 	schema: HugoConfigurationSchema,
-	// 	filename: 'cloudcannon-config.legacy-hugo.schema.json',
-	// 	id: 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-config.legacy-hugo.schema.json',
-	// },
-	// {
-	// 	schema: EleventyConfigurationSchema,
-	// 	filename: 'cloudcannon-config.legacy-eleventy.schema.json',
-	// 	id: 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-config.legacy-eleventy.schema.json',
-	// },
-	// {
-	// 	schema: ReaderConfigurationSchema,
-	// 	filename: 'cloudcannon-config.legacy-reader.schema.json',
-	// 	id: 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-config.legacy-reader.schema.json',
-	// },
+	{
+		schema: JekyllConfigurationSchema,
+		filename: 'cloudcannon-config.legacy-jekyll.schema.json',
+		id: 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-config.legacy-jekyll.schema.json',
+	},
+	{
+		schema: HugoConfigurationSchema,
+		filename: 'cloudcannon-config.legacy-hugo.schema.json',
+		id: 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-config.legacy-hugo.schema.json',
+	},
+	{
+		schema: EleventyConfigurationSchema,
+		filename: 'cloudcannon-config.legacy-eleventy.schema.json',
+		id: 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-config.legacy-eleventy.schema.json',
+	},
+	{
+		schema: ReaderConfigurationSchema,
+		filename: 'cloudcannon-config.legacy-reader.schema.json',
+		id: 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-config.legacy-reader.schema.json',
+	},
 ];
 
 for (const schema of schemas) {
