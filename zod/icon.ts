@@ -1,4 +1,4 @@
-import * as z from "zod/v4";
+import * as z from 'zod/v4';
 
 export const IconSchema = z.enum([
 	'10k',
@@ -3584,7 +3584,7 @@ export const IconSchema = z.enum([
 	'zoom_in',
 	'zoom_in_map',
 	'zoom_out',
-	'zoom_out_map'
+	'zoom_out_map',
 ]);
 
 export type Icon = z.infer<typeof IconSchema>;

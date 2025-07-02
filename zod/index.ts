@@ -1,4 +1,4 @@
-import * as z from "zod/v4";
+import * as z from 'zod/v4';
 
 // Re-exports from other modules will be handled during generation
 export * from './build-coupled.ts';
@@ -35,7 +35,7 @@ export const SsgKeySchema = z.enum([
 	'sphinx',
 	'static',
 	'legacy',
-	'other'
+	'other',
 ]);
 
-export type SsgKey = z.infer<typeof SsgKeySchema>; 
+export type SsgKey = z.infer<typeof SsgKeySchema>;

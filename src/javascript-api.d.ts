@@ -1,6 +1,6 @@
 import type { Cascade } from './cascade';
+import type { FileInput, RichTextInput, UrlInput } from './inputs';
 import type { SnippetConfig } from './snippets';
-import type { FileInput, UrlInput, RichTextInput } from './inputs';
 
 export interface CloseCustomDataPanelOptions {
 	parentId: string;
@@ -109,7 +109,7 @@ export interface CloudCannonJavaScriptAPI {
 	 */
 	uploadFile(
 		file: File,
-		inputConfig: RichTextInput | UrlInput | FileInput | undefined,
+		inputConfig: RichTextInput | UrlInput | FileInput | undefined
 	): Promise<string | undefined>;
 
 	/**

@@ -46,7 +46,11 @@ export interface Structure extends StructureBase {
 	style?: 'select' | 'modal';
 }
 
-export interface StructureValue extends WithPreview, WithPickerPreview, StructureBase, ReducedCascade {
+export interface StructureValue
+	extends WithPreview,
+		WithPickerPreview,
+		StructureBase,
+		ReducedCascade {
 	/**
 	 * A unique reference value used when referring to this structure value from the Object input's
 	 * assigned_structures option.

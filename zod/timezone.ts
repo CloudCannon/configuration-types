@@ -1,4 +1,4 @@
-import * as z from "zod/v4";
+import * as z from 'zod/v4';
 
 export const TimezoneSchema = z.enum([
 	'Africa/Abidjan',
@@ -595,7 +595,7 @@ export const TimezoneSchema = z.enum([
 	'UTC',
 	'W-SU',
 	'WET',
-	'Zulu'
+	'Zulu',
 ]);
 
 export type Timezone = z.infer<typeof TimezoneSchema>;

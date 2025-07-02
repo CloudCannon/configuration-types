@@ -14,7 +14,7 @@ body {
 	padding: 0;
 	margin: 0;
 	line-height: 1.35;
-	font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+	font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
 	font-weight: normal;
 }
 
@@ -40,7 +40,8 @@ h2 {
 
 textarea,
 code {
-	font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+	font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono",
+		monospace;
 	font-weight: normal;
 	font-size: 0.8em;
 }
@@ -51,14 +52,14 @@ textarea {
 	width: 100%;
 }
 
-body>div {
+body > div {
 	width: 50%;
 	max-height: 100%;
 	overflow: auto;
 }
 
-body>div textarea,
-body>div>ol {
+body > div textarea,
+body > div > ol {
 	min-width: 0;
 	max-height: 100%;
 	overflow: auto;
