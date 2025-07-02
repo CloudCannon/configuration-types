@@ -21,7 +21,7 @@
 	"scripts": {
 		"prebuild": "rm -rf dist && mkdir -p dist",
 		"build": "node --experimental-strip-types generate-schemas.ts && npm run build:combined",
-		"build:combined": "cp src/cloudcannon-config.schema.json dist/cloudcannon-config.schema.json",
+		"build:combined": "cp cloudcannon-config.schema.json dist/cloudcannon-config.schema.json",
 		"lint": "npm run lint:tsc && npm run lint:format",
 		"lint:tsc": "tsc --noEmit",
 		"lint:format": "biome check --fix",

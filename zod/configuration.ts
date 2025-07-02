@@ -2,7 +2,7 @@ import * as z from 'zod/v4';
 import { CascadeSchema, EditorKeySchema, ReducedCascadeSchema } from './cascade.ts';
 import { DocumentationSchema } from './documentation.ts';
 import { IconSchema } from './icon.ts';
-import { BaseInputSchema } from './inputs.ts';
+import { InputSchema } from './inputs.ts';
 import { MarkdownSettingsSchema } from './markdown.ts';
 import { WithPathsSchema } from './paths.ts';
 import { WithPreviewSchema } from './preview.ts';
@@ -327,7 +327,7 @@ export const CommitTemplateSchema = z.object({
 		),
 
 	_inputs: z
-		.record(z.string(), BaseInputSchema)
+		.record(z.string(), InputSchema)
 		.optional()
 		.describe('Define inputs used to populate data placeholders in the commit template.'),
 

@@ -18,6 +18,9 @@ export * from './source-editor.ts';
 export * from './structures.ts';
 export * from './timezone.ts';
 
+// TODO move this into a separate package
+export * from './javascript-api.ts';
+
 export const SsgKeySchema = z.enum([
 	'hugo',
 	'jekyll',

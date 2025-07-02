@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { HugoConfigurationSchema, JekyllConfigurationSchema } from '../zod/build-coupled.ts';
-import { ConfigurationSchema } from '../zod/configuration.ts';
+import { type Configuration, ConfigurationSchema } from '../zod/configuration.ts';
 
 describe('Integration Tests', () => {
 	describe('Real-world Configuration Examples', () => {
@@ -410,7 +410,7 @@ describe('Integration Tests', () => {
 		});
 
 		it('should validate complex nested structures', () => {
-			const config = {
+			const config: Configuration = {
 				collections_config: {
 					pages: {
 						path: 'pages',

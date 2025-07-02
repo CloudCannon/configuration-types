@@ -1,7 +1,7 @@
 import * as z from 'zod/v4';
 import { DocumentationSchema } from './documentation.ts';
 import { IconSchema } from './icon.ts';
-import { BaseInputSchema, ObjectInputGroupSchema } from './inputs.ts';
+import { BaseInputSchema, InputSchema, ObjectInputGroupSchema } from './inputs.ts';
 import { WithPickerPreviewSchema, WithPreviewSchema } from './preview.ts';
 import { SelectValuesSchema } from './select-values.ts';
 
@@ -40,12 +40,14 @@ const StructureBaseSchema = z.object({
 export const StructureValueSchema = StructureBaseSchema.extend(WithPreviewSchema.shape)
 	.extend(WithPickerPreviewSchema.shape)
 	.extend({
-		_inputs: z
-			.record(z.string(), BaseInputSchema)
-			.optional()
-			.describe(
-				'Controls the behavior and appearance of your inputs in all data editing interfaces.'
-			),
+		get _inputs() {
+			return z
+				.record(z.string(), InputSchema)
+				.optional()
+				.describe(
+					'Controls the behavior and appearance of your inputs in all data editing interfaces.'
+				);
+		},
 
 		_select_data: z
 			.record(z.string(), SelectValuesSchema)
@@ -96,12 +98,14 @@ export const StructureValueSchema = StructureBaseSchema.extend(WithPreviewSchema
 			.optional()
 			.describe('Used to group and filter items when selecting from a modal.'),
 
-		groups: z
-			.array(ObjectInputGroupSchema)
-			.optional()
-			.describe(
-				'Allows you to group the inputs inside this object together without changing the data structure.'
-			),
+		get groups() {
+			return z
+				.array(ObjectInputGroupSchema)
+				.optional()
+				.describe(
+					'Allows you to group the inputs inside this object together without changing the data structure.'
+				);
+		},
 
 		place_groups_below: z
 			.boolean()

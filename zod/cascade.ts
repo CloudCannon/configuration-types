@@ -1,7 +1,7 @@
 import * as z from 'zod/v4';
 
 import { EditablesSchema } from './editables.ts';
-import { BaseInputSchema } from './inputs.ts';
+import { InputSchema } from './inputs.ts';
 import { SelectValuesSchema } from './select-values.ts';
 import { StructureSchema } from './structures.ts';
 
@@ -9,7 +9,7 @@ export const EditorKeySchema = z.enum(['visual', 'content', 'data']);
 
 export const ReducedCascadeSchema = z.object({
 	_inputs: z
-		.record(z.string(), BaseInputSchema)
+		.record(z.string(), InputSchema)
 		.optional()
 		.describe(
 			'Controls the behavior and appearance of your inputs in all data editing interfaces.'
