@@ -1,6 +1,8 @@
 {
 	"compilerOptions": {
-		"allowImportingTsExtensions": true
+		"strict": true,
+		"allowImportingTsExtensions": true,
+		"noEmit": true
 	},
 	"include": ["zod/**/*.ts"],
 	"exclude": ["node_modules", "dist"]

@@ -2,52 +2,54 @@ import * as z from 'zod/v4';
 import { ReducedCascadeSchema } from './cascade.ts';
 import { WithPickerPreviewSchema, WithPreviewSchema } from './preview.ts';
 
-export const SnippetConfigSchema = z.object({
-	...ReducedCascadeSchema.shape,
-	...WithPreviewSchema.shape,
-	...WithPickerPreviewSchema.shape,
-	snippet: z.string().optional().describe('Name of the snippet.'),
+export const SnippetConfigSchema = ReducedCascadeSchema.extend(WithPreviewSchema.shape)
+	.extend(WithPickerPreviewSchema.shape)
+	.extend({
+		snippet: z.string().optional().describe('Name of the snippet.'),
 
-	template: z
-		.string()
-		.optional()
-		.describe(
-			'The template that this snippet should inherit, out of the available Shortcode Templates.'
-		),
-
-	inline: z
-		.boolean()
-		.optional()
-		.describe(
-			'Whether this snippet can appear inline (within a sentence). Defaults to false, which will treat this snippet as a block-level element in the content editor.'
-		),
-
-	view: z
-		.enum(['card', 'inline', 'gallery'])
-		.optional()
-		.describe(
-			"Controls how selected items are rendered. Defaults to 'card', or 'inline' if `inline` is true."
-		),
-
-	strict_whitespace: z
-		.boolean()
-		.optional()
-		.describe('Whether this snippet treats whitespace as-is or not.'),
-
-	definitions: z
-		.record(z.string(), z.unknown())
-		.optional()
-		.describe('The variables required for the selected template.'),
-
-	get alternate_formats() {
-		return z
-			.array(SnippetConfigSchema)
+		template: z
+			.string()
 			.optional()
-			.describe('Alternate configurations for this snippet.');
-	},
+			.describe(
+				'The template that this snippet should inherit, out of the available Shortcode Templates.'
+			),
 
-	params: z.record(z.string(), z.unknown()).optional().describe('The parameters of this snippet.'),
-});
+		inline: z
+			.boolean()
+			.optional()
+			.describe(
+				'Whether this snippet can appear inline (within a sentence). Defaults to false, which will treat this snippet as a block-level element in the content editor.'
+			),
+
+		view: z
+			.enum(['card', 'inline', 'gallery'])
+			.optional()
+			.describe(
+				"Controls how selected items are rendered. Defaults to 'card', or 'inline' if `inline` is true."
+			),
+
+		strict_whitespace: z
+			.boolean()
+			.optional()
+			.describe('Whether this snippet treats whitespace as-is or not.'),
+
+		definitions: z
+			.record(z.string(), z.unknown())
+			.optional()
+			.describe('The variables required for the selected template.'),
+
+		get alternate_formats() {
+			return z
+				.array(SnippetConfigSchema)
+				.optional()
+				.describe('Alternate configurations for this snippet.');
+		},
+
+		params: z
+			.record(z.string(), z.unknown())
+			.optional()
+			.describe('The parameters of this snippet.'),
+	});
 
 // Helper schemas for snippet import configurations
 const SnippetImportConfigSchema = z.union([

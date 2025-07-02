@@ -5,7 +5,10 @@
 	"description": "Contains TypeScript declarations and generates JSONSchema files for the CloudCannon configuration file.",
 	"author": "CloudCannon <support@cloudcannon.com>",
 	"license": "MIT",
-	"keywords": ["static site generator", "cloudcannon"],
+	"keywords": [
+		"static site generator",
+		"cloudcannon"
+	],
 	"homepage": "https://github.com/CloudCannon/configuration-types#readme",
 	"repository": {
 		"type": "git",
@@ -27,14 +30,19 @@
 		"format": "prettier -w src",
 		"site:dev": "http-server site -p 12345 -c-1",
 		"site:build": "cp dist/*.schema.json site/.",
-		"test": "exit 0"
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"test:coverage": "vitest run --coverage"
 	},
 	"main": "./zod/index.ts",
 	"types": "./zod/index.ts",
 	"publishConfig": {
 		"access": "public"
 	},
-	"files": ["src/**/*", "dist/**/*"],
+	"files": [
+		"src/**/*",
+		"dist/**/*"
+	],
 	"dependencies": {
 		"@cloudcannon/snippet-types": "^1.1.13",
 		"zod": "^3.25.67"
@@ -42,7 +50,9 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
 		"@types/node": "^22.10.7",
+		"@vitest/coverage-v8": "^2.1.9",
 		"http-server": "^14.1.1",
-		"typescript": "^5.8.3"
+		"typescript": "^5.8.3",
+		"vitest": "^2.1.8"
 	}
 }
