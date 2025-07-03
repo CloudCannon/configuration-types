@@ -82,6 +82,9 @@ export const ImageResizeableSchema = z.object({
 		.describe(
 			'Definitions for creating additional images of different sizes when uploading or selecting existing files.'
 		),
+}).meta({
+	name: 'ImageResizeable',
+	description: 'Configuration for image resizing, format conversion, and multi-size generation when uploading images.',
 });
 
 export type ImageResizeable = z.infer<typeof ImageResizeableSchema>;

@@ -171,6 +171,9 @@ export const SyntaxSchema = z.enum([
 	'xquery',
 	'yaml',
 	'zeek',
-]);
+]).meta({
+	name: 'Syntax',
+	description: 'Available syntax highlighting languages for code editors in CloudCannon.',
+});
 
 export type Schema = z.infer<typeof SyntaxSchema>;

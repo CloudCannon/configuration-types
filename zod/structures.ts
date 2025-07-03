@@ -131,6 +131,9 @@ export const StructureValueSchema = StructureBaseSchema.extend(WithPreviewSchema
 		documentation: DocumentationSchema.optional().describe(
 			'Provides a custom link for documentation for editors shown in the Data Editor for expanded values matching this Structure value. Has no default.'
 		),
+	}).meta({
+		name: 'StructureValue',
+		description: 'A single value option within a structure, defining the data format and appearance for content editors.',
 	});
 
 export const StructureSchema = z.object({
@@ -154,6 +157,9 @@ export const StructureSchema = z.object({
 		.describe(
 			'Defines whether options are shown to your editors in a select menu (select, default) or a modal pop up window (modal) when adding a new item.'
 		),
+}).meta({
+	name: 'Structure',
+	description: 'Provides data formats when adding new items to arrays and objects, with options for how editors choose from available values.',
 });
 
 export type StructureValue = z.infer<typeof StructureValueSchema>;

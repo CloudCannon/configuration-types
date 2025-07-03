@@ -596,6 +596,9 @@ export const TimezoneSchema = z.enum([
 	'W-SU',
 	'WET',
 	'Zulu',
-]);
+]).meta({
+	name: 'Timezone',
+	description: 'IANA timezone identifiers for date and time formatting in CloudCannon.',
+});
 
 export type Timezone = z.infer<typeof TimezoneSchema>;

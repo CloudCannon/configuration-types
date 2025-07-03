@@ -5,7 +5,10 @@ import { InputSchema } from './inputs.ts';
 import { SelectValuesSchema } from './select-values.ts';
 import { StructureSchema } from './structures.ts';
 
-export const EditorKeySchema = z.enum(['visual', 'content', 'data']);
+export const EditorKeySchema = z.enum(['visual', 'content', 'data']).meta({
+	name: 'EditorKey',
+	description: 'The available editors in CloudCannon: visual, content, and data editors.',
+});
 
 export const ReducedCascadeSchema = z.object({
 	_inputs: z
@@ -30,6 +33,9 @@ export const ReducedCascadeSchema = z.object({
 				'Structured values for editors adding new items to arrays and objects. Entries here can be referenced in the configuration for `array` or `object` inputs.'
 			);
 	},
+}).meta({
+	name: 'ReducedCascade',
+	description: 'Core cascade properties for inputs, select data, and structures that can be inherited by nested configurations.',
 });
 
 export const CascadeSchema = z.object({
@@ -45,6 +51,9 @@ export const CascadeSchema = z.object({
 	_editables: EditablesSchema.optional().describe(
 		'Contains input options for Editable Regions and the Content Editor.'
 	),
+}).meta({
+	name: 'Cascade',
+	description: 'Configuration options that cascade down to nested items, including editor settings and editable regions.',
 });
 
 export type EditorKey = z.infer<typeof EditorKeySchema>;

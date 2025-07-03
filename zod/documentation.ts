@@ -12,6 +12,9 @@ export const DocumentationSchema = z.object({
 	icon: IconSchema.default('auto_stories')
 		.optional()
 		.describe('The icon displayed next to the link.'),
+}).meta({
+	name: 'Documentation',
+	description: 'Configuration for documentation links displayed in the CloudCannon interface.',
 });
 
 export type Documentation = z.infer<typeof DocumentationSchema>;

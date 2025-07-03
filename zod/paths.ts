@@ -39,12 +39,18 @@ export const PathsSchema = z.object({
 		.describe(
 			'When set to true, CloudCannon will reference files relative to the path of the file they were uploaded to.'
 		),
+}).meta({
+	name: 'Paths',
+	description: 'Configuration for file upload paths and asset handling in CloudCannon.',
 });
 
 export const WithPathsSchema = z.object({
 	paths: PathsSchema.optional().describe(
 		'Paths to where new asset files are uploaded to. They also set the default path when choosing existing images, and linking to existing files. Each path is relative to global `source`. Defaults to the global `paths`.'
 	),
+}).meta({
+	name: 'WithPaths',
+	description: 'Mixin schema that adds path configuration capabilities to other schemas.',
 });
 
 export type Paths = z.infer<typeof PathsSchema>;

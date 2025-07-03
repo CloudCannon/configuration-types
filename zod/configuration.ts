@@ -23,6 +23,9 @@ export const HrefAddOptionSchema = z.object({
 		.describe(
 			'The link that opens when the option is clicked. Can either be an external or internal link. If internal, the link is relative to the current site.'
 		),
+}).meta({
+	name: 'HrefAddOption',
+	description: 'An option for the add menu that opens a link.',
 });
 
 export const AddOptionSchema = z.object({
@@ -68,9 +71,15 @@ export const AddOptionSchema = z.object({
 		.describe(
 			'The path to a file used to populate the initial contents of a new file if no schemas are configured. We recommend using schemas, and this is ignored if a schema is available.'
 		),
+}).meta({
+	name: 'SortOption',
+	description: 'A sort option for a collection.',
 });
 
-export const SortOrderSchema = z.enum(['ascending', 'descending', 'asc', 'desc']);
+export const SortOrderSchema = z.enum(['ascending', 'descending', 'asc', 'desc']).meta({
+	name: 'SortOrder',
+	description: 'The order of a sort option.',
+});
 
 export const SortSchema = z.object({
 	key: z
@@ -82,6 +91,9 @@ export const SortSchema = z.object({
 	order: SortOrderSchema.default('ascending')
 		.optional()
 		.describe('Controls which sort values come first.'),
+}).meta({
+	name: 'Sort',
+	description: 'A sort option for a collection.',
 });
 
 export const SortOptionSchema = SortSchema.extend({
@@ -91,6 +103,9 @@ export const SortOptionSchema = SortSchema.extend({
 		.describe(
 			'The text to display in the sort option list. Defaults to a generated label from key and order.'
 		),
+}).meta({
+	name: 'SortOption',
+	description: 'A sort option for a collection.',
 });
 
 export const CreateSchema = z.object({
@@ -115,6 +130,9 @@ export const CreateSchema = z.object({
 		.describe(
 			"Defines a target collection when publishing. When a file is published, the target collection's create definition is used instead."
 		),
+}).meta({
+	name: 'Create',
+	description: 'Controls where new files are saved.',
 });
 
 export const SchemaSchema = z.object({
@@ -145,6 +163,9 @@ export const SchemaSchema = z.object({
 		.describe(
 			"Preview your unbuilt pages (e.g. drafts) to another page's output URL. The Visual Editor will load that URL, where Data Bindings and Previews are available to render your new page without saving."
 		),
+}).meta({
+	name: 'Schema',
+	description: 'Definitions for your schemas, which are the structured data formats for your content files.',
 });
 
 export const CollectionConfigSchema = z.object({
@@ -274,6 +295,9 @@ export const CollectionConfigSchema = z.object({
 		.describe(
 			'This key defines the name for the structured data key that references the Schema a file uses.'
 		),
+}).meta({
+	name: 'CollectionConfig',
+	description: 'Definitions for your collections, which are the sets of content files for your site grouped by folder.',
 });
 
 export const CollectionGroupSchema = z.object({
@@ -284,10 +308,16 @@ export const CollectionGroupSchema = z.object({
 		.describe(
 			'The collections shown in the sidebar for this group. Collections here are referenced by their key within `collections_config`.'
 		),
+}).meta({
+	name: 'CollectionGroup',
+	description: 'Defines which collections are shown in the site navigation and how those collections are grouped.',
 });
 
 export const DataConfigEntrySchema = z.object({
 	path: z.string().describe('The path to a file or folder of files containing data.'),
+}).meta({
+	name: 'DataConfigEntry',
+	description: 'Controls what data sets are available to populate select and multiselect inputs.',
 });
 
 export const FileConfigEntrySchema = z.object({
@@ -295,6 +325,9 @@ export const FileConfigEntrySchema = z.object({
 	glob: z
 		.union([z.array(z.string()), z.string()])
 		.describe('The glob pattern(s) targeting a path to one or more files.'),
+}).meta({
+	name: 'FileConfigEntry',
+	description: 'Provides scope to configure at a file level, without adding configuration to files.',
 });
 
 export const EditorSchema = z.object({
@@ -304,6 +337,9 @@ export const EditorSchema = z.object({
 		.describe(
 			'The URL used for the dashboard screenshot, and where the editor opens to when clicking the dashboard "Edit Home" button.'
 		),
+}).meta({
+	name: 'Editor',
+	description: 'Contains settings for the default editor actions on your site.',
 });
 
 export const CommitTemplateSchema = z.object({
@@ -337,6 +373,9 @@ export const CommitTemplateSchema = z.object({
 		.describe('Define additional template strings, for building nested templates.'),
 
 	wrap_width: z.number().optional().describe('Sets the width of the text wrap in the editor.'),
+}).meta({
+	name: 'CommitTemplate',
+	description: 'A template for commit messages when saving changes.',
 });
 
 export const ConfigurationSchema = z.object({
@@ -429,6 +468,9 @@ export const ConfigurationSchema = z.object({
 		.record(z.string(), SnippetConfigSchema)
 		.optional()
 		.describe('Extended option used when creating more complex custom snippets.'),
+}).meta({
+	name: 'Configuration',
+	description: 'The main CloudCannon configuration schema.',
 });
 
 export type HrefAddOption = z.infer<typeof HrefAddOptionSchema>;

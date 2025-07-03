@@ -3585,6 +3585,9 @@ export const IconSchema = z.enum([
 	'zoom_in_map',
 	'zoom_out',
 	'zoom_out_map',
-]);
+]).meta({
+	name: 'Icon',
+	description: 'Material Design icon names available in CloudCannon for UI elements and content previews.',
+});
 
 export type Icon = z.infer<typeof IconSchema>;

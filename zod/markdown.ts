@@ -7,7 +7,10 @@ export const AttributeListPositionSchema = z.enum([
 	'below',
 	'newline below',
 	'right-of-prefix',
-]);
+]).meta({
+	name: 'AttributeListPosition',
+	description: 'Positioning options for Markdown attribute elements.',
+});
 
 export const MarkdownAttributeElementOptionsSchema = z.union([
 	z.object({
@@ -15,7 +18,10 @@ export const MarkdownAttributeElementOptionsSchema = z.union([
 		block: AttributeListPositionSchema.optional(),
 	}),
 	z.record(z.string(), AttributeListPositionSchema),
-]);
+]).meta({
+	name: 'MarkdownAttributeElementOptions',
+	description: 'Configuration for positioning Markdown attributes on different element types.',
+});
 
 export const MarkdownSettingsSchema = z.object({
 	engine: z
@@ -96,6 +102,9 @@ export const MarkdownSettingsSchema = z.object({
 			'Define positioning behavior of Markdown attributes for different elements.'
 		),
 	}),
+}).meta({
+	name: 'MarkdownSettings',
+	description: 'Configuration for Markdown processing engines and formatting options.',
 });
 
 export type AttributeListPosition = z.infer<typeof AttributeListPositionSchema>;

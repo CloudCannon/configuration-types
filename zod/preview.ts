@@ -20,20 +20,32 @@ const PreviewEntrySchema = z.union([
 
 export const WithTextPreviewSchema = z.object({
 	text: PreviewEntrySchema.optional().describe('Controls the main text shown per item.'),
+}).meta({
+	name: 'WithTextPreview',
+	description: 'Mixin that adds text preview configuration.',
 });
 
 export const WithImagePreviewSchema = z.object({
 	image: PreviewEntrySchema.optional().describe('Controls the image shown per item.'),
+}).meta({
+	name: 'WithImagePreview',
+	description: 'Mixin that adds image preview configuration.',
 });
 
 export const WithSubtextPreviewSchema = z.object({
 	subtext: PreviewEntrySchema.optional().describe('Controls the supporting text shown per item.'),
+}).meta({
+	name: 'WithSubtextPreview',
+	description: 'Mixin that adds subtext preview configuration.',
 });
 
 export const WithIconPreviewSchema = z.object({
 	icon: PreviewEntrySchema.optional().describe(
 		'Controls the icon shown per item. Must result in a Material Icon name.'
 	),
+}).meta({
+	name: 'WithIconPreview',
+	description: 'Mixin that adds icon preview configuration.',
 });
 
 export const WithIconColorPreviewSchema = z.object({
@@ -42,6 +54,9 @@ export const WithIconColorPreviewSchema = z.object({
 	icon_background_color: PreviewEntrySchema.optional().describe(
 		'Controls the background color of the icon.'
 	),
+}).meta({
+	name: 'WithIconColorPreview',
+	description: 'Mixin that adds icon color preview configuration.',
 });
 
 export const PreviewGallerySchema = z.object({
@@ -58,6 +73,9 @@ export const PreviewGallerySchema = z.object({
 	background_color: PreviewEntrySchema.optional().describe(
 		'Controls the background color gallery area.'
 	),
+}).meta({
+	name: 'PreviewGallery',
+	description: 'Configuration for gallery-style previews with images and positioning options.',
 });
 
 export const PreviewMetadataSchema = z.object({
@@ -65,6 +83,9 @@ export const PreviewMetadataSchema = z.object({
 	...WithImagePreviewSchema.shape,
 	...WithIconPreviewSchema.shape,
 	...WithIconColorPreviewSchema.shape,
+}).meta({
+	name: 'PreviewMetadata',
+	description: 'Metadata configuration for preview items including text, image, and icon options.',
 });
 
 export const PreviewSchema = z.object({
@@ -81,16 +102,25 @@ export const PreviewSchema = z.object({
 	gallery: PreviewGallerySchema.optional().describe(
 		'Details for large image/icon preview per item.'
 	),
+}).meta({
+	name: 'Preview',
+	description: 'Configuration for how content items are visually previewed in the CloudCannon interface.',
 });
 
 export const WithPreviewSchema = z.object({
 	preview: PreviewSchema.optional().describe('Changes the way items are previewed in the CMS.'),
+}).meta({
+	name: 'WithPreview',
+	description: 'Mixin that adds preview configuration capabilities.',
 });
 
 export const WithPickerPreviewSchema = z.object({
 	picker_preview: PreviewSchema.optional().describe(
 		'Changes the way items are previewed in the CMS while being chosen.'
 	),
+}).meta({
+	name: 'WithPickerPreview',
+	description: 'Mixin that adds picker preview configuration capabilities.',
 });
 
 export type WithTextPreview = z.infer<typeof WithTextPreviewSchema>;

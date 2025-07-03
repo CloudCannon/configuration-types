@@ -434,6 +434,9 @@ export const MimeTypeSchema = z.enum([
 	'application/zip',
 	'multipart/x-zip',
 	'text/x-script.zsh',
-]);
+]).meta({
+	name: 'MimeType',
+	description: 'MIME type identifiers for file type validation and handling in CloudCannon.',
+});
 
 export type MimeType = z.infer<typeof MimeTypeSchema>;

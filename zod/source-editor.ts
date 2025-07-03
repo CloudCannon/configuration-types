@@ -39,7 +39,10 @@ export const ThemeSchema = z.enum([
 	'twilight',
 	'vibrant_ink',
 	'xcode',
-]);
+]).meta({
+	name: 'Theme',
+	description: 'Available color themes for syntax highlighting in the Source Editor.',
+});
 
 export const SourceEditorSchema = z
 	.object({
@@ -69,7 +72,11 @@ export const SourceEditorSchema = z
 	})
 	.describe(
 		'This key defines the appearance and behavior of the Source Editor. The following nested keys are available:\n\n- `tab_size`\n- `show_gutter`\n- `theme`\n\nThis key has no default.\n\nhttps://cloudcannon.com/documentation/articles/the-source-editor/#source_editor'
-	);
+	)
+	.meta({
+		name: 'SourceEditor',
+		description: 'Configuration for the Source Editor appearance and behavior, including themes, tab settings, and display options.',
+	});
 
 export type Theme = z.infer<typeof ThemeSchema>;
 export type SourceEditor = z.infer<typeof SourceEditorSchema>;

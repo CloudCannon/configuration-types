@@ -267,6 +267,9 @@ export const EditablesSchema = z.object({
 	),
 
 	text: TextEditableSchema.optional().describe('Contains input options for text Editable Regions.'),
+}).meta({
+	name: 'Editables',
+	description: 'Configuration for editable regions in the Visual Editor, including content, block, link, image, and text editing options.',
 });
 
 export type ToolbarOptions = z.infer<typeof ToolbarOptionsSchema>;

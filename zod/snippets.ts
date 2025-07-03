@@ -49,6 +49,9 @@ export const SnippetConfigSchema = ReducedCascadeSchema.extend(WithPreviewSchema
 			.record(z.string(), z.unknown())
 			.optional()
 			.describe('The parameters of this snippet.'),
+	}).meta({
+		name: 'SnippetConfig',
+		description: 'A snippet configuration.',
 	});
 
 // Helper schemas for snippet import configurations
@@ -68,7 +71,10 @@ const SnippetImportConfigSchema = z.union([
 				'The list of included snippets. If unset, all snippets are included unless defined in `exclude`.'
 			),
 	}),
-]);
+]).meta({
+	name: 'SnippetImportConfig',
+	description: 'Controls what snippets are available to import.',
+});
 
 export const SnippetsImportsSchema = z.object({
 	hugo: SnippetImportConfigSchema.optional().describe('Default snippets for Hugo SSG.'),
@@ -96,6 +102,9 @@ export const SnippetsImportsSchema = z.object({
 	docusaurus_mdx: SnippetImportConfigSchema.optional().describe(
 		'Default snippets for Docusaurus SSG.'
 	),
+}).meta({
+	name: 'SnippetsImports',
+	description: 'Controls what snippets are available to import.',
 });
 
 export type SnippetConfig = z.infer<typeof SnippetConfigSchema>;
