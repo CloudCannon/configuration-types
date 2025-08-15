@@ -7,33 +7,27 @@ export const PathsSchema = z
 			description:
 				'Location of assets that are statically copied to the output site. This prefix will be removed from the _Uploads_ path when CloudCannon outputs the URL of an asset.',
 		}),
-
 		uploads: z.string().default('uploads').optional().meta({
 			id: 'Paths.uploads',
 			description: 'Default location of newly uploaded site files.',
 		}),
-
 		uploads_filename: z.string().optional().meta({
 			id: 'Paths.uploads_filename',
 			description: 'Filename template for newly uploaded site files.',
 		}),
-
 		dam_uploads: z.string().optional().meta({
 			id: 'Paths.dam_uploads',
 			description: 'Default location of newly uploaded DAM files.',
 		}),
-
 		dam_uploads_filename: z.string().optional().meta({
 			id: 'Paths.dam_uploads_filename',
 			description: 'Filename template for newly uploaded DAM files.',
 		}),
-
 		dam_static: z.string().optional().meta({
 			id: 'Paths.dam_static',
 			description:
 				'Location of statically copied assets for DAM files. This prefix will be removed from the _DAM Uploads_ path when CloudCannon outputs the URL of an asset.',
 		}),
-
 		uploads_use_relative_path: z.boolean().optional().meta({
 			id: 'Paths.uploads_use_relative_path',
 			description:

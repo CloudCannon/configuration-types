@@ -1,5 +1,4 @@
 import * as z from 'zod';
-
 import { EditablesSchema } from './editables';
 import { InputsSchema } from './inputs';
 import { SelectDataSchema } from './select-values';
