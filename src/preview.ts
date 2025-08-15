@@ -23,38 +23,38 @@ const PreviewEntrySchema = z
 		id: 'PreviewEntry',
 	});
 
-const TextPreviewSchema = PreviewEntrySchema.optional().meta({
+const TextPreviewSchema = PreviewEntrySchema.meta({
 	id: 'preview.text',
 	description: 'Controls the main text shown per item.',
 });
 
-const ImagePreviewSchema = PreviewEntrySchema.optional().meta({
+const ImagePreviewSchema = PreviewEntrySchema.meta({
 	id: 'preview.image',
 	description: 'Controls the image shown per item.',
 });
 
-const IconPreviewSchema = PreviewEntrySchema.optional().meta({
+const IconPreviewSchema = PreviewEntrySchema.meta({
 	id: 'preview.icon',
 	description: 'Controls the icon shown per item. Must result in a Material Symbol name.',
 });
 
-const IconColorSchema = PreviewEntrySchema.optional().meta({
+export const IconColorSchema = PreviewEntrySchema.meta({
 	id: 'preview.icon_color',
 	description: 'Controls the color of the icon.',
 });
 
-const IconBackgroundColorSchema = PreviewEntrySchema.optional().meta({
+export const IconBackgroundColorSchema = PreviewEntrySchema.meta({
 	id: 'preview.icon_background_color',
 	description: 'Controls the background color of the icon.',
 });
 
 export const PreviewGallerySchema = z
 	.object({
-		text: TextPreviewSchema,
-		image: ImagePreviewSchema,
-		icon: IconPreviewSchema,
-		icon_color: IconColorSchema,
-		icon_background_color: IconBackgroundColorSchema,
+		text: TextPreviewSchema.optional(),
+		image: ImagePreviewSchema.optional(),
+		icon: IconPreviewSchema.optional(),
+		icon_color: IconColorSchema.optional(),
+		icon_background_color: IconBackgroundColorSchema.optional(),
 		fit: z.enum(['padded', 'cover', 'contain', 'cover-top']).default('padded').optional().meta({
 			description: 'Controls how the gallery image is positioned within the gallery.',
 		}),
@@ -70,11 +70,11 @@ export const PreviewGallerySchema = z
 
 export const PreviewMetadataSchema = z
 	.object({
-		text: TextPreviewSchema,
-		image: ImagePreviewSchema,
-		icon: IconPreviewSchema,
-		icon_color: IconColorSchema,
-		icon_background_color: IconBackgroundColorSchema,
+		text: TextPreviewSchema.optional(),
+		image: ImagePreviewSchema.optional(),
+		icon: IconPreviewSchema.optional(),
+		icon_color: IconColorSchema.optional(),
+		icon_background_color: IconBackgroundColorSchema.optional(),
 	})
 	.meta({
 		id: 'preview.metadata',
@@ -85,14 +85,14 @@ export const PreviewMetadataSchema = z
 
 export const PreviewSchema = z
 	.object({
-		text: TextPreviewSchema,
+		text: TextPreviewSchema.optional(),
 		subtext: PreviewEntrySchema.optional().meta({
 			description: 'Controls the supporting text shown per item.',
 		}),
-		image: ImagePreviewSchema,
-		icon: IconPreviewSchema,
-		icon_color: IconColorSchema,
-		icon_background_color: IconBackgroundColorSchema,
+		image: ImagePreviewSchema.optional(),
+		icon: IconPreviewSchema.optional(),
+		icon_color: IconColorSchema.optional(),
+		icon_background_color: IconBackgroundColorSchema.optional(),
 		metadata: z.array(PreviewMetadataSchema).optional().meta({
 			description: 'Defines a list of items that can contain an image, icon, and text.',
 		}),

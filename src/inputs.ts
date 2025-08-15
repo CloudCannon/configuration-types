@@ -5,7 +5,12 @@ import { IconSchema } from './icon';
 import { ImageOptionsSchema } from './image-options';
 import { MimeTypeSchema } from './mimetype';
 import { PathsSchema } from './paths';
-import { PickerPreviewSchema, PreviewSchema } from './preview';
+import {
+	IconBackgroundColorSchema,
+	IconColorSchema,
+	PickerPreviewSchema,
+	PreviewSchema,
+} from './preview';
 import { SelectDataValuesSchema } from './select-values';
 import { SourceEditorSchema } from './source-editor';
 import { StructureSchema } from './structures';
@@ -179,22 +184,22 @@ const ArrayControlOptionsSchema = z.object({
 	}),
 });
 
-const EmptyTypeTextSchema = z.enum(['null', 'string']).default('null').optional().meta({
+const EmptyTypeTextSchema = z.enum(['null', 'string']).default('null').meta({
 	id: 'empty_type_text',
 	description: 'Set how an ‘empty’ value will be saved. Does not apply to existing empty values.',
 });
 
-const EmptyTypeNumberSchema = z.enum(['null', 'number']).default('null').optional().meta({
+const EmptyTypeNumberSchema = z.enum(['null', 'number']).default('null').meta({
 	id: 'empty_type_number',
 	description: 'Set how an ‘empty’ value will be saved. Does not apply to existing empty values.',
 });
 
-const EmptyTypeObjectSchema = z.enum(['null', 'object']).default('null').optional().meta({
+const EmptyTypeObjectSchema = z.enum(['null', 'object']).default('null').meta({
 	id: 'empty_type_object',
 	description: 'Set how an ‘empty’ value will be saved. Does not apply to existing empty values.',
 });
 
-const EmptyTypeArraySchema = z.enum(['null', 'array']).default('null').optional().meta({
+const EmptyTypeArraySchema = z.enum(['null', 'array']).default('null').meta({
 	id: 'empty_type_array',
 	description: 'Set how an ‘empty’ value will be saved. Does not apply to existing empty values.',
 });
@@ -263,13 +268,15 @@ export const TextInputOptionsSchema = z
 	.object({
 		...TextValidationSchema.shape,
 		...RequiredValidationSchema.shape,
-		empty_type: EmptyTypeTextSchema,
+		empty_type: EmptyTypeTextSchema.optional(),
 		placeholder: z.string().optional().meta({
 			description: 'Text shown when this input has no value.',
 		}),
 		icon: IconSchema.optional().meta({
 			description: 'Icon shown beside the input.',
 		}),
+		icon_color: IconColorSchema.optional(),
+		icon_background_color: IconBackgroundColorSchema.optional(),
 	})
 	.meta({
 		description: 'Options that are specific to Text Inputs.',
@@ -298,7 +305,12 @@ export const TextInputSchema = z
 
 export const TextareaInputOptionsSchema = z
 	.object({
-		...TextInputOptionsSchema.shape,
+		...TextValidationSchema.shape,
+		...RequiredValidationSchema.shape,
+		empty_type: EmptyTypeTextSchema.optional(),
+		placeholder: z.string().optional().meta({
+			description: 'Text shown when this input has no value.',
+		}),
 		show_count: z.boolean().default(false).optional().meta({
 			description: 'Shows a character counter below the input if enabled.',
 		}),
@@ -322,7 +334,7 @@ export const CodeInputOptionsSchema = z
 		...SourceEditorSchema.shape,
 		...TextValidationSchema.shape,
 		...RequiredValidationSchema.shape,
-		empty_type: EmptyTypeTextSchema,
+		empty_type: EmptyTypeTextSchema.optional(),
 		max_visible_lines: z.number().optional().meta({
 			description:
 				'Sets the maximum number of visible lines for this input, effectively controlling maximum height. When the containing text exceeds this number, the input becomes a scroll area.',
@@ -354,7 +366,7 @@ export const ColorInputOptionsSchema = z
 	.object({
 		...TextValidationSchema.shape,
 		...RequiredValidationSchema.shape,
-		empty_type: EmptyTypeTextSchema,
+		empty_type: EmptyTypeTextSchema.optional(),
 		format: z.enum(['rgb', 'hex', 'hsl', 'hsv']).optional().meta({
 			description:
 				'Sets what format the color value is saved as. Defaults to the naming convention, or HEX if that is unset.',
@@ -402,7 +414,7 @@ const MaxSchema = z.number().meta({
 export const NumberInputOptionsSchema = z
 	.object({
 		...RequiredValidationSchema.shape,
-		empty_type: EmptyTypeNumberSchema,
+		empty_type: EmptyTypeNumberSchema.optional(),
 		min: MinSchema.optional(),
 		max: MaxSchema.optional(),
 		step: z.number().optional().meta({
@@ -461,7 +473,7 @@ export const RichTextInputOptionsSchema = z
 		...BlockEditableSchema.shape,
 		...TextValidationSchema.shape,
 		...RequiredValidationSchema.shape,
-		empty_type: EmptyTypeTextSchema,
+		empty_type: EmptyTypeTextSchema.optional(),
 		allow_resize: z.boolean().default(false).optional().meta({
 			description: 'Shows or hides the resize handler to vertically resize the input.',
 		}),
@@ -486,7 +498,7 @@ export const RichTextInputSchema = z
 export const DateInputOptionsSchema = z
 	.object({
 		...RequiredValidationSchema.shape,
-		empty_type: EmptyTypeTextSchema,
+		empty_type: EmptyTypeTextSchema.optional(),
 		timezone: TimezoneSchema.optional().default('Etc/UTC').meta({
 			description:
 				'Specifies the time zone that dates are displayed and edited in. Also changes the suffix the date is persisted to the file with. Defaults to the global `timezone`.',
@@ -537,7 +549,7 @@ export const DateInputSchema = z
 export const TimeInputOptionsSchema = z
 	.object({
 		...RequiredValidationSchema.shape,
-		empty_type: EmptyTypeTextSchema,
+		empty_type: EmptyTypeTextSchema.optional(),
 	})
 	.meta({
 		description: 'Options that are specific to Time Inputs.',
@@ -558,7 +570,7 @@ export const FileInputOptionsSchema = z
 		...ImageOptionsSchema.shape,
 		...TextValidationSchema.shape,
 		...RequiredValidationSchema.shape,
-		empty_type: EmptyTypeTextSchema,
+		empty_type: EmptyTypeTextSchema.optional(),
 		paths: PathsSchema.optional(),
 		accepts_mime_types: z
 			.union([z.string(), z.array(MimeTypeSchema)])
@@ -677,7 +689,7 @@ export const SelectInputOptionsSchema = z
 	.object({
 		...SharedSelectInputOptionsSchema.shape,
 		...TextValidationSchema.shape,
-		empty_type: EmptyTypeTextSchema,
+		empty_type: EmptyTypeTextSchema.optional(),
 	})
 	.meta({
 		description: 'Options that are specific to Select Inputs.',
@@ -697,7 +709,7 @@ export const MultiselectInputOptionsSchema = z
 	.object({
 		...SharedSelectInputOptionsSchema.shape,
 		...ArrayValidationSchema.shape,
-		empty_type: EmptyTypeArraySchema,
+		empty_type: EmptyTypeArraySchema.optional(),
 	})
 	.meta({
 		description: 'Options that are specific to Multiselect Inputs.',
@@ -721,7 +733,7 @@ export const ChoiceInputOptionsSchema = z
 	.object({
 		...SharedChoiceInputOptionsSchema.shape,
 		...TextValidationSchema.shape,
-		empty_type: EmptyTypeTextSchema,
+		empty_type: EmptyTypeTextSchema.optional(),
 	})
 	.meta({
 		description: 'Options that are specific to Choice Inputs.',
@@ -741,7 +753,7 @@ export const MultichoiceInputOptionsSchema = z
 	.object({
 		...SharedChoiceInputOptionsSchema.shape,
 		...ArrayValidationSchema.shape,
-		empty_type: EmptyTypeArraySchema,
+		empty_type: EmptyTypeArraySchema.optional(),
 	})
 	.meta({
 		description: 'Options that are specific to Multichoice Inputs.',
@@ -780,7 +792,7 @@ export const ObjectInputGroupSchema = z.object({
 export const ObjectInputOptionsSchema = z
 	.object({
 		...RequiredValidationSchema.shape,
-		empty_type: EmptyTypeObjectSchema,
+		empty_type: EmptyTypeObjectSchema.optional(),
 		preview: PreviewSchema.optional(),
 		subtype: z.enum(['object', 'mutable', 'tabbed']).optional().meta({
 			description: 'Changes the appearance and behavior of the input.',
@@ -845,7 +857,7 @@ export const ArrayInputOptionsSchema = z
 		...RequiredValidationSchema.shape,
 		...ArrayValidationSchema.shape,
 		...ArrayControlOptionsSchema.shape,
-		empty_type: EmptyTypeArraySchema,
+		empty_type: EmptyTypeArraySchema.optional(),
 		get structures() {
 			return z.union([z.string(), StructureSchema]).optional().meta({
 				description:
