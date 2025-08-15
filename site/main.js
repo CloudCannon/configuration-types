@@ -17,7 +17,7 @@ class Schema {
 	async content() {
 		this.fetch ||= fetch(this.url, {
 			method: 'GET',
-			headers: { 'Content-Type': 'application/json' }
+			headers: { 'Content-Type': 'application/json' },
 		}).then((response) => response.json());
 
 		return this.fetch;
@@ -34,23 +34,23 @@ const schemas = {
 	'legacy-eleventy': new Schema('/cloudcannon-config.legacy-eleventy.schema.json'),
 	'legacy-hugo': new Schema('/cloudcannon-config.legacy-hugo.schema.json'),
 	'legacy-jekyll': new Schema('/cloudcannon-config.legacy-jekyll.schema.json'),
-	'legacy-reader': new Schema('/cloudcannon-config.legacy-reader.schema.json')
-}
+	'legacy-reader': new Schema('/cloudcannon-config.legacy-reader.schema.json'),
+};
 
 let activeSchema = schemas.latest;
 const ajv = new Ajv({ strict: 'log', allErrors: true, verbose: true });
-const editor = ace.edit($input, { mode: "ace/mode/yaml", selectionStyle: "text" });
+const editor = ace.edit($input, { mode: 'ace/mode/yaml', selectionStyle: 'text' });
 let useAjv = false;
 
 $validator.addEventListener('change', () => {
 	useAjv = $validator.checked;
 	runValidate();
-})
+});
 
 $schema.addEventListener('change', () => {
 	activeSchema = schemas[$schema.value];
 	runValidate();
-})
+});
 
 function renderAllowedValues(entry) {
 	if (!entry.context?.allowedValues) {
@@ -66,13 +66,11 @@ function renderAllowedValues(entry) {
 }
 
 function codeify(value) {
-	return value
-		?.replace(/'([^']+)'/g, (match, contents) => `<code>${encodeHtml(contents)}</code>`);
+	return value?.replace(/'([^']+)'/g, (match, contents) => `<code>${encodeHtml(contents)}</code>`);
 }
 
 function emify(value) {
-	return value
-		?.replace(/'([^']+)'/g, (match, contents) => `<em>${encodeHtml(contents)}</em>`);
+	return value?.replace(/'([^']+)'/g, (match, contents) => `<em>${encodeHtml(contents)}</em>`);
 }
 
 function encodeHtml(html) {
@@ -147,13 +145,13 @@ function renderErrorJsonSchemaLibrary(error) {
 async function runValidateJsonSchemaLibrary() {
 	try {
 		const schema = await activeSchema.content();
-		console.log("schema", schema)
+		console.log('schema', schema);
 		const data = jsYaml.load(editor.getValue());
 		const jsonSchema = new Draft07(schema);
 		const errors = jsonSchema.validate(data);
 
 		if (errors.length) {
-			console.debug('json-schema-library', errors)
+			console.debug('json-schema-library', errors);
 
 			$output.innerHTML = `
 				<h2><strong>Invalid</strong> (${errors.length} issues)</h2>
@@ -245,10 +243,10 @@ async function runValidateAjv() {
 				schema,
 				data,
 				errors: ajvValidate.errors,
-				basePath: '$'
+				basePath: '$',
 			});
 
-			console.debug('ajv', ajvValidate.errors)
+			console.debug('ajv', ajvValidate.errors);
 			console.debug('apideck', output);
 
 			$output.innerHTML = `
@@ -257,7 +255,7 @@ async function runValidateAjv() {
 			`;
 		}
 	} catch (e) {
-		console.error(e)
+		console.error(e);
 
 		$output.innerHTML = `
 			<h2><strong>Error</strong></h2>
@@ -270,7 +268,7 @@ function runValidate() {
 	if (useAjv) {
 		runValidateAjv();
 	} else {
-		runValidateJsonSchemaLibrary()
+		runValidateJsonSchemaLibrary();
 	}
 }
 

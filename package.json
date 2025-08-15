@@ -19,24 +19,22 @@
 		"email": "support@cloudcannon.com"
 	},
 	"scripts": {
-		"prebuild": "rimraf dist && mkdir -p dist",
-		"build": "run-p build:*",
-		"build:combined": "cp src/cloudcannon-config.schema.json dist/cloudcannon-config.schema.json",
-		"build:latest": "ts-json-schema-generator --markdown-description --no-top-ref --path src/index.d.ts --type Configuration --out dist/cloudcannon-config.latest.schema.json --id 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-config.latest.schema.json'",
-		"build:legacy-jekyll": "ts-json-schema-generator --markdown-description --no-top-ref --path src/build-coupled.d.ts --type JekyllConfiguration --out dist/cloudcannon-config.legacy-jekyll.schema.json --id 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-config.legacy-jekyll.schema.json'",
-		"build:legacy-hugo": "ts-json-schema-generator --markdown-description --no-top-ref --path src/build-coupled.d.ts --type HugoConfiguration --out dist/cloudcannon-config.legacy-hugo.schema.json --id 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-config.legacy-hugo.schema.json'",
-		"build:legacy-eleventy": "ts-json-schema-generator --markdown-description --no-top-ref --path src/build-coupled.d.ts --type EleventyConfiguration --out dist/cloudcannon-config.legacy-eleventy.schema.json --id 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-config.legacy-eleventy.schema.json'",
-		"build:legacy-reader": "ts-json-schema-generator --markdown-description --no-top-ref --path src/build-coupled.d.ts --type ReaderConfiguration --out dist/cloudcannon-config.legacy-reader.schema.json --id 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-config.legacy-reader.schema.json'",
+		"prebuild": "rm -rf dist && mkdir -p dist",
+		"build": "tsx generate-schemas.ts && npm run build:combined",
+		"build:combined": "cp cloudcannon-config.schema.json dist/cloudcannon-config.schema.json",
 		"lint": "npm run lint:tsc && npm run lint:format",
 		"lint:tsc": "tsc --noEmit",
-		"lint:format": "prettier -c src",
-		"format": "prettier -w src",
+		"lint:format": "biome check --fix",
+		"lint:report": "biome lint --diagnostic-level=error --reporter=junit > lint-results.xml",
+		"lint:staged": "biome check --diagnostic-level=error --staged --no-errors-on-unmatched",
 		"site:dev": "http-server site -p 12345 -c-1",
 		"site:build": "cp dist/*.schema.json site/.",
-		"test": "exit 0"
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"test:coverage": "vitest run --coverage"
 	},
-	"main": "./src/index.d.ts",
-	"types": "./src/index.d.ts",
+	"main": "./src/index.ts",
+	"types": "./src/index.ts",
 	"publishConfig": {
 		"access": "public"
 	},
@@ -46,15 +44,15 @@
 	],
 	"dependencies": {
 		"@cloudcannon/snippet-types": "^1.1.13",
-		"npm-run-all": "^4.1.5",
-		"ts-json-schema-generator": "^2.2.0"
+		"zod": "^4.0.17"
 	},
 	"devDependencies": {
-		"@types/node": "^22.10.7",
+		"@biomejs/biome": "1.9.4",
+		"@types/node": "^24.2.1",
+		"@vitest/coverage-v8": "^2.1.9",
 		"http-server": "^14.1.1",
-		"prettier": "^3.4.2",
-		"prettier-plugin-jsdoc": "^1.3.2",
-		"rimraf": "^6.0.1",
-		"typescript": "^5.7.3"
+		"tsx": "^4.20.4",
+		"typescript": "^5.9.2",
+		"vitest": "^2.1.8"
 	}
 }
