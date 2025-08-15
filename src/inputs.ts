@@ -622,6 +622,10 @@ export const UrlInputOptionsSchema = z
 			description:
 				'Hides the option to link to an email address. This does not prevent typing a `mailto:` link in the input.',
 		}),
+		hide_link_to_telephone: z.boolean().default(false).optional().meta({
+			description:
+				'Hides the option to link to a telephone number. This does not prevent typing a `tel:` link in the input.',
+		}),
 	})
 	.meta({
 		description: 'Options that are specific to URL Inputs.',
