@@ -1,21 +1,15 @@
 import * as z from 'zod';
-import { CascadeSchema, EditorKeySchema, ReducedCascadeSchema } from './cascade.ts';
-import { DocumentationSchema } from './documentation.ts';
-import { IconSchema } from './icon.ts';
-import {
-	InputSchema,
-	InputsSchema,
-	ObjectInputOptionsSchema,
-	ObjectInputSchema,
-} from './inputs.ts';
-import { MarkdownSettingsSchema } from './markdown.ts';
-import { PathsSchema } from './paths.ts';
-import { PickerPreviewSchema, PreviewSchema } from './preview.ts';
-import { SnippetConfigSchema } from './snippets.ts';
-import { SnippetsImportsSchema } from './snippets.ts';
-import { SourceEditorSchema } from './source-editor.ts';
-import { StructureSchema } from './structures.ts';
-import { TimezoneSchema } from './timezone.ts';
+import { CascadeSchema, EditorKeySchema, ReducedCascadeSchema } from './cascade';
+import { DocumentationSchema } from './documentation';
+import { IconSchema } from './icon';
+import { InputSchema } from './inputs';
+import { MarkdownSettingsSchema } from './markdown';
+import { PathsSchema } from './paths';
+import { PreviewSchema } from './preview';
+import { SnippetConfigSchema } from './snippets';
+import { SnippetsImportsSchema } from './snippets';
+import { SourceEditorSchema } from './source-editor';
+import { TimezoneSchema } from './timezone';
 
 export const HrefAddOptionSchema = z
 	.object({

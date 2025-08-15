@@ -1,6 +1,6 @@
 import * as z from 'zod';
-import { ReducedCascadeSchema } from './cascade.ts';
-import { PickerPreviewSchema, PreviewSchema } from './preview.ts';
+import { ReducedCascadeSchema } from './cascade';
+import { PickerPreviewSchema, PreviewSchema } from './preview';
 
 export const SnippetConfigSchema = z
 	.object({

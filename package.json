@@ -20,7 +20,7 @@
 	},
 	"scripts": {
 		"prebuild": "rm -rf dist && mkdir -p dist",
-		"build": "node --experimental-strip-types generate-schemas.ts && npm run build:combined",
+		"build": "tsx generate-schemas.ts && npm run build:combined",
 		"build:combined": "cp cloudcannon-config.schema.json dist/cloudcannon-config.schema.json",
 		"lint": "npm run lint:tsc && npm run lint:format",
 		"lint:tsc": "tsc --noEmit",
@@ -51,6 +51,7 @@
 		"@types/node": "^24.2.1",
 		"@vitest/coverage-v8": "^2.1.9",
 		"http-server": "^14.1.1",
+		"tsx": "^4.20.4",
 		"typescript": "^5.9.2",
 		"vitest": "^2.1.8"
 	}

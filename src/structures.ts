@@ -1,9 +1,9 @@
 import * as z from 'zod';
-import { DocumentationSchema } from './documentation.ts';
-import { IconSchema } from './icon.ts';
-import { InputsSchema, ObjectInputGroupSchema } from './inputs.ts';
-import { PickerPreviewSchema, PreviewSchema } from './preview.ts';
-import { SelectDataSchema } from './select-values.ts';
+import { DocumentationSchema } from './documentation';
+import { IconSchema } from './icon';
+import { InputsSchema, ObjectInputGroupSchema } from './inputs';
+import { PickerPreviewSchema, PreviewSchema } from './preview';
+import { SelectDataSchema } from './select-values';
 
 const StructureBaseSchema = z.object({
 	reorder_inputs: z.boolean().default(true).optional().meta({

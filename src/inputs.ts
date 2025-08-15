@@ -1,16 +1,16 @@
 import * as z from 'zod';
-import { DocumentationSchema } from './documentation.ts';
-import { BlockEditableSchema } from './editables.ts';
-import { IconSchema } from './icon.ts';
-import { ImageOptionsSchema } from './image-options.ts';
-import { MimeTypeSchema } from './mimetype.ts';
-import { PathsSchema } from './paths.ts';
-import { PickerPreviewSchema, PreviewSchema } from './preview.ts';
-import { SelectDataValuesSchema } from './select-values.ts';
-import { SourceEditorSchema } from './source-editor.ts';
-import { StructureSchema } from './structures.ts';
-import { SyntaxSchema } from './syntax.ts';
-import { TimezoneSchema } from './timezone.ts';
+import { DocumentationSchema } from './documentation';
+import { BlockEditableSchema } from './editables';
+import { IconSchema } from './icon';
+import { ImageOptionsSchema } from './image-options';
+import { MimeTypeSchema } from './mimetype';
+import { PathsSchema } from './paths';
+import { PickerPreviewSchema, PreviewSchema } from './preview';
+import { SelectDataValuesSchema } from './select-values';
+import { SourceEditorSchema } from './source-editor';
+import { StructureSchema } from './structures';
+import { SyntaxSchema } from './syntax';
+import { TimezoneSchema } from './timezone';
 
 export const InputTypeSchema = z
 	.enum([
@@ -560,11 +560,14 @@ export const FileInputOptionsSchema = z
 		...RequiredValidationSchema.shape,
 		empty_type: EmptyTypeTextSchema,
 		paths: PathsSchema.optional(),
-		accepts_mime_types: MimeTypeSchema.optional().meta({
-			id: 'accepts_mime_types',
-			description:
-				'Restricts which file types are available to select or upload to this input. Accepted format is an array or comma-separated string of MIME types. The special value "*" means any type is accepted.',
-		}),
+		accepts_mime_types: z
+			.union([z.string(), z.array(MimeTypeSchema)])
+			.optional()
+			.meta({
+				id: 'accepts_mime_types',
+				description:
+					'Restricts which file types are available to select or upload to this input. Accepted format is an array or comma-separated string of MIME types. The special value "*" means any type is accepted.',
+			}),
 		max_file_size: z.number().optional().meta({
 			id: 'max_file_size',
 			description:
@@ -839,6 +842,12 @@ export const ArrayInputOptionsSchema = z
 		...ArrayValidationSchema.shape,
 		...ArrayControlOptionsSchema.shape,
 		empty_type: EmptyTypeArraySchema,
+		get structures() {
+			return z.union([z.string(), StructureSchema]).optional().meta({
+				description:
+					'Provides data formats for value of this object. When choosing an item, team members are prompted to choose from a number of values you have defined.',
+			});
+		},
 	})
 	.meta({
 		description: 'Options that are specific to Array Inputs.',

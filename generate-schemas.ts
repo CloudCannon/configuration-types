@@ -1,13 +1,11 @@
-#!/usr/bin/env tsx
-
 import fs from 'node:fs';
 import path from 'node:path';
 import * as z from 'zod';
-import { JekyllConfigurationSchema } from './src/build-coupled.ts';
-import { HugoConfigurationSchema } from './src/build-coupled.ts';
-import { EleventyConfigurationSchema } from './src/build-coupled.ts';
-import { ReaderConfigurationSchema } from './src/build-coupled.ts';
-import { ConfigurationSchema } from './src/configuration.ts';
+import { JekyllConfigurationSchema } from './src/build-coupled';
+import { HugoConfigurationSchema } from './src/build-coupled';
+import { EleventyConfigurationSchema } from './src/build-coupled';
+import { ReaderConfigurationSchema } from './src/build-coupled';
+import { ConfigurationSchema } from './src/configuration';
 
 const schemas = [
 	{

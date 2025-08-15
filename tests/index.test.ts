@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { SsgKeySchema } from '../src/index.ts';
+import { SsgKeySchema } from '../src/index';
 
 describe('Index exports', () => {
 	describe('SsgKeySchema', () => {

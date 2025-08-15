@@ -43,7 +43,8 @@
 				"noUselessThisAlias": "off"
 			},
 			"correctness": {
-				"noVoidTypeReturn": "off"
+				"noVoidTypeReturn": "off",
+				"noUnusedImports": "error"
 			},
 			"suspicious": {
 				"noExplicitAny": "off",

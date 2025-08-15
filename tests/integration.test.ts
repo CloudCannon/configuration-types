@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { HugoConfigurationSchema, JekyllConfigurationSchema } from '../src/build-coupled.ts';
-import { type Configuration, ConfigurationSchema } from '../src/configuration.ts';
+import { HugoConfigurationSchema, JekyllConfigurationSchema } from '../src/build-coupled';
+import { type Configuration, ConfigurationSchema } from '../src/configuration';
 
 describe('Integration Tests', () => {
 	describe('Real-world Configuration Examples', () => {

@@ -1,6 +1,6 @@
 import * as z from 'zod';
-import { ImageOptionsSchema } from './image-options.ts';
-import { PathsSchema } from './paths.ts';
+import { ImageOptionsSchema } from './image-options';
+import { PathsSchema } from './paths';
 
 export const TextEditableSchema = z.object({
 	paths: PathsSchema.optional(),

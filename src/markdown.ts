@@ -9,13 +9,13 @@ export const AttributeListPositionSchema = z
 	});
 
 export const MarkdownAttributeElementOptionsSchema = z
-	.union([
+	.intersection(
 		z.object({
 			inline: AttributeListPositionSchema.optional(),
 			block: AttributeListPositionSchema.optional(),
 		}),
-		z.record(z.string(), AttributeListPositionSchema),
-	])
+		z.record(z.string(), AttributeListPositionSchema)
+	)
 	.meta({
 		title: 'Markdown Attribute Element Options',
 		description: 'Configuration for positioning Markdown attributes on different element types.',

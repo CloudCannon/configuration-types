@@ -3,8 +3,8 @@ import {
 	CollectionConfigSchema,
 	ConfigurationSchema,
 	DataConfigEntrySchema,
-} from './configuration.ts';
-import { PathsSchema } from './paths.ts';
+} from './configuration';
+import { PathsSchema } from './paths';
 
 export const BuildCoupledPathsSchema = z
 	.object({
@@ -24,7 +24,6 @@ export const BuildCoupledPathsSchema = z
 				'Parent folder of all includes, partials, or shortcode files. Only applies to Jekyll, Hugo, and Eleventy sites.',
 		}),
 	})
-	.optional()
 	.meta({
 		id: 'paths:BuildCoupled',
 		description:
@@ -116,8 +115,9 @@ export const BuildCoupledConfigurationSchema = z.object({
 	}),
 	version: z
 		.enum(['legacy-hugo', 'legacy-jekyll', 'legacy-eleventy', 'legacy-reader'])
+		.optional()
 		.meta(versionMeta),
-	paths: BuildCoupledPathsSchema,
+	paths: BuildCoupledPathsSchema.optional(),
 	collections_config: z
 		.record(z.string(), BuildCoupledCollectionConfigSchema)
 		.optional()
