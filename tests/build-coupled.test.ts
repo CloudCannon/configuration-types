@@ -4,7 +4,7 @@ import {
 	HugoConfigurationSchema,
 	JekyllConfigurationSchema,
 	ReaderConfigurationSchema,
-} from '../zod/build-coupled.ts';
+} from '../src/build-coupled.ts';
 
 describe('Build-Coupled Configurations', () => {
 	describe('JekyllConfigurationSchema', () => {

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { HugoConfigurationSchema, JekyllConfigurationSchema } from '../zod/build-coupled.ts';
-import { type Configuration, ConfigurationSchema } from '../zod/configuration.ts';
+import { HugoConfigurationSchema, JekyllConfigurationSchema } from '../src/build-coupled.ts';
+import { type Configuration, ConfigurationSchema } from '../src/configuration.ts';
 
 describe('Integration Tests', () => {
 	describe('Real-world Configuration Examples', () => {

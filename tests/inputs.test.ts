@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { BaseInputSchema } from '../zod/inputs.ts';
+import { BaseInputSchema } from '../src/inputs.ts';
 
 describe('BaseInputSchema', () => {
 	it('should accept a text input', () => {

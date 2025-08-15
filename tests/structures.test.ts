@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { StructureSchema, StructureValueSchema } from '../zod/structures.ts';
+import { StructureSchema, StructureValueSchema } from '../src/structures.ts';
 
 describe('StructureSchema', () => {
 	it('should accept a basic structure', () => {

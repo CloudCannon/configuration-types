@@ -1,9 +1,10 @@
 {
 	"compilerOptions": {
 		"strict": true,
+		"esModuleInterop": true,
 		"allowImportingTsExtensions": true,
 		"noEmit": true
 	},
-	"include": ["zod/**/*.ts"],
+	"include": ["src/**/*.ts"],
 	"exclude": ["node_modules", "dist"]
 }

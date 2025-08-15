@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { ConfigurationSchema } from '../zod/configuration.ts';
+import { ConfigurationSchema } from '../src/configuration.ts';
 
 describe('ConfigurationSchema', () => {
 	it('should accept a minimal valid configuration', () => {

@@ -1,13 +1,12 @@
-import * as z from 'zod/v4';
+import * as z from 'zod';
 
-// Re-exports from other modules will be handled during generation
 export * from './build-coupled.ts';
 export * from './cascade.ts';
 export * from './configuration.ts';
 export * from './documentation.ts';
 export * from './editables.ts';
 export * from './icon.ts';
-export * from './image-resizeable.ts';
+export * from './image-options.ts';
 export * from './inputs.ts';
 export * from './markdown.ts';
 export * from './paths.ts';
@@ -17,9 +16,6 @@ export * from './snippets.ts';
 export * from './source-editor.ts';
 export * from './structures.ts';
 export * from './timezone.ts';
-
-// TODO move this into a separate package
-export * from './javascript-api.ts';
 
 export const SsgKeySchema = z.enum([
 	'hugo',

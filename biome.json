@@ -1,6 +1,10 @@
 {
 	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-	"vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
 	"files": {
 		"ignoreUnknown": false,
 		"ignore": [".zed/**", ".backstage/**", "package.json", "package-lock.json"]
@@ -22,7 +26,9 @@
 			"quoteStyle": "single"
 		}
 	},
-	"organizeImports": { "enabled": true },
+	"organizeImports": {
+		"enabled": true
+	},
 	"linter": {
 		"enabled": true,
 		"rules": {
@@ -45,8 +51,13 @@
 				"noShadowRestrictedNames": "off",
 				"noImplicitAnyLet": "warn"
 			},
-			"nursery": { "useExplicitType": "off" },
-			"performance": { "noDelete": "off", "noAccumulatingSpread": "warn" }
+			"nursery": {
+				"useExplicitType": "off"
+			},
+			"performance": {
+				"noDelete": "off",
+				"noAccumulatingSpread": "warn"
+			}
 		}
 	}
 }
