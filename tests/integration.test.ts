@@ -6,7 +6,7 @@ describe('Integration Tests', () => {
 	describe('Real-world Configuration Examples', () => {
 		it('should validate a typical Jekyll blog configuration', () => {
 			const config = {
-				version: 'legacy-jekyll' as const,
+				version: 'legacy-jekyll',
 				source: '.',
 				collections_config: {
 					posts: {
@@ -14,19 +14,15 @@ describe('Integration Tests', () => {
 						name: 'Blog Posts',
 						description: 'Articles and tutorials',
 						icon: 'article',
-						sort: {
-							key: 'date',
-							order: 'descending' as const,
-						},
 						sort_options: [
 							{
 								key: 'date',
-								order: 'descending' as const,
+								order: 'descending',
 								label: 'Latest First',
 							},
 							{
 								key: 'title',
-								order: 'ascending' as const,
+								order: 'ascending',
 								label: 'Title A-Z',
 							},
 						],
@@ -73,7 +69,7 @@ describe('Integration Tests', () => {
 						name: 'Pages',
 						icon: 'description',
 						filter: {
-							base: 'strict' as const,
+							base: 'strict',
 							include: ['*.md', '*.html'],
 							exclude: ['README.md', '_*/**'],
 						},
@@ -85,7 +81,7 @@ describe('Integration Tests', () => {
 					},
 				},
 				markdown: {
-					engine: 'kramdown' as const,
+					engine: 'kramdown',
 					options: {
 						input: 'GFM',
 						hard_wrap: false,
@@ -105,7 +101,7 @@ describe('Integration Tests', () => {
 
 		it('should validate a Hugo documentation site configuration', () => {
 			const config = {
-				version: 'legacy-hugo' as const,
+				version: 'legacy-hugo',
 				source: 'content',
 				paths: {
 					uploads: 'static/uploads',
@@ -118,10 +114,12 @@ describe('Integration Tests', () => {
 						description: 'Product documentation pages',
 						icon: 'menu_book',
 						parse_branch_index: true,
-						sort: {
-							key: 'weight',
-							order: 'ascending' as const,
-						},
+						sort_options: [
+							{
+								key: 'weight',
+								order: 'ascending',
+							},
+						],
 						_inputs: {
 							weight: {
 								type: 'number',
@@ -155,7 +153,7 @@ describe('Integration Tests', () => {
 								options: {
 									width: 1200,
 									height: 630,
-									resize_style: 'cover' as const,
+									resize_style: 'cover',
 								},
 							},
 						},
@@ -210,7 +208,7 @@ describe('Integration Tests', () => {
 
 		it('should validate a complex latest version configuration', () => {
 			const config = {
-				version: 'latest' as const,
+				version: 'latest',
 				source: 'src',
 				base_url: '/docs',
 				timezone: 'America/Los_Angeles',
@@ -224,15 +222,17 @@ describe('Integration Tests', () => {
 							url: 'https://docs.company.com/content-guide',
 							text: 'Content Writing Guide',
 						},
-						sort: {
-							key: 'date',
-							order: 'descending' as const,
-						},
+						sort_options: [
+							{
+								key: 'date',
+								order: 'descending',
+							},
+						],
 						add_options: [
 							{
 								name: 'Standard Post',
 								icon: 'article',
-								editor: 'content' as const,
+								editor: 'content',
 								schema: 'default',
 							},
 							{
@@ -360,7 +360,7 @@ describe('Integration Tests', () => {
 
 		it('should reject configuration with missing required fields', () => {
 			const config = {
-				version: 'latest' as const,
+				version: 'latest',
 				collections_config: {
 					posts: {
 						// Missing required 'path' field
@@ -375,14 +375,16 @@ describe('Integration Tests', () => {
 
 		it('should reject configuration with invalid nested values', () => {
 			const config = {
-				version: 'latest' as const,
+				version: 'latest',
 				collections_config: {
 					posts: {
 						path: '_posts',
-						sort: {
-							key: 'date',
-							order: 'invalid-order', // Invalid sort order
-						},
+						sort_options: [
+							{
+								key: 'date',
+								order: 'invalid-order', // Invalid sort order
+							},
+						],
 					},
 				},
 			};
@@ -402,7 +404,7 @@ describe('Integration Tests', () => {
 
 		it('should handle configuration with only version', () => {
 			const config = {
-				version: 'latest' as const,
+				version: 'latest',
 			};
 
 			const result = ConfigurationSchema.safeParse(config);
@@ -416,7 +418,7 @@ describe('Integration Tests', () => {
 						path: 'pages',
 						_structures: {
 							page_sections: {
-								style: 'modal' as const,
+								style: 'modal',
 								values: [
 									{
 										label: 'Hero Section',
