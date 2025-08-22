@@ -4,7 +4,7 @@ import { ConfigurationSchema } from '../src/configuration';
 describe('ConfigurationSchema', () => {
 	it('should accept a minimal valid configuration', () => {
 		const config = {
-			version: 'latest' as const,
+			version: 'latest',
 		};
 
 		const result = ConfigurationSchema.safeParse(config);
@@ -13,7 +13,7 @@ describe('ConfigurationSchema', () => {
 
 	it('should accept a complete configuration', () => {
 		const config = {
-			version: 'latest' as const,
+			version: 'latest',
 			source: 'src',
 			base_url: '/docs',
 			timezone: 'America/New_York',
@@ -23,10 +23,12 @@ describe('ConfigurationSchema', () => {
 					name: 'Blog Posts',
 					description: 'Articles and blog posts',
 					icon: 'article',
-					sort: {
-						key: 'date',
-						order: 'descending' as const,
-					},
+					sort_options: [
+						{
+							key: 'date',
+							order: 'descending',
+						},
+					],
 				},
 			},
 			data_config: {
@@ -102,7 +104,7 @@ describe('ConfigurationSchema', () => {
 	it('should accept markdown configuration', () => {
 		const config = {
 			markdown: {
-				engine: 'commonmark' as const,
+				engine: 'commonmark',
 				options: {
 					html: true,
 					breaks: false,
@@ -157,7 +159,7 @@ describe('ConfigurationSchema', () => {
 			file_config: [
 				{
 					glob: '*.md',
-					_enabled_editors: ['content', 'visual'] as const,
+					_enabled_editors: ['content', 'visual'],
 					_inputs: {
 						title: {
 							type: 'text',

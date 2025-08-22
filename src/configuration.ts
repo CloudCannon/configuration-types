@@ -202,13 +202,18 @@ export const CollectionConfigSchema = z
 			description:
 				'This key defines the documentation link at the top of a _Collection browser_. Collection documentation is useful for assisting your team members.',
 		}),
-		sort: SortSchema.optional().meta({
-			description:
-				'This key defines how CloudCannon sorts your Collection files when you first open your _Collection browser_.',
-		}),
 		sort_options: z.array(SortOptionSchema).optional().meta({
-			description: 'This key defines the options for the Sort dropdown in a _Collection browser_.',
+			description:
+				'This key defines the options for the Sort dropdown in a _Collection browser_. The first option listed is used as the default sort.',
 		}),
+		view_options: z
+			.array(z.enum(['card', 'list', 'gallery']))
+			.optional()
+			.meta({
+				uniqueItems: true,
+				description:
+					'This key defines the options for the View dropdown in a _Collection browser_. The first option listed is used as the default view.',
+			}),
 		singular_name: z.string().optional().meta({
 			description:
 				'This key defines the singular noun for your Collection name. CloudCannon uses the singular noun in the _+ Add_ button in the top right of the _Collection browser_.',
