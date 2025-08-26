@@ -31,9 +31,11 @@ const PreviewEntrySchema = z
 		id: 'PreviewEntry',
 	});
 
-const PreviewEntriesSchema = z.union([z.array(PreviewEntrySchema), PreviewEntrySchema]).meta({
-	id: 'PreviewEntries',
-});
+const PreviewEntriesSchema = z
+	.union([z.array(PreviewEntrySchema), z.string(), z.literal(false)])
+	.meta({
+		id: 'PreviewEntries',
+	});
 
 const TextPreviewSchema = PreviewEntriesSchema.meta({
 	id: 'preview.text',
@@ -105,6 +107,9 @@ export const PreviewSchema = z
 		icon: IconPreviewSchema.optional(),
 		icon_color: IconColorSchema.optional(),
 		icon_background_color: IconBackgroundColorSchema.optional(),
+		tags: z.array(z.string()).optional().meta({
+			description: 'Defines a list of tags.',
+		}),
 		metadata: z.array(PreviewMetadataSchema).optional().meta({
 			description: 'Defines a list of items that can contain an image, icon, and text.',
 		}),
