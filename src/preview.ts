@@ -13,37 +13,49 @@ const PreviewTemplateEntrySchema = z.object({
 	}),
 });
 
+const PreviewTextEntrySchema = z.object({
+	text: z.string().meta({
+		description: 'The raw text used as the value for the preview.',
+	}),
+});
+
 const PreviewEntrySchema = z
 	.union([
-		z.array(z.union([PreviewKeyEntrySchema, PreviewTemplateEntrySchema, z.string(), z.boolean()])),
+		PreviewKeyEntrySchema,
+		PreviewTemplateEntrySchema,
+		PreviewTextEntrySchema,
 		z.string(),
-		z.boolean(),
+		z.literal(false),
 	])
 	.meta({
 		id: 'PreviewEntry',
 	});
 
-const TextPreviewSchema = PreviewEntrySchema.meta({
+const PreviewEntriesSchema = z.union([z.array(PreviewEntrySchema), PreviewEntrySchema]).meta({
+	id: 'PreviewEntries',
+});
+
+const TextPreviewSchema = PreviewEntriesSchema.meta({
 	id: 'preview.text',
 	description: 'Controls the main text shown per item.',
 });
 
-const ImagePreviewSchema = PreviewEntrySchema.meta({
+const ImagePreviewSchema = PreviewEntriesSchema.meta({
 	id: 'preview.image',
 	description: 'Controls the image shown per item.',
 });
 
-const IconPreviewSchema = PreviewEntrySchema.meta({
+const IconPreviewSchema = PreviewEntriesSchema.meta({
 	id: 'preview.icon',
 	description: 'Controls the icon shown per item. Must result in a Material Symbol name.',
 });
 
-export const IconColorSchema = PreviewEntrySchema.meta({
+export const IconColorSchema = PreviewEntriesSchema.meta({
 	id: 'preview.icon_color',
 	description: 'Controls the color of the icon.',
 });
 
-export const IconBackgroundColorSchema = PreviewEntrySchema.meta({
+export const IconBackgroundColorSchema = PreviewEntriesSchema.meta({
 	id: 'preview.icon_background_color',
 	description: 'Controls the background color of the icon.',
 });
@@ -58,7 +70,7 @@ export const PreviewGallerySchema = z
 		fit: z.enum(['padded', 'cover', 'contain', 'cover-top']).default('padded').optional().meta({
 			description: 'Controls how the gallery image is positioned within the gallery.',
 		}),
-		background_color: PreviewEntrySchema.optional().meta({
+		background_color: PreviewEntriesSchema.optional().meta({
 			description: 'Controls the background color gallery area.',
 		}),
 	})
@@ -86,7 +98,7 @@ export const PreviewMetadataSchema = z
 export const PreviewSchema = z
 	.object({
 		text: TextPreviewSchema.optional(),
-		subtext: PreviewEntrySchema.optional().meta({
+		subtext: PreviewEntriesSchema.optional().meta({
 			description: 'Controls the supporting text shown per item.',
 		}),
 		image: ImagePreviewSchema.optional(),
@@ -120,6 +132,8 @@ export const PickerPreviewSchema = z
 		description: 'Changes the way items are previewed in the CMS while being chosen.',
 	});
 
+export type PreviewEntry = z.infer<typeof PreviewEntrySchema>;
+export type PreviewEntries = z.infer<typeof PreviewEntriesSchema>;
 export type PreviewGallery = z.infer<typeof PreviewGallerySchema>;
 export type PreviewMetadata = z.infer<typeof PreviewMetadataSchema>;
 export type Preview = z.infer<typeof PreviewSchema>;
