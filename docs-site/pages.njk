@@ -1,0 +1,26 @@
+---
+pagination:
+  data: docPages
+  size: 1
+  alias: p
+permalink: "/{{ p.url }}/"
+layout: layouts/default.njk
+---
+<p>
+	{% if p.parent_url %}
+		<a href="{{ p.parent_url }}">&larr; {{ p.parent_url }}</a>
+	{% else %}
+		/
+	{% endif %}
+</p>
+
+<h1>{{ p.doc | getDocTitle }}</h1>
+
+{% renderFile "./_includes/doc-page.njk", p %}
+
+<hr>
+
+<details>
+	<summary>Raw data</summary>
+	<pre><code>{{ p | json }}</code></pre>
+</details>

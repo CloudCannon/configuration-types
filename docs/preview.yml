@@ -1,0 +1,78 @@
+picker_preview:
+  name: Picker Preview
+  comment:
+  description: Changes the way items are previewed in the CMS while being chosen.
+  examples:
+  documentation_link: https://cloudcannon.com/documentation/articles/configure-your-card-previews/
+preview:
+  name: Preview
+  comment:
+  description: Configuration for how content items are visually previewed in the CloudCannon interface.
+  examples:
+  documentation_link: https://cloudcannon.com/documentation/articles/configure-your-card-previews/
+preview.text:
+  name: Preview Text
+  comment:
+  description: Controls the main text shown per item.
+  examples:
+  documentation_link:
+preview.subtext:
+  name: Preview Subtext
+  comment:
+  description: Controls the supporting text shown per item.
+  examples:
+  documentation_link:
+preview.image:
+  name: Preview Image
+  comment:
+  description: Controls the image shown per item.
+  examples:
+  documentation_link:
+preview.icon:
+  name: Preview Icon
+  comment:
+  description: Controls the icon shown per item. Must result in a Material Symbol name.
+  examples:
+  documentation_link:
+preview.icon_color:
+  name: Preview Icon Color
+  comment:
+  description: Controls the color of the icon.
+  examples:
+  documentation_link:
+preview.icon_background_color:
+  name: Preview Icon Background Color
+  comment:
+  description: Controls the background color of the icon.
+  examples:
+  documentation_link:
+preview.tags:
+  name: Preview Tags
+  comment:
+  description: Defines a list of tags.
+  examples:
+  documentation_link:
+preview.metadata:
+  name: Preview Metadata
+  comment:
+  description: Defines a list of items that can contain an image, icon, and text.
+  examples:
+  documentation_link:
+preview.gallery:
+  name: Preview Gallery
+  comment:
+  description: Details for large image/icon preview per item.
+  examples:
+  documentation_link:
+preview.gallery.background_color:
+  name: Preview Gallery Background Color
+  comment:
+  description: Controls the background color gallery area.
+  examples:
+  documentation_link:
+preview.gallery.fit:
+  name: Preview Gallery Image Fit
+  comment:
+  description: Controls how the gallery image is positioned within the gallery.
+  examples:
+  documentation_link:

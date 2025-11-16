@@ -1,0 +1,13 @@
+{% set items = doc.items | arrayify %}
+
+{% if items | length %}
+	<h2>Items</h2>
+	<div class="articles">
+		{% for doc in items %}
+			<article>
+				{% set docPage = doc | getDocPage %}
+				{% renderFile "./_includes/doc-page.njk", docPage %}
+			</article>
+		{% endfor %}
+	</div>
+{% endif %}

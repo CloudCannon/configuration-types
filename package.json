@@ -20,8 +20,9 @@
 	},
 	"scripts": {
 		"prebuild": "rm -rf dist && mkdir -p dist",
-		"build": "tsx generate-schemas.ts && npm run build:combined",
+		"build": "npm run build:schemas && npm run build:combined",
 		"build:combined": "cp cloudcannon-config.schema.json dist/cloudcannon-config.schema.json",
+		"build:schemas": "tsx generate-schemas.ts",
 		"lint": "npm run lint:tsc && npm run lint:format",
 		"lint:tsc": "tsc --noEmit",
 		"lint:format": "biome check --fix",
@@ -48,9 +49,11 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
+		"@types/js-yaml": "^4.0.9",
 		"@types/node": "^24.2.1",
 		"@vitest/coverage-v8": "^2.1.9",
 		"http-server": "^14.1.1",
+		"js-yaml": "^4.1.0",
 		"tsx": "^4.20.4",
 		"typescript": "^5.9.2",
 		"vitest": "^2.1.8"

@@ -11,9 +11,9 @@ export const EditorKeySchema = z.enum(['visual', 'content', 'data']).meta({
 });
 
 export const ReducedCascadeSchema = z.object({
-	_inputs: InputsSchema.optional(),
-	_select_data: SelectDataSchema.optional(),
-	_structures: StructuresSchema.optional(),
+	_inputs: InputsSchema,
+	_select_data: SelectDataSchema,
+	_structures: StructuresSchema,
 });
 
 export const CascadeSchema = z.object({
@@ -26,7 +26,7 @@ export const CascadeSchema = z.object({
 		uniqueItems: true,
 	}),
 	_editables: EditablesSchema.optional().meta({
-		id: '_editables',
+		id: 'type.Editables',
 		title: 'Editables',
 		description:
 			'Configuration for editable regions in the Visual Editor, including content, block, link, image, and text editing options.',

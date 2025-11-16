@@ -1,0 +1,46 @@
+{% set p = doc | getDocPage %}
+{% set doc = p.doc %}
+
+<dl>
+	{% if doc.appears_in %}
+		<dt>Appears in:</dt>
+		{% for parent in doc.appears_in | sort(false, false, 'full_key') %}
+			<dd><a href="{{ parent.url }}">{{ parent.full_key }}</a></dd>
+		{% endfor %}
+	{% elif p.full_key %}
+		<dt>Full key:</dt>
+		<dd><code>{{ p.full_key }}</code></dd>
+	{% endif %}
+
+	<dt>Type:</dt>
+	<dd>
+		{% renderFile "./_includes/doc-type.njk", p %}
+		{%- if p.required %}
+			<small style="color: red;">(Required)</small>
+		{%- endif -%}
+	</dd>
+
+	{% if p.doc.description %}
+		<dt>Description:</dt>
+		<dd>{{ p.doc.description | default('') | renderContent('md') | safe }}</dd>
+	{% endif %}
+</dl>
+
+{% if p.doc.documentation.examples | length %}
+	<h2>Examples</h2>
+	{% for example in p.doc.documentation.examples %}
+		<pre><code>{{ example }}</code></pre>
+	{% endfor %}
+{% endif %}
+
+{% if p.doc.type == "array" %}
+	{% renderFile "./_includes/pages/array.njk", p %}
+{% elif p.doc.type == "object" %}
+	{% renderFile "./_includes/pages/object.njk", p %}
+	{% elif p.doc.type == "string" or p.doc.type == "number" or p.doc.type === "boolean" %}
+	{% renderFile "./_includes/pages/primitive.njk", p %}
+{% elif p.doc.anyOf | length %}
+	{% renderFile "./_includes/pages/any-of.njk", p %}
+{% else %}
+	<p>TODO: {{ p.doc.type }}</p>
+{% endif %}

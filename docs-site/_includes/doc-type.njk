@@ -1,0 +1,45 @@
+{%- set isTypeId = r/^type\./g -%}
+
+{%- if doc.id and isTypeId.test(doc.id) -%}
+	<em><a href="{{ url }}">{{ title }}</a></em>
+{%- elif doc.type == "array" -%}
+	<em>Array</em>
+	{% set items = doc.items | arrayify %}
+	{% if items | length %}
+		of
+		{%- set comma = joiner() -%}
+		{%- for itemDoc in items -%}
+			{{ comma() }}
+			{% set docPage = itemDoc | getDocPage %}
+			{% renderFile "./_includes/doc-type.njk", docPage %}
+		{%- endfor %}
+	{%- endif -%}
+{%- elif doc.type == "object" -%}
+	<em>Object
+		{% if doc.additionalProperties != false %}
+			{% set additionalProperties = doc.additionalProperties | arrayify %}
+			{% if additionalProperties.length == 1 %}
+				{% set additionalDocPage = additionalProperties[0] | getDocPage %}
+				of {% renderFile "./_includes/doc-type.njk", additionalDocPage %}
+			{%- endif %}
+		{% endif -%}
+	</em>
+{%- elif doc.type == "string" -%}
+	<em>{% if doc.const %}"{{ doc.const }}"{% else %}string{% endif %}</em>
+{%- elif doc.type == "number" -%}
+	<em>{% if doc.const or doc.const == 0 %}{{ doc.const }}{% else %}number{% endif %}</em>
+{%- elif doc.type == "boolean" -%}
+	<em>{% if doc.const or doc.const == false %}{{ doc.const }}{% else %}boolean{% endif %}</em>
+{%- elif doc.anyOf | length -%}
+	{% set join = joiner("•") %}
+	{% for doc in doc.anyOf %}
+		{% set docPage = doc | getDocPage %}
+		{{ join() }}
+		{% renderFile "./_includes/doc-type.njk", docPage %}
+	{% endfor %}
+{%- elif not doc.type -%}
+	<em>unknown</em>
+{%- else -%}
+	<em>{{ doc.type }}</em>
+	<pre><code>{{ doc | json }}</code></pre>
+{%- endif -%}

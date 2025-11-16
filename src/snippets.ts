@@ -5,8 +5,8 @@ import { PickerPreviewSchema, PreviewSchema } from './preview';
 export const SnippetConfigSchema = z
 	.object({
 		...ReducedCascadeSchema.shape,
-		preview: PreviewSchema.optional(),
-		picker_preview: PickerPreviewSchema.optional(),
+		preview: PreviewSchema,
+		picker_preview: PickerPreviewSchema,
 	})
 	.extend({
 		snippet: z.string().optional().meta({
@@ -32,6 +32,7 @@ export const SnippetConfigSchema = z
 		}),
 		get alternate_formats() {
 			return z.array(SnippetConfigSchema).optional().meta({
+				id: 'type.SnippetAlternateFormats',
 				description: 'Alternate configurations for this snippet.',
 			});
 		},
@@ -40,7 +41,7 @@ export const SnippetConfigSchema = z
 		}),
 	})
 	.meta({
-		id: 'SnippetConfig',
+		id: 'type.SnippetConfig',
 		title: 'Snippet Configuration',
 		description: 'A snippet configuration.',
 	});
@@ -50,64 +51,58 @@ const SnippetImportSchema = z
 		z.boolean(),
 		z.object({
 			exclude: z.array(z.string()).meta({
+				id: 'SnippetImportExclude',
 				description:
 					'The list of excluded snippets. If unset, all snippets are excluded unless defined in `include`.',
 			}),
 		}),
 		z.object({
 			include: z.array(z.string()).meta({
+				id: 'SnippetImportInclude',
 				description:
 					'The list of included snippets. If unset, all snippets are included unless defined in `exclude`.',
 			}),
 		}),
 	])
-	.meta({
-		id: 'SnippetImport',
-		title: 'Snippet Import',
-		description: 'Controls what snippets are available to import.',
-	});
+	.optional();
 
 export const SnippetsImportsSchema = z
 	.object({
-		hugo: SnippetImportSchema.optional().meta({
-			description: 'Default snippets for Hugo SSG.',
+		hugo: SnippetImportSchema.meta({
+			id: '_snippets_imports.hugo',
 			uniqueItems: true,
 		}),
-		jekyll: SnippetImportSchema.optional().meta({
-			description: 'Default snippets for Jekyll SSG.',
+		jekyll: SnippetImportSchema.meta({
+			id: '_snippets_imports.jekyll',
 			uniqueItems: true,
 		}),
-		mdx: SnippetImportSchema.optional().meta({
-			description: 'Default snippets for MDX-based content.',
+		mdx: SnippetImportSchema.meta({
+			id: '_snippets_imports.mdx',
 			uniqueItems: true,
 		}),
-		eleventy_liquid: SnippetImportSchema.optional().meta({
-			description: 'Default snippets for Eleventy SSG Liquid files.',
+		eleventy_liquid: SnippetImportSchema.meta({
+			id: '_snippets_imports.eleventy_liquid',
 			uniqueItems: true,
 		}),
-		eleventy_nunjucks: SnippetImportSchema.optional().meta({
-			description: 'Default snippets for Eleventy SSG Nunjucks files.',
+		eleventy_nunjucks: SnippetImportSchema.meta({
+			id: '_snippets_imports.eleventy_nunjucks',
 			uniqueItems: true,
 		}),
-		markdoc: SnippetImportSchema.optional().meta({
-			description: 'Default snippets for Markdoc-based content.',
+		markdoc: SnippetImportSchema.meta({
+			id: '_snippets_imports.markdoc',
 			uniqueItems: true,
 		}),
-		python_markdown_extensions: SnippetImportSchema.optional().meta({
-			description: 'Default snippets for content using Python markdown extensions.',
+		python_markdown_extensions: SnippetImportSchema.meta({
+			id: '_snippets_imports.python_markdown_extensions',
 			uniqueItems: true,
 		}),
-		docusaurus_mdx: SnippetImportSchema.optional().meta({
-			description: 'Default snippets for Docusaurus SSG.',
+		docusaurus_mdx: SnippetImportSchema.meta({
+			id: '_snippets_imports.docusaurus_mdx',
 			uniqueItems: true,
 		}),
 	})
-	.meta({
-		id: '_snippets_imports',
-		title: 'Snippets Imports',
-		description:
-			'Provides control over which snippets are available to use and/or extend within `_snippets`.',
-	});
+	.optional()
+	.meta({ id: '_snippets_imports' });
 
 export type SnippetConfig = z.infer<typeof SnippetConfigSchema>;
 export type SnippetsImports = z.infer<typeof SnippetsImportsSchema>;

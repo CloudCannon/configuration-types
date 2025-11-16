@@ -1,0 +1,48 @@
+<h2>Properties</h2>
+
+{% if doc.properties | length %}
+	<div class="articles">
+		{% for key, propDoc in doc.properties %}
+			<article>
+				{% set docPage = propDoc | getDocPage %}
+				{% if docPage %}
+					{% set propDoc = docPage.doc %}
+				{% endif %}
+
+				{% set isTypeId = r/^type\./g %}
+				{% if docPage and not (propDoc.id and isTypeId.test(propDoc.id)) %}
+					<strong><a href="{{ docPage.url }}">{{ key }}</a></strong>
+				{% else %}
+					<strong>{{ key }}</strong>
+				{% endif %}
+
+				- {% renderFile "./_includes/doc-type.njk", docPage %}
+
+				{%- if docPage.required %}
+					<small style="color: red;">(Required)</small>
+				{%- endif -%}
+
+				{% renderFile "./_includes/doc-summary.njk", docPage %}
+			</article>
+		{% endfor %}
+	</div>
+{% else %}
+	<p>There are no reserved properties.</p>
+{% endif %}
+
+{% if doc.additionalProperties == false %}
+	<p>All other properties are invalid.</p>
+{% else %}
+	{% set additionalProperties = doc.additionalProperties | arrayify %}
+	{% if additionalProperties | length %}
+		<h2>Additional properties</h2>
+		<div class="articles">
+			{% for doc in additionalProperties %}
+				<article>
+					{% set docPage = doc | getDocPage %}
+					{% renderFile "./_includes/doc-page.njk", docPage %}
+				</article>
+			{% endfor %}
+		</div>
+	{% endif %}
+{% endif %}

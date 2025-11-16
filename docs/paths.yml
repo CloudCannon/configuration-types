@@ -1,0 +1,68 @@
+paths:
+  name: Paths
+  comment:
+  description: Paths to where new asset files are uploaded to. They also set the default path when choosing existing images, and linking to existing files. Each path is relative to global `source`. Defaults to the global `paths`.
+  examples:
+    - |-
+      paths:
+        uploads: static/uploads
+        static: static
+  documentation_link: https://cloudcannon.com/documentation/articles/adjusting-the-uploads-path/
+paths.static:
+  name: Static Path
+  comment:
+  description: Location of assets that are statically copied to the output site. This prefix will be removed from the _Uploads_ path when CloudCannon outputs the URL of an asset.
+  examples:
+    - |-
+      paths:
+        uploads: static/uploads
+        static: static
+  documentation_link:
+paths.uploads:
+  name: Uploads Path
+  comment:
+  description: Default location of newly uploaded site files. The available fixed placeholders include ...
+  examples:
+    - |-
+      paths:
+        uploads: uploads
+  documentation_link: https://cloudcannon.com/documentation/articles/adjusting-the-uploads-path/#paths.uploads
+paths.uploads_filename:
+  name: Uploads Filename Path
+  comment:
+  description: Filename template for newly uploaded site files. The available fixed placeholders include `[asset_filename]`, `[asset_filename_without_ext]`, `[date]`, `[count]`, and `[asset_ext]`.
+  examples:
+    - |-
+      paths:
+        uploads_filename: '{title|slugify}-[asset_filename]'
+    - |-
+      paths:
+        uploads_filename: '[asset_filename_without_ext]-[date|year].[asset_ext]'
+  documentation_link: https://cloudcannon.com/documentation/articles/adjusting-the-uploads-path/#paths.uploads_filename
+paths.dam_uploads:
+  name: DAM Uploads Path
+  comment:
+  description: Default location of newly uploaded DAM files. The available fixed placeholders include ...
+  examples:
+  documentation_link: https://cloudcannon.com/documentation/articles/adjusting-the-uploads-path/#paths.dam_uploads
+paths.dam_uploads_filename:
+  name: DAM Uploads Filename Path
+  comment:
+  description: Filename template for newly uploaded DAM files. The available fixed placeholders include ...
+  examples:
+  documentation_link: https://cloudcannon.com/documentation/articles/adjusting-the-uploads-path/#paths.dam_uploads_filename
+paths.dam_static:
+  name: DAM Static Path
+  comment:
+  description: Location of statically copied assets for DAM files. This prefix will be removed from the _DAM Uploads_ path when CloudCannon outputs the URL of an asset.
+  examples:
+  documentation_link: https://cloudcannon.com/documentation/articles/adjusting-the-uploads-path/#paths.dam_static
+paths.uploads_use_relative_path:
+  name: Uploads Use Relative Path
+  comment:
+  description: When set to true, CloudCannon will reference files relative to the path of the file they were uploaded to.
+  examples:
+    - |-
+      paths:
+        uploads_use_relative_path: true
+  documentation_link: https://cloudcannon.com/documentation/articles/adjusting-the-uploads-path/#paths.uploads_use_relative_path

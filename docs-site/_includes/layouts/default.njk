@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Docs</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+		<style>
+			dl {
+			}
+
+			dt {
+				font-weight: bold;
+			}
+
+			dd {
+				margin-left: 20px;
+			}
+
+			dd + dt {
+				margin-top: 10px;
+			}
+
+			dd p:first-of-type {
+				margin-top: 0;
+			}
+
+			article {
+				border: 2px solid #aaa;
+				padding: 10px;
+				margin: 10px 0;
+			}
+
+			article > :first-child {
+				margin-top: 0;
+			}
+			article > :last-child {
+				margin-bottom: 0;
+			}
+
+			.articles {
+				padding-top: 10px;
+			}
+			.articles article {
+				margin-top: -12px;
+			}
+		</style>
+	</head>
+
+	<body>
+		{{ content | safe }}
+	</body>
+</html>

@@ -118,7 +118,7 @@ export const CreateSchema = z
 export const SchemaSchema = z
 	.object({
 		...CascadeSchema.shape,
-		preview: PreviewSchema.optional(),
+		preview: PreviewSchema,
 		path: z.string().meta({
 			description: 'The path to the schema file. Relative to the root folder of the site.',
 		}),
@@ -160,7 +160,7 @@ export const SchemaSchema = z
 export const CollectionConfigSchema = z
 	.object({
 		...CascadeSchema.shape,
-		preview: PreviewSchema.optional(),
+		preview: PreviewSchema,
 		path: z.string().meta({
 			id: 'path',
 			description:
@@ -251,11 +251,7 @@ export const CollectionConfigSchema = z
 				'This key defines the name for the structured data key that references the Schema a file uses.',
 		}),
 	})
-	.meta({
-		title: 'CollectionConfig',
-		description:
-			'Definitions for your Collections, which are the sets of content files for your site grouped by folder.',
-	});
+	.meta({ id: 'type.CollectionConfig', title: 'Collection Config' });
 
 export const CollectionGroupSchema = z
 	.object({
@@ -267,24 +263,13 @@ export const CollectionGroupSchema = z
 				'The collections shown in the sidebar for this group. Collections here are referenced by their key within `collections_config`.',
 		}),
 	})
-	.meta({
-		title: 'Collection Group',
-		description:
-			'Defines which Collections are shown in the Site Navigation and how those Collections are grouped.',
-	});
+	.meta({ id: 'type.CollectionGroup', title: 'Collection Group' });
 
 export const DataConfigEntrySchema = z
 	.object({
-		path: z.string().meta({
-			id: 'DataConfigEntry.path',
-			description: 'The path to a file or folder of files containing data.',
-		}),
+		path: z.string().meta({ id: 'type.DataConfigEntry.path' }),
 	})
-	.meta({
-		id: 'DataConfigEntry',
-		title: 'Data Config Entry',
-		description: 'Controls what data sets are available to populate select and multiselect inputs.',
-	});
+	.meta({ id: 'type.DataConfigEntry' });
 
 export const FileConfigEntrySchema = z
 	.object({
@@ -293,17 +278,10 @@ export const FileConfigEntrySchema = z
 			description: 'The glob pattern(s) targeting a path to one or more files.',
 		}),
 	})
-	.meta({
-		title: 'FileConfigEntry',
-		description:
-			'Provides scope to configure at a file level, without adding configuration to files.',
-	});
+	.meta({ id: 'type.FileConfigEntry' });
 
 export const EditorSchema = z.object({
-	default_path: z.string().default('/').meta({
-		description:
-			'The URL used for the dashboard screenshot, and where the editor opens to when clicking the dashboard "Edit Home" button.',
-	}),
+	default_path: z.string().default('/').meta({ id: 'editor.default_path' }),
 });
 
 export const CommitTemplateSchema = z
@@ -339,66 +317,30 @@ export const CommitTemplateSchema = z
 export const ConfigurationSchema = z
 	.object({
 		...CascadeSchema.shape,
-		paths: PathsSchema.optional(),
-		version: z.literal('latest').optional().meta({
-			description:
-				'Controls which schema this file is validated against. Defaults to the latest schema.',
-		}),
-		source: z
-			.string()
+		paths: PathsSchema,
+		version: z.literal('latest').optional().meta({ id: 'version' }),
+		source: z.string().optional().meta({ id: 'source' }),
+		collections_config: z
+			.record(z.string(), CollectionConfigSchema)
 			.optional()
-			.meta({
-				description: `This key defines the base path for your source files, relative to the root folder of your
-repository. Unless you use a nested folder as the source for your Site you can leave this key
-empty or set it to \`/\`.
-
-By default, this key is empty.
-
-https://cloudcannon.com/documentation/articles/configuration-file-reference/#source',`,
-			}),
-		collections_config: z.record(z.string(), CollectionConfigSchema).optional().meta({
-			description:
-				'Definitions for your collections, which are the sets of content files for your site grouped by folder.',
-		}),
-		collection_groups: z.array(CollectionGroupSchema).optional().meta({
-			description:
-				'Defines which collections are shown in the site navigation and how those collections are grouped.',
-		}),
-		base_url: z.string().optional().meta({
-			description: 'The subpath where your output files are hosted.',
-		}),
-		data_config: z.record(z.string(), DataConfigEntrySchema).optional().meta({
-			description:
-				'Controls what data sets are available to populate select and multiselect inputs.',
-		}),
-		file_config: z.array(FileConfigEntrySchema).optional().meta({
-			description:
-				'Provides scope to configure at a file level, without adding configuration to files.',
-		}),
-		editor: EditorSchema.optional().meta({
-			description: 'Contains settings for the default editor actions on your site.',
-		}),
-		source_editor: SourceEditorSchema.optional().meta({
-			title: 'Source Editor',
-			description:
-				'This key defines the appearance and behavior of the Source Editor. The following nested keys are available:\n\n- `tab_size`\n- `show_gutter`\n- `theme`\n\nThis key has no default.\n\nhttps://cloudcannon.com/documentation/articles/the-source-editor/#source_editor',
-		}),
-		commit_templates: z.array(CommitTemplateSchema).optional().meta({
-			description: 'Templates for commit messages when saving changes.',
-		}),
-		upstream_commit_template: z.string().optional().meta({
-			description: 'The commit template to use when pulling changes from the upstream repository.',
-		}),
-		markdown: MarkdownSettingsSchema.optional().meta({
-			description: 'Contains settings for various Markdown engines.',
-		}),
-		timezone: TimezoneSchema.default('Etc/UTC').optional().meta({
-			description: 'Specifies the time zone that dates are displayed and edited in.',
-		}),
+			.meta({ id: 'collections_config', title: 'Collection Config Entry' }),
+		collection_groups: z
+			.array(CollectionGroupSchema)
+			.optional()
+			.meta({ id: 'collection_groups', title: 'Collection Group' }),
+		base_url: z.string().optional().meta({ id: 'base_url' }),
+		data_config: z.record(z.string(), DataConfigEntrySchema).optional().meta({ id: 'data_config' }),
+		file_config: z.array(FileConfigEntrySchema).optional().meta({ id: 'file_config' }),
+		editor: EditorSchema.optional().meta({ id: 'editor' }),
+		source_editor: SourceEditorSchema.optional().meta({ id: 'source_editor' }),
+		commit_templates: z.array(CommitTemplateSchema).optional().meta({ id: 'commit_templates' }),
+		upstream_commit_template: z.string().optional().meta({ id: 'upstream_commit_template' }),
+		markdown: MarkdownSettingsSchema.optional().meta({ id: 'markdown' }),
+		timezone: TimezoneSchema.default('Etc/UTC').optional().meta({ id: 'timezone' }),
 		_snippets: z.record(z.string(), SnippetConfigSchema).optional().meta({
 			description: 'Configuration for custom snippets.',
 		}),
-		_snippets_imports: SnippetsImportsSchema.optional(),
+		_snippets_imports: SnippetsImportsSchema,
 		_snippets_templates: z.record(z.string(), SnippetConfigSchema).optional().meta({
 			description: 'Extended option used when creating more complex custom snippets.',
 		}),

@@ -1,0 +1,49 @@
+object:
+  name:
+  description:
+array:
+  name:
+  description:
+string:
+  name:
+  description:
+number:
+  name:
+  description:
+boolean:
+  name:
+  description:
+type.PreviewEntries:
+  name: Preview Entries
+  description: A set of entries inside one of the properties of `preview`.
+type.PreviewEntry:
+  name: Preview Entry
+  description: An entry inside one of the properties of `preview`.
+
+type.PreviewEntryKey:
+  name: Preview Entry Key
+  description: The object containing the key used to access the value used for the preview.
+type.PreviewEntryKeyValue:
+  name: Preview Entry Key Value
+  description: The key used to access the value used for the preview.
+
+type.PreviewEntryTemplate:
+  name: Preview Entry Template
+  description: The object containing a template string containing various placeholders for the value used in the preview.
+type.PreviewEntryTemplateValue:
+  name: Preview Entry Template Value
+  description: A template string containing various placeholders for the value used in the preview.
+
+type.PreviewEntryText:
+  name: Preview Entry Text
+  description: The object containing the raw text used as the value for the preview.
+type.PreviewEntryTextValue:
+  name: Preview Entry Text Value
+  description: The raw text used as the value for the preview.
+
+type.PreviewMetadatum:
+  name: Preview Metadata Entry
+  comment:
+  description: Metadata item that can contain an image, icon, and text.
+  examples:
+  documentation_link:
