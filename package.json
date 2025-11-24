@@ -43,7 +43,6 @@
 		"dist/**/*"
 	],
 	"dependencies": {
-		"@cloudcannon/snippet-types": "^1.1.13",
 		"zod": "^4.0.17"
 	},
 	"devDependencies": {
