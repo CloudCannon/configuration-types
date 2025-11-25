@@ -336,6 +336,23 @@ export const CommitTemplateSchema = z
 		description: 'A template for commit messages when saving changes.',
 	});
 
+export const PullRequestTemplateSchema = z.object({
+	label: z.string().optional().meta({
+		description:
+			'Used to identify a pull request template when multiple pull request templates are available.',
+	}),
+	title: z.string().optional().meta({
+		description: 'The default value for the pull request title.',
+	}),
+	body: z.string().optional().meta({
+		description: 'The default value for the pull request body.',
+	}),
+	_inputs: z.record(z.string(), InputSchema).optional().meta({
+		title: 'Inputs',
+		description: 'Define inputs used for the title and body fields of the pull request.',
+	}),
+});
+
 export const ConfigurationSchema = z
 	.object({
 		...CascadeSchema.shape,
@@ -382,6 +399,9 @@ https://cloudcannon.com/documentation/articles/configuration-file-reference/#sou
 			title: 'Source Editor',
 			description:
 				'This key defines the appearance and behavior of the Source Editor. The following nested keys are available:\n\n- `tab_size`\n- `show_gutter`\n- `theme`\n\nThis key has no default.\n\nhttps://cloudcannon.com/documentation/articles/the-source-editor/#source_editor',
+		}),
+		pull_request_templates: z.array(PullRequestTemplateSchema).optional().meta({
+			description: 'Templates for pull requests.',
 		}),
 		commit_templates: z.array(CommitTemplateSchema).optional().meta({
 			description: 'Templates for commit messages when saving changes.',
