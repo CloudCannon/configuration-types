@@ -3,7 +3,7 @@ import { ImageOptionsSchema } from './image-options';
 import { PathsSchema } from './paths';
 
 export const TextEditableSchema = z.object({
-	paths: PathsSchema,
+	paths: PathsSchema.optional(),
 
 	bold: z.boolean().default(true).optional().meta({
 		id: 'bold',
@@ -206,11 +206,11 @@ export const BlockEditableSchema = z.object({
 
 export const ImageEditableSchema = z.object({
 	...ImageOptionsSchema.shape,
-	paths: PathsSchema,
+	paths: PathsSchema.optional(),
 });
 
 export const LinkEditableSchema = z.object({
-	paths: PathsSchema,
+	paths: PathsSchema.optional(),
 });
 
 export const EditablesSchema = z.object({

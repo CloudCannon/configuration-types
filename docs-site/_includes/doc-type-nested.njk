@@ -1,5 +1,5 @@
-{%- if url and not parent -%}
-	<a href="{{ url }}">{{ title | default(key, true) }}</a>
+{%- if url and title -%}
+	<a href="{{ url }}">{{ title }}</a>
 {%- elif type == "array" -%}
 	Array
 	{%- if items | length -%}

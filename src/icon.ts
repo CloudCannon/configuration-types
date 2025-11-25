@@ -3591,7 +3591,7 @@ export const IconSchema = z
 		id: 'icon',
 		title: 'Icon',
 		description:
-			'Material Design icon names available in CloudCannon for UI elements and content previews.',
+			'Material Symbol icon names available in CloudCannon for UI elements and content previews.',
 	});
 
 export type Icon = z.infer<typeof IconSchema>;

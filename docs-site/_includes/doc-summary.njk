@@ -1,30 +1,31 @@
-{% if doc.description %}
-	{{ doc.description | default('') | renderContent('md') | safe }}
+{% set description = documentation.description | default(developer_documentation.description, true) %}
+{% if description %}
+	{{ description | renderContent('md') | safe }}
 {% endif %}
 
-{% if doc.documentation.examples | length %}
-	<details open>
-		<summary><strong>Examples</strong></summary>
-		{% for example in doc.documentation.examples %}
+{% if documentation.examples | length %}
+	<details>
+		<summary><em>Examples</em></summary>
+		{% for example in documentation.examples %}
 			<pre><code>{{ example }}</code></pre>
 		{% endfor %}
 	</details>
 {% endif %}
 
-{% if doc.default %}
-	<p>Defaults to: <code>{{ doc.default }}</code></p>
+{% if default %}
+	<p><em>Defaults to:</em> <code>{{ default }}</code></p>
 {% endif %}
 
 {% set maxLength = 10 %}
-{% set enumLength = maxLength if doc.enum.length > maxLength else doc.enum.length %}
+{% set enumLength = maxLength if enum.length > maxLength else enum.length %}
 {% if enumLength %}
 	<p>
-		Allowed values:
+		<em>Allowed values:</em>
 		{% for i in range(0, enumLength) %}
-			<code>{{ doc.enum[i] }}</code>
+			<code>{{ enum[i] }}</code>
 		{% endfor %}
 
-		{% set enumMore = doc.enum.length - enumLength %}
+		{% set enumMore = enum.length - enumLength %}
 		{% if enumMore %}and {{ enumMore }} more.{% endif %}
 	</p>
 {% endif %}

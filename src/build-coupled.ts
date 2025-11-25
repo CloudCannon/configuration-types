@@ -1,9 +1,6 @@
 import * as z from 'zod';
-import {
-	CollectionConfigSchema,
-	ConfigurationSchema,
-	DataConfigEntrySchema,
-} from './configuration';
+import { CollectionConfigSchema } from './collections';
+import { ConfigurationSchema, DataConfigEntrySchema } from './configuration';
 import { PathsSchema } from './paths';
 
 export const BuildCoupledPathsSchema = z

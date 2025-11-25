@@ -3,6 +3,7 @@ import * as z from 'zod';
 export * from './build-coupled';
 export * from './cascade';
 export * from './configuration';
+export * from './collections';
 export * from './documentation';
 export * from './editables';
 export * from './icon';

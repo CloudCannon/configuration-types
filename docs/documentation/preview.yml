@@ -1,0 +1,91 @@
+PickerPreview:
+  title: Picker Preview
+  description: Changes the way items are previewed in the CMS while being chosen.
+  examples:
+
+Preview:
+  title: Preview
+  description: Configuration for how content items are visually previewed in the CloudCannon interface.
+  examples:
+Preview.text:
+  title: Preview Text
+  description: Controls the main text shown per item.
+  examples:
+Preview.subtext:
+  title: Preview Subtext
+  description: Controls the supporting text shown per item.
+  examples:
+Preview.image:
+  title: Preview Image
+  description: Controls the image shown per item.
+  examples:
+Preview.icon:
+  title: Preview Icon
+  description: Controls the icon shown per item. Must result in a Material Symbol name.
+  examples:
+Preview.icon_color:
+  title: Preview Icon Color
+  description: Controls the color of the icon.
+  examples:
+Preview.icon_background_color:
+  title: Preview Icon Background Color
+  description: Controls the background color of the icon.
+  examples:
+Preview.tags:
+  title: Preview Tags
+  description: Defines a list of tags.
+  examples:
+Preview.metadata:
+  title: Preview Metadata
+  description: Defines a list of items that can contain an image, icon, and text.
+  examples:
+Preview.metadata.[*]:
+  title: Preview Metadata Entry
+  description: Metadata item that can contain an image, icon, and text.
+  examples:
+
+Preview.gallery:
+  title: Preview Gallery
+  description: Details for large image/icon preview per item.
+  examples:
+Preview.gallery.background_color:
+  title: Preview Gallery Background Color
+  description: Controls the background color gallery area.
+  examples:
+Preview.gallery.fit:
+  title: Preview Gallery Image Fit
+  description: Controls how the gallery image is positioned within the gallery.
+  examples:
+
+PreviewEntry:
+  title: Preview Entry
+  description: An entry inside one of the properties of `preview`.
+
+PreviewEntry.(key):
+  title: Key
+  description: The object containing the key used to access the value used for the preview.
+PreviewEntry.(key).key:
+  title: Key Value
+  description: The key used to access the value used for the preview.
+
+PreviewEntry.(template):
+  title: Template
+  description: The object containing a template string containing various placeholders for the value used in the preview.
+PreviewEntry.(template).template:
+  title: Template Value
+  description: A template string containing various placeholders for the value used in the preview.
+
+PreviewEntry.(text):
+  title: Text
+  description: The object containing the raw text used as the value for the preview.
+PreviewEntry.(text).text:
+  title: Text Value
+  description: The raw text used as the value for the preview.
+
+PreviewEntry.(raw-text):
+  title: Raw Text
+  description: Raw text used as the value for the preview.
+
+PreviewEntry.(false):
+  title: "False"
+  description: Indicates this preview entry should be hidden.

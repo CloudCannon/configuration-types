@@ -11,15 +11,15 @@ export const EditorKeySchema = z.enum(['visual', 'content', 'data']).meta({
 });
 
 export const ReducedCascadeSchema = z.object({
-	_inputs: InputsSchema,
-	_select_data: SelectDataSchema,
-	_structures: StructuresSchema,
+	_inputs: InputsSchema.optional(),
+	_select_data: SelectDataSchema.optional(),
+	_structures: StructuresSchema.optional(),
 });
 
 export const CascadeSchema = z.object({
 	...ReducedCascadeSchema.shape,
 	_enabled_editors: z.array(EditorKeySchema).optional().meta({
-		id: '_enabled_editors',
+		id: 'type.EnabledEditors',
 		title: 'Enabled Editors',
 		description:
 			'Set a preferred editor and/or disable the others. The first value sets which editor opens by default, and the following values specify which editors are accessible.',

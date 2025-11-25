@@ -1,26 +1,29 @@
 ---
 pagination:
-  data: docPages
+  data: documentationPages
   size: 1
-  alias: p
-permalink: "/{{ p.url }}/"
+  alias: doc
+permalink: "/{{ doc.url }}/"
 layout: layouts/default.njk
 ---
+{% set parent = doc.parent | docFromGid %}
 <p>
-	{% if p.parent_url %}
-		<a href="{{ p.parent_url }}">&larr; {{ p.parent_url }}</a>
+	{% if parent %}
+		<a href="{{ parent.url }}">&larr; {{ parent.url }}</a>
+	{% elif doc.url != '/' %}
+		<a href="/">&larr; /</a>
 	{% else %}
 		/
 	{% endif %}
 </p>
 
-<h1>{{ p.doc | getDocTitle }}</h1>
+<h1>{{ doc.title | default(doc.key, true) }}</h1>
 
-{% renderFile "./_includes/doc-page.njk", p %}
+{% renderFile "./_includes/doc-page.njk", doc %}
 
 <hr>
 
 <details>
 	<summary>Raw data</summary>
-	<pre><code>{{ p | json }}</code></pre>
+	<pre><code>{{ doc | json }}</code></pre>
 </details>

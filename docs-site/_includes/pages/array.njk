@@ -1,13 +1,22 @@
-{% set items = doc.items | arrayify %}
-
 {% if items | length %}
-	<h2>Items</h2>
-	<div class="articles">
-		{% for doc in items %}
+	<dt>Items:</dt>
+	{% for itemRef in items %}
+		<dd>
 			<article>
-				{% set docPage = doc | getDocPage %}
-				{% renderFile "./_includes/doc-page.njk", docPage %}
+				{% set itemDoc = itemRef | docFromRef %}
+				<p>
+					{% if itemDoc.url and itemDoc.parent %}
+						<em><a href="{{ itemDoc.url }}">{{ itemDoc.title | default(itemDoc.key, true) }}</a></em> —
+					{% endif %}
+
+					<code>{% renderFile "./_includes/doc-type.njk", itemDoc %}</code>
+				</p>
+				{% renderFile "./_includes/doc-summary.njk", itemDoc %}
 			</article>
-		{% endfor %}
-	</div>
+		</dd>
+	{% endfor %}
+
+	{% if uniqueItems %}
+		<dd><p>All items must be unique.</p></dd>
+	{% endif %}
 {% endif %}

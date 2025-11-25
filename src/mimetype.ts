@@ -437,7 +437,7 @@ export const MimeTypeSchema = z
 		'text/x-script.zsh',
 	])
 	.meta({
-		id: 'MimeType',
+		id: 'type.MimeType',
 		title: 'Mime Type',
 		description: 'MIME type identifiers for file type validation and handling in CloudCannon.',
 	});

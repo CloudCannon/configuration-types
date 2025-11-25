@@ -2,15 +2,15 @@
 
 data_config:
   blog-tags:
-    path: 'data/tags.yml'
+    path: "data/tags.yml"
 
 collections_config:
   pages:
-    icon: feed
+    icon: rss_feed
     disable_add_folder: true
     path: content
     create:
-      path: '{title|slugify}.md'
+      path: "{title|slugify}.md"
     schemas:
       default:
         path: schemas/page.html

@@ -1,28 +1,18 @@
-{% if doc.anyOf | length %}
-	<h2>Types</h2>
+{% if anyOf | length %}
+	<dt>Types:</dt>
+	{% for anyOfRef in anyOf %}
+		<dd>
+			<article>
+				{% set anyOfDoc = anyOfRef | docFromRef %}
+				<p>
+					{% if anyOfDoc.url and anyOfDoc.parent %}
+						<em><a href="{{ anyOfDoc.url }}">{{ anyOfDoc.title | default(anyOfDoc.key, true) }}</a></em> —
+					{% endif %}
 
-	{% for propDoc in doc.anyOf %}
-		<article>
-			{% set docPage = propDoc | getDocPage %}
-
-			{% if docPage %}
-				{% set propDoc = docPage.doc %}
-			{% endif %}
-
-			<p>
-				{% if docPage.url %}
-					<em><a href="{{ docPage.url }}">{{ docPage.title }}</a></em>
-				{% else %}
-					{% renderFile "./_includes/doc-type.njk", docPage %}
-				{% endif %}
-			</p>
-
-			{% renderFile "./_includes/doc-summary.njk", docPage %}
-{#
-			<details>
-				<summary>Details</summary>
-				{% renderFile "./_includes/doc-page.njk", docPage %}
-			</details> #}
-		</article>
+					<code>{% renderFile "./_includes/doc-type.njk", anyOfDoc %}</code>
+				</p>
+				{% renderFile "./_includes/doc-summary.njk", anyOfDoc %}
+			</article>
+		</dd>
 	{% endfor %}
 {% endif %}

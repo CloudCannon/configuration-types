@@ -1,8 +1,5 @@
 file_config:
-  name: File Configuration
-  comment:
-    This key defines file-specific configuration without configuring a collection
-    or modifying files.
+  title: File Configuration
   description: >-
     This key defines file-specific configuration without configuring a collection
     or modifying files.
@@ -13,10 +10,7 @@ file_config:
           _inputs:
             title:
               comment: This is a YAML data file title.
-  documentation_link: https://cloudcannon.com/documentation/articles/configuration-file-reference/#file_config
-type.FileConfigEntry:
-  name: File Configuration Entry
-  comment:
+file_config.[*]:
+  title: File Configuration Entry
   description: Provides scope to configure at a file level, without adding configuration to files.
   examples:
-  documentation_link:
