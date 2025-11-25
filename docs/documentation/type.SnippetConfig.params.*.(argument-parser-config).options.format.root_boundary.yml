@@ -1,0 +1,7 @@
+gid: >-
+  type.SnippetConfig.params.*.(argument-parser-config).options.format.root_boundary
+url: >-
+  /type.SnippetConfig/params/*/(argument-parser-config)/options/format/root_boundary/
+title: ''
+description: ''
+examples: []

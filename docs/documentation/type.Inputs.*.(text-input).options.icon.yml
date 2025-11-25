@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(text-input).options.icon
+url: /type.Inputs/*/(text-input)/options/icon/
+title: Icon
+description: Icon shown beside the input.
+examples: []

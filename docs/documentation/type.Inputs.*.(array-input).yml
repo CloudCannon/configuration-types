@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(array-input)
+url: /type.Inputs/*/(array-input)/
+title: Array Input
+description: Provides a user interface for lists of inputs or input groups.
+examples: []

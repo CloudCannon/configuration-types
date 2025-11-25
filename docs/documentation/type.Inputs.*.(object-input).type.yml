@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(object-input).type
+url: /type.Inputs/*/(object-input)/type/
+title: Type
+description: Sets an input type, which controls how this input appears and behaves.
+examples: []

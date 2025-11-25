@@ -1,0 +1,7 @@
+gid: collections_config.*.add_options.[*].(href-add-option).href
+url: /collections_config/*/add_options/[*]/(href-add-option)/href/
+title: ''
+description: >-
+  The link that opens when the option is clicked. Can either be an external or
+  internal link. If internal, the link is relative to the current site.
+examples: []

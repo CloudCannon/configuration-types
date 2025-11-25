@@ -1,0 +1,7 @@
+gid: type.SnippetsImports.python_markdown_extensions.(include-list).include
+url: /type.SnippetsImports/python_markdown_extensions/(include-list)/include/
+title: ''
+description: >-
+  The list of included snippets. If unset, all snippets are included unless
+  defined in `exclude`.
+examples: []

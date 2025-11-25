@@ -1,0 +1,7 @@
+gid: type.SnippetsImports.eleventy_nunjucks.(exclude-list).exclude
+url: /type.SnippetsImports/eleventy_nunjucks/(exclude-list)/exclude/
+title: ''
+description: >-
+  The list of excluded snippets. If unset, all snippets are excluded unless
+  defined in `include`.
+examples: []

@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(rich-text-input).options.allowed_sources.[*]
+url: /type.Inputs/*/(rich-text-input)/options/allowed_sources/[*]/
+title: ''
+description: ''
+examples: []

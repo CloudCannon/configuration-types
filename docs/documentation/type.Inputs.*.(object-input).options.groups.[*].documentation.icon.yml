@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(object-input).options.groups.[*].documentation.icon
+url: /type.Inputs/*/(object-input)/options/groups/[*]/documentation/icon/
+title: Icon
+description: The icon displayed next to the link.
+examples: []

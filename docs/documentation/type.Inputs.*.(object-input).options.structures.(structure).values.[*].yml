@@ -1,0 +1,7 @@
+gid: type.Inputs.*.(object-input).options.structures.(structure).values.[*]
+url: /type.Inputs/*/(object-input)/options/structures/(structure)/values/[*]/
+title: Structure Value
+description: >-
+  A single value option within a structure, defining the data format and
+  appearance for content editors.
+examples: []

@@ -1,0 +1,7 @@
+gid: type.Editables.image.sizes.[*].target
+url: /type.Editables/image/sizes/[*]/target/
+title: ''
+description: >-
+  A reference to another input that is given the path to this additional image
+  file.
+examples: []

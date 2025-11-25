@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(time-input).options
+url: /type.Inputs/*/(time-input)/options/
+title: ''
+description: Options that are specific to Time Inputs.
+examples: []

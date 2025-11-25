@@ -1,0 +1,9 @@
+gid: >-
+  type.Inputs.*.(object-input).options.entries.structures.(structure).values.[*].id
+url: >-
+  /type.Inputs/*/(object-input)/options/entries/structures/(structure)/values/[*]/id/
+title: ''
+description: >-
+  A unique reference value used when referring to this structure value from the
+  Object input's assigned_structures option.
+examples: []

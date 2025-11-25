@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(code-input).options.pattern_flags.global
+url: /type.Inputs/*/(code-input)/options/pattern_flags/global/
+title: ''
+description: '`g` - Search globally.'
+examples: []

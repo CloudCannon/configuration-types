@@ -1,0 +1,5 @@
+gid: >-
+  type.Inputs.*.(object-input).options.entries.structures.(structure).values.[*].picker_preview
+title: ''
+description: ''
+examples: []

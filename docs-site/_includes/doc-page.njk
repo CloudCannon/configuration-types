@@ -1,5 +1,21 @@
 {% set doc = gid | docFromGid %}
 
+{% set parent = doc.parent | docFromGid %}
+<p>
+	{% if parent %}
+		<a href="{{ parent.url }}">&larr; {{ parent.url }}</a>
+	{% elif doc.url != '/' %}
+		<a href="/">&larr; /</a>
+	{% else %}
+		/
+	{% endif %}
+</p>
+
+<h1
+	data-editable="text"
+	data-prop="@file[/docs/documentation/{{ doc.gid }}.yml].title"
+>{{ doc.title | default(doc.key, true) }}</h1>
+
 <dl>
 	{% if appears_in | length %}
 		<dt>Appears in:</dt>
@@ -36,7 +52,10 @@
 	{% set description = documentation.description | default(developer_documentation.description, true) %}
 	{% if description %}
 		<dt>Description:</dt>
-		<dd>{{ description | renderContent('md') | safe }}</dd>
+		<dd
+			data-editable="text"
+			data-prop="@file[/docs/documentation/{{ gid }}.yml].description"
+		>{{ description | renderContent('md') | safe }}</dd>
 	{% endif %}
 
 	{% if default %}
@@ -53,9 +72,13 @@
 
 	{% if documentation.examples | length %}
 		<dt>Examples:</dt>
-		{% for example in documentation.examples %}
-			<dd><pre><code>{{ example }}</code></pre></dd>
-		{% endfor %}
+		<editable-array data-prop="@file[/docs/documentation/{{ gid }}.yml].examples">
+			{% for example in documentation.examples %}
+				<dd data-editable="array-item">
+					<pre><code>{{ example }}</code></pre>
+				</dd>
+			{% endfor %}
+		</editable-array>
 	{% endif %}
 
 	{% if type == "array" %}
@@ -66,3 +89,10 @@
 		{% renderFile "./_includes/pages/any-of.njk", doc %}
 	{% endif %}
 </dl>
+
+<hr>
+
+<details>
+	<summary>Raw data</summary>
+	<pre><code>{{ doc | json }}</code></pre>
+</details>

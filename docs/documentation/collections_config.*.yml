@@ -1,0 +1,7 @@
+gid: collections_config.*
+url: /collections_config/*/
+title: Collection Config
+description: >-
+  Definitions for your Collections, which are the sets of content files for your
+  site grouped by folder.
+examples: []

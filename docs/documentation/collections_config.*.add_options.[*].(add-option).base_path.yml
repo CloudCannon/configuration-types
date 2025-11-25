@@ -1,0 +1,9 @@
+gid: collections_config.*.add_options.[*].(add-option).base_path
+url: /collections_config/*/add_options/[*]/(add-option)/base_path/
+title: ''
+description: >-
+  Enforces a path for new files to be created in, regardless of path the user is
+  currently navigated to within the collection file list. Relative to the path
+  of the collection defined in collection. Defaults to the path within the
+  collection the user is currently navigated to.
+examples: []

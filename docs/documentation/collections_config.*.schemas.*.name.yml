@@ -1,0 +1,7 @@
+gid: collections_config.*.schemas.*.name
+url: /collections_config/*/schemas/*/name/
+title: ''
+description: >-
+  Displayed in the add menu when creating new files. Defaults to a formatted
+  version of the key.
+examples: []

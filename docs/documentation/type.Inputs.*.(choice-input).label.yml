@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(choice-input).label
+url: /type.Inputs/*/(choice-input)/label/
+title: ''
+description: Optionally changes the text above this input.
+examples: []

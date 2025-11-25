@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(boolean-input).hidden.(query-string)
+url: /type.Inputs/*/(boolean-input)/hidden/(query-string)/
+title: Query String
+description: ''
+examples: []

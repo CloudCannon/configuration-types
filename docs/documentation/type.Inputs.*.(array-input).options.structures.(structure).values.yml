@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(array-input).options.structures.(structure).values
+url: /type.Inputs/*/(array-input)/options/structures/(structure)/values/
+title: ''
+description: Defines what values are available to add when using this structure.
+examples: []

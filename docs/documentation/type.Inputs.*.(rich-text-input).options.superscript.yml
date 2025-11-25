@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(rich-text-input).options.superscript
+url: /type.Inputs/*/(rich-text-input)/options/superscript/
+title: ''
+description: Enables a control to set selected text to superscript.
+examples: []

@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(object-input).options.view
+url: /type.Inputs/*/(object-input)/options/view/
+title: ''
+description: Controls how object previews are rendered.
+examples: []

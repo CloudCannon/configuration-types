@@ -1,0 +1,8 @@
+gid: collections_config.*.add_options.[*].(add-option).collection
+url: /collections_config/*/add_options/[*]/(add-option)/collection/
+title: ''
+description: >-
+  Sets which collection this action is creating a file in. This is used when
+  matching the value for schema. Defaults to the containing collection these
+  `add_options` are configured in.
+examples: []

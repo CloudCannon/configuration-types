@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(time-input).documentation
+url: /type.Inputs/*/(time-input)/documentation/
+title: Documentation
+description: Provides a custom link for documentation for editors shown above input.
+examples: []

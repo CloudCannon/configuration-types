@@ -1,0 +1,5 @@
+gid: type.Structures.*.values.[*].documentation.text
+url: /type.Structures/*/values/[*]/documentation/text/
+title: ''
+description: The visible text used in the link.
+examples: []

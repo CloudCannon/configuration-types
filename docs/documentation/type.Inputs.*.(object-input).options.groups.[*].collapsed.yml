@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(object-input).options.groups.[*].collapsed
+url: /type.Inputs/*/(object-input)/options/groups/[*]/collapsed/
+title: ''
+description: Controls if this group is collapsed or expanded when first viewed.
+examples: []

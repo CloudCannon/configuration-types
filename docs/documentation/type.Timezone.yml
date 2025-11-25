@@ -1,0 +1,8 @@
+gid: type.Timezone
+url: /type.Timezone/
+title: ''
+description: >-
+  Specifies the time zone that dates are displayed and edited in. Also changes
+  the suffix the date is persisted to the file with. Defaults to the global
+  `timezone`.
+examples: []

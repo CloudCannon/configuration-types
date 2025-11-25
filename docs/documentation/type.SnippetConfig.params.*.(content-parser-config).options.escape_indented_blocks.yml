@@ -1,0 +1,7 @@
+gid: >-
+  type.SnippetConfig.params.*.(content-parser-config).options.escape_indented_blocks
+url: >-
+  /type.SnippetConfig/params/*/(content-parser-config)/options/escape_indented_blocks/
+title: ''
+description: ''
+examples: []

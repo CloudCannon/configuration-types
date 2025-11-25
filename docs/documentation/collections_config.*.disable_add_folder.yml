@@ -1,0 +1,7 @@
+gid: collections_config.*.disable_add_folder
+url: /collections_config/*/disable_add_folder/
+title: ''
+description: >-
+  This key toggles whether team members can use the _+ Add_ button in the top
+  right of the _Collection browser_ to add subfolders to a Collection.
+examples: []

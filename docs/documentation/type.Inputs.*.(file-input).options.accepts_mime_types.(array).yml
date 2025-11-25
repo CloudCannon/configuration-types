@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(file-input).options.accepts_mime_types.(array)
+url: /type.Inputs/*/(file-input)/options/accepts_mime_types/(array)/
+title: Array
+description: ''
+examples: []

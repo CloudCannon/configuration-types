@@ -1,0 +1,9 @@
+gid: type.Inputs.*.(rich-text-input).options.embed
+url: /type.Inputs/*/(rich-text-input)/options/embed/
+title: ''
+description: >-
+  Enables a control to insert a region of raw HTML, including YouTube, Vimeo,
+  Tweets, and other media. Embedded content is sanitized to mitigate XSS risks,
+  which includes removing style tags. Embeds containing script tags are not
+  loaded in the editor.
+examples: []

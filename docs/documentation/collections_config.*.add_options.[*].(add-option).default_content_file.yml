@@ -1,0 +1,8 @@
+gid: collections_config.*.add_options.[*].(add-option).default_content_file
+url: /collections_config/*/add_options/[*]/(add-option)/default_content_file/
+title: ''
+description: >-
+  The path to a file used to populate the initial contents of a new file if no
+  schemas are configured. We recommend using schemas, and this is ignored if a
+  schema is available.
+examples: []

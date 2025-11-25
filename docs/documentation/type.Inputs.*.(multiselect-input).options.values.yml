@@ -1,0 +1,8 @@
+gid: type.Inputs.*.(multiselect-input).options.values
+url: /type.Inputs/*/(multiselect-input)/options/values/
+title: ''
+description: >-
+  Defines the values available to choose from. Optional, defaults to fetching
+  values from the naming convention (e.g. colors or my_colors for data set
+  colors).
+examples: []

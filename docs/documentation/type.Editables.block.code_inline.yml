@@ -1,0 +1,7 @@
+gid: type.Editables.block.code_inline
+url: /type.Editables/block/code_inline/
+title: ''
+description: >-
+  Enables a control to create an inline code element, containing any selected
+  text.
+examples: []

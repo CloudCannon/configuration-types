@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(number-input).context
+url: /type.Inputs/*/(number-input)/context/
+title: ''
+description: Adds an expandable section of rich text below the input.
+examples: []

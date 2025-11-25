@@ -1,0 +1,7 @@
+gid: >-
+  type.Inputs.*.(object-input).options.entries.structures.(structure).values.[*].groups.[*].inputs
+url: >-
+  /type.Inputs/*/(object-input)/options/entries/structures/(structure)/values/[*]/groups/[*]/inputs/
+title: ''
+description: The keys of each input in this group.
+examples: []

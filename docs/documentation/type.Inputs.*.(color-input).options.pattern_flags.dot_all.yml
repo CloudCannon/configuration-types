@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(color-input).options.pattern_flags.dot_all
+url: /type.Inputs/*/(color-input)/options/pattern_flags/dot_all/
+title: ''
+description: '`s` - `.` matches newline characters.'
+examples: []

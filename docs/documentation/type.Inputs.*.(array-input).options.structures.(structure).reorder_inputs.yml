@@ -1,0 +1,7 @@
+gid: type.Inputs.*.(array-input).options.structures.(structure).reorder_inputs
+url: /type.Inputs/*/(array-input)/options/structures/(structure)/reorder_inputs/
+title: ''
+description: >-
+  If true, inputs are sorted to match when editing. Extra inputs are ordered
+  after expected inputs, unless `remove_extra_inputs` is true. Defaults to true.
+examples: []

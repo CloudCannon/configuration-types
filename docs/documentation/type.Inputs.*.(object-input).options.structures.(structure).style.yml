@@ -1,0 +1,7 @@
+gid: type.Inputs.*.(object-input).options.structures.(structure).style
+url: /type.Inputs/*/(object-input)/options/structures/(structure)/style/
+title: ''
+description: >-
+  Defines whether options are shown to your editors in a select menu (select,
+  default) or a modal pop up window (modal) when adding a new item.
+examples: []

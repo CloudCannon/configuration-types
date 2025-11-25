@@ -1,0 +1,5 @@
+gid: type.Editables.content.join_below
+url: /type.Editables/content/join_below/
+title: ''
+description: Enables a control to join the selected block with the block below it.
+examples: []

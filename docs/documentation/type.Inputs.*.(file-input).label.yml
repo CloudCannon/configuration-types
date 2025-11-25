@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(file-input).label
+url: /type.Inputs/*/(file-input)/label/
+title: ''
+description: Optionally changes the text above this input.
+examples: []

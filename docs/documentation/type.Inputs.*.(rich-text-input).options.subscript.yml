@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(rich-text-input).options.subscript
+url: /type.Inputs/*/(rich-text-input)/options/subscript/
+title: ''
+description: Enables a control to set selected text to subscript.
+examples: []

@@ -1,0 +1,7 @@
+gid: type.Structures.*.values.[*].groups
+url: /type.Structures/*/values/[*]/groups/
+title: ''
+description: >-
+  Allows you to group the inputs inside this object together without changing
+  the data structure.
+examples: []

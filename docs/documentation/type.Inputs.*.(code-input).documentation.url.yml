@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(code-input).documentation.url
+url: /type.Inputs/*/(code-input)/documentation/url/
+title: ''
+description: The "href" value of the link.
+examples: []

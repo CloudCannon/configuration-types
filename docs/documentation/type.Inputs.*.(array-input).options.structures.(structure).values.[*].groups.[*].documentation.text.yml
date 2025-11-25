@@ -1,0 +1,7 @@
+gid: >-
+  type.Inputs.*.(array-input).options.structures.(structure).values.[*].groups.[*].documentation.text
+url: >-
+  /type.Inputs/*/(array-input)/options/structures/(structure)/values/[*]/groups/[*]/documentation/text/
+title: ''
+description: The visible text used in the link.
+examples: []

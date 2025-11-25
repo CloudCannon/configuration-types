@@ -1,0 +1,7 @@
+gid: type.SnippetConfig.template
+url: /type.SnippetConfig/template/
+title: ''
+description: >-
+  The template that this snippet should inherit, out of the available Snippet
+  Templates.
+examples: []

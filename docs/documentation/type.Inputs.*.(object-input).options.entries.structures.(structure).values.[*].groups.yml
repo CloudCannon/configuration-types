@@ -1,0 +1,9 @@
+gid: >-
+  type.Inputs.*.(object-input).options.entries.structures.(structure).values.[*].groups
+url: >-
+  /type.Inputs/*/(object-input)/options/entries/structures/(structure)/values/[*]/groups/
+title: ''
+description: >-
+  Allows you to group the inputs inside this object together without changing
+  the data structure.
+examples: []

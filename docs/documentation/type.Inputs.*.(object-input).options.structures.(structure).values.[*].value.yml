@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(object-input).options.structures.(structure).values.[*].value
+url: /type.Inputs/*/(object-input)/options/structures/(structure)/values/[*]/value/
+title: ''
+description: The actual value used when items are added after selection.
+examples: []

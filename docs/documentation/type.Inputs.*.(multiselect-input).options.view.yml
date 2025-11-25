@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(multiselect-input).options.view
+url: /type.Inputs/*/(multiselect-input)/options/view/
+title: ''
+description: Controls how selected items are rendered.
+examples: []

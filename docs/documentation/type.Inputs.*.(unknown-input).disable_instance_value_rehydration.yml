@@ -1,0 +1,7 @@
+gid: type.Inputs.*.(unknown-input).disable_instance_value_rehydration
+url: /type.Inputs/*/(unknown-input)/disable_instance_value_rehydration/
+title: ''
+description: >-
+  Prevents the default where inputs configured with an `instance_value` are
+  rehydrated with a new value when duplicated in the CMS.
+examples: []

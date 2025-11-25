@@ -1,0 +1,7 @@
+gid: type.Inputs.*.(array-input).options.disable_add
+url: /type.Inputs/*/(array-input)/options/disable_add/
+title: ''
+description: >-
+  Hides the add button, and context menu actions on each item for adding new
+  items to this Input.
+examples: []

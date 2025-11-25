@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(url-input).options.pattern_flags.ignore_case
+url: /type.Inputs/*/(url-input)/options/pattern_flags/ignore_case/
+title: ''
+description: '`i` - Case-insensitive.'
+examples: []

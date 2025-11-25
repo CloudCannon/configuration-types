@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(number-input).label
+url: /type.Inputs/*/(number-input)/label/
+title: ''
+description: Optionally changes the text above this input.
+examples: []

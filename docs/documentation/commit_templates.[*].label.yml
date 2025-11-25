@@ -1,0 +1,7 @@
+gid: commit_templates.[*].label
+url: /commit_templates/[*]/label/
+title: ''
+description: >-
+  Used to identify a commit template when multiple commit templates are
+  available.
+examples: []

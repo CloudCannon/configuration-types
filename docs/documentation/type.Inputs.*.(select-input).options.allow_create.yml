@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(select-input).options.allow_create
+url: /type.Inputs/*/(select-input)/options/allow_create/
+title: ''
+description: Allows new text values to be created at edit time.
+examples: []

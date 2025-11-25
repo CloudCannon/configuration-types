@@ -1,0 +1,5 @@
+gid: commit_templates.[*].wrap_width
+url: /commit_templates/[*]/wrap_width/
+title: ''
+description: Sets the width of the text wrap in the editor.
+examples: []

@@ -1,0 +1,7 @@
+gid: >-
+  type.Inputs.*.(array-input).options.structures.(structure).values.[*].groups.[*].heading
+url: >-
+  /type.Inputs/*/(array-input)/options/structures/(structure)/values/[*]/groups/[*]/heading/
+title: ''
+description: The main text for the group shown when collapsed or expanded.
+examples: []

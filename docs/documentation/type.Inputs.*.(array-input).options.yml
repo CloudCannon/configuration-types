@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(array-input).options
+url: /type.Inputs/*/(array-input)/options/
+title: ''
+description: Options that are specific to Array Inputs.
+examples: []

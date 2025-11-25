@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(textarea-input).options
+url: /type.Inputs/*/(textarea-input)/options/
+title: ''
+description: Options that are specific to Textarea Inputs.
+examples: []

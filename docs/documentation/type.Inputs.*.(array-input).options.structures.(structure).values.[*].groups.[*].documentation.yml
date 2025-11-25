@@ -1,0 +1,9 @@
+gid: >-
+  type.Inputs.*.(array-input).options.structures.(structure).values.[*].groups.[*].documentation
+url: >-
+  /type.Inputs/*/(array-input)/options/structures/(structure)/values/[*]/groups/[*]/documentation/
+title: Documentation
+description: >-
+  Provides a custom link for documentation for editors shown above the
+  collection file list.
+examples: []

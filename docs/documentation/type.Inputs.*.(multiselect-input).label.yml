@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(multiselect-input).label
+url: /type.Inputs/*/(multiselect-input)/label/
+title: ''
+description: Optionally changes the text above this input.
+examples: []

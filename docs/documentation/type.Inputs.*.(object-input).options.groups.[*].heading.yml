@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(object-input).options.groups.[*].heading
+url: /type.Inputs/*/(object-input)/options/groups/[*]/heading/
+title: ''
+description: The main text for the group shown when collapsed or expanded.
+examples: []

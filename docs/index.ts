@@ -1,10 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import type { JSONSchema } from 'zod/v4/core';
-import { type DocumentationEntry, readDocs } from './reader.js';
-
-type DocType = JsonSchema['type'] | 'date';
-type JsonSchema = JSONSchema.JSONSchema & { documentationType?: DocType };
+import { readDocs, writeDocs } from './docs.js';
+import { type JsonSchema, type Page, type PageRef, slugify, verbose } from './util.js';
 
 const schemaRaw = await fs.readFile(
 	path.join(process.cwd(), 'dist/cloudcannon-config.documentation.schema.json'),
@@ -12,47 +9,10 @@ const schemaRaw = await fs.readFile(
 );
 const schema = JSON.parse(schemaRaw);
 const documentationEntries = await readDocs();
-const documentationKeys = new Set(Object.keys(documentationEntries));
+const existingDocumentationKeys = new Set(Object.keys(documentationEntries));
 const attemptedDocumentationKeys: Set<string> = new Set();
 const untitledGids: Set<string> = new Set();
-
-type PageRef = ({ gid: string } | { type: string }) & {
-	documentation?: DocumentationEntry | undefined;
-};
-
-interface Page {
-	gid: string;
-	title?: DocumentationEntry['title'];
-	description?: DocumentationEntry['description'];
-	examples?: DocumentationEntry['examples'];
-	documentation?: DocumentationEntry;
-	developer_documentation?: DocumentationEntry;
-	url: string;
-	required: boolean;
-	key: string;
-	full_key: string;
-	parent?: string;
-	appears_in: string[];
-	type: DocType;
-	default: JsonSchema['default'];
-	enum: JsonSchema['enum'];
-	const: JsonSchema['const'];
-	uniqueItems: JsonSchema['uniqueItems'];
-	items?: PageRef[];
-	properties?: Record<string, PageRef>;
-	additionalProperties?: PageRef[];
-	anyOf?: PageRef[];
-}
-
 const pages: Record<string, Page> = {};
-
-function slugify(input: string): string {
-	return input
-		.toLowerCase()
-		.replace(/[^a-z0-9\s-]/g, ' ')
-		.trim()
-		.replace(/[\s-]+/g, '-');
-}
 
 function deref(doc: JsonSchema): JsonSchema {
 	if (typeof doc !== 'object') {
@@ -64,14 +24,6 @@ function deref(doc: JsonSchema): JsonSchema {
 
 		Object.keys(refDoc).forEach((key) => {
 			if (doc[key] === undefined) {
-				if (key === 'id' && doc.id && doc.id !== refDoc.id) {
-					throw new Error(`Overriding id through deref: ${refDoc.id} overriding ${doc.id}`);
-				}
-
-				if (key === 'gid' && doc.gid !== refDoc.gid) {
-					throw new Error(`Overriding gid through deref: ${refDoc.gid} overriding ${doc.gid}`);
-				}
-
 				doc[key] = refDoc[key];
 			}
 		});
@@ -125,12 +77,12 @@ function docToPage(
 	}
 
 	const isType = doc.id?.startsWith('type.');
-	let thisPath = isType ? [doc.id?.replace('type.', '') || ''] : key ? [...path, key] : [...path];
+	let thisPath = isType ? [doc.id || ''] : key ? [...path, key] : [...path];
 	let gid = thisPath.join('.');
 
 	if (doc.id === 'type.Configuration') {
 		thisPath = [];
-		gid = 'Configuration';
+		gid = 'type.Configuration';
 	}
 
 	const seenPage = pages[gid];
@@ -316,16 +268,29 @@ await fs.writeFile(
 console.log('✅ dist/documentation.json');
 
 // @ts-ignore
-const documented = documentationKeys.intersection(attemptedDocumentationKeys);
+const documented = existingDocumentationKeys.intersection(attemptedDocumentationKeys);
 // @ts-ignore
-const undocumented = attemptedDocumentationKeys.difference(documentationKeys);
+const undocumented = attemptedDocumentationKeys.difference(existingDocumentationKeys);
 // @ts-ignore
-const unused = documentationKeys.difference(attemptedDocumentationKeys);
+const unused = existingDocumentationKeys.difference(attemptedDocumentationKeys);
 
 const separator = '\n     ';
-console.log([`✅ Documented (${documented.size}):`, ...documented.values()].join(separator));
+
 console.log(
-	[`✏️ Needs documentated (${undocumented.size}):`, ...undocumented.values()].join(separator)
+	[`✅ Documented (${documented.size})`, ...(verbose ? documented.values() : [])].join(separator)
 );
-console.log([`💣 Stale/unused (${unused.size}):`, ...unused.values()].join(separator));
-console.log([`🔠 Untitled (${untitledGids.size}):`, ...untitledGids.values()].join(separator));
+
+console.log(
+	[`✏️ New (${undocumented.size})`, ...(verbose ? undocumented.values() : [])].join(separator)
+);
+
+console.log(
+	[`💣 Stale/unused (${unused.size})`, ...(verbose ? unused.values() : [])].join(separator)
+);
+
+console.log(
+	[`🔠 Untitled (${untitledGids.size})`, ...(verbose ? untitledGids.values() : [])].join(separator)
+);
+
+await writeDocs(attemptedDocumentationKeys, pages);
+console.log('✅ docs/documentation/*.yml');

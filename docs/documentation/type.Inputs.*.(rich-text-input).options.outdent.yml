@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(rich-text-input).options.outdent
+url: /type.Inputs/*/(rich-text-input)/options/outdent/
+title: ''
+description: Enables a control to reduce indentation for numbered and unordered lists.
+examples: []

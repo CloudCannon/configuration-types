@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(range-input).hidden
+url: /type.Inputs/*/(range-input)/hidden/
+title: ''
+description: Toggles the visibility of this input.
+examples: []

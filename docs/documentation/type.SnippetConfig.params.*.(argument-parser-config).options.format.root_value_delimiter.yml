@@ -1,0 +1,7 @@
+gid: >-
+  type.SnippetConfig.params.*.(argument-parser-config).options.format.root_value_delimiter
+url: >-
+  /type.SnippetConfig/params/*/(argument-parser-config)/options/format/root_value_delimiter/
+title: ''
+description: ''
+examples: []

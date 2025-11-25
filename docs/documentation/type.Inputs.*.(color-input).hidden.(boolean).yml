@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(color-input).hidden.(boolean)
+url: /type.Inputs/*/(color-input)/hidden/(boolean)/
+title: Boolean
+description: ''
+examples: []

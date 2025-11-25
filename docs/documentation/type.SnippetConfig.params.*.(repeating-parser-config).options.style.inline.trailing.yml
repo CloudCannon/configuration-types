@@ -1,0 +1,7 @@
+gid: >-
+  type.SnippetConfig.params.*.(repeating-parser-config).options.style.inline.trailing
+url: >-
+  /type.SnippetConfig/params/*/(repeating-parser-config)/options/style/inline/trailing/
+title: ''
+description: ''
+examples: []

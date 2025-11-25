@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(file-input).options.disable_upload_file
+url: /type.Inputs/*/(file-input)/options/disable_upload_file/
+title: ''
+description: Disables the context menu option and the drop area for uploading files.
+examples: []

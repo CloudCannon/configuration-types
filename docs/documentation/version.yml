@@ -1,0 +1,7 @@
+gid: version
+url: /version/
+title: ''
+description: >-
+  Controls which schema this file is validated against. Defaults to the latest
+  schema.
+examples: []

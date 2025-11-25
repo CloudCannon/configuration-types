@@ -1,0 +1,5 @@
+gid: collections_config.*.documentation.text
+url: /collections_config/*/documentation/text/
+title: ''
+description: The visible text used in the link.
+examples: []

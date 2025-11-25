@@ -1,0 +1,7 @@
+gid: type.Editables.block.width
+url: /type.Editables/block/width/
+title: Width
+description: >-
+  Defines the width of the bounding box used in the image resizing process
+  defined with resize_style.
+examples: []

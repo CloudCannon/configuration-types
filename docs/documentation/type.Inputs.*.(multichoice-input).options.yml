@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(multichoice-input).options
+url: /type.Inputs/*/(multichoice-input)/options/
+title: ''
+description: Options that are specific to Multichoice Inputs.
+examples: []

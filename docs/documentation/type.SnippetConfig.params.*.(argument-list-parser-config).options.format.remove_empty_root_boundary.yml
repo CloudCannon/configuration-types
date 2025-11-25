@@ -1,0 +1,7 @@
+gid: >-
+  type.SnippetConfig.params.*.(argument-list-parser-config).options.format.remove_empty_root_boundary
+url: >-
+  /type.SnippetConfig/params/*/(argument-list-parser-config)/options/format/remove_empty_root_boundary/
+title: ''
+description: ''
+examples: []

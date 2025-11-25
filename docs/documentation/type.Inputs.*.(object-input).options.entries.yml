@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(object-input).options.entries
+url: /type.Inputs/*/(object-input)/options/entries/
+title: ''
+description: Contains options for the "mutable" subtype.
+examples: []

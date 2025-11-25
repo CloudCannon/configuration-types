@@ -1,0 +1,7 @@
+gid: collections_config.*.sort_options
+url: /collections_config/*/sort_options/
+title: ''
+description: >-
+  This key defines the options for the Sort dropdown in a _Collection browser_.
+  The first option listed is used as the default sort.
+examples: []

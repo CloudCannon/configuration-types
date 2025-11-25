@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(choice-input).disabled.(boolean)
+url: /type.Inputs/*/(choice-input)/disabled/(boolean)/
+title: Boolean
+description: ''
+examples: []

@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(boolean-input).hidden
+url: /type.Inputs/*/(boolean-input)/hidden/
+title: ''
+description: Toggles the visibility of this input.
+examples: []

@@ -1,0 +1,6 @@
+gid: type.SnippetConfig.params.*.(repeating-parser-config).options.output_delimiter
+url: >-
+  /type.SnippetConfig/params/*/(repeating-parser-config)/options/output_delimiter/
+title: ''
+description: ''
+examples: []

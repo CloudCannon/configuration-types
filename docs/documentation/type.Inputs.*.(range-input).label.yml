@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(range-input).label
+url: /type.Inputs/*/(range-input)/label/
+title: ''
+description: Optionally changes the text above this input.
+examples: []

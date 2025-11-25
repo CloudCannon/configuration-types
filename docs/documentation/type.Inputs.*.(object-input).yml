@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(object-input)
+url: /type.Inputs/*/(object-input)/
+title: Object Input
+description: Provides a user interface for a group of inputs.
+examples: []

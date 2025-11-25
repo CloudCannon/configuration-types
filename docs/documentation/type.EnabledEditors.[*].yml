@@ -1,0 +1,5 @@
+gid: type.EnabledEditors.[*]
+url: /type.EnabledEditors/[*]/
+title: Editor Key
+description: 'The available editors in CloudCannon: visual, content, and data editors.'
+examples: []

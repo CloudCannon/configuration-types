@@ -1,0 +1,7 @@
+gid: collections_config.*.name
+url: /collections_config/*/name/
+title: ''
+description: >-
+  This key defines the display name for a Collection. The name appears in the
+  _Site Navigation_ and at the top of the _Collection browser_.
+examples: []

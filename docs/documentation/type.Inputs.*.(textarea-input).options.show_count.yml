@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(textarea-input).options.show_count
+url: /type.Inputs/*/(textarea-input)/options/show_count/
+title: ''
+description: Shows a character counter below the input if enabled.
+examples: []

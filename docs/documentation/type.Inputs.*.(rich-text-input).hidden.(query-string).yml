@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(rich-text-input).hidden.(query-string)
+url: /type.Inputs/*/(rich-text-input)/hidden/(query-string)/
+title: Query String
+description: ''
+examples: []

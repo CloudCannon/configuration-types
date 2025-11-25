@@ -1,0 +1,5 @@
+gid: collections_config.*.sort_options.[*]
+url: /collections_config/*/sort_options/[*]/
+title: SortOption
+description: A sort option for a Collection.
+examples: []

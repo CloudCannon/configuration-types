@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(rich-text-input).options.link
+url: /type.Inputs/*/(rich-text-input)/options/link/
+title: ''
+description: Enables a control to create hyperlinks around selected text.
+examples: []

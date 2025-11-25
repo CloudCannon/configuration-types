@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(multichoice-input).hidden.(boolean)
+url: /type.Inputs/*/(multichoice-input)/hidden/(boolean)/
+title: Boolean
+description: ''
+examples: []

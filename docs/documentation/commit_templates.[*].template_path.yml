@@ -1,0 +1,7 @@
+gid: commit_templates.[*].template_path
+url: /commit_templates/[*]/template_path/
+title: ''
+description: >-
+  Sets the path for a file containing your commit template. The file path should
+  be relative to the root directory.
+examples: []

@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(color-input).hidden
+url: /type.Inputs/*/(color-input)/hidden/
+title: ''
+description: Toggles the visibility of this input.
+examples: []

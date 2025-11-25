@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(object-input).options.allow_label_formatting
+url: /type.Inputs/*/(object-input)/options/allow_label_formatting/
+title: ''
+description: Controls whether or not labels on mutable object entries are formatted.
+examples: []

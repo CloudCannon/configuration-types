@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(multiselect-input).disabled
+url: /type.Inputs/*/(multiselect-input)/disabled/
+title: ''
+description: Toggles if this input can be edited.
+examples: []

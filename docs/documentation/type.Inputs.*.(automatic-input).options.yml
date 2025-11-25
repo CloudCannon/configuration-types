@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(automatic-input).options
+url: /type.Inputs/*/(automatic-input)/options/
+title: ''
+description: Options that are specific to this `type` of input.
+examples: []

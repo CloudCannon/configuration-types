@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(textarea-input).options.pattern_flags.unicode_sets
+url: /type.Inputs/*/(textarea-input)/options/pattern_flags/unicode_sets/
+title: ''
+description: '`v` - Extended `unicode` mode.'
+examples: []

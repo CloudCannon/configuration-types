@@ -1,0 +1,7 @@
+gid: type.SnippetConfig.snippet
+url: /type.SnippetConfig/snippet/
+title: ''
+description: >-
+  The snippet string contains the text to match for your snippet, with any
+  dynamic sections represented using a placeholder in double square brackets.
+examples: []

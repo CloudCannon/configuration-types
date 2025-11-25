@@ -1,0 +1,5 @@
+gid: type.SnippetConfig.params.*.(repeating-literal-parser-config)
+url: /type.SnippetConfig/params/*/(repeating-literal-parser-config)/
+title: Repeating Literal Parser Config
+description: ''
+examples: []

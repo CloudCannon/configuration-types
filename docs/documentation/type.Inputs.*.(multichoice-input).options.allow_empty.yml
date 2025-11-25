@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(multichoice-input).options.allow_empty
+url: /type.Inputs/*/(multichoice-input)/options/allow_empty/
+title: ''
+description: Provides an empty option alongside the options provided by values.
+examples: []

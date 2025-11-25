@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(code-input)
+url: /type.Inputs/*/(code-input)/
+title: Code Input
+description: Provides an editing interface for code or mono-spaced plain text content.
+examples: []

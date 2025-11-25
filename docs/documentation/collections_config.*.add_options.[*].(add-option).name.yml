@@ -1,0 +1,7 @@
+gid: collections_config.*.add_options.[*].(add-option).name
+url: /collections_config/*/add_options/[*]/(add-option)/name/
+title: ''
+description: >-
+  The text displayed for the menu item. Defaults to using name from the matching
+  schema if set.
+examples: []

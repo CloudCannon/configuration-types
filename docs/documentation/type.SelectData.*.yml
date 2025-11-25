@@ -1,0 +1,7 @@
+gid: type.SelectData.*
+url: /type.SelectData/*/
+title: ''
+description: >-
+  Data formats for populating select and multiselect input options, supporting
+  arrays and objects.
+examples: []

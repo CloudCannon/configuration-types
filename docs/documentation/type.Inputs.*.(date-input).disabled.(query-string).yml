@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(date-input).disabled.(query-string)
+url: /type.Inputs/*/(date-input)/disabled/(query-string)/
+title: Query String
+description: ''
+examples: []

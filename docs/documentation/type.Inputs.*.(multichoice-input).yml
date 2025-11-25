@@ -1,0 +1,7 @@
+gid: type.Inputs.*.(multichoice-input)
+url: /type.Inputs/*/(multichoice-input)/
+title: Multichoice Input
+description: >-
+  Provides an editing interface for data with multiple predefined options.
+  Multichoice inputs allow several values.
+examples: []

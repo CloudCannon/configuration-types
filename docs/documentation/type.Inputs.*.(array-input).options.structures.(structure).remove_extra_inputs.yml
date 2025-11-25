@@ -1,0 +1,6 @@
+gid: type.Inputs.*.(array-input).options.structures.(structure).remove_extra_inputs
+url: >-
+  /type.Inputs/*/(array-input)/options/structures/(structure)/remove_extra_inputs/
+title: ''
+description: If checked, extra inputs are removed when editing. Defaults to true.
+examples: []

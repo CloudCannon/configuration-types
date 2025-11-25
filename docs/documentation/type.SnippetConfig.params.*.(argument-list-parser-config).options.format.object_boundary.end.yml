@@ -1,0 +1,7 @@
+gid: >-
+  type.SnippetConfig.params.*.(argument-list-parser-config).options.format.object_boundary.end
+url: >-
+  /type.SnippetConfig/params/*/(argument-list-parser-config)/options/format/object_boundary/end/
+title: ''
+description: ''
+examples: []

@@ -1,0 +1,7 @@
+gid: collection_groups.[*].collections
+url: /collection_groups/[*]/collections/
+title: ''
+description: >-
+  The collections shown in the sidebar for this group. Collections here are
+  referenced by their key within `collections_config`.
+examples: []

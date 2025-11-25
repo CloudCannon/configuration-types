@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(automatic-input).documentation.text
+url: /type.Inputs/*/(automatic-input)/documentation/text/
+title: ''
+description: The visible text used in the link.
+examples: []

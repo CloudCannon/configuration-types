@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(boolean-input).context.title
+url: /type.Inputs/*/(boolean-input)/context/title/
+title: ''
+description: The text shown when not open. Defaults to "Context" if unset.
+examples: []

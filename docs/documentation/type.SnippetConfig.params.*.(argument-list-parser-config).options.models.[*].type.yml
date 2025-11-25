@@ -1,0 +1,7 @@
+gid: >-
+  type.SnippetConfig.params.*.(argument-list-parser-config).options.models.[*].type
+url: >-
+  /type.SnippetConfig/params/*/(argument-list-parser-config)/options/models/[*]/type/
+title: ''
+description: ''
+examples: []

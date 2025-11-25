@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(boolean-input)
+url: /type.Inputs/*/(boolean-input)/
+title: Boolean Input
+description: Provides an editing interface for true or false values.
+examples: []

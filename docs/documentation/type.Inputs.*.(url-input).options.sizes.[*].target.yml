@@ -1,0 +1,7 @@
+gid: type.Inputs.*.(url-input).options.sizes.[*].target
+url: /type.Inputs/*/(url-input)/options/sizes/[*]/target/
+title: ''
+description: >-
+  A reference to another input that is given the path to this additional image
+  file.
+examples: []

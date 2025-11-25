@@ -1,0 +1,16 @@
+collections_config:
+  documentation:
+    path: docs/documentation
+    url: "{url}"
+    preview:
+      text:
+        - key: title
+        - key: gid
+      subtext:
+        - key: description
+      metadata:
+        - text:
+            - key: url
+            - false
+          icon:
+            - text: public

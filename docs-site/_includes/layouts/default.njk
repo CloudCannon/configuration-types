@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Docs</title>
+		{% set page_title = title | default(doc.title) | default(doc.key, true) %}
+		<title>{% if page_title %}{{ page_title }} - {% endif %} Autodocs</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⌨️</text></svg>">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
 		<style>
-			dl {
-			}
-
 			dt {
 				font-weight: bold;
 				margin-bottom: 5px;
@@ -33,6 +32,8 @@
 			article > :first-child {
 				margin-top: 0;
 			}
+
+			article p:last-of-type,
 			article > :last-child {
 				margin-bottom: 0;
 			}

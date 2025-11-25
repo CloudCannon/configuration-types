@@ -1,0 +1,5 @@
+gid: commit_templates.[*]
+url: /commit_templates/[*]/
+title: Commit Template
+description: A template for commit messages when saving changes.
+examples: []

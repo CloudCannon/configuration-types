@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(automatic-input).context.icon
+url: /type.Inputs/*/(automatic-input)/context/icon/
+title: Icon
+description: The icon shown when not open. Defaults to "auto_stories" if unset.
+examples: []

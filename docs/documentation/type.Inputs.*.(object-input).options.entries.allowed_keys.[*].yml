@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(object-input).options.entries.allowed_keys.[*]
+url: /type.Inputs/*/(object-input)/options/entries/allowed_keys/[*]/
+title: ''
+description: ''
+examples: []

@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(textarea-input).documentation.url
+url: /type.Inputs/*/(textarea-input)/documentation/url/
+title: ''
+description: The "href" value of the link.
+examples: []

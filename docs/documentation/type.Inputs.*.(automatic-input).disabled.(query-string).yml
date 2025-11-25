@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(automatic-input).disabled.(query-string)
+url: /type.Inputs/*/(automatic-input)/disabled/(query-string)/
+title: Query String
+description: ''
+examples: []

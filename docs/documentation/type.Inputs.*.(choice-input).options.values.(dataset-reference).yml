@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(choice-input).options.values.(dataset-reference)
+url: /type.Inputs/*/(choice-input)/options/values/(dataset-reference)/
+title: Dataset Reference
+description: Reference to a dataset.
+examples: []

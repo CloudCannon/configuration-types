@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(file-input).options
+url: /type.Inputs/*/(file-input)/options/
+title: ''
+description: Options that are specific to File Inputs.
+examples: []

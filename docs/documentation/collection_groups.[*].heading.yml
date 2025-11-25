@@ -1,0 +1,5 @@
+gid: collection_groups.[*].heading
+url: /collection_groups/[*]/heading/
+title: ''
+description: Short, descriptive label for this group of Collections.
+examples: []

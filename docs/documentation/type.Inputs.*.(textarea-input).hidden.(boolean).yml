@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(textarea-input).hidden.(boolean)
+url: /type.Inputs/*/(textarea-input)/hidden/(boolean)/
+title: Boolean
+description: ''
+examples: []

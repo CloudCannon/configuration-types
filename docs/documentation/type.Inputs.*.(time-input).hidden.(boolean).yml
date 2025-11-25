@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(time-input).hidden.(boolean)
+url: /type.Inputs/*/(time-input)/hidden/(boolean)/
+title: Boolean
+description: ''
+examples: []

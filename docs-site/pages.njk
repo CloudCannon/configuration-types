@@ -6,24 +6,5 @@ pagination:
 permalink: "/{{ doc.url }}/"
 layout: layouts/default.njk
 ---
-{% set parent = doc.parent | docFromGid %}
-<p>
-	{% if parent %}
-		<a href="{{ parent.url }}">&larr; {{ parent.url }}</a>
-	{% elif doc.url != '/' %}
-		<a href="/">&larr; /</a>
-	{% else %}
-		/
-	{% endif %}
-</p>
-
-<h1>{{ doc.title | default(doc.key, true) }}</h1>
 
 {% renderFile "./_includes/doc-page.njk", doc %}
-
-<hr>
-
-<details>
-	<summary>Raw data</summary>
-	<pre><code>{{ doc | json }}</code></pre>
-</details>

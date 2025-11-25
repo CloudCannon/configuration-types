@@ -1,0 +1,8 @@
+gid: type.EnabledEditors
+url: /type.EnabledEditors/
+title: Enabled Editors
+description: >-
+  Set a preferred editor and/or disable the others. The first value sets which
+  editor opens by default, and the following values specify which editors are
+  accessible.
+examples: []

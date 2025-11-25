@@ -20,9 +20,10 @@
 	},
 	"scripts": {
 		"prebuild": "rm -rf dist && mkdir -p dist",
-		"build": "npm run build:schemas && npm run build:combined",
+		"build": "npm run build:schemas && npm run build:combined && npm run build:docs",
 		"build:combined": "cp cloudcannon-config.schema.json dist/cloudcannon-config.schema.json",
 		"build:schemas": "tsx generate-schemas.ts",
+		"build:docs": "tsx docs/index.ts",
 		"lint": "npm run lint:tsc && npm run lint:format",
 		"lint:tsc": "tsc --noEmit",
 		"lint:format": "biome check --fix",

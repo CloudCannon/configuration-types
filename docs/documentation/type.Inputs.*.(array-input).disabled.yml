@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(array-input).disabled
+url: /type.Inputs/*/(array-input)/disabled/
+title: ''
+description: Toggles if this input can be edited.
+examples: []

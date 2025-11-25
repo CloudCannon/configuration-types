@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(unknown-input)
+url: /type.Inputs/*/(unknown-input)/
+title: Unknown Input
+description: Provides a default user interface based on the data contained.
+examples: []

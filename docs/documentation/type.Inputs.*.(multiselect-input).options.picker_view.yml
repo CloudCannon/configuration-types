@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(multiselect-input).options.picker_view
+url: /type.Inputs/*/(multiselect-input)/options/picker_view/
+title: ''
+description: Controls how selectable options are rendered.
+examples: []

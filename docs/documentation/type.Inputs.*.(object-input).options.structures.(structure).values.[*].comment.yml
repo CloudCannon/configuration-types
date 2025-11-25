@@ -1,0 +1,10 @@
+gid: type.Inputs.*.(object-input).options.structures.(structure).values.[*].comment
+url: >-
+  /type.Inputs/*/(object-input)/options/structures/(structure)/values/[*]/comment/
+title: ''
+description: >-
+  Provides short descriptive text for editors shown in the Data Editor for
+  expanded values matching this Structure value. Has no default. Supports a
+  limited set of Markdown: links, bold, italic, subscript, superscript, and
+  inline code elements are allowed.
+examples: []

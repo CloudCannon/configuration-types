@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(url-input).context.open
+url: /type.Inputs/*/(url-input)/context/open/
+title: ''
+description: Makes the content visible initially.
+examples: []

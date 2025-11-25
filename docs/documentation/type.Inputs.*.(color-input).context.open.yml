@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(color-input).context.open
+url: /type.Inputs/*/(color-input)/context/open/
+title: ''
+description: Makes the content visible initially.
+examples: []

@@ -1,0 +1,7 @@
+gid: >-
+  type.SnippetConfig.params.*.(argument-parser-config).options.format.object_pair_delimiter
+url: >-
+  /type.SnippetConfig/params/*/(argument-parser-config)/options/format/object_pair_delimiter/
+title: ''
+description: ''
+examples: []

@@ -1,0 +1,7 @@
+gid: >-
+  type.Inputs.*.(object-input).options.structures.(structure).values.[*].place_groups_below
+url: >-
+  /type.Inputs/*/(object-input)/options/structures/(structure)/values/[*]/place_groups_below/
+title: ''
+description: Controls which order input groups and ungrouped inputs appear in.
+examples: []

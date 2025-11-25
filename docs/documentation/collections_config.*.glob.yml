@@ -1,0 +1,8 @@
+gid: collections_config.*.glob
+url: /collections_config/*/glob/
+title: ''
+description: >-
+  This key defines globs which filter the files visible in the _Collection
+  browser_ for a given Collection. Values in this array are relative to the
+  Collection `path`.
+examples: []

@@ -1,0 +1,7 @@
+gid: type.Inputs.*.(rich-text-input).options.table
+url: /type.Inputs/*/(rich-text-input)/options/table/
+title: ''
+description: >-
+  Enables a control to insert a table. Further options for table cells are
+  available in the context menu for cells within the editor.
+examples: []

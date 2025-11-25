@@ -1,0 +1,7 @@
+gid: type.Structures.*.values.[*].groups.[*].documentation
+url: /type.Structures/*/values/[*]/groups/[*]/documentation/
+title: Documentation
+description: >-
+  Provides a custom link for documentation for editors shown above the
+  collection file list.
+examples: []

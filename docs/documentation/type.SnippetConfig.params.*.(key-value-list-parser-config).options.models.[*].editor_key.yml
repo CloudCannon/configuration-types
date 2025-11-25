@@ -1,0 +1,7 @@
+gid: >-
+  type.SnippetConfig.params.*.(key-value-list-parser-config).options.models.[*].editor_key
+url: >-
+  /type.SnippetConfig/params/*/(key-value-list-parser-config)/options/models/[*]/editor_key/
+title: ''
+description: ''
+examples: []

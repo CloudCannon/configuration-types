@@ -1,0 +1,7 @@
+gid: >-
+  type.SnippetConfig.params.*.(key-value-list-parser-config).options.models.[*].implied_boolean
+url: >-
+  /type.SnippetConfig/params/*/(key-value-list-parser-config)/options/models/[*]/implied_boolean/
+title: ''
+description: ''
+examples: []

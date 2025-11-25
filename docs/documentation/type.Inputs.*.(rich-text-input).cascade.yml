@@ -1,0 +1,7 @@
+gid: type.Inputs.*.(rich-text-input).cascade
+url: /type.Inputs/*/(rich-text-input)/cascade/
+title: ''
+description: >-
+  Specifies whether or not this input configuration should be merged with any
+  matching, less specific configuration.
+examples: []

@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(unknown-input).context.content
+url: /type.Inputs/*/(unknown-input)/context/content/
+title: ''
+description: The rich text content shown when opened. Supports a limited set of Markdown.
+examples: []

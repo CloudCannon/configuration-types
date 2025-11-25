@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(unknown-input).label
+url: /type.Inputs/*/(unknown-input)/label/
+title: ''
+description: Optionally changes the text above this input.
+examples: []

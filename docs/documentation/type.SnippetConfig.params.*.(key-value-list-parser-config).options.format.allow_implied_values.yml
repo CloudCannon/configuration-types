@@ -1,0 +1,7 @@
+gid: >-
+  type.SnippetConfig.params.*.(key-value-list-parser-config).options.format.allow_implied_values
+url: >-
+  /type.SnippetConfig/params/*/(key-value-list-parser-config)/options/format/allow_implied_values/
+title: ''
+description: ''
+examples: []

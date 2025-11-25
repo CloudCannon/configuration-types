@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(automatic-input)
+url: /type.Inputs/*/(automatic-input)/
+title: Automatic Input
+description: Provides a default user interface based on the data contained.
+examples: []

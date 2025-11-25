@@ -1,0 +1,7 @@
+gid: type.Inputs.*.(range-input).options.min_message
+url: /type.Inputs/*/(range-input)/options/min_message/
+title: ''
+description: >-
+  This key defines the message that explains why an Input needs to have a
+  minimum numerical value. This key requires you to define `options.min`.
+examples: []

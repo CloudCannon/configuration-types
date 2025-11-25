@@ -1,0 +1,7 @@
+gid: >-
+  type.SnippetConfig.params.*.(key-value-list-parser-config).options.models.[*].type.(number)
+url: >-
+  /type.SnippetConfig/params/*/(key-value-list-parser-config)/options/models/[*]/type/(number)/
+title: Number
+description: ''
+examples: []

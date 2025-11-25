@@ -1,0 +1,5 @@
+gid: type.SnippetConfig.params.*.(content-parser-config).options.forbidden_tokens
+url: /type.SnippetConfig/params/*/(content-parser-config)/options/forbidden_tokens/
+title: ''
+description: ''
+examples: []

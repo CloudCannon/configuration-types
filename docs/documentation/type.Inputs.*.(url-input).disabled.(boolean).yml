@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(url-input).disabled.(boolean)
+url: /type.Inputs/*/(url-input)/disabled/(boolean)/
+title: Boolean
+description: ''
+examples: []

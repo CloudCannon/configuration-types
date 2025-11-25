@@ -1,0 +1,10 @@
+gid: type.Inputs.*.(number-input).options.min
+url: /type.Inputs/*/(number-input)/options/min/
+title: ''
+description: >-
+  This key defines the minimum numerical value CloudCannon will allow in an
+  Input. When configured, CloudCannon will prevent you from entering a lesser
+  numerical value. If the Input already contains a lesser numerical value,
+  CloudCannon will require you to enter a valid value to save your changes, or
+  discard your unsaved changes.
+examples: []

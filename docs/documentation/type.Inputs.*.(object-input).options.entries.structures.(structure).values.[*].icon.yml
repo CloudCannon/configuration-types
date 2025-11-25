@@ -1,0 +1,9 @@
+gid: >-
+  type.Inputs.*.(object-input).options.entries.structures.(structure).values.[*].icon
+url: >-
+  /type.Inputs/*/(object-input)/options/entries/structures/(structure)/values/[*]/icon/
+title: Icon
+description: >-
+  An icon used when displaying the structure (defaults to either
+  format_list_bulleted for items in arrays, or notes otherwise).
+examples: []

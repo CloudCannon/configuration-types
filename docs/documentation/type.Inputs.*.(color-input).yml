@@ -1,0 +1,5 @@
+gid: type.Inputs.*.(color-input)
+url: /type.Inputs/*/(color-input)/
+title: Color Input
+description: Provides an editing interface for color values.
+examples: []
