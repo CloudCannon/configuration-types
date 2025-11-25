@@ -1,6 +1,7 @@
 collections_config:
   documentation:
     path: docs/documentation
+    icon: draft
     url: "{url}"
     preview:
       text:
@@ -8,9 +9,14 @@ collections_config:
         - key: gid
       subtext:
         - key: description
+        - false
       metadata:
         - text:
             - key: url
-            - false
           icon:
             - text: public
+    disable_url: false
+    disable_add: true
+    disable_add_folder: true
+    disable_file_actions: true
+timezone: Etc/UTC
