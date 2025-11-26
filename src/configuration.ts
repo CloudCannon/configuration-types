@@ -347,6 +347,9 @@ export const PullRequestTemplateSchema = z.object({
 	body: z.string().optional().meta({
 		description: 'The default value for the pull request body.',
 	}),
+	template_path: z.string().optional().meta({
+		description: 'Used to specify a file on the Site whose contents will be used as the default value for the pull request body. This has no effect if `body` is defined.',
+	}),
 	_inputs: z.record(z.string(), InputSchema).optional().meta({
 		title: 'Inputs',
 		description: 'Define inputs used for the title and body fields of the pull request.',
