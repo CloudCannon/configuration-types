@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(file-input).options.accepts_mime_types.(comma-separated)
-url: /type.Inputs/*/(file-input)/options/accepts_mime_types/(comma-separated)/
-title: Comma Separated
-description: ''
-examples: []

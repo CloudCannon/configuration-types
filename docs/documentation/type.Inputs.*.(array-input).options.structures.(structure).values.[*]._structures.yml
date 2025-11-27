@@ -1,5 +1,0 @@
-gid: >-
-  type.Inputs.*.(array-input).options.structures.(structure).values.[*]._structures
-title: ''
-description: ''
-examples: []

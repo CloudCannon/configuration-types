@@ -1,0 +1,7 @@
+gid: type._editables.content.sizes.[*].size
+url: /types/_editables/content/sizes/[*]/size/
+title: ''
+description: >-
+  A number suffixed with "x" (relative size) or "w" (fixed width) for setting
+  the dimensions of the image (e.g. 2x, 3x, 100w, 360w).
+examples: []

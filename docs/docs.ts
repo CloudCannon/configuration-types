@@ -7,7 +7,7 @@ export async function readDocs(): Promise<Record<string, DocumentationEntry>> {
 	const docs: Record<string, DocumentationEntry> = {};
 	const files = await fs.readdir(path.join(process.cwd(), 'docs/documentation'));
 
-	console.log(`📄 Reading (${files.length})`);
+	console.log(`📄 Read from docs/documentation/*.yml (${files.length})`);
 
 	for (let i = 0; i < files.length; i++) {
 		if (files[i].endsWith('.yml')) {
@@ -33,10 +33,42 @@ export async function readDocs(): Promise<Record<string, DocumentationEntry>> {
 	return docs;
 }
 
-export async function writeDocs(gids: Set<string>, pages: Record<string, Page>): Promise<void> {
+export async function moveOldDocs(gidsInUse: Set<string>): Promise<void> {
+	const allFiles = await fs.readdir(path.join(process.cwd(), 'docs/documentation'));
+	const files = allFiles.filter(
+		(file) => file.endsWith('.yml') && !gidsInUse.has(file.replace(/\.yml$/, ''))
+	);
+
+	await fs.mkdir(path.join(process.cwd(), 'docs/documentation-unused'), { recursive: true });
+
+	console.log(`🚚 Move to docs/documentation-unused/*.yml (${files.length})`);
+
+	for (let i = 0; i < files.length; i++) {
+		if (verbose) {
+			console.log(`     ${files[i]}`);
+		}
+
+		await fs.rename(
+			path.join(process.cwd(), 'docs/documentation', files[i]),
+			path.join(process.cwd(), 'docs/documentation-unused', files[i])
+		);
+	}
+}
+
+export async function writeNewDocs(gids: Set<string>, pages: Record<string, Page>): Promise<void> {
 	const pageFiles: any[] = [];
 
-	gids.forEach((gid) => {
+	const files = await fs.readdir(path.join(process.cwd(), 'docs/documentation'));
+	const existingGids = files.reduce((memo: Record<string, boolean>, file) => {
+		memo[file.replace(/\.yml$/, '')] = true;
+		return memo;
+	}, {});
+
+	const newGids = Array.from(gids).filter((gid) => !existingGids[gid]);
+
+	console.log(`📝 Write to docs/documentation/*.yml (${newGids.length})`);
+
+	newGids.forEach((gid) => {
 		pageFiles.push({
 			gid,
 			url: pages[gid]?.url,
@@ -50,8 +82,14 @@ export async function writeDocs(gids: Set<string>, pages: Record<string, Page>):
 
 	for (let i = 0; i < pageFiles.length; i++) {
 		const pageFile = pageFiles[i];
+		const filename = `${pageFile.gid}.yml`;
+
+		if (verbose) {
+			console.log(`     ${filename}`);
+		}
+
 		await fs.writeFile(
-			path.join(process.cwd(), 'docs/documentation', `${pageFile.gid}.yml`),
+			path.join(process.cwd(), 'docs/documentation', filename),
 			dump(pageFile, { noRefs: true })
 		);
 	}

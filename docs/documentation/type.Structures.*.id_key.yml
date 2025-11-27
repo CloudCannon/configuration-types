@@ -1,8 +1,0 @@
-gid: type.Structures.*.id_key
-url: /type.Structures/*/id_key/
-title: ''
-description: >-
-  Defines what key should be used to detect which structure an item is. If this
-  key is not found in the existing structure, a comparison of key names is used.
-  Defaults to "_type".
-examples: []

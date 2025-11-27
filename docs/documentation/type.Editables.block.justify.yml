@@ -1,9 +1,0 @@
-gid: type.Editables.block.justify
-url: /type.Editables/block/justify/
-title: ''
-description: >-
-  Enables a control to justify text by toggling a class name for a block of
-  text. The value is the class name the editor should add to justify the text.
-  The styles for this class need to be listed in the `styles` file to take
-  effect outside of the input.
-examples: []

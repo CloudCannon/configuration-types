@@ -1,7 +1,0 @@
-gid: >-
-  type.SnippetConfig.params.*.(key-value-list-parser-config).options.style.block.trailing
-url: >-
-  /type.SnippetConfig/params/*/(key-value-list-parser-config)/options/style/block/trailing/
-title: ''
-description: ''
-examples: []

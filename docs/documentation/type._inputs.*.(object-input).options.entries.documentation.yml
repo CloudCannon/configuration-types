@@ -1,0 +1,7 @@
+gid: type._inputs.*.(object-input).options.entries.documentation
+url: /types/_inputs/*/(object-input)/options/entries/documentation/
+title: Documentation
+description: >-
+  Provides a custom link for documentation for editors shown above the key input
+  when adding/renaming within a mutable object input.
+examples: []

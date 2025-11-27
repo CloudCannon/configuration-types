@@ -1,0 +1,4 @@
+gid: type.structure.values.[*].picker_preview
+title: "Picker Preview"
+description: "This key defines the appearance of a Card. You can configure Card preview for Structures and Snippets. This key is separate from the `preview` key and only affects the select and modal lists."
+examples: []

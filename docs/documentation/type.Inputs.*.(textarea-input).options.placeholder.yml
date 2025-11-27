@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(textarea-input).options.placeholder
-url: /type.Inputs/*/(textarea-input)/options/placeholder/
-title: ''
-description: Text shown when this input has no value.
-examples: []

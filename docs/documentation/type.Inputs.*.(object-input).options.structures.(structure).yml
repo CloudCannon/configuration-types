@@ -1,7 +1,0 @@
-gid: type.Inputs.*.(object-input).options.structures.(structure)
-url: /type.Inputs/*/(object-input)/options/structures/(structure)/
-title: Structure
-description: >-
-  Provides data formats when adding new items to arrays and objects, with
-  options for how editors choose from available values.
-examples: []

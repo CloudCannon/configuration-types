@@ -1,0 +1,5 @@
+gid: type._inputs.*.(rich-text-input).options.snippet
+url: /types/_inputs/*/(rich-text-input)/options/snippet/
+title: ''
+description: Enables a control to insert snippets, if any are available.
+examples: []

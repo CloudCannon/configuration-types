@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(color-input).label
-url: /type.Inputs/*/(color-input)/label/
-title: ''
-description: Optionally changes the text above this input.
-examples: []

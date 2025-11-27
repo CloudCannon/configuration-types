@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(rich-text-input).options.code_block
-url: /type.Inputs/*/(rich-text-input)/options/code_block/
-title: ''
-description: Enables a control to insert a code block.
-examples: []

@@ -1,0 +1,5 @@
+gid: type._inputs.*.(time-input).documentation.icon
+url: /types/_inputs/*/(time-input)/documentation/icon/
+title: Icon
+description: The icon displayed next to the link.
+examples: []

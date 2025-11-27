@@ -1,7 +1,0 @@
-gid: >-
-  type.Inputs.*.(object-input).options.entries.structures.(structure).values.[*].tags
-url: >-
-  /type.Inputs/*/(object-input)/options/entries/structures/(structure)/values/[*]/tags/
-title: ''
-description: Used to group and filter items when selecting from a modal.
-examples: []

@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(rich-text-input).options.bold
-url: /type.Inputs/*/(rich-text-input)/options/bold/
-title: ''
-description: Enables a control to set selected text to bold.
-examples: []

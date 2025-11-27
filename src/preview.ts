@@ -23,7 +23,7 @@ const PreviewEntrySchema = z
 		PreviewRawTextEntrySchema,
 		PreviewFalseEntrySchema,
 	])
-	.meta({ id: 'type.PreviewEntry' });
+	.meta({ id: 'PreviewEntry' });
 
 export const PreviewEntriesSchema = z
 	.union([
@@ -31,7 +31,7 @@ export const PreviewEntriesSchema = z
 		PreviewRawTextEntrySchema,
 		PreviewFalseEntrySchema,
 	])
-	.meta({ id: 'type.PreviewEntries' });
+	.meta({ id: 'PreviewEntries' });
 
 export const PreviewGallerySchema = z
 	.object({
@@ -71,14 +71,7 @@ export const PreviewSchema = z
 		metadata: z.array(PreviewMetadataEntrySchema).optional().meta({ id: 'preview.metadata' }),
 		gallery: PreviewGallerySchema.optional(),
 	})
-	.meta({ id: 'type.Preview', title: 'Preview' });
-
-export const PickerPreviewSchema = z
-	// This needs to extend it this way, rather than calling PreviewSchema.meta(...).
-	// Otherwise, it seems to override in a way that does not allow us to remove `"id": "preview"`
-	// during JSONSchema generate.
-	.object({ ...PreviewSchema.shape })
-	.meta({ id: 'type.PickerPreview', title: 'Picker Preview' });
+	.meta({ id: 'type.preview', title: 'Preview' });
 
 export type PreviewEntry = z.infer<typeof PreviewEntrySchema>;
 export type PreviewEntries = z.infer<typeof PreviewEntriesSchema>;

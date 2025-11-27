@@ -72,7 +72,7 @@ export const SyntaxSchema = z
 		'yaml',
 	])
 	.meta({
-		id: 'type.Syntax',
+		id: 'Syntax',
 		title: 'Syntax',
 		description: 'Available syntax highlighting languages for code editors in CloudCannon.',
 	});

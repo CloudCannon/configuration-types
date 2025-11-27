@@ -1,5 +1,0 @@
-gid: type.Structures.*.values.[*].groups.[*].collapsed
-url: /type.Structures/*/values/[*]/groups/[*]/collapsed/
-title: ''
-description: Controls if this group is collapsed or expanded when first viewed.
-examples: []

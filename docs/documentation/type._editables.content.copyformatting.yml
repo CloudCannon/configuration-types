@@ -1,0 +1,8 @@
+gid: type._editables.content.copyformatting
+url: /types/_editables/content/copyformatting/
+title: ''
+description: >-
+  Enables a control to copy formatting from text to other text. Only applies to
+  formatting from `bold`, `italic`, `underline`, `strike`, `subscript`, and
+  `superscript`. Does not copy other styles or formatting.
+examples: []

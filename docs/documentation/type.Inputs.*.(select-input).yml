@@ -1,7 +1,0 @@
-gid: type.Inputs.*.(select-input)
-url: /type.Inputs/*/(select-input)/
-title: Select Input
-description: >-
-  Provides an editing interface for data with multiple predefined options.
-  Select inputs only allow one value.
-examples: []

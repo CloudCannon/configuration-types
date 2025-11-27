@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(choice-input).options.values.(text-object).*
-url: /type.Inputs/*/(choice-input)/options/values/(text-object)/*/
-title: ''
-description: ''
-examples: []

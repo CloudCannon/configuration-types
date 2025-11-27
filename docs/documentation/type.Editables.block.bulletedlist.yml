@@ -1,7 +1,0 @@
-gid: type.Editables.block.bulletedlist
-url: /type.Editables/block/bulletedlist/
-title: ''
-description: >-
-  Enables a control to insert an unordered list, or to convert selected blocks
-  of text into a unordered list.
-examples: []

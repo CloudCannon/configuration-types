@@ -1,7 +1,0 @@
-gid: type.Inputs.*.(url-input).options.disable_direct_input
-url: /type.Inputs/*/(url-input)/options/disable_direct_input/
-title: ''
-description: >-
-  Prevents typing into the text input, while still allowing context menu options
-  to change the value.
-examples: []

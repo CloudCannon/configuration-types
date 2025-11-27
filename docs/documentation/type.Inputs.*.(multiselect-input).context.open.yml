@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(multiselect-input).context.open
-url: /type.Inputs/*/(multiselect-input)/context/open/
-title: ''
-description: Makes the content visible initially.
-examples: []

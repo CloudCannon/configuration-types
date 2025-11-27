@@ -1,0 +1,5 @@
+gid: type._inputs.*.(choice-input).context
+url: /types/_inputs/*/(choice-input)/context/
+title: ''
+description: Adds an expandable section of rich text below the input.
+examples: []

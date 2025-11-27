@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(choice-input).disabled
-url: /type.Inputs/*/(choice-input)/disabled/
-title: ''
-description: Toggles if this input can be edited.
-examples: []

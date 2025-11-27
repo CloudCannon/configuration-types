@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(choice-input).options
-url: /type.Inputs/*/(choice-input)/options/
-title: ''
-description: Options that are specific to Choice Inputs.
-examples: []

@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(rich-text-input).context.open
-url: /type.Inputs/*/(rich-text-input)/context/open/
-title: ''
-description: Makes the content visible initially.
-examples: []

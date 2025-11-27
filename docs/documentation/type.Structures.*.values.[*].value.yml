@@ -1,5 +1,0 @@
-gid: type.Structures.*.values.[*].value
-url: /type.Structures/*/values/[*]/value/
-title: ''
-description: The actual value used when items are added after selection.
-examples: []

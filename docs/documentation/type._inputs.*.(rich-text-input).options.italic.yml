@@ -1,0 +1,5 @@
+gid: type._inputs.*.(rich-text-input).options.italic
+url: /types/_inputs/*/(rich-text-input)/options/italic/
+title: ''
+description: Enables a control to italicize selected text.
+examples: []

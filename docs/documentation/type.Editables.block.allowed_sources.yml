@@ -1,7 +1,0 @@
-gid: type.Editables.block.allowed_sources
-url: /type.Editables/block/allowed_sources/
-title: Allowed Sources
-description: >-
-  If you have one or more DAMs connected to your site, you can use this key to
-  list which asset sources can be uploaded to and selected from.
-examples: []

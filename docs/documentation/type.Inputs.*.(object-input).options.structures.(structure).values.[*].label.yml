@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(object-input).options.structures.(structure).values.[*].label
-url: /type.Inputs/*/(object-input)/options/structures/(structure)/values/[*]/label/
-title: ''
-description: Used as the main text in the interface for this value.
-examples: []

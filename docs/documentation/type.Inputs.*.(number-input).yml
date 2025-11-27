@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(number-input)
-url: /type.Inputs/*/(number-input)/
-title: Number Input
-description: Provides an editing interface for numeric values.
-examples: []

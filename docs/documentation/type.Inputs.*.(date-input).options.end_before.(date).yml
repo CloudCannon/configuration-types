@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(date-input).options.end_before.(date)
-url: /type.Inputs/*/(date-input)/options/end_before/(date)/
-title: Date
-description: ''
-examples: []

@@ -1,0 +1,5 @@
+gid: type._inputs.*.(textarea-input).hidden
+url: /types/_inputs/*/(textarea-input)/hidden/
+title: ''
+description: Toggles the visibility of this input.
+examples: []

@@ -1,0 +1,5 @@
+gid: type._inputs.*.(array-input).options.disable_reorder
+url: /types/_inputs/*/(array-input)/options/disable_reorder/
+title: ''
+description: Hides the controls on each item for moving them.
+examples: []

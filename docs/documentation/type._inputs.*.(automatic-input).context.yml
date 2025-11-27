@@ -1,0 +1,5 @@
+gid: type._inputs.*.(automatic-input).context
+url: /types/_inputs/*/(automatic-input)/context/
+title: ''
+description: Adds an expandable section of rich text below the input.
+examples: []

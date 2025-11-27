@@ -5,7 +5,7 @@
 			<article>
 				{% set itemDoc = itemRef | docFromRef %}
 				<p>
-					{% if itemDoc.url and itemDoc.parent %}
+					{% if itemDoc.url %}
 						<em><a href="{{ itemDoc.url }}">{{ itemDoc.title | default(itemDoc.key, true) }}</a></em> —
 					{% endif %}
 

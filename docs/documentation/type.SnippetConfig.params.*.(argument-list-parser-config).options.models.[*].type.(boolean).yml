@@ -1,7 +1,0 @@
-gid: >-
-  type.SnippetConfig.params.*.(argument-list-parser-config).options.models.[*].type.(boolean)
-url: >-
-  /type.SnippetConfig/params/*/(argument-list-parser-config)/options/models/[*]/type/(boolean)/
-title: Boolean
-description: ''
-examples: []

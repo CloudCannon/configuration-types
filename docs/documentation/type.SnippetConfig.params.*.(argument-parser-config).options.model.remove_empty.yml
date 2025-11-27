@@ -1,7 +1,0 @@
-gid: >-
-  type.SnippetConfig.params.*.(argument-parser-config).options.model.remove_empty
-url: >-
-  /type.SnippetConfig/params/*/(argument-parser-config)/options/model/remove_empty/
-title: ''
-description: ''
-examples: []

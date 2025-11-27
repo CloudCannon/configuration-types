@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(date-input).hidden.(query-string)
-url: /type.Inputs/*/(date-input)/hidden/(query-string)/
-title: Query String
-description: ''
-examples: []

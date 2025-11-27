@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(textarea-input).context.title
-url: /type.Inputs/*/(textarea-input)/context/title/
-title: ''
-description: The text shown when not open. Defaults to "Context" if unset.
-examples: []

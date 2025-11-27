@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(choice-input).options.view
-url: /type.Inputs/*/(choice-input)/options/view/
-title: ''
-description: Controls how selected items are rendered.
-examples: []

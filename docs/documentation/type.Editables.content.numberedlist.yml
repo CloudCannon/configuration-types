@@ -1,7 +1,0 @@
-gid: type.Editables.content.numberedlist
-url: /type.Editables/content/numberedlist/
-title: ''
-description: >-
-  Enables a control to insert a numbered list, or to convert selected blocks of
-  text into a numbered list.
-examples: []

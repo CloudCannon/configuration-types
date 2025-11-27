@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(code-input).type
-url: /type.Inputs/*/(code-input)/type/
-title: Type
-description: Sets an input type, which controls how this input appears and behaves.
-examples: []

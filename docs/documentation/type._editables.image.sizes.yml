@@ -1,0 +1,7 @@
+gid: type._editables.image.sizes
+url: /types/_editables/image/sizes/
+title: Sizes
+description: >-
+  Definitions for creating additional images of different sizes when uploading
+  or selecting existing files.
+examples: []

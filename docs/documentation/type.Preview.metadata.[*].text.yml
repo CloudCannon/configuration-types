@@ -1,4 +1,5 @@
-gid: type.Preview.metadata.[*].text
+gid: type.preview.metadata.[*].text
+url: /types/preview/metadata/[*]/text/
 title: ''
 description: ''
 examples: []

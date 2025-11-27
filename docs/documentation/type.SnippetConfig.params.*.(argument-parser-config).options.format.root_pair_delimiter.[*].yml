@@ -1,7 +1,0 @@
-gid: >-
-  type.SnippetConfig.params.*.(argument-parser-config).options.format.root_pair_delimiter.[*]
-url: >-
-  /type.SnippetConfig/params/*/(argument-parser-config)/options/format/root_pair_delimiter/[*]/
-title: ''
-description: ''
-examples: []

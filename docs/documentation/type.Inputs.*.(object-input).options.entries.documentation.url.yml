@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(object-input).options.entries.documentation.url
-url: /type.Inputs/*/(object-input)/options/entries/documentation/url/
-title: ''
-description: The "href" value of the link.
-examples: []

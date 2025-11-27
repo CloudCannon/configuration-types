@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(number-input).options
-url: /type.Inputs/*/(number-input)/options/
-title: ''
-description: Options that are specific to Number Inputs.
-examples: []

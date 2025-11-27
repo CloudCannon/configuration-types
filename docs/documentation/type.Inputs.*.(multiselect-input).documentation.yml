@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(multiselect-input).documentation
-url: /type.Inputs/*/(multiselect-input)/documentation/
-title: Documentation
-description: Provides a custom link for documentation for editors shown above input.
-examples: []

@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { readDocs, writeDocs } from './docs.js';
-import { type JsonSchema, type Page, type PageRef, slugify, verbose } from './util.js';
+import { moveOldDocs, readDocs, writeNewDocs } from './docs.js';
+import { type JsonSchema, type Page, type PageRef, slugify } from './util.js';
 
 const schemaRaw = await fs.readFile(
 	path.join(process.cwd(), 'dist/cloudcannon-config.documentation.schema.json'),
@@ -9,8 +9,7 @@ const schemaRaw = await fs.readFile(
 );
 const schema = JSON.parse(schemaRaw);
 const documentationEntries = await readDocs();
-const existingDocumentationKeys = new Set(Object.keys(documentationEntries));
-const attemptedDocumentationKeys: Set<string> = new Set();
+const attemptedGids: Set<string> = new Set();
 const untitledGids: Set<string> = new Set();
 const pages: Record<string, Page> = {};
 
@@ -53,7 +52,7 @@ function flattenNestedAnyOf(doc: JsonSchema) {
 }
 
 function getDocumentationEntry(gid: string) {
-	attemptedDocumentationKeys.add(gid);
+	attemptedGids.add(gid);
 	return documentationEntries[gid];
 }
 
@@ -96,13 +95,13 @@ function docToPage(
 	}
 
 	const full_key = thisPath.join('.').replaceAll('.[', '[').replaceAll('.(', '(');
-	const displayKey = getDisplayKey(full_key);
-	const url = !thisPath.length ? '/' : `/${thisPath.join('/')}/`;
 	const documentation = getDocumentationEntry(gid);
 	const developer_documentation = {
 		title: doc.title,
 		description: doc.description,
-		examples: doc.examples?.filter((example) => typeof example === 'string'),
+		examples: doc.examples
+			?.filter((example) => typeof example === 'string')
+			.map((code) => ({ code })),
 	};
 
 	const page: Page = {
@@ -119,9 +118,9 @@ function docToPage(
 		uniqueItems: doc.uniqueItems,
 		documentation,
 		developer_documentation,
-		url,
+		url: !thisPath.length ? '/' : `/${thisPath.join('/').replace(/^type\./, 'types/')}/`,
 		required: !!required,
-		key: displayKey || full_key,
+		key: getDisplayKey(full_key) || full_key,
 		full_key,
 		parent: isType ? undefined : parent,
 		appears_in: isType && parent ? [parent] : [],
@@ -261,36 +260,21 @@ function docToPage(
 
 docToPage(schema, { path: [] });
 
+console.log('📝 Write to dist/documentation.json');
+
 await fs.writeFile(
 	path.join(process.cwd(), 'dist/documentation.json'),
 	JSON.stringify(pages, null, '  ')
 );
-console.log('✅ dist/documentation.json');
 
-// @ts-ignore
-const documented = existingDocumentationKeys.intersection(attemptedDocumentationKeys);
-// @ts-ignore
-const undocumented = attemptedDocumentationKeys.difference(existingDocumentationKeys);
-// @ts-ignore
-const unused = existingDocumentationKeys.difference(attemptedDocumentationKeys);
+if (untitledGids.size) {
+	console.error(
+		[
+			`🔠 \x1b[31mNeeds developer title (${untitledGids.size})\x1b[0m`, // Red text
+			...untitledGids.values(),
+		].join('\n     ')
+	);
+}
 
-const separator = '\n     ';
-
-console.log(
-	[`✅ Documented (${documented.size})`, ...(verbose ? documented.values() : [])].join(separator)
-);
-
-console.log(
-	[`✏️ New (${undocumented.size})`, ...(verbose ? undocumented.values() : [])].join(separator)
-);
-
-console.log(
-	[`💣 Stale/unused (${unused.size})`, ...(verbose ? unused.values() : [])].join(separator)
-);
-
-console.log(
-	[`🔠 Untitled (${untitledGids.size})`, ...(verbose ? untitledGids.values() : [])].join(separator)
-);
-
-await writeDocs(attemptedDocumentationKeys, pages);
-console.log('✅ docs/documentation/*.yml');
+await moveOldDocs(attemptedGids);
+await writeNewDocs(attemptedGids, pages);

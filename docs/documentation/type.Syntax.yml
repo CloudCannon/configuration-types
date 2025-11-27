@@ -1,7 +1,0 @@
-gid: type.Syntax
-url: /type.Syntax/
-title: Syntax
-description: >-
-  Changes how the editor parses your content for syntax highlighting. Should be
-  set to the language of the code going into the input.
-examples: []

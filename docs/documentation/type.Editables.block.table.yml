@@ -1,7 +1,0 @@
-gid: type.Editables.block.table
-url: /type.Editables/block/table/
-title: ''
-description: >-
-  Enables a control to insert a table. Further options for table cells are
-  available in the context menu for cells within the editor.
-examples: []

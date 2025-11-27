@@ -1,0 +1,5 @@
+gid: type._inputs.*.(time-input).disabled
+url: /types/_inputs/*/(time-input)/disabled/
+title: ''
+description: Toggles if this input can be edited.
+examples: []

@@ -5,7 +5,7 @@ import { IconSchema } from './icon';
 import { ImageOptionsSchema } from './image-options';
 import { MimeTypeSchema } from './mimetype';
 import { PathsSchema } from './paths';
-import { PickerPreviewSchema, PreviewEntriesSchema, PreviewSchema } from './preview';
+import { PreviewEntriesSchema, PreviewSchema } from './preview';
 import { SelectDataValuesSchema } from './select-values';
 import { SourceEditorSchema } from './source-editor';
 import { StructureReferenceSchema, StructureSchema } from './structures';
@@ -687,7 +687,7 @@ export const UrlInputSchema = z
 export const SharedSelectInputOptionsSchema = z.object({
 	...RequiredValidationSchema.shape,
 	preview: PreviewSchema.optional(),
-	picker_preview: PickerPreviewSchema.optional(),
+	picker_preview: PreviewSchema.optional(),
 	allow_create: z.boolean().default(false).optional().meta({
 		id: 'allow_create',
 		description: 'Allows new text values to be created at edit time.',
@@ -1004,7 +1004,7 @@ export const InputSchema = z.union([KnownInputSchema, UnknownInputSchema]).meta(
 });
 
 export const InputsSchema = z.record(z.string(), InputSchema).meta({
-	id: 'type.Inputs',
+	id: 'type._inputs',
 	title: 'Inputs',
 	description:
 		'Controls the behavior and appearance of your inputs in all data editing interfaces.',

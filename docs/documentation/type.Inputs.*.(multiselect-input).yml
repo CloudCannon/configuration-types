@@ -1,7 +1,0 @@
-gid: type.Inputs.*.(multiselect-input)
-url: /type.Inputs/*/(multiselect-input)/
-title: Multiselect Input
-description: >-
-  Provides an editing interface for data with multiple predefined options.
-  Multiselect inputs allow several values.
-examples: []

@@ -1,7 +1,0 @@
-gid: type.Structures.*.values.[*]
-url: /type.Structures/*/values/[*]/
-title: Structure Value
-description: >-
-  A single value option within a structure, defining the data format and
-  appearance for content editors.
-examples: []

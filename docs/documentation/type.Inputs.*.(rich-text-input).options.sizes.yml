@@ -1,7 +1,0 @@
-gid: type.Inputs.*.(rich-text-input).options.sizes
-url: /type.Inputs/*/(rich-text-input)/options/sizes/
-title: Sizes
-description: >-
-  Definitions for creating additional images of different sizes when uploading
-  or selecting existing files.
-examples: []

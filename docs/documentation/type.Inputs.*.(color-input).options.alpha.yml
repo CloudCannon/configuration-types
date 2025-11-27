@@ -1,8 +1,0 @@
-gid: type.Inputs.*.(color-input).options.alpha
-url: /type.Inputs/*/(color-input)/options/alpha/
-title: ''
-description: >-
-  Toggles showing a control for adjusting the transparency of the selected
-  color. Defaults to using the naming convention, enabled if the input key ends
-  with "a".
-examples: []

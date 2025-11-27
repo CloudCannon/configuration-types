@@ -1,0 +1,5 @@
+gid: type._inputs.*.(color-input).options
+url: /types/_inputs/*/(color-input)/options/
+title: ''
+description: Options that are specific to Color Inputs.
+examples: []

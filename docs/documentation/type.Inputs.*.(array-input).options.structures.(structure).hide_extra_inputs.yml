@@ -1,7 +1,0 @@
-gid: type.Inputs.*.(array-input).options.structures.(structure).hide_extra_inputs
-url: /type.Inputs/*/(array-input)/options/structures/(structure)/hide_extra_inputs/
-title: ''
-description: >-
-  Hides unexpected inputs when editing. Has no effect if `remove_extra_inputs`
-  is true. Defaults to false.
-examples: []

@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(choice-input).disabled.(query-string)
-url: /type.Inputs/*/(choice-input)/disabled/(query-string)/
-title: Query String
-description: ''
-examples: []

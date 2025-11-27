@@ -1,7 +1,0 @@
-gid: type.Inputs.*.(object-input).options.structures.(structure).values.[*].image
-url: /type.Inputs/*/(object-input)/options/structures/(structure)/values/[*]/image/
-title: ''
-description: >-
-  Path to an image in your source files used when displaying the structure. Can
-  be either a source (has priority) or output path.
-examples: []

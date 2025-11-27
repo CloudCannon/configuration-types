@@ -13,6 +13,6 @@ export const PathsSchema = z
 			.optional()
 			.meta({ id: 'paths.uploads_use_relative_path' }),
 	})
-	.meta({ id: 'type.Paths' });
+	.meta({ id: 'type.paths', title: 'Paths' });
 
 export type Paths = z.infer<typeof PathsSchema>;

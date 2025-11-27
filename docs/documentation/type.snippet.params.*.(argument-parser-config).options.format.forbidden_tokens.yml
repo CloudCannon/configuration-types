@@ -1,0 +1,6 @@
+gid: type.snippet.params.*.(argument-parser-config).options.format.forbidden_tokens
+url: >-
+  /types/snippet/params/*/(argument-parser-config)/options/format/forbidden_tokens/
+title: ''
+description: ''
+examples: []

@@ -1,0 +1,5 @@
+gid: type._inputs.*.(textarea-input).type
+url: /types/_inputs/*/(textarea-input)/type/
+title: Type
+description: Sets an input type, which controls how this input appears and behaves.
+examples: []

@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(rich-text-input).options.italic
-url: /type.Inputs/*/(rich-text-input)/options/italic/
-title: ''
-description: Enables a control to italicize selected text.
-examples: []

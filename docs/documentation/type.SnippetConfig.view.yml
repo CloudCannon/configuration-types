@@ -1,7 +1,0 @@
-gid: type.SnippetConfig.view
-url: /type.SnippetConfig/view/
-title: ''
-description: >-
-  Controls how selected items are rendered. Defaults to 'card', or 'inline' if
-  `inline` is true.
-examples: []

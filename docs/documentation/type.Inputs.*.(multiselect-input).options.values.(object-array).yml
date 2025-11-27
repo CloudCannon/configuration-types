@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(multiselect-input).options.values.(object-array)
-url: /type.Inputs/*/(multiselect-input)/options/values/(object-array)/
-title: Object Array
-description: ''
-examples: []

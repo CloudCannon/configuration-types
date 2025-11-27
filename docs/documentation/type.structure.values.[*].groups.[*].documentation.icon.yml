@@ -1,0 +1,5 @@
+gid: type.structure.values.[*].groups.[*].documentation.icon
+url: /types/structure/values/[*]/groups/[*]/documentation/icon/
+title: Icon
+description: The icon displayed next to the link.
+examples: []

@@ -1,0 +1,7 @@
+gid: type.snippet.view
+url: /types/snippet/view/
+title: ''
+description: >-
+  Controls how selected items are rendered. Defaults to 'card', or 'inline' if
+  `inline` is true.
+examples: []

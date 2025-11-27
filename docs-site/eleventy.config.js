@@ -12,7 +12,13 @@ export default function (eleventyConfig) {
 
 		if (docRef.documentation) {
 			// Use more specific documentation entry
-			return { ...doc, ...docRef };
+			return {
+				...doc,
+				title: docRef.documentation.title || doc.title,
+				description: docRef.documentation.description || doc.description,
+				examples: docRef.documentation.examples.length ? docRef.documentation.examples : doc.examples,
+				documentation: docRef.documentation
+			};
 		}
 
 		return doc;

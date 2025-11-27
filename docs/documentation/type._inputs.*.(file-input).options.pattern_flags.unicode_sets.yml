@@ -1,0 +1,5 @@
+gid: type._inputs.*.(file-input).options.pattern_flags.unicode_sets
+url: /types/_inputs/*/(file-input)/options/pattern_flags/unicode_sets/
+title: ''
+description: '`v` - Extended `unicode` mode.'
+examples: []

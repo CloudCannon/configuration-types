@@ -1,8 +1,0 @@
-gid: type.Inputs.*.(multiselect-input).instance_value
-url: /type.Inputs/*/(multiselect-input)/instance_value/
-title: Instance Value
-description: >-
-  Controls if and how the value of this input is instantiated when created. This
-  occurs when creating files, or adding array items containing the configured
-  input.
-examples: []

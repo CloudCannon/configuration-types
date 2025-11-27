@@ -1,7 +1,0 @@
-gid: type.Inputs.*.(rich-text-input).options.prevent_resize_existing_files
-url: /type.Inputs/*/(rich-text-input)/options/prevent_resize_existing_files/
-title: Prevent Resize Existing Files
-description: >-
-  Enable to skip the image resizing process configured for this input when
-  selecting existing images.
-examples: []

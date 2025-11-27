@@ -1,6 +1,0 @@
-gid: type.SnippetConfig.params.*.(repeating-literal-parser-config).options.literal
-url: >-
-  /type.SnippetConfig/params/*/(repeating-literal-parser-config)/options/literal/
-title: ''
-description: ''
-examples: []

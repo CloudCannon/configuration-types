@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(time-input)
-url: /type.Inputs/*/(time-input)/
-title: Time Input
-description: Provides an editing interface for time values only.
-examples: []

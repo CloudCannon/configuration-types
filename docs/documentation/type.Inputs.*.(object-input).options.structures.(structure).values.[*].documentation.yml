@@ -1,9 +1,0 @@
-gid: >-
-  type.Inputs.*.(object-input).options.structures.(structure).values.[*].documentation
-url: >-
-  /type.Inputs/*/(object-input)/options/structures/(structure)/values/[*]/documentation/
-title: Documentation
-description: >-
-  Provides a custom link for documentation for editors shown in the Data Editor
-  for expanded values matching this Structure value. Has no default.
-examples: []

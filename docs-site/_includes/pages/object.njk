@@ -5,7 +5,7 @@
 			<article class="condensed">
 				{% set propDoc = propRef | docFromRef %}
 
-				{% if propDoc.url and propDoc.parent %}
+				{% if propDoc.url %}
 					<strong><a href="{{ propDoc.url }}">{{ key }}</a></strong>
 				{% else %}
 					<strong>{{ key }}</strong>
@@ -32,7 +32,7 @@
 			<article>
 				{% set additionalPropDoc = additionalPropRef | docFromRef %}
 				<p>
-					{% if additionalPropDoc.url and additionalPropDoc.parent %}
+					{% if additionalPropDoc.url %}
 						<em><a href="{{ additionalPropDoc.url }}">{{ additionalPropDoc.title | default(additionalPropDoc.key, true) }}</a></em> —
 					{% endif %}
 

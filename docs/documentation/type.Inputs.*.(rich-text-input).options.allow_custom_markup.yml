@@ -1,8 +1,0 @@
-gid: type.Inputs.*.(rich-text-input).options.allow_custom_markup
-url: /type.Inputs/*/(rich-text-input)/options/allow_custom_markup/
-title: ''
-description: >-
-  Defines if the content can contain "custom markup". It is not recommended to
-  have this option turned on. Defaults to true for non-content editable regions,
-  false otherwise.
-examples: []

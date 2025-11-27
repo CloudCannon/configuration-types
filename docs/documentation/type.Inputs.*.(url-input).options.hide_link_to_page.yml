@@ -1,7 +1,0 @@
-gid: type.Inputs.*.(url-input).options.hide_link_to_page
-url: /type.Inputs/*/(url-input)/options/hide_link_to_page/
-title: ''
-description: >-
-  Hides the option to link to a page. This does not prevent typing a file's
-  output URL in the input.
-examples: []

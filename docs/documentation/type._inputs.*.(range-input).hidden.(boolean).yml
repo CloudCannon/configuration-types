@@ -1,0 +1,5 @@
+gid: type._inputs.*.(range-input).hidden.(boolean)
+url: /types/_inputs/*/(range-input)/hidden/(boolean)/
+title: Boolean
+description: ''
+examples: []

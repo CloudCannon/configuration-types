@@ -1,28 +1,24 @@
 {% set doc = gid | docFromGid %}
 
-{% set parent = doc.parent | docFromGid %}
-<p>
-	{% if parent %}
-		<a href="{{ parent.url }}">&larr; {{ parent.url }}</a>
-	{% elif doc.url != '/' %}
-		<a href="/">&larr; /</a>
-	{% else %}
-		/
-	{% endif %}
-</p>
-
 <h1
 	data-editable="text"
 	data-prop="@file[/docs/documentation/{{ doc.gid }}.yml].title"
 >{{ doc.title | default(doc.key, true) }}</h1>
 
 <dl>
-	{% if appears_in | length %}
+	{% set parent = doc.parent | docFromGid %}
+	{% if appears_in | length or parent %}
 		<dt>Appears in:</dt>
-		{% for parentGid in appears_in %}
-			{% set parentDoc = parentGid | docFromGid %}
-			<dd><a href="{{ parentDoc.url }}"><code>{{ parentDoc.full_key | default(parentDoc.title, true) }}</code></a></dd>
-		{% endfor %}
+		{% if parent %}
+			<dd><a href="{{ parent.url }}"><code>{{ parent.url }}</code></a></dd>
+		{% endif %}
+
+		{% if appears_in | length %}
+			{% for appearsInGid in appears_in %}
+				{% set appearsInDoc = appearsInGid | docFromGid %}
+				<dd><a href="{{ appearsInDoc.url }}"><code>{{ appearsInDoc.url }}</code></a></dd>
+			{% endfor %}
+		{% endif %}
 	{% endif %}
 
 	{% if key %}
@@ -49,14 +45,11 @@
 		</dd>
 	{% endif %}
 
-	{% set description = documentation.description | default(developer_documentation.description, true) %}
-	{% if description %}
-		<dt>Description:</dt>
-		<dd
-			data-editable="text"
-			data-prop="@file[/docs/documentation/{{ gid }}.yml].description"
-		>{{ description | renderContent('md') | safe }}</dd>
-	{% endif %}
+	<dt{% if not description %} class="show-in-cms"{% endif %}>Description:</dt>
+	<dd
+		data-editable="text"
+		data-prop="@file[/docs/documentation/{{ gid }}.yml].description"
+	>{% if description %}{{ description | renderContent('md') | safe }}{% endif %}</dd>
 
 	{% if default %}
 		<dt>Default value:</dt>
@@ -70,16 +63,14 @@
 		{% endfor %}
 	{% endif %}
 
-	{% if documentation.examples | length %}
-		<dt>Examples:</dt>
-		<editable-array data-prop="@file[/docs/documentation/{{ gid }}.yml].examples">
-			{% for example in documentation.examples %}
-				<dd data-editable="array-item">
-					<pre><code>{{ example }}</code></pre>
-				</dd>
-			{% endfor %}
-		</editable-array>
-	{% endif %}
+	<dt{% if not documentation.examples | length %} class="show-in-cms"{% endif %}>Examples:</dt>
+	<editable-array data-prop="@file[/docs/documentation/{{ gid }}.yml].examples">
+		{% for example in documentation.examples %}
+			<dd data-editable="array-item">
+				<pre><code>{{ example }}</code></pre>
+			</dd>
+		{% endfor %}
+	</editable-array>
 
 	{% if type == "array" %}
 		{% renderFile "./_includes/pages/array.njk", doc %}

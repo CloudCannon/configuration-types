@@ -1,16 +1,48 @@
 collections_config:
   documentation:
     path: docs/documentation
-    icon: draft
+    icon: description
+    glob:
+      - "**/*"
+      - "!type.inputs*"
+      - "!type.snippet*"
+      - "!type._snippets*"
+      - "!type._editables*"
+      - "!type.preview*"
+      - "!type.structure*"
+      - "!type._structures*"
     url: "{url}"
-    preview:
+    sort_options: &sort_options
+      - key: last_modified
+        order: descending
+      - key: last_modified
+        order: ascending
+      - key: created_at
+        order: descending
+      - key: created_at
+        order: ascending
+      - key: path
+        order: descending
+      - key: path
+        order: ascending
+      - key: title
+        order: descending
+      - key: title
+        order: ascending
+    preview: &preview
+      icon:
+        - false
       text:
         - key: title
-        - key: gid
+        - text: "..."
       subtext:
         - key: description
         - false
       metadata:
+        - text:
+            - key: gid
+          icon:
+            - text: id_card
         - text:
             - key: url
           icon:
@@ -19,4 +51,88 @@ collections_config:
     disable_add: true
     disable_add_folder: true
     disable_file_actions: true
+  inputs:
+    path: docs/documentation
+    glob:
+      - type._inputs*
+    icon: description
+    url: "{url}"
+    sort_options: *sort_options
+    preview: *preview
+    disable_url: false
+    disable_add: true
+    disable_add_folder: true
+    disable_file_actions: true
+  snippets:
+    path: docs/documentation
+    glob:
+      - type.snippet*
+      - type._snippets*
+    icon: description
+    url: "{url}"
+    sort_options: *sort_options
+    preview: *preview
+    disable_url: false
+    disable_add: true
+    disable_add_folder: true
+    disable_file_actions: true
+  editables:
+    path: docs/documentation
+    glob:
+      - type._editables*
+    icon: description
+    url: "{url}"
+    sort_options: *sort_options
+    preview: *preview
+    disable_url: false
+    disable_add: true
+    disable_add_folder: true
+    disable_file_actions: true
+  preview:
+    path: docs/documentation
+    glob:
+      - type.preview*
+    icon: description
+    url: "{url}"
+    sort_options: *sort_options
+    preview: *preview
+    disable_url: false
+    disable_add: true
+    disable_add_folder: true
+    disable_file_actions: true
+  structures:
+    path: docs/documentation
+    glob:
+      - type.structure*
+      - type._structures*
+    icon: description
+    url: "{url}"
+    sort_options: *sort_options
+    preview: *preview
+    disable_url: false
+    disable_add: true
+    disable_add_folder: true
+    disable_file_actions: true
+  unused:
+    path: docs/documentation-unused
+    icon: folder_delete
+    description: These are files which are no longer referenced. They are kept here in case they have documentation to be moved elsewhere, otherwise they are safe to delete.
 timezone: Etc/UTC
+_inputs:
+  gid:
+    type: disabled
+    hidden: true
+  url:
+    type: disabled
+    hidden: true
+  description:
+    type: markdown
+  examples:
+    type: array
+    options:
+      structures:
+        values:
+          - label: Example
+            value:
+              description:
+              code:

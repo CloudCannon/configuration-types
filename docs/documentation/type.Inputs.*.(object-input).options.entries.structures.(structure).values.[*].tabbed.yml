@@ -1,7 +1,0 @@
-gid: >-
-  type.Inputs.*.(object-input).options.entries.structures.(structure).values.[*].tabbed
-url: >-
-  /type.Inputs/*/(object-input)/options/entries/structures/(structure)/values/[*]/tabbed/
-title: ''
-description: Show nested objects as tabs. Requires all top-level keys to be objects.
-examples: []

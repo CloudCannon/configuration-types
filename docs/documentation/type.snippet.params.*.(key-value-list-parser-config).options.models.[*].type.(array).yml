@@ -1,0 +1,7 @@
+gid: >-
+  type.snippet.params.*.(key-value-list-parser-config).options.models.[*].type.(array)
+url: >-
+  /types/snippet/params/*/(key-value-list-parser-config)/options/models/[*]/type/(array)/
+title: Array
+description: ''
+examples: []

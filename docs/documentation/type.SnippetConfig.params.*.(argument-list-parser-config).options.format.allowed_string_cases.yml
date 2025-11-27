@@ -1,7 +1,0 @@
-gid: >-
-  type.SnippetConfig.params.*.(argument-list-parser-config).options.format.allowed_string_cases
-url: >-
-  /type.SnippetConfig/params/*/(argument-list-parser-config)/options/format/allowed_string_cases/
-title: ''
-description: ''
-examples: []

@@ -1,0 +1,5 @@
+gid: type._inputs.*.(choice-input).options.values.(object-array)
+url: /types/_inputs/*/(choice-input)/options/values/(object-array)/
+title: Object Array
+description: ''
+examples: []

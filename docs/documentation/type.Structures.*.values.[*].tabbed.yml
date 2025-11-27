@@ -1,5 +1,0 @@
-gid: type.Structures.*.values.[*].tabbed
-url: /type.Structures/*/values/[*]/tabbed/
-title: ''
-description: Show nested objects as tabs. Requires all top-level keys to be objects.
-examples: []

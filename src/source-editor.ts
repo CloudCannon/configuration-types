@@ -28,15 +28,13 @@ export const ThemeSchema = z
 		'xcode_dark',
 		'xcode_light',
 	])
-	.meta({
-		id: 'type.Theme',
-	});
+	.meta({ id: 'Theme' });
 
 export const SourceEditorSchema = z.object({
-	tab_size: z.number().default(2).optional().meta({ id: 'source_editor.tab_size' }),
-	theme: ThemeSchema.default('basic_dark').optional().meta({ id: 'source_editor.theme' }),
-	show_gutter: z.boolean().default(true).optional().meta({ id: 'source_editor.show_gutter' }),
-	soft_wrap: z.boolean().default(false).optional().meta({ id: 'source_editor.soft_wrap' }),
+	tab_size: z.number().optional().default(2),
+	theme: ThemeSchema.optional().default('basic_dark'),
+	show_gutter: z.boolean().optional().default(true),
+	soft_wrap: z.boolean().optional().default(false),
 });
 
 export type Theme = z.infer<typeof ThemeSchema>;

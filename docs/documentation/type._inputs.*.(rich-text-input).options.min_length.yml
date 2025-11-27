@@ -1,0 +1,10 @@
+gid: type._inputs.*.(rich-text-input).options.min_length
+url: /types/_inputs/*/(rich-text-input)/options/min_length/
+title: ''
+description: >-
+  This key defines the minimum string length, in characters, that CloudCannon
+  will allow in an Input. When configured, CloudCannon will warn you when an
+  Input value is too short. If the Input already contains a shorter value,
+  CloudCannon will require you to add characters until the Input contains a
+  valid string to save your changes, or discard your unsaved changes.
+examples: []

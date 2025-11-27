@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(color-input).options.pattern_flags.global
-url: /type.Inputs/*/(color-input)/options/pattern_flags/global/
-title: ''
-description: '`g` - Search globally.'
-examples: []

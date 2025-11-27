@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(number-input).documentation
-url: /type.Inputs/*/(number-input)/documentation/
-title: Documentation
-description: Provides a custom link for documentation for editors shown above input.
-examples: []

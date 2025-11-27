@@ -1,18 +1,15 @@
-{% set description = documentation.description | default(developer_documentation.description, true) %}
 <editable-text data-prop="@file[/docs/documentation/{{ gid }}.yml].description">
 	{% if description %}{{ description | renderContent('md') | safe }}{% endif %}
 </editable-text>
 
-{% if documentation.examples | length %}
-	<details>
-		<summary><em>Examples</em></summary>
-		<editable-array data-prop="@file[/docs/documentation/{{ gid }}.yml].examples">
-			{% for example in documentation.examples %}
-				<pre data-editable="array-item"><code>{{ example }}</code></pre>
-			{% endfor %}
-		</editable-array>
-	</details>
-{% endif %}
+<details{% if not documentation.examples | length %} class="show-in-cms"{% endif %}>
+	<summary><em>Examples</em></summary>
+	<editable-array data-prop="@file[/docs/documentation/{{ gid }}.yml].examples">
+		{% for example in documentation.examples %}
+			<pre data-editable="array-item"><code>{{ example }}</code></pre>
+		{% endfor %}
+	</editable-array>
+</details>
 
 {% if default %}
 	<p><em>Defaults to:</em> <code>{{ default }}</code></p>

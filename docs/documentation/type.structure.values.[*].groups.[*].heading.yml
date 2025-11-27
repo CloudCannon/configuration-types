@@ -1,0 +1,5 @@
+gid: type.structure.values.[*].groups.[*].heading
+url: /types/structure/values/[*]/groups/[*]/heading/
+title: ''
+description: The main text for the group shown when collapsed or expanded.
+examples: []

@@ -1,7 +1,0 @@
-gid: >-
-  type.SnippetConfig.params.*.(key-value-list-parser-config).options.format.array_delimiter
-url: >-
-  /type.SnippetConfig/params/*/(key-value-list-parser-config)/options/format/array_delimiter/
-title: ''
-description: ''
-examples: []

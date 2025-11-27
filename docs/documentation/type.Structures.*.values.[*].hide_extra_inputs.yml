@@ -1,7 +1,0 @@
-gid: type.Structures.*.values.[*].hide_extra_inputs
-url: /type.Structures/*/values/[*]/hide_extra_inputs/
-title: ''
-description: >-
-  Hides unexpected inputs when editing. Has no effect if `remove_extra_inputs`
-  is true. Defaults to false.
-examples: []

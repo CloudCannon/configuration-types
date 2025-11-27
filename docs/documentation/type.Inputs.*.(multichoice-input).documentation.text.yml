@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(multichoice-input).documentation.text
-url: /type.Inputs/*/(multichoice-input)/documentation/text/
-title: ''
-description: The visible text used in the link.
-examples: []

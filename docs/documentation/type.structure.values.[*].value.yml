@@ -1,0 +1,5 @@
+gid: type.structure.values.[*].value
+url: /types/structure/values/[*]/value/
+title: ''
+description: The actual value used when items are added after selection.
+examples: []

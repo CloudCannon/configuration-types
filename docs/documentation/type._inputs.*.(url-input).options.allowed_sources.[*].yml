@@ -1,0 +1,5 @@
+gid: type._inputs.*.(url-input).options.allowed_sources.[*]
+url: /types/_inputs/*/(url-input)/options/allowed_sources/[*]/
+title: ''
+description: ''
+examples: []

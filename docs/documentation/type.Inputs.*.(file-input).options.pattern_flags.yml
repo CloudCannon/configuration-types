@@ -1,7 +1,0 @@
-gid: type.Inputs.*.(file-input).options.pattern_flags
-url: /type.Inputs/*/(file-input)/options/pattern_flags/
-title: ''
-description: >-
-  This key defines the flags (e.g. case-insensitive searching) for the regular
-  expression set in `options.pattern`.
-examples: []

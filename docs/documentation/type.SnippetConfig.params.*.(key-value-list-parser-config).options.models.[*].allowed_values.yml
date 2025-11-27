@@ -1,7 +1,0 @@
-gid: >-
-  type.SnippetConfig.params.*.(key-value-list-parser-config).options.models.[*].allowed_values
-url: >-
-  /type.SnippetConfig/params/*/(key-value-list-parser-config)/options/models/[*]/allowed_values/
-title: ''
-description: ''
-examples: []

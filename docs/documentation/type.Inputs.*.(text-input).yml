@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(text-input)
-url: /type.Inputs/*/(text-input)/
-title: Text Input
-description: Provides a simple editing interface for plain text.
-examples: []

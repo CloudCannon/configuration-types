@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(choice-input).options.pattern_flags.ignore_case
-url: /type.Inputs/*/(choice-input)/options/pattern_flags/ignore_case/
-title: ''
-description: '`i` - Case-insensitive.'
-examples: []

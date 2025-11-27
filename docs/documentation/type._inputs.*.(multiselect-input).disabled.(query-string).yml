@@ -1,0 +1,5 @@
+gid: type._inputs.*.(multiselect-input).disabled.(query-string)
+url: /types/_inputs/*/(multiselect-input)/disabled/(query-string)/
+title: Query String
+description: ''
+examples: []

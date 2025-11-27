@@ -1,0 +1,5 @@
+gid: type._inputs.*.(object-input).options.groups.[*].inputs
+url: /types/_inputs/*/(object-input)/options/groups/[*]/inputs/
+title: ''
+description: The keys of each input in this group.
+examples: []

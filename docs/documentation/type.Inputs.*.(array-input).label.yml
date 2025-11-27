@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(array-input).label
-url: /type.Inputs/*/(array-input)/label/
-title: ''
-description: Optionally changes the text above this input.
-examples: []

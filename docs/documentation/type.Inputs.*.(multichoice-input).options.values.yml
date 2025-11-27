@@ -1,8 +1,0 @@
-gid: type.Inputs.*.(multichoice-input).options.values
-url: /type.Inputs/*/(multichoice-input)/options/values/
-title: ''
-description: >-
-  Defines the values available to choose from. Optional, defaults to fetching
-  values from the naming convention (e.g. colors or my_colors for data set
-  colors).
-examples: []

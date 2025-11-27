@@ -2,14 +2,13 @@ import * as z from 'zod';
 import { DocumentationSchema } from './documentation';
 import { IconSchema } from './icon';
 import { InputsSchema, ObjectInputGroupSchema } from './inputs';
-import { PickerPreviewSchema, PreviewSchema } from './preview';
+import { PreviewSchema } from './preview';
 import { SelectDataSchema } from './select-values';
 
 export const StructureReferenceSchema = z.string().meta({
-	id: 'StructureReference',
+	id: 'type.structure-reference',
 	title: 'Structure Reference',
 	description: 'A reference to an existing structure.',
-	examples: ['structures: _structures.content_blocks'],
 });
 
 const StructureBaseSchema = z.object({
@@ -32,7 +31,7 @@ const StructureBaseSchema = z.object({
 
 export const StructureValueSchema = StructureBaseSchema.extend({
 	preview: PreviewSchema.optional(),
-	picker_preview: PickerPreviewSchema.optional(),
+	picker_preview: PreviewSchema.optional(),
 
 	// This is the ReducedCascadeSchema - can't seem to reuse it due to Zod's limitations.
 	get _inputs() {
@@ -110,14 +109,14 @@ export const StructureSchema = z
 		}),
 	})
 	.meta({
-		id: 'Structure',
+		id: 'type.structure',
 		title: 'Structure',
 		description:
 			'Provides data formats when adding new items to arrays and objects, with options for how editors choose from available values.',
 	});
 
 export const StructuresSchema = z.record(z.string(), StructureSchema).meta({
-	id: 'type.Structures',
+	id: 'type._structures',
 	title: 'Structures',
 	description:
 		'Structured values for editors adding new items to arrays and objects. Entries here can be referenced in the configuration for `array` or `object` inputs.',

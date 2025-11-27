@@ -1,0 +1,5 @@
+gid: type._inputs.*.(time-input).documentation.url
+url: /types/_inputs/*/(time-input)/documentation/url/
+title: ''
+description: The "href" value of the link.
+examples: []

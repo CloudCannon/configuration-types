@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(number-input).hidden.(boolean)
-url: /type.Inputs/*/(number-input)/hidden/(boolean)/
-title: Boolean
-description: ''
-examples: []

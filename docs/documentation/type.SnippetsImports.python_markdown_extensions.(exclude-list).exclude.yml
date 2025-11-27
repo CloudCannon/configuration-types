@@ -1,7 +1,0 @@
-gid: type.SnippetsImports.python_markdown_extensions.(exclude-list).exclude
-url: /type.SnippetsImports/python_markdown_extensions/(exclude-list)/exclude/
-title: ''
-description: >-
-  The list of excluded snippets. If unset, all snippets are excluded unless
-  defined in `include`.
-examples: []

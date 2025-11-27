@@ -1,0 +1,5 @@
+gid: type._inputs.*.(code-input).documentation
+url: /types/_inputs/*/(code-input)/documentation/
+title: Documentation
+description: Provides a custom link for documentation for editors shown above input.
+examples: []

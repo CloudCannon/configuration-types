@@ -1,0 +1,5 @@
+gid: type._inputs.*.(range-input)
+url: /types/_inputs/*/(range-input)/
+title: Range Input
+description: Provides a slider interface for selecting a numeric value.
+examples: []

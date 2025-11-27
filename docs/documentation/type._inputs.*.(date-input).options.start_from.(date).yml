@@ -1,0 +1,5 @@
+gid: type._inputs.*.(date-input).options.start_from.(date)
+url: /types/_inputs/*/(date-input)/options/start_from/(date)/
+title: Date
+description: ''
+examples: []

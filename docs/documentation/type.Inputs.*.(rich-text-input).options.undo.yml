@@ -1,7 +1,0 @@
-gid: type.Inputs.*.(rich-text-input).options.undo
-url: /type.Inputs/*/(rich-text-input)/options/undo/
-title: ''
-description: >-
-  Enables a control to undo recent edits. Undo is always enabled through
-  standard OS-specific keyboard shortcuts.
-examples: []

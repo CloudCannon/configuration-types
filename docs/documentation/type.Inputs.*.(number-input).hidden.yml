@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(number-input).hidden
-url: /type.Inputs/*/(number-input)/hidden/
-title: ''
-description: Toggles the visibility of this input.
-examples: []

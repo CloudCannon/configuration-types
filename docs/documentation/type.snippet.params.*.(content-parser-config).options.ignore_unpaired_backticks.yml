@@ -1,0 +1,7 @@
+gid: >-
+  type.snippet.params.*.(content-parser-config).options.ignore_unpaired_backticks
+url: >-
+  /types/snippet/params/*/(content-parser-config)/options/ignore_unpaired_backticks/
+title: ''
+description: ''
+examples: []

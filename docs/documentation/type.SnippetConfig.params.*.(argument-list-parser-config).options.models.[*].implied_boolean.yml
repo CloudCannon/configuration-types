@@ -1,7 +1,0 @@
-gid: >-
-  type.SnippetConfig.params.*.(argument-list-parser-config).options.models.[*].implied_boolean
-url: >-
-  /type.SnippetConfig/params/*/(argument-list-parser-config)/options/models/[*]/implied_boolean/
-title: ''
-description: ''
-examples: []

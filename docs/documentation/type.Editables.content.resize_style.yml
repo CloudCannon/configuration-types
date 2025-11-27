@@ -1,8 +1,0 @@
-gid: type.Editables.content.resize_style
-url: /type.Editables/content/resize_style/
-title: Resize Style
-description: >-
-  Sets how uploaded image files are resized with a bounding box defined by width
-  and height prior to upload. Has no effect when selecting existing images, or
-  if width and height are unset.
-examples: []

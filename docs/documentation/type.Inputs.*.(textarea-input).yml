@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(textarea-input)
-url: /type.Inputs/*/(textarea-input)/
-title: Textarea Input
-description: Provides an editing interface for plain text.
-examples: []

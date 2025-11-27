@@ -1,0 +1,5 @@
+gid: type._inputs.*.(multichoice-input).disabled.(boolean)
+url: /types/_inputs/*/(multichoice-input)/disabled/(boolean)/
+title: Boolean
+description: ''
+examples: []

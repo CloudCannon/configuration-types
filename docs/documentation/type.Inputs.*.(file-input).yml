@@ -1,7 +1,0 @@
-gid: type.Inputs.*.(file-input)
-url: /type.Inputs/*/(file-input)/
-title: File Input
-description: >-
-  Provides an editing interface for uploading files to your repository or DAM
-  and browsing existing assets.
-examples: []

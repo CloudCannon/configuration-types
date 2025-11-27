@@ -1,7 +1,0 @@
-gid: type.Inputs.*.(rich-text-input).options.code_inline
-url: /type.Inputs/*/(rich-text-input)/options/code_inline/
-title: ''
-description: >-
-  Enables a control to create an inline code element, containing any selected
-  text.
-examples: []

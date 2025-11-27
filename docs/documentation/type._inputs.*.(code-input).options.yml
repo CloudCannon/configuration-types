@@ -1,0 +1,5 @@
+gid: type._inputs.*.(code-input).options
+url: /types/_inputs/*/(code-input)/options/
+title: ''
+description: Options that are specific to Code Inputs.
+examples: []

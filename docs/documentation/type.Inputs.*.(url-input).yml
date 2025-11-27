@@ -1,7 +1,0 @@
-gid: type.Inputs.*.(url-input)
-url: /type.Inputs/*/(url-input)/
-title: URL Input
-description: >-
-  Provides an editing interface for relative, absolute, and fully qualified
-  URLs.
-examples: []

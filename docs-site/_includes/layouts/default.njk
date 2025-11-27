@@ -9,14 +9,11 @@
 			dt {
 				font-weight: bold;
 				margin-bottom: 5px;
+				margin-top: 20px;
 			}
 
 			dd {
 				margin-left: 20px;
-			}
-
-			dd + dt {
-				margin-top: 20px;
 			}
 
 			dt + dd > p:first-of-type {
@@ -44,6 +41,10 @@
 
 			dd + dd article.condensed {
 				margin-top: -2px;
+			}
+
+			body:not(.cms-editor-active) .show-in-cms {
+				display: none;
 			}
 		</style>
 	</head>

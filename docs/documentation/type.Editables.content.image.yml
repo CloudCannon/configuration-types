@@ -1,7 +1,0 @@
-gid: type.Editables.content.image
-url: /type.Editables/content/image/
-title: ''
-description: >-
-  Enables a control to insert an image. The image can be uploaded, existing or
-  an external link.
-examples: []

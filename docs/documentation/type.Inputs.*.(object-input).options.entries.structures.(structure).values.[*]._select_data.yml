@@ -1,5 +1,0 @@
-gid: >-
-  type.Inputs.*.(object-input).options.entries.structures.(structure).values.[*]._select_data
-title: ''
-description: ''
-examples: []

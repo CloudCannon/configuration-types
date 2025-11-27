@@ -80,16 +80,19 @@ export const ConfigurationSchema = z
 		timezone: TimezoneSchema.optional().default('Etc/UTC'),
 		...CascadeSchema.shape,
 		_snippets: z.record(z.string(), SnippetConfigSchema).optional().meta({
-			id: 'type.Snippets',
+			id: 'type._snippets',
+			title: 'Snippets',
 			description: 'Configuration for custom snippets.',
 		}),
 		_snippets_imports: SnippetsImportsSchema.optional(),
 		_snippets_templates: z.record(z.string(), SnippetConfigSchema).optional().meta({
-			id: 'type.SnippetsTemplates',
+			id: 'type._snippets_templates',
+			title: 'Snippets Templates',
 			description: 'Extended option used when creating more complex custom snippets.',
 		}),
 		_snippets_definitions: z.record(z.string(), z.unknown()).optional().meta({
-			id: 'type.SnippetsDefinitions',
+			id: 'type._snippets_definitions',
+			title: 'Snippets Definitions',
 			description: 'Extended option used when creating more complex custom snippets.',
 		}),
 	})

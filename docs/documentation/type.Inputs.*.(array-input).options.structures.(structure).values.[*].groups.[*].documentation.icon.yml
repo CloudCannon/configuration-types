@@ -1,7 +1,0 @@
-gid: >-
-  type.Inputs.*.(array-input).options.structures.(structure).values.[*].groups.[*].documentation.icon
-url: >-
-  /type.Inputs/*/(array-input)/options/structures/(structure)/values/[*]/groups/[*]/documentation/icon/
-title: Icon
-description: The icon displayed next to the link.
-examples: []

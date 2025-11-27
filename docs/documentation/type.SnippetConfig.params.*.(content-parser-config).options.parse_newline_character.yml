@@ -1,7 +1,0 @@
-gid: >-
-  type.SnippetConfig.params.*.(content-parser-config).options.parse_newline_character
-url: >-
-  /type.SnippetConfig/params/*/(content-parser-config)/options/parse_newline_character/
-title: ''
-description: ''
-examples: []

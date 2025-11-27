@@ -1,9 +1,14 @@
 import type { JSONSchema } from 'zod/v4/core';
 
+export interface Example {
+	description?: string;
+	code: string;
+}
+
 export interface DocumentationEntry {
 	title?: string;
 	description?: string;
-	examples?: string[];
+	examples?: Example[];
 }
 
 export type DocType = JsonSchema['type'] | 'date';
@@ -18,7 +23,7 @@ export interface Page {
 	gid: string;
 	title?: DocumentationEntry['title'];
 	description?: DocumentationEntry['description'];
-	examples?: DocumentationEntry['examples'];
+	examples?: Example[];
 	documentation?: DocumentationEntry;
 	developer_documentation?: DocumentationEntry;
 	url: string;

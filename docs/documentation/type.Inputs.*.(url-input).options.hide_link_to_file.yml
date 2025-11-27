@@ -1,7 +1,0 @@
-gid: type.Inputs.*.(url-input).options.hide_link_to_file
-url: /type.Inputs/*/(url-input)/options/hide_link_to_file/
-title: ''
-description: >-
-  Hides the options to link to an existing file, and upload a new file. This
-  does not prevent typing a file path in the input.
-examples: []

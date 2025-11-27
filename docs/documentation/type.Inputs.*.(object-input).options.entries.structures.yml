@@ -1,8 +1,0 @@
-gid: type.Inputs.*.(object-input).options.entries.structures
-url: /type.Inputs/*/(object-input)/options/entries/structures/
-title: ''
-description: >-
-  Provides data formats for value of this object. When choosing an item, team
-  members are prompted to choose from a number of values you have defined.
-  `structures` applies to the object itself.
-examples: []

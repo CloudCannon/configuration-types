@@ -1,0 +1,5 @@
+gid: type._inputs.*.(date-input).hidden.(query-string)
+url: /types/_inputs/*/(date-input)/hidden/(query-string)/
+title: Query String
+description: ''
+examples: []

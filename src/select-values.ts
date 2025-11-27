@@ -13,7 +13,7 @@ export const SelectDataValuesSchema = z
 	});
 
 export const SelectDataSchema = z.record(z.string(), SelectDataValuesSchema).meta({
-	id: 'type.SelectData',
+	id: 'type._select_data',
 	title: 'Select Data',
 	description:
 		'Fixed datasets that can be referenced by the _Values_ configuration for _Select_ and _Multiselect_ inputs.',

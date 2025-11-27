@@ -1,7 +1,0 @@
-gid: >-
-  type.SnippetConfig.params.*.(key-value-list-parser-config).options.style.inline
-url: >-
-  /type.SnippetConfig/params/*/(key-value-list-parser-config)/options/style/inline/
-title: ''
-description: ''
-examples: []

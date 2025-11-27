@@ -1,7 +1,0 @@
-gid: type.Inputs.*.(url-input).options.hide_link_to_telephone
-url: /type.Inputs/*/(url-input)/options/hide_link_to_telephone/
-title: ''
-description: >-
-  Hides the option to link to a telephone number. This does not prevent typing a
-  `tel:` link in the input.
-examples: []

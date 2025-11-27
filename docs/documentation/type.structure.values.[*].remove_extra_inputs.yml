@@ -1,0 +1,5 @@
+gid: type.structure.values.[*].remove_extra_inputs
+url: /types/structure/values/[*]/remove_extra_inputs/
+title: ''
+description: If checked, extra inputs are removed when editing. Defaults to true.
+examples: []

@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(rich-text-input).options.pattern_flags.unicode_sets
-url: /type.Inputs/*/(rich-text-input)/options/pattern_flags/unicode_sets/
-title: ''
-description: '`v` - Extended `unicode` mode.'
-examples: []

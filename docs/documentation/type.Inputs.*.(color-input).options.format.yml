@@ -1,7 +1,0 @@
-gid: type.Inputs.*.(color-input).options.format
-url: /type.Inputs/*/(color-input)/options/format/
-title: ''
-description: >-
-  Sets what format the color value is saved as. Defaults to the naming
-  convention, or HEX if that is unset.
-examples: []

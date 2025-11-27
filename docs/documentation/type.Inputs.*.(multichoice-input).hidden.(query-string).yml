@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(multichoice-input).hidden.(query-string)
-url: /type.Inputs/*/(multichoice-input)/hidden/(query-string)/
-title: Query String
-description: ''
-examples: []

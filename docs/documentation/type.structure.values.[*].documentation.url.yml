@@ -1,0 +1,5 @@
+gid: type.structure.values.[*].documentation.url
+url: /types/structure/values/[*]/documentation/url/
+title: ''
+description: The "href" value of the link.
+examples: []

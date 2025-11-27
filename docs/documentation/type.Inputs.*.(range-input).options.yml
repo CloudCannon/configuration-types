@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(range-input).options
-url: /type.Inputs/*/(range-input)/options/
-title: ''
-description: Options that are specific to Range Inputs.
-examples: []

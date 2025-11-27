@@ -1,7 +1,0 @@
-gid: >-
-  type.SnippetConfig.params.*.(content-parser-config).options.style.block.leading
-url: >-
-  /type.SnippetConfig/params/*/(content-parser-config)/options/style/block/leading/
-title: ''
-description: ''
-examples: []

@@ -1,7 +1,0 @@
-gid: type.Inputs.*.(rich-text-input).options.width
-url: /type.Inputs/*/(rich-text-input)/options/width/
-title: Width
-description: >-
-  Defines the width of the bounding box used in the image resizing process
-  defined with resize_style.
-examples: []

@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(text-input).disabled.(boolean)
-url: /type.Inputs/*/(text-input)/disabled/(boolean)/
-title: Boolean
-description: ''
-examples: []

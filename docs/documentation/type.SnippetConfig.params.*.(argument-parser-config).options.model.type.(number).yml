@@ -1,7 +1,0 @@
-gid: >-
-  type.SnippetConfig.params.*.(argument-parser-config).options.model.type.(number)
-url: >-
-  /type.SnippetConfig/params/*/(argument-parser-config)/options/model/type/(number)/
-title: Number
-description: ''
-examples: []

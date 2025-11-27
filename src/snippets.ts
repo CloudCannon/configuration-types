@@ -1,6 +1,6 @@
 import * as z from 'zod';
 import { ReducedCascadeSchema } from './cascade';
-import { PickerPreviewSchema, PreviewSchema } from './preview';
+import { PreviewSchema } from './preview';
 
 export const ParserModelSchema = z.object({
 	source_key: z.string().optional(),
@@ -181,7 +181,7 @@ export const SnippetConfigSchema = z
 	.object({
 		...ReducedCascadeSchema.shape,
 		preview: PreviewSchema.optional(),
-		picker_preview: PickerPreviewSchema.optional(),
+		picker_preview: PreviewSchema.optional(),
 	})
 	.extend({
 		snippet: z.string().optional().meta({
@@ -218,8 +218,8 @@ export const SnippetConfigSchema = z
 		}),
 	})
 	.meta({
-		id: 'type.SnippetConfig',
-		title: 'Snippet Configuration',
+		id: 'type.snippet',
+		title: 'Snippet',
 		description: 'A snippet configuration.',
 	});
 
@@ -282,7 +282,7 @@ export const SnippetsImportsSchema = z
 			uniqueItems: true,
 		}),
 	})
-	.meta({ id: 'type.SnippetsImports' });
+	.meta({ id: 'type._snippets_imports', title: 'Snippets Imports' });
 
 export type SnippetConfig = z.infer<typeof SnippetConfigSchema>;
 export type SnippetsImports = z.infer<typeof SnippetsImportsSchema>;

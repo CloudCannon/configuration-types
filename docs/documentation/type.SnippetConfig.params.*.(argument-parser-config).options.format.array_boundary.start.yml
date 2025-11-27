@@ -1,7 +1,0 @@
-gid: >-
-  type.SnippetConfig.params.*.(argument-parser-config).options.format.array_boundary.start
-url: >-
-  /type.SnippetConfig/params/*/(argument-parser-config)/options/format/array_boundary/start/
-title: ''
-description: ''
-examples: []

@@ -1,0 +1,7 @@
+gid: type._editables.image.height
+url: /types/_editables/image/height/
+title: Height
+description: >-
+  Defines the height of the bounding box used in the image resizing process
+  defined with resize_style.
+examples: []

@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(rich-text-input).label
-url: /type.Inputs/*/(rich-text-input)/label/
-title: ''
-description: Optionally changes the text above this input.
-examples: []

@@ -598,6 +598,6 @@ export const TimezoneSchema = z
 		'WET',
 		'Zulu',
 	])
-	.meta({ id: 'type.Timezone' });
+	.meta({ id: 'type.timezone', title: 'Timezone' });
 
 export type Timezone = z.infer<typeof TimezoneSchema>;

@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(array-input).context
-url: /type.Inputs/*/(array-input)/context/
-title: ''
-description: Adds an expandable section of rich text below the input.
-examples: []

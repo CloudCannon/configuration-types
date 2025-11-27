@@ -1,5 +1,0 @@
-gid: >-
-  type.Inputs.*.(array-input).options.structures.(structure).values.[*].picker_preview
-title: ''
-description: ''
-examples: []

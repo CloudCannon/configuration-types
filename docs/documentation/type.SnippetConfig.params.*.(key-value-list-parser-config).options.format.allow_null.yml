@@ -1,7 +1,0 @@
-gid: >-
-  type.SnippetConfig.params.*.(key-value-list-parser-config).options.format.allow_null
-url: >-
-  /type.SnippetConfig/params/*/(key-value-list-parser-config)/options/format/allow_null/
-title: ''
-description: ''
-examples: []

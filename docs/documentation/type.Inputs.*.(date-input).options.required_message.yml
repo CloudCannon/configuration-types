@@ -1,7 +1,0 @@
-gid: type.Inputs.*.(date-input).options.required_message
-url: /type.Inputs/*/(date-input)/options/required_message/
-title: ''
-description: >-
-  This key defines the message that explains why an Input is required. This key
-  requires you to define `options.required`.
-examples: []

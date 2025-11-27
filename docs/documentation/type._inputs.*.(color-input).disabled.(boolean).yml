@@ -1,0 +1,5 @@
+gid: type._inputs.*.(color-input).disabled.(boolean)
+url: /types/_inputs/*/(color-input)/disabled/(boolean)/
+title: Boolean
+description: ''
+examples: []

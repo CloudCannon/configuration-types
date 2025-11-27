@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(multichoice-input).hidden
-url: /type.Inputs/*/(multichoice-input)/hidden/
-title: ''
-description: Toggles the visibility of this input.
-examples: []

@@ -1,5 +1,0 @@
-gid: type.Inputs.*.(rich-text-input).options.horizontalrule
-url: /type.Inputs/*/(rich-text-input)/options/horizontalrule/
-title: ''
-description: Enables a control to insert a horizontal rule.
-examples: []

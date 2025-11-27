@@ -1,0 +1,5 @@
+gid: type._inputs.*.(array-input).options.disable_remove
+url: /types/_inputs/*/(array-input)/options/disable_remove/
+title: ''
+description: Hides the context menu actions on each item for removing them.
+examples: []
