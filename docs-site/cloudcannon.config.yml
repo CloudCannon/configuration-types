@@ -29,24 +29,26 @@ collections_config:
         order: descending
       - key: title
         order: ascending
+    view_options: &view_options
+      - list
+      - gallery
+      - card
     preview: &preview
       icon:
         - false
       text:
         - key: title
-        - text: "..."
+        - template: "{gid|unless=title}"
       subtext:
-        - key: description
+        - template: "{gid|if=title}"
         - false
       metadata:
         - text:
-            - key: gid
-          icon:
-            - text: id_card
-        - text:
             - key: url
+            - text: No URL
           icon:
-            - text: public
+            - template: '{"link"|if=url}'
+            - text: link_off
     disable_url: false
     disable_add: true
     disable_add_folder: true
@@ -58,6 +60,7 @@ collections_config:
     icon: description
     url: "{url}"
     sort_options: *sort_options
+    view_options: *view_options
     preview: *preview
     disable_url: false
     disable_add: true
@@ -71,6 +74,7 @@ collections_config:
     icon: description
     url: "{url}"
     sort_options: *sort_options
+    view_options: *view_options
     preview: *preview
     disable_url: false
     disable_add: true
@@ -83,6 +87,7 @@ collections_config:
     icon: description
     url: "{url}"
     sort_options: *sort_options
+    view_options: *view_options
     preview: *preview
     disable_url: false
     disable_add: true
@@ -95,6 +100,7 @@ collections_config:
     icon: description
     url: "{url}"
     sort_options: *sort_options
+    view_options: *view_options
     preview: *preview
     disable_url: false
     disable_add: true
@@ -108,6 +114,7 @@ collections_config:
     icon: description
     url: "{url}"
     sort_options: *sort_options
+    view_options: *view_options
     preview: *preview
     disable_url: false
     disable_add: true
@@ -127,12 +134,38 @@ _inputs:
     hidden: true
   description:
     type: markdown
+    options:
+      blockquote: true
+      bold: true
+      bulletedlist: true
+      code_block: true
+      code_inline: true
+      image: false
+      italic: true
+      link: true
+      numberedlist: true
+      removeformat: true
+      snippet: true
+      strike: true
+      subscript: true
+      superscript: true
+      underline: true
   examples:
     type: array
     options:
       structures:
         values:
           - label: Example
+            icon: code
+            preview:
+              subtext:
+                - key: description
+                - key: code
             value:
               description:
               code:
+            _inputs:
+              code:
+                type: code
+                options:
+                  syntax: yaml
