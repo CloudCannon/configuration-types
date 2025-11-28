@@ -1,5 +1,0 @@
-gid: type._inputs.*.(unknown-input).context
-url: /types/_inputs/*/(unknown-input)/context/
-title: ''
-description: Adds an expandable section of rich text below the input.
-examples: []

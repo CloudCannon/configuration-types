@@ -35,19 +35,35 @@ function deref(doc: JsonSchema): JsonSchema {
 function flattenNestedAnyOf(doc: JsonSchema) {
 	if (doc?.anyOf) {
 		const anyOf: JsonSchema[] = [];
+		const add = (item: JsonSchema): void => {
+			if (item.excludeFromDocumentation) {
+				return;
+			}
+
+			anyOf.push(item);
+		};
 
 		for (let i = 0; i < doc.anyOf.length; i++) {
-			flattenNestedAnyOf(doc.anyOf[i]);
+			deref(doc.anyOf[i]);
 
 			const docAnyOf = doc.anyOf[i]?.anyOf;
 			if (Array.isArray(docAnyOf)) {
-				anyOf.push(...docAnyOf);
+				for (let j = 0; j < docAnyOf.length; j++) {
+					deref(docAnyOf[j]);
+					add(docAnyOf[j]);
+				}
 			} else {
-				anyOf.push(doc.anyOf[i]);
+				add(doc.anyOf[i]);
 			}
 		}
 
-		doc.anyOf = anyOf;
+		if (anyOf.length === 0) {
+			delete doc.anyOf;
+		} else if (anyOf.length === 1) {
+			Object.assign(doc, anyOf[0]);
+		} else {
+			doc.anyOf = anyOf;
+		}
 	}
 }
 
@@ -140,6 +156,10 @@ function docToPage(
 
 			deref(item);
 
+			if (item.excludeFromDocumentation) {
+				continue;
+			}
+
 			const itemKey =
 				items.length === 1 ? '[*]' : `(${slugify(item.title || item.id || `item-${i}`)})`;
 
@@ -174,6 +194,10 @@ function docToPage(
 
 			deref(property);
 
+			if (property.excludeFromDocumentation) {
+				continue;
+			}
+
 			const propPage = docToPage(property, {
 				parent: gid,
 				path: thisPath,
@@ -203,6 +227,10 @@ function docToPage(
 
 		for (let i = 0; i < additionalProperties.length; i++) {
 			deref(additionalProperties[i]);
+
+			if (additionalProperties[i].excludeFromDocumentation) {
+				continue;
+			}
 
 			const additionalPropertyKey =
 				additionalProperties.length === 1

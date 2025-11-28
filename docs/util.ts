@@ -13,7 +13,10 @@ export interface DocumentationEntry {
 
 export type DocType = JsonSchema['type'] | 'date';
 
-export type JsonSchema = JSONSchema.JSONSchema & { documentationType?: DocType };
+export type JsonSchema = JSONSchema.JSONSchema & {
+	documentationType?: DocType;
+	excludeFromDocumentation?: boolean;
+};
 
 export type PageRef = ({ gid: string } | { type: string }) & {
 	documentation?: DocumentationEntry | undefined;

@@ -59,7 +59,7 @@ export const CommitTemplateSchema = z
 export const ConfigurationSchema = z
 	.object({
 		paths: PathsSchema.optional(),
-		version: z.literal('latest').optional().meta({ id: 'version' }),
+		version: z.literal('latest').optional().meta({ id: 'version', excludeFromDocumentation: true }),
 		source: z.string().optional().meta({ id: 'source' }),
 		collections_config: z
 			.record(z.string(), CollectionConfigSchema)

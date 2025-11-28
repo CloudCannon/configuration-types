@@ -1,5 +1,0 @@
-gid: type._inputs.*.(unknown-input).context.title
-url: /types/_inputs/*/(unknown-input)/context/title/
-title: ''
-description: The text shown when not open. Defaults to "Context" if unset.
-examples: []

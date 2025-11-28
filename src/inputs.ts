@@ -954,6 +954,7 @@ export const AutoInputSchema = z
 		id: 'AutoInput',
 		title: 'Automatic Input',
 		description: 'Provides a default user interface based on the data contained.',
+		excludeFromDocumentation: true,
 	});
 
 export const UnknownInputSchema = z
@@ -967,6 +968,7 @@ export const UnknownInputSchema = z
 		id: 'UnknownInput',
 		title: 'Unknown Input',
 		description: 'Provides a default user interface based on the data contained.',
+		excludeFromDocumentation: true,
 	});
 
 export const KnownInputSchema = z
