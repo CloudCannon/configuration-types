@@ -1,6 +1,7 @@
-<editable-text data-prop="@file[/docs/documentation/{{ gid }}.yml].description">
-	{% if description %}{{ description | renderContent('md') | safe }}{% endif %}
-</editable-text>
+<editable-text
+	data-prop="@file[/docs/documentation/{{ gid }}.yml].description"
+	data-type="block"
+>{% if description %}{{ description | renderContent('md') | safe }}{% endif %}</editable-text>
 
 <details{% if not documentation.examples | length %} class="show-in-cms"{% endif %}>
 	<summary><em>Examples</em></summary>

@@ -3,6 +3,7 @@
 <h1
 	data-editable="text"
 	data-prop="@file[/docs/documentation/{{ doc.gid }}.yml].title"
+	data-defer-mount
 >{{ doc.title | default(doc.key, true) }}</h1>
 
 <dl>
@@ -48,6 +49,7 @@
 	<dt{% if not description %} class="show-in-cms"{% endif %}>Description:</dt>
 	<dd
 		data-editable="text"
+		data-type="block"
 		data-prop="@file[/docs/documentation/{{ gid }}.yml].description"
 	>{% if description %}{{ description | renderContent('md') | safe }}{% endif %}</dd>
 
