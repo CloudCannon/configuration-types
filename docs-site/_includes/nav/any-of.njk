@@ -1,0 +1,16 @@
+<ul>
+	{% for anyOfRef in propDoc.anyOf %}
+		{% set anyOfDoc = anyOfRef | docFromRef %}
+		{% if anyOfDoc.url == doc.url %}
+			<li>
+				<span class="icon">&bull;</span>
+				<span>{{ anyOfDoc.title | default(anyOfDoc.key, true) }}</span>
+			</li>
+		{% elif anyOfDoc.url %}
+			<li>
+				<span class="icon">&bull;</span>
+				<a href="{{ anyOfDoc.url }}">{{ anyOfDoc.title | default(anyOfDoc.key, true) }}</a>
+			</li>
+		{% endif %}
+	{% endfor %}
+</ul>

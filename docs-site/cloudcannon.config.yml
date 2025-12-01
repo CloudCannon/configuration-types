@@ -124,6 +124,8 @@ collections_config:
     path: docs/documentation-unused
     icon: folder_delete
     description: These are files which are no longer referenced. They are kept here in case they have documentation to be moved elsewhere, otherwise they are safe to delete.
+    disable_add: true
+    disable_add_folder: true
 timezone: Etc/UTC
 _inputs:
   gid:
