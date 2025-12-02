@@ -56,6 +56,24 @@ export const CommitTemplateSchema = z
 		description: 'A template for commit messages when saving changes.',
 	});
 
+export const PullRequestTemplateSchema = z.object({
+	label: z.string().optional().meta({
+		description:
+			'Used to identify a pull request template when multiple pull request templates are available.',
+	}),
+	title: z.string().optional().meta({
+		description: 'The default value for the pull request title.',
+	}),
+	body: z.string().optional().meta({
+		description: 'The default value for the pull request body.',
+	}),
+	template_path: z.string().optional().meta({
+		description:
+			'Used to specify a file on the Site whose contents will be used as the default value for the pull request body. This has no effect if `body` is defined.',
+	}),
+	_inputs: InputsSchema.optional(),
+});
+
 export const ConfigurationSchema = z
 	.object({
 		paths: PathsSchema.optional(),
@@ -74,6 +92,9 @@ export const ConfigurationSchema = z
 		file_config: z.array(FileConfigEntrySchema).optional().meta({ id: 'file_config' }),
 		editor: EditorSchema.optional().meta({ id: 'editor' }),
 		source_editor: SourceEditorSchema.optional().meta({ id: 'source_editor' }),
+		pull_request_templates: z.array(PullRequestTemplateSchema).optional().meta({
+			description: 'Templates for pull requests.',
+		}),
 		commit_templates: z.array(CommitTemplateSchema).optional().meta({ id: 'commit_templates' }),
 		upstream_commit_template: z.string().optional().meta({ id: 'upstream_commit_template' }),
 		markdown: MarkdownSettingsSchema.optional().meta({ id: 'markdown' }),
@@ -98,7 +119,7 @@ export const ConfigurationSchema = z
 	})
 	.meta({
 		title: 'Configuration',
-		description: 'The main CloudCannon configuration schema.',
+		description: 'The main CloudCannon configuration.',
 	});
 
 export type DataConfigEntry = z.infer<typeof DataConfigEntrySchema>;
