@@ -1,0 +1,7 @@
+gid: pull_request_templates.[*].template_path
+url: /pull_request_templates/[*]/template_path/
+title: ''
+description: >-
+  Used to specify a file on the Site whose contents will be used as the default
+  value for the pull request body. This has no effect if `body` is defined.
+examples: []
