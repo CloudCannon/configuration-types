@@ -3,12 +3,12 @@ import { ReducedCascadeSchema } from './cascade';
 import { PreviewSchema } from './preview';
 
 export const ParserModelSchema = z.object({
-	source_key: z.string().nullable().optional(),
-	editor_key: z.string().nullable().optional(),
+	source_key: z.string().optional(),
+	editor_key: z.string().optional(),
 	remove_empty: z.boolean(),
 	optional: z.boolean(),
-	type: z.enum(['array', 'object', 'string', 'boolean', 'number']).nullable().optional(),
-	allowed_values: z.array(z.any()).nullable().optional(),
+	type: z.enum(['array', 'object', 'string', 'boolean', 'number']).optional(),
+	allowed_values: z.array(z.any()).optional(),
 	implied_boolean: z.boolean(),
 	default: z.any().optional(),
 });
@@ -33,7 +33,7 @@ export const SnippetStyleSchema = z.object({
 			leading: z.string().optional(),
 			trailing: z.string().optional(),
 		})
-		.nullable()
+
 		.optional(),
 	block: z
 		.object({
@@ -41,7 +41,7 @@ export const SnippetStyleSchema = z.object({
 			trailing: z.string().optional(),
 			indent: z.string().optional(),
 		})
-		.nullable()
+
 		.optional(),
 });
 

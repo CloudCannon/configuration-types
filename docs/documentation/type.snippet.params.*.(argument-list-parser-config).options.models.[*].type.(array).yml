@@ -1,7 +1,0 @@
-gid: >-
-  type.snippet.params.*.(argument-list-parser-config).options.models.[*].type.(array)
-url: >-
-  /types/snippet/params/*/(argument-list-parser-config)/options/models/[*]/type/(array)/
-title: Array
-description: ''
-examples: []
