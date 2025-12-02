@@ -1,0 +1,7 @@
+gid: type._inputs.*.(choice-input).options.empty_type
+url: /types/_inputs/*/(choice-input)/options/empty_type/
+title: ''
+description: >-
+  Set how an ‘empty’ value will be saved. Does not apply to existing empty
+  values.
+examples: []

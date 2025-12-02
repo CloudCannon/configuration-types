@@ -1,0 +1,7 @@
+gid: >-
+  type.snippet.params.*.(key-value-list-parser-config).options.format.allowed_string_cases.leading_lower
+url: >-
+  /types/snippet/params/*/(key-value-list-parser-config)/options/format/allowed_string_cases/leading_lower/
+title: ''
+description: ''
+examples: []

@@ -1,0 +1,5 @@
+gid: type.preview.metadata.[*].image.(array).[*].(text)
+url: /types/preview/metadata/[*]/image/(array)/[*]/(text)/
+title: Text
+description: ''
+examples: []

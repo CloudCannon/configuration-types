@@ -1,0 +1,5 @@
+gid: markdown.options.breaks
+url: /markdown/options/breaks/
+title: ''
+description: Convert `\n` in paragraphs into `<br>`.
+examples: []

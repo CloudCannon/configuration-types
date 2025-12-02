@@ -1,0 +1,5 @@
+gid: type._inputs.*.(rich-text-input).options.blockquote
+url: /types/_inputs/*/(rich-text-input)/options/blockquote/
+title: ''
+description: Enables a control to wrap blocks of text in block quotes.
+examples: []

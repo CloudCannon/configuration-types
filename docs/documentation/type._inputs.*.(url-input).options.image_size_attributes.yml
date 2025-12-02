@@ -1,0 +1,7 @@
+gid: type._inputs.*.(url-input).options.image_size_attributes
+url: /types/_inputs/*/(url-input)/options/image_size_attributes/
+title: Image Size Attributes
+description: >-
+  Instructs the editor to save `width` and `height` attributes on the image
+  elements. This can prevent pop-in as a page loads.
+examples: []

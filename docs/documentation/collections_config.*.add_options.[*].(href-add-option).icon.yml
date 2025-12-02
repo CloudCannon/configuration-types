@@ -1,0 +1,5 @@
+gid: collections_config.*.add_options.[*].(href-add-option).icon
+url: /collections_config/*/add_options/[*]/(href-add-option)/icon/
+title: Icon
+description: The icon next to the text in the menu item.
+examples: []

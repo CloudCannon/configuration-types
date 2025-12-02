@@ -1,0 +1,7 @@
+gid: pull_request_templates.[*].label
+url: /pull_request_templates/[*]/label/
+title: ''
+description: >-
+  Used to identify a pull request template when multiple pull request templates
+  are available.
+examples: []

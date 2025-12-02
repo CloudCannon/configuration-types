@@ -1,0 +1,31 @@
+<editable-text
+	data-prop="@file[/docs/documentation/{{ gid }}.yml].description"
+	data-type="block"
+>{% if description %}{{ description | renderContent('md') | safe }}{% endif %}</editable-text>
+
+<details{% if not documentation.examples | length %} class="show-in-cms"{% endif %}>
+	<summary><em>Examples</em></summary>
+	<editable-array data-prop="@file[/docs/documentation/{{ gid }}.yml].examples">
+		{% for example in documentation.examples %}
+			<pre data-editable="array-item"><code>{{ example }}</code></pre>
+		{% endfor %}
+	</editable-array>
+</details>
+
+{% if default %}
+	<p><em>Defaults to:</em> <code>{{ default }}</code></p>
+{% endif %}
+
+{% set maxLength = 10 %}
+{% set enumLength = maxLength if enum.length > maxLength else enum.length %}
+{% if enumLength %}
+	<p>
+		<em>Allowed values:</em>
+		{% for i in range(0, enumLength) %}
+			<code>{{ enum[i] }}</code>
+		{% endfor %}
+
+		{% set enumMore = enum.length - enumLength %}
+		{% if enumMore %}and {{ enumMore }} more.{% endif %}
+	</p>
+{% endif %}

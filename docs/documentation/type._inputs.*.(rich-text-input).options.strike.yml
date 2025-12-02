@@ -1,0 +1,5 @@
+gid: type._inputs.*.(rich-text-input).options.strike
+url: /types/_inputs/*/(rich-text-input)/options/strike/
+title: ''
+description: Enables a control to strike selected text.
+examples: []

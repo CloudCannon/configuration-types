@@ -1,0 +1,5 @@
+gid: type.structure.values.[*].tabbed
+url: /types/structure/values/[*]/tabbed/
+title: ''
+description: Show nested objects as tabs. Requires all top-level keys to be objects.
+examples: []

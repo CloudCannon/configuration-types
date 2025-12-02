@@ -1,0 +1,8 @@
+gid: type.structure.remove_empty_inputs
+url: /types/structure/remove_empty_inputs/
+title: ''
+description: >-
+  If checked, empty inputs are removed from the source file on save. Removed
+  inputs will be available for editing again, provided they are in the matching
+  schema/structure. Defaults to false.
+examples: []

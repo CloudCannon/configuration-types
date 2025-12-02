@@ -1,0 +1,5 @@
+gid: collections_config.*.create
+url: /collections_config/*/create/
+title: Create
+description: Controls where new files are saved.
+examples: []

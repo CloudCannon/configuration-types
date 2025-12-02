@@ -1,0 +1,5 @@
+gid: type._inputs.*.(object-input).options
+url: /types/_inputs/*/(object-input)/options/
+title: ''
+description: Options that are specific to Object Inputs.
+examples: []

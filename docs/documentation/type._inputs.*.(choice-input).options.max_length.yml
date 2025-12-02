@@ -1,0 +1,10 @@
+gid: type._inputs.*.(choice-input).options.max_length
+url: /types/_inputs/*/(choice-input)/options/max_length/
+title: ''
+description: >-
+  This key defines the maximum string length, in characters, that CloudCannon
+  will allow in an Input. When configured, CloudCannon will warn you when an
+  Input value is too long. If the Input already contains a longer value,
+  CloudCannon will require you to remove characters until the Input contains a
+  valid string to save your changes, or discard your unsaved changes.
+examples: []

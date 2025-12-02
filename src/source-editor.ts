@@ -2,66 +2,39 @@ import * as z from 'zod';
 
 export const ThemeSchema = z
 	.enum([
-		'ambiance',
-		'chaos',
-		'chrome',
-		'clouds',
-		'clouds_midnight',
-		'cobalt',
-		'crimson_editor',
-		'dawn',
+		'atomone',
+		'basic_dark',
+		'basic_light',
+		'darcula',
 		'dracula',
-		'dreamweaver',
+		'duotone_dark',
+		'duotone_light',
 		'eclipse',
-		'github',
-		'gob',
-		'gruvbox',
-		'idle_fingers',
-		'iplastic',
-		'katzenmilch',
-		'kr_theme',
-		'kuroir',
-		'merbivore',
-		'merbivore_soft',
-		'mono_industrial',
-		'monokai',
-		'nord_dark',
-		'pastel_on_dark',
+		'github_dark',
+		'github_light',
+		'gruvbox_dark',
+		'gruvbox_light',
+		'material_dark',
+		'material_light',
 		'solarized_dark',
 		'solarized_light',
-		'sqlserver',
-		'terminal',
-		'textmate',
-		'tomorrow',
-		'tomorrow_night',
+		'sublime',
+		'tokyo_night',
+		'tokyo_night_day',
+		'tokyo_night_storm',
 		'tomorrow_night_blue',
-		'tomorrow_night_bright',
-		'tomorrow_night_eighties',
-		'twilight',
-		'vibrant_ink',
-		'xcode',
+		'vscode_dark',
+		'vscode_light',
+		'xcode_dark',
+		'xcode_light',
 	])
-	.meta({
-		id: 'Theme',
-	});
+	.meta({ id: 'Theme' });
 
 export const SourceEditorSchema = z.object({
-	tab_size: z.number().default(2).optional().meta({
-		description:
-			'This key defines the auto-indentation of each line and how many spaces a tab indentation counts as.\n\nBy default, this key is `2`.\n\nhttps://cloudcannon.com/documentation/articles/the-source-editor/#source_editor.tab_size',
-	}),
-	theme: ThemeSchema.default('monokai').optional().meta({
-		title: 'Theme',
-		description:
-			'This key defines the color theme for syntax highlighting.\n\nBy default, this key is `monokai`.\n\nhttps://cloudcannon.com/documentation/articles/the-source-editor/#source_editor.theme',
-	}),
-	show_gutter: z.boolean().default(true).optional().meta({
-		description:
-			'This key toggles the gutter on the left of the editing interface, displaying line numbers and code folding controls.\n\nBy default, this key is `true`.\n\nhttps://cloudcannon.com/documentation/articles/the-source-editor/#source_editor.show_gutter',
-	}),
-	soft_wrap: z.boolean().default(false).optional().meta({
-		description: 'Enables soft wrapping of the code.',
-	}),
+	tab_size: z.number().default(2).optional(),
+	theme: ThemeSchema.default('basic_dark').optional(),
+	show_gutter: z.boolean().default(true).optional(),
+	soft_wrap: z.boolean().default(false).optional(),
 });
 
 export type Theme = z.infer<typeof ThemeSchema>;

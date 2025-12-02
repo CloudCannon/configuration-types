@@ -1,0 +1,91 @@
+{% set doc = gid | docFromGid %}
+
+<h1
+	data-editable="text"
+	data-prop="@file[/docs/documentation/{{ doc.gid }}.yml].title"
+	data-defer-mount
+>{{ doc.title | default(doc.key, true) }}</h1>
+
+<dl>
+	{% set parent = doc.parent | docFromGid %}
+	{% if appears_in | length or parent %}
+		<dt>Appears in:</dt>
+		{% if parent %}
+			<dd><a href="{{ parent.url }}"><code>{{ parent.url }}</code></a></dd>
+		{% endif %}
+
+		{% if appears_in | length %}
+			{% for appearsInGid in appears_in %}
+				{% set appearsInDoc = appearsInGid | docFromGid %}
+				<dd><a href="{{ appearsInDoc.url }}"><code>{{ appearsInDoc.url }}</code></a></dd>
+			{% endfor %}
+		{% endif %}
+	{% endif %}
+
+	{% if key %}
+		<dt>Key:</dt>
+		<dd><code>{{ key }}</code></dd>
+	{% endif %}
+
+	{% if full_key %}
+		<dt>Full key:</dt>
+		<dd><code>{{ full_key }}</code></dd>
+	{% endif %}
+
+	<dt>GID:</dt>
+	<dd><code>{{ gid }}</code></dd>
+
+	{% if not anyOf | length %}
+		<dt>Type:</dt>
+		<dd>
+			<code>{% renderFile "./_includes/doc-type.njk", doc %}</code>
+
+			{%- if required %}
+				<small style="color: red;">(Required)</small>
+			{%- endif -%}
+		</dd>
+	{% endif %}
+
+	<dt{% if not description %} class="show-in-cms"{% endif %}>Description:</dt>
+	<dd
+		data-editable="text"
+		data-type="block"
+		data-prop="@file[/docs/documentation/{{ gid }}.yml].description"
+	>{% if description %}{{ description | renderContent('md') | safe }}{% endif %}</dd>
+
+	{% if default %}
+		<dt>Default value:</dt>
+		<dd><code>{{ default }}</code></dd>
+	{% endif %}
+
+	{% if enum | length %}
+		<dt>Allowed values:</dt>
+		{% for value in enum %}
+			<dd><code>{{ value }}</code></dd>
+		{% endfor %}
+	{% endif %}
+
+	<dt{% if not documentation.examples | length %} class="show-in-cms"{% endif %}>Examples:</dt>
+	<editable-array data-prop="@file[/docs/documentation/{{ gid }}.yml].examples">
+		{% for example in documentation.examples %}
+			<dd data-editable="array-item">
+				<pre><code>{{ example }}</code></pre>
+			</dd>
+		{% endfor %}
+	</editable-array>
+
+	{% if type == "array" %}
+		{% renderFile "./_includes/pages/array.njk", doc %}
+	{% elif type == "object" %}
+		{% renderFile "./_includes/pages/object.njk", doc %}
+	{% elif anyOf | length %}
+		{% renderFile "./_includes/pages/any-of.njk", doc %}
+	{% endif %}
+</dl>
+
+<hr>
+
+<details>
+	<summary>Raw data</summary>
+	<pre><code>{{ doc | json }}</code></pre>
+</details>

@@ -1,0 +1,7 @@
+gid: type._editables.block.format
+url: /types/_editables/block/format/
+title: ''
+description: >-
+  Enables a drop down menu for structured text. Has options for "p", "h1", "h2",
+  "h3", "h4", "h5", "h6". Set as space separated options (e.g. "p h1 h2").
+examples: []

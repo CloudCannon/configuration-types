@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% set page_title = title | default(doc.title) | default(doc.key, true) %}
+		<title>{% if page_title %}{{ page_title }} - {% endif %} Autodocs</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⌨️</text></svg>">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+		<style>
+			:root {
+				--icon-width: 18px;
+			}
+
+			body {
+				max-width: 1200px;
+			}
+
+			dt {
+				font-weight: bold;
+				margin-bottom: 5px;
+				margin-top: 20px;
+			}
+
+			dd {
+				margin-left: 20px;
+			}
+
+			dt + dd > p:first-of-type {
+				margin-top: 0;
+			}
+
+			article {
+				border: 2px solid #aaa;
+				padding: 10px;
+				margin: 0;
+			}
+
+			article > :first-child {
+				margin-top: 0;
+			}
+
+			article p:last-of-type,
+			article > :last-child {
+				margin-bottom: 0;
+			}
+
+			dd + dd article {
+				margin-top: 10px;
+			}
+
+			dd + dd article.condensed {
+				margin-top: -2px;
+			}
+
+			body:not(.cms-editor-active) .show-in-cms {
+				display: none;
+			}
+
+			nav {
+				padding-top: 60px;
+			}
+
+			nav li {
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: block;
+				white-space: nowrap;
+			}
+
+			nav ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			nav ul ul {
+				margin-left: var(--icon-width);
+			}
+
+			.icon {
+				display: inline-block;
+				width: var(--icon-width);
+				text-align: center;
+			}
+
+			.flip-x {
+				transform: scaleX(-1);
+			}
+		</style>
+	</head>
+
+	<body>
+		{{ content | safe }}
+	</body>
+</html>

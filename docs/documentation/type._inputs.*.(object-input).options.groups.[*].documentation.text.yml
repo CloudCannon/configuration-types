@@ -1,0 +1,5 @@
+gid: type._inputs.*.(object-input).options.groups.[*].documentation.text
+url: /types/_inputs/*/(object-input)/options/groups/[*]/documentation/text/
+title: ''
+description: The visible text used in the link.
+examples: []

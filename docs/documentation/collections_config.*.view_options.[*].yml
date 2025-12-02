@@ -1,0 +1,5 @@
+gid: collections_config.*.view_options.[*]
+url: /collections_config/*/view_options/[*]/
+title: ''
+description: ''
+examples: []

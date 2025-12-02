@@ -1,0 +1,5 @@
+gid: type._inputs.*.(object-input).disabled.(query-string)
+url: /types/_inputs/*/(object-input)/disabled/(query-string)/
+title: Query String
+description: ''
+examples: []

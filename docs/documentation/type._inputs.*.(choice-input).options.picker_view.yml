@@ -1,0 +1,5 @@
+gid: type._inputs.*.(choice-input).options.picker_view
+url: /types/_inputs/*/(choice-input)/options/picker_view/
+title: ''
+description: Controls how selectable options are rendered.
+examples: []

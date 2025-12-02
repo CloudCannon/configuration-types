@@ -1,0 +1,5 @@
+gid: type._editables.content.code
+url: /types/_editables/content/code/
+title: ''
+description: 'Enables both block and inline code controls: `code_block` and `code_inline`.'
+examples: []

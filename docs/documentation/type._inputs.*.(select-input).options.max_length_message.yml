@@ -1,0 +1,7 @@
+gid: type._inputs.*.(select-input).options.max_length_message
+url: /types/_inputs/*/(select-input)/options/max_length_message/
+title: ''
+description: >-
+  This key defines the message that explains which maximum string length an
+  Input will accept. This key requires you to define `options.max_length`.
+examples: []

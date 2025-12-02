@@ -1,0 +1,8 @@
+gid: collections_config.*.icon
+url: /collections_config/*/icon/
+title: Icon
+description: >-
+  This key defines the icon for a Collection. Collection icons appear in the
+  _Site Navigation_ and are the default icon for Collection file Cards if you
+  have not defined `preview.icon`.
+examples: []

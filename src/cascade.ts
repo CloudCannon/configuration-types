@@ -19,14 +19,14 @@ export const ReducedCascadeSchema = z.object({
 export const CascadeSchema = z.object({
 	...ReducedCascadeSchema.shape,
 	_enabled_editors: z.array(EditorKeySchema).optional().meta({
-		id: '_enabled_editors',
+		id: 'type._enabled_editors',
 		title: 'Enabled Editors',
 		description:
 			'Set a preferred editor and/or disable the others. The first value sets which editor opens by default, and the following values specify which editors are accessible.',
 		uniqueItems: true,
 	}),
 	_editables: EditablesSchema.optional().meta({
-		id: '_editables',
+		id: 'type._editables',
 		title: 'Editables',
 		description:
 			'Configuration for editable regions in the Visual Editor, including content, block, link, image, and text editing options.',

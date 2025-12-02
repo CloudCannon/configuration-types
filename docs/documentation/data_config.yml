@@ -1,0 +1,13 @@
+gid: data_config
+url: /data_config/
+title: Data Configuration
+description: >-
+  Controls what data sets are available to populate select and multiselect
+  inputs.
+examples:
+  - |-
+    data_config:
+      locations:
+        path: data/locations.yml
+      authors:
+        path: data/authors

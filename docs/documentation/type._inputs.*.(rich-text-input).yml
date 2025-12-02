@@ -1,0 +1,5 @@
+gid: type._inputs.*.(rich-text-input)
+url: /types/_inputs/*/(rich-text-input)/
+title: Rich Text Input
+description: Provides an editing interface for HTML markup content.
+examples: []

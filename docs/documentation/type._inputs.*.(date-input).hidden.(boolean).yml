@@ -1,0 +1,5 @@
+gid: type._inputs.*.(date-input).hidden.(boolean)
+url: /types/_inputs/*/(date-input)/hidden/(boolean)/
+title: Boolean
+description: ''
+examples: []

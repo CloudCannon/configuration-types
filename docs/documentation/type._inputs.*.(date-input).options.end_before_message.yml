@@ -1,0 +1,8 @@
+gid: type._inputs.*.(date-input).options.end_before_message
+url: /types/_inputs/*/(date-input)/options/end_before_message/
+title: ''
+description: >-
+  This key defines the message that explains why an Input needs to have an end
+  date. This key requires you to define `options.end_before`. This key has no
+  default.
+examples: []

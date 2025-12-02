@@ -1,0 +1,7 @@
+gid: >-
+  type.snippet.params.*.(argument-list-parser-config).options.format.allowed_string_cases.leading_upper
+url: >-
+  /types/snippet/params/*/(argument-list-parser-config)/options/format/allowed_string_cases/leading_upper/
+title: ''
+description: ''
+examples: []

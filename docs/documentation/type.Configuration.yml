@@ -1,0 +1,5 @@
+gid: type.Configuration
+url: /
+title: Configuration
+description: The main CloudCannon configuration schema.
+examples: []

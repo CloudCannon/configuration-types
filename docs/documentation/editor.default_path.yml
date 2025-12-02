@@ -1,0 +1,7 @@
+gid: editor.default_path
+url: /editor/default_path/
+title: ''
+description: >-
+  The URL used for the dashboard screenshot, and where the editor opens to when
+  clicking the dashboard "Edit Home" button.
+examples: []

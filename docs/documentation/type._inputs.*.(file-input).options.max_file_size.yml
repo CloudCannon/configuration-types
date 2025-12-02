@@ -1,0 +1,11 @@
+gid: type._inputs.*.(file-input).options.max_file_size
+url: /types/_inputs/*/(file-input)/options/max_file_size/
+title: ''
+description: >-
+  This key defines the maximum file size, in kilobytes, that CloudCannon will
+  allow in an Input. When configured, CloudCannon will prevent you from
+  uploading a file larger than the specified size. If the Input already contains
+  a file larger than the specified size, CloudCannon will require you to change
+  it to a valid value to save your changes, or discard your unsaved changes.
+  Value can be any positive integer.
+examples: []

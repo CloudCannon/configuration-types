@@ -1,0 +1,9 @@
+gid: collections_config.*.add_options.[*].(add-option).schema
+url: /collections_config/*/add_options/[*]/(add-option)/schema/
+title: ''
+description: >-
+  The schema that new files are created from with this action. This schema is
+  not restricted to the containing collection, and is instead relative to the
+  collection specified with collection. Defaults to default if schemas are
+  configured for the collection.
+examples: []

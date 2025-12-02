@@ -1,0 +1,7 @@
+gid: collection_groups
+url: /collection_groups/
+title: Collection Groups
+description: >-
+  Defines which collections are shown in the site navigation and how those
+  collections are grouped.
+examples: []

@@ -1,0 +1,5 @@
+gid: type._inputs.*.(select-input).options
+url: /types/_inputs/*/(select-input)/options/
+title: ''
+description: Options that are specific to Select Inputs.
+examples: []

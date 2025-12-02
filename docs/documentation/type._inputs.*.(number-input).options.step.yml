@@ -1,0 +1,7 @@
+gid: type._inputs.*.(number-input).options.step
+url: /types/_inputs/*/(number-input)/options/step/
+title: ''
+description: >-
+  A number that specifies the granularity that the value must adhere to, or the
+  special value any, which allows any decimal value between `max` and `min`.
+examples: []

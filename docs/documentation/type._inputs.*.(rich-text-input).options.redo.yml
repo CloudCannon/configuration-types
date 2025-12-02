@@ -1,0 +1,7 @@
+gid: type._inputs.*.(rich-text-input).options.redo
+url: /types/_inputs/*/(rich-text-input)/options/redo/
+title: ''
+description: >-
+  Enables a control to redo recent edits undone with undo. Redo is always
+  enabled through standard OS-specific keyboard shortcuts.
+examples: []

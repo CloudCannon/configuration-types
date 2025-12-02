@@ -215,22 +215,32 @@ export const LinkEditableSchema = z.object({
 
 export const EditablesSchema = z.object({
 	content: BlockEditableSchema.optional().meta({
+		id: 'ContentEditable',
+		title: 'Content Editable',
 		description: 'Contains input options for the Content Editor.',
 	}),
 
 	block: BlockEditableSchema.optional().meta({
+		id: 'BlockEditable',
+		title: 'Block Editable',
 		description: 'Contains input options for block Editable Regions.',
 	}),
 
 	link: LinkEditableSchema.optional().meta({
+		id: 'LinkEditable',
+		title: 'Link Editable',
 		description: 'Contains input options for link Editable Regions.',
 	}),
 
 	image: ImageEditableSchema.optional().meta({
+		id: 'ImageEditable',
+		title: 'Image Editable',
 		description: 'Contains input options for image Editable Regions.',
 	}),
 
 	text: TextEditableSchema.optional().meta({
+		id: 'TextEditable',
+		title: 'Text Editable',
 		description: 'Contains input options for text Editable Regions.',
 	}),
 });

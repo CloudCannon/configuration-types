@@ -1,0 +1,5 @@
+gid: type._inputs.*.(choice-input).hidden
+url: /types/_inputs/*/(choice-input)/hidden/
+title: ''
+description: Toggles the visibility of this input.
+examples: []

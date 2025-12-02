@@ -1,0 +1,9 @@
+gid: type._editables.content.remove_custom_markup
+url: /types/_editables/content/remove_custom_markup/
+title: ''
+description: >-
+  Defines if the content should be stripped of "custom markup". It is
+  recommended to have this option turned on once you have all of your rich text
+  options configured. Having `allow_custom_markup` turned on disables this
+  option. Defaults to false.
+examples: []

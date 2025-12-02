@@ -1,0 +1,5 @@
+gid: base_url
+url: /base_url/
+title: ''
+description: The subpath where your output files are hosted.
+examples: []

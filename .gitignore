@@ -2,3 +2,4 @@ node_modules/
 dist/
 site/*.schema.json
 coverage/
+docs-site/_site

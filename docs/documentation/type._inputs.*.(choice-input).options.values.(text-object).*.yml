@@ -1,0 +1,5 @@
+gid: type._inputs.*.(choice-input).options.values.(text-object).*
+url: /types/_inputs/*/(choice-input)/options/values/(text-object)/*/
+title: ''
+description: ''
+examples: []

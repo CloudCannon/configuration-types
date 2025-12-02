@@ -1,0 +1,5 @@
+gid: type._inputs.*.(array-input).disabled.(boolean)
+url: /types/_inputs/*/(array-input)/disabled/(boolean)/
+title: Boolean
+description: ''
+examples: []

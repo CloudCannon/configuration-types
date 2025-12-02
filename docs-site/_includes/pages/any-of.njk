@@ -1,0 +1,18 @@
+{% if anyOf | length %}
+	<dt>Types:</dt>
+	{% for anyOfRef in anyOf %}
+		<dd>
+			<article>
+				{% set anyOfDoc = anyOfRef | docFromRef %}
+				<p>
+					{% if anyOfDoc.url %}
+						<em><a href="{{ anyOfDoc.url }}">{{ anyOfDoc.title | default(anyOfDoc.key, true) }}</a></em> —
+					{% endif %}
+
+					<code>{% renderFile "./_includes/doc-type.njk", anyOfDoc %}</code>
+				</p>
+				{% renderFile "./_includes/doc-summary.njk", anyOfDoc %}
+			</article>
+		</dd>
+	{% endfor %}
+{% endif %}

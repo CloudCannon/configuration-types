@@ -1,0 +1,5 @@
+gid: type._inputs.*.(rich-text-input).options.pattern_flags.unicode
+url: /types/_inputs/*/(rich-text-input)/options/pattern_flags/unicode/
+title: ''
+description: '`u` - Pattern is treated as a sequence of Unicode code points.'
+examples: []

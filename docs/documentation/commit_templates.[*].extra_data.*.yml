@@ -1,0 +1,5 @@
+gid: commit_templates.[*].extra_data.*
+url: /commit_templates/[*]/extra_data/*/
+title: ''
+description: ''
+examples: []

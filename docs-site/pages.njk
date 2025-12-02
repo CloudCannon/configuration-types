@@ -1,0 +1,16 @@
+---
+pagination:
+  data: docs
+  size: 1
+  alias: doc
+permalink: "/{{ doc.url }}/"
+layout: layouts/default.njk
+---
+
+<div style="display: grid; grid-template-columns: 270px 1fr; gap: 20px;">
+	{% include "nav.njk" %}
+
+	<main>
+		{% renderFile "./_includes/doc-page.njk", doc %}
+	</main>
+</div>

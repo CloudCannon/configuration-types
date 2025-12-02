@@ -1,0 +1,5 @@
+gid: type._inputs.*.(object-input).options.groups.[*].documentation.url
+url: /types/_inputs/*/(object-input)/options/groups/[*]/documentation/url/
+title: ''
+description: The "href" value of the link.
+examples: []

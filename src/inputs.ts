@@ -5,15 +5,10 @@ import { IconSchema } from './icon';
 import { ImageOptionsSchema } from './image-options';
 import { MimeTypeSchema } from './mimetype';
 import { PathsSchema } from './paths';
-import {
-	IconBackgroundColorSchema,
-	IconColorSchema,
-	PickerPreviewSchema,
-	PreviewSchema,
-} from './preview';
+import { PreviewEntriesSchema, PreviewSchema } from './preview';
 import { SelectDataValuesSchema } from './select-values';
 import { SourceEditorSchema } from './source-editor';
-import { StructureSchema } from './structures';
+import { StructureReferenceSchema, StructureSchema } from './structures';
 import { SyntaxSchema } from './syntax';
 import { TimezoneSchema } from './timezone';
 
@@ -169,16 +164,16 @@ const ArrayValidationSchema = z.object({
 });
 
 const ArrayControlOptionsSchema = z.object({
-	disable_add: z.boolean().default(false).meta({
+	disable_add: z.boolean().default(false).optional().meta({
 		id: 'ArrayInput.disable_add',
 		description:
 			'Hides the add button, and context menu actions on each item for adding new items to this Input.',
 	}),
-	disable_remove: z.boolean().default(false).meta({
+	disable_remove: z.boolean().default(false).optional().meta({
 		id: 'disable_remove',
 		description: 'Hides the context menu actions on each item for removing them.',
 	}),
-	disable_reorder: z.boolean().default(false).meta({
+	disable_reorder: z.boolean().default(false).optional().meta({
 		id: 'disable_reorder',
 		description: 'Hides the controls on each item for moving them.',
 	}),
@@ -238,14 +233,22 @@ export const BaseInputSchema = z.object({
 		id: 'label',
 		description: 'Optionally changes the text above this input.',
 	}),
-	hidden: z.boolean().default(false).optional().meta({
-		id: 'hidden',
-		description: 'Toggles the visibility of this input.',
-	}),
-	disabled: z.boolean().default(false).optional().meta({
-		id: 'disabled',
-		description: 'Toggles if this input can be edited.',
-	}),
+	hidden: z
+		.union([z.boolean().meta({ title: 'Boolean' }), z.string().meta({ title: 'Query String' })])
+		.default(false)
+		.optional()
+		.meta({
+			id: 'hidden',
+			description: 'Toggles the visibility of this input.',
+		}),
+	disabled: z
+		.union([z.boolean().meta({ title: 'Boolean' }), z.string().meta({ title: 'Query String' })])
+		.default(false)
+		.optional()
+		.meta({
+			id: 'disabled',
+			description: 'Toggles if this input can be edited.',
+		}),
 	instance_value: z.enum(['UUID', 'NOW']).optional().meta({
 		id: 'instance_value',
 		title: 'Instance Value',
@@ -257,7 +260,7 @@ export const BaseInputSchema = z.object({
 		description:
 			'Prevents the default where inputs configured with an `instance_value` are rehydrated with a new value when duplicated in the CMS.',
 	}),
-	cascade: z.boolean().default(false).optional().meta({
+	cascade: z.boolean().default(true).optional().meta({
 		id: 'cascade',
 		description:
 			'Specifies whether or not this input configuration should be merged with any matching, less specific configuration.',
@@ -275,8 +278,8 @@ export const TextInputOptionsSchema = z
 		icon: IconSchema.optional().meta({
 			description: 'Icon shown beside the input.',
 		}),
-		icon_color: IconColorSchema.optional(),
-		icon_background_color: IconBackgroundColorSchema.optional(),
+		icon_color: PreviewEntriesSchema.optional(),
+		icon_background_color: PreviewEntriesSchema.optional(),
 	})
 	.meta({
 		description: 'Options that are specific to Text Inputs.',
@@ -301,6 +304,8 @@ export const TextInputSchema = z
 	})
 	.meta({
 		id: 'TextInput',
+		title: 'Text Input',
+		description: 'Provides a simple editing interface for plain text.',
 	});
 
 export const TextareaInputOptionsSchema = z
@@ -327,6 +332,8 @@ export const TextareaInputSchema = z
 	})
 	.meta({
 		id: 'TextareaInput',
+		title: 'Textarea Input',
+		description: 'Provides an editing interface for plain text.',
 	});
 
 export const CodeInputOptionsSchema = z
@@ -360,6 +367,8 @@ export const CodeInputSchema = z
 	})
 	.meta({
 		id: 'CodeInput',
+		title: 'Code Input',
+		description: 'Provides an editing interface for code or mono-spaced plain text content.',
 	});
 
 export const ColorInputOptionsSchema = z
@@ -388,15 +397,19 @@ export const ColorInputSchema = z
 	})
 	.meta({
 		id: 'ColorInput',
+		title: 'Color Input',
+		description: 'Provides an editing interface for color values.',
 	});
 
 export const BooleanInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
-		type: z.literal('checkbox').meta(typeMeta),
+		type: z.enum(['checkbox', 'switch']).meta(typeMeta),
 	})
 	.meta({
 		id: 'BooleanInput',
+		title: 'Boolean Input',
+		description: 'Provides an editing interface for true or false values.',
 	});
 
 const MinSchema = z.number().meta({
@@ -445,6 +458,8 @@ export const NumberInputSchema = z
 	})
 	.meta({
 		id: 'NumberInput',
+		title: 'Number Input',
+		description: 'Provides an editing interface for numeric values.',
 	});
 
 export const RangeInputOptionsSchema = z
@@ -465,6 +480,8 @@ export const RangeInputSchema = z
 	})
 	.meta({
 		id: 'RangeInput',
+		title: 'Range Input',
+		description: 'Provides a slider interface for selecting a numeric value.',
 	});
 
 export const RichTextInputOptionsSchema = z
@@ -493,20 +510,22 @@ export const RichTextInputSchema = z
 	})
 	.meta({
 		id: 'RichTextInput',
+		title: 'Rich Text Input',
+		description: 'Provides an editing interface for HTML markup content.',
 	});
 
 export const DateInputOptionsSchema = z
 	.object({
 		...RequiredValidationSchema.shape,
 		empty_type: EmptyTypeTextSchema.optional(),
-		timezone: TimezoneSchema.optional().default('Etc/UTC').meta({
+		timezone: TimezoneSchema.optional().meta({
 			description:
 				'Specifies the time zone that dates are displayed and edited in. Also changes the suffix the date is persisted to the file with. Defaults to the global `timezone`.',
 		}),
 		start_from: z
 			.union([
-				z.iso.datetime({ offset: true, local: true }),
-				z.coerce.string().meta({ isJsonSchemaAny: true }),
+				z.iso.datetime({ offset: true, local: true }).meta({ title: 'ISO8601 String' }),
+				z.coerce.string().meta({ isJsonSchemaAny: true, documentationType: 'date', title: 'Date' }),
 			])
 			.optional()
 			.meta({
@@ -519,8 +538,8 @@ export const DateInputOptionsSchema = z
 		}),
 		end_before: z
 			.union([
-				z.iso.datetime({ offset: true, local: true }),
-				z.coerce.string().meta({ isJsonSchemaAny: true }),
+				z.iso.datetime({ offset: true, local: true }).meta({ title: 'ISO8601 String' }),
+				z.coerce.string().meta({ isJsonSchemaAny: true, documentationType: 'date', title: 'Date' }),
 			])
 			.optional()
 			.meta({
@@ -544,6 +563,8 @@ export const DateInputSchema = z
 	})
 	.meta({
 		id: 'DateInput',
+		title: 'Date Input',
+		description: 'Provides an editing interface for date and/or time values.',
 	});
 
 export const TimeInputOptionsSchema = z
@@ -563,6 +584,8 @@ export const TimeInputSchema = z
 	})
 	.meta({
 		id: 'TimeInput',
+		title: 'Time Input',
+		description: 'Provides an editing interface for time values only.',
 	});
 
 export const FileInputOptionsSchema = z
@@ -573,7 +596,10 @@ export const FileInputOptionsSchema = z
 		empty_type: EmptyTypeTextSchema.optional(),
 		paths: PathsSchema.optional(),
 		accepts_mime_types: z
-			.union([z.string(), z.array(MimeTypeSchema)])
+			.union([
+				z.string().meta({ title: 'Comma Separated' }),
+				z.array(MimeTypeSchema).meta({ title: 'Array' }),
+			])
 			.optional()
 			.meta({
 				id: 'accepts_mime_types',
@@ -617,6 +643,9 @@ export const FileInputSchema = z
 	})
 	.meta({
 		id: 'FileInput',
+		title: 'File Input',
+		description:
+			'Provides an editing interface for uploading files to your repository or DAM and browsing existing assets.',
 	});
 
 export const UrlInputOptionsSchema = z
@@ -651,12 +680,14 @@ export const UrlInputSchema = z
 	})
 	.meta({
 		id: 'UrlInput',
+		title: 'URL Input',
+		description: 'Provides an editing interface for relative, absolute, and fully qualified URLs.',
 	});
 
 export const SharedSelectInputOptionsSchema = z.object({
 	...RequiredValidationSchema.shape,
 	preview: PreviewSchema.optional(),
-	picker_preview: PickerPreviewSchema.optional(),
+	picker_preview: PreviewSchema.optional(),
 	allow_create: z.boolean().default(false).optional().meta({
 		id: 'allow_create',
 		description: 'Allows new text values to be created at edit time.',
@@ -665,11 +696,17 @@ export const SharedSelectInputOptionsSchema = z.object({
 		id: 'allow_empty',
 		description: 'Provides an empty option alongside the options provided by values.',
 	}),
-	values: z.union([z.string(), SelectDataValuesSchema]).optional().meta({
-		id: 'values',
-		description:
-			'Defines the values available to choose from. Optional, defaults to fetching values from the naming convention (e.g. colors or my_colors for data set colors).',
-	}),
+	values: z
+		.union([
+			z.string().meta({ title: 'Dataset Reference', description: 'Reference to a dataset.' }),
+			SelectDataValuesSchema,
+		])
+		.optional()
+		.meta({
+			id: 'values',
+			description:
+				'Defines the values available to choose from. Optional, defaults to fetching values from the naming convention (e.g. colors or my_colors for data set colors).',
+		}),
 	value_key: z.string().optional().meta({
 		id: 'value_key',
 		description:
@@ -703,6 +740,9 @@ export const SelectInputSchema = z
 	})
 	.meta({
 		id: 'SelectInput',
+		title: 'Select Input',
+		description:
+			'Provides an editing interface for data with multiple predefined options. Select inputs only allow one value.',
 	});
 
 export const MultiselectInputOptionsSchema = z
@@ -723,6 +763,9 @@ export const MultiselectInputSchema = z
 	})
 	.meta({
 		id: 'MultiselectInput',
+		title: 'Multiselect Input',
+		description:
+			'Provides an editing interface for data with multiple predefined options. Multiselect inputs allow several values.',
 	});
 
 export const SharedChoiceInputOptionsSchema = SharedSelectInputOptionsSchema.omit({
@@ -747,6 +790,9 @@ export const ChoiceInputSchema = z
 	})
 	.meta({
 		id: 'ChoiceInput',
+		title: 'Choice Input',
+		description:
+			'Provides an editing interface for data with multiple predefined options. Choice inputs only allow one value.',
 	});
 
 export const MultichoiceInputOptionsSchema = z
@@ -767,6 +813,9 @@ export const MultichoiceInputSchema = z
 	})
 	.meta({
 		id: 'MultichoiceInput',
+		title: 'Multichoice Input',
+		description:
+			'Provides an editing interface for data with multiple predefined options. Multichoice inputs allow several values.',
 	});
 
 export const ObjectInputGroupSchema = z.object({
@@ -808,18 +857,28 @@ export const ObjectInputOptionsSchema = z
 						'Provides data formats when adding entries to the data within this object input. When adding an entry, team members are prompted to choose from a number of values you have defined. Has no effect if `allow_create` is false. `entries.structures` applies to the entries within the object.',
 				}),
 				get structures() {
-					return z.union([z.string(), StructureSchema]).optional().meta({
+					return z.union([StructureReferenceSchema, StructureSchema]).optional().meta({
 						description:
 							'Provides data formats for value of this object. When choosing an item, team members are prompted to choose from a number of values you have defined. `structures` applies to the object itself.',
 					});
 				},
+				comment: z.string().optional().meta({
+					id: 'entries_comment',
+					description:
+						'Used to supply help text above the key input when adding/renaming within a mutable object input. Has no default. Supports a limited set of Markdown: links, bold, italic, subscript, superscript and inline code elements are allowed.',
+				}),
+				documentation: DocumentationSchema.optional().meta({
+					id: 'entries_documentation',
+					description:
+						'Provides a custom link for documentation for editors shown above the key input when adding/renaming within a mutable object input.',
+				}),
 			})
 			.optional()
 			.meta({
 				description: 'Contains options for the "mutable" subtype.',
 			}),
 		get structures() {
-			return z.union([z.string(), StructureSchema]).optional().meta({
+			return z.union([StructureReferenceSchema, StructureSchema]).optional().meta({
 				description:
 					'Provides data formats for value of this object. When choosing an item, team members are prompted to choose from a number of values you have defined. `structures` applies to the object itself.',
 			});
@@ -850,6 +909,8 @@ export const ObjectInputSchema = z
 	})
 	.meta({
 		id: 'ObjectInput',
+		title: 'Object Input',
+		description: 'Provides a user interface for a group of inputs.',
 	});
 
 export const ArrayInputOptionsSchema = z
@@ -859,7 +920,7 @@ export const ArrayInputOptionsSchema = z
 		...ArrayControlOptionsSchema.shape,
 		empty_type: EmptyTypeArraySchema.optional(),
 		get structures() {
-			return z.union([z.string(), StructureSchema]).optional().meta({
+			return z.union([StructureReferenceSchema, StructureSchema]).optional().meta({
 				description:
 					'Provides data formats for value of this object. When choosing an item, team members are prompted to choose from a number of values you have defined.',
 			});
@@ -877,6 +938,8 @@ export const ArrayInputSchema = z
 	})
 	.meta({
 		id: 'ArrayInput',
+		title: 'Array Input',
+		description: 'Provides a user interface for lists of inputs or input groups.',
 	});
 
 export const AutoInputSchema = z
@@ -889,6 +952,9 @@ export const AutoInputSchema = z
 	})
 	.meta({
 		id: 'AutoInput',
+		title: 'Automatic Input',
+		description: 'Provides a default user interface based on the data contained.',
+		excludeFromDocumentation: true,
 	});
 
 export const UnknownInputSchema = z
@@ -901,8 +967,8 @@ export const UnknownInputSchema = z
 	.meta({
 		id: 'UnknownInput',
 		title: 'Unknown Input',
-		description:
-			'An input type that is not known to the CloudCannon configuration schema. This is logically the same as `AutoInput`, but is used for inputs that have no type set.',
+		description: 'Provides a default user interface based on the data contained.',
+		excludeFromDocumentation: true,
 	});
 
 export const KnownInputSchema = z
@@ -935,10 +1001,11 @@ export const KnownInputSchema = z
 
 export const InputSchema = z.union([KnownInputSchema, UnknownInputSchema]).meta({
 	id: 'Input',
+	title: 'Input',
 });
 
 export const InputsSchema = z.record(z.string(), InputSchema).meta({
-	id: '_inputs',
+	id: 'type._inputs',
 	title: 'Inputs',
 	description:
 		'Controls the behavior and appearance of your inputs in all data editing interfaces.',

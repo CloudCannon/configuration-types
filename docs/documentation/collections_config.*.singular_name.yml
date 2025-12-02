@@ -1,0 +1,8 @@
+gid: collections_config.*.singular_name
+url: /collections_config/*/singular_name/
+title: ''
+description: >-
+  This key defines the singular noun for your Collection name. CloudCannon uses
+  the singular noun in the _+ Add_ button in the top right of the _Collection
+  browser_.
+examples: []

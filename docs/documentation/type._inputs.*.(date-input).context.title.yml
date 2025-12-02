@@ -1,0 +1,5 @@
+gid: type._inputs.*.(date-input).context.title
+url: /types/_inputs/*/(date-input)/context/title/
+title: ''
+description: The text shown when not open. Defaults to "Context" if unset.
+examples: []

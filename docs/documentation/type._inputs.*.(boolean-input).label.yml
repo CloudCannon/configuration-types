@@ -1,0 +1,5 @@
+gid: type._inputs.*.(boolean-input).label
+url: /types/_inputs/*/(boolean-input)/label/
+title: ''
+description: Optionally changes the text above this input.
+examples: []

@@ -1,0 +1,47 @@
+<dt>Properties:</dt>
+{% if properties | length %}
+	{% for key, propRef in properties %}
+		<dd>
+			<article class="condensed">
+				{% set propDoc = propRef | docFromRef %}
+
+				{% if propDoc.url %}
+					<strong><a href="{{ propDoc.url }}">{{ key }}</a></strong>
+				{% else %}
+					<strong>{{ key }}</strong>
+				{% endif %}
+
+				– <code>{% renderFile "./_includes/doc-type.njk", propDoc %}</code>
+
+				{%- if propDoc.required %}
+					<small style="color: red;">(Required)</small>
+				{%- endif -%}
+
+				{% renderFile "./_includes/doc-summary.njk", propDoc %}
+			</article>
+		</dd>
+	{% endfor %}
+{% else %}
+	<dd><p>There are no reserved properties.</p></dd>
+{% endif %}
+
+<dt>Additional properties:</dt>
+{% if additionalProperties | length %}
+	{% for additionalPropRef in additionalProperties %}
+		<dd>
+			<article>
+				{% set additionalPropDoc = additionalPropRef | docFromRef %}
+				<p>
+					{% if additionalPropDoc.url %}
+						<em><a href="{{ additionalPropDoc.url }}">{{ additionalPropDoc.title | default(additionalPropDoc.key, true) }}</a></em> —
+					{% endif %}
+
+					<code>{% renderFile "./_includes/doc-type.njk", additionalPropDoc %}</code>
+				</p>
+				{% renderFile "./_includes/doc-summary.njk", additionalPropDoc %}
+			</article>
+		</dd>
+	{% endfor %}
+{% else %}
+	<dd><p>All other properties are invalid.</p></dd>
+{% endif %}

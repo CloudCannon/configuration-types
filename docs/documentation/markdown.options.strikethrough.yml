@@ -1,0 +1,5 @@
+gid: markdown.options.strikethrough
+url: /markdown/options/strikethrough/
+title: ''
+description: Output strikes in wrapped in double tildes (e.g. `~~strike~~`).
+examples: []

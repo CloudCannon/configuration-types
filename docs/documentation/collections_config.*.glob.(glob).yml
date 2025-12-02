@@ -1,0 +1,5 @@
+gid: collections_config.*.glob.(glob)
+url: /collections_config/*/glob/(glob)/
+title: Glob
+description: ''
+examples: []

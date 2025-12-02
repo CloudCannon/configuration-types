@@ -1,0 +1,5 @@
+gid: type._inputs.*.(rich-text-input).options.allow_resize
+url: /types/_inputs/*/(rich-text-input)/options/allow_resize/
+title: ''
+description: Shows or hides the resize handler to vertically resize the input.
+examples: []

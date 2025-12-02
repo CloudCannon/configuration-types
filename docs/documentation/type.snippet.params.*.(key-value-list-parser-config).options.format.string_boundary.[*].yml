@@ -1,0 +1,7 @@
+gid: >-
+  type.snippet.params.*.(key-value-list-parser-config).options.format.string_boundary.[*]
+url: >-
+  /types/snippet/params/*/(key-value-list-parser-config)/options/format/string_boundary/[*]/
+title: ''
+description: ''
+examples: []

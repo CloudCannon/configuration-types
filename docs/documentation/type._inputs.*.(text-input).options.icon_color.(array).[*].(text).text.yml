@@ -1,0 +1,5 @@
+gid: type._inputs.*.(text-input).options.icon_color.(array).[*].(text).text
+url: /types/_inputs/*/(text-input)/options/icon_color/(array)/[*]/(text)/text/
+title: Text Value
+description: ''
+examples: []

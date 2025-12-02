@@ -1,0 +1,5 @@
+gid: markdown.options.subscript
+url: /markdown/options/subscript/
+title: ''
+description: Output subscript in wrapped in tildes (e.g. `~sub~`).
+examples: []

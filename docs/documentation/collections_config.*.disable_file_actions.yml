@@ -1,0 +1,7 @@
+gid: collections_config.*.disable_file_actions
+url: /collections_config/*/disable_file_actions/
+title: ''
+description: >-
+  This key toggles whether team members can use the _+ Add_ button in the top
+  right of the _Collection browser_ to add files to a Collection.
+examples: []

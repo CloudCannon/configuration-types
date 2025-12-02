@@ -598,10 +598,6 @@ export const TimezoneSchema = z
 		'WET',
 		'Zulu',
 	])
-	.meta({
-		id: 'Timezone',
-		title: 'Timezone',
-		description: 'IANA timezone identifiers for date and time formatting in CloudCannon.',
-	});
+	.meta({ id: 'type.timezone', title: 'Timezone' });
 
 export type Timezone = z.infer<typeof TimezoneSchema>;

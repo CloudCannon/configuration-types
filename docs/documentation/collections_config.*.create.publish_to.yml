@@ -1,0 +1,7 @@
+gid: collections_config.*.create.publish_to
+url: /collections_config/*/create/publish_to/
+title: ''
+description: >-
+  Defines a target collection when publishing. When a file is published, the
+  target collection's create definition is used instead.
+examples: []

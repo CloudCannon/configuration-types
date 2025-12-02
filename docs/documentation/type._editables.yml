@@ -1,0 +1,7 @@
+gid: type._editables
+url: /types/_editables/
+title: Editables
+description: >-
+  Configuration for editable regions in the Visual Editor, including content,
+  block, link, image, and text editing options.
+examples: []

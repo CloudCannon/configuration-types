@@ -1,0 +1,8 @@
+gid: type._inputs.*.(file-input).options.mime_type
+url: /types/_inputs/*/(file-input)/options/mime_type/
+title: Mime Type
+description: >-
+  Sets the format images are converted to prior to upload. The extension of the
+  file is updated to match. Defaults to keeping the mime type of the uploaded
+  file.
+examples: []

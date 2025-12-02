@@ -1,0 +1,5 @@
+gid: collections_config.*.sort_options.[*].order
+url: /collections_config/*/sort_options/[*]/order/
+title: ''
+description: Controls which sort values come first.
+examples: []

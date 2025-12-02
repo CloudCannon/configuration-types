@@ -1,0 +1,5 @@
+gid: type._inputs.*.(url-input).options
+url: /types/_inputs/*/(url-input)/options/
+title: ''
+description: Options that are specific to URL Inputs.
+examples: []

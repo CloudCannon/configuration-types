@@ -1,0 +1,7 @@
+gid: type._inputs.*.(multichoice-input).options.unique_on_message
+url: /types/_inputs/*/(multichoice-input)/options/unique_on_message/
+title: ''
+description: >-
+  This key defines the message that explains why an Input needs to be unique.
+  This key requires you to define `options.unique_on`.
+examples: []
