@@ -83,6 +83,7 @@ export const ConfigurationSchema = z
 			.record(z.string(), CollectionConfigSchema)
 			.optional()
 			.meta({ id: 'collections_config' }),
+		collections_config_from_glob: z.array(z.string()).optional(),
 		collection_groups: z
 			.array(CollectionGroupSchema)
 			.optional()
@@ -105,17 +106,21 @@ export const ConfigurationSchema = z
 			title: 'Snippets',
 			description: 'Configuration for custom snippets.',
 		}),
+		_snippets_from_glob: z.array(z.string()).optional(),
 		_snippets_imports: SnippetsImportsSchema.optional(),
+		_snippets_imports_from_glob: z.array(z.string()).optional(),
 		_snippets_templates: z.record(z.string(), SnippetConfigSchema).optional().meta({
 			id: 'type._snippets_templates',
 			title: 'Snippets Templates',
 			description: 'Extended option used when creating more complex custom snippets.',
 		}),
+		_snippets_templates_from_glob: z.array(z.string()).optional(),
 		_snippets_definitions: z.record(z.string(), z.unknown()).optional().meta({
 			id: 'type._snippets_definitions',
 			title: 'Snippets Definitions',
 			description: 'Extended option used when creating more complex custom snippets.',
 		}),
+		_snippets_definitions_from_glob: z.array(z.string()).optional(),
 	})
 	.meta({
 		title: 'Configuration',

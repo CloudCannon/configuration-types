@@ -37,10 +37,12 @@ export const StructureValueSchema = StructureBaseSchema.extend({
 	get _inputs() {
 		return InputsSchema.optional();
 	},
+	_inputs_from_glob: z.array(z.string()).optional(),
 	_select_data: SelectDataSchema.optional(),
 	get _structures() {
 		return StructuresSchema.optional();
 	},
+	_structures_from_glob: z.array(z.string()).optional(),
 
 	id: z.string().optional().meta({
 		description:
@@ -99,6 +101,7 @@ export const StructureSchema = z
 		values: z.array(StructureValueSchema).meta({
 			description: 'Defines what values are available to add when using this structure.',
 		}),
+		values_from_glob: z.array(z.string()).optional(),
 		id_key: z.string().default('_type').optional().meta({
 			description:
 				'Defines what key should be used to detect which structure an item is. If this key is not found in the existing structure, a comparison of key names is used. Defaults to "_type".',

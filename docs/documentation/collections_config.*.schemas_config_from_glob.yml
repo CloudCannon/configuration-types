@@ -1,0 +1,5 @@
+gid: collections_config.*.schemas_config_from_glob
+url: /collections_config/*/schemas_config_from_glob/
+title: ''
+description: ''
+examples: []
