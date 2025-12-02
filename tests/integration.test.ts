@@ -335,12 +335,12 @@ describe('Integration Tests', () => {
 				_snippets: {
 					youtube: {
 						snippet:
-							'<div class="video-embed">\n  <iframe src="https://youtube.com/embed/{{id}}" frameborder="0"></iframe>\n</div>',
+							'<div class="video-embed"><iframe src="https://youtube.com/embed/{{[[id]]}}" frameborder="0"></iframe></div>',
 						params: {
 							id: {
-								parser: {
-									regex: '(?:youtube\\.com\\/watch\\?v=|youtu\\.be\\/)([\\w-]+)',
-									flags: 'i',
+								parser: 'content',
+								options: {
+									editor_key: 'id',
 								},
 							},
 						},
