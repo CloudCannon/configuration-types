@@ -98,7 +98,7 @@ export const ConfigurationSchema = z
 		commit_templates: z.array(CommitTemplateSchema).optional().meta({ id: 'commit_templates' }),
 		upstream_commit_template: z.string().optional().meta({ id: 'upstream_commit_template' }),
 		markdown: MarkdownSettingsSchema.optional().meta({ id: 'markdown' }),
-		timezone: TimezoneSchema.optional().default('Etc/UTC'),
+		timezone: TimezoneSchema.default('Etc/UTC').optional(),
 		...CascadeSchema.shape,
 		_snippets: z.record(z.string(), SnippetConfigSchema).optional().meta({
 			id: 'type._snippets',

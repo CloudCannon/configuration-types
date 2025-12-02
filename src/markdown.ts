@@ -21,7 +21,7 @@ export const MarkdownAttributeElementOptionsSchema = z
 
 export const MarkdownSettingsSchema = z
 	.object({
-		engine: z.enum(['commonmark', 'kramdown']).optional().default('commonmark').meta({
+		engine: z.enum(['commonmark', 'kramdown']).default('commonmark').optional().meta({
 			description: 'The flavor of Markdown to use to convert between HTML and Markdown.',
 		}),
 		options: z

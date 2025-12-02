@@ -164,16 +164,16 @@ const ArrayValidationSchema = z.object({
 });
 
 const ArrayControlOptionsSchema = z.object({
-	disable_add: z.boolean().optional().default(false).meta({
+	disable_add: z.boolean().default(false).optional().meta({
 		id: 'ArrayInput.disable_add',
 		description:
 			'Hides the add button, and context menu actions on each item for adding new items to this Input.',
 	}),
-	disable_remove: z.boolean().optional().default(false).meta({
+	disable_remove: z.boolean().default(false).optional().meta({
 		id: 'disable_remove',
 		description: 'Hides the context menu actions on each item for removing them.',
 	}),
-	disable_reorder: z.boolean().optional().default(false).meta({
+	disable_reorder: z.boolean().default(false).optional().meta({
 		id: 'disable_reorder',
 		description: 'Hides the controls on each item for moving them.',
 	}),
@@ -235,16 +235,16 @@ export const BaseInputSchema = z.object({
 	}),
 	hidden: z
 		.union([z.boolean().meta({ title: 'Boolean' }), z.string().meta({ title: 'Query String' })])
-		.optional()
 		.default(false)
+		.optional()
 		.meta({
 			id: 'hidden',
 			description: 'Toggles the visibility of this input.',
 		}),
 	disabled: z
 		.union([z.boolean().meta({ title: 'Boolean' }), z.string().meta({ title: 'Query String' })])
-		.optional()
 		.default(false)
+		.optional()
 		.meta({
 			id: 'disabled',
 			description: 'Toggles if this input can be edited.',
@@ -999,7 +999,6 @@ export const KnownInputSchema = z
 			'A union of all input types that are known to the CloudCannon configuration schema.',
 	});
 
-const a = KnownInputSchema;
 export const InputSchema = z.union([KnownInputSchema, UnknownInputSchema]).meta({
 	id: 'Input',
 	title: 'Input',
