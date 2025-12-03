@@ -1,12 +1,7 @@
-// AJV
 import { betterAjvErrors } from 'https://cdn.jsdelivr.net/npm/@apideck/better-ajv-errors@0.3.6/+esm';
 import Ajv from 'https://cdn.jsdelivr.net/npm/ajv@8.17.1/+esm';
-
-// json-schema-library
-import { Draft07 } from 'https://cdn.jsdelivr.net/npm/json-schema-library@10.0.0-rc6/+esm';
-
-// Shared
 import jsYaml from 'https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/+esm';
+import { Draft07 } from 'https://cdn.jsdelivr.net/npm/json-schema-library@10.0.0-rc6/+esm';
 import { JSONPath } from 'https://cdn.jsdelivr.net/npm/jsonpath-plus@10.2.0/+esm';
 
 class Schema {
@@ -66,22 +61,22 @@ function renderAllowedValues(entry) {
 }
 
 function codeify(value) {
-	return value?.replace(/'([^']+)'/g, (match, contents) => `<code>${encodeHtml(contents)}</code>`);
+	return value?.replace(/'([^']+)'/g, (_match, contents) => `<code>${encodeHtml(contents)}</code>`);
 }
 
 function emify(value) {
-	return value?.replace(/'([^']+)'/g, (match, contents) => `<em>${encodeHtml(contents)}</em>`);
+	return value?.replace(/'([^']+)'/g, (_match, contents) => `<em>${encodeHtml(contents)}</em>`);
 }
 
 function encodeHtml(html) {
 	if (typeof html === 'string' || typeof html === 'number' || typeof html === 'boolean') {
 		return html
 			?.toString()
-			?.replace(/\&/g, '&amp;')
-			?.replace(/\</g, '&lt;')
-			?.replace(/\>/g, '&gt;')
-			?.replace(/\"/g, '&quot;')
-			?.replace(/\'/g, '&#x27;')
+			?.replace(/&/g, '&amp;')
+			?.replace(/</g, '&lt;')
+			?.replace(/>/g, '&gt;')
+			?.replace(/"/g, '&quot;')
+			?.replace(/'/g, '&#x27;')
 			?.replace(/\//g, '&#x2F;');
 	}
 

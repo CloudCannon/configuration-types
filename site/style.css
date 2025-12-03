@@ -40,8 +40,8 @@ h2 {
 
 textarea,
 code {
-	font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono",
-		monospace;
+	font-family:
+		ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
 	font-weight: normal;
 	font-size: 0.8em;
 }
@@ -58,15 +58,15 @@ body > div {
 	overflow: auto;
 }
 
-body > div textarea,
-body > div > ol {
+ol {
+	margin: 0;
+}
+
+body > div > ol,
+body > div textarea {
 	min-width: 0;
 	max-height: 100%;
 	overflow: auto;
-}
-
-ol {
-	margin: 0;
 }
 
 p {

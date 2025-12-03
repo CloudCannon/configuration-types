@@ -1,8 +1,8 @@
 import * as z from 'zod';
-import { CascadeSchema, EditorKeySchema, ReducedCascadeSchema } from './cascade';
-import { DocumentationSchema } from './documentation';
-import { IconSchema } from './icon';
-import { PreviewSchema } from './preview';
+import { CascadeSchema, EditorKeySchema, ReducedCascadeSchema } from './cascade.ts';
+import { DocumentationSchema } from './documentation.ts';
+import { IconSchema } from './icon.ts';
+import { PreviewSchema } from './preview.ts';
 
 export const HrefAddOptionSchema = z
 	.object({

@@ -1,14 +1,20 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { moveOldDocs, readDocs, writeNewDocs } from './docs.js';
-import { type JsonSchema, type Page, type PageRef, slugify } from './util.js';
+import {
+	type DocumentationEntry,
+	type JsonSchema,
+	type Page,
+	type PageRef,
+	slugify,
+} from './util.js';
 
-const schemaRaw = await fs.readFile(
+const schemaRaw: string = await fs.readFile(
 	path.join(process.cwd(), 'dist/cloudcannon-config.documentation.schema.json'),
 	{ encoding: 'utf8' }
 );
-const schema = JSON.parse(schemaRaw);
-const documentationEntries = await readDocs();
+const schema: JsonSchema = JSON.parse(schemaRaw);
+const documentationEntries: Record<string, DocumentationEntry> = await readDocs();
 const attemptedGids: Set<string> = new Set();
 const untitledGids: Set<string> = new Set();
 const pages: Record<string, Page> = {};
@@ -18,7 +24,7 @@ function deref(doc: JsonSchema): JsonSchema {
 		return doc;
 	}
 
-	if (doc?.$ref) {
+	if (doc?.$ref && schema.$defs) {
 		const refDoc = deref(schema.$defs[doc.$ref.replace('#/$defs/', '')]);
 
 		Object.keys(refDoc).forEach((key) => {
@@ -32,7 +38,7 @@ function deref(doc: JsonSchema): JsonSchema {
 	return doc;
 }
 
-function flattenNestedAnyOf(doc: JsonSchema) {
+function flattenNestedAnyOf(doc: JsonSchema): void {
 	if (doc?.anyOf) {
 		const anyOf: JsonSchema[] = [];
 		const add = (item: JsonSchema): void => {
@@ -67,7 +73,7 @@ function flattenNestedAnyOf(doc: JsonSchema) {
 	}
 }
 
-function getDocumentationEntry(gid: string) {
+function getDocumentationEntry(gid: string): DocumentationEntry {
 	attemptedGids.add(gid);
 	return documentationEntries[gid];
 }

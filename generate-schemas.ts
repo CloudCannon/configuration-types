@@ -1,16 +1,18 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import * as z from 'zod';
-import { JekyllConfigurationSchema } from './src/build-coupled';
-import { HugoConfigurationSchema } from './src/build-coupled';
-import { EleventyConfigurationSchema } from './src/build-coupled';
-import { ReaderConfigurationSchema } from './src/build-coupled';
+import {
+	EleventyConfigurationSchema,
+	HugoConfigurationSchema,
+	JekyllConfigurationSchema,
+	ReaderConfigurationSchema,
+} from './src/build-coupled';
 import { CollectionConfigSchema } from './src/collections';
 import { ConfigurationSchema } from './src/configuration';
 import { EditablesSchema } from './src/editables';
 import { InputsSchema } from './src/inputs';
 import { SnippetsImportsSchema } from './src/snippets';
-import { StructureValueSchema, StructuresSchema } from './src/structures';
+import { StructuresSchema, StructureValueSchema } from './src/structures';
 
 const schemas = [
 	{

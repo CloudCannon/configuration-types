@@ -1,13 +1,12 @@
 import * as z from 'zod';
-import { CascadeSchema } from './cascade';
-import { CollectionConfigSchema, CollectionGroupSchema } from './collections';
-import { InputsSchema } from './inputs';
-import { MarkdownSettingsSchema } from './markdown';
-import { PathsSchema } from './paths';
-import { SnippetConfigSchema } from './snippets';
-import { SnippetsImportsSchema } from './snippets';
-import { SourceEditorSchema } from './source-editor';
-import { TimezoneSchema } from './timezone';
+import { CascadeSchema } from './cascade.ts';
+import { CollectionConfigSchema, CollectionGroupSchema } from './collections.ts';
+import { InputsSchema } from './inputs.ts';
+import { MarkdownSettingsSchema } from './markdown.ts';
+import { PathsSchema } from './paths.ts';
+import { SnippetConfigSchema, SnippetsImportsSchema } from './snippets.ts';
+import { SourceEditorSchema } from './source-editor.ts';
+import { TimezoneSchema } from './timezone.ts';
 
 export const DataConfigEntrySchema = z.object({ path: z.string() }).meta({ id: 'DataConfigEntry' });
 

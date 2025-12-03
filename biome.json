@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.3.8/schema.json",
 	"vcs": {
 		"enabled": true,
 		"clientKind": "git",
@@ -7,7 +7,15 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": [".zed/**", ".backstage/**", "package.json", "package-lock.json"]
+		"includes": [
+			"**",
+			"!.zed",
+			"!package.json",
+			"!package-lock.json",
+			"!CHANGELOG.md",
+			"!.github",
+			"!.backstage"
+		]
 	},
 	"formatter": {
 		"enabled": true,
@@ -26,8 +34,12 @@
 			"quoteStyle": "single"
 		}
 	},
-	"organizeImports": {
-		"enabled": true
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "on"
+			}
+		}
 	},
 	"linter": {
 		"enabled": true,
@@ -35,7 +47,15 @@
 			"recommended": true,
 			"style": {
 				"noParameterAssign": "off",
-				"noInferrableTypes": "off"
+				"noInferrableTypes": "off",
+				"useAsConstAssertion": "error",
+				"useDefaultParameterLast": "error",
+				"useEnumInitializers": "error",
+				"useSelfClosingElements": "error",
+				"useSingleVarDeclarator": "error",
+				"noUnusedTemplateLiteral": "error",
+				"useNumberNamespace": "error",
+				"noUselessElse": "error"
 			},
 			"complexity": {
 				"useArrowFunction": "off",
@@ -50,10 +70,8 @@
 				"noExplicitAny": "off",
 				"noControlCharactersInRegex": "off",
 				"noShadowRestrictedNames": "off",
-				"noImplicitAnyLet": "warn"
-			},
-			"nursery": {
-				"useExplicitType": "off"
+				"noImplicitAnyLet": "warn",
+				"noPrototypeBuiltins": "off"
 			},
 			"performance": {
 				"noDelete": "off",

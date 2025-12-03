@@ -1,8 +1,8 @@
 import * as z from 'zod';
-import { EditablesSchema } from './editables';
-import { InputsSchema } from './inputs';
-import { SelectDataSchema } from './select-values';
-import { StructuresSchema } from './structures';
+import { EditablesSchema } from './editables.ts';
+import { InputsSchema } from './inputs.ts';
+import { SelectDataSchema } from './select-values.ts';
+import { StructuresSchema } from './structures.ts';
 
 export const EditorKeySchema = z.enum(['visual', 'content', 'data']).meta({
 	id: 'EditorKey',

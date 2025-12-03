@@ -1,5 +1,5 @@
 import * as z from 'zod';
-import { IconSchema } from './icon';
+import { IconSchema } from './icon.ts';
 
 export const DocumentationSchema = z
 	.object({

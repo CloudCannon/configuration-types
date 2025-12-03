@@ -1,9 +1,9 @@
 import * as z from 'zod';
-import { DocumentationSchema } from './documentation';
-import { IconSchema } from './icon';
-import { InputsSchema, ObjectInputGroupSchema } from './inputs';
-import { PreviewSchema } from './preview';
-import { SelectDataSchema } from './select-values';
+import { DocumentationSchema } from './documentation.ts';
+import { IconSchema } from './icon.ts';
+import { InputsSchema, ObjectInputGroupSchema } from './inputs.ts';
+import { PreviewSchema } from './preview.ts';
+import { SelectDataSchema } from './select-values.ts';
 
 export const StructureReferenceSchema = z.string().meta({
 	id: 'type.structure-reference',

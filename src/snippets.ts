@@ -1,6 +1,6 @@
 import * as z from 'zod';
-import { ReducedCascadeSchema } from './cascade';
-import { PreviewSchema } from './preview';
+import { ReducedCascadeSchema } from './cascade.ts';
+import { PreviewSchema } from './preview.ts';
 
 export const ParserModelSchema = z.object({
 	source_key: z.string().optional(),

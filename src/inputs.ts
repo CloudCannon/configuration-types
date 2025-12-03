@@ -1,16 +1,16 @@
 import * as z from 'zod';
-import { DocumentationSchema } from './documentation';
-import { BlockEditableSchema } from './editables';
-import { IconSchema } from './icon';
-import { ImageOptionsSchema } from './image-options';
-import { MimeTypeSchema } from './mimetype';
-import { PathsSchema } from './paths';
-import { PreviewEntriesSchema, PreviewSchema } from './preview';
-import { SelectDataValuesSchema } from './select-values';
-import { SourceEditorSchema } from './source-editor';
-import { StructureReferenceSchema, StructureSchema } from './structures';
-import { SyntaxSchema } from './syntax';
-import { TimezoneSchema } from './timezone';
+import { DocumentationSchema } from './documentation.ts';
+import { BlockEditableSchema } from './editables.ts';
+import { IconSchema } from './icon.ts';
+import { ImageOptionsSchema } from './image-options.ts';
+import { MimeTypeSchema } from './mimetype.ts';
+import { PathsSchema } from './paths.ts';
+import { PreviewEntriesSchema, PreviewSchema } from './preview.ts';
+import { SelectDataValuesSchema } from './select-values.ts';
+import { SourceEditorSchema } from './source-editor.ts';
+import { StructureReferenceSchema, StructureSchema } from './structures.ts';
+import { SyntaxSchema } from './syntax.ts';
+import { TimezoneSchema } from './timezone.ts';
 
 export const InputTypeSchema = z
 	.enum([
