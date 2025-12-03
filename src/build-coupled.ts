@@ -1,7 +1,7 @@
 import * as z from 'zod';
-import { CollectionConfigSchema } from './collections';
-import { ConfigurationSchema, DataConfigEntrySchema } from './configuration';
-import { PathsSchema } from './paths';
+import { CollectionConfigSchema } from './collections.ts';
+import { ConfigurationSchema, DataConfigEntrySchema } from './configuration.ts';
+import { PathsSchema } from './paths.ts';
 
 export const BuildCoupledPathsSchema = z
 	.object({

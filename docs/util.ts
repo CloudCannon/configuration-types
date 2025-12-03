@@ -54,4 +54,4 @@ export function slugify(input: string): string {
 		.replace(/[\s-]+/g, '-');
 }
 
-export const verbose = process.argv.includes('--verbose');
+export const verbose: boolean = process.argv.includes('--verbose');

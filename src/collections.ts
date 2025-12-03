@@ -1,8 +1,8 @@
 import * as z from 'zod';
-import { CascadeSchema, EditorKeySchema, ReducedCascadeSchema } from './cascade';
-import { DocumentationSchema } from './documentation';
-import { IconSchema } from './icon';
-import { PreviewSchema } from './preview';
+import { CascadeSchema, EditorKeySchema, ReducedCascadeSchema } from './cascade.ts';
+import { DocumentationSchema } from './documentation.ts';
+import { IconSchema } from './icon.ts';
+import { PreviewSchema } from './preview.ts';
 
 export const HrefAddOptionSchema = z
 	.object({
@@ -231,6 +231,7 @@ export const CollectionConfigSchema = z
 			description:
 				'This key defines which Schemas are available to populate files in this Collection.',
 		}),
+		schemas_config_from_glob: z.array(z.string()).optional(),
 		schema_key: z.string().optional().meta({
 			description:
 				'This key defines the name for the structured data key that references the Schema a file uses.',

@@ -1,13 +1,12 @@
 import * as z from 'zod';
-import { CascadeSchema } from './cascade';
-import { CollectionConfigSchema, CollectionGroupSchema } from './collections';
-import { InputsSchema } from './inputs';
-import { MarkdownSettingsSchema } from './markdown';
-import { PathsSchema } from './paths';
-import { SnippetConfigSchema } from './snippets';
-import { SnippetsImportsSchema } from './snippets';
-import { SourceEditorSchema } from './source-editor';
-import { TimezoneSchema } from './timezone';
+import { CascadeSchema } from './cascade.ts';
+import { CollectionConfigSchema, CollectionGroupSchema } from './collections.ts';
+import { InputsSchema } from './inputs.ts';
+import { MarkdownSettingsSchema } from './markdown.ts';
+import { PathsSchema } from './paths.ts';
+import { SnippetConfigSchema, SnippetsImportsSchema } from './snippets.ts';
+import { SourceEditorSchema } from './source-editor.ts';
+import { TimezoneSchema } from './timezone.ts';
 
 export const DataConfigEntrySchema = z.object({ path: z.string() }).meta({ id: 'DataConfigEntry' });
 
@@ -83,6 +82,7 @@ export const ConfigurationSchema = z
 			.record(z.string(), CollectionConfigSchema)
 			.optional()
 			.meta({ id: 'collections_config' }),
+		collections_config_from_glob: z.array(z.string()).optional(),
 		collection_groups: z
 			.array(CollectionGroupSchema)
 			.optional()
@@ -105,17 +105,21 @@ export const ConfigurationSchema = z
 			title: 'Snippets',
 			description: 'Configuration for custom snippets.',
 		}),
+		_snippets_from_glob: z.array(z.string()).optional(),
 		_snippets_imports: SnippetsImportsSchema.optional(),
+		_snippets_imports_from_glob: z.array(z.string()).optional(),
 		_snippets_templates: z.record(z.string(), SnippetConfigSchema).optional().meta({
 			id: 'type._snippets_templates',
 			title: 'Snippets Templates',
 			description: 'Extended option used when creating more complex custom snippets.',
 		}),
+		_snippets_templates_from_glob: z.array(z.string()).optional(),
 		_snippets_definitions: z.record(z.string(), z.unknown()).optional().meta({
 			id: 'type._snippets_definitions',
 			title: 'Snippets Definitions',
 			description: 'Extended option used when creating more complex custom snippets.',
 		}),
+		_snippets_definitions_from_glob: z.array(z.string()).optional(),
 	})
 	.meta({
 		title: 'Configuration',

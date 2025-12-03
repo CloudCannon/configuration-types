@@ -1,22 +1,22 @@
 import * as z from 'zod';
 
-export * from './build-coupled';
-export * from './cascade';
-export * from './configuration';
-export * from './collections';
-export * from './documentation';
-export * from './editables';
-export * from './icon';
-export * from './image-options';
-export * from './inputs';
-export * from './markdown';
-export * from './paths';
-export * from './preview';
-export * from './select-values';
-export * from './snippets';
-export * from './source-editor';
-export * from './structures';
-export * from './timezone';
+export * from './build-coupled.ts';
+export * from './cascade.ts';
+export * from './collections.ts';
+export * from './configuration.ts';
+export * from './documentation.ts';
+export * from './editables.ts';
+export * from './icon.ts';
+export * from './image-options.ts';
+export * from './inputs.ts';
+export * from './markdown.ts';
+export * from './paths.ts';
+export * from './preview.ts';
+export * from './select-values.ts';
+export * from './snippets.ts';
+export * from './source-editor.ts';
+export * from './structures.ts';
+export * from './timezone.ts';
 
 export const SsgKeySchema = z.enum([
 	'hugo',
