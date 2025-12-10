@@ -34,6 +34,12 @@ function deref(doc: JsonSchema): JsonSchema {
 		});
 	}
 
+	// A workaround, but these are essentially the same for the docs.
+	if (doc.oneOf && !doc.anyOf) {
+		doc.anyOf = doc.oneOf;
+		delete doc.oneOf;
+	}
+
 	flattenNestedAnyOf(doc);
 	return doc;
 }
@@ -41,12 +47,11 @@ function deref(doc: JsonSchema): JsonSchema {
 function flattenNestedAnyOf(doc: JsonSchema): void {
 	if (doc?.anyOf) {
 		const anyOf: JsonSchema[] = [];
-		const add = (item: JsonSchema): void => {
-			if (item.excludeFromDocumentation) {
-				return;
-			}
 
-			anyOf.push(item);
+		const add = (item: JsonSchema): void => {
+			if (!item.excludeFromDocumentation) {
+				anyOf.push(item);
+			}
 		};
 
 		for (let i = 0; i < doc.anyOf.length; i++) {
