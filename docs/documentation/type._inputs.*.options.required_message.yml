@@ -26,15 +26,5 @@ examples:
             required: true
             required_message: You are not allowed to leave this blank.
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      _inputs:
-        author:
-          type: text
-          comment: Enter the name of the author for this blog post.
-          options:
-            required: true
-            required_message: You are not allowed to leave this blank.
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

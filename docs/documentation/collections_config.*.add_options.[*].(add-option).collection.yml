@@ -29,14 +29,5 @@ examples:
               collection: new_articles
               schema: articles
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      collections_config:
-        articles:
-          add_options:
-            - name: Add articles
-              collection: new_articles
-              schema: articles
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

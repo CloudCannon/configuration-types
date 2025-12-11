@@ -22,11 +22,5 @@ examples:
         data:
           disable_url: true
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      collections_config:
-        data:
-          disable_url: true
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

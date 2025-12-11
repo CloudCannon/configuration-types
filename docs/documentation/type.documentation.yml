@@ -30,14 +30,5 @@ examples:
             text: CloudCannon Documentation
             icon: star
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      collections_config:
-        data:
-          documentation:
-            url: https://cloudcannon.com/documentation/
-            text: CloudCannon Documentation
-            icon: star
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: true

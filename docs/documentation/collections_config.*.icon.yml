@@ -8,9 +8,8 @@ description: >-
   defined `preview.icon`.
 
 
-  <comp.Notice info_type="info">
-    For more information about the preview icon, please read our documentation on the [preview](/documentation/articles/configure-your-card-previews/) key.
-  </comp.Notice>
+  > For more information about the preview icon, please read our documentation
+  on the [preview](/documentation/articles/configure-your-card-previews/) key.
 
 
   Values can be from [Google's Material
@@ -29,11 +28,5 @@ examples:
         blog:
           icon: post_add
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      collections_config:
-        blog:
-          icon: post_add
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

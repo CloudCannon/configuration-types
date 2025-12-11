@@ -40,24 +40,5 @@ examples:
                   inputs:
                     - author
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      _structures:
-        article_information:
-          values:
-            - label: Blog
-              value:
-                title:
-                subtitle:
-                author:
-              groups:
-                - heading: Titles
-                  inputs:
-                    - title
-                    - subtitle
-                - heading: Details
-                  inputs:
-                    - author
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

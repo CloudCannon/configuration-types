@@ -6,9 +6,9 @@ description: >-
   you have two layers of nested object within your Structure.
 
 
-  <comp.Notice info_type="info">
-    CloudCannon would create tabs automatically for Non-unified Configuration Sites, but it must be explicitly configured in the Unified Configuration file format.
-  </comp.Notice>
+  > CloudCannon would create tabs automatically for Non-unified Configuration
+  Sites, but it must be explicitly configured in the Unified Configuration file
+  format.
 
 
   By default, this key is `false` (i.e., Object and Array inputs using this
@@ -33,20 +33,5 @@ examples:
                   color:
                   font:
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      _structures:
-        components:
-          values:
-            - label: Component
-              tabbed: true
-              value:
-                content:
-                  title:
-                  text:
-                style:
-                  color:
-                  font:
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

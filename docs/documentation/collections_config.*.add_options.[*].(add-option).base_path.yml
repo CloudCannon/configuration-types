@@ -32,15 +32,5 @@ examples:
               editor: content
               base_path: /../_drafts/blog
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      collections_config:
-        _posts:
-          add_options:
-            - name: Add draft blog
-              icon: post_add
-              editor: content
-              base_path: /../_drafts/blog
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

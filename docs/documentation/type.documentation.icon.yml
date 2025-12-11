@@ -24,13 +24,5 @@ examples:
             url: https://www.cloudcannon.com/documentation/
             icon: star
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      collections_config:
-        blog:
-          documentation:
-            url: https://www.cloudcannon.com/documentation/
-            icon: star
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

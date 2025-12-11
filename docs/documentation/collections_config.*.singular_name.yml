@@ -24,11 +24,5 @@ examples:
         team:
           singular_name: Team Member
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      collections_config:
-        team:
-          singular_name: Team Member
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

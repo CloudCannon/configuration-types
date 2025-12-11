@@ -28,14 +28,5 @@ examples:
           options:
             max_file_size: 140
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      _inputs:
-        feature_image:
-          type: image
-          comment: Select the feature image for the banner.
-          options:
-            max_file_size: 140
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

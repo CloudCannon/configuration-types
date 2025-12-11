@@ -60,27 +60,8 @@ examples:
               editor: content
               base_path: /../_drafts/blog
     annotations: []
+    source: cloudcannon.config.yml
   - description: >-
-      In this example, we want team members in the `_posts` Collection to create
-      new files in the`blog` subfolder of the `_drafts` Collection. CloudCannon
-      will open these files in the [Content
-      Editor](/documentation/articles/what-is-the-content-editor/).
-
-
-      <comp.MultiCodeBlock language="YAML" translate_into={["json"]}
-      source="cloudcannon.config.yml">
-            ``````````
-            collections_config:
-                _posts:
-                  add_options:
-                    - name: Add draft blog
-                      icon: post_add
-                      editor: content
-                      base_path: /../_drafts/blog
-
-            ``````````
-            </comp.MultiCodeBlock>
-
       In this example, the *\+ Add* button dropdown in the `team` *Collection
       browser* has a link to the Office Locations page on our live website.
     language: yaml
@@ -92,25 +73,5 @@ examples:
               icon: map
               href: /our-offices
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      collections_config:
-        _posts:
-          add_options:
-            - name: Add draft blog
-              icon: post_add
-              editor: content
-              base_path: /../_drafts/blog
-    annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      collections_config:
-        team:
-          add_options:
-            - name: Office Locations
-              icon: map
-              href: /our-offices
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

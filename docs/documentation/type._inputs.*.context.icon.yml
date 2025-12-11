@@ -25,18 +25,5 @@ examples:
           options:
             max_file_size: 10000
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      _inputs:
-        file_upload:
-          type: file
-          label: Upload Document
-          context:
-            title: File Requirements
-            icon: warning
-            content: Maximum file size is 10MB.
-          options:
-            max_file_size: 10000
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

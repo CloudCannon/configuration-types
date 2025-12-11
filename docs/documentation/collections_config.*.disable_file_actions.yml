@@ -27,11 +27,5 @@ examples:
         data:
           disable_file_actions: true
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      collections_config:
-        data:
-          disable_file_actions: true
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

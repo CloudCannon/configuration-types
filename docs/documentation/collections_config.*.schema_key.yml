@@ -29,11 +29,5 @@ examples:
         blog:
           schema_key: _blog_template
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      collections_config:
-        blog:
-          schema_key: _blog_template
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

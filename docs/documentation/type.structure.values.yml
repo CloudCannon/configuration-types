@@ -81,50 +81,5 @@ examples:
                 subtext: Add a related blog
                 icon: post_add
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      _structures:
-        related_articles:
-          values:
-            - label: Blog
-              id:
-              default: true
-              tabbed: false
-              tags:
-                - blog
-              value:
-                title:
-                subtitle:
-                author:
-                featured_image:
-                url:
-              _inputs:
-                featured_image:
-                  type: image
-                  options:
-                    width: 50
-                    height: 50
-              groups:
-                - heading: Titles
-                  inputs:
-                    - title
-                    - subtitle
-                - heading: Details
-                  inputs:
-                    - author
-                    - image
-                    - url
-              preview:
-                text:
-                  - template: "{title}"
-                subtext:
-                  - template: "By {author}"
-                image:
-                  - key: image
-              picker_preview:
-                text: Blog
-                subtext: Add a related blog
-                icon: post_add
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

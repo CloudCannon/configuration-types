@@ -4,6 +4,7 @@ export interface Example {
 	description?: string;
 	code: string;
 	language?: string;
+	source?: string;
 	annotations?: string[];
 }
 

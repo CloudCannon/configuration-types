@@ -30,11 +30,5 @@ examples:
         data:
           disable_add: true
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      collections_config:
-        data:
-          disable_add: true
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

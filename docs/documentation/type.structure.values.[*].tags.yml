@@ -52,43 +52,5 @@ examples:
                 image_path:
                 videoUrl:
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      _structures:
-        page_components:
-          style: modal
-          values:
-            - label: Hero Component
-              tags:
-                - image
-                - text
-              value:
-                title:
-                description:
-                image_path:
-                link:
-                  text:
-                  url:
-            - label: Feature Component
-              tags:
-                - image
-                - text
-                - button
-              value:
-                image_path:
-                title:
-                description:
-                button:
-                  link:
-                  text:
-                reversed_layout: false
-            - label: Video Component
-              tags:
-                - image
-                - video
-              value:
-                image_path:
-                videoUrl:
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

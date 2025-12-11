@@ -21,35 +21,7 @@ examples:
       collections_config_from_glob:
         - '/.cloudcannon/collections/*.cloudcannon.collections.yml'
     annotations: []
-  - description: >-
-      In this example, each *Collection* has its own *Configuration File* in the
-      `.cloudcannon/collections/` folder. The value of the
-      `collections_config_from_glob` key tells CloudCannon to use all files in
-      that folder that match the glob `*.cloudcannon.collections.yml`.
-
-
-      <comp.MultiCodeBlock language="YAML" translate_into={["json"]}
-      source="cloudcannon.config.yml">
-
-      ``````````
-
-      collections_config_from_glob:
-        - '/.cloudcannon/collections/*.cloudcannon.collections.yml'
-      ``````````
-
-      </comp.MultiCodeBlock>
-    language: yaml
-    code: |-
-      posts:
-        path: content/posts
-        icon: event
-    annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      collections_config_from_glob:
-        - '/.cloudcannon/collections/*.cloudcannon.collections.yml'
-    annotations: []
+    source: cloudcannon.config.yml
   - description: ''
     language: yaml
     code: |-
@@ -57,4 +29,5 @@ examples:
         path: content/posts
         icon: event
     annotations: []
+    source: /.cloudcannon/collections/posts.cloudcannon.collections.yml
 show_in_navigation: false

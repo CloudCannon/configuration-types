@@ -19,13 +19,5 @@ examples:
             url: https://cloudcannon.com/documentation/
             text: CloudCannon Documentation
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      collections_config:
-        data:
-          documentation:
-            url: https://cloudcannon.com/documentation/
-            text: CloudCannon Documentation
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

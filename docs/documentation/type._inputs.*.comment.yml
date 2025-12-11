@@ -20,13 +20,5 @@ examples:
           label: Page Description
           comment: Enter a brief description of this page for search engines
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      _inputs:
-        page_description:
-          type: text
-          label: Page Description
-          comment: Enter a brief description of this page for search engines
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

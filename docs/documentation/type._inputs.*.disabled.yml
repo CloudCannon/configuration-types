@@ -44,17 +44,5 @@ examples:
           options:
             timezone: Etc/UTC
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      _inputs:
-        date_created:
-          type: datetime
-          label: Date of article creation
-          comment: UTC +0 timezone
-          disabled: true
-          instance_value: NOW
-          options:
-            timezone: Etc/UTC
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

@@ -30,11 +30,5 @@ examples:
         data:
           disable_add_folder: true
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      collections_config:
-        data:
-          disable_add_folder: true
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

@@ -23,14 +23,5 @@ examples:
 
             If your have any questions, please contact Heather.
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      collections_config:
-        blog:
-          description:|-
-            This Collection is for *Travel blogs* and *Customer stories*.
-
-            If your have any questions, please contact Heather.
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

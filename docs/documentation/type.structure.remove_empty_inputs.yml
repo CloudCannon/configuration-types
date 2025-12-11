@@ -35,19 +35,5 @@ examples:
               place:
               sponsor:
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      _structures:
-        event_details:
-          remove_empty_inputs: true
-          values:
-            - value:
-              name:
-              description:
-              url:
-              time:
-              place:
-              sponsor:
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

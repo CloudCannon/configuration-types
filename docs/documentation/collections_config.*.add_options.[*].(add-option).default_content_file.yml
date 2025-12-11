@@ -22,14 +22,5 @@ examples:
             collection: upcoming_events
             default_content_file: event_template.yml
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      collections_config:
-        events:
-          add_options:
-            name: Add new event
-            collection: upcoming_events
-            default_content_file: event_template.yml
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

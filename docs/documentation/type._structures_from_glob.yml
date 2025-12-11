@@ -24,46 +24,7 @@ examples:
       _structures_from_glob:
         - '/.cloudcannon/structures/staffMembers.cloudcannon.structures.yml'
     annotations: []
-  - description: >-
-      In this example, we have several *Structure Configuration Files* in the
-      `.cloudcannon/structures/` folder. The value of the
-      `_structures_from_glob` key tells CloudCannon to use the
-      `staffMembers.cloudcannon.structures.yml` file in that folder.
-
-
-      <comp.MultiCodeBlock language="YAML" translate_into={["json"]}
-      source="cloudcannon.config.yml">
-
-      ``````````
-
-      _structures_from_glob:
-        - '/.cloudcannon/structures/staffMembers.cloudcannon.structures.yml'
-      ``````````
-
-      </comp.MultiCodeBlock>
-    language: yaml
-    code: |-
-      staff:
-        style: modal
-        values:
-          - label: Employee
-            value:
-              name:
-              job_description:
-              profile_picture:
-          - label: Manager
-            value:
-              name:
-              job_description:
-              profile_picture:
-              url:
-    annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      _structures_from_glob:
-        - '/.cloudcannon/structures/staffMembers.cloudcannon.structures.yml'
-    annotations: []
+    source: cloudcannon.config.yml
   - description: ''
     language: yaml
     code: |-
@@ -82,4 +43,5 @@ examples:
               profile_picture:
               url:
     annotations: []
+    source: /.cloudcannon/structures/staffMembers.cloudcannon.structures.yml
 show_in_navigation: true

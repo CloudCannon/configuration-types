@@ -28,17 +28,5 @@ examples:
             min_length: 25
             min_length_message: Please write more than 25 characters.
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      _inputs:
-        seo_description:
-          type: markdown
-          comment: Enter a brief description of this blog.
-          options:
-            max_length: 125
-            max_length_message: You are only allowed 125 characters.
-            min_length: 25
-            min_length_message: Please write more than 25 characters.
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

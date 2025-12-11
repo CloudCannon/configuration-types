@@ -24,11 +24,5 @@ examples:
         blog:
           new_preview_url: /about/
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      collections_config:
-        blog:
-          new_preview_url: /about/
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

@@ -20,12 +20,5 @@ examples:
           documentation:
             url: https://example.com
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      collections_config:
-        blog:
-          documentation:
-            url: https://example.com
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

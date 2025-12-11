@@ -10,9 +10,9 @@ description: >-
 
     Values for this key can be a mix of plain text and template strings, and should begin and end with the `/` character. Template strings can contain data placholders and fixed placeholders, which CloudCannon will replace with the data it references when generating the output URL.
 
-  <comp.Notice info_type="info">
-    For more information about data placeholders and fixed placeholders, please read our documentation on [configuring your template strings](/documentation/articles/configure-your-template-strings/).
-  </comp.Notice>
+  > For more information about data placeholders and fixed placeholders, please
+  read our documentation on [configuring your template
+  strings](/documentation/articles/configure-your-template-strings/).
 
 
   By default, CloudCannon will use the key name of the Collection.
@@ -26,11 +26,5 @@ examples:
         blog:
           url: /travel/[slug]/
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      collections_config:
-        blog:
-          url: /travel/[slug]/
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

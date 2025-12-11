@@ -33,14 +33,5 @@ examples:
             pattern: '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
             pattern_message: 'Please use the format ___@___.__'
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      _inputs:
-        contact_email:
-          type: email
-          options:
-            pattern: '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
-            pattern_message: 'Please use the format ___@___.__'
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

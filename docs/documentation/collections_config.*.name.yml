@@ -19,11 +19,5 @@ examples:
         blog:
           name: Travel Blog
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      collections_config:
-        blog:
-          name: Travel Blog
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

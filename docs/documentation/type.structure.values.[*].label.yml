@@ -29,22 +29,5 @@ examples:
                 profile_picture:
                 url:
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      _structures:
-        staff:
-          values:
-            - label: Employee
-              value:
-                name:
-                job_description:
-                profile_picture:
-            - label: Manager
-              value:
-                name:
-                job_description:
-                profile_picture:
-                url:
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

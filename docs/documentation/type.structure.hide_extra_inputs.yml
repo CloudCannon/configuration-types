@@ -29,16 +29,5 @@ examples:
               description:
               url:
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      _structures:
-        related_articles:
-          hide_extra_inputs: true
-          values:
-            - value:
-              name:
-              description:
-              url:
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

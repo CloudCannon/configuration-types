@@ -26,14 +26,5 @@ examples:
           - '/.cloudcannon/schemas/*.cloudcannon.schemas.yml'
           - '!/.cloudcannon/schemas/pages.cloudcannon.schemas.yml'
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      posts:
-        path: content/posts
-        icon: event
-        schemas_from_glob:
-          - '/.cloudcannon/schemas/*.cloudcannon.schemas.yml'
-          - '!/.cloudcannon/schemas/pages.cloudcannon.schemas.yml'
-    annotations: []
+    source: /.cloudcannon/collections/posts.cloudcannon.collections.yml
 show_in_navigation: false

@@ -20,14 +20,5 @@ examples:
               order: ascending
               label: Author (A-Z)
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      collections_config:
-        blog:
-          sort_options:
-            - key: author
-              order: ascending
-              label: Author (A-Z)
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

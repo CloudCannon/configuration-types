@@ -23,17 +23,5 @@ examples:
             icon: info
             content: Keep descriptions between 150-160 characters for optimal search engine display.
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      _inputs:
-        seo_description:
-          type: text
-          label: SEO Description
-          context:
-            open: true
-            title: SEO Guidelines
-            icon: info
-            content: Keep descriptions between 150-160 characters for optimal search engine display.
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

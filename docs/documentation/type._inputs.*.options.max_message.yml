@@ -27,17 +27,5 @@ examples:
             min: 1
             min_message: Cannot be less than 1
     annotations: []
-  - description: ''
-    language: yaml
-    code: |-
-      _inputs:
-        rating:
-          type: number
-          comment: How highly did you rate this experience?
-          options:
-            max: 5
-            max_message: Cannot be more than 5
-            min: 1
-            min_message: Cannot be less than 1
-    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false
