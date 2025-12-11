@@ -231,7 +231,7 @@ export const CollectionConfigSchema = z
 			description:
 				'This key defines which Schemas are available to populate files in this Collection.',
 		}),
-		schemas_from_glob: z.array(z.string()).optional(),
+		schemas_config_from_glob: z.array(z.string()).optional(),
 		schema_key: z.string().optional().meta({
 			description:
 				'This key defines the name for the structured data key that references the Schema a file uses.',
