@@ -5,3 +5,4 @@ description: >-
   This key defines the message that explains why an Input needs to have a start
   date. This key requires you to define `options.start_from`.
 examples: []
+show_in_navigation: false

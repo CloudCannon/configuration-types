@@ -3,3 +3,4 @@ url: /types/_enabled_editors/[*]/
 title: Editor Key
 description: 'The available editors in CloudCannon: visual, content, and data editors.'
 examples: []
+show_in_navigation: false

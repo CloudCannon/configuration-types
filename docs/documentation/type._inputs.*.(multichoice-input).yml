@@ -5,3 +5,4 @@ description: >-
   Provides an editing interface for data with multiple predefined options.
   Multichoice inputs allow several values.
 examples: []
+show_in_navigation: false

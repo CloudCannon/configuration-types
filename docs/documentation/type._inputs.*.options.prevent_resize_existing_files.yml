@@ -1,0 +1,8 @@
+gid: type._inputs.*.options.prevent_resize_existing_files
+url: /types/_inputs/*/options/prevent_resize_existing_files/
+title: Prevent Resize Existing Files
+description: >-
+  Enable to skip the image resizing process configured for this input when
+  selecting existing images.
+examples: []
+show_in_navigation: false

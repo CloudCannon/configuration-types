@@ -3,3 +3,4 @@ url: /
 title: Configuration
 description: The main CloudCannon configuration schema.
 examples: []
+show_in_navigation: true

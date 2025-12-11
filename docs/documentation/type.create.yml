@@ -1,0 +1,6 @@
+gid: type.create
+url: /types/create/
+title: Create
+description: Controls where new files are saved.
+examples: []
+show_in_navigation: true

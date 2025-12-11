@@ -6,3 +6,4 @@ description: >-
   members are prompted to choose from a number of values you have defined.
   `structures` applies to the object itself.
 examples: []
+show_in_navigation: false

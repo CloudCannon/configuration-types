@@ -1,0 +1,8 @@
+gid: type._inputs.*.options.disable_direct_input
+url: /types/_inputs/*/options/disable_direct_input/
+title: ''
+description: >-
+  Prevents typing into the text input, while still allowing context menu options
+  to change the value.
+examples: []
+show_in_navigation: false

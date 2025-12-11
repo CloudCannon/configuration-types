@@ -5,3 +5,4 @@ description: >-
   Controls how selected items are rendered. Defaults to 'card', or 'inline' if
   `inline` is true.
 examples: []
+show_in_navigation: false

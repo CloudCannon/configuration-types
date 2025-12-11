@@ -1,0 +1,9 @@
+gid: type.create.extra_data
+url: /types/create/extra_data/
+title: ''
+description: >-
+  Adds to the available data placeholders coming from the file. Entry values
+  follow the same format as path, and are processed sequentially before path.
+  These values are not saved back to your file.
+examples: []
+show_in_navigation: false

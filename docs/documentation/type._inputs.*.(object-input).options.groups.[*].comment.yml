@@ -6,3 +6,4 @@ description: >-
   set of Markdown: links, bold, italic, subscript, superscript, and inline code
   elements are allowed.
 examples: []
+show_in_navigation: false

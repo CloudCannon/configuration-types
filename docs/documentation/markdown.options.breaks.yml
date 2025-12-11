@@ -3,3 +3,4 @@ url: /markdown/options/breaks/
 title: ''
 description: Convert `\n` in paragraphs into `<br>`.
 examples: []
+show_in_navigation: false

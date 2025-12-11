@@ -1,0 +1,6 @@
+gid: type._inputs.*.options.accepts_mime_types.(array).[*]
+url: /types/_inputs/*/options/accepts_mime_types/(array)/[*]/
+title: Mime Type
+description: MIME type identifiers for file type validation and handling in CloudCannon.
+examples: []
+show_in_navigation: false

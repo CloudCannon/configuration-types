@@ -6,3 +6,4 @@ description: >-
   page. Collection descriptions are useful for adding extra context for your
   team members.
 examples: []
+show_in_navigation: false

@@ -1,7 +1,0 @@
-gid: >-
-  type.snippet.params.*.(argument-list-parser-config).options.format.allowed_string_cases.lower
-url: >-
-  /types/snippet/params/*/(argument-list-parser-config)/options/format/allowed_string_cases/lower/
-title: ''
-description: ''
-examples: []

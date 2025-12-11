@@ -121,7 +121,12 @@ function docToPage(
 		return seenPage;
 	}
 
-	const full_key = thisPath.join('.').replaceAll('.[', '[').replaceAll('.(', '(');
+	const full_key = thisPath
+		.join('.')
+		.replace(/^type\./, '')
+		.replaceAll('.[', '[')
+		.replaceAll('.(', '(');
+
 	const documentation = getDocumentationEntry(gid);
 	const developer_documentation = {
 		title: doc.title,
@@ -145,7 +150,12 @@ function docToPage(
 		uniqueItems: doc.uniqueItems,
 		documentation,
 		developer_documentation,
-		url: !thisPath.length ? '/' : `/${thisPath.join('/').replace(/^type\./, 'types/')}/`,
+		url: !thisPath.length
+			? '/'
+			: `/${thisPath
+					.join('/')
+					.replace(/^type\./, 'types/')
+					.replaceAll('.', '/')}/`.replace(/\/+/g, '/'),
 		required: !!required,
 		key: getDisplayKey(full_key) || full_key,
 		full_key,
@@ -219,11 +229,6 @@ function docToPage(
 			const pageRef: PageRef = propPage?.gid
 				? { gid: propPage.gid }
 				: { type: property.type || 'unknown' };
-
-			if (property.id?.startsWith('type.')) {
-				const propGid = thisPath.concat([propKey]).join('.');
-				pageRef.documentation = getDocumentationEntry(propGid);
-			}
 
 			page.properties[propKey] = pageRef;
 		}

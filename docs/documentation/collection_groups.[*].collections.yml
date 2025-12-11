@@ -5,3 +5,4 @@ description: >-
   The collections shown in the sidebar for this group. Collections here are
   referenced by their key within `collections_config`.
 examples: []
+show_in_navigation: false

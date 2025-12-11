@@ -3,3 +3,4 @@ url: /markdown/options/attributes/
 title: ''
 description: Save element attributes in Markdown format instead of converting to HTML.
 examples: []
+show_in_navigation: false

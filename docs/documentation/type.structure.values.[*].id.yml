@@ -5,3 +5,4 @@ description: >-
   A unique reference value used when referring to this structure value from the
   Object input's assigned_structures option.
 examples: []
+show_in_navigation: false

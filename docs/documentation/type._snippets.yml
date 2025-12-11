@@ -3,3 +3,4 @@ url: /types/_snippets/
 title: Snippets
 description: Configuration for custom snippets.
 examples: []
+show_in_navigation: true

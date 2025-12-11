@@ -6,3 +6,4 @@ description: >-
   input. This set is used when entries are added and renamed with `allow_create`
   enabled. Has no effect if `allow_create` is not enabled.
 examples: []
+show_in_navigation: false

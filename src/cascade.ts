@@ -1,8 +1,8 @@
 import * as z from 'zod';
-import { EditablesSchema } from './editables.ts';
-import { InputsSchema } from './inputs.ts';
+import { EditablesFromGlobSchema, EditablesSchema } from './editables.ts';
+import { InputsFromGlobSchema, InputsSchema } from './inputs.ts';
 import { SelectDataSchema } from './select-values.ts';
-import { StructuresSchema } from './structures.ts';
+import { StructuresFromGlobSchema, StructuresSchema } from './structures.ts';
 
 export const EditorKeySchema = z.enum(['visual', 'content', 'data']).meta({
 	id: 'EditorKey',
@@ -12,10 +12,10 @@ export const EditorKeySchema = z.enum(['visual', 'content', 'data']).meta({
 
 export const ReducedCascadeSchema = z.object({
 	_inputs: InputsSchema.optional(),
-	_inputs_from_glob: z.array(z.string()).optional(),
+	_inputs_from_glob: InputsFromGlobSchema.optional(),
 	_select_data: SelectDataSchema.optional(),
 	_structures: StructuresSchema.optional(),
-	_structures_from_glob: z.array(z.string()).optional(),
+	_structures_from_glob: StructuresFromGlobSchema.optional(),
 });
 
 export const CascadeSchema = z.object({
@@ -33,7 +33,7 @@ export const CascadeSchema = z.object({
 		description:
 			'Configuration for editable regions in the Visual Editor, including content, block, link, image, and text editing options.',
 	}),
-	_editables_from_glob: z.array(z.string()).optional(),
+	_editables_from_glob: EditablesFromGlobSchema.optional(),
 });
 
 export type EditorKey = z.infer<typeof EditorKeySchema>;

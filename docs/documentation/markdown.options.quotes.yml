@@ -7,3 +7,4 @@ description: >-
   German, and ["«\xA0", "\xA0»", "‹\xA0", "\xA0›"] for French (including
   `nbsp`).
 examples: []
+show_in_navigation: false

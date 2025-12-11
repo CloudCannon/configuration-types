@@ -1,0 +1,8 @@
+gid: type._inputs.*.cascade
+url: /types/_inputs/*/cascade/
+title: ''
+description: >-
+  Specifies whether or not this input configuration should be merged with any
+  matching, less specific configuration.
+examples: []
+show_in_navigation: false

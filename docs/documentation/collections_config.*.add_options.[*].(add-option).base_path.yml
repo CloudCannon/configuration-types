@@ -7,3 +7,4 @@ description: >-
   of the collection defined in collection. Defaults to the path within the
   collection the user is currently navigated to.
 examples: []
+show_in_navigation: false

@@ -3,3 +3,4 @@ url: /collections_config/*/add_options/[*]/(href-add-option)/
 title: HREF Add Option
 description: An option for the add menu that opens a link.
 examples: []
+show_in_navigation: false

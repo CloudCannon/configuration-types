@@ -5,3 +5,4 @@ description: >-
   The text to display in the sort option list. Defaults to a generated label
   from key and order.
 examples: []
+show_in_navigation: false

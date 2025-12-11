@@ -1,0 +1,6 @@
+gid: type._inputs.*.hidden
+url: /types/_inputs/*/hidden/
+title: ''
+description: Toggles the visibility of this input.
+examples: []
+show_in_navigation: false

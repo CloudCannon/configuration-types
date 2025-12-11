@@ -1,0 +1,8 @@
+gid: type._inputs.*.options.pattern_message
+url: /types/_inputs/*/options/pattern_message/
+title: ''
+description: >-
+  This key defines the message that explains which regular expression an Input
+  will accept. This key requires you to define `options.pattern`.
+examples: []
+show_in_navigation: false

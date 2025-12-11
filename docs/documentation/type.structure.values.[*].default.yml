@@ -7,3 +7,4 @@ description: >-
   on its id_key or matching fields, then it will fall back to this item. If
   multiple items have default set to true, only the first item will be used.
 examples: []
+show_in_navigation: false

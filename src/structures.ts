@@ -1,7 +1,7 @@
 import * as z from 'zod';
 import { DocumentationSchema } from './documentation.ts';
 import { IconSchema } from './icon.ts';
-import { InputsSchema, ObjectInputGroupSchema } from './inputs.ts';
+import { InputsFromGlobSchema, InputsSchema, ObjectInputGroupSchema } from './inputs.ts';
 import { PreviewSchema } from './preview.ts';
 import { SelectDataSchema } from './select-values.ts';
 
@@ -29,6 +29,10 @@ const StructureBaseSchema = z.object({
 	}),
 });
 
+export const StructuresFromGlobSchema = z.array(z.string()).meta({
+	id: 'type._structures_from_glob',
+});
+
 export const StructureValueSchema = StructureBaseSchema.extend({
 	preview: PreviewSchema.optional(),
 	picker_preview: PreviewSchema.optional(),
@@ -37,12 +41,14 @@ export const StructureValueSchema = StructureBaseSchema.extend({
 	get _inputs() {
 		return InputsSchema.optional();
 	},
-	_inputs_from_glob: z.array(z.string()).optional(),
+	get _inputs_from_glob() {
+		return InputsFromGlobSchema.optional();
+	},
 	_select_data: SelectDataSchema.optional(),
 	get _structures() {
 		return StructuresSchema.optional();
 	},
-	_structures_from_glob: z.array(z.string()).optional(),
+	_structures_from_glob: StructuresFromGlobSchema.optional(),
 
 	id: z.string().optional().meta({
 		description:

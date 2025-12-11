@@ -1,0 +1,8 @@
+gid: type._editables.*.redo
+url: /types/_editables/*/redo/
+title: ''
+description: >-
+  Enables a control to redo recent edits undone with undo. Redo is always
+  enabled through standard OS-specific keyboard shortcuts.
+examples: []
+show_in_navigation: false

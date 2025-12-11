@@ -3,3 +3,4 @@ url: /markdown/options/code_block_fences/
 title: ''
 description: Determines which style of code block fences to use.
 examples: []
+show_in_navigation: false

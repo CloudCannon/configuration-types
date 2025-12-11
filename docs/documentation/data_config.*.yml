@@ -5,3 +5,4 @@ description: >-
   Controls what data sets are available to populate select and multiselect
   inputs.
 examples: []
+show_in_navigation: false

@@ -5,3 +5,4 @@ description: >-
   Set the string for the commit template. This will only be used if
   `template_path` is not set.
 examples: []
+show_in_navigation: false

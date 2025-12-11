@@ -6,3 +6,4 @@ description: >-
   The value for this key is relative to your Site `source`. Each Collection must
   have a unique path.
 examples: []
+show_in_navigation: false

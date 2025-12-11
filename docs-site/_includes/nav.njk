@@ -20,7 +20,7 @@
 
 	<ul>
 		{% for propDoc in docs %}
-			{% if not propDoc.parent %}{% include "nav-item.njk" %}{% endif %}
+			{% if propDoc.documentation.show_in_navigation %}{% include "nav-item.njk" %}{% endif %}
 		{% endfor %}
 	</ul>
 </nav>

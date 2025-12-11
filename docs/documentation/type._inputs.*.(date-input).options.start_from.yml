@@ -10,3 +10,4 @@ description: >-
   format. If `options.end_before` is also configured, this key cannot be a later
   date and time.
 examples: []
+show_in_navigation: false

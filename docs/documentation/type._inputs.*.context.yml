@@ -1,0 +1,6 @@
+gid: type._inputs.*.context
+url: /types/_inputs/*/context/
+title: ''
+description: Adds an expandable section of rich text below the input.
+examples: []
+show_in_navigation: false

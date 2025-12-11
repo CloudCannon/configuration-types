@@ -1,7 +1,0 @@
-gid: type._inputs.*.(rich-text-input).options.bulletedlist
-url: /types/_inputs/*/(rich-text-input)/options/bulletedlist/
-title: ''
-description: >-
-  Enables a control to insert an unordered list, or to convert selected blocks
-  of text into a unordered list.
-examples: []

@@ -3,3 +3,4 @@ url: /source_editor/theme/
 title: ''
 description: This key defines the color theme for syntax highlighting.
 examples: []
+show_in_navigation: false

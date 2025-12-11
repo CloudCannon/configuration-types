@@ -1,0 +1,9 @@
+gid: type._inputs.*.options.max_file_size_message
+url: /types/_inputs/*/options/max_file_size_message/
+title: ''
+description: >-
+  This key defines the message that explains why an Input needs to have a
+  maximum file size. This key requires you to define `options.max_file_size`.
+  This key has no default.
+examples: []
+show_in_navigation: false

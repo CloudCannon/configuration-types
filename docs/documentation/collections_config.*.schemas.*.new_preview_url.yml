@@ -6,3 +6,4 @@ description: >-
   Visual Editor will load that URL, where Data Bindings and Previews are
   available to render your new page without saving.
 examples: []
+show_in_navigation: false

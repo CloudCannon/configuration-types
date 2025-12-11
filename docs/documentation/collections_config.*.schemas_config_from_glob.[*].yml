@@ -3,3 +3,4 @@ url: /collections_config/*/schemas_config_from_glob/[*]/
 title: ''
 description: ''
 examples: []
+show_in_navigation: false

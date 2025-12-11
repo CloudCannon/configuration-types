@@ -5,3 +5,4 @@ description: >-
   The link that opens when the option is clicked. Can either be an external or
   internal link. If internal, the link is relative to the current site.
 examples: []
+show_in_navigation: false

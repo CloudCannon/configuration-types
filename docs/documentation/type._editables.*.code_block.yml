@@ -1,0 +1,6 @@
+gid: type._editables.*.code_block
+url: /types/_editables/*/code_block/
+title: ''
+description: Enables a control to insert a code block.
+examples: []
+show_in_navigation: false

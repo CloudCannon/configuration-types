@@ -3,3 +3,4 @@ url: /commit_templates/
 title: ''
 description: Templates for commit messages when saving changes.
 examples: []
+show_in_navigation: false

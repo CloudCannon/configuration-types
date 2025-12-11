@@ -2,70 +2,83 @@ import * as z from 'zod';
 import { ReducedCascadeSchema } from './cascade.ts';
 import { PreviewSchema } from './preview.ts';
 
-export const ParserModelSchema = z.object({
-	source_key: z.string().optional(),
-	editor_key: z.string().optional(),
-	remove_empty: z.boolean(),
-	optional: z.boolean(),
-	type: z.enum(['array', 'object', 'string', 'boolean', 'number']).optional(),
-	allowed_values: z.array(z.any()).optional(),
-	implied_boolean: z.boolean(),
-	default: z.any().optional(),
-});
+export const ParserModelSchema = z
+	.object({
+		source_key: z.string().optional(),
+		editor_key: z.string().optional(),
+		remove_empty: z.boolean(),
+		optional: z.boolean(),
+		type: z.enum(['array', 'object', 'string', 'boolean', 'number']).optional(),
+		allowed_values: z.array(z.any()).optional(),
+		implied_boolean: z.boolean(),
+		default: z.any().optional(),
+	})
+	.meta({
+		id: 'type.snippet-model',
+		title: 'Snippet Model',
+	});
 
 export const PairedTokenSchema = z.object({
 	start: z.string(),
 	end: z.string(),
 });
 
-export const StringCasesSchema = z.object({
-	any: z.boolean().optional(),
-	leading_upper: z.boolean().optional(),
-	leading_lower: z.boolean().optional(),
-	lower: z.boolean().optional(),
-	upper: z.boolean().optional(),
-});
+export const SnippetStyleSchema = z
+	.object({
+		output: z.enum(['legacy', 'inline', 'block']),
+		inline: z
+			.object({
+				leading: z.string().optional(),
+				trailing: z.string().optional(),
+			})
 
-export const SnippetStyleSchema = z.object({
-	output: z.enum(['legacy', 'inline', 'block']),
-	inline: z
-		.object({
-			leading: z.string().optional(),
-			trailing: z.string().optional(),
-		})
+			.optional(),
+		block: z
+			.object({
+				leading: z.string().optional(),
+				trailing: z.string().optional(),
+				indent: z.string().optional(),
+			})
 
-		.optional(),
-	block: z
-		.object({
-			leading: z.string().optional(),
-			trailing: z.string().optional(),
-			indent: z.string().optional(),
-		})
+			.optional(),
+	})
+	.meta({
+		id: 'type.snippet-style',
+		title: 'Snippet Style',
+	});
 
-		.optional(),
-});
-
-export const ParserFormatSchema = z.object({
-	root_boundary: PairedTokenSchema,
-	root_value_boundary: PairedTokenSchema,
-	root_value_boundary_optional: z.record(z.string(), z.boolean()),
-	root_value_delimiter: z.string().optional(),
-	root_pair_delimiter: z.array(z.string()),
-	remove_empty_root_boundary: z.boolean(),
-	object_boundary: PairedTokenSchema,
-	object_value_delimiter: z.string(),
-	object_pair_delimiter: z.string(),
-	array_boundary: PairedTokenSchema,
-	array_delimiter: z.string(),
-	string_boundary: z.array(z.string()),
-	string_escape_character: z.string(),
-	allow_booleans: z.boolean(),
-	allow_numbers: z.boolean(),
-	allow_implied_values: z.boolean(),
-	allow_null: z.boolean(),
-	forbidden_tokens: z.array(z.string()),
-	allowed_string_cases: StringCasesSchema,
-});
+export const ParserFormatSchema = z
+	.object({
+		root_boundary: PairedTokenSchema,
+		root_value_boundary: PairedTokenSchema,
+		root_value_boundary_optional: z.record(z.string(), z.boolean()),
+		root_value_delimiter: z.string().optional(),
+		root_pair_delimiter: z.array(z.string()),
+		remove_empty_root_boundary: z.boolean(),
+		object_boundary: PairedTokenSchema,
+		object_value_delimiter: z.string(),
+		object_pair_delimiter: z.string(),
+		array_boundary: PairedTokenSchema,
+		array_delimiter: z.string(),
+		string_boundary: z.array(z.string()),
+		string_escape_character: z.string(),
+		allow_booleans: z.boolean(),
+		allow_numbers: z.boolean(),
+		allow_implied_values: z.boolean(),
+		allow_null: z.boolean(),
+		forbidden_tokens: z.array(z.string()),
+		allowed_string_cases: z.object({
+			any: z.boolean().optional(),
+			leading_upper: z.boolean().optional(),
+			leading_lower: z.boolean().optional(),
+			lower: z.boolean().optional(),
+			upper: z.boolean().optional(),
+		}),
+	})
+	.meta({
+		id: 'type.snippet-format',
+		title: 'Snippet Format',
+	});
 
 export const ArgumentListParserConfigSchema = z.object({
 	parser: z.literal('argument_list'),
@@ -219,7 +232,7 @@ export const SnippetConfigSchema = z
 
 const SnippetImportSchema = z
 	.union([
-		z.boolean().meta({ title: 'Full Import' }),
+		z.boolean().meta({ id: 'type._snippets_imports.*.(full-import)', title: 'Full Import' }),
 		z
 			.object({
 				exclude: z.array(z.string()).meta({

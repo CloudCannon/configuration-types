@@ -3,3 +3,4 @@ url: /types/structure/values/[*]/tabbed/
 title: ''
 description: Show nested objects as tabs. Requires all top-level keys to be objects.
 examples: []
+show_in_navigation: false

@@ -3,3 +3,4 @@ url: /types/snippet/params/*/(literal-parser-config)/
 title: Literal Parser Config
 description: ''
 examples: []
+show_in_navigation: false

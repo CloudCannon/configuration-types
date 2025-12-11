@@ -4,3 +4,4 @@ title: Structure Reference
 description: A reference to an existing structure.
 examples:
   - 'structures: _structures.content_blocks'
+show_in_navigation: true

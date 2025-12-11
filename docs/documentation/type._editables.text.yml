@@ -3,3 +3,4 @@ url: /types/_editables/text/
 title: Text Editable
 description: Contains input options for text Editable Regions.
 examples: []
+show_in_navigation: false

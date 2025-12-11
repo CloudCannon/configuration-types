@@ -1,0 +1,6 @@
+gid: type._editables.*.outdent
+url: /types/_editables/*/outdent/
+title: ''
+description: Enables a control to reduce indentation for numbered and unordered lists.
+examples: []
+show_in_navigation: false

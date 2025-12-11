@@ -1,0 +1,8 @@
+gid: type._editables.*.undo
+url: /types/_editables/*/undo/
+title: ''
+description: >-
+  Enables a control to undo recent edits. Undo is always enabled through
+  standard OS-specific keyboard shortcuts.
+examples: []
+show_in_navigation: false

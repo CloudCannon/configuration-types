@@ -1,5 +1,0 @@
-gid: type._inputs.*.(choice-input).label
-url: /types/_inputs/*/(choice-input)/label/
-title: ''
-description: Optionally changes the text above this input.
-examples: []

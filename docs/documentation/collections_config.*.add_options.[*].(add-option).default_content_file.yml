@@ -6,3 +6,4 @@ description: >-
   schemas are configured. We recommend using schemas, and this is ignored if a
   schema is available.
 examples: []
+show_in_navigation: false

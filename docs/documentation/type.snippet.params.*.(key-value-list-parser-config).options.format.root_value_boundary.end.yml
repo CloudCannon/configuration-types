@@ -1,7 +1,0 @@
-gid: >-
-  type.snippet.params.*.(key-value-list-parser-config).options.format.root_value_boundary.end
-url: >-
-  /types/snippet/params/*/(key-value-list-parser-config)/options/format/root_value_boundary/end/
-title: ''
-description: ''
-examples: []

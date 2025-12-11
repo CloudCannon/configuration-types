@@ -1,7 +1,0 @@
-gid: type._inputs.*.(url-input).options.sizes
-url: /types/_inputs/*/(url-input)/options/sizes/
-title: Sizes
-description: >-
-  Definitions for creating additional images of different sizes when uploading
-  or selecting existing files.
-examples: []

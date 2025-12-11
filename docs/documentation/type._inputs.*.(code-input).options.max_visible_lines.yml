@@ -6,3 +6,4 @@ description: >-
   controlling maximum height. When the containing text exceeds this number, the
   input becomes a scroll area.
 examples: []
+show_in_navigation: false

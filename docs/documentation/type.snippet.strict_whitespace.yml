@@ -3,3 +3,4 @@ url: /types/snippet/strict_whitespace/
 title: ''
 description: Whether this snippet treats whitespace as-is or not.
 examples: []
+show_in_navigation: false

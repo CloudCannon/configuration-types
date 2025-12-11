@@ -5,3 +5,4 @@ description: >-
   This key toggles whether CloudCannon will generate an output URL for a given
   Collection.
 examples: []
+show_in_navigation: false

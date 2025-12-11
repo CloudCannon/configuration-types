@@ -3,3 +3,4 @@ url: /types/_inputs/*/(object-input)/options/subtype/
 title: ''
 description: Changes the appearance and behavior of the input.
 examples: []
+show_in_navigation: false

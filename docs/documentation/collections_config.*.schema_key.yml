@@ -5,3 +5,4 @@ description: >-
   This key defines the name for the structured data key that references the
   Schema a file uses.
 examples: []
+show_in_navigation: false

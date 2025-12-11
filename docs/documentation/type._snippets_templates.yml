@@ -3,3 +3,4 @@ url: /types/_snippets_templates/
 title: Snippets Templates
 description: Extended option used when creating more complex custom snippets.
 examples: []
+show_in_navigation: true

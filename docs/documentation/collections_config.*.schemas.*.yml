@@ -5,3 +5,4 @@ description: >-
   Definitions for your schemas, which are the structured data formats for your
   content files.
 examples: []
+show_in_navigation: false

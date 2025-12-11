@@ -5,3 +5,4 @@ description: >-
   Defines which collections are shown in the site navigation and how those
   collections are grouped.
 examples: []
+show_in_navigation: false

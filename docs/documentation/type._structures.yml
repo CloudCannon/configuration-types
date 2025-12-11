@@ -5,3 +5,4 @@ description: >-
   Structured values for editors adding new items to arrays and objects. Entries
   here can be referenced in the configuration for `array` or `object` inputs.
 examples: []
+show_in_navigation: true

@@ -1,8 +1,0 @@
-gid: type._inputs.*.(array-input).comment
-url: /types/_inputs/*/(array-input)/comment/
-title: ''
-description: >-
-  Changes the subtext below the _Label_. Has no default. Supports a limited set
-  of Markdown: links, bold, italic, subscript, superscript, and inline code
-  elements are allowed.
-examples: []

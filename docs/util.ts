@@ -3,12 +3,15 @@ import type { JSONSchema } from 'zod/v4/core';
 export interface Example {
 	description?: string;
 	code: string;
+	language?: string;
+	annotations?: string[];
 }
 
 export interface DocumentationEntry {
 	title?: string;
 	description?: string;
 	examples?: Example[];
+	show_in_navigation?: boolean;
 }
 
 export type DocType = JsonSchema['type'] | 'date';

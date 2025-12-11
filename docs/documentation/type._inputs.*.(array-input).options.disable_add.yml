@@ -5,3 +5,4 @@ description: >-
   Hides the add button, and context menu actions on each item for adding new
   items to this Input.
 examples: []
+show_in_navigation: false

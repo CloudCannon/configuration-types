@@ -3,3 +3,4 @@ url: /types/_select_data/*/(object)/
 title: Object
 description: ''
 examples: []
+show_in_navigation: false

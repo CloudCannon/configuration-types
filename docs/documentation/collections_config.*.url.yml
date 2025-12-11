@@ -6,3 +6,4 @@ description: >-
   uses the output URL in the Visual Editor, and when linking to your Testing
   Domain and Custom Domain.
 examples: []
+show_in_navigation: false

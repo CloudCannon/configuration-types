@@ -3,3 +3,4 @@ url: /types/_editables/image/
 title: Image Editable
 description: Contains input options for image Editable Regions.
 examples: []
+show_in_navigation: false

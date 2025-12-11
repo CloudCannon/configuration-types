@@ -1,0 +1,6 @@
+gid: type._editables.*.horizontalrule
+url: /types/_editables/*/horizontalrule/
+title: ''
+description: Enables a control to insert a horizontal rule.
+examples: []
+show_in_navigation: false

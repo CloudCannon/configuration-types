@@ -3,3 +3,4 @@ url: /types/snippet/params/*/(wrapper-parser-config)/options/
 title: ''
 description: ''
 examples: []
+show_in_navigation: false

@@ -3,3 +3,4 @@ url: /markdown/options/treat_indentation_as_code/
 title: ''
 description: Determines whether 4 spaces on indentation should be read as a code block.
 examples: []
+show_in_navigation: false

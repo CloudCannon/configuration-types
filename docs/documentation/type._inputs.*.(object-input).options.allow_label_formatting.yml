@@ -3,3 +3,4 @@ url: /types/_inputs/*/(object-input)/options/allow_label_formatting/
 title: ''
 description: Controls whether or not labels on mutable object entries are formatted.
 examples: []
+show_in_navigation: false

@@ -6,3 +6,4 @@ description: >-
   date. This key requires you to define `options.end_before`. This key has no
   default.
 examples: []
+show_in_navigation: false

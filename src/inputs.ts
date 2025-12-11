@@ -58,12 +58,12 @@ const typeMeta = {
 
 const RequiredValidationSchema = z.object({
 	required: z.boolean().default(false).optional().meta({
-		id: 'required',
+		id: 'type._inputs.*.options.required',
 		description:
 			'This key toggles whether CloudCannon requires this Input to have a value. If set to true, CloudCannon will require you to enter a value to save your changes, or discard your unsaved changes.',
 	}),
 	required_message: z.string().optional().meta({
-		id: 'required_message',
+		id: 'type._inputs.*.options.required_message',
 		description:
 			'This key defines the message that explains why an Input is required. This key requires you to define `options.required`.',
 	}),
@@ -71,32 +71,32 @@ const RequiredValidationSchema = z.object({
 
 const TextValidationSchema = z.object({
 	max_length: z.number().optional().meta({
-		id: 'max_length',
+		id: 'type._inputs.*.options.max_length',
 		description:
 			'This key defines the maximum string length, in characters, that CloudCannon will allow in an Input. When configured, CloudCannon will warn you when an Input value is too long. If the Input already contains a longer value, CloudCannon will require you to remove characters until the Input contains a valid string to save your changes, or discard your unsaved changes.',
 	}),
 	max_length_message: z.string().optional().meta({
-		id: 'max_length_message',
+		id: 'type._inputs.*.options.max_length_message',
 		description:
 			'This key defines the message that explains which maximum string length an Input will accept. This key requires you to define `options.max_length`.',
 	}),
 	min_length: z.number().optional().meta({
-		id: 'min_length',
+		id: 'type._inputs.*.options.min_length',
 		description:
 			'This key defines the minimum string length, in characters, that CloudCannon will allow in an Input. When configured, CloudCannon will warn you when an Input value is too short. If the Input already contains a shorter value, CloudCannon will require you to add characters until the Input contains a valid string to save your changes, or discard your unsaved changes.',
 	}),
 	min_length_message: z.string().optional().meta({
-		id: 'min_length_message',
+		id: 'type._inputs.*.options.min_length_message',
 		description:
 			'This key defines the message that explains which minimum string length an Input will accept. This key requires you to define `options.min_length`.',
 	}),
 	pattern: z.string().optional().meta({
-		id: 'pattern',
+		id: 'type._inputs.*.options.pattern',
 		description:
 			'This key defines a regular expression that the Input value must match. When configured, CloudCannon will require you to enter a value that matches the REGEX pattern. If the Input already contains an invalid value, CloudCannon will require you to enter a valid string to save your changes, or discard your unsaved changes.',
 	}),
 	pattern_message: z.string().optional().meta({
-		id: 'pattern_message',
+		id: 'type._inputs.*.options.pattern_message',
 		description:
 			'This key defines the message that explains which regular expression an Input will accept. This key requires you to define `options.pattern`.',
 	}),
@@ -124,7 +124,7 @@ const TextValidationSchema = z.object({
 		})
 		.optional()
 		.meta({
-			id: 'pattern_flags',
+			id: 'type._inputs.*.options.pattern_flags',
 			description:
 				'This key defines the flags (e.g. case-insensitive searching) for the regular expression set in `options.pattern`.',
 		}),
@@ -132,32 +132,32 @@ const TextValidationSchema = z.object({
 
 const ArrayValidationSchema = z.object({
 	max_items: z.number().optional().meta({
-		id: 'max_items',
+		id: 'type._inputs.*.options.max_items',
 		description:
 			'This key defines the maximum number of items CloudCannon will allow in an Input. When configured, CloudCannon will prevent you from adding more items to this Input. If the Input already contains more items, CloudCannon will require you to remove items until the Input contains a valid number to save your changes, or discard your unsaved changes.',
 	}),
 	max_items_message: z.string().optional().meta({
-		id: 'max_items_message',
+		id: 'type._inputs.*.options.max_items_message',
 		description:
 			'This key defines the message that explains why an Input needs to have a maximum number of items. This key requires you to define `options.max_items`.',
 	}),
 	min_items: z.number().optional().meta({
-		id: 'min_items',
+		id: 'type._inputs.*.options.min_items',
 		description:
 			'This key defines the minimum number of items CloudCannon will allow in an Input. When configured, CloudCannon will prevent you from removing items from this Input below this value. If the Input already contains fewer items, CloudCannon will require you to add items until the Input contains a valid number to save your changes, or discard your unsaved changes.',
 	}),
 	min_items_message: z.string().optional().meta({
-		id: 'min_items_message',
+		id: 'type._inputs.*.options.min_items_message',
 		description:
 			'This key defines the message that explains why an Input needs to have a minimum number of items. This key requires you to define `options.min_items`.',
 	}),
 	unique_on: z.string().optional().meta({
-		id: 'unique_on',
+		id: 'type._inputs.*.options.unique_on',
 		description:
 			'This key defines the JSON Path selector that CloudCannon should use to determine if the value of an Input is unique. When configured, CloudCannon will require the value of the Input to be unique compared to the value defined on the JSON Path. If the Input already contains a non-unique value, CloudCannon will require you to change it to a valid value to save your changes, or discard your unsaved changes.',
 	}),
 	unique_on_message: z.string().optional().meta({
-		id: 'unique_on_message',
+		id: 'type._inputs.*.options.unique_on_message',
 		description:
 			'This key defines the message that explains why an Input needs to be unique. This key requires you to define `options.unique_on`.',
 	}),
@@ -180,22 +180,22 @@ const ArrayControlOptionsSchema = z.object({
 });
 
 const EmptyTypeTextSchema = z.enum(['null', 'string']).default('null').meta({
-	id: 'empty_type_text',
+	id: 'type._inputs.*.options.empty_type_text',
 	description: 'Set how an ‘empty’ value will be saved. Does not apply to existing empty values.',
 });
 
 const EmptyTypeNumberSchema = z.enum(['null', 'number']).default('null').meta({
-	id: 'empty_type_number',
+	id: 'type._inputs.*.options.empty_type_number',
 	description: 'Set how an ‘empty’ value will be saved. Does not apply to existing empty values.',
 });
 
 const EmptyTypeObjectSchema = z.enum(['null', 'object']).default('null').meta({
-	id: 'empty_type_object',
+	id: 'type._inputs.*.options.empty_type_object',
 	description: 'Set how an ‘empty’ value will be saved. Does not apply to existing empty values.',
 });
 
 const EmptyTypeArraySchema = z.enum(['null', 'array']).default('null').meta({
-	id: 'empty_type_array',
+	id: 'type._inputs.*.options.empty_type_array',
 	description: 'Set how an ‘empty’ value will be saved. Does not apply to existing empty values.',
 });
 
@@ -215,13 +215,13 @@ export const ContextSchema = z
 		}),
 	})
 	.meta({
-		id: 'context',
+		id: 'type._inputs.*.context',
 		description: 'Adds an expandable section of rich text below the input.',
 	});
 
 export const BaseInputSchema = z.object({
 	comment: z.string().optional().meta({
-		id: 'comment',
+		id: 'type._inputs.*.comment',
 		description:
 			'Changes the subtext below the _Label_. Has no default. Supports a limited set of Markdown: links, bold, italic, subscript, superscript, and inline code elements are allowed.',
 	}),
@@ -230,7 +230,7 @@ export const BaseInputSchema = z.object({
 		description: 'Provides a custom link for documentation for editors shown above input.',
 	}),
 	label: z.string().optional().meta({
-		id: 'label',
+		id: 'type._inputs.*.label',
 		description: 'Optionally changes the text above this input.',
 	}),
 	hidden: z
@@ -238,7 +238,7 @@ export const BaseInputSchema = z.object({
 		.default(false)
 		.optional()
 		.meta({
-			id: 'hidden',
+			id: 'type._inputs.*.hidden',
 			description: 'Toggles the visibility of this input.',
 		}),
 	disabled: z
@@ -246,22 +246,22 @@ export const BaseInputSchema = z.object({
 		.default(false)
 		.optional()
 		.meta({
-			id: 'disabled',
+			id: 'type._inputs.*.disabled',
 			description: 'Toggles if this input can be edited.',
 		}),
 	instance_value: z.enum(['UUID', 'NOW']).optional().meta({
-		id: 'instance_value',
+		id: 'type._inputs.*.instance_value',
 		title: 'Instance Value',
 		description:
 			'Controls if and how the value of this input is instantiated when created. This occurs when creating files, or adding array items containing the configured input.',
 	}),
 	disable_instance_value_rehydration: z.boolean().default(false).optional().meta({
-		id: 'disable_instance_value_rehydration',
+		id: 'type._inputs.*.disable_instance_value_rehydration',
 		description:
 			'Prevents the default where inputs configured with an `instance_value` are rehydrated with a new value when duplicated in the CMS.',
 	}),
 	cascade: z.boolean().default(true).optional().meta({
-		id: 'cascade',
+		id: 'type._inputs.*.cascade',
 		description:
 			'Specifies whether or not this input configuration should be merged with any matching, less specific configuration.',
 	}),
@@ -413,13 +413,13 @@ export const BooleanInputSchema = z
 	});
 
 const MinSchema = z.number().meta({
-	id: 'min',
+	id: 'type._inputs.*.options.min',
 	description:
 		'This key defines the minimum numerical value CloudCannon will allow in an Input. When configured, CloudCannon will prevent you from entering a lesser numerical value. If the Input already contains a lesser numerical value, CloudCannon will require you to enter a valid value to save your changes, or discard your unsaved changes.',
 });
 
 const MaxSchema = z.number().meta({
-	id: 'max',
+	id: 'type._inputs.*.options.max',
 	description:
 		'This key defines the maximum numerical value CloudCannon will allow in an Input. When configured, CloudCannon will prevent you from entering a greater numerical value. If the Input already contains a greater numerical value, CloudCannon will require you to enter a valid value to save your changes, or discard your unsaved changes.',
 });
@@ -431,17 +431,17 @@ export const NumberInputOptionsSchema = z
 		min: MinSchema.optional(),
 		max: MaxSchema.optional(),
 		step: z.number().optional().meta({
-			id: 'step',
+			id: 'type._inputs.*.options.step',
 			description:
 				'A number that specifies the granularity that the value must adhere to, or the special value any, which allows any decimal value between `max` and `min`.',
 		}),
 		min_message: z.string().optional().meta({
-			id: 'min_message',
+			id: 'type._inputs.*.options.min_message',
 			description:
 				'This key defines the message that explains why an Input needs to have a minimum numerical value. This key requires you to define `options.min`.',
 		}),
 		max_message: z.string().optional().meta({
-			id: 'max_message',
+			id: 'type._inputs.*.options.max_message',
 			description:
 				'This key defines the message that explains why an Input needs to have a maximum numerical value. This key requires you to define `options.max`.',
 		}),
@@ -602,31 +602,31 @@ export const FileInputOptionsSchema = z
 			])
 			.optional()
 			.meta({
-				id: 'accepts_mime_types',
+				id: 'type._inputs.*.options.accepts_mime_types',
 				description:
 					'Restricts which file types are available to select or upload to this input. Accepted format is an array or comma-separated string of MIME types. The special value "*" means any type is accepted.',
 			}),
 		max_file_size: z.number().optional().meta({
-			id: 'max_file_size',
+			id: 'type._inputs.*.options.max_file_size',
 			description:
 				'This key defines the maximum file size, in kilobytes, that CloudCannon will allow in an Input. When configured, CloudCannon will prevent you from uploading a file larger than the specified size. If the Input already contains a file larger than the specified size, CloudCannon will require you to change it to a valid value to save your changes, or discard your unsaved changes. Value can be any positive integer.',
 		}),
 		max_file_size_message: z.string().optional().meta({
-			id: 'max_file_size_message',
+			id: 'type._inputs.*.options.max_file_size_message',
 			description:
 				'This key defines the message that explains why an Input needs to have a maximum file size. This key requires you to define `options.max_file_size`. This key has no default.',
 		}),
 		disable_upload_file: z.boolean().default(false).optional().meta({
-			id: 'disable_upload_file',
+			id: 'type._inputs.*.options.disable_upload_file',
 			description: 'Disables the context menu option and the drop area for uploading files.',
 		}),
 		disable_direct_input: z.boolean().default(false).optional().meta({
-			id: 'disable_direct_input',
+			id: 'type._inputs.*.options.disable_direct_input',
 			description:
 				'Prevents typing into the text input, while still allowing context menu options to change the value.',
 		}),
 		disable_upload_file_in_file_browser: z.boolean().default(false).optional().meta({
-			id: 'disable_upload_file_in_file_browser',
+			id: 'type._inputs.*.options.disable_upload_file_in_file_browser',
 			description:
 				'Prevents file uploads inside the "Select existing file/image" file browser modal window.',
 		}),
@@ -689,11 +689,11 @@ export const SharedSelectInputOptionsSchema = z.object({
 	preview: PreviewSchema.optional(),
 	picker_preview: PreviewSchema.optional(),
 	allow_create: z.boolean().default(false).optional().meta({
-		id: 'allow_create',
+		id: 'type._inputs.*.options.allow_create',
 		description: 'Allows new text values to be created at edit time.',
 	}),
 	allow_empty: z.boolean().default(true).optional().meta({
-		id: 'allow_empty',
+		id: 'type._inputs.*.options.allow_empty',
 		description: 'Provides an empty option alongside the options provided by values.',
 	}),
 	values: z
@@ -703,21 +703,21 @@ export const SharedSelectInputOptionsSchema = z.object({
 		])
 		.optional()
 		.meta({
-			id: 'values',
+			id: 'type._inputs.*.options.values',
 			description:
 				'Defines the values available to choose from. Optional, defaults to fetching values from the naming convention (e.g. colors or my_colors for data set colors).',
 		}),
 	value_key: z.string().optional().meta({
-		id: 'value_key',
+		id: 'type._inputs.*.options.value_key',
 		description:
 			'Defines the key used for mapping between saved values and objects in values. This changes how the input saves selected values to match. Defaults to checking for "id", "uuid", "path", "title", then "name". Has no effect unless values is an array of objects, the key is used instead for objects, and the value itself is used for primitive types.',
 	}),
 	view: z.enum(['card', 'text', 'gallery', 'gallery-left']).optional().meta({
-		id: 'view',
+		id: 'type._inputs.*.options.view',
 		description: 'Controls how selected items are rendered.',
 	}),
 	picker_view: z.enum(['card', 'text', 'gallery', 'gallery-left']).optional().meta({
-		id: 'picker_view',
+		id: 'type._inputs.*.options.picker_view',
 		description: 'Controls how selectable options are rendered.',
 	}),
 });
@@ -868,7 +868,6 @@ export const ObjectInputOptionsSchema = z
 						'Used to supply help text above the key input when adding/renaming within a mutable object input. Has no default. Supports a limited set of Markdown: links, bold, italic, subscript, superscript and inline code elements are allowed.',
 				}),
 				documentation: DocumentationSchema.optional().meta({
-					id: 'entries_documentation',
 					description:
 						'Provides a custom link for documentation for editors shown above the key input when adding/renaming within a mutable object input.',
 				}),
@@ -1009,6 +1008,10 @@ export const InputsSchema = z.record(z.string(), InputSchema).meta({
 	title: 'Inputs',
 	description:
 		'Controls the behavior and appearance of your inputs in all data editing interfaces.',
+});
+
+export const InputsFromGlobSchema = z.array(z.string()).meta({
+	id: 'type._inputs_from_glob',
 });
 
 export type Context = z.infer<typeof ContextSchema>;

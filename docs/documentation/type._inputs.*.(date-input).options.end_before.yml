@@ -10,3 +10,4 @@ description: >-
   options.start_from is also configured, this key cannot be an earlier date and
   time. This key has no default.
 examples: []
+show_in_navigation: false

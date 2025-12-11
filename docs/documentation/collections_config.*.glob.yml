@@ -32,7 +32,8 @@ examples:
           glob:
             - '!secret.yml'
   - description: >-
-      In this example, the *Collection browser* will show only `.yml` files in the `data` folder or any nested folders:
+      In this example, the *Collection browser* will show only `.yml` files in
+      the `data` folder or any nested folders:
     code: |-
       collections_config:
         data:
@@ -40,8 +41,8 @@ examples:
           glob:
             - '**/*.yml'
   - description: >-
-      In this example, the *Collection browser* will show only `.yml` files
-      in the `data` folder, except for the `secret.yml` file:
+      In this example, the *Collection browser* will show only `.yml` files in
+      the `data` folder, except for the `secret.yml` file:
     code: |-
       collections_config:
         data:
@@ -49,3 +50,4 @@ examples:
           glob:
             - '**/*.yml'
             - '!secret.yml'
+show_in_navigation: false

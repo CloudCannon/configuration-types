@@ -3,3 +3,4 @@ url: /types/_inputs/*/(object-input)/options/groups/[*]/inputs/
 title: ''
 description: The keys of each input in this group.
 examples: []
+show_in_navigation: false

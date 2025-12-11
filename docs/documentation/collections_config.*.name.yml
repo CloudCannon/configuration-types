@@ -5,3 +5,4 @@ description: >-
   This key defines the display name for a Collection. The name appears in the
   _Site Navigation_ and at the top of the _Collection browser_.
 examples: []
+show_in_navigation: false

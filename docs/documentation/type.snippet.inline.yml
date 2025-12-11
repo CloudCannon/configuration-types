@@ -5,3 +5,4 @@ description: >-
   Whether this snippet can appear inline (within a sentence). Defaults to false,
   which will treat this snippet as a block-level element in the content editor.
 examples: []
+show_in_navigation: false

@@ -5,3 +5,4 @@ description: >-
   Path to an image in your source files used when displaying the structure. Can
   be either a source (has priority) or output path.
 examples: []
+show_in_navigation: false

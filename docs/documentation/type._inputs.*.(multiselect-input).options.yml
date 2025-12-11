@@ -3,3 +3,4 @@ url: /types/_inputs/*/(multiselect-input)/options/
 title: ''
 description: Options that are specific to Multiselect Inputs.
 examples: []
+show_in_navigation: false

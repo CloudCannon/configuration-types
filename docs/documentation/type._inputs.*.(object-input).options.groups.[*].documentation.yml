@@ -1,7 +1,0 @@
-gid: type._inputs.*.(object-input).options.groups.[*].documentation
-url: /types/_inputs/*/(object-input)/options/groups/[*]/documentation/
-title: Documentation
-description: >-
-  Provides a custom link for documentation for editors shown above the
-  collection file list.
-examples: []

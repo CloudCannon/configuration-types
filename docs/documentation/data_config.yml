@@ -11,3 +11,4 @@ examples:
         path: data/locations.yml
       authors:
         path: data/authors
+show_in_navigation: false

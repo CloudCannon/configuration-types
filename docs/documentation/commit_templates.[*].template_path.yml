@@ -5,3 +5,4 @@ description: >-
   Sets the path for a file containing your commit template. The file path should
   be relative to the root directory.
 examples: []
+show_in_navigation: false

@@ -3,3 +3,4 @@ url: /collection_groups/[*]/
 title: Collection Group
 description: A group of Collections shown in the Site Navigation.
 examples: []
+show_in_navigation: false

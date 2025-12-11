@@ -3,3 +3,4 @@ url: /types/_inputs/*/(text-input)/options/icon_background_color/
 title: ''
 description: ''
 examples: []
+show_in_navigation: false
