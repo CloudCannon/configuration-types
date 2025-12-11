@@ -94,7 +94,7 @@ export const CreateSchema = z
 		...ReducedCascadeSchema.shape,
 	})
 	.meta({
-		id: 'create',
+		id: 'type.create',
 		title: 'Create',
 		description: 'Controls where new files are saved.',
 	});
@@ -110,7 +110,7 @@ export const SchemaSchema = z
 		}),
 		icon: IconSchema.default('notes').optional().meta({
 			description:
-				'Displayed in the add menu when creating new files; also used as the icon for collection files if no other preview is found. Defaults to notes.',
+				'Displayed in the add menu when creating new files; also used as the icon for collection files if no other preview is found.',
 		}),
 		create: CreateSchema.optional(),
 		new_preview_url: z.string().optional().meta({
@@ -119,7 +119,7 @@ export const SchemaSchema = z
 		}),
 		reorder_inputs: z.boolean().default(true).optional().meta({
 			description:
-				'If true, inputs are sorted to match when editing. Extra inputs are ordered after expected inputs, unless `remove_extra_inputs` is true. Defaults to true.',
+				'If true, inputs are sorted to match when editing. Extra inputs are ordered after expected inputs, unless `remove_extra_inputs` is true.',
 		}),
 		hide_extra_inputs: z.boolean().default(false).optional().meta({
 			description:
@@ -127,10 +127,10 @@ export const SchemaSchema = z
 		}),
 		remove_empty_inputs: z.boolean().default(false).optional().meta({
 			description:
-				'If checked, empty inputs are removed from the source file on save. Removed inputs will be available for editing again, provided they are in the matching schema/structure. Defaults to false.',
+				'If checked, empty inputs are removed from the source file on save. Removed inputs will be available for editing again, provided they are in the matching schema/structure.',
 		}),
 		remove_extra_inputs: z.boolean().default(true).optional().meta({
-			description: 'If checked, extra inputs are removed when editing. Defaults to true.',
+			description: 'If checked, extra inputs are removed when editing.',
 		}),
 		preview: PreviewSchema.optional(),
 		...CascadeSchema.shape,

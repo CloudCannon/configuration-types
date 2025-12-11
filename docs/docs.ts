@@ -64,17 +64,27 @@ export async function writeNewDocs(gids: Set<string>, pages: Record<string, Page
 		return memo;
 	}, {});
 
-	const newGids = Array.from(gids).filter((gid) => !existingGids[gid]);
+	let newCount = 0;
+	let updatedCount = 0;
 
-	console.log(`📝 Write to docs/documentation/*.yml (${newGids.length})`);
+	console.log(`📝 Write to docs/documentation/*.yml (${gids.size})`);
 
-	newGids.forEach((gid) => {
+	gids.forEach((gid) => {
+		if (existingGids[gid]) {
+			updatedCount++;
+		} else {
+			newCount++;
+		}
+
 		pageFiles.push({
 			gid,
 			url: pages[gid]?.url,
 			title: pages[gid]?.title || '',
 			description: pages[gid]?.description || '',
 			examples: pages[gid]?.examples || [],
+			show_in_navigation:
+				pages[gid]?.documentation?.show_in_navigation ??
+				(gid.startsWith('type.') && gid.split('.').length === 2),
 		});
 	});
 
@@ -93,4 +103,7 @@ export async function writeNewDocs(gids: Set<string>, pages: Record<string, Page
 			dump(pageFile, { noRefs: true })
 		);
 	}
+
+	console.log(`     🆕 New (${newCount})`);
+	console.log(`     ✍️ Updated (${updatedCount})`);
 }
