@@ -1,7 +1,0 @@
-gid: >-
-  type.snippet.params.*.(key-value-list-parser-config).options.format.string_escape_character
-url: >-
-  /types/snippet/params/*/(key-value-list-parser-config)/options/format/string_escape_character/
-title: ''
-description: ''
-examples: []

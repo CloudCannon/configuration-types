@@ -65,14 +65,11 @@ export async function writeNewDocs(gids: Set<string>, pages: Record<string, Page
 	}, {});
 
 	let newCount = 0;
-	let updatedCount = 0;
 
 	console.log(`📝 Write to docs/documentation/*.yml (${gids.size})`);
 
 	gids.forEach((gid) => {
-		if (existingGids[gid]) {
-			updatedCount++;
-		} else {
+		if (!existingGids[gid]) {
 			newCount++;
 		}
 
@@ -105,5 +102,4 @@ export async function writeNewDocs(gids: Set<string>, pages: Record<string, Page
 	}
 
 	console.log(`     🆕 New (${newCount})`);
-	console.log(`     ✍️ Updated (${updatedCount})`);
 }

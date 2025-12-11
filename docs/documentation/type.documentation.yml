@@ -1,0 +1,8 @@
+gid: type.documentation
+url: /types/documentation/
+title: Documentation
+description: >-
+  This key defines the documentation link at the top of a _Collection browser_.
+  Collection documentation is useful for assisting your team members.
+examples: []
+show_in_navigation: true

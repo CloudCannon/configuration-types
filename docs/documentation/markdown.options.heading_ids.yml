@@ -3,3 +3,4 @@ url: /markdown/options/heading_ids/
 title: ''
 description: Generate IDs for headings.
 examples: []
+show_in_navigation: false

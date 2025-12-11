@@ -1,0 +1,6 @@
+gid: type._editables.*.indent
+url: /types/_editables/*/indent/
+title: ''
+description: Enables a control to increase indentation for numbered and unordered lists.
+examples: []
+show_in_navigation: false

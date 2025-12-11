@@ -3,3 +3,4 @@ url: /types/_inputs/*/(date-input)/options/start_from/(date)/
 title: Date
 description: ''
 examples: []
+show_in_navigation: false

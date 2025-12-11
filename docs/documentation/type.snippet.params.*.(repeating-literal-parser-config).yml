@@ -3,3 +3,4 @@ url: /types/snippet/params/*/(repeating-literal-parser-config)/
 title: Repeating Literal Parser Config
 description: ''
 examples: []
+show_in_navigation: false

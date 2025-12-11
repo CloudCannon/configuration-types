@@ -5,3 +5,4 @@ description: >-
   Hides unexpected inputs when editing. Has no effect if `remove_extra_inputs`
   is true. Defaults to false.
 examples: []
+show_in_navigation: false

@@ -3,3 +3,4 @@ url: /markdown/options/superscript/
 title: ''
 description: Output superscript in wrapped in carets (e.g. `^super^`).
 examples: []
+show_in_navigation: false

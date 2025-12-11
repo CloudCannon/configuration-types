@@ -3,3 +3,4 @@ url: /types/_inputs/*/(color-input)/type/
 title: Type
 description: Sets an input type, which controls how this input appears and behaves.
 examples: []
+show_in_navigation: false

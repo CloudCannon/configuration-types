@@ -1,0 +1,8 @@
+gid: type._editables.*.image
+url: /types/_editables/*/image/
+title: ''
+description: >-
+  Enables a control to insert an image. The image can be uploaded, existing or
+  an external link.
+examples: []
+show_in_navigation: false

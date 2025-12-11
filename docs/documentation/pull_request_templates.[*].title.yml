@@ -3,3 +3,4 @@ url: /pull_request_templates/[*]/title/
 title: ''
 description: The default value for the pull request title.
 examples: []
+show_in_navigation: false

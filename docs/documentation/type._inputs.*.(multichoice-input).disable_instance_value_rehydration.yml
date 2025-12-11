@@ -1,7 +1,0 @@
-gid: type._inputs.*.(multichoice-input).disable_instance_value_rehydration
-url: /types/_inputs/*/(multichoice-input)/disable_instance_value_rehydration/
-title: ''
-description: >-
-  Prevents the default where inputs configured with an `instance_value` are
-  rehydrated with a new value when duplicated in the CMS.
-examples: []

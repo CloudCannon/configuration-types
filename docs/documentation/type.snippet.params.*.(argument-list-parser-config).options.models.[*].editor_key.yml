@@ -1,7 +1,0 @@
-gid: >-
-  type.snippet.params.*.(argument-list-parser-config).options.models.[*].editor_key
-url: >-
-  /types/snippet/params/*/(argument-list-parser-config)/options/models/[*]/editor_key/
-title: ''
-description: ''
-examples: []

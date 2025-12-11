@@ -1,0 +1,10 @@
+gid: type._editables.*.left
+url: /types/_editables/*/left/
+title: ''
+description: >-
+  Enables a control to left align text by toggling a class name for a block of
+  text. The value is the class name the editor should add to align the text. The
+  styles for this class need to be listed in the `styles` file to take effect
+  outside of the input.
+examples: []
+show_in_navigation: false

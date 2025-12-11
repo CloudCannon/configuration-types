@@ -5,3 +5,4 @@ description: >-
   This key defines a new URL for previewing your unbuilt pages in the Visual
   Editor.
 examples: []
+show_in_navigation: false

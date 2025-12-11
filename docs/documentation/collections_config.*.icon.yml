@@ -6,3 +6,4 @@ description: >-
   _Site Navigation_ and are the default icon for Collection file Cards if you
   have not defined `preview.icon`.
 examples: []
+show_in_navigation: false

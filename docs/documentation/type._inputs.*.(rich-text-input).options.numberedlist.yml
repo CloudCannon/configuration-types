@@ -1,7 +1,0 @@
-gid: type._inputs.*.(rich-text-input).options.numberedlist
-url: /types/_inputs/*/(rich-text-input)/options/numberedlist/
-title: ''
-description: >-
-  Enables a control to insert a numbered list, or to convert selected blocks of
-  text into a numbered list.
-examples: []

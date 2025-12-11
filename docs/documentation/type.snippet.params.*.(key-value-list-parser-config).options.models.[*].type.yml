@@ -1,6 +1,0 @@
-gid: type.snippet.params.*.(key-value-list-parser-config).options.models.[*].type
-url: >-
-  /types/snippet/params/*/(key-value-list-parser-config)/options/models/[*]/type/
-title: ''
-description: ''
-examples: []

@@ -3,3 +3,4 @@ url: /markdown/options/linkify/
 title: ''
 description: Autoconvert URL-like text to links.
 examples: []
+show_in_navigation: false

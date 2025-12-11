@@ -1,7 +1,0 @@
-gid: >-
-  type._inputs.*.(text-input).options.icon_background_color.(array).[*].(template)
-url: >-
-  /types/_inputs/*/(text-input)/options/icon_background_color/(array)/[*]/(template)/
-title: Template
-description: ''
-examples: []

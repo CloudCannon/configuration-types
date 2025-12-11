@@ -5,3 +5,4 @@ description: >-
   This key toggles the gutter on the left of the editing interface, displaying
   line numbers and code folding controls.
 examples: []
+show_in_navigation: false

@@ -5,3 +5,4 @@ description: >-
   Allows you to group the inputs inside this object together without changing
   the data structure.
 examples: []
+show_in_navigation: false

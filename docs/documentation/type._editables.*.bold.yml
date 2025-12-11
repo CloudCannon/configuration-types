@@ -1,0 +1,6 @@
+gid: type._editables.*.bold
+url: /types/_editables/*/bold/
+title: ''
+description: Enables a control to set selected text to bold.
+examples: []
+show_in_navigation: false

@@ -3,3 +3,4 @@ url: /commit_templates/[*]/extra_data/*/
 title: ''
 description: ''
 examples: []
+show_in_navigation: false

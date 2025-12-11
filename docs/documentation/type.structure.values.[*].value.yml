@@ -3,3 +3,4 @@ url: /types/structure/values/[*]/value/
 title: ''
 description: The actual value used when items are added after selection.
 examples: []
+show_in_navigation: false

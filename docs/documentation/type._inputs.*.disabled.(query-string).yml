@@ -1,0 +1,6 @@
+gid: type._inputs.*.disabled.(query-string)
+url: /types/_inputs/*/disabled/(query-string)/
+title: Query String
+description: ''
+examples: []
+show_in_navigation: false

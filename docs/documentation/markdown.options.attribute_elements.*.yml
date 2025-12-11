@@ -3,3 +3,4 @@ url: /markdown/options/attribute_elements/*/
 title: Attribute List Position
 description: Positioning options for Markdown attribute elements.
 examples: []
+show_in_navigation: false

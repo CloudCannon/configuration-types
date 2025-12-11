@@ -7,3 +7,4 @@ description: >-
   of values you have defined. Has no effect if `allow_create` is false.
   `entries.structures` applies to the entries within the object.
 examples: []
+show_in_navigation: false

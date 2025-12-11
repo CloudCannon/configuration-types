@@ -5,3 +5,4 @@ description: >-
   The list of included snippets. If unset, all snippets are included unless
   defined in `exclude`.
 examples: []
+show_in_navigation: false

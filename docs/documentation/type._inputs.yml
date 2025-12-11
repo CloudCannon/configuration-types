@@ -3,8 +3,8 @@ url: /types/_inputs/
 title: Inputs
 description: >-
   This key defines which inputs are available at a given level of the
-  configuration cascade.
-  This key has no default. If undefined at higher levels of the [configuration
+  configuration cascade. This key has no default. If undefined at higher levels
+  of the [configuration
   cascade](/documentation/articles/using-the-configuration-cascade/), `_inputs`
   will default to any values configured in the [CloudCannon configuration
   file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
@@ -52,3 +52,4 @@ examples:
                   - Opinion
                   - Feature
                   - Resource
+show_in_navigation: true

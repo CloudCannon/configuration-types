@@ -5,3 +5,4 @@ description: >-
   This key defines which Schemas are available to populate files in this
   Collection.
 examples: []
+show_in_navigation: false

@@ -1,0 +1,6 @@
+gid: type._inputs.*.context.open
+url: /types/_inputs/*/context/open/
+title: ''
+description: Makes the content visible initially.
+examples: []
+show_in_navigation: false

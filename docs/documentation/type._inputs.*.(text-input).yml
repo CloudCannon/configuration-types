@@ -3,3 +3,4 @@ url: /types/_inputs/*/(text-input)/
 title: Text Input
 description: Provides a simple editing interface for plain text.
 examples: []
+show_in_navigation: false

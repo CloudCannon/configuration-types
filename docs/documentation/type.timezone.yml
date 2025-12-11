@@ -6,3 +6,4 @@ description: >-
   the suffix the date is persisted to the file with. Defaults to the global
   `timezone`.
 examples: []
+show_in_navigation: true

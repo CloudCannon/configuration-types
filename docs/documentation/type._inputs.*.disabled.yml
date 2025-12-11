@@ -1,0 +1,6 @@
+gid: type._inputs.*.disabled
+url: /types/_inputs/*/disabled/
+title: ''
+description: Toggles if this input can be edited.
+examples: []
+show_in_navigation: false

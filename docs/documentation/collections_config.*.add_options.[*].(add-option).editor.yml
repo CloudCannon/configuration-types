@@ -6,3 +6,4 @@ description: >-
   file's type if possible. If no default editor can be calculated, or the editor
   does not support the new file type, a warning is shown in place of the editor.
 examples: []
+show_in_navigation: false

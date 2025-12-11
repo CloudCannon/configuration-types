@@ -3,3 +3,4 @@ url: /types/structure/values/[*]/tags/
 title: ''
 description: Used to group and filter items when selecting from a modal.
 examples: []
+show_in_navigation: false

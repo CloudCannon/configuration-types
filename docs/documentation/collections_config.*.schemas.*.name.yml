@@ -5,3 +5,4 @@ description: >-
   Displayed in the add menu when creating new files. Defaults to a formatted
   version of the key.
 examples: []
+show_in_navigation: false

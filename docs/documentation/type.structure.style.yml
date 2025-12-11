@@ -5,3 +5,4 @@ description: >-
   Defines whether options are shown to your editors in a select menu (select,
   default) or a modal pop up window (modal) when adding a new item.
 examples: []
+show_in_navigation: false

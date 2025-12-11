@@ -3,3 +3,4 @@ url: /types/snippet/alternate_formats/
 title: ''
 description: Alternate configurations for this snippet.
 examples: []
+show_in_navigation: false

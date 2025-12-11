@@ -3,3 +3,4 @@ url: /commit_templates/[*]/wrap_width/
 title: ''
 description: Sets the width of the text wrap in the editor.
 examples: []
+show_in_navigation: false

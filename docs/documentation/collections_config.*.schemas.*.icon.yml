@@ -5,3 +5,4 @@ description: >-
   Displayed in the add menu when creating new files; also used as the icon for
   collection files if no other preview is found. Defaults to notes.
 examples: []
+show_in_navigation: false

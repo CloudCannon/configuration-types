@@ -1,0 +1,6 @@
+gid: type._editables.*.subscript
+url: /types/_editables/*/subscript/
+title: ''
+description: Enables a control to set selected text to subscript.
+examples: []
+show_in_navigation: false

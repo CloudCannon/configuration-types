@@ -3,3 +3,4 @@ url: /types/snippet/params/*/(argument-list-parser-config)/
 title: Argument List Parser Config
 description: ''
 examples: []
+show_in_navigation: false

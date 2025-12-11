@@ -3,3 +3,4 @@ url: /types/_inputs/*/(object-input)/options/groups/[*]/
 title: ''
 description: ''
 examples: []
+show_in_navigation: false

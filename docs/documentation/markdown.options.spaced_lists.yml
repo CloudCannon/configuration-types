@@ -3,3 +3,4 @@ url: /markdown/options/spaced_lists/
 title: ''
 description: Output lists with an extra space in Markdown.
 examples: []
+show_in_navigation: false

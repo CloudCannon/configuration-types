@@ -1,0 +1,6 @@
+gid: type._inputs.*.options.accepts_mime_types.(comma-separated)
+url: /types/_inputs/*/options/accepts_mime_types/(comma-separated)/
+title: Comma Separated
+description: ''
+examples: []
+show_in_navigation: false

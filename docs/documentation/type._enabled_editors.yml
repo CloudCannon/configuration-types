@@ -6,3 +6,4 @@ description: >-
   editor opens by default, and the following values specify which editors are
   accessible.
 examples: []
+show_in_navigation: true

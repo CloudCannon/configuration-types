@@ -1,4 +1,0 @@
-gid: pull_request_templates.[*]._inputs
-title: ''
-description: 'Define inputs used for the title and body fields of the pull request.'
-examples: []

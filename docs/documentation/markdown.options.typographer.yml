@@ -3,3 +3,4 @@ url: /markdown/options/typographer/
 title: ''
 description: Enable some language-neutral replacement, as well as quotes beautification.
 examples: []
+show_in_navigation: false

@@ -3,3 +3,4 @@ url: /types/_inputs/*/(date-input)/options/end_before/(date)/
 title: Date
 description: ''
 examples: []
+show_in_navigation: false

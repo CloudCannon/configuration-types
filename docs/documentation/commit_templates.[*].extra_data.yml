@@ -3,3 +3,4 @@ url: /commit_templates/[*]/extra_data/
 title: ''
 description: Define additional template strings, for building nested templates.
 examples: []
+show_in_navigation: false

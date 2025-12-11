@@ -3,3 +3,4 @@ url: /collections_config/*/add_options/[*]/(add-option)/
 title: Add Option
 description: An option for the add menu.
 examples: []
+show_in_navigation: false

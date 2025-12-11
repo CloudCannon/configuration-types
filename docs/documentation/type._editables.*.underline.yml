@@ -1,0 +1,6 @@
+gid: type._editables.*.underline
+url: /types/_editables/*/underline/
+title: ''
+description: Enables a control to underline selected text.
+examples: []
+show_in_navigation: false

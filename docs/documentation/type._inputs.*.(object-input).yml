@@ -3,3 +3,4 @@ url: /types/_inputs/*/(object-input)/
 title: Object Input
 description: Provides a user interface for a group of inputs.
 examples: []
+show_in_navigation: false

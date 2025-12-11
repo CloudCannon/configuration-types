@@ -1,5 +1,0 @@
-gid: type._inputs.*.(textarea-input).options.pattern_flags.ignore_case
-url: /types/_inputs/*/(textarea-input)/options/pattern_flags/ignore_case/
-title: ''
-description: '`i` - Case-insensitive.'
-examples: []

@@ -3,3 +3,4 @@ url: /types/structure/values/[*]/label/
 title: ''
 description: Used as the main text in the interface for this value.
 examples: []
+show_in_navigation: false

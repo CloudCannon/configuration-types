@@ -3,3 +3,4 @@ url: /types/_inputs/*/(textarea-input)/
 title: Textarea Input
 description: Provides an editing interface for plain text.
 examples: []
+show_in_navigation: false

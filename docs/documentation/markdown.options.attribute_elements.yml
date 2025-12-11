@@ -3,3 +3,4 @@ url: /markdown/options/attribute_elements/
 title: Markdown Attribute Element Options
 description: Define positioning behavior of Markdown attributes for different elements.
 examples: []
+show_in_navigation: false

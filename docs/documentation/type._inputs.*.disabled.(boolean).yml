@@ -1,0 +1,6 @@
+gid: type._inputs.*.disabled.(boolean)
+url: /types/_inputs/*/disabled/(boolean)/
+title: Boolean
+description: ''
+examples: []
+show_in_navigation: false

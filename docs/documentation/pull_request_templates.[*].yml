@@ -3,3 +3,4 @@ url: /pull_request_templates/[*]/
 title: ''
 description: ''
 examples: []
+show_in_navigation: false

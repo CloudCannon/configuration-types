@@ -5,3 +5,4 @@ description: >-
   This key defines the auto-indentation of each line and how many spaces a tab
   indentation counts as.
 examples: []
+show_in_navigation: false

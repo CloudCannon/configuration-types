@@ -5,3 +5,4 @@ description: >-
   Fixed datasets that can be referenced by the _Values_ configuration for
   _Select_ and _Multiselect_ inputs.
 examples: []
+show_in_navigation: true

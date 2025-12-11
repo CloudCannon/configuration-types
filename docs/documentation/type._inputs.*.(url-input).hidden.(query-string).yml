@@ -1,5 +1,0 @@
-gid: type._inputs.*.(url-input).hidden.(query-string)
-url: /types/_inputs/*/(url-input)/hidden/(query-string)/
-title: Query String
-description: ''
-examples: []

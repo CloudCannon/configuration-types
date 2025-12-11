@@ -5,3 +5,4 @@ description: >-
   Used to identify a pull request template when multiple pull request templates
   are available.
 examples: []
+show_in_navigation: false

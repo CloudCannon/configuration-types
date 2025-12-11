@@ -3,3 +3,4 @@ url: /markdown/options/sentence_per_line/
 title: ''
 description: Add linebreaks between sentences in Markdown.
 examples: []
+show_in_navigation: false

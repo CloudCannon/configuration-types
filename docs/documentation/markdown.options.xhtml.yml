@@ -3,3 +3,4 @@ url: /markdown/options/xhtml/
 title: ''
 description: Use `/` to close single tags (e.g. `<br />`).
 examples: []
+show_in_navigation: false

@@ -1,0 +1,6 @@
+gid: type._editables.*.italic
+url: /types/_editables/*/italic/
+title: ''
+description: Enables a control to italicize selected text.
+examples: []
+show_in_navigation: false

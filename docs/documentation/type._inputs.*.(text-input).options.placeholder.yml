@@ -3,3 +3,4 @@ url: /types/_inputs/*/(text-input)/options/placeholder/
 title: ''
 description: Text shown when this input has no value.
 examples: []
+show_in_navigation: false

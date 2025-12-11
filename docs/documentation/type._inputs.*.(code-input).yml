@@ -3,3 +3,4 @@ url: /types/_inputs/*/(code-input)/
 title: Code Input
 description: Provides an editing interface for code or mono-spaced plain text content.
 examples: []
+show_in_navigation: false

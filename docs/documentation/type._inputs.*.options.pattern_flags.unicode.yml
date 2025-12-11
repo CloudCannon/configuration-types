@@ -1,0 +1,6 @@
+gid: type._inputs.*.options.pattern_flags.unicode
+url: /types/_inputs/*/options/pattern_flags/unicode/
+title: ''
+description: '`u` - Pattern is treated as a sequence of Unicode code points.'
+examples: []
+show_in_navigation: false

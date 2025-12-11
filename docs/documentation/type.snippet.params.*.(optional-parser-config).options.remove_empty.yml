@@ -3,3 +3,4 @@ url: /types/snippet/params/*/(optional-parser-config)/options/remove_empty/
 title: ''
 description: ''
 examples: []
+show_in_navigation: false

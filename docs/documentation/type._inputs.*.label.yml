@@ -1,0 +1,6 @@
+gid: type._inputs.*.label
+url: /types/_inputs/*/label/
+title: ''
+description: Optionally changes the text above this input.
+examples: []
+show_in_navigation: false

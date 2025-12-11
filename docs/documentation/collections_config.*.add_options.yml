@@ -5,3 +5,4 @@ description: >-
   This key defines the options available in the _+ Add_ button dropdown at the
   top right of your _Collection browser_.
 examples: []
+show_in_navigation: false

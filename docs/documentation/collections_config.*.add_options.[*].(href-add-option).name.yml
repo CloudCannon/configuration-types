@@ -3,3 +3,4 @@ url: /collections_config/*/add_options/[*]/(href-add-option)/name/
 title: ''
 description: The text displayed for the menu item.
 examples: []
+show_in_navigation: false

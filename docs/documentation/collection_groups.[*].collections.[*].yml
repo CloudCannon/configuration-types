@@ -3,3 +3,4 @@ url: /collection_groups/[*]/collections/[*]/
 title: ''
 description: ''
 examples: []
+show_in_navigation: false

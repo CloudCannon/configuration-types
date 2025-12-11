@@ -3,3 +3,4 @@ url: /types/_inputs/*/(date-input)/
 title: Date/Datetime Input
 description: Provides an editing interface for date and/or time values.
 examples: []
+show_in_navigation: false

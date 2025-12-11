@@ -5,3 +5,4 @@ description: >-
   The URL used for the dashboard screenshot, and where the editor opens to when
   clicking the dashboard "Edit Home" button.
 examples: []
+show_in_navigation: false

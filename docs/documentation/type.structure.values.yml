@@ -3,3 +3,4 @@ url: /types/structure/values/
 title: ''
 description: Defines what values are available to add when using this structure.
 examples: []
+show_in_navigation: false

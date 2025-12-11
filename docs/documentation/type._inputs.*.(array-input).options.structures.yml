@@ -5,3 +5,4 @@ description: >-
   Provides data formats for value of this object. When choosing an item, team
   members are prompted to choose from a number of values you have defined.
 examples: []
+show_in_navigation: false

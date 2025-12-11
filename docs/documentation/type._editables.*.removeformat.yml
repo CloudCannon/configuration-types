@@ -1,0 +1,9 @@
+gid: type._editables.*.removeformat
+url: /types/_editables/*/removeformat/
+title: ''
+description: >-
+  Enables the control to remove formatting from text. Applies to formatting from
+  `bold`, `italic`, `underline`, `strike`, `subscript`, and `superscript`. Does
+  not remove other styles or formatting.
+examples: []
+show_in_navigation: false

@@ -1,0 +1,8 @@
+gid: type._inputs.*.options.height
+url: /types/_inputs/*/options/height/
+title: Height
+description: >-
+  Defines the height of the bounding box used in the image resizing process
+  defined with resize_style.
+examples: []
+show_in_navigation: false

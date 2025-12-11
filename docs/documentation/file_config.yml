@@ -11,3 +11,4 @@ examples:
         _inputs:
           title:
             comment: This is a YAML data file title.
+show_in_navigation: false

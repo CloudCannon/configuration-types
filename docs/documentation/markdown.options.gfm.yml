@@ -3,3 +3,4 @@ url: /markdown/options/gfm/
 title: ''
 description: Enable GFM mode.
 examples: []
+show_in_navigation: false

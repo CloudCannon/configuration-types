@@ -5,3 +5,4 @@ description: >-
   The text displayed for the menu item. Defaults to using name from the matching
   schema if set.
 examples: []
+show_in_navigation: false

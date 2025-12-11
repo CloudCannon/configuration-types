@@ -5,3 +5,4 @@ description: >-
   Provides an editing interface for uploading files to your repository or DAM
   and browsing existing assets.
 examples: []
+show_in_navigation: false

@@ -5,3 +5,4 @@ description: >-
   Provides data formats when adding new items to arrays and objects, with
   options for how editors choose from available values.
 examples: []
+show_in_navigation: true

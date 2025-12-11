@@ -3,3 +3,4 @@ url: /types/_inputs/*/(array-input)/options/
 title: ''
 description: Options that are specific to Array Inputs.
 examples: []
+show_in_navigation: false

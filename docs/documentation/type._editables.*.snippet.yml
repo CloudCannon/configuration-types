@@ -1,0 +1,6 @@
+gid: type._editables.*.snippet
+url: /types/_editables/*/snippet/
+title: ''
+description: Enables a control to insert snippets, if any are available.
+examples: []
+show_in_navigation: false

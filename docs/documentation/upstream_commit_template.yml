@@ -3,3 +3,4 @@ url: /upstream_commit_template/
 title: ''
 description: The commit template to use when pulling changes from the upstream repository.
 examples: []
+show_in_navigation: false

@@ -3,3 +3,4 @@ url: /types/_select_data/*/(text-array)/
 title: Text Array
 description: ''
 examples: []
+show_in_navigation: false

@@ -1,0 +1,6 @@
+gid: type._inputs.*.hidden.(boolean)
+url: /types/_inputs/*/hidden/(boolean)/
+title: Boolean
+description: ''
+examples: []
+show_in_navigation: false

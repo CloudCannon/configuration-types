@@ -6,3 +6,4 @@ description: >-
   color. Defaults to using the naming convention, enabled if the input key ends
   with "a".
 examples: []
+show_in_navigation: false

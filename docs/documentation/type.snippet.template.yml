@@ -5,3 +5,4 @@ description: >-
   The template that this snippet should inherit, out of the available Snippet
   Templates.
 examples: []
+show_in_navigation: false

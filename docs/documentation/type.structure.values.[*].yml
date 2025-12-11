@@ -5,3 +5,4 @@ description: >-
   A single value option within a structure, defining the data format and
   appearance for content editors.
 examples: []
+show_in_navigation: false

@@ -5,3 +5,4 @@ description: >-
   Provides scope to configure at a file level, without adding configuration to
   files.
 examples: []
+show_in_navigation: false

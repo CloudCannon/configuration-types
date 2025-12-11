@@ -1,0 +1,6 @@
+gid: type._editables.*.link
+url: /types/_editables/*/link/
+title: ''
+description: Enables a control to create hyperlinks around selected text.
+examples: []
+show_in_navigation: false

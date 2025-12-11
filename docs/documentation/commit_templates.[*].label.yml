@@ -5,3 +5,4 @@ description: >-
   Used to identify a commit template when multiple commit templates are
   available.
 examples: []
+show_in_navigation: false

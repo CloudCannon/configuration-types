@@ -1,0 +1,6 @@
+gid: type._editables.*.strike
+url: /types/_editables/*/strike/
+title: ''
+description: Enables a control to strike selected text.
+examples: []
+show_in_navigation: false

@@ -3,3 +3,4 @@ url: /markdown/options/html/
 title: ''
 description: Output HTML tags from source.
 examples: []
+show_in_navigation: false

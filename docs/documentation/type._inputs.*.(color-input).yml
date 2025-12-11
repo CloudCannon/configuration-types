@@ -3,3 +3,4 @@ url: /types/_inputs/*/(color-input)/
 title: Color Input
 description: Provides an editing interface for color values.
 examples: []
+show_in_navigation: false

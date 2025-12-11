@@ -1,0 +1,6 @@
+gid: type._inputs.*.options.pattern_flags.global
+url: /types/_inputs/*/options/pattern_flags/global/
+title: ''
+description: '`g` - Search globally.'
+examples: []
+show_in_navigation: false

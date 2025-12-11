@@ -6,3 +6,4 @@ description: >-
   inputs will be available for editing again, provided they are in the matching
   schema/structure. Defaults to false.
 examples: []
+show_in_navigation: false

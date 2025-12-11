@@ -3,3 +3,4 @@ url: /types/_inputs/*/(text-input)/options/icon/
 title: Icon
 description: Icon shown beside the input.
 examples: []
+show_in_navigation: false

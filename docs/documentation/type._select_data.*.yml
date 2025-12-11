@@ -5,3 +5,4 @@ description: >-
   Data formats for populating select and multiselect input options, supporting
   arrays and objects.
 examples: []
+show_in_navigation: false

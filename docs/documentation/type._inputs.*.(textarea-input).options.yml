@@ -3,3 +3,4 @@ url: /types/_inputs/*/(textarea-input)/options/
 title: ''
 description: Options that are specific to Textarea Inputs.
 examples: []
+show_in_navigation: false

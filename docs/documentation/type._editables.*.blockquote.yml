@@ -1,0 +1,6 @@
+gid: type._editables.*.blockquote
+url: /types/_editables/*/blockquote/
+title: ''
+description: Enables a control to wrap blocks of text in block quotes.
+examples: []
+show_in_navigation: false

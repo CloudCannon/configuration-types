@@ -3,3 +3,4 @@ url: /markdown/options/table/
 title: ''
 description: Output tables in Markdown format.
 examples: []
+show_in_navigation: false

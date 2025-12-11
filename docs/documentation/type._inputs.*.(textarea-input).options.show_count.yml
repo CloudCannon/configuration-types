@@ -3,3 +3,4 @@ url: /types/_inputs/*/(textarea-input)/options/show_count/
 title: ''
 description: Shows a character counter below the input if enabled.
 examples: []
+show_in_navigation: false

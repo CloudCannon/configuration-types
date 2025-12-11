@@ -1,7 +1,0 @@
-gid: >-
-  type.snippet.params.*.(argument-list-parser-config).options.models.[*].allowed_values
-url: >-
-  /types/snippet/params/*/(argument-list-parser-config)/options/models/[*]/allowed_values/
-title: ''
-description: ''
-examples: []

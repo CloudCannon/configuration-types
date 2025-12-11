@@ -6,3 +6,4 @@ description: >-
   matching the value for schema. Defaults to the containing collection these
   `add_options` are configured in.
 examples: []
+show_in_navigation: false

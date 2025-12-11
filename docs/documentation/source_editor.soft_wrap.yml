@@ -3,3 +3,4 @@ url: /source_editor/soft_wrap/
 title: ''
 description: Enables soft wrapping of the code.
 examples: []
+show_in_navigation: false

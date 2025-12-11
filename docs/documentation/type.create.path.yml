@@ -1,0 +1,8 @@
+gid: type.create.path
+url: /types/create/path/
+title: ''
+description: >-
+  The raw template to be processed when creating files. Relative to the
+  containing collection's path.
+examples: []
+show_in_navigation: false
