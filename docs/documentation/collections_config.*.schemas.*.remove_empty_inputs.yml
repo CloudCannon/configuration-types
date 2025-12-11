@@ -1,9 +1,13 @@
 gid: collections_config.*.schemas.*.remove_empty_inputs
 url: /collections_config/*/schemas/*/remove_empty_inputs/
-title: ''
-description: >-
-  If checked, empty inputs are removed from the source file on save. Removed
-  inputs will be available for editing again, provided they are in the matching
-  schema/structure. Defaults to false.
+title: ""
+description: |-
+  Sets the behavior when saving files with empty inputs. Defaults to `false`.
+
+  If `true`, empty inputs are removed before persisting the data to the source file.
+
+  If `false`, empty inputs are persisted in the source file.
+
+  Removed inputs are available for editing again provided they are in the matching schema file. Inputs are considered empty if the value is `null`, `undefined` or `''`.
 examples: []
 show_in_navigation: false

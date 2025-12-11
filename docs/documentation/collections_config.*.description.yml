@@ -1,9 +1,31 @@
 gid: collections_config.*.description
 url: /collections_config/*/description/
-title: ''
-description: >-
-  This key defines the description text that appears on the _Collection browser_
-  page. Collection descriptions are useful for adding extra context for your
-  team members.
-examples: []
+title: ""
+description: |-
+  This key defines the description text that appears on the *Collection browser* page. Collection descriptions are useful for adding extra context for your team members.
+
+  CloudCannon supports a limited selection of Markdown formatting for the value of this key: links, bold, italic, subscript, superscript, and inline code.
+
+  This key has no default.
+examples:
+  - description: ""
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          description:|-
+            This Collection is for *Travel blogs* and *Customer stories*.
+
+            If your have any questions, please contact Heather.
+    annotations: []
+  - description: ""
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          description:|-
+            This Collection is for *Travel blogs* and *Customer stories*.
+
+            If your have any questions, please contact Heather.
+    annotations: []
 show_in_navigation: false

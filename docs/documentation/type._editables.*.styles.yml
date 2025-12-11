@@ -1,10 +1,9 @@
 gid: type._editables.*.styles
 url: /types/_editables/*/styles/
-title: ''
-description: >-
-  Enables a drop down menu for editors to style selected text or blocks or text.
-  Styles are the combination of an element and class name. The value for this
-  option is the path (either source or build output) to the CSS file containing
-  the styles.
+title: ""
+description: |-
+  This key enables a dropdown menu to apply a style to selected text. Styles are the combination of an element and class name. The value for this option is the path (either source or build output) for the CSS file containing styles.
+
+  Available for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), and Rich Text inputs (`_inputs.key_name.options`).
 examples: []
 show_in_navigation: false

@@ -1,10 +1,31 @@
 gid: collections_config.*.add_options.[*].(add-option).schema
 url: /collections_config/*/add_options/[*]/(add-option)/schema/
-title: ''
-description: >-
-  The schema that new files are created from with this action. This schema is
-  not restricted to the containing collection, and is instead relative to the
-  collection specified with collection. Defaults to default if schemas are
-  configured for the collection.
-examples: []
+title: ""
+description: |-
+  This key defines which Schema CloudCannon should use to populate a file created with an option in the *\+ Add* button dropdown. This Schema is relative to the Collection configured in `add_options.collection`. Configuring this key will override `add_options.default_content_file`.
+
+  The value for this key should be the key name of a Schema.
+
+  By default, this key is the default Schema in the Collection configured in `add_options.collection`.
+examples:
+  - description: In this example, we want CloudCannon to populate new files with the contents of the `articles` Schema when a team member selects this option from the + Add button dropdown.
+    language: yaml
+    code: |-
+      collections_config:
+        articles:
+          add_options:
+            - name: Add articles
+              collection: new_articles
+              schema: articles
+    annotations: []
+  - description: ""
+    language: yaml
+    code: |-
+      collections_config:
+        articles:
+          add_options:
+            - name: Add articles
+              collection: new_articles
+              schema: articles
+    annotations: []
 show_in_navigation: false

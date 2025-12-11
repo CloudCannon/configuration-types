@@ -1,8 +1,25 @@
 gid: collections_config.*.disable_url
 url: /collections_config/*/disable_url/
-title: ''
-description: >-
-  This key toggles whether CloudCannon will generate an output URL for a given
-  Collection.
-examples: []
+title: ""
+description: |-
+  This key toggles whether CloudCannon will generate an output URL for a given Collection.
+
+  Setting this key to `true` will prevent CloudCannon from generating an output URL for a Collection.
+
+  By default, this key is `false` (i.e., generate an output URL for this Collection).
+examples:
+  - description: In this example, `data` is an non-output Collection and we don't want output URLs generated.
+    language: yaml
+    code: |-
+      collections_config:
+        data:
+          disable_url: true
+    annotations: []
+  - description: ""
+    language: yaml
+    code: |-
+      collections_config:
+        data:
+          disable_url: true
+    annotations: []
 show_in_navigation: false

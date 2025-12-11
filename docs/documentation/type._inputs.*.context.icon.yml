@@ -1,6 +1,37 @@
 gid: type._inputs.*.context.icon
 url: /types/_inputs/*/context/icon/
 title: Icon
-description: The icon shown when not open. Defaults to "auto_stories" if unset.
-examples: []
+description: |-
+  This key determines which icon appears next to the context box title. The value must match an icon name from Google's [Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons) list.
+
+  This key has no default.
+examples:
+  - description: In this example, we want to use a warning icon to draw attention to important information about our `file_upload` Input.
+    language: yaml
+    code: |-
+      _inputs:
+        file_upload:
+          type: file
+          label: Upload Document
+          context:
+            title: File Requirements
+            icon: warning
+            content: Maximum file size is 10MB.
+          options:
+            max_file_size: 10000
+    annotations: []
+  - description: ""
+    language: yaml
+    code: |-
+      _inputs:
+        file_upload:
+          type: file
+          label: Upload Document
+          context:
+            title: File Requirements
+            icon: warning
+            content: Maximum file size is 10MB.
+          options:
+            max_file_size: 10000
+    annotations: []
 show_in_navigation: false

@@ -1,11 +1,35 @@
 gid: type._inputs.*.options.min
 url: /types/_inputs/*/options/min/
-title: ''
-description: >-
-  This key defines the minimum numerical value CloudCannon will allow in an
-  Input. When configured, CloudCannon will prevent you from entering a lesser
-  numerical value. If the Input already contains a lesser numerical value,
-  CloudCannon will require you to enter a valid value to save your changes, or
-  discard your unsaved changes.
-examples: []
+title: ""
+description: |-
+  This key defines the minimum numerical value CloudCannon will allow in an Input. When configured, CloudCannon will prevent you from entering a lesser numerical value. If the Input already contains a lesser numerical value, CloudCannon will require you to enter a valid value to save your changes, or discard your unsaved changes. This key is required for `range` inputs.
+
+  Value can be any integer. If `options.max` is also configured, this key cannot be a greater number.
+
+  This key has no default.
+
+  This key is available for Number Inputs.
+examples:
+  - description: In this example, we want to add a rating out of five for each article in our travel blog using the `rating` Input. This Input limits you to a minimum rating of one.
+    language: yaml
+    code: |-
+      _inputs:
+        rating:
+          type: number
+          comment: How highly did you rate this experience?
+          options:
+            max: 5
+            min: 1
+    annotations: []
+  - description: ""
+    language: yaml
+    code: |-
+      _inputs:
+        rating:
+          type: number
+          comment: How highly did you rate this experience?
+          options:
+            max: 5
+            min: 1
+    annotations: []
 show_in_navigation: false

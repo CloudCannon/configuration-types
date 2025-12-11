@@ -1,9 +1,83 @@
 gid: type.structure.id_key
 url: /types/structure/id_key/
-title: ''
-description: >-
-  Defines what key should be used to detect which structure an item is. If this
-  key is not found in the existing structure, a comparison of key names is used.
-  Defaults to "_type".
-examples: []
+title: ""
+description: |-
+  This key defines which key within `values[*].value` CloudCannon should use to identify the Structure option. If CloudCannon cannot find this key in a Structure value, it will compare all other key names in the Structure value to find the correct one.
+
+  By default, this key is `_type`.
+examples:
+  - description: In this example, we have change the `id_key` from the default `_type` to `component` to match our existing configuration in the `content_blocks` Array input.
+    language: yaml
+    code: |-
+      _inputs:
+          content_blocks___1___:
+            type: array
+            options:
+            structures: _structures.page_components
+        _structures:
+          page_components:
+            id_key___2___: component
+            values:
+              - label: Hero Component
+                value:
+                  component___3___: hero
+                  title:
+                  description:
+                  image_path:
+                  link:
+                    text:
+                    url:
+              - label: Feature Component
+                value:
+                  component: feature
+                  image_path:
+                  title:
+                  description:
+                  button:
+                    link:
+                    text:
+                  reversed_layout: false
+              - label: Video Component
+                value:
+                  component: video
+                  image_path:
+                  videoUrl:
+    annotations: []
+  - description: ""
+    language: yaml
+    code: |-
+      _inputs:
+          content_blocks___1___:
+            type: array
+            options:
+            structures: _structures.page_components
+        _structures:
+          page_components:
+            id_key___2___: component
+            values:
+              - label: Hero Component
+                value:
+                  component___3___: hero
+                  title:
+                  description:
+                  image_path:
+                  link:
+                    text:
+                    url:
+              - label: Feature Component
+                value:
+                  component: feature
+                  image_path:
+                  title:
+                  description:
+                  button:
+                    link:
+                    text:
+                  reversed_layout: false
+              - label: Video Component
+                value:
+                  component: video
+                  image_path:
+                  videoUrl:
+    annotations: []
 show_in_navigation: false

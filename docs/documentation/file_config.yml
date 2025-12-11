@@ -1,14 +1,19 @@
 gid: file_config
 url: /file_config/
 title: File Configuration
-description: >-
-  This key defines file-specific configuration without configuring a collection
-  or modifying files.
-examples:
-  - |-
-    file_config:
-      - glob: data/*.yml
-        _inputs:
-          title:
-            comment: This is a YAML data file title.
+description: |-
+  This key defines file-specific configuration without configuring a collection or modifying files.
+
+  The following nested keys are available for each entry in `file_config`:
+
+  * `glob` (required)
+  * `_select_data`
+  * `_structures`
+  * `_select_data`
+  * `_enabled_editors`
+  * `_inputs`
+  * `_editables`
+
+  This key has no default.
+examples: []
 show_in_navigation: false

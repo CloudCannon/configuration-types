@@ -1,6 +1,46 @@
 gid: _snippets_imports_from_glob
 url: /_snippets_imports_from_glob/
-title: ''
-description: ''
-examples: []
+title: ""
+description: |-
+  This key defines globs that filter which files CloudCannon should use for *Collection* configuration. Values in this array are relative to the root of your repository (i.e., `/`, not the value of `source`) and must end in the file extension `.cloudcannon.snippets-imports.yml`. You can use this key anywhere you would use the `_snippets_imports` key in the configuration cascade.
+
+  This key has no default.
+examples:
+  - description: In this example, we have several Snippet *Configuration Files* in the `.cloudcannon/snippets/` folder. The value of the `_snippets_import_from_glob` key tells CloudCannon all files in that folder that match the glob `*.cloudcannon.snippets-import.yml`.
+    language: yaml
+    code: |-
+      _snippets_imports_from_glob:
+        - '/.cloudcannon/snippets/*.cloudcannon.snippets-imports.yml'
+    annotations: []
+  - description: |-
+      In this example, we have several Snippet *Configuration Files* in the `.cloudcannon/snippets/` folder. The value of the `_snippets_import_from_glob` key tells CloudCannon all files in that folder that match the glob `*.cloudcannon.snippets-import.yml`.
+
+      <comp.MultiCodeBlock language="YAML" translate_into={["json"]} source="cloudcannon.config.yml">
+      ``````````
+      _snippets_imports_from_glob:
+        - '/.cloudcannon/snippets/*.cloudcannon.snippets-imports.yml'
+
+      ``````````
+      </comp.MultiCodeBlock>
+    language: yaml
+    code: |-
+      mdx: true
+        docusaurus_mdx:
+          exclude:
+            - docusaurus_mdx_truncate
+    annotations: []
+  - description: ""
+    language: yaml
+    code: |-
+      _snippets_imports_from_glob:
+        - '/.cloudcannon/snippets/*.cloudcannon.snippets-imports.yml'
+    annotations: []
+  - description: ""
+    language: yaml
+    code: |-
+      mdx: true
+        docusaurus_mdx:
+          exclude:
+            - docusaurus_mdx_truncate
+    annotations: []
 show_in_navigation: false

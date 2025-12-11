@@ -1,9 +1,9 @@
 gid: collections_config.*.schemas.*.new_preview_url
 url: /collections_config/*/schemas/*/new_preview_url/
-title: ''
-description: >-
-  Preview your unbuilt pages (e.g. drafts) to another page's output URL. The
-  Visual Editor will load that URL, where Data Bindings and Previews are
-  available to render your new page without saving.
+title: ""
+description: |-
+  Preview your unbuilt pages (e.g. drafts) to another page’s output URL. The Visual Editor will load that set preview URL and use the Data Bindings and Previews to render your new page without saving.
+
+  For example `new_preview_url: /about/` will load the `/about/` URL on new or unbuilt pages in the Visual Editor.
 examples: []
 show_in_navigation: false

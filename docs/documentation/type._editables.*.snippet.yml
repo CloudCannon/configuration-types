@@ -1,6 +1,9 @@
 gid: type._editables.*.snippet
 url: /types/_editables/*/snippet/
-title: ''
-description: Enables a control to insert snippets, if any are available.
+title: ""
+description: |-
+  This key enables a tool to insert a [Snippet](/documentation/articles/what-is-a-snippet/), if any are available.
+
+  Available for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), and Rich Text inputs (`_inputs.key_name.options`).
 examples: []
 show_in_navigation: false

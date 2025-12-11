@@ -1,6 +1,9 @@
 gid: type._editables.*.blockquote
 url: /types/_editables/*/blockquote/
-title: ''
-description: Enables a control to wrap blocks of text in block quotes.
+title: ""
+description: |-
+  This key enables a tool to wrap selected blocks of text in a block quote.
+
+  Available for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), the Link editable region (`_editables.link`), and Rich Text inputs (`_inputs.key_name.options`).
 examples: []
 show_in_navigation: false

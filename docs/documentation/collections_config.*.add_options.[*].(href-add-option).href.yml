@@ -1,8 +1,31 @@
 gid: collections_config.*.add_options.[*].(href-add-option).href
 url: /collections_config/*/add_options/[*]/(href-add-option)/href/
-title: ''
-description: >-
-  The link that opens when the option is clicked. Can either be an external or
-  internal link. If internal, the link is relative to the current site.
-examples: []
+title: ""
+description: |-
+  This key defines the link for a URL option in the *\+ Add* button dropdown.
+
+  Values can be an external URL or an internal URL relative to the current Site.
+
+  This key has no default.
+examples:
+  - description: In this example, the *\+ Add* button dropdown in the `team` *Collection browser* has a link to the Office Locations page on our live website.
+    language: yaml
+    code: |-
+      collections_config:
+        team:
+          add_options:
+            - name: Office Locations
+              icon: map
+              href: /our-offices
+    annotations: []
+  - description: ""
+    language: yaml
+    code: |-
+      collections_config:
+        team:
+          add_options:
+            - name: Office Locations
+              icon: map
+              href: /our-offices
+    annotations: []
 show_in_navigation: false

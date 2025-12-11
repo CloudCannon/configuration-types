@@ -1,8 +1,31 @@
 gid: type._inputs.*.options.pattern_message
 url: /types/_inputs/*/options/pattern_message/
-title: ''
-description: >-
-  This key defines the message that explains which regular expression an Input
-  will accept. This key requires you to define `options.pattern`.
-examples: []
+title: ""
+description: |-
+  This key defines a custom error message that explains why a value has failed the validation criteria from `options.pattern`. This key requires you to define `options.pattern`.
+
+  This key has no default.
+
+  This key is available for Code, Color, File, Select, Text, Rich Text, and URL Inputs.
+examples:
+  - description: In this example, we prompt our team to use the correct email format in the `contact_email` Input using a pattern message.
+    language: yaml
+    code: |-
+      _inputs:
+        contact_email:
+          type: email
+          options:
+            pattern: '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
+            pattern_message: 'Please use the format ___@___.__'
+    annotations: []
+  - description: ""
+    language: yaml
+    code: |-
+      _inputs:
+        contact_email:
+          type: email
+          options:
+            pattern: '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
+            pattern_message: 'Please use the format ___@___.__'
+    annotations: []
 show_in_navigation: false

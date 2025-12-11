@@ -1,6 +1,85 @@
 gid: _snippets_from_glob
 url: /_snippets_from_glob/
-title: ''
-description: ''
-examples: []
+title: ""
+description: |-
+  This key defines globs that filter which files CloudCannon should use for Snippet configuration. Values in this array are relative to the root of your repository (i.e., `/`, not the value of `source`) and must end in the file extension `.cloudcannon.snippets.yml`. You can use this key anywhere you would use the `_snippets` key in the configuration cascade.
+
+  This key has no default.
+examples:
+  - description: In this example, each Custom Snippet has its own *Configuration File* in the `.cloudcannon/snippets/` folder. The value of the `_snippets_from_glob` key tells CloudCannon to use the `callout.cloudcannon.snippets.yml` file in that folder.
+    language: yaml
+    code: |-
+      _snippets_imports:
+            eleventy_liquid: true
+        _snippets_from_glob:
+          - '/.cloudcannon/snippets/callout.cloudcannon.snippets.yml'
+    annotations: []
+  - description: |-
+      In this example, each Custom Snippet has its own *Configuration File* in the `.cloudcannon/snippets/` folder. The value of the `_snippets_from_glob` key tells CloudCannon to use the `callout.cloudcannon.snippets.yml` file in that folder.
+
+      <comp.MultiCodeBlock language="YAML" translate_into={["json"]} source="cloudcannon.config.yml">
+      ``````````
+      _snippets_imports:
+          eleventy_liquid: true
+      _snippets_from_glob:
+        - '/.cloudcannon/snippets/callout.cloudcannon.snippets.yml'
+      ``````````
+      </comp.MultiCodeBlock>
+    language: yaml
+    code: |-
+      callout:
+        template: eleventy_liquid_include
+        inline: false
+        preview:
+          text: Callout
+        definitions:
+          include_name: callout
+          named_args:
+            - source_key: type
+              editor_key: label
+              type: string
+            - editor_key: message
+              type: string
+        _inputs:
+          label:
+            type: select
+            options:
+              values:
+                - info
+                - warning
+                - error
+    annotations: []
+  - description: ""
+    language: yaml
+    code: |-
+      _snippets_imports:
+            eleventy_liquid: true
+        _snippets_from_glob:
+          - '/.cloudcannon/snippets/callout.cloudcannon.snippets.yml'
+    annotations: []
+  - description: ""
+    language: yaml
+    code: |-
+      callout:
+        template: eleventy_liquid_include
+        inline: false
+        preview:
+          text: Callout
+        definitions:
+          include_name: callout
+          named_args:
+            - source_key: type
+              editor_key: label
+              type: string
+            - editor_key: message
+              type: string
+        _inputs:
+          label:
+            type: select
+            options:
+              values:
+                - info
+                - warning
+                - error
+    annotations: []
 show_in_navigation: false

@@ -1,6 +1,62 @@
 gid: type._editables_from_glob
 url: /types/_editables_from_glob/
-title: ''
-description: ''
-examples: []
+title: ""
+description: |-
+  This key defines globs that filter which files CloudCannon should use for configuring Rich Text formatting. Values in this array are relative to the root of your repository (i.e., `/`, not the value of `source`) and must end in the file extension `.cloudcannon.editables.yml`. You can use this key anywhere you would use the `_editables` key in the configuration cascade.
+
+  This key has no default.
+examples:
+  - description: In this example, we have several WYSIWYG Toolbar *Configuration Files* in the `.cloudcannon/editables/` folder, with each file containing multiple definitions. The value of the `_editables_from_glob` key tells CloudCannon all files in that folder that match the glob `*.cloudcannon.editables.yml`.
+    language: yaml
+    code: |-
+      _editables_from_glob:
+        - '/.cloudcannon/editables/*.cloudcannon.editables.yml'
+    annotations: []
+  - description: |-
+      In this example, we have several WYSIWYG Toolbar *Configuration Files* in the `.cloudcannon/editables/` folder, with each file containing multiple definitions. The value of the `_editables_from_glob` key tells CloudCannon all files in that folder that match the glob `*.cloudcannon.editables.yml`.
+
+      <comp.MultiCodeBlock language="YAML" translate_into={["json"]} source="cloudcannon.config.yml">
+      ``````````
+      _editables_from_glob:
+        - '/.cloudcannon/editables/*.cloudcannon.editables.yml'
+
+      ``````````
+      </comp.MultiCodeBlock>
+    language: yaml
+    code: |-
+      text:
+          bold: true
+          italic: true
+          underline: true
+        block:
+          format: p h3
+          undo: true
+          redo: true
+        link:
+          bold: true
+          italic: true
+          underline: true
+    annotations: []
+  - description: ""
+    language: yaml
+    code: |-
+      _editables_from_glob:
+        - '/.cloudcannon/editables/*.cloudcannon.editables.yml'
+    annotations: []
+  - description: ""
+    language: yaml
+    code: |-
+      text:
+          bold: true
+          italic: true
+          underline: true
+        block:
+          format: p h3
+          undo: true
+          redo: true
+        link:
+          bold: true
+          italic: true
+          underline: true
+    annotations: []
 show_in_navigation: true

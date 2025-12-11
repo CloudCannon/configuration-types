@@ -1,6 +1,96 @@
 gid: type._inputs_from_glob
 url: /types/_inputs_from_glob/
-title: ''
-description: ''
-examples: []
+title: ""
+description: |-
+  This key defines globs that filter which files CloudCannon should use for *Input* configuration. Values in this array are relative to the root of your repository (i.e., `/`, not the value of `source`) and must end in the file extension `.cloudcannon.inputs.yml`. You can use this key anywhere you would use the `_inputs` key in the configuration cascade.
+
+  This key has no default.
+examples:
+  - description: In this example, we have several *Input Configuration Files* in the `.cloudcannon/inputs/` folder, with each file containing multiple *Input* definitions. The value of the `_inputs_from_glob` key tells CloudCannon to only use the `seo.cloudcannon.inputs.yml` and `blog-details.cloudcannon.inputs.yml` files in that folder.
+    language: yaml
+    code: |-
+      collections_config:
+        posts:
+          path: content/posts
+          icon: event
+          inputs_from_glob:
+            - '/.cloudcannon/inputs/seo.cloudcannon.inputs.yml'
+            - '/.cloudcannon/inputs/blogDetails.cloudcannon.inputs.yml'
+    annotations: []
+  - description: |-
+      In this example, we have several *Input Configuration Files* in the `.cloudcannon/inputs/` folder, with each file containing multiple *Input* definitions. The value of the `_inputs_from_glob` key tells CloudCannon to only use the `seo.cloudcannon.inputs.yml` and `blog-details.cloudcannon.inputs.yml` files in that folder.
+
+      <comp.MultiCodeBlock language="YAML" translate_into={["json"]} source="cloudcannon.config.yml">
+      ``````````
+      collections_config:
+        posts:
+          path: content/posts
+          icon: event
+          inputs_from_glob:
+            - '/.cloudcannon/inputs/seo.cloudcannon.inputs.yml'
+            - '/.cloudcannon/inputs/blogDetails.cloudcannon.inputs.yml'
+      ``````````
+      </comp.MultiCodeBlock>
+    language: yaml
+    code: |-
+      seo_title:
+          type: text
+          options:
+            required: true
+            max_length: 50
+        seo_description:
+          type: textarea
+          options:
+            show_count: true
+            required: true
+            max_length: 125
+        seo_image:
+          type: image
+          options:
+            path:
+              uploads: images
+            accepts_mime_types:
+              - image/png
+              - image/jpeg
+            required: true
+            pattern: (?i)\.(jpe?g|png)$
+            pattern_message: Please select a JPG or PNG image file
+    annotations: []
+  - description: ""
+    language: yaml
+    code: |-
+      collections_config:
+        posts:
+          path: content/posts
+          icon: event
+          inputs_from_glob:
+            - '/.cloudcannon/inputs/seo.cloudcannon.inputs.yml'
+            - '/.cloudcannon/inputs/blogDetails.cloudcannon.inputs.yml'
+    annotations: []
+  - description: ""
+    language: yaml
+    code: |-
+      seo_title:
+          type: text
+          options:
+            required: true
+            max_length: 50
+        seo_description:
+          type: textarea
+          options:
+            show_count: true
+            required: true
+            max_length: 125
+        seo_image:
+          type: image
+          options:
+            path:
+              uploads: images
+            accepts_mime_types:
+              - image/png
+              - image/jpeg
+            required: true
+            pattern: (?i)\.(jpe?g|png)$
+            pattern_message: Please select a JPG or PNG image file
+    annotations: []
 show_in_navigation: true

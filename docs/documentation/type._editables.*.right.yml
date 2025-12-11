@@ -1,10 +1,9 @@
 gid: type._editables.*.right
 url: /types/_editables/*/right/
-title: ''
-description: >-
-  Enables a control to right align text by toggling a class name for a block of
-  text. The value is the class name the editor should add to align the text. The
-  styles for this class need to be listed in the `styles` file to take effect
-  outside of the input.
+title: ""
+description: |-
+  This key enables a tool to right align selected text by toggling a class name for that text block. The value is the class name to align the text. The styles for this class must be defined in the `styles` file.
+
+  Available for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), and Rich Text inputs (`_inputs.key_name.options`).
 examples: []
 show_in_navigation: false

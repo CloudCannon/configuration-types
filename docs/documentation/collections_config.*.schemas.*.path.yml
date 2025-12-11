@@ -1,6 +1,6 @@
 gid: collections_config.*.schemas.*.path
 url: /collections_config/*/schemas/*/path/
-title: ''
-description: The path to the schema file. Relative to the root folder of the site.
+title: ""
+description: The path to the schema file. Relative to the root folder of the site. Required.
 examples: []
 show_in_navigation: false

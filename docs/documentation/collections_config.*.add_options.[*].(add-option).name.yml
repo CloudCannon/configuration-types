@@ -1,8 +1,29 @@
 gid: collections_config.*.add_options.[*].(add-option).name
 url: /collections_config/*/add_options/[*]/(add-option)/name/
-title: ''
-description: >-
-  The text displayed for the menu item. Defaults to using name from the matching
-  schema if set.
-examples: []
+title: ""
+description: |-
+  This key defines the name of an option in the *\+ Add* button dropdown.
+
+  This key has no default, unless you have configured `add_options.schema`. In this case, this key defaults to the name of the matching Schema.
+examples:
+  - description: In this example, the *\+ Add* button dropdown in the `team` *Collection browser* has a link to the Office Locations page on our live website.
+    language: yaml
+    code: |-
+      collections_config:
+        team:
+          add_options:
+            - name: Office Locations
+              icon: map
+              href: /our-offices
+    annotations: []
+  - description: ""
+    language: yaml
+    code: |-
+      collections_config:
+        team:
+          add_options:
+            - name: Office Locations
+              icon: map
+              href: /our-offices
+    annotations: []
 show_in_navigation: false

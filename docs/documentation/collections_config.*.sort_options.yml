@@ -1,8 +1,53 @@
 gid: collections_config.*.sort_options
 url: /collections_config/*/sort_options/
-title: ''
-description: >-
-  This key defines the options for the Sort dropdown in a _Collection browser_.
-  The first option listed is used as the default sort.
-examples: []
+title: ""
+description: |-
+  This key defines the options for the *Sort* dropdown in a *Collection browser*. Configuring sort options for a Collection will remove CloudCannon's default sorting options from the *Sort* dropdown.
+
+  The following nested keys are available for each entry in the `sort_options` array:
+
+  * `key` (required)
+  * `order`
+  * `label`
+
+  By default, CloudCannon provides sorting options for path, file size, file creation time, and last modified, in ascending and descending order. CloudCannon will also read data keys from your early Collection files and provide options to sort by those key values.
+examples:
+  - description: In this example, the *Sort* dropdown in the `blog` *Collection browser* only contains options for sorting by `author` and `date` in ascending and descending order.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          sort_options:
+            - key: author
+              order: ascending
+              label: Author (A-Z)
+            - key: author
+              order: descending
+              label: Author (Z-A)
+            - key: date
+              order: ascending
+              label: Date (Newest First)
+            - key: date
+              order: descending
+              label: Date (Oldest First)
+    annotations: []
+  - description: ""
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          sort_options:
+            - key: author
+              order: ascending
+              label: Author (A-Z)
+            - key: author
+              order: descending
+              label: Author (Z-A)
+            - key: date
+              order: ascending
+              label: Date (Newest First)
+            - key: date
+              order: descending
+              label: Date (Oldest First)
+    annotations: []
 show_in_navigation: false

@@ -1,6 +1,27 @@
 gid: type._inputs.*.label
 url: /types/_inputs/*/label/
-title: ''
-description: Optionally changes the text above this input.
-examples: []
+title: ""
+description: |-
+  This key changes the bold title text above an Input.
+
+  By default, CloudCannon generates the value from the Input key name, in title case (e.g., `page_title` will become "Page Title").
+examples:
+  - description: In this example, we want to customize the label for our `page_title` Input to be more descriptive.
+    language: yaml
+    code: |-
+      _inputs:
+        page_title:
+          type: text
+          label: Article Title
+          comment: Enter the main title for this article
+    annotations: []
+  - description: ""
+    language: yaml
+    code: |-
+      _inputs:
+        page_title:
+          type: text
+          label: Article Title
+          comment: Enter the main title for this article
+    annotations: []
 show_in_navigation: false

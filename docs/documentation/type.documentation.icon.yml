@@ -1,6 +1,30 @@
 gid: type.documentation.icon
 url: /types/documentation/icon/
 title: Icon
-description: The icon displayed next to the link.
-examples: []
+description: |-
+  This key defines the icon for the documentation link at the top of a *Collection browser*.
+
+  Values can be from [Google's Material
+  Icons](https://fonts.google.com/icons?icon.set=Material+Icons) library.
+
+  By default, this key is `auto_stories`.
+examples:
+  - description: In this example, we have configured the `star` icon for the `blog` Collection documentation link.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          documentation:
+            url: https://www.cloudcannon.com/documentation/
+            icon: star
+    annotations: []
+  - description: ""
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          documentation:
+            url: https://www.cloudcannon.com/documentation/
+            icon: star
+    annotations: []
 show_in_navigation: false

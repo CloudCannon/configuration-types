@@ -1,9 +1,35 @@
 gid: type._inputs.*.(date-input).options.end_before_message
 url: /types/_inputs/*/(date-input)/options/end_before_message/
-title: ''
-description: >-
-  This key defines the message that explains why an Input needs to have an end
-  date. This key requires you to define `options.end_before`. This key has no
-  default.
-examples: []
+title: ""
+description: |-
+  This key defines a custom error message that explains why a value has failed the validation criteria from `options.end_before`. This key requires you to define `options.end_before`.
+
+  This key has no default.
+
+  This key is available for Date and Time Inputs.
+examples:
+  - description: In this example, we prompt our team to enter a valid date using a custom message.
+    language: yaml
+    code: |-
+      _inputs:
+        2022_event:
+          type: datetime
+          options:
+            start_from: 2022-01-01T00:00:00Z
+            start_from_message: Date is too early. Must be during 2022.
+            end_before: 2023-01-01T00:00:00Z
+            end_before_message: Date is too late. Must be during 2022.
+    annotations: []
+  - description: ""
+    language: yaml
+    code: |-
+      _inputs:
+        2022_event:
+          type: datetime
+          options:
+            start_from: 2022-01-01T00:00:00Z
+            start_from_message: Date is too early. Must be during 2022.
+            end_before: 2023-01-01T00:00:00Z
+            end_before_message: Date is too late. Must be during 2022.
+    annotations: []
 show_in_navigation: false
