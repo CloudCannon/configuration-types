@@ -7,7 +7,8 @@
 	<summary><em>Examples</em></summary>
 	<editable-array data-prop="@file[/docs/documentation/{{ gid }}.yml].examples">
 		{% for example in documentation.examples %}
-			<pre data-editable="array-item"><code>{{ example }}</code></pre>
+			{% if example.description %}{{ example.description | renderContent('md') | safe }}{% endif %}
+			<pre data-editable="array-item"><code>{{ example.code }}</code></pre>
 		{% endfor %}
 	</editable-array>
 </details>

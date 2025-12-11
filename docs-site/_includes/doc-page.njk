@@ -69,7 +69,8 @@
 	<editable-array data-prop="@file[/docs/documentation/{{ gid }}.yml].examples">
 		{% for example in documentation.examples %}
 			<dd data-editable="array-item">
-				<pre><code>{{ example }}</code></pre>
+				{% if example.description %}{{ example.description | renderContent('md') | safe }}{% endif %}
+				<pre><code>{{ example.code }}</code></pre>
 			</dd>
 		{% endfor %}
 	</editable-array>
