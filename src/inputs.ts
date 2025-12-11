@@ -90,6 +90,42 @@ const TextValidationSchema = z.object({
 		description:
 			'This key defines the message that explains which minimum string length an Input will accept. This key requires you to define `options.min_length`.',
 	}),
+	max_words: z.number().optional().meta({
+		description:
+			'This key defines the maximum string length, in words, that CloudCannon will allow in an Input. When configured, CloudCannon will warn you when an Input value is too long. If the Input already contains a longer value, CloudCannon will require you to remove characters until the Input contains a valid string to save your changes, or discard your unsaved changes.',
+	}),
+	max_words_message: z.string().optional().meta({
+		description:
+			'This key defines the message that explains which maximum string length an Input will accept. This key requires you to define `options.max_words.',
+	}),
+	min_words: z.number().optional().meta({
+		description:
+			'This key defines the minimum string length, in words, that CloudCannon will allow in an Input. When configured, CloudCannon will warn you when an Input value is too short. If the Input already contains a shorter value, CloudCannon will require you to add characters until the Input contains a valid string to save your changes, or discard your unsaved changes.',
+	}),
+	min_words_message: z.string().optional().meta({
+		description:
+			'This key defines the message that explains which minimum string length an Input will accept. This key requires you to define `options.min_words`.',
+	}),
+	max_graphemes: z.number().optional().meta({
+		description:
+			'This key defines the maximum string length, in graphemes, that CloudCannon will allow in an Input. When configured, CloudCannon will warn you when an Input value is too long. If the Input already contains a longer value, CloudCannon will require you to remove characters until the Input contains a valid string to save your changes, or discard your unsaved changes.',
+	}),
+	max_graphemes_message: z.string().optional().meta({
+		description:
+			'This key defines the message that explains which maximum string length an Input will accept. This key requires you to define `options.max_graphemes.',
+	}),
+	min_graphemes: z.number().optional().meta({
+		description:
+			'This key defines the minimum string length, in graphemes, that CloudCannon will allow in an Input. When configured, CloudCannon will warn you when an Input value is too short. If the Input already contains a shorter value, CloudCannon will require you to add characters until the Input contains a valid string to save your changes, or discard your unsaved changes.',
+	}),
+	min_graphemes_message: z.string().optional().meta({
+		description:
+			'This key defines the message that explains which minimum string length an Input will accept. This key requires you to define `options.min_graphemes`.',
+	}),
+	locale: z.string().optional().meta({
+		description:
+			'This key defines the locale that CloudCannon uses to determine the number of words or graphemes in this Input, if you have `max_words`, `min_words`, `max_graphemes`, or `min_graphemes` configured.',
+	}),
 	pattern: z.string().optional().meta({
 		id: 'type._inputs.*.options.pattern',
 		description:
