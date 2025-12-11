@@ -1,9 +1,14 @@
 gid: type._editables.*.justify
 url: /types/_editables/*/justify/
-title: ""
-description: |-
-  This key enables a tool to justify selected text by toggling a class name for that text block. The value is the class name to align the text. The styles for this class must be defined in the `styles` file.
+title: ''
+description: >-
+  This key enables a tool to justify selected text by toggling a class name for
+  that text block. The value is the class name to align the text. The styles for
+  this class must be defined in the `styles` file.
 
-  Available for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), and Rich Text inputs (`_inputs.key_name.options`).
+
+  Available for the Content Editor (`_editables.content`), the Block editable
+  region (`_editables.block`), and Rich Text inputs
+  (`_inputs.key_name.options`).
 examples: []
 show_in_navigation: false

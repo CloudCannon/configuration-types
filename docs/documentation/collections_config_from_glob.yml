@@ -1,25 +1,42 @@
 gid: collections_config_from_glob
 url: /collections_config_from_glob/
-title: ""
-description: |-
-  This key defines globs that filter which files CloudCannon should use for *Collection* configuration. Values in this array are relative to the root of your repository (i.e., `/`, not the value of `source`) and must end in the file extension `.cloudcannon.collections.yml`. You can use this key anywhere you would use the `collections_config` key.
+title: ''
+description: >-
+  This key defines globs that filter which files CloudCannon should use for
+  *Collection* configuration. Values in this array are relative to the root of
+  your repository (i.e., `/`, not the value of `source`) and must end in the
+  file extension `.cloudcannon.collections.yml`. You can use this key anywhere
+  you would use the `collections_config` key.
+
 
   This key has no default.
 examples:
-  - description: In this example, each *Collection* has its own *Configuration File* in the `.cloudcannon/collections/` folder. The value of the `collections_config_from_glob` key tells CloudCannon to use all files in that folder that match the glob `*.cloudcannon.collections.yml`.
+  - description: >-
+      In this example, each *Collection* has its own *Configuration File* in the
+      `.cloudcannon/collections/` folder. The value of the
+      `collections_config_from_glob` key tells CloudCannon to use all files in
+      that folder that match the glob `*.cloudcannon.collections.yml`.
     language: yaml
     code: |-
       collections_config_from_glob:
         - '/.cloudcannon/collections/*.cloudcannon.collections.yml'
     annotations: []
-  - description: |-
-      In this example, each *Collection* has its own *Configuration File* in the `.cloudcannon/collections/` folder. The value of the `collections_config_from_glob` key tells CloudCannon to use all files in that folder that match the glob `*.cloudcannon.collections.yml`.
+  - description: >-
+      In this example, each *Collection* has its own *Configuration File* in the
+      `.cloudcannon/collections/` folder. The value of the
+      `collections_config_from_glob` key tells CloudCannon to use all files in
+      that folder that match the glob `*.cloudcannon.collections.yml`.
 
-      <comp.MultiCodeBlock language="YAML" translate_into={["json"]} source="cloudcannon.config.yml">
+
+      <comp.MultiCodeBlock language="YAML" translate_into={["json"]}
+      source="cloudcannon.config.yml">
+
       ``````````
+
       collections_config_from_glob:
         - '/.cloudcannon/collections/*.cloudcannon.collections.yml'
       ``````````
+
       </comp.MultiCodeBlock>
     language: yaml
     code: |-
@@ -27,13 +44,13 @@ examples:
         path: content/posts
         icon: event
     annotations: []
-  - description: ""
+  - description: ''
     language: yaml
     code: |-
       collections_config_from_glob:
         - '/.cloudcannon/collections/*.cloudcannon.collections.yml'
     annotations: []
-  - description: ""
+  - description: ''
     language: yaml
     code: |-
       posts:

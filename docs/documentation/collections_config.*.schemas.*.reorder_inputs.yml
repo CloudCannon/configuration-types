@@ -1,9 +1,12 @@
 gid: collections_config.*.schemas.*.reorder_inputs
 url: /collections_config/*/schemas/*/reorder_inputs/
-title: ""
-description: |-
-  Controls whether or not inputs are sorted to match the schema when editing existing files. Defaults to `true`.
+title: ''
+description: >-
+  Controls whether or not inputs are sorted to match the schema when editing
+  existing files. Defaults to `true`.
 
-  Non-schema inputs are ordered after schema inputs if not removed with `remove_extra_inputs`.
+
+  Non-schema inputs are ordered after schema inputs if not removed with
+  `remove_extra_inputs`.
 examples: []
 show_in_navigation: false

@@ -1,12 +1,17 @@
 gid: type._inputs.*.comment
 url: /types/_inputs/*/comment/
-title: ""
-description: |-
-  This key changes the subtitle text above an Input. CloudCannon supports a limited selection of Markdown formatting for the value of this key: links, bold, italic, subscript, superscript, and inline code.
+title: ''
+description: >-
+  This key changes the subtitle text above an Input. CloudCannon supports a
+  limited selection of Markdown formatting for the value of this key: links,
+  bold, italic, subscript, superscript, and inline code.
+
 
   This key has no default.
 examples:
-  - description: In this example, we want to add helpful guidance for our `page_description` Input.
+  - description: >-
+      In this example, we want to add helpful guidance for our
+      `page_description` Input.
     language: yaml
     code: |-
       _inputs:
@@ -15,7 +20,7 @@ examples:
           label: Page Description
           comment: Enter a brief description of this page for search engines
     annotations: []
-  - description: ""
+  - description: ''
     language: yaml
     code: |-
       _inputs:

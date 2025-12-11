@@ -1,14 +1,26 @@
 gid: type.structure.remove_empty_inputs
 url: /types/structure/remove_empty_inputs/
-title: ""
-description: |-
-  This key toggles whether CloudCannon will remove empty nested inputs from an Object or Array input that uses this Structure when you save the input configuration. CloudCannon consideres an input to be empty when its value is `null`, `' '`, or undefined.
+title: ''
+description: >-
+  This key toggles whether CloudCannon will remove empty nested inputs from an
+  Object or Array input that uses this Structure when you save the input
+  configuration. CloudCannon consideres an input to be empty when its value is
+  `null`, `' '`, or undefined.
 
-  If this key is set to `true`, the `id_key` must be configured for this Structure, as removing inputs prevents CloudCannon from comparing Structure values. You can bring back empty inputs removed from an Object or Array input by re-adding the structure to the input.
 
-  By default, this key is `false` (i.e, CloudCannon does not remove empty inputs).
+  If this key is set to `true`, the `id_key` must be configured for this
+  Structure, as removing inputs prevents CloudCannon from comparing Structure
+  values. You can bring back empty inputs removed from an Object or Array input
+  by re-adding the structure to the input.
+
+
+  By default, this key is `false` (i.e, CloudCannon does not remove empty
+  inputs).
 examples:
-  - description: In this example, we want to delete any unnecessary nested inputs (i.e., input we choose not to provide a value for) from Object or Array inputs referenceing the `event_details` Structure.
+  - description: >-
+      In this example, we want to delete any unnecessary nested inputs (i.e.,
+      input we choose not to provide a value for) from Object or Array inputs
+      referenceing the `event_details` Structure.
     language: yaml
     code: |-
       _structures:
@@ -23,7 +35,7 @@ examples:
               place:
               sponsor:
     annotations: []
-  - description: ""
+  - description: ''
     language: yaml
     code: |-
       _structures:

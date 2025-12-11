@@ -1,12 +1,17 @@
 gid: type._inputs.*.context.icon
 url: /types/_inputs/*/context/icon/
 title: Icon
-description: |-
-  This key determines which icon appears next to the context box title. The value must match an icon name from Google's [Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons) list.
+description: >-
+  This key determines which icon appears next to the context box title. The
+  value must match an icon name from Google's [Material
+  Icons](https://fonts.google.com/icons?icon.set=Material+Icons) list.
+
 
   This key has no default.
 examples:
-  - description: In this example, we want to use a warning icon to draw attention to important information about our `file_upload` Input.
+  - description: >-
+      In this example, we want to use a warning icon to draw attention to
+      important information about our `file_upload` Input.
     language: yaml
     code: |-
       _inputs:
@@ -20,7 +25,7 @@ examples:
           options:
             max_file_size: 10000
     annotations: []
-  - description: ""
+  - description: ''
     language: yaml
     code: |-
       _inputs:

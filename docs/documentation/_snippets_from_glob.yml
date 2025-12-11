@@ -1,12 +1,21 @@
 gid: _snippets_from_glob
 url: /_snippets_from_glob/
-title: ""
-description: |-
-  This key defines globs that filter which files CloudCannon should use for Snippet configuration. Values in this array are relative to the root of your repository (i.e., `/`, not the value of `source`) and must end in the file extension `.cloudcannon.snippets.yml`. You can use this key anywhere you would use the `_snippets` key in the configuration cascade.
+title: ''
+description: >-
+  This key defines globs that filter which files CloudCannon should use for
+  Snippet configuration. Values in this array are relative to the root of your
+  repository (i.e., `/`, not the value of `source`) and must end in the file
+  extension `.cloudcannon.snippets.yml`. You can use this key anywhere you would
+  use the `_snippets` key in the configuration cascade.
+
 
   This key has no default.
 examples:
-  - description: In this example, each Custom Snippet has its own *Configuration File* in the `.cloudcannon/snippets/` folder. The value of the `_snippets_from_glob` key tells CloudCannon to use the `callout.cloudcannon.snippets.yml` file in that folder.
+  - description: >-
+      In this example, each Custom Snippet has its own *Configuration File* in
+      the `.cloudcannon/snippets/` folder. The value of the
+      `_snippets_from_glob` key tells CloudCannon to use the
+      `callout.cloudcannon.snippets.yml` file in that folder.
     language: yaml
     code: |-
       _snippets_imports:
@@ -14,16 +23,24 @@ examples:
         _snippets_from_glob:
           - '/.cloudcannon/snippets/callout.cloudcannon.snippets.yml'
     annotations: []
-  - description: |-
-      In this example, each Custom Snippet has its own *Configuration File* in the `.cloudcannon/snippets/` folder. The value of the `_snippets_from_glob` key tells CloudCannon to use the `callout.cloudcannon.snippets.yml` file in that folder.
+  - description: >-
+      In this example, each Custom Snippet has its own *Configuration File* in
+      the `.cloudcannon/snippets/` folder. The value of the
+      `_snippets_from_glob` key tells CloudCannon to use the
+      `callout.cloudcannon.snippets.yml` file in that folder.
 
-      <comp.MultiCodeBlock language="YAML" translate_into={["json"]} source="cloudcannon.config.yml">
+
+      <comp.MultiCodeBlock language="YAML" translate_into={["json"]}
+      source="cloudcannon.config.yml">
+
       ``````````
+
       _snippets_imports:
           eleventy_liquid: true
       _snippets_from_glob:
         - '/.cloudcannon/snippets/callout.cloudcannon.snippets.yml'
       ``````````
+
       </comp.MultiCodeBlock>
     language: yaml
     code: |-
@@ -49,7 +66,7 @@ examples:
                 - warning
                 - error
     annotations: []
-  - description: ""
+  - description: ''
     language: yaml
     code: |-
       _snippets_imports:
@@ -57,7 +74,7 @@ examples:
         _snippets_from_glob:
           - '/.cloudcannon/snippets/callout.cloudcannon.snippets.yml'
     annotations: []
-  - description: ""
+  - description: ''
     language: yaml
     code: |-
       callout:

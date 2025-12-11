@@ -1,9 +1,13 @@
 gid: type._editables.*.code
 url: /types/_editables/*/code/
-title: ""
-description: |-
-  This key enables two tools to turn selected text into inline code and selected text into a code block.
+title: ''
+description: >-
+  This key enables two tools to turn selected text into inline code and selected
+  text into a code block.
 
-  Available for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), and Rich Text inputs (`_inputs.key_name.options`).
+
+  Available for the Content Editor (`_editables.content`), the Block editable
+  region (`_editables.block`), and Rich Text inputs
+  (`_inputs.key_name.options`).
 examples: []
 show_in_navigation: false

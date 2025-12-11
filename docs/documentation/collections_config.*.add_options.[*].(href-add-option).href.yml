@@ -1,6 +1,6 @@
 gid: collections_config.*.add_options.[*].(href-add-option).href
 url: /collections_config/*/add_options/[*]/(href-add-option)/href/
-title: ""
+title: ''
 description: |-
   This key defines the link for a URL option in the *\+ Add* button dropdown.
 
@@ -8,7 +8,9 @@ description: |-
 
   This key has no default.
 examples:
-  - description: In this example, the *\+ Add* button dropdown in the `team` *Collection browser* has a link to the Office Locations page on our live website.
+  - description: >-
+      In this example, the *\+ Add* button dropdown in the `team` *Collection
+      browser* has a link to the Office Locations page on our live website.
     language: yaml
     code: |-
       collections_config:
@@ -18,7 +20,7 @@ examples:
               icon: map
               href: /our-offices
     annotations: []
-  - description: ""
+  - description: ''
     language: yaml
     code: |-
       collections_config:

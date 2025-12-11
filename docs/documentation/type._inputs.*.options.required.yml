@@ -1,14 +1,22 @@
 gid: type._inputs.*.options.required
 url: /types/_inputs/*/options/required/
-title: ""
-description: |-
-  This key toggles whether CloudCannon requires this Input to have a value. If set to `true`, CloudCannon will require you to enter a value to save your changes, or discard your unsaved changes.
+title: ''
+description: >-
+  This key toggles whether CloudCannon requires this Input to have a value. If
+  set to `true`, CloudCannon will require you to enter a value to save your
+  changes, or discard your unsaved changes.
 
-  By default, this key is `false` (i.e, CloudCannon does not require this Input to have a value).
 
-  This key is available for Array, Code, Color, Date and Time, File, Number, Object, Select and Multiselect, Text, Rich Text, and URL Inputs.
+  By default, this key is `false` (i.e, CloudCannon does not require this Input
+  to have a value).
+
+
+  This key is available for Array, Code, Color, Date and Time, File, Number,
+  Object, Select and Multiselect, Text, Rich Text, and URL Inputs.
 examples:
-  - description: In this example, we want to require our team to enter an `author` value for markup files with this Input.
+  - description: >-
+      In this example, we want to require our team to enter an `author` value
+      for markup files with this Input.
     language: yaml
     code: |-
       _inputs:
@@ -18,7 +26,7 @@ examples:
           options:
             required: true
     annotations: []
-  - description: ""
+  - description: ''
     language: yaml
     code: |-
       _inputs:

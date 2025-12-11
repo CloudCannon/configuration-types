@@ -1,13 +1,20 @@
 gid: collections_config.*.schemas.*.remove_extra_inputs
 url: /collections_config/*/schemas/*/remove_extra_inputs/
-title: ""
-description: |-
-  Sets the behavior when editing existing files with inputs not present in the schema. Defaults to `true`.
+title: ''
+description: >-
+  Sets the behavior when editing existing files with inputs not present in the
+  schema. Defaults to `true`.
 
-  If `true`, non-schema inputs are removed before the editor loads, and subsequently removed from the source file if saved.
 
-  If `false`, non-schema inputs are either hidden or visible in the editor depending on `hide_extra_inputs`, but still kept in the source file on save.
+  If `true`, non-schema inputs are removed before the editor loads, and
+  subsequently removed from the source file if saved.
 
-  If any inputs conflict with schema (e.g. a file's `title` is a string and the schema's `title` is an object), the schema version takes priority.
+
+  If `false`, non-schema inputs are either hidden or visible in the editor
+  depending on `hide_extra_inputs`, but still kept in the source file on save.
+
+
+  If any inputs conflict with schema (e.g. a file's `title` is a string and the
+  schema's `title` is an object), the schema version takes priority.
 examples: []
 show_in_navigation: false

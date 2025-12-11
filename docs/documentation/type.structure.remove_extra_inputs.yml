@@ -1,12 +1,18 @@
 gid: type.structure.remove_extra_inputs
 url: /types/structure/remove_extra_inputs/
-title: ""
-description: |-
-  This key toggles whether inputs that are not present in the Structure are removed from the file before CloudCannon loads it in an editing interface. Saving the file will push this change to your Git repository.
+title: ''
+description: >-
+  This key toggles whether inputs that are not present in the Structure are
+  removed from the file before CloudCannon loads it in an editing interface.
+  Saving the file will push this change to your Git repository.
 
-  By default, this key is `false`(i.e., inputs not present in the Structure are not removed from the file).
+
+  By default, this key is `false`(i.e., inputs not present in the Structure are
+  not removed from the file).
 examples:
-  - description: In this example, we want to delete old inputs that are not in the Structure from the associated file.
+  - description: >-
+      In this example, we want to delete old inputs that are not in the
+      Structure from the associated file.
     language: yaml
     code: |-
       _structures:
@@ -18,7 +24,7 @@ examples:
               description:
               url:
     annotations: []
-  - description: ""
+  - description: ''
     language: yaml
     code: |-
       _structures:

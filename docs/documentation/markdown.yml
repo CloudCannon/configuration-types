@@ -1,16 +1,23 @@
 gid: markdown
 url: /markdown/
 title: Markdown Settings
-description: |-
-  This key defines your markdown engine for parsing Markdown content into HTML and any configuration options for your engine.
+description: >-
+  This key defines your markdown engine for parsing Markdown content into HTML
+  and any configuration options for your engine.
+
 
   The following nested keys are available:
 
+
   * `engine`
+
   * `options`
+
 
   This key has no default.
 
-  For more information, please read our documentation on [configuring your markdown engine](/documentation/articles/configure-your-markdown-engine/).
+
+  For more information, please read our documentation on [configuring your
+  markdown engine](/documentation/articles/configure-your-markdown-engine/).
 examples: []
 show_in_navigation: false

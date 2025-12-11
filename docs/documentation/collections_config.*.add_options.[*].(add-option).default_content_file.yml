@@ -1,12 +1,18 @@
 gid: collections_config.*.add_options.[*].(add-option).default_content_file
 url: /collections_config/*/add_options/[*]/(add-option)/default_content_file/
-title: ""
-description: |-
-  This key defines which file CloudCannon should use to populate a file created with an option in the *\+ Add* button dropdown if the Collection defined in `add_options.collection` has no Schemas configured. The `add_options.schema` key will override `default_content_file`.
+title: ''
+description: >-
+  This key defines which file CloudCannon should use to populate a file created
+  with an option in the *\+ Add* button dropdown if the Collection defined in
+  `add_options.collection` has no Schemas configured. The `add_options.schema`
+  key will override `default_content_file`.
+
 
   This key has no default.
 examples:
-  - description: In this example, we want CloudCannon to populate the initial contents of new files with `event_template.yml`.
+  - description: >-
+      In this example, we want CloudCannon to populate the initial contents of
+      new files with `event_template.yml`.
     language: yaml
     code: |-
       collections_config:
@@ -16,7 +22,7 @@ examples:
             collection: upcoming_events
             default_content_file: event_template.yml
     annotations: []
-  - description: ""
+  - description: ''
     language: yaml
     code: |-
       collections_config:

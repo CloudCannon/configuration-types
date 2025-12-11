@@ -1,12 +1,16 @@
 gid: collections_config.*.sort_options.[*].label
 url: /collections_config/*/sort_options/[*]/label/
-title: ""
-description: |-
-  This key defines the label used for a file sorting option in the *Sort* dropdown.
+title: ''
+description: >-
+  This key defines the label used for a file sorting option in the *Sort*
+  dropdown.
+
 
   This key has no default.
 examples:
-  - description: In this example, the sorting method which uses the `author` key is called "Author (A-Z)" in the *Sort* dropdown.
+  - description: >-
+      In this example, the sorting method which uses the `author` key is called
+      "Author (A-Z)" in the *Sort* dropdown.
     language: yaml
     code: |-
       collections_config:
@@ -16,7 +20,7 @@ examples:
               order: ascending
               label: Author (A-Z)
     annotations: []
-  - description: ""
+  - description: ''
     language: yaml
     code: |-
       collections_config:

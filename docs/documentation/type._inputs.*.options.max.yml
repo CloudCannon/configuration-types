@@ -1,16 +1,27 @@
 gid: type._inputs.*.options.max
 url: /types/_inputs/*/options/max/
-title: ""
-description: |-
-  This key defines the maximum numerical value CloudCannon will allow in an Input. When configured, CloudCannon will prevent you from entering a greater numerical value. If the Input already contains a greater numerical value, CloudCannon will require you to enter a valid value to save your changes, or discard your unsaved changes. This key is required for `range` inputs.
+title: ''
+description: >-
+  This key defines the maximum numerical value CloudCannon will allow in an
+  Input. When configured, CloudCannon will prevent you from entering a greater
+  numerical value. If the Input already contains a greater numerical value,
+  CloudCannon will require you to enter a valid value to save your changes, or
+  discard your unsaved changes. This key is required for `range` inputs.
 
-  Value can be any integer. If `options.min` is also configured, this key cannot be a lesser number.
+
+  Value can be any integer. If `options.min` is also configured, this key cannot
+  be a lesser number.
+
 
   This key has no default.
 
+
   This key is available for Number Inputs.
 examples:
-  - description: In this example, we want to add a rating out of five for each article in our travel blog using the `rating` Input. This Input limits you to a maximum rating of five.
+  - description: >-
+      In this example, we want to add a rating out of five for each article in
+      our travel blog using the `rating` Input. This Input limits you to a
+      maximum rating of five.
     language: yaml
     code: |-
       _inputs:
@@ -21,7 +32,7 @@ examples:
             max: 5
             min: 1
     annotations: []
-  - description: ""
+  - description: ''
     language: yaml
     code: |-
       _inputs:

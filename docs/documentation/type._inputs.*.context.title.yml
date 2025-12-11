@@ -1,12 +1,14 @@
 gid: type._inputs.*.context.title
 url: /types/_inputs/*/context/title/
-title: ""
+title: ''
 description: |-
   This key determines the title of the context box.
 
   By default, this key value is "Context".
 examples:
-  - description: In this example, we want to customize the context box title to be more descriptive for our `author_bio` Input.
+  - description: >-
+      In this example, we want to customize the context box title to be more
+      descriptive for our `author_bio` Input.
     language: yaml
     code: |-
       _inputs:
@@ -18,7 +20,7 @@ examples:
             icon: edit
             content: Write a brief, professional biography (2-3 sentences) that highlights your expertise and experience.
     annotations: []
-  - description: ""
+  - description: ''
     language: yaml
     code: |-
       _inputs:

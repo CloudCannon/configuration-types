@@ -1,14 +1,23 @@
 gid: type.structure.values.[*].default
 url: /types/structure/values/[*]/default/
-title: ""
-description: |-
-  This key toggles whether CloudCannon should treat an entry in the `values` array as the default option for your Object or Array input. If multiple entries in the `values` array are set to `true`, CloudCannon will use the first entry.
+title: ''
+description: >-
+  This key toggles whether CloudCannon should treat an entry in the `values`
+  array as the default option for your Object or Array input. If multiple
+  entries in the `values` array are set to `true`, CloudCannon will use the
+  first entry.
 
-  If CloudCannon cannot determine the type of an entry within the `values` array based on the `id_key` or matching inputs in the `values.value` array, it will fall back to the default entry.
+
+  If CloudCannon cannot determine the type of an entry within the `values` array
+  based on the `id_key` or matching inputs in the `values.value` array, it will
+  fall back to the default entry.
+
 
   By default, this key is `false` (i.e., the entry is not the default option).
 examples:
-  - description: In this example, we want the entry labelled `Employee` to be our default option for populating inputs configured with the `staff` Structure.
+  - description: >-
+      In this example, we want the entry labelled `Employee` to be our default
+      option for populating inputs configured with the `staff` Structure.
     language: yaml
     code: |-
       _structures:
@@ -28,7 +37,7 @@ examples:
                 profile_picture:
                 url:
     annotations: []
-  - description: ""
+  - description: ''
     language: yaml
     code: |-
       _structures:

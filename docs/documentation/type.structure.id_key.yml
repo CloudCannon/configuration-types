@@ -1,12 +1,19 @@
 gid: type.structure.id_key
 url: /types/structure/id_key/
-title: ""
-description: |-
-  This key defines which key within `values[*].value` CloudCannon should use to identify the Structure option. If CloudCannon cannot find this key in a Structure value, it will compare all other key names in the Structure value to find the correct one.
+title: ''
+description: >-
+  This key defines which key within `values[*].value` CloudCannon should use to
+  identify the Structure option. If CloudCannon cannot find this key in a
+  Structure value, it will compare all other key names in the Structure value to
+  find the correct one.
+
 
   By default, this key is `_type`.
 examples:
-  - description: In this example, we have change the `id_key` from the default `_type` to `component` to match our existing configuration in the `content_blocks` Array input.
+  - description: >-
+      In this example, we have change the `id_key` from the default `_type` to
+      `component` to match our existing configuration in the `content_blocks`
+      Array input.
     language: yaml
     code: |-
       _inputs:
@@ -43,7 +50,7 @@ examples:
                   image_path:
                   videoUrl:
     annotations: []
-  - description: ""
+  - description: ''
     language: yaml
     code: |-
       _inputs:

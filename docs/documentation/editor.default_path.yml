@@ -1,6 +1,6 @@
 gid: editor.default_path
 url: /editor/default_path/
-title: ""
+title: ''
 description: |-
   This key defines the link for the *Home* button on the *Dashboard* page.
 

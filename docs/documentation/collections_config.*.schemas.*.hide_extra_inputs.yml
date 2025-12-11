@@ -1,10 +1,14 @@
 gid: collections_config.*.schemas.*.hide_extra_inputs
 url: /collections_config/*/schemas/*/hide_extra_inputs/
-title: ""
-description: |-
-  Sets the behavior when editing existing files with inputs not present in the schema with `remove_extra_inputs` set to `false`. Defaults to `false`. Has no effect if `remove_extra_inputs` is `true`.
+title: ''
+description: >-
+  Sets the behavior when editing existing files with inputs not present in the
+  schema with `remove_extra_inputs` set to `false`. Defaults to `false`. Has no
+  effect if `remove_extra_inputs` is `true`.
+
 
   If `true`, non-schema inputs are hidden in the Data Editor.
+
 
   If `false`, non-schema inputs are visible in the Data Editor.
 examples: []
