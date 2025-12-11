@@ -1,6 +1,29 @@
 gid: collections_config.*.sort_options.[*].order
 url: /collections_config/*/sort_options/[*]/order/
 title: ''
-description: Controls which sort values come first.
-examples: []
+description: >-
+  This key defines which order an option in the *Sort* dropdown should use to
+  sort files in your *Collection browser*. CloudCannon will sort files according
+  to the value of `sort_options.key` for each option in the *Sort* dropdown.
+
+
+  Values can be one of the following: `asc`, `ascending`, `desc`, or
+  `descending`.
+
+
+  By default, this key is `ascending`.
+examples:
+  - description: >-
+      In this example, the "Author (A-Z)" option in the *Sort* dropdown will
+      sort files in the `blog` *Collection browser* in ascending order.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          sort_options:
+            - key: author
+              order: ascending
+              label: Author (A-Z)
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

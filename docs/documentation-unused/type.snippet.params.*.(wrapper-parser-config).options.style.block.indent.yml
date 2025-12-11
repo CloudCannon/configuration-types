@@ -1,0 +1,8 @@
+gid: type.snippet.params.*.(wrapper-parser-config).options.style.block.indent
+url: /type/snippet/params/*/(wrapper-parser-config)/options/style/block/indent/
+title: ''
+description: |-
+  For block content, how should the value be indented.
+  Nested snippets only need to specify the indentation relative to their parent.
+examples: []
+show_in_navigation: false

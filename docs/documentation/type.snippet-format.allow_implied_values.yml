@@ -1,6 +1,8 @@
 gid: type.snippet-format.allow_implied_values
 url: /types/snippet-format/allow_implied_values/
 title: ''
-description: ''
+description: >-
+  When parsing key-value pairs, can a key be specified without a value to imply
+  a value of `true`?
 examples: []
 show_in_navigation: false

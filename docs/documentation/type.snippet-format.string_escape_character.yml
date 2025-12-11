@@ -1,6 +1,9 @@
 gid: type.snippet-format.string_escape_character
 url: /types/snippet-format/string_escape_character/
 title: ''
-description: ''
+description: |-
+  What character can be placed before a string boundary to escape it?
+
+  If required, this will usually be `\`.
 examples: []
 show_in_navigation: false

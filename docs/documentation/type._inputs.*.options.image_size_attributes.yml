@@ -2,7 +2,20 @@ gid: type._inputs.*.options.image_size_attributes
 url: /types/_inputs/*/options/image_size_attributes/
 title: Image Size Attributes
 description: >-
-  Instructs the editor to save `width` and `height` attributes on the image
-  elements. This can prevent pop-in as a page loads.
+  This key instructs a rich text editor to save `width` and `height` on image
+  elements. This can [prevent
+  pop-in](/documentation/articles/why-cloudcannon-injects-width-and-height-onto-images/)
+  as a page loads. Defaults to `false`.
+
+
+  > This defaults to `true` for sites created before June 23 2023, in order to
+  keep those sites working. Use the [Image Size Attributes
+  Default](/documentation/articles/legacy-option-flags/#image-size-attributes-default-behaviour)
+  flag to update this for your site, if needed.
+
+
+  Available for the Content Editor (`_editables.content`), the Block editable
+  region (`_editables.block`), the Image editable region (`_editables.image`),
+  and Rich Text inputs (`_inputs.key_name.options`).
 examples: []
 show_in_navigation: false

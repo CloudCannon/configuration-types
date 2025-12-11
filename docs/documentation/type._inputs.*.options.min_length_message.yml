@@ -2,7 +2,31 @@ gid: type._inputs.*.options.min_length_message
 url: /types/_inputs/*/options/min_length_message/
 title: ''
 description: >-
-  This key defines the message that explains which minimum string length an
-  Input will accept. This key requires you to define `options.min_length`.
-examples: []
+  This key defines a custom error message that explains why a value has failed
+  the validation criteria from `options.min_length`. This key requires you to
+  define `options.min_length`.
+
+
+  This key has no default.
+
+
+  This key is available for Code, Color, File, Select, Text, Rich Text, and URL
+  Inputs.
+examples:
+  - description: >-
+      In this example, we prompt our team to enter a valid number of characters
+      using a custom message.
+    language: yaml
+    code: |-
+      _inputs:
+        seo_description:
+          type: markdown
+          comment: Enter a brief description of this blog.
+          options:
+            max_length: 125
+            max_length_message: You are only allowed 125 characters.
+            min_length: 25
+            min_length_message: Please write more than 25 characters.
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

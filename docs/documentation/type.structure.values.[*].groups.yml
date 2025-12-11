@@ -2,7 +2,43 @@ gid: type.structure.values.[*].groups
 url: /types/structure/values/[*]/groups/
 title: ''
 description: >-
-  Allows you to group the inputs inside this object together without changing
-  the data structure.
-examples: []
+  This key defines the order and customing grouping for inputs within a
+  Structure. Each groups can have a heading.
+
+
+  The following nested keys are available for each entry in the `groups` array:
+
+
+  * `heading`
+
+  * `inputs`
+
+
+  By default, CloudCannon respects the order of inputs as configured in the
+  `values.value` key and does not include any groups.
+examples:
+  - description: >-
+      In this example, we want to separate the inputs into two groups with
+      descriptive headings: `title` and `subtitle` under the `Titles` heading,
+      and `author` under the `Details` heading.
+    language: yaml
+    code: |-
+      _structures:
+        article_information:
+          values:
+            - label: Blog
+              value:
+                title:
+                subtitle:
+                author:
+              groups:
+                - heading: Titles
+                  inputs:
+                    - title
+                    - subtitle
+                - heading: Details
+                  inputs:
+                    - author
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

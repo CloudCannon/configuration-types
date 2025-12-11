@@ -2,7 +2,10 @@ gid: type.structure.values.[*].id
 url: /types/structure/values/[*]/id/
 title: ''
 description: >-
-  A unique reference value used when referring to this structure value from the
-  Object input's assigned_structures option.
+  This key defines the string used to identify a given Structure value when
+  refering to it from other input configuration.
+
+
+  This key has no default.
 examples: []
 show_in_navigation: false

@@ -1,6 +1,45 @@
 gid: type.snippet-model.optional
 url: /types/snippet-model/optional/
 title: ''
-description: ''
-examples: []
+description: >-
+  Whether a value must exist for this parser. Useful for long sets of key-value
+  pairs that are not all required.
+examples:
+  - description: ''
+    language: yaml
+    code: |-
+      parser: "key_values"
+      options:
+        models:
+          - editor_key: href
+          - editor_key: target
+            optional: true
+          - editor_key: class
+            optional: true
+    annotations: []
+    source: cloudcannon.config.yml
+  - description: 'Example usage:'
+    language: markdown
+    code: |-
+      ## My blog post
+
+      <a href="#link" target="_blank" class="my_link"> ... </a> <!--1-->
+      <a href="#link" target="_blank"> ... </a> <!--1-->
+      <a href="#link"> ... </a> <!--1-->
+
+      <a target="_blank"> ... </a> <!--2-->
+
+      Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+    annotations:
+      - number: 1
+        content: >-
+          All of these anchor tags will parse correctly, as they are missing
+          either `target` or `class`
+
+          keys from the arguments, and both are marked as `optional`.
+      - number: 2
+        content: >-
+          This anchor tag will not be parsed, as the `href` key is absent and is
+          not marked as `optional`.
+    source: page.md
 show_in_navigation: false

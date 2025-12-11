@@ -2,8 +2,29 @@ gid: type._inputs.*.options.max_file_size_message
 url: /types/_inputs/*/options/max_file_size_message/
 title: ''
 description: >-
-  This key defines the message that explains why an Input needs to have a
-  maximum file size. This key requires you to define `options.max_file_size`.
+  This key defines a custom error message that explains why a value has failed
+  the validation criteria from `options.max_file_size`. This key requires you to
+  define `options.max_file_size`.
+
+
   This key has no default.
-examples: []
+
+
+  This key is available for File and URL Inputs.
+examples:
+  - description: >-
+      In this example, we want our team to upload an image using the
+      `feature_image` Input. This Input limits you to a maximum file size of 750
+      kB.
+    language: yaml
+    code: |-
+      _inputs:
+        feature_image:
+          type: image
+          comment: Select the feature image for the banner.
+          options:
+            max_file_size: 140
+            max_file_size_message: For SEO, keep this under 140kB
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

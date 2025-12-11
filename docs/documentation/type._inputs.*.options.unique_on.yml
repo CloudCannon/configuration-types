@@ -8,5 +8,37 @@ description: >-
   on the JSON Path. If the Input already contains a non-unique value,
   CloudCannon will require you to change it to a valid value to save your
   changes, or discard your unsaved changes.
-examples: []
+
+
+  Value must be a valid JSON Path.
+
+
+  This key has no default.
+
+
+  This key is available for Array inputs.
+examples:
+  - description: >-
+      In this example, we want our team to add article filepaths to the
+      `related_articles` Input. This Input requires all the filepaths to be
+      unique.
+    language: yaml
+    code: |-
+      _inputs:
+        related_articles:
+          type: array
+          options:
+            unique_on: '$.path'
+    annotations: []
+    source: cloudcannon.config.yml
+  - description: ''
+    language: yaml
+    code: |-
+      related_articles:
+        - path: /articles/first-article.md
+          featured: true
+        - path: /articles/second-article.md
+          featured: false
+    annotations: []
+    source: blog-article.yml
 show_in_navigation: false

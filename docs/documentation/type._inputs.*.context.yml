@@ -1,6 +1,37 @@
 gid: type._inputs.*.context
 url: /types/_inputs/*/context/
 title: ''
-description: Adds an expandable section of rich text below the input.
-examples: []
+description: >-
+  This key enables you to define a context box for extra information about an
+  Input. The following nested keys are available:
+
+
+  * `open`
+
+  * `title`
+
+  * `icon`
+
+  * `content` (required)
+
+
+  This key has no default.
+examples:
+  - description: >-
+      In this example, we want to add a context box to our `date_created` Input
+      to explain its purpose.
+    language: yaml
+    code: |-
+      _inputs:
+        date_created:
+          type: datetime
+          label: Date of article creation
+          instance_value: NOW
+          context:
+            open: false
+            title: Help
+            icon: help
+            content: This date field will automatically populate when you create an article.
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

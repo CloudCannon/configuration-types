@@ -2,8 +2,38 @@ gid: type.structure.remove_empty_inputs
 url: /types/structure/remove_empty_inputs/
 title: ''
 description: >-
-  If checked, empty inputs are removed from the source file on save. Removed
-  inputs will be available for editing again, provided they are in the matching
-  schema/structure. Defaults to false.
-examples: []
+  This key toggles whether CloudCannon will remove empty nested inputs from an
+  Object or Array input that uses this Structure when you save the input
+  configuration. CloudCannon consideres an input to be empty when its value is
+  `null`, `' '`, or undefined.
+
+
+  If this key is set to `true`, the `id_key` must be configured for this
+  Structure, as removing inputs prevents CloudCannon from comparing Structure
+  values. You can bring back empty inputs removed from an Object or Array input
+  by re-adding the structure to the input.
+
+
+  By default, this key is `false` (i.e, CloudCannon does not remove empty
+  inputs).
+examples:
+  - description: >-
+      In this example, we want to delete any unnecessary nested inputs (i.e.,
+      input we choose not to provide a value for) from Object or Array inputs
+      referenceing the `event_details` Structure.
+    language: yaml
+    code: |-
+      _structures:
+        event_details:
+          remove_empty_inputs: true
+          values:
+            - value:
+              name:
+              description:
+              url:
+              time:
+              place:
+              sponsor:
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

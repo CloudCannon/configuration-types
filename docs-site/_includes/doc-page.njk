@@ -71,6 +71,7 @@
 			<dd data-editable="array-item">
 				{% if example.description %}{{ example.description | renderContent('md') | safe }}{% endif %}
 				<pre><code>{{ example.code }}</code></pre>
+				<p>{% if example.language %}{{ example.language }}{% endif %} | {% if example.source %}{{ example.source }}{% endif %}</p>
 			</dd>
 		{% endfor %}
 	</editable-array>

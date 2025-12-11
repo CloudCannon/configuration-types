@@ -1,8 +1,9 @@
 gid: editor.default_path
 url: /editor/default_path/
 title: ''
-description: >-
-  The URL used for the dashboard screenshot, and where the editor opens to when
-  clicking the dashboard "Edit Home" button.
+description: |-
+  This key defines the link for the *Home* button on the *Dashboard* page.
+
+  By default, this key is set to `/` (i.e., your index output URL).
 examples: []
 show_in_navigation: false

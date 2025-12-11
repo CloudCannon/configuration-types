@@ -2,7 +2,29 @@ gid: collections_config.*.add_options.[*].(add-option).icon
 url: /collections_config/*/add_options/[*]/(add-option)/icon/
 title: Icon
 description: >-
-  The icon next to the text in the menu item. Defaults to using icon from the
-  matching schema if set, then falls back to add.
-examples: []
+  This key defines the icon for an option in the *\+ Add* button dropdown.
+
+
+  Values can be from <a
+  href="https://fonts.google.com/icons?icon.set=Material+Icons" target="_blank"
+  rel="noopener">Google's Material Icons</a> library.
+
+
+  By default, this key is `add`, unless you have configured
+  `add_options.schema`. In this case, this key defaults to the icon of the
+  matching Schema.
+examples:
+  - description: >-
+      In this example, the *\+ Add* button dropdown in the `team` *Collection
+      browser* has a link to the Office Locations page on our live website.
+    language: yaml
+    code: |-
+      collections_config:
+        team:
+          add_options:
+            - name: Office Locations
+              icon: map
+              href: /our-offices
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

@@ -9,6 +9,7 @@
 		{% for example in documentation.examples %}
 			{% if example.description %}{{ example.description | renderContent('md') | safe }}{% endif %}
 			<pre data-editable="array-item"><code>{{ example.code }}</code></pre>
+			<p>{% if example.language %}{{ example.language }}{% endif %} | {% if example.source %}{{ example.source }}{% endif %}</p>
 		{% endfor %}
 	</editable-array>
 </details>

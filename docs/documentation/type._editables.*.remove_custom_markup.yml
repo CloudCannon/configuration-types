@@ -2,9 +2,25 @@ gid: type._editables.*.remove_custom_markup
 url: /types/_editables/*/remove_custom_markup/
 title: ''
 description: >-
-  Defines if the content should be stripped of "custom markup". It is
-  recommended to have this option turned on once you have all of your rich text
-  options configured. Having `allow_custom_markup` turned on disables this
-  option. Defaults to false.
+  This key enables you to strip custom markup from content edited in a rich text
+  editor, allowing you to clean files of unnecessary HTML content. By default,
+  `remove_custom_markup` is `false` for inputs, the Content Editor, and editable
+  regions.
+
+
+  The `remove_custom_markup` key is disabled if `allow_custom_markup` is
+  enabled.
+
+
+  Available for the Content Editor (`_editables.content`), the Block editable
+  region (`_editables.block`), the Link editable region (`_editables.link`), the
+  Text editable region (`_editables.text`), and Rich Text inputs
+  (`_inputs.key_name.options`).
+
+
+  For more information, please read our documentation on best practices for HTML
+  in [rich text](/documentation/articles/best-practices-for-rich-text/) and
+  [editable
+  regions](/documentation/articles/define-editable-regions-in-your-html/).
 examples: []
 show_in_navigation: false

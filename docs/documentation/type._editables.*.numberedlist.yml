@@ -2,7 +2,12 @@ gid: type._editables.*.numberedlist
 url: /types/_editables/*/numberedlist/
 title: ''
 description: >-
-  Enables a control to insert a numbered list, or to convert selected blocks of
-  text into a numbered list.
+  This key enables a tool to insert an ordered list or convert selected text to
+  an ordered list.
+
+
+  Available for the Content Editor (`_editables.content`), the Block editable
+  region (`_editables.block`), and Rich Text inputs
+  (`_inputs.key_name.options`).
 examples: []
 show_in_navigation: false

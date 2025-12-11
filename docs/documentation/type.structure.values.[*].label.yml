@@ -1,6 +1,33 @@
 gid: type.structure.values.[*].label
 url: /types/structure/values/[*]/label/
 title: ''
-description: Used as the main text in the interface for this value.
-examples: []
+description: >-
+  This key defines the dispaly name for a given value in a Structure. The name
+  will appear in the *+ Add* button dropdown below an Object or Array input or
+  in the Structures modal (if configured).
+
+
+  By default, this key falls back to `unknown`.
+examples:
+  - description: >-
+      In this example, we want two value options for our `staff` structure: one
+      called `Manager` and one called `Employee`.
+    language: yaml
+    code: |-
+      _structures:
+        staff:
+          values:
+            - label: Employee
+              value:
+                name:
+                job_description:
+                profile_picture:
+            - label: Manager
+              value:
+                name:
+                job_description:
+                profile_picture:
+                url:
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

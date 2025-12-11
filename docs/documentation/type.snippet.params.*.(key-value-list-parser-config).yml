@@ -1,6 +1,25 @@
 gid: type.snippet.params.*.(key-value-list-parser-config)
 url: /types/snippet/params/*/(key-value-list-parser-config)/
 title: Key Value List Parser Config
-description: ''
-examples: []
+description: >-
+  Parses repeating pairs of keys and values. Useful for most SSG snippets that
+  take properties.
+
+
+
+
+  Can be configured to handle most syntax forms of key value pairs.
+examples:
+  - description: ''
+    language: liquid
+    code: |-
+      {% include "image.html" image: "tree.png" alt: "Image of a tree" %}
+                              └──────────────────────────────────────┘
+    annotations: []
+  - description: ''
+    language: markdown
+    code: |-
+      <Link href="/about/" new_tab={true}/>
+            └───────────────────────────┘
+    annotations: []
 show_in_navigation: false

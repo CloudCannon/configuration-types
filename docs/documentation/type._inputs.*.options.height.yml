@@ -2,7 +2,12 @@ gid: type._inputs.*.options.height
 url: /types/_inputs/*/options/height/
 title: Height
 description: >-
-  Defines the height of the bounding box used in the image resizing process
-  defined with resize_style.
+  This key defines the height of the bounding box used in the resizing method
+  defined by `resize_style`.
+
+
+  Available for the Content Editor (`_editables.content`), the Block editable
+  region (`_editables.block`), the Image editable region (`_editables.image`),
+  and Rich Text inputs (`_inputs.key_name.options`).
 examples: []
 show_in_navigation: false

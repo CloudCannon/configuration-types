@@ -1,6 +1,22 @@
 gid: type.paths.dam_uploads
 url: /types/paths/dam_uploads/
 title: ''
-description: ''
+description: >-
+  This key enables you to define the path for the default location of newly
+  uploaded [DAM](/documentation/articles/introduction-to-assets-and-dams/)
+  files.
+
+
+  You can use [dynamic
+  placeholders](/documentation/articles/configure-your-template-strings/) for
+  `uploads` and `dam_uploads`. For more information, please read our
+  documentation on [adjusting file upload
+  paths](/documentation/articles/adjusting-the-uploads-path/).
+
+
+  Available for the Content Editor (`_editables.content`), the Block editable
+  region (`_editables.block`), the Image editable region (`_editables.image`),
+  the Text editable region (`_editables.text`), and Rich Text inputs
+  (`_inputs.key_name.options`).
 examples: []
 show_in_navigation: false

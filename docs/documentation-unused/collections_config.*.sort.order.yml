@@ -1,0 +1,21 @@
+gid: collections_config.*.sort.order
+url: /collections_config/*/sort/order/
+title: ''
+description: |-
+  This key defines the order in which Collection files are sorted in your *Collection browser*. CloudCannon will sort files according to the value of `sort.key`.
+
+  Values can be one of the following: `asc`, `ascending`, `desc`, or `descending`.
+
+  By default, this key is `ascending`.
+examples:
+  - description: In this example, CloudCannon will sort files in the `blog` Collection by the `date` key in the front matter of each file, in descending order.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          sort:
+            key: date
+            order: descending
+    annotations: []
+    source: cloudcannon.config.yml
+show_in_navigation: false

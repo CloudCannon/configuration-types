@@ -1,0 +1,6 @@
+gid: type.snippet.params.*.(wrapper-parser-config).options.style.block.trailing
+url: /type/snippet/params/*/(wrapper-parser-config)/options/style/block/trailing/
+title: ''
+description: For block content, what should trail the value. Useful for adding newlines around content.
+examples: []
+show_in_navigation: false

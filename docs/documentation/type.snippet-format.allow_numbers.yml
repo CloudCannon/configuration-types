@@ -1,6 +1,6 @@
 gid: type.snippet-format.allow_numbers
 url: /types/snippet-format/allow_numbers/
 title: ''
-description: ''
+description: Whether unquoted numbers like `5` and `-0.4` can be used as values.
 examples: []
 show_in_navigation: false

@@ -1,6 +1,23 @@
 gid: type.documentation.text
 url: /types/documentation/text/
 title: ''
-description: The visible text used in the link.
-examples: []
+description: >-
+  This key defines the link text for the documentation link at the top of a
+  *Collection browser*.
+
+
+  By default, this key is `Documentation`.
+examples:
+  - description: >-
+      In this example, the text for the documentation link is `CloudCannon
+      Documentation`.
+    language: yaml
+    code: |-
+      collections_config:
+        data:
+          documentation:
+            url: https://cloudcannon.com/documentation/
+            text: CloudCannon Documentation
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

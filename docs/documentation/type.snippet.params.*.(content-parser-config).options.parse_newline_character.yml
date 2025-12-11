@@ -2,6 +2,33 @@ gid: type.snippet.params.*.(content-parser-config).options.parse_newline_charact
 url: >-
   /types/snippet/params/*/(content-parser-config)/options/parse_newline_character/
 title: ''
-description: ''
-examples: []
+description: >-
+  This tells the parser to treat `\n` as line breaks instead of literal
+  characters.
+
+  This is useful if you are editing your content in a multiline editing
+  interface.
+examples:
+  - description: ''
+    language: yaml
+    code: |-
+      parser: "content"
+      options:
+        parse_newline_character: true
+    annotations: []
+    source: cloudcannon.config.yml
+  - description: 'Example usage:'
+    language: markdown
+    code: |-
+      ## My blog post
+
+      <<highlight>> Line One\nLine Two <</highlight>> <!--1-->
+    annotations:
+      - number: 1
+        content: >-
+          This content will be displayed on two lines when opened in an editing
+          interface, instead of
+
+          showing the literal `\n` characters.
+    source: page.md
 show_in_navigation: false

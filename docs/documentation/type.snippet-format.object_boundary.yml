@@ -1,6 +1,11 @@
 gid: type.snippet-format.object_boundary
 url: /types/snippet-format/object_boundary/
 title: ''
-description: ''
+description: >-
+  For snippets which can parse object literals, what characters start and end an
+  object?
+
+
+  If required, this will usually be `{ start: "{", end: "}" }`.
 examples: []
 show_in_navigation: false

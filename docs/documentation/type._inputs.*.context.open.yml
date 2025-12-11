@@ -1,6 +1,27 @@
 gid: type._inputs.*.context.open
 url: /types/_inputs/*/context/open/
 title: ''
-description: Makes the content visible initially.
-examples: []
+description: >-
+  This key determines whether the context box is open to display text content by
+  default.
+
+
+  By default, this key is `false` (i.e., closed).
+examples:
+  - description: >-
+      In this example, we want the context box to be open by default so users
+      can immediately see the help information.
+    language: yaml
+    code: |-
+      _inputs:
+        seo_description:
+          type: text
+          label: SEO Description
+          context:
+            open: true
+            title: SEO Guidelines
+            icon: info
+            content: Keep descriptions between 150-160 characters for optimal search engine display.
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

@@ -2,8 +2,32 @@ gid: collections_config.*.add_options.[*].(add-option).collection
 url: /collections_config/*/add_options/[*]/(add-option)/collection/
 title: ''
 description: >-
-  Sets which collection this action is creating a file in. This is used when
-  matching the value for schema. Defaults to the containing collection these
-  `add_options` are configured in.
-examples: []
+  This key defines the Collection for files created using an option in the *\+
+  Add* button dropdown. This Collections overrides the current Collection open
+  in the *Collection browser*.
+
+
+  The value for this key should be the key name of a Collection.
+
+
+  By default, this key is the current Collection open in the *Collection
+  browser*.
+examples:
+  - description: >-
+      In this example, we want team members in the articles Collection to create
+      new files in the `new_articles` Collection rather than the current
+      Collection browser they have open. By configuring the `collection` value
+      to `new_articles`, new files will be created in a different Collection
+      (i.e., `new_articles`) when a team member selects this option from the +
+      Add button dropdown.
+    language: yaml
+    code: |-
+      collections_config:
+        articles:
+          add_options:
+            - name: Add articles
+              collection: new_articles
+              schema: articles
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

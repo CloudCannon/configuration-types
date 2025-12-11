@@ -1,6 +1,24 @@
 gid: type.snippet.params.*.(repeating-parser-config).options.output_delimiter
 url: /types/snippet/params/*/(repeating-parser-config)/options/output_delimiter/
 title: ''
-description: ''
+description: >-
+  Either `inline` or `block`. For parsers such as the content and repeating
+  parsers,
+
+  determines how to format the output.
+
+
+  When set to `block`, values will always be output with leading and trailing
+  newlines.
+
+
+  When set to `inline`, values will always be output on a single line, with
+  newlines inserted as `\n`.
+
+
+  If unspecified, `inline` will be chosen when the value is a single line,
+  otherwise `block`
+
+  formatting will be used.
 examples: []
 show_in_navigation: false

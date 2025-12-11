@@ -2,7 +2,26 @@ gid: type.structure.reorder_inputs
 url: /types/structure/reorder_inputs/
 title: ''
 description: >-
-  If true, inputs are sorted to match when editing. Extra inputs are ordered
-  after expected inputs, unless `remove_extra_inputs` is true. Defaults to true.
-examples: []
+  This key toggles whether inputs in a file are reordered to match the order in
+  the Structure.
+
+
+  By default, this key is `true` (i.e, inputs are reordered to match the
+  Structure).
+examples:
+  - description: >-
+      In this example, we want to preserve the order of the inputs in a file
+      over the order in the associated Structure.
+    language: yaml
+    code: |-
+      _structures:
+        related_articles:
+          reorder_inputs: false
+          values:
+            - value:
+              name:
+              description:
+              url:
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

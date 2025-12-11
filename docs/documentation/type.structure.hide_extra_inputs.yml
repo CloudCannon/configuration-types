@@ -2,7 +2,32 @@ gid: type.structure.hide_extra_inputs
 url: /types/structure/hide_extra_inputs/
 title: ''
 description: >-
-  Hides unexpected inputs when editing. Has no effect if `remove_extra_inputs`
-  is true. Defaults to false.
-examples: []
+  This key toggles whether inputs that are not present in the Structure are
+  visible in the [Data
+  Editor](/documentation/articles/what-is-the-data-editor/). Hiding these inputs
+  does not delete the data. You can see structured data keys from outside a
+  Structure by opening a file in the [Source
+  Editor](/documentation/articles/what-is-the-source-editor/). This key has no
+  effect if `remove_extra_inputs` is `true`.
+
+
+  By default, this key is `false` (i.e, non-structure inputs are visible in the
+  Data Editor).
+examples:
+  - description: >-
+      In this example, we don't want inputs outside of those listed in the
+      Structure (e.g., old inputs from deprecated versions of this Structure) to
+      appear in the Data Editor.
+    language: yaml
+    code: |-
+      _structures:
+        related_articles:
+          hide_extra_inputs: true
+          values:
+            - value:
+              name:
+              description:
+              url:
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

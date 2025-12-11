@@ -2,8 +2,23 @@ gid: type._inputs.*.comment
 url: /types/_inputs/*/comment/
 title: ''
 description: >-
-  Changes the subtext below the _Label_. Has no default. Supports a limited set
-  of Markdown: links, bold, italic, subscript, superscript, and inline code
-  elements are allowed.
-examples: []
+  This key changes the subtitle text above an Input. CloudCannon supports a
+  limited selection of Markdown formatting for the value of this key: links,
+  bold, italic, subscript, superscript, and inline code.
+
+
+  This key has no default.
+examples:
+  - description: >-
+      In this example, we want to add helpful guidance for our
+      `page_description` Input.
+    language: yaml
+    code: |-
+      _inputs:
+        page_description:
+          type: text
+          label: Page Description
+          comment: Enter a brief description of this page for search engines
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

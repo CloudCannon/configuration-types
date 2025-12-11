@@ -1,6 +1,24 @@
 gid: type._inputs.*.context.title
 url: /types/_inputs/*/context/title/
 title: ''
-description: The text shown when not open. Defaults to "Context" if unset.
-examples: []
+description: |-
+  This key determines the title of the context box.
+
+  By default, this key value is "Context".
+examples:
+  - description: >-
+      In this example, we want to customize the context box title to be more
+      descriptive for our `author_bio` Input.
+    language: yaml
+    code: |-
+      _inputs:
+        author_bio:
+          type: textarea
+          label: Author Biography
+          context:
+            title: Writing Guidelines
+            icon: edit
+            content: Write a brief, professional biography (2-3 sentences) that highlights your expertise and experience.
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

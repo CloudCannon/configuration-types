@@ -1,6 +1,48 @@
 gid: type.snippet-model.source_key
 url: /types/snippet-model/source_key/
 title: ''
-description: ''
-examples: []
+description: |-
+  Specifies the key that the parser should look for in the source text.
+
+  This only needs to be set if it differs from the `editor_key`.
+examples:
+  - description: ''
+    language: yaml
+    code: |-
+      parser: "key_values"
+      options:
+        models___1___:
+          - source_key: href
+            editor_key: link
+          - source_key: target
+            editor_key: link_target
+          - source_key: class
+            editor_key: classnames
+    annotations:
+      - number: 1
+        content: >-
+          Key/value models can be specified in any order, so do not have to
+          match the order
+
+          of they keys in the source code.
+    source: cloudcannon.config.yml
+  - description: 'Example usage:'
+    language: markdown
+    code: |-
+      ## My blog post
+
+      <a href="#link" target="_blank" class="my_link"> ... </a>
+      Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+    annotations: []
+    source: page.md
+  - description: |-
+      When edited in CloudCannon, this will edit as the data model:
+
+      {/* TODO: Use screenshot here instead */}
+    language: yaml
+    code: |-
+      link: "#link"
+      link_target: "_blank"
+      classnames: "my_link"
+    annotations: []
 show_in_navigation: false
