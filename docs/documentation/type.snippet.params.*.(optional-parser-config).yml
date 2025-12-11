@@ -1,6 +1,13 @@
 gid: type.snippet.params.*.(optional-parser-config)
 url: /types/snippet/params/*/(optional-parser-config)/
 title: Optional Parser Config
-description: ''
+description: >-
+  If `false` this parser requires at least one matching value. If `true`,
+
+  matching zero times is a valid state.
+
+
+  Setting this to `true` is preferred to wrapping the `repeating` parser inside
+  an `optional` parser.
 examples: []
 show_in_navigation: false

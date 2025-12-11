@@ -1,6 +1,61 @@
 gid: type.snippet.params.*.(content-parser-config).options.indented_by
 url: /types/snippet/params/*/(content-parser-config)/options/indented_by/
 title: ''
-description: ''
-examples: []
+description: >-
+  Configures the content parser to **require** whitespace indentation when
+  parsing.
+
+  Used when a snippet continues for as long as content is indented.
+
+
+  This option should only be used if required, since it prevents your Snippet
+  from parsing if the whitespace does not match.
+
+  If you want parsing to be flexible, but the output to be formatted, use the
+  Style options instead.
+examples:
+  - description: ''
+    language: yaml
+    code: |-
+      _snippets:
+        highlight:
+          snippet: "<<highlight>>\n[[inner]]\n<</highlight>>"
+          params:
+            inner:
+              parser: "content"
+              options:
+                editor_key: highlighted_text
+                indented_by___0___: "  "
+    annotations: []
+    source: cloudcannon.config.yml
+  - description: 'Example usage:'
+    language: markdown
+    code: |-
+      ## My blog post
+
+      <<highlight>>
+        My highlighted content!   <!--1-->
+      <</highlight>>
+
+      <<highlight>>
+          My highlighted content! <!--2-->
+      <</highlight>>
+
+      <<highlight>>
+      My highlighted content!     <!--3-->
+      <</highlight>>
+
+      Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+    annotations:
+      - number: 1
+        content: This will parse correctly as `My highlighted content!`
+      - number: 2
+        content: >-
+          This will strip only the indentation that matches, and return `  My
+          highlighted content!`
+      - number: 2
+        content: |-
+          This will **not** match this parser, as indentation is required.
+          Use the `style.block.indent` option instead.
+    source: page.md
 show_in_navigation: false

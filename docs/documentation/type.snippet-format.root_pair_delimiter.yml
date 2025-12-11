@@ -1,6 +1,13 @@
 gid: type.snippet-format.root_pair_delimiter
 url: /types/snippet-format/root_pair_delimiter/
 title: ''
-description: ''
+description: >-
+  For key-value pairs, what delimits the each key-value pair from the next.
+
+
+  - For segments such as `href="about" title="Hello World"`, this would be ` `
+  (a space).
+
+  - For segments such as `href: about, title: "Hello World"`, this would be `,`.
 examples: []
 show_in_navigation: false

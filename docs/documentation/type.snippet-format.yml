@@ -1,6 +1,51 @@
 gid: type.snippet-format
 url: /types/snippet-format/
 title: Snippet Format
-description: ''
-examples: []
+description: This should be an object containing keys from the available Format keys.
+examples:
+  - description: |-
+      A common option to configure for the
+      argument parser is the `string_boundary`:
+    language: yaml
+    code: |-
+      _snippets:
+        video:
+          snippet: "<<video [[video_arg]]>>"
+          params:
+            video_arg:
+              parser: "argument"
+              options:
+                model:
+                  editor_key: video_id
+                format:
+                  string_boundary: ['"', "`"]
+    annotations: []
+    source: cloudcannon.config.yml
+  - description: >-
+      This would make our snippet match `<<video "CZcNgDN81Sw">>` or `` <<video
+      `CZcNgDN81Sw`>> `` but not `<<video 'CZcNgDN81Sw'>>` or `<<video
+      CZcNgDN81Sw>>`.
+
+
+      Another common requirement is specifying `forbidden_tokens`,
+
+      especially when defining an argument with no string boundary.
+    language: yaml
+    code: |-
+      _snippets:
+        video:
+          snippet: "<<video [[video_arg]]>>"
+          params:
+            video_arg:
+              parser: "argument"
+              options:
+                model:
+                  editor_key: video_id
+                format:
+                  forbidden_tokens:
+                    - ">"
+                  string_boundary:
+                    - ""
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

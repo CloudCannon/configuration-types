@@ -1,6 +1,11 @@
 gid: type.snippet-format.root_value_boundary
 url: /types/snippet-format/root_value_boundary/
 title: ''
-description: ''
+description: >-
+  For arguments and values, what boundary is required (if any).
+
+
+  For example, MDX specifies `{ start: "{", end: "}" }`, which allows syntax
+  such as: `<Component flag={true} />`.
 examples: []
 show_in_navigation: false

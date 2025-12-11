@@ -27,9 +27,9 @@ examples:
     language: yaml
     code: |-
       mdx: true
-        docusaurus_mdx:
-          exclude:
-            - docusaurus_mdx_truncate
+      docusaurus_mdx:
+        exclude:
+          - docusaurus_mdx_truncate
     annotations: []
     source: /.cloudcannon/snippets/docusaurusSnippets.cloudcannon.snippets-imports.yml
 show_in_navigation: false

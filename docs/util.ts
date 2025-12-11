@@ -5,7 +5,10 @@ export interface Example {
 	code: string;
 	language?: string;
 	source?: string;
-	annotations?: string[];
+	annotations?: {
+		number?: number;
+		content?: string;
+	}[];
 }
 
 export interface DocumentationEntry {

@@ -1,6 +1,6 @@
 gid: type.snippet.params.*.(repeating-parser-config)
 url: /types/snippet/params/*/(repeating-parser-config)/
 title: Repeating Parser Config
-description: ''
+description: Higher-order parser that wraps a snippet string and allows it to repeat.
 examples: []
 show_in_navigation: false

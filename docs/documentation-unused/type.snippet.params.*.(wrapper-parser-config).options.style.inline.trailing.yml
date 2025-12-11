@@ -1,0 +1,6 @@
+gid: type.snippet.params.*.(wrapper-parser-config).options.style.inline.trailing
+url: /type/snippet/params/*/(wrapper-parser-config)/options/style/inline/trailing/
+title: ''
+description: For inline content, what should trail the value. Useful for adding whitespace around strings.
+examples: []
+show_in_navigation: false

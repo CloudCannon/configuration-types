@@ -1,0 +1,9 @@
+gid: type.snippet.params.*.(wrapper-parser-config).options.style
+url: /type/snippet/params/*/(wrapper-parser-config)/options/style/
+title: ''
+description: |-
+  A style object to control how content is parsed and stringified, to produce cleaner source code.
+
+  Can be customized to indent each repetition, add leading and trailing tokens to the entire block, and add tokens between each repetition.
+examples: []
+show_in_navigation: false

@@ -1,6 +1,6 @@
 gid: type.snippet-model
 url: /types/snippet-model/
 title: Snippet Model
-description: ''
+description: Defines the parsing configuration for this argument.
 examples: []
 show_in_navigation: false

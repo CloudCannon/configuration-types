@@ -1,0 +1,18 @@
+gid: type.snippet-model.default
+url: /type/snippet-model/default/
+title: ''
+description: The default value for this argument, which is used when adding a new snippet to a page in CloudCannon.
+examples:
+  - description: ''
+    language: yaml
+    code: |-
+      parser: "key_values"
+      options:
+        models:
+          - editor_key: href
+            default: "/"
+          - editor_key: target
+            default: "_blank"
+    annotations: []
+    source: cloudcannon.config.yml
+show_in_navigation: false

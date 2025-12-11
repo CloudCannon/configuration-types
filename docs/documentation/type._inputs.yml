@@ -3,8 +3,32 @@ url: /types/_inputs/
 title: Inputs
 description: >-
   This key defines which inputs are available at a given level of the
-  configuration cascade. This key has no default. If undefined at higher levels
-  of the [configuration
+  configuration cascade.
+
+
+  The following nested keys are available for each input inside `_inputs`:
+
+
+  * `type`
+
+  * `label`
+
+  * `comment`
+
+  * `context`
+
+  * `hidden`
+
+  * `disabled`
+
+  * `instance_value`
+
+  * `cascade`
+
+  * `options`
+
+
+  This key has no default. If undefined at higher levels of the [configuration
   cascade](/documentation/articles/using-the-configuration-cascade/), `_inputs`
   will default to any values configured in the [CloudCannon configuration
   file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
@@ -13,6 +37,7 @@ examples:
       In this example, we have configured the `date_created` Date input, which
       will automatically populate when you create a file using this input.
       Editors cannot alter this input as the interface is disabled.
+    language: yaml
     code: |-
       _inputs:
         date_created:
@@ -30,9 +55,12 @@ examples:
           cascade: true
           options:
             timezone: Etc/UTC
+    annotations: []
+    source: cloudcannon.config.yml
   - description: >-
       In this example, we have configured the `blog_tags` Multiselect input for
       the `blog` Collection.
+    language: yaml
     code: |-
       collections_config:
         blog:
@@ -52,4 +80,6 @@ examples:
                   - Opinion
                   - Feature
                   - Resource
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: true

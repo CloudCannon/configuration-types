@@ -1,6 +1,44 @@
 gid: type.snippet-format.forbidden_tokens
 url: /types/snippet-format/forbidden_tokens/
 title: ''
-description: ''
-examples: []
+description: >-
+  Stops parsing content as soon as one of these tokens is encountered.
+
+  Useful when the content parser is being greedy and consuming more input than
+  intended.
+examples:
+  - description: ''
+    language: yaml
+    code: |-
+      parser: "content"
+      options:
+        editor_key: highlighted_text
+        forbidden_tokens: ['<']
+    annotations: []
+    source: cloudcannon.config.yml
+  - description: 'Example usage:'
+    language: markdown
+    code: |-
+      ## My blog post
+
+      <<highlight>> My content <</highlight>> <!--1-->
+
+      <<highlight>> My < content <</highlight>> <!--2-->
+
+      Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+    annotations:
+      - number: 1
+        content: >-
+          This snippet does not contain a forbidden token, so will parse and
+          return correctly.
+      - number: 2
+        content: >-
+          This snippet **does** contain a forbidden token, and will not match.
+
+
+          This isn't particularly useful in this example, but is generally used
+          to prevent the content
+
+          parser from consuming the end token of itself.
+    source: page.md
 show_in_navigation: false

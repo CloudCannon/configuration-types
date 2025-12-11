@@ -22,18 +22,18 @@ examples:
     language: yaml
     code: |-
       _structures:
-          article_information:
-            values:
-              - label: Blog
-                value:
-                  title:
-                  subtitle:
-                  author:
-        _inputs:
-          details:
-            type: object
-            options:
-              structures: _structures.article_information
+        article_information:
+          values:
+            - label: Blog
+              value:
+                title:
+                subtitle:
+                author:
+      _inputs:
+        details:
+          type: object
+          options:
+            structures: _structures.article_information
     annotations: []
     source: cloudcannon.config.yml
 show_in_navigation: false

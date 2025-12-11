@@ -1,6 +1,11 @@
 gid: type.snippet-format.array_boundary
 url: /types/snippet-format/array_boundary/
 title: ''
-description: ''
+description: >-
+  For snippets which can parse array literals, what characters start and end an
+  array?
+
+
+  If required, this will usually be `{ start: "[", end: "]" }`.
 examples: []
 show_in_navigation: false

@@ -1,6 +1,20 @@
 gid: type.snippet-model.implied_boolean
 url: /types/snippet-model/implied_boolean/
 title: ''
-description: ''
-examples: []
+description: >-
+  If `implied_boolean` is set to `true`, then any value in this argument will
+  alias to `true`, and an empty value will alias
+
+  to `false`.
+examples:
+  - description: ''
+    language: yaml
+    code: |-
+      parser: "argument"
+      options:
+        model:
+          editor_key: has_video_id
+          implied_boolean: true
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

@@ -1,6 +1,49 @@
 gid: type.snippet.params.*.(content-parser-config).options.editor_key
 url: /types/snippet/params/*/(content-parser-config)/options/editor_key/
 title: ''
-description: ''
-examples: []
+description: >-
+  Specifies a key that a user in CloudCannon will see to edit this value.
+
+  The value returned by this parser is a number input that can be edited to
+  change how
+
+  many literals are output by the parser.
+examples:
+  - description: ''
+    language: yaml
+    code: |-
+      _snippets:
+        custom_title:
+          snippet: "[[hashes]] [[title]]"
+          params:
+            hashes:
+              parser: repeating_literal
+              options:
+                literal: '#'
+                minimum: 1
+                editor_key: heading_level
+            title:
+              parser: "content"
+              options:
+                editor_key: title
+                forbidden_tokens: ["\n"]
+    annotations: []
+    source: cloudcannon.config.yml
+  - description: 'Example usage:'
+    language: markdown
+    code: |-
+      # My blog post <!--1-->
+
+      Aenean lacinia bibendum nulla sed consectetur.
+
+      ## My heading <!--1-->
+
+      Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+    annotations:
+      - number: 1
+        content: |-
+          If editing these as snippets in CloudCannon, the editor will see
+          `heading_level` as a number input. Changing this value will
+          add or remove `#` characters to the source code to match the number.
+    source: page.md
 show_in_navigation: false

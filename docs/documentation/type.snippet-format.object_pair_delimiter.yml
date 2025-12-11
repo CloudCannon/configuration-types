@@ -1,6 +1,9 @@
 gid: type.snippet-format.object_pair_delimiter
 url: /types/snippet-format/object_pair_delimiter/
 title: ''
-description: ''
+description: |-
+  Within an object, what delimits each key-value pair from the next.
+
+  If required, this will usually be `,`.
 examples: []
 show_in_navigation: false

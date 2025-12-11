@@ -1,6 +1,8 @@
 gid: type.snippet.params.*.(repeating-parser-config).options.default_length
 url: /types/snippet/params/*/(repeating-parser-config)/options/default_length/
 title: ''
-description: ''
+description: >-
+  Used when initializing a new Snippet, and determines how many repetitions
+  should be created in the initial data.
 examples: []
 show_in_navigation: false

@@ -1,6 +1,49 @@
 gid: type.snippet-model.allowed_values
 url: /types/snippet-model/allowed_values/
 title: ''
-description: ''
-examples: []
+description: >-
+  A list of valid values for the parser. If specified, values not in the
+  provided list will cause this snippet to be skipped,
+
+  and a different snippet will be matched if possible.
+
+  A user entering a different value while editing this snippet will cause it to
+  error, so this option is
+
+  best paired with a select input configured on the `editor_key`.
+examples:
+  - description: ''
+    language: yaml
+    code: |-
+      parser: "argument"
+      options:
+        model:
+          editor_key: video_id
+          allowed_values: ["riXoAr6gO-E", "CZcNgDN81Sw", "0iwNjcFIHNM"]
+    annotations: []
+    source: cloudcannon.config.yml
+  - description: 'Example usage:'
+    language: markdown
+    code: |-
+      ## My blog post
+
+      <<video "CZcNgDN81Sw">> <!--1-->
+
+      <<video "riXoAr6gO-E">> <!--1-->
+
+      <<video "RuvMHkfOpvg">> <!--2-->
+
+      Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+    annotations:
+      - number: 1
+        content: >-
+          These IDs match a value in `allowed_values`, thus will be shown as a
+          `video` snippet
+      - number: 2
+        content: >-
+          This ID is not present in `allowed_values` and will not parse as a
+          `video` snippet.
+
+          It may still parse as another snippet, or will remain as plain text.
+    source: page.md
 show_in_navigation: false

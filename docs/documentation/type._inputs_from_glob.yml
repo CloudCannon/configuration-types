@@ -32,27 +32,27 @@ examples:
     language: yaml
     code: |-
       seo_title:
-          type: text
-          options:
-            required: true
-            max_length: 50
-        seo_description:
-          type: textarea
-          options:
-            show_count: true
-            required: true
-            max_length: 125
-        seo_image:
-          type: image
-          options:
-            path:
-              uploads: images
-            accepts_mime_types:
-              - image/png
-              - image/jpeg
-            required: true
-            pattern: (?i)\.(jpe?g|png)$
-            pattern_message: Please select a JPG or PNG image file
+        type: text
+        options:
+          required: true
+          max_length: 50
+      seo_description:
+        type: textarea
+        options:
+          show_count: true
+          required: true
+          max_length: 125
+      seo_image:
+        type: image
+        options:
+          path:
+            uploads: images
+          accepts_mime_types:
+            - image/png
+            - image/jpeg
+          required: true
+          pattern: (?i)\.(jpe?g|png)$
+          pattern_message: Please select a JPG or PNG image file
     annotations: []
     source: /.cloudcannon/inputs/seo.cloudcannon.inputs.yml
 show_in_navigation: true

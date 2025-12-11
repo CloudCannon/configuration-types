@@ -1,6 +1,9 @@
 gid: type.snippet-format.array_delimiter
 url: /types/snippet-format/array_delimiter/
 title: ''
-description: ''
+description: |-
+  Within an array, what delimits each value from the next"?
+
+  If required, this will usually be `,`.
 examples: []
 show_in_navigation: false

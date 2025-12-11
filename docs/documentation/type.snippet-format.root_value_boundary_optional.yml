@@ -1,6 +1,11 @@
 gid: type.snippet-format.root_value_boundary_optional
 url: /types/snippet-format/root_value_boundary_optional/
 title: ''
-description: ''
+description: >-
+  Where a `root_value_boundary` applies, what types do not require a boundary?
+
+
+  For example, MDX specifies `{ string: true }`, which allows strings to exist
+  as `<Component arg="true" />` rather than `<Component arg={"true"} />`.
 examples: []
 show_in_navigation: false

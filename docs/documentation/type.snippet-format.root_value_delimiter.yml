@@ -1,6 +1,10 @@
 gid: type.snippet-format.root_value_delimiter
 url: /types/snippet-format/root_value_delimiter/
 title: ''
-description: ''
+description: |-
+  For key-value pairs, what delimits the key from the value.
+
+  - For pairs such as `key="value"`, this would be `=`.
+  - For pairs such as `key: "value"`, this would be `: `.
 examples: []
 show_in_navigation: false

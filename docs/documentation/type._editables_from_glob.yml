@@ -27,17 +27,17 @@ examples:
     language: yaml
     code: |-
       text:
-          bold: true
-          italic: true
-          underline: true
-        block:
-          format: p h3
-          undo: true
-          redo: true
-        link:
-          bold: true
-          italic: true
-          underline: true
+        bold: true
+        italic: true
+        underline: true
+      block:
+        format: p h3
+        undo: true
+        redo: true
+      link:
+        bold: true
+        italic: true
+        underline: true
     annotations: []
     source: /.cloudcannon/editables/textEditableRegions.cloudcannon.editables.yml
 show_in_navigation: true
