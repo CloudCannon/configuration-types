@@ -1,0 +1,6 @@
+gid: collections_config.*.schemas_from_glob
+url: /collections_config/*/schemas_from_glob/
+title: ''
+description: ''
+examples: []
+show_in_navigation: false
