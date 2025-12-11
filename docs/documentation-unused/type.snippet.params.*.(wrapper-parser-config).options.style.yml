@@ -1,9 +1,62 @@
 gid: type.snippet.params.*.(wrapper-parser-config).options.style
 url: /type/snippet/params/*/(wrapper-parser-config)/options/style/
 title: ''
-description: |-
-  A style object to control how content is parsed and stringified, to produce cleaner source code.
+description: A style object to control how content is parsed and stringified, to produce cleaner source code.
+examples:
+  - description: ''
+    language: yaml
+    code: |-
+      parser: "content"
+      options:
+        editor_key: highlighted_text
+        style:
+          inline:
+            leading: " "
+            trailing: " "
+          block:
+            leading: "\n"
+            trailing: "\n"
+            indent: "  "
+    annotations: []
+    source: cloudcannon.config.yml
+  - description: 'For example, we''ll look at the following input file:'
+    language: markdown
+    code: |-
+      ## My blog post
 
-  Can be customized to indent each repetition, add leading and trailing tokens to the entire block, and add tokens between each repetition.
-examples: []
+      <<highlight>>My content<</highlight>> <!--1-->
+
+      <<highlight>>My
+      multiline               <!--2-->
+      content<</highlight>>
+
+      Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+    annotations:
+      - number: 1
+        content: As this snippet contains a single line of text, it will be formatted as `inline`.
+      - number: 2
+        content: This snippet contains multiple lines, so will be auto-formatted as `block`.
+    source: page.md
+  - description: 'When the above file is opened in CloudCannon and saved, the source will be formatted to:'
+    language: markdown
+    code: |-
+      ## My blog post
+
+      <<highlight>> My content <</highlight>> <!--1-->
+
+      <<highlight>>
+        My
+        multiline               <!--2-->
+        content
+      <</highlight>>
+
+      Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+    annotations:
+      - number: 1
+        content: The `inline` snippet was given the leading and trailing padding of the `inline` style options.
+      - number: 2
+        content: |-
+          The `block` snippet was given the leading and trailing padding of the `block` style options,
+          and was also indented by the provided tokens.
+    source: page.md
 show_in_navigation: false

@@ -1,18 +1,21 @@
 gid: type.snippet-model.default
 url: /type/snippet-model/default/
 title: ''
-description: The default value for this argument, which is used when adding a new snippet to a page in CloudCannon.
+description: |-
+  The default value for this argument, which is used when adding a new snippet to a page in CloudCannon.
+
+
+
+   With this config, adding a new `video` snippet to a page in CloudCannon will instantiate it as `<<video "riXoAr6gO-E">>`.
 examples:
   - description: ''
     language: yaml
     code: |-
-      parser: "key_values"
+      parser: "argument"
       options:
-        models:
-          - editor_key: href
-            default: "/"
-          - editor_key: target
-            default: "_blank"
+        model:
+          editor_key: video_id
+          default: "riXoAr6gO-E"
     annotations: []
     source: cloudcannon.config.yml
 show_in_navigation: false
