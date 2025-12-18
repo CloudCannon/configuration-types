@@ -1,5 +1,5 @@
-gid: type.structure.values.[*].comment
-url: /types/structure/values/[*]/comment/
+gid: type.structure.values.[*].description
+url: /types/structure/values/[*]/description/
 title: ''
 description: >-
   Provides short descriptive text for editors shown in the Data Editor for

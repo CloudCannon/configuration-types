@@ -87,7 +87,7 @@ export const StructureValueSchema = StructureBaseSchema.extend({
 	value: z.unknown().meta({
 		description: 'The actual value used when items are added after selection.',
 	}),
-	comment: z.string().optional().meta({
+	description: z.string().optional().meta({
 		description:
 			'Provides short descriptive text for editors shown in the Data Editor for expanded values matching this Structure value. Has no default. Supports a limited set of Markdown: links, bold, italic, subscript, superscript, and inline code elements are allowed.',
 	}),

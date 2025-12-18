@@ -384,6 +384,8 @@ export const ColorInputOptionsSchema = z
 			description:
 				'Toggles showing a control for adjusting the transparency of the selected color. Defaults to using the naming convention, enabled if the input key ends with "a".',
 		}),
+		palette: z.array(z.string()).optional(),
+		hide_picker: z.boolean().optional(),
 	})
 	.meta({
 		description: 'Options that are specific to Color Inputs.',
