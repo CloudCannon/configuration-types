@@ -1,0 +1,3862 @@
+# CloudCannon Configuration Keys Reference
+# Auto-generated from placeholder files
+# Total keys: 144
+# Duplicate keys excluded: _inputs, preview, _structures, collections_config, path, name, icon, _editables, _enabled_editors, _select_data, create, new_preview_url, paths, hide_extra_inputs, reorder_inputs, remove_empty_inputs, remove_extra_inputs
+
+keys:
+  - label: "_editables"
+    type_markdown: "Object"
+    source_file: "collections-reference"
+    definition: >
+      This key defines which Rich Text editors have custom configuration for the associated WYSIWYG
+      toolbar. The following nested keys are available: * `content` * `block` * `link` * `text` * `image`
+      This key has no default.
+    examples:
+      - description: >
+          In this example, we have configured the Snippet tool for WYSIWYG toolbars in the `blog` Collection.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        blog:
+                          _editables:
+                            content:
+                              snippet: true
+        annotations: []
+
+  - label: "_editables_from_glob"
+    type_markdown: "Array of Strings"
+    source_file: "configuration-file-reference"
+    definition: >
+      This key defines globs that filter which files CloudCannon should use for configuring Rich Text
+      formatting. Values in this array are relative to the root of your repository (i.e., `/`, not the
+      value of `source`) and must end in the file extension `.cloudcannon.editables.yml`. You can use this
+      key anywhere you would use the `_editables` key in the configuration cascade. This key has no
+      default.
+    examples:
+      - description: >
+          In this example, we have several WYSIWYG Toolbar *Configuration Files* in the
+          `.cloudcannon/editables/` folder, with each file containing multiple definitions. The value of the
+          `_editables_from_glob` key tells CloudCannon all files in that folder that match the glob
+          `*.cloudcannon.editables.yml`.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _editables_from_glob:
+                  - '/.cloudcannon/editables/*.cloudcannon.editables.yml'
+        annotations: []
+      - description: >
+          In this example, we have several WYSIWYG Toolbar *Configuration Files* in the
+          `.cloudcannon/editables/` folder, with each file containing multiple definitions. The value of the
+          `_editables_from_glob` key tells CloudCannon all files in that folder that match the glob
+          `*.cloudcannon.editables.yml`.
+        language: yaml
+        source: /.cloudcannon/editables/textEditableRegions.cloudcannon.editables.yml
+        code: |
+          text:
+                  bold: true
+                  italic: true
+                  underline: true
+                block:
+                  format: p h3
+                  undo: true
+                  redo: true
+                link:
+                  bold: true
+                  italic: true
+                  underline: true
+        annotations: []
+
+  - label: "_enabled_editors"
+    type_markdown: "Array"
+    source_file: "configuration-file-reference"
+    definition: >
+      This key defines which editing interfaces are available by default for files at a given level of the
+      configuration cascade. Whether an editing interface is available for a specific file is determined
+      by other factors. Values can be one of the following: `visual`, `content`, or `data`. Specifying one
+      or more editing interfaces will disable all unspecified editing interfaces. You cannot disable the
+      Source Editor with this key. By default, this key is set to `visual`, `content`, and `data`. If
+      undefined at higher levels of the [configuration
+      cascade](/documentation/articles/using-the-configuration-cascade/), `_enabled_editables` will
+      default to any values configured in the [CloudCannon configuration
+      file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
+    examples:
+      - description: >
+          In this example, we have enabled only the [Content
+          Editor](/documentation/articles/what-is-the-content-editor/) in the `blog` Collection.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                                    blog:
+                                      _enabled_editors:
+                                        - content
+        annotations: []
+
+  - label: "_inputs_from_glob"
+    type_markdown: "Array of Strings"
+    source_file: "configuration-file-reference"
+    definition: >
+      This key defines globs that filter which files CloudCannon should use for *Input* configuration.
+      Values in this array are relative to the root of your repository (i.e., `/`, not the value of
+      `source`) and must end in the file extension `.cloudcannon.inputs.yml`. You can use this key
+      anywhere you would use the `_inputs` key in the configuration cascade. This key has no default.
+    examples:
+      - description: >
+          In this example, we have several *Input Configuration Files* in the `.cloudcannon/inputs/` folder,
+          with each file containing multiple *Input* definitions. The value of the `_inputs_from_glob` key
+          tells CloudCannon to only use the `seo.cloudcannon.inputs.yml` and
+          `blog-details.cloudcannon.inputs.yml` files in that folder.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                  posts:
+                    path: content/posts
+                    icon: event
+                    inputs_from_glob:
+                      - '/.cloudcannon/inputs/seo.cloudcannon.inputs.yml'
+                      - '/.cloudcannon/inputs/blogDetails.cloudcannon.inputs.yml'
+        annotations: []
+      - description: >
+          In this example, we have several *Input Configuration Files* in the `.cloudcannon/inputs/` folder,
+          with each file containing multiple *Input* definitions. The value of the `_inputs_from_glob` key
+          tells CloudCannon to only use the `seo.cloudcannon.inputs.yml` and
+          `blog-details.cloudcannon.inputs.yml` files in that folder.
+        language: yaml
+        source: /.cloudcannon/inputs/seo.cloudcannon.inputs.yml
+        code: |
+          seo_title:
+                  type: text
+                  options:
+                    required: true
+                    max_length: 50
+                seo_description:
+                  type: textarea
+                  options:
+                    show_count: true
+                    required: true
+                    max_length: 125
+                seo_image:
+                  type: image
+                  options:
+                    path:
+                      uploads: images
+                    accepts_mime_types:
+                      - image/png
+                      - image/jpeg
+                    required: true
+                    pattern: (?i)\.(jpe?g|png)$
+                    pattern_message: Please select a JPG or PNG image file
+        annotations: []
+
+  - label: "_inputs"
+    type_markdown: "Object"
+    source_file: "inputs-reference"
+    definition: >
+      This key defines which inputs are available at a given level of the configuration cascade. The
+      following nested keys are available for each input inside `_inputs`: * `type` * `label` * `comment`
+      * `context` * `hidden` * `disabled` * `instance_value` * `cascade` * `options` This key has no
+      default. If undefined at higher levels of the [configuration
+      cascade](/documentation/articles/using-the-configuration-cascade/), `_inputs` will default to any
+      values configured in the [CloudCannon configuration
+      file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
+    examples:
+      - description: >
+          In this example, we have configured the `date_created` Date input, which will automatically populate
+          when you create a file using this input. Editors cannot alter this input as the interface is
+          disabled.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  date_created:
+                    type: datetime
+                    label: Date of article creation
+                    comment: UTC +0 timezone
+                    context:
+                      open: false
+                      title: Help
+                      icon: help
+                      content: This date field will automatically populate when you create an article.
+                    hidden: false
+                    disabled: true
+                    instance_value: NOW
+                    cascade: true
+                    options:
+                      timezone: Etc/UTC
+        annotations: []
+      - description: >
+          In this example, we have configured the `date_created` Date input, which will automatically populate
+          when you create a file using this input. Editors cannot alter this input as the interface is
+          disabled.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                  blog:
+                    _inputs:
+                      blog_tags:
+                        type: multiselect
+                        label: Blog type
+                        comment: Select a blog type
+                        context:
+                          open: false
+                          title: Help
+                          icon: help
+                          content: |
+                            Blog tags help our users filter articles by topic.
+                        options:
+                          values:
+                            - Opinion
+                            - Feature
+                            - Resource
+        annotations: []
+
+
+  - label: "_inputs.*.cascade"
+    type_markdown: "Boolean"
+    source_file: "inputs-reference"
+    definition: >
+      This key determines whether CloudCannon should merge this input configuration with any matching,
+      less specific configurations elsewhere in the configuration cascade. The [configuration
+      cascade](/documentation/articles/using-the-configuration-cascade/) works by finding the most
+      specific `_inputs` entry. Usually, once an option is found in the cascade, there's no reason to keep
+      looking. When this key is `true`, the cascade continues looking and each entry found is merged. This
+      key allows you to define some options globally while using specific options for other keys at
+      different levels of the cascade. For example, define a `comment` globally, but use
+      collection-specific `label` for inputs in different collections. You can stop the cascade at any
+      point in the configuration cascade by setting `cascade` to `false`. By default, this key is `true`
+      (i.e., merges all configurations for an input in the cascade).
+    examples: []
+
+  - label: "_inputs.*.comment"
+    type_markdown: "String"
+    source_file: "inputs-reference"
+    definition: >
+      This key changes the subtitle text above an Input. CloudCannon supports a limited selection of
+      Markdown formatting for the value of this key: links, bold, italic, subscript, superscript, and
+      inline code. This key has no default.
+    examples:
+      - description: >
+          In this example, we want to add helpful guidance for our `page_description` Input.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  page_description:
+                    type: text
+                    label: Page Description
+                    comment: Enter a brief description of this page for search engines
+        annotations: []
+
+  - label: "_inputs.*.context"
+    type_markdown: "Object"
+    source_file: "inputs-reference"
+    definition: >
+      This key enables you to define a context box for extra information about an Input. The following
+      nested keys are available: * `open` * `title` * `icon` * `content` (required) This key has no
+      default.
+    examples:
+      - description: >
+          In this example, we want to add a context box to our `date_created` Input to explain its purpose.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  date_created:
+                    type: datetime
+                    label: Date of article creation
+                    instance_value: NOW
+                    context:
+                      open: false
+                      title: Help
+                      icon: help
+                      content: This date field will automatically populate when you create an article.
+        annotations: []
+
+  - label: "_inputs.*.context.content"
+    type_markdown: "String"
+    source_file: "inputs-reference"
+    definition: >
+      This key determines the text content inside the context box. CloudCannon supports a limited
+      selection of Markdown formatting for the value of this key: links, headings, bold, italic,
+      subscript, superscript, and inline code. This key is required for the `context` object to function.
+      This key has no default.
+    examples:
+      - description: >
+          In this example, we want to provide detailed guidance for our `blog_tags` Input.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  blog_tags:
+                    type: multiselect
+                    label: Blog Tags
+                    context:
+                      title: Tag Guidelines
+                      icon: help
+                      content: |
+                        # Tag Guidelines
+                        
+                        Choose 3-5 relevant tags that best describe this article. Tags help readers find related content and improve SEO.
+                        
+                        **Good examples:** technology, web development, tutorials
+                        **Avoid:** generic terms like "blog" or "article"
+        annotations: []
+
+  - label: "_inputs.*.context.icon"
+    type_markdown: "String"
+    source_file: "inputs-reference"
+    definition: >
+      This key determines which icon appears next to the context box title. The value must match an icon
+      name from Google's [Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons) list.
+      This key has no default.
+    examples:
+      - description: >
+          In this example, we want to use a warning icon to draw attention to important information about our
+          `file_upload` Input.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  file_upload:
+                    type: file
+                    label: Upload Document
+                    context:
+                      title: File Requirements
+                      icon: warning
+                      content: Maximum file size is 10MB.
+                    options:
+                      max_file_size: 10000
+        annotations: []
+
+  - label: "_inputs.*.context.open"
+    type_markdown: "Boolean"
+    source_file: "inputs-reference"
+    definition: >
+      This key determines whether the context box is open to display text content by default. By default,
+      this key is `false` (i.e., closed).
+    examples:
+      - description: >
+          In this example, we want the context box to be open by default so users can immediately see the help
+          information.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  seo_description:
+                    type: text
+                    label: SEO Description
+                    context:
+                      open: true
+                      title: SEO Guidelines
+                      icon: info
+                      content: Keep descriptions between 150-160 characters for optimal search engine display.
+        annotations: []
+
+  - label: "_inputs.*.context.title"
+    type_markdown: "String"
+    source_file: "inputs-reference"
+    definition: >
+      This key determines the title of the context box. By default, this key value is "Context".
+    examples:
+      - description: >
+          In this example, we want to customize the context box title to be more descriptive for our
+          `author_bio` Input.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  author_bio:
+                    type: textarea
+                    label: Author Biography
+                    context:
+                      title: Writing Guidelines
+                      icon: edit
+                      content: Write a brief, professional biography (2-3 sentences) that highlights your expertise and experience.
+        annotations: []
+
+  - label: "_inputs.*.disabled"
+    type_markdown: "Boolean or string"
+    source_file: "inputs-reference"
+    definition: >
+      This key toggles whether the value of an input is editable in the Data Editor or the sidebar of the
+      Visual or Content Editor. Disabled inputs are useful if you want CloudCannon to display the input
+      value, but prevent team members from editing the value outside of the Source Editor. The value of
+      this key can be a boolean or a string. A boolean value of `true` will prevent team members from
+      editing the value. A string value can prevent team members from editing an input based on the value
+      of another input. You can reverse the value with a `!` character at the beginning. * `published`
+      hides an input when the sibling input `published` is truthy * `!published` hides an input when the
+      sibling input `published` is falsy For reverse values in `YAML` files, the string should be in `'`
+      or `"` quotation marks. By default, this key is `false` (i.e., team members can edit input values).
+    examples:
+      - description: >
+          In this example, we have configured the `date_created` Date input, which will automatically populate
+          when you create a file using this input. Editors cannot alter this input as the interface is
+          disabled.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  date_created:
+                    type: datetime
+                    label: Date of article creation
+                    comment: UTC +0 timezone
+                    disabled: true
+                    instance_value: NOW
+                    options:
+                      timezone: Etc/UTC
+        annotations: []
+
+  - label: "_inputs.*.hidden"
+    type_markdown: "Boolean or string"
+    source_file: "inputs-reference"
+    definition: >
+      This key toggles the visibility of an input in the Data Editor or the sidebar of the Visual or
+      Content Editor. Hidden inputs are useful when you want an input to exist, but not be visible or
+      editable outside of the Source Editor. Value can be a boolean or a string. A boolean value of `true`
+      will hide the input. A string value can hide an input based on the value of another input. You can
+      reverse the value with a `!` character at the beginning. * `published` hides an input when the
+      sibling input `published` is truthy * `!published` hides an input when the sibling input `published`
+      is falsy For reverse values in `YAML` files, the string should be in `'` or `"` quotation marks. By
+      default, this key follows the input naming convention where key names beginning with an underscore
+      are hidden `true`.
+    examples: []
+
+  - label: "_inputs.*.instance_value"
+    type_markdown: "String"
+    source_file: "inputs-reference"
+    definition: >
+      This key determines whether an input is automatically populated with a value when the input is
+      created. This occurs when creating a new file, or adding array items containing this input. Valid
+      values are `UUID` or `NOW`. * `UUID` generates a uuidv4 key (extremely unlikely to generate
+      duplicates), useful for identifying unique items (e.g. `6ec0bd7f-11c0-43da-975e-2a8ad9ebae0b`) *
+      `NOW` generates the current datetime in the Site's configured timezone This key has no default.
+    examples: []
+
+  - label: "_inputs.*.label"
+    type_markdown: "String"
+    source_file: "inputs-reference"
+    definition: >
+      This key changes the bold title text above an Input. By default, CloudCannon generates the value
+      from the Input key name, in title case (e.g., `page_title` will become "Page Title").
+    examples:
+      - description: >
+          In this example, we want to customize the label for our `page_title` Input to be more descriptive.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  page_title:
+                    type: text
+                    label: Article Title
+                    comment: Enter the main title for this article
+        annotations: []
+
+  - label: "_inputs.*.options"
+    type_markdown: "Object"
+    source_file: "inputs-reference"
+    definition: >
+      This key determines the configuration specific to each input type. If this key and nested keys are
+      not defined, CloudCannon will use the default configuration options for that input type. This key
+      has no default. For more information on options, please read our documentation on each input type.
+    examples: []
+
+  - label: "_inputs.*.options.end_before"
+    type_markdown: "Date"
+    source_file: "inputs-reference"
+    definition: >
+      This key defines the date and time, exclusive, that CloudCannon will allow in an Input. When
+      configured, CloudCannon will prevent you from selecting a later date and time. If the Input already
+      contains a later date and time, CloudCannon will require you to change it to a valid value to save
+      your changes, or discard your unsaved changes. Value must be in
+      [ISO8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. If `options.start_from` is
+      also configured, this key cannot be an earlier date and time. This key has no default. This key is
+      available for Date and Time Inputs.
+    examples:
+      - description: >
+          In this example, we want our team to enter the date and time of an event in the `2022_event` Input.
+          This Input will only allow dates before January 1st, 2023.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  2022_event:
+                    type: datetime
+                    options:
+                      start_from: 2022-01-01T00:00:00Z
+                      end_before: 2023-01-01T00:00:00Z
+        annotations: []
+
+  - label: "_inputs.*.options.end_before_message"
+    type_markdown: "String"
+    source_file: "inputs-reference"
+    definition: >
+      This key defines a custom error message that explains why a value has failed the validation criteria
+      from `options.end_before`. This key requires you to define `options.end_before`. This key has no
+      default. This key is available for Date and Time Inputs.
+    examples:
+      - description: >
+          In this example, we prompt our team to enter a valid date using a custom message.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  2022_event:
+                    type: datetime
+                    options:
+                      start_from: 2022-01-01T00:00:00Z
+                      start_from_message: Date is too early. Must be during 2022.
+                      end_before: 2023-01-01T00:00:00Z
+                      end_before_message: Date is too late. Must be during 2022.
+        annotations: []
+
+  - label: "_inputs.*.options.max"
+    type_markdown: "Number"
+    source_file: "inputs-reference"
+    definition: >
+      This key defines the maximum numerical value CloudCannon will allow in an Input. When configured,
+      CloudCannon will prevent you from entering a greater numerical value. If the Input already contains
+      a greater numerical value, CloudCannon will require you to enter a valid value to save your changes,
+      or discard your unsaved changes. This key is required for `range` inputs. Value can be any integer.
+      If `options.min` is also configured, this key cannot be a lesser number. This key has no default.
+      This key is available for Number Inputs.
+    examples:
+      - description: >
+          In this example, we want to add a rating out of five for each article in our travel blog using the
+          `rating` Input. This Input limits you to a maximum rating of five.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  rating:
+                    type: number
+                    comment: How highly did you rate this experience?
+                    options:
+                      max: 5
+                      min: 1
+        annotations: []
+
+  - label: "_inputs.*.options.max_file_size"
+    type_markdown: "String"
+    source_file: "inputs-reference"
+    definition: >
+      This key defines the maximum file size in kB that CloudCannon will allow you to upload. When
+      configured, CloudCannon will prevent you from saving your changes until you select a valid file
+      size, or discard your unsaved changes. Value can be any positive integer. This key has no default.
+      This key is available for File and URL Inputs.
+    examples:
+      - description: >
+          In this example, we want our team to upload an image using the `feature_image` Input. This Input
+          limits you to a maximum file size of 750 kB.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  feature_image:
+                    type: image
+                    comment: Select the feature image for the banner.
+                    options:
+                      max_file_size: 140
+        annotations: []
+
+  - label: "_inputs.*.options.max_file_size_message"
+    type_markdown: "String"
+    source_file: "inputs-reference"
+    definition: >
+      This key defines a custom error message that explains why a value has failed the validation criteria
+      from `options.max_file_size`. This key requires you to define `options.max_file_size`. This key has
+      no default. This key is available for File and URL Inputs.
+    examples:
+      - description: >
+          In this example, we want our team to upload an image using the `feature_image` Input. This Input
+          limits you to a maximum file size of 750 kB.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  feature_image:
+                    type: image
+                    comment: Select the feature image for the banner.
+                    options:
+                      max_file_size: 140
+                      max_file_size_message: For SEO, keep this under 140kB
+        annotations: []
+
+  - label: "_inputs.*.options.max_items"
+    type_markdown: "Number"
+    source_file: "inputs-reference"
+    definition: >
+      This key defines the maximum number of items CloudCannon will allow in an Input. When configured,
+      CloudCannon will prevent you from adding more items to this Input. If the Input already contains
+      more items, CloudCannon will require you to remove items until the Input contains a valid number to
+      save your changes, or discard your unsaved changes. Value can be any positive integer. If
+      `options.min_items` is also configured, this key cannot be a lesser number. This key has no default.
+      This key is available for Array and Multiselect or Multichoice Inputs.
+    examples:
+      - description: >
+          In this example, we want to add an array of filepaths to our homepage's `featured_posts` Input. This
+          Input limits you to a maximum of five array items.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  featured_posts:
+                    type: array
+                    options:
+                      max_items: 5
+                      max_items_message: Cannot be more than 5
+                      min_items: 2
+                      min_items_message: Cannot be less than 2
+        annotations: []
+
+  - label: "_inputs.*.options.max_items_message"
+    type_markdown: "String"
+    source_file: "inputs-reference"
+    definition: >
+      This key defines a custom error message that explains why a value has failed the validation criteria
+      from `options.max_items`. This key requires you to define `options.max_items`. This key has no
+      default. This key is available for Array and Multiselect or Multichoice Inputs.
+    examples:
+      - description: >
+          In this example, we prompt our team to enter a valid number of items using a custom message.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  featured_posts:
+                    type: array
+                    options:
+                      max_items: 5
+                      max_items_message: Cannot be more than 5
+                      min_items: 2
+                      min_items_message: Cannot be less than 2
+        annotations: []
+
+  - label: "_inputs.*.options.max_length"
+    type_markdown: "Number"
+    source_file: "inputs-reference"
+    definition: >
+      This key defines the maximum string length, in characters, that CloudCannon will allow in an Input.
+      When configured, CloudCannon will warn you when an Input value is too long. If the Input already
+      contains a longer value, CloudCannon will require you to remove characters until the Input contains
+      a valid string to save your changes, or discard your unsaved changes. Value can be any non-negative
+      integer. If this key is set to `0`, CloudCannon requires the Input to be empty. If
+      `options.min_length` is also configured, this key cannot be a smaller number. This key has no
+      default. This key is available for Code, Color, File, Select, Text, Rich Text, and URL Inputs. To
+      use this key in a Select Input, `allow_create` must be set to `true`.
+    examples:
+      - description: >
+          In this example, we want our team to enter a blog description using the Rich Text `seo_description`
+          Input. This Input limits you to a maximum of 125 characters.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  seo_description:
+                    type: markdown
+                    comment: Enter a brief description of this blog.
+                    options:
+                      max_length: 125
+                      min_length: 25
+        annotations: []
+
+  - label: "_inputs.*.options.max_length_message"
+    type_markdown: "String"
+    source_file: "inputs-reference"
+    definition: >
+      This key defines a custom error message that explains why a value has failed the validation criteria
+      from `options.max_length`. This key requires you to define `options.max_length`. This key has no
+      default. This key is available for Code, Color, File, Select, Text, Rich Text, and URL Inputs.
+    examples:
+      - description: >
+          In this example, we prompt our team to enter a valid number of characters using a custom message.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  seo_description:
+                    type: markdown
+                    comment: Enter a brief description of this blog.
+                    options:
+                      max_length: 125
+                      max_length_message: You are only allowed 125 characters.
+                      min_length: 25
+                      min_length_message: Please write more than 25 characters.
+        annotations: []
+
+  - label: "_inputs.*.options.max_message"
+    type_markdown: "String"
+    source_file: "inputs-reference"
+    definition: >
+      This key defines a custom error message that explains why a value has failed the validation criteria
+      from `options.max`. This key requires you to define `options.max`. This key has no default. This key
+      is available for Number Inputs.
+    examples:
+      - description: >
+          In this example, we prompt our team to enter a valid number using a custom message.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  rating:
+                    type: number
+                    comment: How highly did you rate this experience?
+                    options:
+                      max: 5
+                      max_message: Cannot be more than 5
+                      min: 1
+                      min_message: Cannot be less than 1
+        annotations: []
+
+  - label: "_inputs.*.options.min"
+    type_markdown: "Number"
+    source_file: "inputs-reference"
+    definition: >
+      This key defines the minimum numerical value CloudCannon will allow in an Input. When configured,
+      CloudCannon will prevent you from entering a lesser numerical value. If the Input already contains a
+      lesser numerical value, CloudCannon will require you to enter a valid value to save your changes, or
+      discard your unsaved changes. This key is required for `range` inputs. Value can be any integer. If
+      `options.max` is also configured, this key cannot be a greater number. This key has no default. This
+      key is available for Number Inputs.
+    examples:
+      - description: >
+          In this example, we want to add a rating out of five for each article in our travel blog using the
+          `rating` Input. This Input limits you to a minimum rating of one.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  rating:
+                    type: number
+                    comment: How highly did you rate this experience?
+                    options:
+                      max: 5
+                      min: 1
+        annotations: []
+
+  - label: "_inputs.*.options.min_items"
+    type_markdown: "Number"
+    source_file: "inputs-reference"
+    definition: >
+      This key defines the minimum number of items CloudCannon will allow in an Input. When configured,
+      CloudCannon will prevent you from removing items from this Input below this value. If the Input
+      already contains fewer items, CloudCannon will require you to add items until the Input contains a
+      valid number to save your changes, or discard your unsaved changes. Value can be any positive
+      integer. If `options.min_items` is also configured, this key cannot be a greater number. This key
+      has no default. This key is available for Array and Multiselect or Multichoice Inputs.
+    examples:
+      - description: >
+          In this example, we want to add an array of filepaths to our homepage's `featured_posts` Input. This
+          Input limits you to a maximum of two array items.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  featured_posts:
+                    type: array
+                    options:
+                      max_items: 5
+                      max_items_message: Cannot be more than 5
+                      min_items: 2
+                      min_items_message: Cannot be less than 2
+        annotations: []
+
+  - label: "_inputs.*.options.min_items_message"
+    type_markdown: "String"
+    source_file: "inputs-reference"
+    definition: >
+      This key defines a custom error message that explains why a value has failed the validation criteria
+      from `options.min_items`. This key requires you to define `options.min_items`. This key has no
+      default. This key is available for Array and Multiselect or Multichoice Inputs.
+    examples:
+      - description: >
+          In this example, we prompt our team to enter a valid number of items using a custom message.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  featured_posts:
+                    type: array
+                    options:
+                      max_items: 5
+                      max_items_message: Cannot be more than 5
+                      min_items: 2
+                      min_items_message: Cannot be less than 2
+        annotations: []
+
+  - label: "_inputs.*.options.min_length"
+    type_markdown: "Number"
+    source_file: "inputs-reference"
+    definition: >
+      This key defines the minimum string length, in characters, that CloudCannon will allow in an Input.
+      When configured, CloudCannon will warn you when an Input value is too short. If the Input already
+      contains a shorter value, CloudCannon will require you to add characters until the Input contains a
+      valid string to save your changes, or discard your unsaved changes. Value can be any positive
+      integer. If `options.max_length` is also configured, this key cannot be a greater number. This key
+      has no default. This key is available for Code, Color, File, Select, Text, Rich Text, and URL
+      Inputs. To use this key in a Select Input, `allow_create` must be set to `true`.
+    examples:
+      - description: >
+          In this example, we want our team to enter a blog description using the Rich Text `seo_description`
+          Input. This Input requires a minimum of 25 characters.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  seo_description:
+                    type: markdown
+                    comment: Enter a brief description of this blog.
+                    options:
+                      max_length: 125
+                      min_length: 25
+        annotations: []
+
+  - label: "_inputs.*.options.min_length_message"
+    type_markdown: "String"
+    source_file: "inputs-reference"
+    definition: >
+      This key defines a custom error message that explains why a value has failed the validation criteria
+      from `options.min_length`. This key requires you to define `options.min_length`. This key has no
+      default. This key is available for Code, Color, File, Select, Text, Rich Text, and URL Inputs.
+    examples:
+      - description: >
+          In this example, we prompt our team to enter a valid number of characters using a custom message.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  seo_description:
+                    type: markdown
+                    comment: Enter a brief description of this blog.
+                    options:
+                      max_length: 125
+                      max_length_message: You are only allowed 125 characters.
+                      min_length: 25
+                      min_length_message: Please write more than 25 characters.
+        annotations: []
+
+  - label: "_inputs.*.options.min_message"
+    type_markdown: "String"
+    source_file: "inputs-reference"
+    definition: >
+      This key defines a custom error message that explains why a value has failed the validation criteria
+      from `options.min`. This key requires you to define `options.min`. This key has no default. This key
+      is available for Number Inputs.
+    examples:
+      - description: >
+          In this example, we prompt our team to enter a valid number using a custom message.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  rating:
+                    type: number
+                    comment: How highly did you rate this experience?
+                    options:
+                      max: 5
+                      max_message: Cannot be more than 5
+                      min: 1
+                      min_message: Cannot be less than 1
+        annotations: []
+
+  - label: "_inputs.*.options.pattern"
+    type_markdown: "String"
+    source_file: "inputs-reference"
+    definition: >
+      This key defines a [regular expression](https://re2js.leopard.in.ua/) that the Input value must
+      match. When configured, CloudCannon will require you to enter a value that matches the REGEX
+      pattern. If the Input already contains an invalid value, CloudCannon will require you to enter a
+      valid string to save your changes, or discard your unsaved changes. Value must be a valid REGEX
+      string. If your REGEX string includes a `\` character and CloudCannon Configuration File is a `.yml`
+      file, use single quotes `'` around the string to avoid a build error. This key has no default. This
+      key is available for Code, Color, File, Select, Text, Rich Text, and URL Inputs. To use this key in
+      a Select Input, `allow_create` must be set to `true`.
+    examples:
+      - description: >
+          In this example, we want our team to add an email address to the `contact_email` Input using the
+          correct email format.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  contact_email:
+                    type: email
+                    options:
+                      pattern: '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
+                      pattern_message: 'Please use the format ___@___.__'
+        annotations: []
+
+  - label: "_inputs.*.options.pattern_message"
+    type_markdown: "String"
+    source_file: "inputs-reference"
+    definition: >
+      This key defines a custom error message that explains why a value has failed the validation criteria
+      from `options.pattern`. This key requires you to define `options.pattern`. This key has no default.
+      This key is available for Code, Color, File, Select, Text, Rich Text, and URL Inputs.
+    examples:
+      - description: >
+          In this example, we prompt our team to use the correct email format in the `contact_email` Input
+          using a pattern message.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  contact_email:
+                    type: email
+                    options:
+                      pattern: '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
+                      pattern_message: 'Please use the format ___@___.__'
+        annotations: []
+
+  - label: "_inputs.*.options.required"
+    type_markdown: "Boolean"
+    source_file: "inputs-reference"
+    definition: >
+      This key toggles whether CloudCannon requires this Input to have a value. If set to `true`,
+      CloudCannon will require you to enter a value to save your changes, or discard your unsaved changes.
+      By default, this key is `false` (i.e, CloudCannon does not require this Input to have a value). This
+      key is available for Array, Code, Color, Date and Time, File, Number, Object, Select and
+      Multiselect, Text, Rich Text, and URL Inputs.
+    examples:
+      - description: >
+          In this example, we want to require our team to enter an `author` value for markup files with this
+          Input.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                    author:
+                      type: text
+                      comment: Enter the name of the author for this blog post.
+                      options:
+                        required: true
+        annotations: []
+
+  - label: "_inputs.*.options.required_message"
+    type_markdown: "String"
+    source_file: "inputs-reference"
+    definition: >
+      This key defines a custom error message that explains why a value has failed the validation criteria
+      from `options.required`. This key requires you to define `options.required`. This key has no
+      default. This key is available for Array, Code, Color, Date and Time, File, Number, Object, Select
+      and Multiselect, Text, Rich Text, and URL Inputs.
+    examples:
+      - description: >
+          In this example, we prompt our team to use enter an Input value using a required message.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                    author:
+                      type: text
+                      comment: Enter the name of the author for this blog post.
+                      options:
+                        required: true
+                        required_message: You are not allowed to leave this blank.
+        annotations: []
+
+  - label: "_inputs.*.options.start_from"
+    type_markdown: "Date"
+    source_file: "inputs-reference"
+    definition: >
+      This key defines the earliest date and time, inclusive, that CloudCannon will allow in an Input.
+      When configured, CloudCannon will prevent you from selecting an earlier date and time. If the Input
+      already contains an earlier date and time, CloudCannon will require you to change it to a valid
+      value to save your changes, or discard your unsaved changes. Value must be in
+      [ISO8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. If `options.end_before` is
+      also configured, this key cannot be a later date and time. This key has no default. This key is
+      available for Date and Time Inputs.
+    examples:
+      - description: >
+          In this example, we want our team to enter the date and time of an event in the `2022_event` Input.
+          This Input will only allow dates on or after January 1st, 2022.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  2022_event:
+                    type: datetime
+                    options:
+                      start_from: 2022-01-01T00:00:00Z
+                      end_before: 2023-01-01T00:00:00Z
+        annotations: []
+
+  - label: "_inputs.*.options.start_from_message"
+    type_markdown: "String"
+    source_file: "inputs-reference"
+    definition: >
+      This key defines a custom error message that explains why a value has failed the validation criteria
+      from `options.start_from`. This key requires you to define `options.start_from`. This key has no
+      default. This key is available for Date and Time Inputs.
+    examples:
+      - description: >
+          In this example, we prompt our team to enter a valid date using a custom message.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  2022_event:
+                    type: datetime
+                    options:
+                      start_from: 2022-01-01T00:00:00Z
+                      start_from_message: Date is too early. Must be during 2022.
+                      end_before: 2023-01-01T00:00:00Z
+                      end_before_message: Date is too late. Must be during 2022.
+        annotations: []
+
+  - label: "_inputs.*.options.unique_on"
+    type_markdown: "String"
+    source_file: "inputs-reference"
+    definition: >
+      This key defines the JSON Path selector that CloudCannon should use to determine if the value of an
+      Input is unique. When configured, CloudCannon will require the value of the Input to be unique
+      compared to the value defined on the JSON Path. If the Input already contains a non-unique value,
+      CloudCannon will require you to change it to a valid value to save your changes, or discard your
+      unsaved changes. Value must be a valid JSON Path. This key has no default. This key is available for
+      Array inputs.
+    examples:
+      - description: >
+          In this example, we want our team to add article filepaths to the `related_articles` Input. This
+          Input requires all the filepaths to be unique.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                      related_articles:
+                        type: array
+                        options:
+                          unique_on: '$.path'
+        annotations: []
+      - description: >
+          In this example, we want our team to add article filepaths to the `related_articles` Input. This
+          Input requires all the filepaths to be unique.
+        language: yaml
+        source: blog-article.yml
+        code: |
+          related_articles:
+                      - path: /articles/first-article.md
+                        featured: true
+                      - path: /articles/second-article.md
+                        featured: false
+        annotations: []
+
+  - label: "_inputs.*.options.unique_on_message"
+    type_markdown: "String"
+    source_file: "inputs-reference"
+    definition: >
+      This key defines a custom error message that explains why a value has failed the validation criteria
+      from `options.unique_on`. This key requires you to define `options.unique_on`. This key has no
+      default. This key is available for Array inputs.
+    examples:
+      - description: >
+          In this example, we want our team to add article filepaths to the `related_articles` Input. This
+          Input requires all the filepaths to be unique.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                      related_articles:
+                        type: array
+                        options:
+                          unique_on: '$.path'
+                          unique_on_message: The value for path must be different for all items.
+        annotations: []
+      - description: >
+          In this example, we want our team to add article filepaths to the `related_articles` Input. This
+          Input requires all the filepaths to be unique.
+        language: yaml
+        source: blog-article.yml
+        code: |
+          related_articles:
+                      - path: /articles/first-article.md
+                        featured: true
+                      - path: /articles/first-article.md
+                        featured: false
+        annotations: []
+
+  - label: "_inputs.*.type"
+    type_markdown: "String"
+    source_file: "inputs-reference"
+    definition: >
+      This key changes the type of editing interface used for an Input. Each Input type has a different
+      appearance and functionality, processes and accepts different types of values, and has different
+      configuration options. Value can be one of the following: `auto`, `checkbox`, `switch`, `code`,
+      `color`, `datetime`, `date`, `time`, `file`, `document`, `image`, `number`, `range`, `object`,
+      `array`, `select`, `multiselect`, `choice`, `multichoice`, `text`, `textarea`, `email`, `html`,
+      `markdown`, or `url`. If the type or value of an Input is misconfigured, CloudCannon will display an
+      orange warning instead of an Input. If type is not configured for an Input, CloudCannon will attempt
+      to determine Input type based on value or key name conventions. This key has no default.
+    examples:
+      - description: >
+          In this example, we have configured the `page_description` Input as a markdown Rich Text Input using
+          the `type` key.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  page_description:
+                    type: markdown
+                    options:
+                      show_count: true
+        annotations: []
+      - description: >
+          In this example, we have configured the `page_description` Input as a markdown Rich Text Input using
+          the `type` key.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  related_links:
+                    type: url
+                    comment: Reference a different page
+        annotations: []
+
+  - label: "_select_data"
+    type_markdown: "Object"
+    source_file: "configuration-file-reference"
+    definition: >
+      This key defines defines fixed data sets to populate Select and Multiselect inputs at a given level
+      of the configuration cascade. This key has no default. If undefined at higher levels of the
+      [configuration cascade](/documentation/articles/using-the-configuration-cascade/), `_select_data`
+      will default to any values configured in the [CloudCannon configuration
+      file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
+    examples:
+      - description: >
+          In this example, we have configured the `blog_tags` Multiselect input for the `blog` Collection.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                                    blog:
+                                      _select_data:
+                                        blog_topics:
+                                          - Opinion
+                                          - Feature
+                                          - Resource
+        annotations: []
+
+  - label: "_snippets"
+    type_markdown: "Object"
+    source_file: "configuration-file-reference"
+    definition: >
+      This key defines custom snippets for your Site. The following nested keys are available for each
+      snippet inside `_snippets`: * `template` * `inline` * `preview` * `definitions` * `_inputs` This key
+      has no default.
+    examples: []
+
+  - label: "_snippets_from_glob"
+    type_markdown: "Array of Strings"
+    source_file: "configuration-file-reference"
+    definition: >
+      This key defines globs that filter which files CloudCannon should use for Snippet configuration.
+      Values in this array are relative to the root of your repository (i.e., `/`, not the value of
+      `source`) and must end in the file extension `.cloudcannon.snippets.yml`. You can use this key
+      anywhere you would use the `_snippets` key in the configuration cascade. This key has no default.
+    examples:
+      - description: >
+          In this example, each Custom Snippet has its own *Configuration File* in the
+          `.cloudcannon/snippets/` folder. The value of the `_snippets_from_glob` key tells CloudCannon to use
+          the `callout.cloudcannon.snippets.yml` file in that folder.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _snippets_imports:
+                    eleventy_liquid: true
+                _snippets_from_glob:
+                  - '/.cloudcannon/snippets/callout.cloudcannon.snippets.yml'
+        annotations: []
+      - description: >
+          In this example, each Custom Snippet has its own *Configuration File* in the
+          `.cloudcannon/snippets/` folder. The value of the `_snippets_from_glob` key tells CloudCannon to use
+          the `callout.cloudcannon.snippets.yml` file in that folder.
+        language: yaml
+        source: /.cloudcannon/snippets/callout.cloudcannon.snippets.yml
+        code: |
+          callout:
+                  template: eleventy_liquid_include
+                  inline: false
+                  preview:
+                    text: Callout
+                  definitions:
+                    include_name: callout
+                    named_args:
+                      - source_key: type
+                        editor_key: label
+                        type: string
+                      - editor_key: message
+                        type: string
+                  _inputs:
+                    label:
+                      type: select
+                      options:
+                        values:
+                          - info
+                          - warning
+                          - error
+        annotations: []
+
+  - label: "_snippets_imports"
+    type_markdown: "Object"
+    source_file: "configuration-file-reference"
+    definition: >
+      This key defines snippet templates or libraries for your Site. Some libraries are SSG specific while
+      others work for most SSGs. The following nested keys are available: * `docusaurus_mdx` *
+      `eleventy_liquid` * `eleventy_nunjucks` * `hugo` * `jekyll` * `mdx` * `python_markdown_extensions`
+      This key has no default. For more information, please read our documentation on [Docusaurus
+      Components](/documentation/articles/snippets-using-docusaurus-components/), [Eleventy
+      Shortcodes](/documentation/articles/snippets-using-eleventy-shortcodes/), [Hugo
+      Shortcodes](/documentation/articles/snippets-using-hugo-shortcodes/), [MDX
+      Components](/documentation/articles/snippets-using-mdx-components/), or [Python
+      Markdown](/documentation/articles/snippets-using-python-markdown/).
+    examples: []
+
+  - label: "_snippets_imports_from_glob"
+    type_markdown: "Array of Strings"
+    source_file: "configuration-file-reference"
+    definition: >
+      This key defines globs that filter which files CloudCannon should use for *Collection*
+      configuration. Values in this array are relative to the root of your repository (i.e., `/`, not the
+      value of `source`) and must end in the file extension `.cloudcannon.snippets-imports.yml`. You can
+      use this key anywhere you would use the `_snippets_imports` key in the configuration cascade. This
+      key has no default.
+    examples:
+      - description: >
+          In this example, we have several Snippet *Configuration Files* in the `.cloudcannon/snippets/`
+          folder. The value of the `_snippets_import_from_glob` key tells CloudCannon all files in that folder
+          that match the glob `*.cloudcannon.snippets-import.yml`.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _snippets_imports_from_glob:
+                  - '/.cloudcannon/snippets/*.cloudcannon.snippets-imports.yml'
+        annotations: []
+      - description: >
+          In this example, we have several Snippet *Configuration Files* in the `.cloudcannon/snippets/`
+          folder. The value of the `_snippets_import_from_glob` key tells CloudCannon all files in that folder
+          that match the glob `*.cloudcannon.snippets-import.yml`.
+        language: yaml
+        source: /.cloudcannon/snippets/docusaurusSnippets.cloudcannon.snippets-imports.yml
+        code: |
+          mdx: true
+                docusaurus_mdx:
+                  exclude:
+                    - docusaurus_mdx_truncate
+        annotations: []
+
+  - label: "_structures"
+    type_markdown: "Object"
+    source_file: "structures-reference"
+    definition: >
+      This key defines which structures are available for [Object
+      inputs](/documentation/articles/what-is-an-object-input/) and [Array
+      inputs](/documentation/articles/what-is-an-array-input/) at a given level of the configuration
+      cascade. The following nested keys are available for each structure inside `_structures`: * `id_key`
+      * `style` * `hide_extra_inputs` * `reorder_inputs` * `remove_empty_inputs` * `remove_extra_inputs` *
+      `values` (required) This key has no default. If undefined at higher levels of the [configuration
+      cascade](/documentation/articles/using-the-configuration-cascade/), `_structures` will default to
+      any values configured in the [CloudCannon configuration
+      file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
+    examples:
+      - description: >
+          In this example, we want to populate an Array input in the `blog` Collection with Related Articles,
+          including the `name`, `description`, and `url` fields.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                              blog:
+                                _structures:
+                                  related_articles:
+                                    style: select
+                                    values:
+                                      - preview:
+                                          text:
+                                            - key: name
+                                          subtext:
+                                            - key: url
+                                        value:
+                                          name:
+                                          description:
+                                          url:
+        annotations: []
+      - description: >
+          In this example, we want to populate an Array input in the `blog` Collection with Related Articles,
+          including the `name`, `description`, and `url` fields.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _structures:
+                              staff:
+                                style: modal
+                                hide_extra_inputs: false
+                                values:
+                                  - value:
+                                      _type: Employee
+                                      name:
+                                      job_description:
+                                      profile_picture:
+                                    preview:
+                                      text:
+                                        - key: name
+                                        - Employee
+                                      subtext:
+                                        - key: job_description
+                                        - Description of position
+                                      image:
+                                        - key: profile_picture
+                                      icon: support_agent
+                                  - value:
+                                      _type: Manager
+                                      name:
+                                      job_description:
+                                      profile_picture:
+                                      url:
+                                    preview:
+                                      text:
+                                        - key: name
+                                        - Manager
+                                      subtext:
+                                        - key: job_description
+                                        - Description of position
+                                      image:
+                                        - key: profile_picture
+                                      icon: face
+        annotations: []
+
+  - label: "_structures_from_glob"
+    type_markdown: "Array of Strings"
+    source_file: "configuration-file-reference"
+    definition: >
+      This key defines globs that filter which files CloudCannon should use for *Structure* configuration.
+      Values in this array are relative to the root of your repository (i.e., `/`, not the value of
+      `source`) and must end in the file extension `.cloudcannon.structures.yml`. You can use this key
+      anywhere you would use the `_structures` key in the configuration cascade. Please see our
+      documentation on
+      [values_from_glob](/documentation/articles/configuration-file-reference/#values_from_glob) for
+      defining individual *Structure* values in a split *Configuration File*. This key has no default.
+    examples:
+      - description: >
+          In this example, we have several *Structure Configuration Files* in the `.cloudcannon/structures/`
+          folder. The value of the `_structures_from_glob` key tells CloudCannon to use the
+          `staffMembers.cloudcannon.structures.yml` file in that folder.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _structures_from_glob:
+                  - '/.cloudcannon/structures/staffMembers.cloudcannon.structures.yml'
+        annotations: []
+      - description: >
+          In this example, we have several *Structure Configuration Files* in the `.cloudcannon/structures/`
+          folder. The value of the `_structures_from_glob` key tells CloudCannon to use the
+          `staffMembers.cloudcannon.structures.yml` file in that folder.
+        language: yaml
+        source: /.cloudcannon/structures/staffMembers.cloudcannon.structures.yml
+        code: |
+          staff:
+                  style: modal
+                  values:
+                    - label: Employee
+                      value:
+                        name:
+                        job_description:
+                        profile_picture:
+                    - label: Manager
+                      value:
+                        name:
+                        job_description:
+                        profile_picture:
+                        url:
+        annotations: []
+
+  - label: "add_options"
+    type_markdown: "Array of Objects"
+    source_file: "collections-reference"
+    definition: >
+      This key defines the options available in the *\+ Add* button dropdown at the top right of your
+      *Collection browser*. Configuring add options for a Collection will remove CloudCannon's default
+      "Add a file" option from the *\+ Add* button dropdown. The following nested keys are available for
+      each standard entry in `add_options`: * `name` * `icon` * `editor` * `base_path` * `collection` *
+      `schema` * `default_content_file` The following nested keys are available for each URL entry in
+      `add_options`: * `name` * `icon` * `href` By default, CloudCannon adds the "Add a file" and "Create
+      new folder" options to the *\+ Add* dropdown. Additionally, any Schemas you have configured for a
+      Collection will also appear in the *\+ Add* dropdown. For more information on these options, please
+      read our reference documentation on
+      [disable\_add](/documentation/articles/collections-reference/#disable_add),
+      [disable\_add\_folder](/documentation/articles/collections-reference/#disable_add_folder), and
+      [schemas](/documentation/articles/schemas-reference/#schemas).
+    examples:
+      - description: >
+          In this example, we want team members in the `_posts` Collection to create new files in the`blog`
+          subfolder of the `_drafts` Collection. CloudCannon will open these files in the [Content
+          Editor](/documentation/articles/what-is-the-content-editor/).
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                          _posts:
+                            add_options:
+                              - name: Add draft blog
+                                icon: post_add
+                                editor: content
+                                base_path: /../_drafts/blog
+        annotations: []
+      - description: >
+          In this example, we want team members in the `_posts` Collection to create new files in the`blog`
+          subfolder of the `_drafts` Collection. CloudCannon will open these files in the [Content
+          Editor](/documentation/articles/what-is-the-content-editor/).
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        team:
+                          add_options:
+                            - name: Office Locations
+                              icon: map
+                              href: /our-offices
+        annotations: []
+
+  - label: "add_options.base_path"
+    type_markdown: "String"
+    source_file: "collections-reference"
+    definition: >
+      This key defines a path for files created using an option in the *\+ Add* button dropdown. This path
+      overrides the path for the current Collection and subfolder open in the *Collection browser*. This
+      key is useful if you need to specify a specific subfolder within a Collection. The value for this
+      key is relative to your Collection [path](/documentation/articles/collections-reference/#path). By
+      default, this key is the path for the current Collection and subfolder open in the *Collection
+      browser*.
+    examples:
+      - description: >
+          In this example, we want team members in the `_posts` Collection to create new files in the`blog`
+          subfolder of the `_drafts` Collection rather than the current *Collection browser* they have open.
+          By configuring the `base_path` value to `/../_drafts/blog`, new files will be created in a different
+          Collection subfolder (i.e., `_drafts`) when a team member selects this option from the *\+ Add*
+          button dropdown.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                          _posts:
+                            add_options:
+                              - name: Add draft blog
+                                icon: post_add
+                                editor: content
+                                base_path: /../_drafts/blog
+        annotations: []
+
+  - label: "add_options.collection"
+    type_markdown: "String"
+    source_file: "collections-reference"
+    definition: >
+      This key defines the Collection for files created using an option in the *\+ Add* button dropdown.
+      This Collections overrides the current Collection open in the *Collection browser*. The value for
+      this key should be the key name of a Collection. By default, this key is the current Collection open
+      in the *Collection browser*.
+    examples:
+      - description: >
+          In this example, we want team members in the articles Collection to create new files in the
+          `new_articles` Collection rather than the current Collection browser they have open. By configuring
+          the `collection` value to `new_articles`, new files will be created in a different Collection (i.e.,
+          `new_articles`) when a team member selects this option from the + Add button dropdown.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        articles:
+                          add_options:
+                            - name: Add articles
+                              collection: new_articles
+                              schema: articles
+        annotations: []
+
+  - label: "add_options.default_content_file"
+    type_markdown: "String"
+    source_file: "collections-reference"
+    definition: >
+      This key defines which file CloudCannon should use to populate a file created with an option in the
+      *\+ Add* button dropdown if the Collection defined in `add_options.collection` has no Schemas
+      configured. The `add_options.schema` key will override `default_content_file`. This key has no
+      default.
+    examples:
+      - description: >
+          In this example, we want CloudCannon to populate the initial contents of new files with
+          `event_template.yml`.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        events:
+                          add_options:
+                            name: Add new event
+                            collection: upcoming_events
+                            default_content_file: event_template.yml
+        annotations: []
+
+  - label: "add_options.editor"
+    type_markdown: "String"
+    source_file: "collections-reference"
+    definition: >
+      This key defines which editing interface CloudCannon will use when you select an option from the *\+
+      Add* button dropdown. Values can be one of the following: `visual`, `content`, or `data`. By
+      default, CloudCannon will open the new file in an appropriate editing interface for that file type.
+      If CloudCannon cannot determine an appropriate editing interface, it will show a warning.
+    examples:
+      - description: >
+          In this example, we want new draft blog files to open in the [Content
+          Editor](/documentation/articles/what-is-the-content-editor/).
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                          _posts:
+                            add_options:
+                              - name: Add draft blog
+                                icon: post_add
+                                editor: content
+                                base_path: /../_drafts/blog
+        annotations: []
+
+  - label: "add_options.href"
+    type_markdown: "String"
+    source_file: "collections-reference"
+    definition: >
+      This key defines the link for a URL option in the *\+ Add* button dropdown. Values can be an
+      external URL or an internal URL relative to the current Site. This key has no default.
+    examples:
+      - description: >
+          In this example, the *\+ Add* button dropdown in the `team` *Collection browser* has a link to the
+          Office Locations page on our live website.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        team:
+                          add_options:
+                            - name: Office Locations
+                              icon: map
+                              href: /our-offices
+        annotations: []
+
+  - label: "add_options.icon"
+    type_markdown: "String"
+    source_file: "collections-reference"
+    definition: >
+      This key defines the icon for an option in the *\+ Add* button dropdown. Values can be from Google's
+      Material Icons library. By default, this key is `add`, unless you have configured
+      `add_options.schema`. In this case, this key defaults to the icon of the matching Schema.
+    examples:
+      - description: >
+          In this example, the *\+ Add* button dropdown in the `team` *Collection browser* has a link to the
+          Office Locations page on our live website.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        team:
+                          add_options:
+                            - name: Office Locations
+                              icon: map
+                              href: /our-offices
+        annotations: []
+
+  - label: "add_options.name"
+    type_markdown: "String"
+    source_file: "collections-reference"
+    definition: >
+      This key defines the name of an option in the *\+ Add* button dropdown. This key has no default,
+      unless you have configured `add_options.schema`. In this case, this key defaults to the name of the
+      matching Schema.
+    examples:
+      - description: >
+          In this example, the *\+ Add* button dropdown in the `team` *Collection browser* has a link to the
+          Office Locations page on our live website.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        team:
+                          add_options:
+                            - name: Office Locations
+                              icon: map
+                              href: /our-offices
+        annotations: []
+
+  - label: "add_options.schema"
+    type_markdown: "String"
+    source_file: "collections-reference"
+    definition: >
+      This key defines which Schema CloudCannon should use to populate a file created with an option in
+      the *\+ Add* button dropdown. This Schema is relative to the Collection configured in
+      `add_options.collection`. Configuring this key will override `add_options.default_content_file`. The
+      value for this key should be the key name of a Schema. By default, this key is the default Schema in
+      the Collection configured in `add_options.collection`.
+    examples:
+      - description: >
+          In this example, we want CloudCannon to populate new files with the contents of the `articles`
+          Schema when a team member selects this option from the + Add button dropdown.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        articles:
+                          add_options:
+                            - name: Add articles
+                              collection: new_articles
+                              schema: articles
+        annotations: []
+
+  - label: "allow_custom_markup"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables you to edit custom markup in rich text editors and explicitly accept the risk of
+      unintentionally deleting elements that cannot be recreated. By default, `allow_custom_markup` is
+      `false` for inputs and the Content Editor and `true` for editable regions. When using
+      `allow_custom_markup` outside of editable regions, content that uses JavaScript will not be editable
+      for security reasons. These inputs will appear as uneditable snippets. Available for the Content
+      Editor (`_editables.content`), the Block editable region (`_editables.block`), the Link editable
+      region (`_editables.link`), the Text editable region (`_editables.text`), and Rich Text inputs
+      (`_inputs.key_name.options`). For more information, please read our documentation on best practices
+      for HTML in [rich text](/documentation/articles/best-practices-for-rich-text/) and [editable
+      regions](/documentation/articles/define-editable-regions-in-your-html/).
+    examples: []
+
+  - label: "allowed_sources"
+    type_markdown: "Array"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key lists which DAMs you are allowed to upload to and browse. Valid values include `site-files`
+      and the reference key for any DAM connected to your site. If `site-files` is omitted from the array,
+      site files will not be available as an asset source for this input.
+    examples: []
+
+  - label: "base_url"
+    type_markdown: "String"
+    source_file: "configuration-file-reference"
+    definition: >
+      This key defines the base URL (or subpath) when generating output URLs for your Site. The base URL
+      will prefix the output URL of each file. This key has no default.
+    examples: []
+
+  - label: "blockquote"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to wrap selected blocks of text in a block quote. Available for the Content
+      Editor (`_editables.content`), the Block editable region (`_editables.block`), the Link editable
+      region (`_editables.link`), and Rich Text inputs (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "bold"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to bold selected text. Available for the Content Editor
+      (`_editables.content`), the Block editable region (`_editables.block`), the Link editable region
+      (`_editables.link`), the Text editable region (`_editables.text`), and Rich Text inputs
+      (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "bulletedlist"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to insert an unordered list or convert selected text to an unordered list.
+      Available for the Content Editor (`_editables.content`), the Block editable region
+      (`_editables.block`), and Rich Text inputs (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "center"
+    type_markdown: "String"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to center align selected text by toggling a class name for that text block.
+      The value is the class name to align the text. The styles for this class must be defined in the
+      `styles` file. Available for the Content Editor (`_editables.content`), the Block editable region
+      (`_editables.block`), and Rich Text inputs (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "code"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables two tools to turn selected text into inline code and selected text into a code
+      block. Available for the Content Editor (`_editables.content`), the Block editable region
+      (`_editables.block`), and Rich Text inputs (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "collection_groups"
+    type_markdown: "Array of Objects"
+    source_file: "configuration-file-reference"
+    definition: >
+      This key defines the groups and order of Collections in your *Site Navigation*. Each item in the
+      array must contain the `heading` and `collections` keys. The following nested keys are available for
+      each entry in `collection_groups`: * `heading` * `collections` This key has no default. If
+      undefined, CloudCannon will sort your Collections in the following order: the *Pages* Collection,
+      all output Collections in alphabetical order, then all non-output Collections in alphabetical order.
+    examples: []
+
+  - label: "collections_config"
+    type_markdown: "Object"
+    source_file: "collections-reference"
+    definition: >
+      This key defines your Collections. The following nested keys are available for each Collection: *
+      `path` * `glob` * `name` * `singular_name` * `icon` * `url` * `disable_url` * `documentation` *
+      `description` * `preview` * `sort` * `sort_options` * `_editables` * `_enabled_editors` * `_inputs`
+      * `_select_data` * `_structures` * `add_options` * `create` * `disable_add` * `disable_add_folder` *
+      `disable_file_actions` * `new_preview_url` * `schemas` * `schema_key` * `include_developer_files` By
+      default, CloudCannon uses your `source` key to make assumptions about your Collections.
+    examples:
+      - description: >
+          In this example, we have configured a `blog` Collection. Key settings include two Schemas to
+          populate files with different content, a Blog Tags input populated by a fixed data set, and a custom
+          Create Path to generate file names from structured data.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        blog:
+                          path: content/blog
+                          glob:
+                            - '!_index.md'
+                          name: Blog
+                          icon: post_add
+                          url: /blog/[full_slug]/
+                          documentation:
+                            url: https://example.com/travel-blog-style-guide
+                            text: Documentation
+                            icon: auto_stories
+                          description: |-
+                            This Collection is for *Travel blogs* and *Customer stories*.
+          
+                            If your have any questions, please contact Heather.
+                          _editables:
+                          _enabled_editors:
+                            - content
+                          _inputs:
+                            blog_tags:
+                              type: multiselect
+                              label: Blog type
+                              comment: Select a blog type
+                              context:
+                                open: false
+                                title: Help
+                                icon: help
+                                content: |
+                                  Blog tags help our users filter articles by topic.
+                              options:
+                                values: _select_data.blog_topics
+                          _select_data:
+                            blog_topics:
+                              - Opinion
+                              - Feature
+                              - Resource
+                          create:
+                            extra_data:
+                              filename: '{date|year}-{date|month}-{date|day}-{title}'
+                            path: '[relative_base_path]/{filename|slugify}.[ext]'
+                          disable_add: false
+                          disable_add_folder: false
+                          disable_file_actions: false
+                          schemas:
+                            blog:
+                              path: schemas/travel_blog.md
+                              name: Blog Post
+                              icon: post_add
+                            customer_story:
+                              path: schemas/customer_story.md
+                              name: Customer Story
+                              icon: post_add
+                          schema_key: _blog_template
+                          include_developer_files: false
+        annotations: []
+      - description: >
+          In this example, we have configured a `blog` Collection. Key settings include two Schemas to
+          populate files with different content, a Blog Tags input populated by a fixed data set, and a custom
+          Create Path to generate file names from structured data.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        team:
+                          path: _data/team
+                          name: Our Team
+                          singular_name: Team Member
+                          icon: groups
+                          disable_url: true
+                          description: |-
+                            This Collection has a file for every member of our team!
+                          preview:
+                            text:
+                              - key: name
+                            subtext:
+                              - key: job_title
+                            icon:
+                              - key: profile_picture
+                          sort:
+                            key: name
+                            order: ascending
+                          sort_options:
+                            - key: name
+                              order: ascending
+                              label: Name (A-Z)
+                            - key: name
+                              order: descending
+                              label: Name (Z-A)
+                            - key: job_title
+                              order: ascending
+                              label: Job Title (A-Z)
+                            - key: date
+                              order: descending
+                              label: Job Title (Z-A)
+                          _enabled_editors:
+                            - data
+                          add_options:
+                            - name: Office Locations
+                              icon: map
+                              href: /our-offices
+                          schemas:
+                            manager:
+                              path: schemas/manager.yml
+                              name: Manager
+                              icon: face
+                            employee:
+                              path: schemas/employee.yml
+                              name: Employee
+                              icon: support_agent
+        annotations: []
+
+  - label: "collections_config_from_glob"
+    type_markdown: "Array of Strings"
+    source_file: "configuration-file-reference"
+    definition: >
+      This key defines globs that filter which files CloudCannon should use for *Collection*
+      configuration. Values in this array are relative to the root of your repository (i.e., `/`, not the
+      value of `source`) and must end in the file extension `.cloudcannon.collections.yml`. You can use
+      this key anywhere you would use the `collections_config` key. This key has no default.
+    examples:
+      - description: >
+          In this example, each *Collection* has its own *Configuration File* in the
+          `.cloudcannon/collections/` folder. The value of the `collections_config_from_glob` key tells
+          CloudCannon to use all files in that folder that match the glob `*.cloudcannon.collections.yml`.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config_from_glob:
+                  - '/.cloudcannon/collections/*.cloudcannon.collections.yml'
+        annotations: []
+      - description: >
+          In this example, each *Collection* has its own *Configuration File* in the
+          `.cloudcannon/collections/` folder. The value of the `collections_config_from_glob` key tells
+          CloudCannon to use all files in that folder that match the glob `*.cloudcannon.collections.yml`.
+        language: yaml
+        source: /.cloudcannon/collections/posts.cloudcannon.collections.yml
+        code: |
+          posts:
+                  path: content/posts
+                  icon: event
+        annotations: []
+
+  - label: "commit_templates"
+    type_markdown: "Array of Objects"
+    source_file: "configuration-file-reference"
+    definition: >
+      This key defines your commit message templates. Commit messages appear on the *Review changes* modal
+      when you save your changes. This key has no default. For more information, please read our
+      documentation on [commit templates](/documentation/articles/configure-your-commit-messages/).
+    examples: []
+
+  - label: "copyformatting"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to copy formatting from selected text. Applies to `bold`, `italic`,
+      `underline`, `strike`, `subscript`, and `superscript` formatting. Does not copy other styles or
+      formatting. Available for the Content Editor (`_editables.content`), the Block editable region
+      (`_editables.block`), the Text editable region (`_editables.text`), and Rich Text inputs
+      (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "create"
+    type_markdown: "Object"
+    source_file: "collections-reference"
+    definition: >
+      This key defines the path to which CloudCannon will save new files in a Collection. CloudCannon
+      generates "Create Paths" when you open the *Review changes* modal. The following nested keys are
+      available: * `path` (required) * `extra_data` * `publish_to` * `_inputs` * `_select_data` *
+      `_structures` This key has no default.
+    examples:
+      - description: >
+          In this example, CloudCannon will generate a Create Path for new files in the `blog` Collection
+          using the `date` and `title` structured data keys. For example, CloudCannon will generate a create
+          path of `blog/2024-10-31-spooky-getaway.md` for a file with the date 31st October 2024 and the title
+          "Spooky Getaway".
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        blog:
+                          create:
+                            extra_data:
+                              filename: '{date|year}-{date|month}-{date|day}-{title}'
+                            path: '[relative_base_path]/{filename|slugify}.[ext]'
+        annotations: []
+
+  - label: "data_config"
+    type_markdown: "Object"
+    source_file: "configuration-file-reference"
+    definition: >
+      This key defines which file or folder data in your Site is available to populate [Select and
+      Multiselect inputs](/documentation/articles/what-is-a-select-input/). This key has no default. For
+      more information, please read our documentation on [defining your
+      data](/documentation/articles/define-your-data/).
+    examples: []
+
+  - label: "default"
+    type_markdown: "Boolean"
+    source_file: "structures-reference"
+    definition: >
+      This key toggles whether CloudCannon should treat an entry in the `values` array as the default
+      option for your Object or Array input. If multiple entries in the `values` array are set to `true`,
+      CloudCannon will use the first entry. If CloudCannon cannot determine the type of an entry within
+      the `values` array based on the `id_key` or matching inputs in the `values.value` array, it will
+      fall back to the default entry. By default, this key is `false` (i.e., the entry is not the default
+      option).
+    examples:
+      - description: >
+          In this example, we want the entry labelled `Employee` to be our default option for populating
+          inputs configured with the `staff` Structure.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _structures:
+                              staff:
+                                style: modal
+                                values:
+                                  - label: Employee
+                                    default: true
+                                    value:
+                                      name:
+                                      job_description:
+                                      profile_picture:
+                                  - label: Manager
+                                    value:
+                                      name:
+                                      job_description:
+                                      profile_picture:
+                                      url:
+        annotations: []
+
+  - label: "description"
+    type_markdown: "String"
+    source_file: "collections-reference"
+    definition: >
+      This key defines the description text that appears on the *Collection browser* page. Collection
+      descriptions are useful for adding extra context for your team members. CloudCannon supports a
+      limited selection of Markdown formatting for the value of this key: links, bold, italic, subscript,
+      superscript, and inline code. This key has no default.
+    examples:
+      - description: >
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        blog:
+                          description:|-
+                            This Collection is for *Travel blogs* and *Customer stories*.
+          
+                            If your have any questions, please contact Heather.
+        annotations: []
+
+  - label: "disable_add"
+    type_markdown: "Boolean"
+    source_file: "collections-reference"
+    definition: >
+      This key toggles whether team members can use the *+ Add* button in the top right of the *Collection
+      browser* to add files to a Collection. This key does not affect your ability to add files using the
+      *File browser*. Setting this key to *true* will prevent team members from adding new files through
+      the *Collection browser*. By default, this key is `false` (i.e., team members can add to the
+      Collection) for most SSGs. For Eleventy, Hugo, and Jekyll, this key defaults to `true` for the
+      `data` Collection (all subfolders in the `data` folder are non-output Collections). If both
+      `disable_add` and`disable_add_folder` are set to `true`, and you have not defined any other
+      `add_options`, then the *\+ Add* button will not appear in the top right of the *Collection
+      browser*.
+    examples:
+      - description: >
+          In this example, we want to prevent team members from adding new files to the `data` Collection
+          through the *Collection browser*.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        data:
+                          disable_add: true
+        annotations: []
+
+  - label: "disable_add_folder"
+    type_markdown: "Boolean"
+    source_file: "collections-reference"
+    definition: >
+      This key toggles whether team members can use the *\+ Add* button in the top right of the
+      *Collection browser* to add subfolders to a Collection. This key does not affect your ability to add
+      subfolders using the *File browser*. Setting this key to *true* will prevent team members from
+      adding new subfolders through the *Collection browser*. By default, this key is `false` (i.e., team
+      members can add folders to the Collection) for most SSGs. For Eleventy, Hugo, and Jekyll, this key
+      defaults to `true` for the `data` Collection (all subfolders in the `data` folder are non-output
+      Collections). If both `disable_add` and`disable_add_folder` are set to `true`, and you have not
+      defined any other `add_options`, then the *\+ Add* button will not appear in the top right of the
+      *Collection browser*.
+    examples:
+      - description: >
+          In this example, we want to prevent team members from adding new subfolders to the `data` Collection
+          through the *Collection browser*.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        data:
+                          disable_add_folder: true
+        annotations: []
+
+  - label: "disable_file_actions"
+    type_markdown: "Boolean"
+    source_file: "collections-reference"
+    definition: >
+      This key toggles whether team members can use the *Move*, *Clone*, *Rename*, and *Delete* file
+      actions in a Collections. You can access these file actions in the *Context Menu* at the top right
+      of a file [Card](/documentation/articles/configure-your-card-previews/) in the *Collection browser*
+      or in an editing interface. This key does not affect file actions in the *File browser*. Setting
+      this key to true will prevent team members from using file actions in the *Collection browser*. By
+      default, this key is `false` (i.e., team members can use file actions) for most SSGs. For Eleventy,
+      Hugo, and Jekyll, this key defaults to `true` for the `data` Collection.
+    examples:
+      - description: >
+          In this example, we want to prevent team members from using file actions in the `data` Collection
+          through the *Collection browser*.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        data:
+                          disable_file_actions: true
+        annotations: []
+
+  - label: "disable_url"
+    type_markdown: "Boolean"
+    source_file: "collections-reference"
+    definition: >
+      This key toggles whether CloudCannon will generate an output URL for a given Collection. Setting
+      this key to `true` will prevent CloudCannon from generating an output URL for a Collection. By
+      default, this key is `false` (i.e., generate an output URL for this Collection).
+    examples:
+      - description: >
+          In this example, `data` is an non-output Collection and we don't want output URLs generated.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        data:
+                          disable_url: true
+        annotations: []
+
+  - label: "documentation"
+    type_markdown: "Object"
+    source_file: "collections-reference"
+    definition: >
+      This key defines the documentation link at the top of a *Collection browser*. Collection
+      documentation is useful for assisting your team members. The following nested keys are available: *
+      `url` (required) * `text` * `icon` This key has no default.
+    examples:
+      - description: >
+          In this example, the documentation link for the `data` Collection goes to [CloudCannon
+          Documentation](/documentation/).
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        data:
+                          documentation:
+                            url: https://cloudcannon.com/documentation/
+                            text: CloudCannon Documentation
+                            icon: star
+        annotations: []
+
+  - label: "documentation.icon"
+    type_markdown: "String"
+    source_file: "collections-reference"
+    definition: >
+      This key defines the icon for the documentation link at the top of a *Collection browser*. Values
+      can be from [Google's Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons)
+      library. By default, this key is `auto_stories`.
+    examples:
+      - description: >
+          In this example, we have configured the `star` icon for the `blog` Collection documentation link.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        blog:
+                          documentation:
+                            url: https://www.cloudcannon.com/documentation/
+                            icon: star
+        annotations: []
+
+  - label: "documentation.text"
+    type_markdown: "String"
+    source_file: "collections-reference"
+    definition: >
+      This key defines the link text for the documentation link at the top of a *Collection browser*. By
+      default, this key is `Documentation`.
+    examples:
+      - description: >
+          In this example, the text for the documentation link is `CloudCannon Documentation`.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        data:
+                          documentation:
+                            url: https://cloudcannon.com/documentation/
+                            text: CloudCannon Documentation
+        annotations: []
+
+  - label: "documentation.url"
+    type_markdown: "String"
+    source_file: "collections-reference"
+    definition: >
+      This key defines the URL for the documentation link at the top of a *Collection browser*. You must
+      define this key for the `documentation` object to function. This key has no default.
+    examples:
+      - description: >
+          In this example, we have configured the `blog` Collection documentation link to go to `example.com`.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        blog:
+                          documentation:
+                            url: https://example.com
+        annotations: []
+
+  - label: "editor.default_path"
+    type_markdown: "Object"
+    source_file: "configuration-file-reference"
+    definition: >
+      This key defines the link for the *Home* button on the *Dashboard* page. By default, this key is set
+      to `/` (i.e., your index output URL).
+    examples: []
+
+  - label: "embed"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to insert a region of raw HTML for Youtube, Vimeo, social media posts, or
+      other media. Embedded content is sanitized to mitigate XSS risks, which includes removing `style`
+      tags. Embeds containing `script` tags are not loaded a rich text editor. Available for the Content
+      Editor (`_editables.content`), the Block editable region (`_editables.block`), and Rich Text inputs
+      (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "expandable"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key defines whether you can upscale an image to fit the bounding box while resizing an image
+      prior to upload. Defaults to `false`. Has no effect if files are not resized. Available for the
+      Content Editor (`_editables.content`), the Block editable region (`_editables.block`), the Image
+      editable region (`_editables.image`), and Rich Text inputs (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "file_config"
+    type_markdown: "Array"
+    source_file: "configuration-file-reference"
+    definition: >
+      This key defines file-specific configuration without configuring a collection or modifying files.
+      The following nested keys are available for each entry in `file_config`: * `glob` (required) *
+      `_select_data` * `_structures` * `_select_data` * `_enabled_editors` * `_inputs` * `_editables` This
+      key has no default.
+    examples: []
+
+  - label: "format"
+    type_markdown: "String"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a dropdown menu tool for structured text. Valid values include for `p`, `h1`, `h2`,
+      `h3`, `h4`, `h5`, `h6`, `pre`, `address`, and `div`. Include a space between each values, e.g.
+      `format: p h1 h2`. Available for the Content Editor (`_editables.content`), the Block editable
+      region (`_editables.block`), the Link editable region (`_editables.link`), and Rich Text inputs
+      (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "glob"
+    type_markdown: "Array of Strings"
+    source_file: "collections-reference"
+    definition: >
+      This key defines globs which filter the files visible in the *Collection browser* for a given
+      Collection. Values in this array are relative to the Collection
+      [path](/documentation/articles/collections-reference/#path). Globs can be positive (e.g. `*.yml`),
+      or negative (e.g. `!**/*.json`). Files are included in a Collection if they match any positive globs
+      and do not match any negative globs. If you do not define any positive globs, CloudCannon will
+      include all non-developer files in a Collection unless they match a negative glob. For more
+      information about developer files, please read our documentation on the
+      [include\_developer\_files](/documentation/articles/collections-reference/#include_developer_files)
+      key. Defining a negative glob for a Collection does not remove a file from the associated Collection
+      folder in your Git repository. Similarly, defining a positive glob for a file in a folder outside
+      your Collection path does not move the file. This key has no default.
+    examples:
+      - description: >
+          In this example, the *Collection browser* will show all files in the `data` folder except for the
+          `secret.yml` file.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        data:
+                          path: data
+                          glob:
+                            - '!secret.yml'
+        annotations: []
+      - description: >
+          In this example, the *Collection browser* will show all files in the `data` folder except for the
+          `secret.yml` file.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        data:
+                          path: data
+                          glob:
+                            - '**/*.yml'
+        annotations: []
+      - description: >
+          In this example, the *Collection browser* will show all files in the `data` folder except for the
+          `secret.yml` file.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        data:
+                          path: data
+                          glob:
+                            - '**/*.yml'
+                            - '!secret.yml'
+        annotations: []
+
+  - label: "groups"
+    type_markdown: "Array of Objects"
+    source_file: "structures-reference"
+    definition: >
+      This key defines the order and customing grouping for inputs within a Structure. Each groups can
+      have a heading. The following nested keys are available for each entry in the `groups` array: *
+      `heading` * `inputs` By default, CloudCannon respects the order of inputs as configured in the
+      `values.value` key and does not include any groups.
+    examples:
+      - description: >
+          In this example, we want to separate the inputs into two groups with descriptive headings: `title`
+          and `subtitle` under the `Titles` heading, and `author` under the `Details` heading.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _structures:
+                              article_information:
+                                values:
+                                  - label: Blog
+                                    value:
+                                      title:
+                                      subtitle:
+                                      author:
+                                    groups:
+                                      - heading: Titles
+                                        inputs:
+                                          - title
+                                          - subtitle
+                                      - heading: Details
+                                        inputs:
+                                          - author
+        annotations: []
+
+  - label: "height"
+    type_markdown: "Integer"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key defines the height of the bounding box used in the resizing method defined by
+      `resize_style`. Available for the Content Editor (`_editables.content`), the Block editable region
+      (`_editables.block`), the Image editable region (`_editables.image`), and Rich Text inputs
+      (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "horizontalrule"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to insert a horizontal line. Available for the Content Editor
+      (`_editables.content`), the Block editable region (`_editables.block`), and Rich Text inputs
+      (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "collections_config.*.icon"
+    type_markdown: "String"
+    source_file: "collections-reference"
+    definition: >
+      This key defines the icon for a Collection. Collection icons appear in the *Site Navigation* and are
+      the default icon for Collection file [Cards](/documentation/articles/configure-your-card-previews/)
+      if you have not defined `preview.icon`.
+    examples:
+      - description: >
+          In this example, we have configured the `post_add` icon for the `blog` Collection.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        blog:
+                          icon: post_add
+        annotations: []
+
+  - label: "schemas.*.icon"
+    type_markdown: "String"
+    source_file: "schemas-reference"
+    definition: >
+      Displayed in the add menu when creating new files, also used as the icon for collection files if no
+      other preview is found. Must be a [Material Icon](https://material.io/resources/icons/) name.
+      Defaults to `notes`.
+    examples: []
+
+  - label: "id"
+    type_markdown: "Boolean"
+    source_file: "structures-reference"
+    definition: >
+      This key defines the string used to identify a given Structure value when refering to it from other
+      input configuration. This key has no default.
+    examples: []
+
+  - label: "id_key"
+    type_markdown: "String"
+    source_file: "structures-reference"
+    definition: >
+      This key defines which key within `values[*].value` CloudCannon should use to identify the Structure
+      option. If CloudCannon cannot find this key in a Structure value, it will compare all other key
+      names in the Structure value to find the correct one. By default, this key is `_type`.
+    examples:
+      - description: >
+          In this example, we have change the `id_key` from the default `_type` to `component` to match our
+          existing configuration in the `content_blocks` Array input.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                              content_blocks___1___:
+                                type: array
+                                options:
+                                structures: _structures.page_components
+                            _structures:
+                              page_components:
+                                id_key___2___: component
+                                values:
+                                  - label: Hero Component
+                                    value:
+                                      component___3___: hero
+                                      title:
+                                      description:
+                                      image_path:
+                                      link:
+                                         text:
+                                         url:
+                                  - label: Feature Component
+                                    value:
+                                      component: feature
+                                      image_path:
+                                      title:
+                                      description:
+                                      button:
+                                         link:
+                                         text:
+                                      reversed_layout: false
+                                  - label: Video Component
+                                    value:
+                                      component: video
+                                      image_path:
+                                      videoUrl:
+        annotations:
+          - number: 1
+            content: >
+              We have configured the Array input `content_blocks` to use the `page_components` Structures.
+          - number: 2
+            content: >
+              The `id_key` for `page_components` is `component`.
+          - number: 3
+            content: >
+              Each option in the `values` array has the `component` key with a different value to identify that
+              option.
+
+  - label: "image"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to insert an image and enter alternative text and title text. Select an
+      existing image, upload an image, or use an external link. Available for the Content Editor
+      (`_editables.content`), the Block editable region (`_editables.block`), and Rich Text inputs
+      (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "image_size_attributes"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key instructs a rich text editor to save `width` and `height` on image elements. This can
+      [prevent pop-in](/documentation/articles/why-cloudcannon-injects-width-and-height-onto-images/) as a
+      page loads. Defaults to `false`. This defaults to `true` for sites created before June 23 2023, in
+      order to keep those sites working. Use the [Image Size Attributes
+      Default](/documentation/articles/legacy-option-flags/#image-size-attributes-default-behaviour) flag
+      to update this for your site, if needed. Available for the Content Editor (`_editables.content`),
+      the Block editable region (`_editables.block`), the Image editable region (`_editables.image`), and
+      Rich Text inputs (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "include_developer_files"
+    type_markdown: "Boolean"
+    source_file: "collections-reference"
+    definition: >
+      This key toggles whether CloudCannon removes developer files from your *Collection browser*.
+      CloudCannon excludes files that probably shouldn't be edited in a CMS from your *Collection
+      browser*, for example files like `README.md` or `package.json`. CloudCannon excludes these files
+      even if you have configured globs to allow them. Setting this key to `true` will allow CloudCannon
+      to show developer files, assuming they are not filtered out by any configured
+      [globs](/documentation/articles/collections-reference/#glob). By default, this key is `false` (i.e.,
+      do not include developer files).
+    examples:
+      - description: >
+          In this example, we want to see developer files in the *Collection browser* for the `data`
+          Collection.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        data:
+                          include_developer_files: true
+        annotations: []
+
+  - label: "indent"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to increase the indentation of a list item in an ordered or unordered list.
+      Available for the Content Editor (`_editables.content`), the Block editable region
+      (`_editables.block`), and Rich Text inputs (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "italic"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to italicize selected text. Available for the Content Editor
+      (`_editables.content`), the Block editable region (`_editables.block`), the Link editable region
+      (`_editables.link`), the Text editable region (`_editables.text`), and Rich Text inputs
+      (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "join_above"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to merge a list item with the item above it in an ordered or unordered list.
+      Available for the Content Editor (`_editables.content`), the Block editable region
+      (`_editables.block`), and Rich Text inputs (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "join_below"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to merge a list item with the item below it in an ordered or unordered list.
+      Available for the Content Editor (`_editables.content`), the Block editable region
+      (`_editables.block`), and Rich Text inputs (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "justify"
+    type_markdown: "String"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to justify selected text by toggling a class name for that text block. The
+      value is the class name to align the text. The styles for this class must be defined in the `styles`
+      file. Available for the Content Editor (`_editables.content`), the Block editable region
+      (`_editables.block`), and Rich Text inputs (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "label"
+    type_markdown: "String"
+    source_file: "structures-reference"
+    definition: >
+      This key defines the dispaly name for a given value in a Structure. The name will appear in the *+
+      Add* button dropdown below an Object or Array input or in the Structures modal (if configured). By
+      default, this key falls back to `unknown`.
+    examples:
+      - description: >
+          In this example, we want two value options for our `staff` structure: one called `Manager` and one
+          called `Employee`.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _structures:
+                              staff:
+                                values:
+                                  - label: Employee
+                                    value:
+                                      name:
+                                      job_description:
+                                      profile_picture:
+                                  - label: Manager
+                                    value:
+                                      name:
+                                      job_description:
+                                      profile_picture:
+                                      url:
+        annotations: []
+
+  - label: "left"
+    type_markdown: "String"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to left align selected text by toggling a class name for that text block.
+      The value is the class name to align the text. The styles for this class must be defined in the
+      `styles` file. Available for the Content Editor (`_editables.content`), the Block editable region
+      (`_editables.block`), and Rich Text inputs (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "link"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to create a hyperlink around selected text. Available for the Content Editor
+      (`_editables.content`), the Block editable region (`_editables.block`), the Link editable region
+      (`_editables.link`), the Text editable region (`_editables.text`), and Rich Text inputs
+      (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "markdown"
+    type_markdown: "Object"
+    source_file: "configuration-file-reference"
+    definition: >
+      This key defines your markdown engine for parsing Markdown content into HTML and any configuration
+      options for your engine. The following nested keys are available: * `engine` * `options` This key
+      has no default. For more information, please read our documentation on [configuring your markdown
+      engine](/documentation/articles/configure-your-markdown-engine/).
+    examples: []
+
+  - label: "mime_type"
+    type_markdown: "String"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key defines what format an image is converted to prior to upload. Defaults to keeping the mime
+      type of the uploaded file. Valid values are `image/jpeg`, `image/png`, or `image/webp`. Available
+      for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), the
+      Image editable region (`_editables.image`), and Rich Text inputs (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "collections_config.*.name"
+    type_markdown: "String"
+    source_file: "collections-reference"
+    definition: >
+      This key defines the display name for a Collection. The name appears in the *Site Navigation* and at
+      the top of the *Collection browser*. Changing the display name does not affect the Collection key
+      name. By default, CloudCannon uses the Collection key name in title case (i.e., `blog_files` becomes
+      "Blog Files").
+    examples:
+      - description: >
+          In this example, CloudCannon will call the `blog` Collection "Travel Blog" in the *Site Navigation*
+          and the *Collection browser*.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        blog:
+                          name: Travel Blog
+        annotations: []
+
+  - label: "schemas.*.name"
+    type_markdown: "String"
+    source_file: "schemas-reference"
+    definition: >
+      Displayed in the add menu when creating new files. Defaults to a formatted version of the key.
+    examples: []
+
+  - label: "new_preview_url"
+    type_markdown: "String"
+    source_file: "collections-reference"
+    definition: >
+      This key defines a new URL for previewing your unbuilt pages in the [Visual
+      Editor](/documentation/articles/what-is-the-visual-editor/). The Visual Editor will load the new
+      preview URL and use Data Bindings and Previews to render your page without saving or building. This
+      key does not affect the URL for your [Testing
+      Domain](/documentation/articles/what-is-a-testing-domain/) or [Custom
+      Domain](/documentation/articles/what-is-a-custom-domain/). This key has no default.
+    examples:
+      - description: >
+          In this example, the Visual Editor will open the `/about/` page when you open an unbuilt page from
+          the `blog` Collection.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        blog:
+                          new_preview_url: /about/
+        annotations: []
+
+  - label: "numberedlist"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to insert an ordered list or convert selected text to an ordered list.
+      Available for the Content Editor (`_editables.content`), the Block editable region
+      (`_editables.block`), and Rich Text inputs (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "outdent"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to decrease the indentation of a list item in an ordered or unordered list.
+      Available for the Content Editor (`_editables.content`), the Block editable region
+      (`_editables.block`), and Rich Text inputs (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "collections_config.*.path"
+    type_markdown: "String"
+    source_file: "collections-reference"
+    definition: >
+      This key defines the folder path for the collection key in which it is nested. The value for this
+      key is relative to your [Site source](/documentation/articles/configuration-file-reference/#source).
+      Each Collection must have a unique path. This key has no default.
+    examples:
+      - description: >
+          In this example, the files for the `blog` Collection are located in the `content/blog` folder.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        blog:
+                          path: content/blog
+        annotations: []
+
+  - label: "collections_config.*.schemas.*.remove_empty_inputs"
+    type_markdown: "Boolean"
+    source_file: "schemas-reference"
+    definition: >
+      This key toggles whether CloudCannon will remove empty nested inputs from a file using a given
+      Schema before persisting them to your file. CloudCannon considers an input to be empty when its
+      value is `null`, `' '`, or undefined. If this key is true, empty inputs will be visible in the
+      [Data Editor](/documentation/articles/what-is-the-data-editor/) and the sidebar of the [Visual
+      Editor](/documentation/articles/what-is-the-visual-editor/) and [Content
+      Editor](/documentation/articles/what-is-the-content-editor/), but not the [Source
+      Editor](/documentation/articles/what-is-the-source-editor/). For this key to function, you must
+      also configure have _schema defined in your file. By default, this key is `false` (i.e,
+      CloudCannon does not remove empty inputs).
+    examples: []
+
+  - label: "collections_config.*.schemas.*.hide_extra_inputs"
+    type_markdown: "Boolean"
+    source_file: "schemas-reference"
+    definition: >
+      This key toggles whether CloudCannon will hide inputs that are not present in a Schema from the [Data
+      Editor](/documentation/articles/what-is-the-data-editor/) and the sidebar of the [Visual
+      Editor](/documentation/articles/what-is-the-visual-editor/) and [Content
+      Editor](/documentation/articles/what-is-the-content-editor/). Hiding these inputs does not
+      delete the data. You can see non-schema data keys by opening a file in the [Source
+      Editor](/documentation/articles/what-is-the-source-editor/). This key has no effect if
+      `remove_extra_inputs` is `true`. By default, this key is `false` (i.e, non-schema inputs are
+      visible in the Data Editor).
+    examples: []
+
+  - label: "collections_config.*.schemas.*.reorder_inputs"
+    type_markdown: "Boolean"
+    source_file: "schemas-reference"
+    definition: >
+      This key toggles whether CloudCannon will reorder inputs in a file to match the order defined in a given
+      Schema. Non-schema inputs will appear after Schema. By default, this key is `true` (i.e, inputs are reordered to
+      match the Schema).
+    examples: []
+
+  - label: "collections_config.*.schemas.*.remove_extra_inputs"
+    type_markdown: "Boolean"
+    source_file: "schemas-reference"
+    definition: >
+      This key toggles whether CloudCannon will remove inputs that are not present in a Schema from a
+      file before loading it in an Editing Interface. If set to `true`, non-Schema inputs will not be 
+      visible in the [Visual Editor](/documentation/articles/what-is-the-visual-editor/), 
+      [Content Editor](/documentation/articles/what-is-the-content-editor/), or 
+      [Data Editor](/documentation/articles/what-is-the-data-editor/), and saving the file will remove 
+      them from the file before persisting the changes to your Git repository. By default, this key is `true` (i.e., inputs not
+      present in the Schema are removed from the file).
+    examples: []
+
+  - label: "schemas.*.path"
+    type_markdown: "String"
+    source_file: "schemas-reference"
+    definition: >
+      The path to the schema file. Relative to the root folder of the site. Required.
+    examples: []
+
+  - label: "paths"
+    type_markdown: "Object"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables you to define paths for your Rich Text editors or File inputs. The following nested
+      keys are available: * `dam_static` * `dam_uploads` * `dam_uploads_filename` * `static` * `uploads` *
+      `uploads_filename` * `uploads_use_relative_paths` This key has no default. If undefined at higher
+      levels of the [configuration cascade](/documentation/articles/using-the-configuration-cascade/),
+      `paths` will default to any values configured in the [CloudCannon configuration
+      file](/documentation/articles/what-is-the-cloudcannon-configuration-file/). For more information,
+      please read our documentation on [Rich Text
+      editors](/documentation/articles/what-are-rich-text-editors/) or [File
+      inputs](/documentation/articles/what-is-a-file-input/). Available for the Content Editor
+      (`_editables.content`), the Block editable region (`_editables.block`), the Image editable region
+      (`_editables.image`), the Text editable region (`_editables.text`), and Rich Text inputs
+      (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "paths.dam_static"
+    type_markdown: "String"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables you to define the path for the location of statically copied assets for
+      [DAM](/documentation/articles/introduction-to-assets-and-dams/) files. Available for the Content
+      Editor (`_editables.content`), the Block editable region (`_editables.block`), the Image editable
+      region (`_editables.image`), the Text editable region (`_editables.text`), and Rich Text inputs
+      (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "paths.dam_uploads"
+    type_markdown: "String"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables you to define the path for the default location of newly uploaded
+      [DAM](/documentation/articles/introduction-to-assets-and-dams/) files. You can use [dynamic
+      placeholders](/documentation/articles/configure-your-template-strings/) for `uploads` and
+      `dam_uploads`. For more information, please read our documentation on [adjusting file upload
+      paths](/documentation/articles/adjusting-the-uploads-path/). Available for the Content Editor
+      (`_editables.content`), the Block editable region (`_editables.block`), the Image editable region
+      (`_editables.image`), the Text editable region (`_editables.text`), and Rich Text inputs
+      (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "paths.dam_uploads_filename"
+    type_markdown: "String"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables you to define the path for the name of the uploaded file, when uploading
+      [DAM](/documentation/articles/introduction-to-assets-and-dams/) files. Available for the Content
+      Editor (`_editables.content`), the Block editable region (`_editables.block`), the Image editable
+      region (`_editables.image`), the Text editable region (`_editables.text`), and Rich Text inputs
+      (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "paths.static"
+    type_markdown: "String"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables you to define the path for the location of statically copied assets. Available for
+      the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), the Image
+      editable region (`_editables.image`), the Text editable region (`_editables.text`), and Rich Text
+      inputs (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "paths.uploads"
+    type_markdown: "String"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables you to define the paths for the default location of newly uploaded site files. You
+      can use [dynamic placeholders](/documentation/articles/configure-your-template-strings/) for
+      `uploads` and `dam_uploads`. For more information, please read our documentation on [adjusting file
+      upload paths](/documentation/articles/adjusting-the-uploads-path/). Available for the Content Editor
+      (`_editables.content`), the Block editable region (`_editables.block`), the Image editable region
+      (`_editables.image`), the Text editable region (`_editables.text`), and Rich Text inputs
+      (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "paths.uploads_filename"
+    type_markdown: "String"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables you to define the path for the name of the uploaded file. Available for the Content
+      Editor (`_editables.content`), the Block editable region (`_editables.block`), the Image editable
+      region (`_editables.image`), the Text editable region (`_editables.text`), and Rich Text inputs
+      (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "picker_preview"
+    type_markdown: "Object"
+    source_file: "structures-reference"
+    definition: >
+      This key defines the appearance of a Card. You can configure Card preview for
+      [Structures](/documentation/articles/what-is-a-structure/) and
+      [Snippets](/documentation/articles/what-is-a-snippet/). This key is separate from the `preview` key
+      and only affects the select and modal lists. The following nested keys are available: * `text` *
+      `subtext` * `icon` * `icon_color` * `image` * `metadata` * `gallery` By default, CloudCannon uses
+      the values configured for `preview`
+    examples:
+      - description: >
+          In this example, we have configured different appearance for Cards in the `events` array and Cards
+          in the Structures modal used to select values for the Array input.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _structures:
+                              events:
+                                style: modal
+                                values:
+                                  - label: Birthday
+                                    value:
+                                      name:
+                                      date:
+                                      place:
+                                      image:
+                                      description:
+                                    preview:
+                                      text:
+                                        - template: "{name}s birthday event!"
+                                      subtext:
+                                        - template: "On {date} at {place}"
+                                      image:
+                                        - key: image
+                                    picker_preview:
+                                      text: Birthday
+                                      subtext: Add someones birthday to the events array
+                                      icon: cake
+                                  - label: Holiday
+                                    value:
+                                      date:
+                                      place:
+                                      image:
+                                      description:
+                                    preview:
+                                      text:
+                                        - template: "Holiday to {place}!"
+                                      subtext:
+                                        - template: "On {date}"
+                                      image:
+                                        - key: image
+                                    picker_preview:
+                                      text: Holiday
+                                      subtext: Add a holiday to the events array
+                                      icon: beach_access
+                            _inputs:
+                              events:
+                                type: array
+                                options:
+                                  structures: _structures.events
+        annotations: []
+
+  - label: "preview"
+    type_markdown: "Object"
+    source_file: "schemas-reference"
+    definition: >
+      This key defines the appearance of a Card. You can configure Card preview for
+      [Collections](/documentation/articles/what-is-a-collection/),
+      [Schemas](/documentation/articles/what-is-a-schema/), [Object
+      inputs](/documentation/articles/what-is-an-object-input/), [Array
+      inputs](/documentation/articles/what-is-an-array-input/), [Select
+      inputs](/documentation/articles/what-is-a-select-input/),
+      [Structures](/documentation/articles/what-is-a-structure/), the Structure modal,
+      [Snippets](/documentation/articles/what-is-a-snippet/), and the Snippet modal. The following nested
+      keys are available: * `text` * `subtext` * `icon` * `icon_color` * `icon_background_color` * `image`
+      * `metadata` * `gallery` This key defaults to: `````````` preview: text: - key: title - key: name
+      icon: - key: icon `````````` For more information about previews, please read our documentation on
+      [configuring card previews](/documentation/articles/configure-your-card-previews/).
+    examples:
+      - description: >
+          In this example, we have configured the appearance of file Cards in the *Collection browser*.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                blog:
+                  preview:
+                    text:
+                      - key: title
+                    subtext:
+                      - key: author
+                    icon: edit_note
+                    icon_color:
+                      - key: color
+                      - '#ff0000'
+                    image:
+                      - key: image
+                    metadata:
+                      - template: [url]
+                      - icon: event
+                        text:
+                          - template: 'Published on {date|date_long}'
+                    gallery:
+                      - key: featured_image
+        annotations: []
+      - description: >
+          In this example, we have configured the appearance of file Cards in the *Collection browser*.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _structures:
+                staff:
+                  values:
+                    - value:
+                        _type: Employee
+                        name:
+                        job_description:
+                        profile_picture:
+                      preview:
+                        text:
+                          - key: name
+                          - Employee
+                        subtext:
+                          - key: job_description
+                          - Description of position
+                        image:
+                          - key: profile_picture
+                        icon: support_agent
+                    - value:
+                        _type: Manager
+                        name:
+                        job_description:
+                        profile_picture:
+                        url:
+                      preview:
+                        text:
+                          - key: name
+                          - Manager
+                        subtext:
+                          - key: job_description
+                          - Description of position
+                        image:
+                          - key: profile_picture
+                        icon: face
+        annotations: []
+
+  - label: "redo"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to redo recent edits undone with `undo`. Undo is always enabled through
+      standard OS-specific keyboard shortcuts. Available for the Content Editor (`_editables.content`),
+      the Block editable region (`_editables.block`), the Text editable region (`_editables.text`), and
+      Rich Text inputs (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "remove_custom_markup"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables you to strip custom markup from content edited in a rich text editor, allowing you
+      to clean files of unnecessary HTML content. By default, `remove_custom_markup` is `false` for
+      inputs, the Content Editor, and editable regions. The `remove_custom_markup` key is disabled if
+      `allow_custom_markup` is enabled. Available for the Content Editor (`_editables.content`), the Block
+      editable region (`_editables.block`), the Link editable region (`_editables.link`), the Text
+      editable region (`_editables.text`), and Rich Text inputs (`_inputs.key_name.options`). For more
+      information, please read our documentation on best practices for HTML in [rich
+      text](/documentation/articles/best-practices-for-rich-text/) and [editable
+      regions](/documentation/articles/define-editable-regions-in-your-html/).
+    examples: []
+
+  - label: "removeformat"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to remove formatting from selected text. Applies to `bold`, `italic`,
+      `underline`, `strike`, `subscript`, and `superscript` formatting. Does not remove other styles or
+      formatting. Available for the Content Editor (`_editables.content`), the Block editable region
+      (`_editables.block`), the Text editable region (`_editables.text`), and Rich Text inputs
+      (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "resize_style"
+    type_markdown: "String"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key defines how image files are resized prior to upload, using a bounding box defined by
+      `width` and `height` options. Defaults to `contain`. Valid values are `contain`, `cover` or
+      `stretch`: * `cover` keeps aspect ratio and ensures the image covers the bounding box * `contain`
+      keeps aspect ratio and ensures the image fits inside the bounding box * `stretch` ignores aspect
+      ratio and resizes the image to the bounding box This key does not apply to existing images, and does
+      not work if `width` and `height` options are not defined. Available for the Content Editor
+      (`_editables.content`), the Block editable region (`_editables.block`), the Image editable region
+      (`_editables.image`), and Rich Text inputs (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "right"
+    type_markdown: "String"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to right align selected text by toggling a class name for that text block.
+      The value is the class name to align the text. The styles for this class must be defined in the
+      `styles` file. Available for the Content Editor (`_editables.content`), the Block editable region
+      (`_editables.block`), and Rich Text inputs (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "schema_key"
+    type_markdown: "Array of Objects"
+    source_file: "collections-reference"
+    definition: >
+      This key defines the name for the structured data key that references the Schema a file uses.
+      CloudCannon automatically adds this key to the top of your file when you create it using a Schema.
+      Values which beginning with the `_` character are hidden from the Data Editor and the sidebar of the
+      Content and Visual Editors. By default, this key is `_schema`.
+    examples:
+      - description: >
+          In this example, we want to make Schemas more friendly for our non-technical team members, so we
+          have configured the schema key in the front matter of files in the `blog` Collection to be
+          `blog_template`.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        blog:
+                          schema_key: _blog_template
+        annotations: []
+
+  - label: "schemas"
+    type_markdown: "Object"
+    source_file: "collections-reference"
+    definition: >
+      This key defines which Schemas are available to populate files in this Collection. Defining a Schema
+      for a collection will add it to the *\+ Add* button dropdown at the top right of the *Collection
+      browser*. The following nested keys are available for each Schema insdie `schemas`: * `path` *
+      `reorder_input` * `hide_extra_inputs` * `remove_empty_inputs` * `remove_extra_inputs` * `name` *
+      `icon` * `preview` * `_editables` * `_enabled_editors` * `_inputs` * `_select_data` * `_structures`
+      * `create` * `new_preview_url` This key has no default. If undefined, clicking the *\+ Add* button
+      to add a new file to a Collection will clone the last file in the Collection and clear any markup
+      content and the values of any structured data keys.
+    examples:
+      - description: >
+          In this example, the *\+ Add* button in the *Collection browser* has an option for `Customer Story`
+          which will populate a new file in the `blog` Collection with the contents of the
+          `customer_story.mdx` file. If the Schema file is updated, CloudCannon will preserve the old inputs
+          to prevent you from losing structured data in older files.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        blog:
+                          schemas:
+                            customer_story:
+                              path: /schemas/customer_story.mdx
+                              reorder_inputs: true
+                              hide_extra_inputs: false
+                              remove_empty_inputs: false
+                              remove_extra_inputs: false
+                              name: Customer Story
+                              icon: notes
+        annotations: []
+      - description: >
+          In this example, the *\+ Add* button in the *Collection browser* has an option for `Customer Story`
+          which will populate a new file in the `blog` Collection with the contents of the
+          `customer_story.mdx` file. If the Schema file is updated, CloudCannon will preserve the old inputs
+          to prevent you from losing structured data in older files.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        glossary:
+                          schemas:
+                            term_definition:
+                              path: /schemas/glossary_term.yml
+                              name: Term Definition
+                              icon: abc
+                              _enabled_editors:
+                                - data
+                              _inputs:
+                                term_description:
+                                  type: textarea
+                                  comment: Keep this as short as possible (i.e., 125 characters).
+                                  context:
+                                    open: false
+                                    title: Help
+                                    icon: help
+                                    content: Try not to use the term name in the description.
+                                  options:
+                                    show_count: true
+        annotations: []
+
+  - label: "schemas_from_glob"
+    type_markdown: "Array of Strings"
+    source_file: "configuration-file-reference"
+    definition: >
+      This key defines globs that filter which files CloudCannon should use for *Schema* configuration.
+      Values in this array are relative to the root of your repository (i.e., `/`, not the value of
+      `source`) and must end in the file extension `.cloudcannon.schemas.yml`. You can use this key
+      anywhere you would use the `schemas` key. This key has no default.
+    examples:
+      - description: >
+          In this example, we have several *Schemas Configuration Files* in the `.cloudcannon/schemas/`
+          folder. The value of the `schemas_from_glob` key tells CloudCannon to use all files in that folder
+          that match the glob `*.cloudcannon.schemas.yml` except for `pages.cloudcannon.schemas.yml` due to
+          the negative glob.
+        language: yaml
+        source: /.cloudcannon/collections/posts.cloudcannon.collections.yml
+        code: |
+          posts:
+                  path: content/posts
+                  icon: event
+                  schemas_from_glob:
+                    - '/.cloudcannon/schemas/*.cloudcannon.schemas.yml'
+                    - '!/.cloudcannon/schemas/pages.cloudcannon.schemas.yml'
+        annotations: []
+
+  - label: "singular_name"
+    type_markdown: "String"
+    source_file: "collections-reference"
+    definition: >
+      This key defines the singular noun for your Collection name. CloudCannon uses the singular noun in
+      the *\+ Add* button in the top right of the *Collection browser* when you select the option to add a
+      new file. This is useful if your Collection name is an irregular plural (e.g., "syllabi" or
+      "syllabuses" to "syllabus"). By default, CloudCannon removes the `s` character from regular plurals
+      to create a singular noun (e.g., "posts" to "post"). This key has no default.
+    examples:
+      - description: >
+          In this example, the *\+ Add* button option to add a Collection file will read "Add Team Member"
+          rather that "Add Team".
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        team:
+                          singular_name: Team Member
+        annotations: []
+
+  - label: "snippet"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to insert a [Snippet](/documentation/articles/what-is-a-snippet/), if any
+      are available. Available for the Content Editor (`_editables.content`), the Block editable region
+      (`_editables.block`), and Rich Text inputs (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "sort"
+    type_markdown: "Object"
+    source_file: "collections-reference"
+    definition: >
+      This key defines how CloudCannon sorts your Collection files when you first open your *Collection
+      browser*. Configuring this key allows you to sort your Collection using a structured data key in
+      your files. The following nested keys are available: * `key` (required) * `order` By default,
+      CloudCannon sorts your Collection files alphabetically by filename in ascending order by default.
+      However, if you have configured the
+      [sort\_options](/documentation/articles/collections-reference/#sort_options) key, CloudCannon will
+      use the first array item in `sort_options`. If you use the *Sort* dropdown in your *Collection
+      browser* to order your Collection files, CloudCannon will preferentially use your most recent
+      sorting method over the value configured in the `sort` key.
+    examples:
+      - description: >
+          In this example, CloudCannon will sort files in the `blog` Collection by the `date` key in the front
+          matter of each file, in descending order.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        blog:
+                          sort:
+                            key: date
+                            order: descending
+        annotations: []
+
+  - label: "sort_options"
+    type_markdown: "Array of Objects"
+    source_file: "collections-reference"
+    definition: >
+      This key defines the options for the *Sort* dropdown in a *Collection browser*. Configuring sort
+      options for a Collection will remove CloudCannon's default sorting options from the *Sort* dropdown.
+      The following nested keys are available for each entry in the `sort_options` array: * `key`
+      (required) * `order` * `label` By default, CloudCannon provides sorting options for path, file size,
+      file creation time, and last modified, in ascending and descending order. CloudCannon will also read
+      data keys from your early Collection files and provide options to sort by those key values.
+    examples:
+      - description: >
+          In this example, the *Sort* dropdown in the `blog` *Collection browser* only contains options for
+          sorting by `author` and `date` in ascending and descending order.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                          blog:
+                            sort_options:
+                              - key: author
+                                order: ascending
+                                label: Author (A-Z)
+                              - key: author
+                                order: descending
+                                label: Author (Z-A)
+                              - key: date
+                                order: ascending
+                                label: Date (Newest First)
+                              - key: date
+                                order: descending
+                                label: Date (Oldest First)
+        annotations: []
+
+  - label: "sort_options.key"
+    type_markdown: "String"
+    source_file: "collections-reference"
+    definition: >
+      This key defines which key an option in the *Sort* dropdown should use to sort files in your
+      *Collection browser*. You must define this key for every entry in the `sort_options` array for the
+      object to function. Value must be the name of a structured data key in your Collection files. If
+      some files in your Collection do not have this data key, CloudCannon will sort those in ascending
+      alphabetical order, after the file sorted by your data key in the *Collection browser*. This key has
+      no default.
+    examples:
+      - description: >
+          In this example, the "Author (A-Z)" option in the *Sort* dropdown will use the `author` key to sort
+          files in the `blog` *Collection browser*.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        blog:
+                          sort_options:
+                            - key: author
+                              order: ascending
+                              label: Author (A-Z)
+        annotations: []
+
+  - label: "sort_options.label"
+    type_markdown: "String"
+    source_file: "collections-reference"
+    definition: >
+      This key defines the label used for a file sorting option in the *Sort* dropdown. This key has no
+      default.
+    examples:
+      - description: >
+          In this example, the sorting method which uses the `author` key is called "Author (A-Z)" in the
+          *Sort* dropdown.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        blog:
+                          sort_options:
+                            - key: author
+                              order: ascending
+                              label: Author (A-Z)
+        annotations: []
+
+  - label: "sort_options.order"
+    type_markdown: "String"
+    source_file: "collections-reference"
+    definition: >
+      This key defines which order an option in the *Sort* dropdown should use to sort files in your
+      *Collection browser*. CloudCannon will sort files according to the value of `sort_options.key` for
+      each option in the *Sort* dropdown. Values can be one of the following: `asc`, `ascending`, `desc`,
+      or `descending`. By default, this key is `ascending`.
+    examples:
+      - description: >
+          In this example, the "Author (A-Z)" option in the *Sort* dropdown will sort files in the `blog`
+          *Collection browser* in ascending order.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        blog:
+                          sort_options:
+                            - key: author
+                              order: ascending
+                              label: Author (A-Z)
+        annotations: []
+
+  - label: "sort.key"
+    type_markdown: "String"
+    source_file: "collections-reference"
+    definition: >
+      This key defines which key CloudCannon should use to sort files in your *Collection browser*. You
+      must define this key for the `sort` object to function. Value must be the name of a structured data
+      key in your Collection files. If some files in your Collection do not have this data key,
+      CloudCannon will sort those in ascending alphabetical order, after the file sorted by your data key
+      in the *Collection browser*. This key has no default.
+    examples:
+      - description: >
+          In this example, CloudCannon will sort files in the `blog` Collection by the `date` key in the front
+          matter of each file, in descending order.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                          blog:
+                            sort:
+                              key: date
+                              order: descending
+        annotations: []
+
+  - label: "sort.order"
+    type_markdown: "String"
+    source_file: "collections-reference"
+    definition: >
+      This key defines the order in which Collection files are sorted in your *Collection browser*.
+      CloudCannon will sort files according to the value of `sort.key`. Values can be one of the
+      following: `asc`, `ascending`, `desc`, or `descending`. By default, this key is `ascending`.
+    examples:
+      - description: >
+          In this example, CloudCannon will sort files in the `blog` Collection by the `date` key in the front
+          matter of each file, in descending order.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        blog:
+                          sort:
+                            key: date
+                            order: descending
+        annotations: []
+
+  - label: "source"
+    type_markdown: "String"
+    source_file: "configuration-file-reference"
+    definition: >
+      This key defines the base path for your source files, relative to the root folder of your
+      repository. Unless you use a nested folder as the source for your Site you can leave this key empty
+      or set it to `/`. By default, this key is empty. For more information, please read our documentation
+      on the [Site
+      source](/documentation/articles/what-is-the-cloudcannon-configuration-file/#the-source-folder)
+      folder in your configuration file.
+    examples: []
+
+  - label: "source_editor"
+    type_markdown: "Object"
+    source_file: "configuration-file-reference"
+    definition: >
+      This key defines the appearance and behavior of the Source Editor. The following nested keys are
+      available: * `tab_size` * `show_gutter` * `theme` This key has no default. For more information,
+      please read our documentation on the [Source
+      Editor](/documentation/articles/what-is-the-source-editor/).
+    examples: []
+
+  - label: "strike"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to strike through selected text. Available for the Content Editor
+      (`_editables.content`), the Block editable region (`_editables.block`), the Link editable region
+      (`_editables.link`), the Text editable region (`_editables.text`), and Rich Text inputs
+      (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "structure.hide_extra_inputs"
+    type_markdown: "Boolean"
+    source_file: "structures-reference"
+    definition: >
+      This key toggles whether CloudCannon will hide inputs that are not present in a Structure from the [Data
+      Editor](/documentation/articles/what-is-the-data-editor/). Hiding these inputs does not delete
+      the data. You can see non-structure data keys by opening a file in the [Source
+      Editor](/documentation/articles/what-is-the-source-editor/). This key has no effect if
+      `remove_extra_inputs` is `true`. By default, this key is `false` (i.e, non-structure inputs are
+      visible in the Data Editor). You can also configure this behavior for specific values of a
+      Structure using structure.values.[*].hide_extra_inputs.
+    examples:
+      - description: >
+          In this example, we don't want inputs outside of those listed in the Structure (e.g., old
+          inputs from deprecated versions of this Structure) to appear in the Data Editor.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _structures:
+            related_articles:
+              hide_extra_inputs: true
+              values:
+                - value:
+                  name:
+                  description:
+                  url:
+        annotations: []
+
+  - label: "structure.values.[*].hide_extra_inputs"
+    type_markdown: "Boolean"
+    source_file: "structures-reference"
+    definition: >
+      This key toggles whether CloudCannon will hide inputs that are not present in a given value from a Structure from the [Data
+      in the [Data Editor](/documentation/articles/what-is-the-data-editor/). Hiding these inputs does
+      not delete the data. You can see non-structure data keys by opening a file in the [Source
+      Editor](/documentation/articles/what-is-the-source-editor/). This key has no effect if
+      `remove_extra_inputs` is `true`. By default, this key is `false` (i.e, non-structure inputs are
+      visible in the Data Editor). You can also configure this behavior for all values of a Structure
+      using structure.hide_extra_inputs.
+    examples: []
+
+  - label: "structure.reorder_inputs"
+    type_markdown: "Boolean"
+    source_file: "structures-reference"
+    definition: >
+      This key toggles whether CloudCannon will reorder inputs in a file to match the order defined in a given
+      Structure. By default, this key is `true` (i.e, inputs are reordered to match the Structure). You
+      can also configure this behavior for specific values of a Structure using
+      `structure.values.[*].reorder_inputs`.
+    examples:
+      - description: >
+          In this example, we want to preserve the order of the inputs in a file over the order in the
+          associated Structure.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _structures:
+            related_articles:
+              reorder_inputs: false
+              values:
+                - value:
+                  name:
+                  description:
+                  url:
+        annotations: []
+
+  - label: "structure.values.[*].reorder_inputs"
+    type_markdown: "Boolean"
+    source_file: "structures-reference"
+    definition: >
+      This key toggles whether CloudCannon will reorder inputs in a file to match the order defined in a
+      given value from a Structure. By default, this key is `true` (i.e, inputs are reordered to match
+      the Structure value). You can also configure this behavior for all values of a Structure using
+      `structure.reorder_inputs`.
+    examples: []
+
+  - label: "structure.remove_extra_inputs"
+    type_markdown: "Boolean"
+    source_file: "structures-reference"
+    definition: >
+      This key toggles whether CloudCannon will remove inputs that are not present in a Structure from a
+      file before loading it in an Editing Interface. If set to `true`, non-Structure inputs will not be 
+      visible in the [Visual Editor](/documentation/articles/what-is-the-visual-editor/), 
+      [Content Editor](/documentation/articles/what-is-the-content-editor/), or 
+      [Data Editor](/documentation/articles/what-is-the-data-editor/), and saving the file will remove 
+      them from the file before persisting the changes to your Git repository. By default, this key is `false` 
+      (i.e., inputs not present in the Structure are not removed from the file). You can also configure 
+      this behavior for specific values of a Structure using `structure.values.[*].remove_extra_inputs`.
+    examples:
+      - description: >
+          In this example, we want to delete old inputs that are not in the Structure from the associated
+          file.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _structures:
+            related_articles:
+              remove_extra_inputs: true
+              values:
+                - value:
+                  name:
+                  description:
+                  url:
+        annotations: []
+
+  - label: "structure.values.[*].remove_extra_inputs"
+    type_markdown: "Boolean"
+    source_file: "structures-reference"
+    definition: >
+      This key toggles whether CloudCannon will remove inputs that are not present in a given value from
+      a Structure from a file before loading it in an Editing Interface. If set to `true`, non-Structure inputs will not be 
+      visible in the [Visual Editor](/documentation/articles/what-is-the-visual-editor/), 
+      [Content Editor](/documentation/articles/what-is-the-content-editor/), or 
+      [Data Editor](/documentation/articles/what-is-the-data-editor/), and saving the file will remove 
+      them from the file before persisting the changes to your Git repository. By default, this key is `false` (i.e., inputs not present in the
+      Structure value are not removed from the file). You can also configure this behavior for all values
+      of a Structure using `structure.remove_extra_inputs`.
+    examples: []
+
+  - label: "structure.remove_empty_inputs"
+    type_markdown: "Boolean"
+    source_file: "structures-reference"
+    definition: >
+      This key toggles whether CloudCannon will remove empty nested inputs from an Object Input or Array
+      Input using a given Structure before persisting them to your file. CloudCannon considers an input
+      to be empty when its value is `null`, `' '`, or undefined. If this key is true, empty inputs will
+      be visible in the [Data Editor](/documentation/articles/what-is-the-data-editor/) but not the
+      [Source Editor](/documentation/articles/what-is-the-source-editor/). For this key to function, you
+      must also configure id_key for the Structure, as removing inputs prevents CloudCannon from
+      comparing Structure values. By default, this key is `false` (i.e, CloudCannon does not remove
+      empty inputs). You can also configure this behavior for specific values of a Structure using
+      structure.values.[*].remove_empty_inputs.
+    examples:
+      - description: >
+          In this example, we want to delete any unnecessary nested inputs (i.e., input we choose not to
+          provide a value for) from Object or Array inputs referenceing the `event_details` Structure.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _structures:
+            event_details:
+              remove_empty_inputs: true
+              values:
+                - value:
+                  name:
+                  description:
+                  url:
+                  time:
+                  place:
+                  sponsor:
+        annotations: []
+
+  - label: "structure.values.[*].remove_empty_inputs"
+    type_markdown: "Boolean"
+    source_file: "structures-reference"
+    definition: >
+      This key toggles whether CloudCannon will remove empty nested inputs from an Object Input or Array
+      Input using a given value from a Structure before persisting them to your file. CloudCannon
+      considers an input to be empty when its value is `null`, `' '`, or undefined. If this key is true,
+      empty inputs will be visible in the [Data Editor](/documentation/articles/what-is-the-data-editor/)
+      but not the [Source Editor](/documentation/articles/what-is-the-source-editor/). For this key to
+      function, you must also configure id_key for the Structure, as removing inputs prevents CloudCannon
+      from comparing Structure values. By default, this key is `false` (i.e, CloudCannon does not remove
+      empty inputs). You can also configure this behavior for all values of a Structure using
+      structure.remove_empty_inputs.
+    examples: []
+
+  - label: "style"
+    type_markdown: "String"
+    source_file: "structures-reference"
+    definition: >
+      This key defines how CloudCannon shows Structure options to populate an Object or Array input. This
+      can be using a Select-style search bar or a pop-up modal. Modals are useful when you have several
+      value options for your Structure. Values can be one of the following: `select`, or `modal`. By
+      default, this key is `select`.
+    examples:
+      - description: >
+          In this example, the `related_articles` Structure only has one option so a `select` searchbar is
+          appropriate.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _structures:
+                                related_articles:
+                                  style: select
+                                  values:
+                                    - value:
+                                        name:
+                                        description:
+                                        url:
+        annotations: []
+
+  - label: "styles"
+    type_markdown: "String"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a dropdown menu to apply a style to selected text. Styles are the combination of an
+      element and class name. The value for this option is the path (either source or build output) for
+      the CSS file containing styles. Available for the Content Editor (`_editables.content`), the Block
+      editable region (`_editables.block`), and Rich Text inputs (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "subscript"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to subscript selected text. Available for the Content Editor
+      (`_editables.content`), the Block editable region (`_editables.block`), the Link editable region
+      (`_editables.link`), the Text editable region (`_editables.text`), and Rich Text inputs
+      (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "superscript"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to superscript selected text. Available for the Content Editor
+      (`_editables.content`), the Block editable region (`_editables.block`), the Link editable region
+      (`_editables.link`), the Text editable region (`_editables.text`), and Rich Text inputs
+      (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "tabbed"
+    type_markdown: "Boolean"
+    source_file: "structures-reference"
+    definition: >
+      This key toggles whether CloudCannon should create tabs in the Data Editor if you have two layers of
+      nested object within your Structure. CloudCannon would create tabs automatically for Non-unified
+      Configuration Sites, but it must be explicitly configured in the Unified Configuration file format.
+      By default, this key is `false` (i.e., Object and Array inputs using this Structure option are not
+      tabbed).
+    examples:
+      - description: >
+          In this example, we want the `content` and `style` keys in our Structure to be tabs at the top of
+          the Data Editor, with the `title` and `text`, and `color` and `font` keys nested within those tabs
+          respectively.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _structures:
+                              components:
+                                values:
+                                  - label: Component
+                                    tabbed: true
+                                    value:
+                                      content:
+                                        title:
+                                        text:
+                                      style:
+                                        color:
+                                        font:
+        annotations: []
+
+  - label: "table"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to insert a table. Further table options are available from the table
+      context menu in the rich text editor. Available for the Content Editor (`_editables.content`), the
+      Block editable region (`_editables.block`), and Rich Text inputs (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "tags"
+    type_markdown: "Array"
+    source_file: "structures-reference"
+    definition: >
+      This key defines which tags are associated with a given value in a Structure. You can use tags to
+      group and filter Structure options when selecting from a modal. The `style` key must be set to
+      `modal` for this key to function. This key has no default.
+    examples:
+      - description: >
+          In this example we have three options for the `page_components` Structure: `Hero Component`,
+          `Feature Component`, and `Video Component`. We can search the Structure modal using the `image`,
+          `text`, `button`, and `video` tags to filter Structure values.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _structures:
+                              page_components:
+                                style: modal
+                                values:
+                                  - label: Hero Component
+                                    tags:
+                                      - image
+                                      - text
+                                    value:
+                                      title:
+                                      description:
+                                      image_path:
+                                      link:
+                                        text:
+                                        url:
+                                  - label: Feature Component
+                                    tags:
+                                      - image
+                                      - text
+                                      - button
+                                    value:
+                                      image_path:
+                                      title:
+                                      description:
+                                      button:
+                                        link:
+                                        text:
+                                      reversed_layout: false
+                                  - label: Video Component
+                                    tags:
+                                      - image
+                                      - video
+                                    value:
+                                      image_path:
+                                      videoUrl:
+        annotations: []
+
+  - label: "timezone"
+    type_markdown: "String"
+    source_file: "configuration-file-reference"
+    definition: >
+      This key defines the timezone for your Site. Value must be in IANA timezone format. By default, this
+      key is `Etc/UTC`. For more information, please read our documentation on [Date and Time
+      inputs](/documentation/articles/what-are-date-and-time-inputs/).
+    examples: []
+
+  - label: "underline"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to underline selected text. Available for the Content Editor
+      (`_editables.content`), the Block editable region (`_editables.block`), the Link editable region
+      (`_editables.link`), the Text editable region (`_editables.text`), and Rich Text inputs
+      (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "undo"
+    type_markdown: "Boolean"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key enables a tool to undo recent edits. Undo is always enabled through standard OS-specific
+      keyboard shortcuts. Available for the Content Editor (`_editables.content`), the Block editable
+      region (`_editables.block`), the Text editable region (`_editables.text`), and Rich Text inputs
+      (`_inputs.key_name.options`).
+    examples: []
+
+  - label: "url"
+    type_markdown: "String"
+    source_file: "collections-reference"
+    definition: >
+      This key defines the output URL for files in a given Collection. CloudCannon uses the output URL in
+      the [Visual Editor](/documentation/articles/what-is-the-visual-editor/), and on your [Testing
+      Domain](/documentation/articles/what-is-a-testing-domain/) and [Custom
+      Domain](/documentation/articles/what-is-a-custom-domain/). Values for this key can be a mix of plain
+      text and template strings, and should begin and end with the `/` character. Template strings can
+      contain data placholders and fixed placeholders, which CloudCannon will replace with the data it
+      references when generating the output URL. For more information about data placeholders and fixed
+      placeholders, please read our documentation on [configuring your template
+      strings](/documentation/articles/configure-your-template-strings/). By default, CloudCannon will use
+      the key name of the Collection.
+    examples:
+      - description: >
+          In this example, the output URL for files in this Collection will be `/travel/` rather than the
+          default `/blog/`.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          collections_config:
+                        blog:
+                          url: /travel/[slug]/
+        annotations: []
+
+  - label: "value"
+    type_markdown: "Object"
+    source_file: "structures-reference"
+    definition: >
+      This key defines which nested inputs the Structure should add to an Object or Array input. You must
+      define this key for the Structure to function. Nested keys can be any
+      [input](/documentation/articles/what-are-inputs/) you require in your Object or Array. For more
+      information, please read our documentation on [configuring an Object
+      input](/documentation/articles/configure-an-object-input/) and [configuring and Array
+      input](/documentation/articles/configure-an-array-input/). This key has no default.
+    examples:
+      - description: >
+          In this example we want to populate the `details` Object input with the nested keys `title`,
+          `subtitle`, and `author` we have defined under the `values.value` key.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _structures:
+                              article_information:
+                                values:
+                                  - label: Blog
+                                    value:
+                                      title:
+                                      subtitle:
+                                      author:
+                            _inputs:
+                              details:
+                                type: object
+                                options:
+                                  structures: _structures.article_information
+        annotations: []
+
+  - label: "values"
+    type_markdown: "Array of Objects"
+    source_file: "structures-reference"
+    definition: >
+      This key defines the options available for a Structure. You must define this key for the Structure
+      to function. The following nested keys are available for each entry in the `values` array: * `id` *
+      `default` * `tabbed` * `_inputs` * `tags` * `value` (required) * `groups` * `label` *
+      `picker_preview` * `preview` This key has no default.
+    examples:
+      - description: >
+          In this example, we want to add the `title`, `subtitle`, `author`, `featured_image`, and `url`
+          fields to Object or Array inputs that reference this Structure.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _structures:
+                        related_articles:
+                          values:
+                            - label: Blog
+                              id:
+                              default: true
+                              tabbed: false
+                              tags:
+                                - blog
+                              value:
+                                title:
+                                subtitle:
+                                author:
+                                featured_image:
+                                url:
+                              _inputs:
+                                featured_image:
+                                  type: image
+                                  options:
+                                    width: 50
+                                    height: 50
+                              groups:
+                                - heading: Titles
+                                  inputs:
+                                    - title
+                                    - subtitle
+                                - heading: Details
+                                  inputs:
+                                    - author
+                                    - image
+                                    - url
+                              preview:
+                                text:
+                                  - template: "{title}"
+                                subtext:
+                                  - template: "By {author}"
+                                image:
+                                  - key: image
+                              picker_preview:
+                                text: Blog
+                                subtext: Add a related blog
+                                icon: post_add
+        annotations: []
+
+  - label: "values_from_glob"
+    type_markdown: "Array of Strings"
+    source_file: "configuration-file-reference"
+    definition: >
+      This key defines globs that filter which files CloudCannon should use for *Structure* value
+      configuration. Values in this array are relative to the root of your repository (i.e., `/`, not the
+      value of `source`) and must end in the file extension `.cloudcannon.structure-value.yml` (note the
+      singular form of "value"). You can use this key anywhere you would use the `_structures.*.values`
+      key. Please see our documentation on
+      [structures_from_glob](/documentation/articles/configuration-file-reference/#_structures_from_glob)
+      for defining a *Structure* in a split *Configuration File*. This key has no default.
+    examples:
+      - description: >
+          In this example, the `staff` Array Input uses inline *Structure* values from the main *Configuration
+          File* and also references another value from the `boardMember.cloudcannon.structure_value.yml` in
+          the `/.cloudcannon/structures/` folder.
+        language: yaml
+        source: cloudcannon.config.yml
+        code: |
+          _inputs:
+                  staff:
+                    type: array
+                    options:
+                      structures:
+                      values_from_glob: /.cloudcannon/structures/boardMember.cloudcannon.structure-value.yml
+                      values:
+                        - label: Employee
+                          value:
+                            name:
+                            title:
+                            profile_picture:
+                        - label: Manager
+                          value:
+                            name:
+                            title:
+                            profile_picture:
+                            url:
+        annotations: []
+      - description: >
+          In this example, the `staff` Array Input uses inline *Structure* values from the main *Configuration
+          File* and also references another value from the `boardMember.cloudcannon.structure_value.yml` in
+          the `/.cloudcannon/structures/` folder.
+        language: yaml
+        source: /.cloudcannon/structures/boardMember.cloudcannon.structure-value.yml
+        code: |
+          label: Board
+                value:
+                  name:
+                  title:
+                  profile_picture:
+                  url:
+                  description:
+        annotations: []
+
+  - label: "width"
+    type_markdown: "Integer"
+    source_file: "rich-text-editor-reference"
+    definition: >
+      This key defines the width of the bounding box used in the resizing method defined by
+      `resize_style`. Available for the Content Editor (`_editables.content`), the Block editable region
+      (`_editables.block`), the Image editable region (`_editables.image`), and Rich Text inputs
+      (`_inputs.key_name.options`).
+    examples: []
+
