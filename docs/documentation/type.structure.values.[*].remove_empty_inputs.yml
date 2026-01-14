@@ -2,11 +2,13 @@ gid: type.structure.values.[*].remove_empty_inputs
 url: /types/structure/values/[*]/remove_empty_inputs/
 title: ''
 description: |-
-  This key toggles whether CloudCannon will remove empty nested inputs from an Object Input or Array Input using a given value from a Structure before persisting them to your file.
+  This key toggles whether CloudCannon will remove empty nested inputs from an Object Input or Array Input using a given value from a Structure before
+  persisting them to your file.
   
   CloudCannon considers an input to be empty when its value is `null`, `' '`, or undefined.
   
-  If this key is true, empty inputs will be visible in the [Data Editor](/documentation/articles/what-is-the-data-editor/) but not the [Source Editor](/documentation/articles/what-is-the-source-editor/).
+  If this key is true, empty inputs will be visible in the [Data Editor](/documentation/articles/what-is-the-data-editor/) but not the [Source
+  Editor](/documentation/articles/what-is-the-source-editor/).
   
   For this key to function, you must also configure `id_key` for the Structure, as removing inputs prevents CloudCannon from comparing Structure values.
   

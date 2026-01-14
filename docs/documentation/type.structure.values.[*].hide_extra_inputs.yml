@@ -2,7 +2,8 @@ gid: type.structure.values.[*].hide_extra_inputs
 url: /types/structure/values/[*]/hide_extra_inputs/
 title: ''
 description: |-
-  This key toggles whether CloudCannon will hide inputs that are not present in a given value from a Structure from the [Data Editor](/documentation/articles/what-is-the-data-editor/).
+  This key toggles whether CloudCannon will hide inputs that are not present in a given value from a Structure from the [Data
+  Editor](/documentation/articles/what-is-the-data-editor/).
   
   Hiding these inputs does not delete the data.
   

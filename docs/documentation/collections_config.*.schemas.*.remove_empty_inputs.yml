@@ -6,7 +6,9 @@ description: |-
   
   CloudCannon considers an input to be empty when its value is `null`, `' '`, or undefined.
   
-  If this key is true, empty inputs will be visible in the [Data Editor](/documentation/articles/what-is-the-data-editor/) and the sidebar of the [Visual Editor](/documentation/articles/what-is-the-visual-editor/) and [Content Editor](/documentation/articles/what-is-the-content-editor/), but not the [Source Editor](/documentation/articles/what-is-the-source-editor/).
+  If this key is true, empty inputs will be visible in the [Data Editor](/documentation/articles/what-is-the-data-editor/) and the sidebar of the
+  [Visual Editor](/documentation/articles/what-is-the-visual-editor/) and [Content Editor](/documentation/articles/what-is-the-content-editor/), but not
+  the [Source Editor](/documentation/articles/what-is-the-source-editor/).
   
   For this key to function, you must also define _schema in your file.
   

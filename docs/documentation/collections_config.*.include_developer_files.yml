@@ -4,7 +4,8 @@ title: ''
 description: |-
   This key toggles whether CloudCannon removes developer files from your *Collection browser*.
   
-  CloudCannon excludes files that probably shouldn't be edited in a CMS from your *Collection browser*, for example files like `README.md` or `package.json`.
+  CloudCannon excludes files that probably shouldn't be edited in a CMS from your *Collection browser*, for example files like `README.md` or
+  `package.json`.
   
   CloudCannon excludes these files even if you have configured globs to allow them.
   

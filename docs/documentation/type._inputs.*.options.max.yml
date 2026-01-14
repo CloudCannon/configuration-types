@@ -6,7 +6,8 @@ description: |-
   
   When configured, CloudCannon will prevent you from entering a greater numerical value.
   
-  If the Input already contains a greater numerical value, CloudCannon will require you to enter a valid value to save your changes, or discard your unsaved changes.
+  If the Input already contains a greater numerical value, CloudCannon will require you to enter a valid value to save your changes, or discard your
+  unsaved changes.
   
   This key is required for `range` inputs.
   
