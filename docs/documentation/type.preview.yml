@@ -36,6 +36,16 @@ description: >-
   This key defaults to:
 
 
+  ````````
+
+  preview:
+    text:
+      - key: title
+      - key: name
+    icon:
+      - key: icon
+
+  ````````
 
 
   For more information about previews, please read our documentation on
