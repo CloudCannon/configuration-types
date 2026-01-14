@@ -1,9 +1,11 @@
 gid: type.structure.values.[*].reorder_inputs
 url: /types/structure/values/[*]/reorder_inputs/
 title: ''
-description: >-
-  This key toggles whether CloudCannon will reorder inputs in a file to match the order defined in a given value
-  from a Structure. By default, this key is `true` (i.e, inputs are reordered to match the Structure value). You can
-  also configure this behavior for all values of a Structure using `structure.reorder_inputs`.
+description: |-
+  This key toggles whether CloudCannon will reorder inputs in a file to match the order defined in a given value from a Structure.
+  
+  By default, this key is `true` (i.e, inputs are reordered to match the Structure value).
+  
+  You can also configure this behavior for all values of a Structure using `structure.reorder_inputs`.
 examples: []
 show_in_navigation: false

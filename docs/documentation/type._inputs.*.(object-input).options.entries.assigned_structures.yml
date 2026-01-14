@@ -1,10 +1,11 @@
 gid: type._inputs.*.(object-input).options.entries.assigned_structures
 url: /types/_inputs/*/(object-input)/options/entries/assigned_structures/
 title: ''
-description: >-
-  Provides data formats when adding entries to the data within this object
-  input. When adding an entry, team members are prompted to choose from a number
-  of values you have defined. Has no effect if `allow_create` is false.
-  `entries.structures` applies to the entries within the object.
+description: |-
+  Provides data formats when adding entries to the data within this object input.
+  
+  When adding an entry, team members are prompted to choose from a number of values you have defined.
+  
+  Has no effect if `allow_create` is false. `entries.structures` applies to the entries within the object.
 examples: []
 show_in_navigation: false

@@ -1,19 +1,16 @@
 gid: collections_config.*.add_options.[*].(add-option).base_path
 url: /collections_config/*/add_options/[*]/(add-option)/base_path/
 title: ''
-description: >-
-  This key defines a path for files created using an option in the *\+ Add*
-  button dropdown. This path overrides the path for the current Collection and
-  subfolder open in the *Collection browser*. This key is useful if you need to
-  specify a specific subfolder within a Collection.
-
-
-  The value for this key is relative to your Collection
-  [path](/documentation/articles/collections-reference/#path).
-
-
-  By default, this key is the path for the current Collection and subfolder open
-  in the *Collection browser*.
+description: |-
+  This key defines a path for files created using an option in the *\+ Add* button dropdown.
+  
+  This path overrides the path for the current Collection and subfolder open in the *Collection browser*.
+  
+  This key is useful if you need to specify a specific subfolder within a Collection.
+  
+  The value for this key is relative to your Collection [path](/documentation/articles/collections-reference/#path).
+  
+  By default, this key is the path for the current Collection and subfolder open in the *Collection browser*.
 examples:
   - description: >-
       In this example, we want team members in the `_posts` Collection to create

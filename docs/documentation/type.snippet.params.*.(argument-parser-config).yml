@@ -1,13 +1,11 @@
 gid: type.snippet.params.*.(argument-parser-config)
 url: /types/snippet/params/*/(argument-parser-config)/
 title: Argument Parser Config
-description: >-
-  Parses a single argument, optionally delimited by characters. Useful for
-  matching a single positional argument.
-
-
-
-
+description: |-
+  Parses a single argument, optionally delimited by characters.
+  
+  Useful for matching a single positional argument.
+  
   The argument parser is also used to parse a list of repeating arguments.
 examples:
   - description: ''

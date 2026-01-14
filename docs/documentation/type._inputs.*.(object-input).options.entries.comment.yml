@@ -1,10 +1,11 @@
 gid: type._inputs.*.(object-input).options.entries.comment
 url: /types/_inputs/*/(object-input)/options/entries/comment/
 title: ''
-description: >-
-  Used to supply help text above the key input when adding/renaming within a
-  mutable object input. Has no default. Supports a limited set of Markdown:
-  links, bold, italic, subscript, superscript and inline code elements are
-  allowed.
+description: |-
+  Used to supply help text above the key input when adding/renaming within a mutable object input.
+  
+  Has no default.
+  
+  Supports a limited set of Markdown: links, bold, italic, subscript, superscript and inline code elements are allowed.
 examples: []
 show_in_navigation: false

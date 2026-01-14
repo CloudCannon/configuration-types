@@ -1,18 +1,14 @@
 gid: type.snippet.params.*.(content-parser-config).options.indented_by
 url: /types/snippet/params/*/(content-parser-config)/options/indented_by/
 title: ''
-description: >-
-  Configures the content parser to **require** whitespace indentation when
-  parsing.
-
+description: |-
+  Configures the content parser to **require** whitespace indentation when parsing.
+  
   Used when a snippet continues for as long as content is indented.
-
-
-  This option should only be used if required, since it prevents your Snippet
-  from parsing if the whitespace does not match.
-
-  If you want parsing to be flexible, but the output to be formatted, use the
-  Style options instead.
+  
+  This option should only be used if required, since it prevents your Snippet from parsing if the whitespace does not match.
+  
+  If you want parsing to be flexible, but the output to be formatted, use the Style options instead.
 examples:
   - description: ''
     language: yaml

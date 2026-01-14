@@ -1,15 +1,12 @@
 gid: type._inputs.*.(date-input).options.start_from_message
 url: /types/_inputs/*/(date-input)/options/start_from_message/
 title: ''
-description: >-
-  This key defines a custom error message that explains why a value has failed
-  the validation criteria from `options.start_from`. This key requires you to
-  define `options.start_from`.
-
-
+description: |-
+  This key defines a custom error message that explains why a value has failed the validation criteria from `options.start_from`.
+  This key requires you to define `options.start_from`.
+  
   This key has no default.
-
-
+  
   This key is available for Date and Time Inputs.
 examples:
   - description: >-

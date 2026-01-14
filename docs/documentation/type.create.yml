@@ -1,35 +1,23 @@
 gid: type.create
 url: /types/create/
 title: Create
-description: >-
-  This key defines the path to which CloudCannon will save new files in a
-  Collection. CloudCannon generates "Create Paths" when you open the *Review
-  changes* modal.
-
-
+description: |-
+  This key defines the path to which CloudCannon will save new files in a Collection.
+  
+  CloudCannon generates "Create Paths" when you open the *Review changes* modal.
+  
   The following nested keys are available:
-
-
+  
   * `path` (required)
-
   * `extra_data`
-
   * `publish_to`
-
   * `_inputs`
-
   * `_select_data`
-
   * `_structures`
-
-
+  
   This key has no default.
-
-
-
-
-  For more information, please read our documentation on [Create
-  Paths](/documentation/articles/set-the-path-for-new-files/).
+  
+  For more information, please read our documentation on [Create Paths](/documentation/articles/set-the-path-for-new-files/).
 examples:
   - description: >-
       In this example, CloudCannon will generate a Create Path for new files in

@@ -1,8 +1,9 @@
 gid: collections_config.*.view_options
 url: /collections_config/*/view_options/
 title: ''
-description: >-
+description: |-
   This key defines the options for the View dropdown in a _Collection browser_.
+  
   The first option listed is used as the default view.
 examples: []
 show_in_navigation: false

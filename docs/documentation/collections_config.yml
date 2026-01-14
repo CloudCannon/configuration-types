@@ -1,66 +1,64 @@
 gid: collections_config
 url: /collections_config/
 title: ''
-description: >-
-  This key defines your Collections. The following nested keys are available for
-  each Collection:
-
-
+description: |-
+  This key defines your Collections.
+  
+  The following nested keys are available for each Collection:
+  
   * `path`
-
+  
   * `glob`
-
+  
   * `name`
-
+  
   * `singular_name`
-
+  
   * `icon`
-
+  
   * `url`
-
+  
   * `disable_url`
-
+  
   * `documentation`
-
+  
   * `description`
-
+  
   * `preview`
-
+  
   * `sort`
-
+  
   * `sort_options`
-
+  
   * `_editables`
-
+  
   * `_enabled_editors`
-
+  
   * `_inputs`
-
+  
   * `_select_data`
-
+  
   * `_structures`
-
+  
   * `add_options`
-
+  
   * `create`
-
+  
   * `disable_add`
-
+  
   * `disable_add_folder`
-
+  
   * `disable_file_actions`
-
+  
   * `new_preview_url`
-
+  
   * `schemas`
-
+  
   * `schema_key`
-
+  
   * `include_developer_files`
-
-
-  By default, CloudCannon uses your `source` key to make assumptions about your
-  Collections.
+  
+  By default, CloudCannon uses your `source` key to make assumptions about your Collections.
 examples:
   - description: >-
       In this example, we have configured a `blog` Collection. Key settings

@@ -1,9 +1,9 @@
 gid: type._inputs.*.(code-input).options.min_visible_lines
 url: /types/_inputs/*/(code-input)/options/min_visible_lines/
 title: ''
-description: >-
-  Sets the minimum number of visible lines for this input, effectively
-  controlling initial height. When the containing text exceeds this number, the
-  input grows line by line to the lines defined by `max_visible_lines`.
+description: |-
+  Sets the minimum number of visible lines for this input, effectively controlling initial height.
+  
+  When the containing text exceeds this number, the input grows line by line to the lines defined by `max_visible_lines`.
 examples: []
 show_in_navigation: false

@@ -1,21 +1,17 @@
 gid: type.documentation
 url: /types/documentation/
 title: Documentation
-description: >-
+description: |-
   This key defines the documentation link at the top of a *Collection browser*.
+  
   Collection documentation is useful for assisting your team members.
-
-
+  
   The following nested keys are available:
-
-
+  
   * `url` (required)
-
   * `text`
-
   * `icon`
-
-
+  
   This key has no default.
 examples:
   - description: >-

@@ -2,12 +2,10 @@ gid: type.snippet.params.*.(content-parser-config).options.parse_newline_charact
 url: >-
   /types/snippet/params/*/(content-parser-config)/options/parse_newline_character/
 title: ''
-description: >-
-  This tells the parser to treat `\n` as line breaks instead of literal
-  characters.
-
-  This is useful if you are editing your content in a multiline editing
-  interface.
+description: |-
+  This tells the parser to treat `\n` as line breaks instead of literal characters.
+  
+  This is useful if you are editing your content in a multiline editing interface.
 examples:
   - description: ''
     language: yaml

@@ -1,32 +1,24 @@
 gid: collections_config.*.glob
 url: /collections_config/*/glob/
 title: ''
-description: >-
-  This key defines globs which filter the files visible in the *Collection
-  browser* for a given Collection. Values in this array are relative to the
-  Collection [path](/documentation/articles/collections-reference/#path).
-
-
-  Globs can be positive (e.g. `*.yml`), or negative (e.g. `!**/*.json`). Files
-  are included in a Collection if they match any positive globs and do not match
-  any negative globs. If you do not define any positive globs, CloudCannon will
-  include all non-developer files in a Collection unless they match a negative
-
+description: |-
+  This key defines globs which filter the files visible in the *Collection browser* for a given Collection.
+  
+  Values in this array are relative to the Collection [path](/documentation/articles/collections-reference/#path).
+  
+  Globs can be positive (e.g. `*.yml`), or negative (e.g. `!**/*.json`).
+  
+  Files are included in a Collection if they match any positive globs and do not match any negative globs.
+  
+  If you do not define any positive globs, CloudCannon will include all non-developer files in a Collection unless they match a negative
   glob.
-
-
-  > For more information about developer files, please read our documentation on
-  the
-  [include\_developer\_files](/documentation/articles/collections-reference/#include_developer_files)
-  key.
-
-
-  Defining a negative glob for a Collection does not remove a file from the
-  associated Collection folder in your Git repository. Similarly, defining a
-  positive glob for a file in a folder outside your Collection path does not
-  move the file.
-
-
+  
+  > For more information about developer files, please read our documentation on the [include\_developer\_files](/documentation/articles/collections-reference/#include_developer_files) key.
+  
+  Defining a negative glob for a Collection does not remove a file from the associated Collection folder in your Git repository.
+  
+  Similarly, defining a positive glob for a file in a folder outside your Collection path does not move the file.
+  
   This key has no default.
 examples:
   - description: >-

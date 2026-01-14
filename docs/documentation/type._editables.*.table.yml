@@ -1,13 +1,12 @@
 gid: type._editables.*.table
 url: /types/_editables/*/table/
 title: ''
-description: >-
-  This key enables a tool to insert a table. Further table options are available
-  from the table context menu in the rich text editor.
-
-
-  Available for the Content Editor (`_editables.content`), the Block editable
-  region (`_editables.block`), and Rich Text inputs
+description: |-
+  This key enables a tool to insert a table.
+  
+  Further table options are available from the table context menu in the rich text editor.
+  
+  Available for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), and Rich Text inputs
   (`_inputs.key_name.options`).
 examples: []
 show_in_navigation: false

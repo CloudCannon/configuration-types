@@ -1,13 +1,11 @@
 gid: type.structure.id_key
 url: /types/structure/id_key/
 title: ''
-description: >-
-  This key defines which key within `values[*].value` CloudCannon should use to
-  identify the Structure option. If CloudCannon cannot find this key in a
-  Structure value, it will compare all other key names in the Structure value to
-  find the correct one.
-
-
+description: |-
+  This key defines which key within `values[*].value` CloudCannon should use to identify the Structure option.
+  
+  If CloudCannon cannot find this key in a Structure value, it will compare all other key names in the Structure value to find the correct one.
+  
   By default, this key is `_type`.
 examples:
   - description: >-

@@ -1,8 +1,9 @@
 gid: type._snippets_imports.markdoc.(exclude-list).exclude
 url: /types/_snippets_imports/markdoc/(exclude-list)/exclude/
 title: ''
-description: >-
-  The list of excluded snippets. If unset, all snippets are excluded unless
-  defined in `include`.
+description: |-
+  The list of excluded snippets.
+  
+  If unset, all snippets are excluded unless defined in `include`.
 examples: []
 show_in_navigation: false

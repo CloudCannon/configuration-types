@@ -1,9 +1,11 @@
 gid: type._inputs.*.options.accepts_mime_types
 url: /types/_inputs/*/options/accepts_mime_types/
 title: ''
-description: >-
+description: |-
   Restricts which file types are available to select or upload to this input.
-  Accepted format is an array or comma-separated string of MIME types. The
-  special value "*" means any type is accepted.
+  
+  Accepted format is an array or comma-separated string of MIME types.
+  
+  The special value "*" means any type is accepted.
 examples: []
 show_in_navigation: false

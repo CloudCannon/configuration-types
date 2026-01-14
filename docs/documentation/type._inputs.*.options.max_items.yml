@@ -1,21 +1,20 @@
 gid: type._inputs.*.options.max_items
 url: /types/_inputs/*/options/max_items/
 title: ''
-description: >-
-  This key defines the maximum number of items CloudCannon will allow in an
-  Input. When configured, CloudCannon will prevent you from adding more items to
-  this Input. If the Input already contains more items, CloudCannon will require
-  you to remove items until the Input contains a valid number to save your
-  changes, or discard your unsaved changes.
-
-
-  Value can be any positive integer. If `options.min_items` is also configured,
-  this key cannot be a lesser number.
-
-
+description: |-
+  This key defines the maximum number of items CloudCannon will allow in an Input.
+  
+  When configured, CloudCannon will prevent you from adding more items to this Input.
+  
+  If the Input already contains more items, CloudCannon will require you to remove items until the Input contains a valid number to save your changes,
+  or discard your unsaved changes.
+  
+  Value can be any positive integer.
+  
+  If `options.min_items` is also configured, this key cannot be a lesser number.
+  
   This key has no default.
-
-
+  
   This key is available for Array and Multiselect or Multichoice Inputs.
 examples:
   - description: >-

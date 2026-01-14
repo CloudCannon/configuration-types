@@ -1,8 +1,9 @@
 gid: type._inputs.*.(url-input).options.hide_link_to_email_address
 url: /types/_inputs/*/(url-input)/options/hide_link_to_email_address/
 title: ''
-description: >-
-  Hides the option to link to an email address. This does not prevent typing a
-  `mailto:` link in the input.
+description: |-
+  Hides the option to link to an email address.
+  
+  This does not prevent typing a `mailto:` link in the input.
 examples: []
 show_in_navigation: false

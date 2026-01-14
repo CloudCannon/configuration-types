@@ -1,9 +1,8 @@
 gid: collections_config.*.schemas.*.icon
 url: /collections_config/*/schemas/*/icon/
 title: Icon
-description: >-
-  Displayed in the add menu when creating new files, also used as the icon for
-  collection files if no other preview is found. Must be a [Material
-  Icon](https://material.io/resources/icons/) name. Defaults to `notes`.
+description: |-
+  Displayed in the add menu when creating new files, also used as the icon for collection files if no other preview is found.
+  Must be a [Material Icon](https://material.io/resources/icons/) name. Defaults to `notes`.
 examples: []
 show_in_navigation: false

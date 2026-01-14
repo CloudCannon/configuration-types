@@ -1,13 +1,11 @@
 gid: type.snippet.params.*.(key-value-list-parser-config)
 url: /types/snippet/params/*/(key-value-list-parser-config)/
 title: Key Value List Parser Config
-description: >-
-  Parses repeating pairs of keys and values. Useful for most SSG snippets that
-  take properties.
-
-
-
-
+description: |-
+  Parses repeating pairs of keys and values.
+  
+  Useful for most SSG snippets that take properties.
+  
   Can be configured to handle most syntax forms of key value pairs.
 examples:
   - description: ''

@@ -1,14 +1,14 @@
 gid: type._editables.*.format
 url: /types/_editables/*/format/
 title: ''
-description: >-
-  This key enables a dropdown menu tool for structured text. Valid values
-  include for `p`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `pre`, `address`, and
-  `div`. Include a space between each values, e.g. `format: p h1 h2`.
-
-
-  Available for the Content Editor (`_editables.content`), the Block editable
-  region (`_editables.block`), the Link editable region (`_editables.link`), and
-  Rich Text inputs (`_inputs.key_name.options`).
+description: |-
+  This key enables a dropdown menu tool for structured text.
+  
+  Valid values include for `p`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `pre`, `address`, and `div`.
+  
+  Include a space between each values, e.g. `format: p h1 h2`.
+  
+  Available for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), the Link editable region (`_editables.link`),
+  and Rich Text inputs (`_inputs.key_name.options`).
 examples: []
 show_in_navigation: false

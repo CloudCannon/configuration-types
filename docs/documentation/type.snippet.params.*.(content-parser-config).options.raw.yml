@@ -1,10 +1,9 @@
 gid: type.snippet.params.*.(content-parser-config).options.raw
 url: /types/snippet/params/*/(content-parser-config)/options/raw/
 title: ''
-description: >-
-  A stricter version of `allow_nested: false` that performs no parsing of the
-  inner text.
-
+description: |-
+  A stricter version of `allow_nested: false` that performs no parsing of the inner text.
+  
   Useful to improve the performance of the content parser, but can misbehave.
 examples:
   - description: ''

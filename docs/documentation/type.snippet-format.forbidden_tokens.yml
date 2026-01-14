@@ -1,11 +1,10 @@
 gid: type.snippet-format.forbidden_tokens
 url: /types/snippet-format/forbidden_tokens/
 title: ''
-description: >-
+description: |-
   Stops parsing content as soon as one of these tokens is encountered.
-
-  Useful when the content parser is being greedy and consuming more input than
-  intended.
+  
+  Useful when the content parser is being greedy and consuming more input than intended.
 examples:
   - description: ''
     language: yaml

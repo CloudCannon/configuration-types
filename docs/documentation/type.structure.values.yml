@@ -1,35 +1,31 @@
 gid: type.structure.values
 url: /types/structure/values/
 title: ''
-description: >-
-  This key defines the options available for a Structure. You must define this
-  key for the Structure to function.
-
-
+description: |-
+  This key defines the options available for a Structure.
+  
+  You must define this key for the Structure to function.
+  
   The following nested keys are available for each entry in the `values` array:
-
-
+  
   * `id`
-
+  
   * `default`
-
+  
   * `tabbed`
-
+  
   * `_inputs`
-
+  
   * `tags`
-
-  * `value` (required)
-
+  
+  * `value`
+  
+   (required)
   * `groups`
-
   * `label`
-
   * `picker_preview`
-
   * `preview`
-
-
+  
   This key has no default.
 examples:
   - description: >-

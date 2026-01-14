@@ -1,56 +1,45 @@
 gid: type.preview
 url: /types/preview/
 title: Preview
-description: >-
-  This key defines the appearance of a Card. You can configure Card preview for
-  [Collections](/documentation/articles/what-is-a-collection/),
-  [Schemas](/documentation/articles/what-is-a-schema/), [Object
-  inputs](/documentation/articles/what-is-an-object-input/), [Array
-  inputs](/documentation/articles/what-is-an-array-input/), [Select
-  inputs](/documentation/articles/what-is-a-select-input/),
-  [Structures](/documentation/articles/what-is-a-structure/), the Structure
-  modal, [Snippets](/documentation/articles/what-is-a-snippet/), and the Snippet
-  modal.
-
-
+description: |-
+  This key defines the appearance of a Card.
+  
+  You can configure Card preview for [Collections](/documentation/articles/what-is-a-collection/), [Schemas](/documentation/articles/what-is-a-schema/),
+  [Object inputs](/documentation/articles/what-is-an-object-input/), [Array inputs](/documentation/articles/what-is-an-array-input/), [Select
+  inputs](/documentation/articles/what-is-a-select-input/), [Structures](/documentation/articles/what-is-a-structure/), the Structure modal,
+  [Snippets](/documentation/articles/what-is-a-snippet/), and the Snippet modal.
+  
   The following nested keys are available:
-
-
+  
   * `text`
-
+  
   * `subtext`
-
+  
   * `icon`
-
+  
   * `icon_color`
-
+  
   * `icon_background_color`
-
+  
   * `image`
-
+  
   * `metadata`
-
+  
   * `gallery`
-
-
+  
   This key defaults to:
-
-
+  
   ````````
-
   preview:
-    text:
-      - key: title
-      - key: name
-    icon:
-      - key: icon
-
+   text:
+   - key: title
+   - key: name
+   icon:
+   - key: icon
+  
   ````````
-
-
-  For more information about previews, please read our documentation on
-  [configuring card
-  previews](/documentation/articles/configure-your-card-previews/).
+  
+  For more information about previews, please read our documentation on [configuring card previews](/documentation/articles/configure-your-card-previews/).
 examples:
   - description: >-
       In this example, we have configured the appearance of file Cards in the

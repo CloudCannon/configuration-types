@@ -1,15 +1,12 @@
 gid: type._inputs.*.options.min_message
 url: /types/_inputs/*/options/min_message/
 title: ''
-description: >-
-  This key defines a custom error message that explains why a value has failed
-  the validation criteria from `options.min`. This key requires you to define
-  `options.min`.
-
-
+description: |-
+  This key defines a custom error message that explains why a value has failed the validation criteria from `options.min`.
+  This key requires you to define `options.min`.
+  
   This key has no default.
-
-
+  
   This key is available for Number Inputs.
 examples:
   - description: >-

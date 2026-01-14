@@ -1,14 +1,12 @@
 gid: type.snippet-format.string_boundary
 url: /types/snippet-format/string_boundary/
 title: ''
-description: >-
-  The valid tokens that can bound a string. The parser will ensure the matched
-  end token
-
+description: |-
+  The valid tokens that can bound a string.
+  
+  The parser will ensure the matched end token
   is the same as the start token.
-
-
-  To handle common strings with either single or double quotes, this would
-  usually be `["'", "\""]`
+  
+  To handle common strings with either single or double quotes, this would usually be `["'", "\""]`
 examples: []
 show_in_navigation: false

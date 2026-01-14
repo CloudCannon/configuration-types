@@ -1,8 +1,8 @@
 gid: type._inputs.*.options.step
 url: /types/_inputs/*/options/step/
 title: ''
-description: >-
-  A number that specifies the granularity that the value must adhere to, or the
-  special value any, which allows any decimal value between `max` and `min`.
+description: |-
+  A number that specifies the granularity that the value must adhere to, or the special value any, which allows any decimal value between `max` and
+  `min`.
 examples: []
 show_in_navigation: false

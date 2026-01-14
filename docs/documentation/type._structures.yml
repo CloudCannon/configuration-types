@@ -1,43 +1,32 @@
 gid: type._structures
 url: /types/_structures/
 title: Structures
-description: >-
-  This key defines which structures are available for [Object
-  inputs](/documentation/articles/what-is-an-object-input/) and [Array
-  inputs](/documentation/articles/what-is-an-array-input/) at a given level of
-  the configuration cascade.
-
-
-  The following nested keys are available for each structure inside
-  `_structures`:
-
-
+description: |-
+  This key defines which structures are available for [Object inputs](/documentation/articles/what-is-an-object-input/) and [Array
+  inputs](/documentation/articles/what-is-an-array-input/) at a given level of the configuration cascade.
+  
+  The following nested keys are available for each structure inside `_structures`:
+  
   * `style`
-
+  
   * `id_key`
-
+  
   * `values`
-
+  
   * `hide_extra_inputs`
-
+  
   * `reorder_inputs`
-
+  
   * `remove_empty_inputs`
-
+  
   * `remove_extra_inputs`
-
-
-  This key has no default. If undefined at higher levels of the [configuration
-  cascade](/documentation/articles/using-the-configuration-cascade/),
-  `_structures` will default to any values configured in the [CloudCannon
-  configuration
-  file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
-
-
-
-
-  For more information, please read our documentation on
-  [structures](/documentation/articles/what-is-a-structure/).
+  
+  This key has no default.
+  
+  If undefined at higher levels of the [configuration cascade](/documentation/articles/using-the-configuration-cascade/), `_structures` will default to
+  any values configured in the [CloudCannon configuration file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
+  
+  For more information, please read our documentation on [structures](/documentation/articles/what-is-a-structure/).
 examples:
   - description: >-
       In this example, we want to populate an Array input in the `blog`

@@ -1,13 +1,12 @@
 gid: type.documentation.url
 url: /types/documentation/url/
 title: ''
-description: >-
-  This key defines the URL for the documentation link at the top of a
-  *Collection browser*. You must define this key for the
-
+description: |-
+  This key defines the URL for the documentation link at the top of a *Collection browser*.
+  
+  You must define this key for the
   `documentation` object to function.
-
-
+  
   This key has no default.
 examples:
   - description: >-

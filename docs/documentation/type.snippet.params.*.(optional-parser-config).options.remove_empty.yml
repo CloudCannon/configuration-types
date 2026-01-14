@@ -3,6 +3,7 @@ url: /types/snippet/params/*/(optional-parser-config)/options/remove_empty/
 title: ''
 description: |-
   Whether to output an empty string, or no value at all.
+  
   This will bubble up to any outer parsers, so may control whether they
   return output.
 examples: []

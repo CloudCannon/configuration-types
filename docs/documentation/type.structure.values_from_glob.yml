@@ -1,17 +1,16 @@
 gid: type.structure.values_from_glob
 url: /types/structure/values_from_glob/
 title: ''
-description: >-
-  This key defines globs that filter which files CloudCannon should use for
-  *Structure* value configuration. Values in this array are relative to the root
-  of your repository (i.e., `/`, not the value of `source`) and must end in the
-  file extension `.cloudcannon.structure-value.yml` (note the singular form of
-  "value"). You can use this key anywhere you would use the
-  `_structures.*.values` key. Please see our documentation on
-  [structures_from_glob](/documentation/articles/configuration-file-reference/#_structures_from_glob)
-  for defining a *Structure* in a split *Configuration File*.
-
-
+description: |-
+  This key defines globs that filter which files CloudCannon should use for *Structure* value configuration.
+  
+  Values in this array are relative to the root of your repository (i.e., `/`, not the value of `source`) and must end in the file extension `.cloudcannon.structure-value.yml` (note the singular form of "value").
+  
+  You can use this key anywhere you would use the `_structures.*.values` key.
+  
+  Please see our documentation on [structures_from_glob](/documentation/articles/configuration-file-reference/#_structures_from_glob) for defining a
+  *Structure* in a split *Configuration File*.
+  
   This key has no default.
 examples:
   - description: >-

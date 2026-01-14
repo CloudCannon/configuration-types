@@ -1,14 +1,14 @@
 gid: type._editables.*.left
 url: /types/_editables/*/left/
 title: ''
-description: >-
-  This key enables a tool to left align selected text by toggling a class name
-  for that text block. The value is the class name to align the text. The styles
-  for this class must be defined in the `styles` file.
-
-
-  Available for the Content Editor (`_editables.content`), the Block editable
-  region (`_editables.block`), and Rich Text inputs
+description: |-
+  This key enables a tool to left align selected text by toggling a class name for that text block.
+  
+  The value is the class name to align the text.
+  
+  The styles for this class must be defined in the `styles` file.
+  
+  Available for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), and Rich Text inputs
   (`_inputs.key_name.options`).
 examples: []
 show_in_navigation: false

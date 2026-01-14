@@ -1,12 +1,10 @@
 gid: type.snippet-model.remove_empty
 url: /types/snippet-model/remove_empty/
 title: ''
-description: >-
-  Whether this key-value pair should be omitted altogether if the value is
-  empty.
-
-  Requires that this key is also set as optional, as otherwise the snippet would
-  not re-parse.
+description: |-
+  Whether this key-value pair should be omitted altogether if the value is empty.
+  
+  Requires that this key is also set as optional, as otherwise the snippet would not re-parse.
 examples:
   - description: ''
     language: yaml

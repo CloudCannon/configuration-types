@@ -1,9 +1,10 @@
 gid: type.snippet-model.optional
 url: /types/snippet-model/optional/
 title: ''
-description: >-
-  Whether a value must exist for this parser. Useful for long sets of key-value
-  pairs that are not all required.
+description: |-
+  Whether a value must exist for this parser.
+  
+  Useful for long sets of key-value pairs that are not all required.
 examples:
   - description: ''
     language: yaml

@@ -1,37 +1,33 @@
 gid: type._inputs
 url: /types/_inputs/
 title: Inputs
-description: >-
-  This key defines which inputs are available at a given level of the
-  configuration cascade.
-
-
+description: |-
+  This key defines which inputs are available at a given level of the configuration cascade.
+  
   The following nested keys are available for each input inside `_inputs`:
-
-
+  
   * `type`
-
+  
   * `label`
-
+  
   * `comment`
-
+  
   * `context`
-
+  
   * `hidden`
-
+  
   * `disabled`
-
+  
   * `instance_value`
-
+  
   * `cascade`
-
+  
   * `options`
-
-
-  This key has no default. If undefined at higher levels of the [configuration
-  cascade](/documentation/articles/using-the-configuration-cascade/), `_inputs`
-  will default to any values configured in the [CloudCannon configuration
-  file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
+  
+  This key has no default.
+  
+  If undefined at higher levels of the [configuration cascade](/documentation/articles/using-the-configuration-cascade/), `_inputs` will default to any
+  values configured in the [CloudCannon configuration file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
 examples:
   - description: >-
       In this example, we have configured the `date_created` Date input, which

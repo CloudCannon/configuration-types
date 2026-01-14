@@ -1,31 +1,24 @@
 gid: type._enabled_editors
 url: /types/_enabled_editors/
 title: Enabled Editors
-description: >-
-  This key defines which editing interfaces are available by default for files
-  at a given level of the configuration cascade. Whether an editing interface is
-  available for a specific file is determined by other factors.
-
-
-  Values can be one of the following: `visual`, `content`, or `data`. Specifying
-  one or more editing interfaces will disable all unspecified editing
-  interfaces. You cannot disable the Source Editor with this key.
-
-
-  By default, this key is set to `visual`, `content`, and `data`. If undefined
-  at higher levels of the [configuration
-  cascade](/documentation/articles/using-the-configuration-cascade/),
-  `_enabled_editables` will default to any values configured in the [CloudCannon
-  configuration
-  file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
-
-
-
-
-  For more information, please read our documentation on the [Visual
-  Editor](/documentation/articles/what-is-the-visual-editor/), [Content
-  Editor](/documentation/articles/what-is-the-content-editor/), [Data
-  Editor](/documentation/articles/what-is-the-data-editor/), and [Source
+description: |-
+  This key defines which editing interfaces are available by default for files at a given level of the configuration cascade.
+  
+  Whether an editing interface is available for a specific file is determined by other factors.
+  
+  Values can be one of the following: `visual`, `content`, or `data`.
+  
+  Specifying one or more editing interfaces will disable all unspecified editing interfaces.
+  
+  You cannot disable the Source Editor with this key.
+  
+  By default, this key is set to `visual`, `content`, and `data`.
+  
+  If undefined at higher levels of the [configuration cascade](/documentation/articles/using-the-configuration-cascade/), `_enabled_editables` will
+  default to any values configured in the [CloudCannon configuration file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
+  
+  For more information, please read our documentation on the [Visual Editor](/documentation/articles/what-is-the-visual-editor/), [Content
+  Editor](/documentation/articles/what-is-the-content-editor/), [Data Editor](/documentation/articles/what-is-the-data-editor/), and [Source
   Editor](/documentation/articles/what-is-the-source-editor/).
 examples:
   - description: >-

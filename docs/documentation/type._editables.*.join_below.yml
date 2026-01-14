@@ -1,13 +1,10 @@
 gid: type._editables.*.join_below
 url: /types/_editables/*/join_below/
 title: ''
-description: >-
-  This key enables a tool to merge a list item with the item below it in an
-  ordered or unordered list.
-
-
-  Available for the Content Editor (`_editables.content`), the Block editable
-  region (`_editables.block`), and Rich Text inputs
+description: |-
+  This key enables a tool to merge a list item with the item below it in an ordered or unordered list.
+  
+  Available for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), and Rich Text inputs
   (`_inputs.key_name.options`).
 examples: []
 show_in_navigation: false

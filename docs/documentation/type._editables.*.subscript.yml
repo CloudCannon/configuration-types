@@ -1,13 +1,10 @@
 gid: type._editables.*.subscript
 url: /types/_editables/*/subscript/
 title: ''
-description: >-
+description: |-
   This key enables a tool to subscript selected text.
-
-
-  Available for the Content Editor (`_editables.content`), the Block editable
-  region (`_editables.block`), the Link editable region (`_editables.link`), the
-  Text editable region (`_editables.text`), and Rich Text inputs
-  (`_inputs.key_name.options`).
+  
+  Available for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), the Link editable region (`_editables.link`),
+  the Text editable region (`_editables.text`), and Rich Text inputs (`_inputs.key_name.options`).
 examples: []
 show_in_navigation: false
