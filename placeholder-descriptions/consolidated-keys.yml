@@ -437,7 +437,7 @@ keys:
       CloudCannon will use the default configuration options for that input type. This key has no default. For more
       information on options, please read our documentation on each input type.
     examples: []
-    matching_file: type._inputs.*.(object-input).options.entries.assigned_structures.*.[*].yml
+    matching_file: 
   - label: _inputs.*.options.end_before
     type_markdown: Date
     source_file: inputs-reference
@@ -948,7 +948,7 @@ keys:
                       start_from: 2022-01-01T00:00:00Z
                       end_before: 2023-01-01T00:00:00Z
         annotations: []
-    matching_file: type._inputs.*.(date-input).options.start_from.(iso8601-string).yml
+    matching_file: type._inputs.*.(date-input).options.start_from.yml
   - label: _inputs.*.options.start_from_message
     type_markdown: String
     source_file: inputs-reference
@@ -1515,7 +1515,7 @@ keys:
                               icon: map
                               href: /our-offices
         annotations: []
-    matching_file: collections_config.*.add_options.[*].(href-add-option).icon.yml
+    matching_file: collections_config.*.add_options.[*].(add-option).icon.yml
   - label: add_options.name
     type_markdown: String
     source_file: collections-reference
@@ -1536,7 +1536,7 @@ keys:
                               icon: map
                               href: /our-offices
         annotations: []
-    matching_file: collections_config.*.add_options.[*].(href-add-option).name.yml
+    matching_file: collections_config.*.add_options.[*].(add-option).name.yml
   - label: add_options.schema
     type_markdown: String
     source_file: collections-reference
@@ -2257,7 +2257,7 @@ keys:
       Displayed in the add menu when creating new files, also used as the icon for collection files if no other preview
       is found. Must be a [Material Icon](https://material.io/resources/icons/) name. Defaults to `notes`.
     examples: []
-    matching_file: collections_config.*.add_options.[*].(href-add-option).icon.yml
+    matching_file: collections_config.*.schemas.*.icon.yml
   - label: id
     type_markdown: Boolean
     source_file: structures-reference
@@ -2443,7 +2443,7 @@ keys:
                                       profile_picture:
                                       url:
         annotations: []
-    matching_file: type._inputs.*.label.yml
+    matching_file: type.structure.values.[*].label.yml
   - label: left
     type_markdown: String
     source_file: rich-text-editor-reference
@@ -2509,7 +2509,7 @@ keys:
     definition: |
       Displayed in the add menu when creating new files. Defaults to a formatted version of the key.
     examples: []
-    matching_file: collections_config.*.add_options.[*].(href-add-option).name.yml
+    matching_file: collections_config.*.schemas.*.name.yml
   - label: new_preview_url
     type_markdown: String
     source_file: collections-reference
@@ -3047,7 +3047,7 @@ keys:
       Available for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), and Rich
       Text inputs (`_inputs.key_name.options`).
     examples: []
-    matching_file: type.snippet.yml
+    matching_file: type._editables.*.snippet.yml
   - label: sort
     type_markdown: Object
     source_file: collections-reference
@@ -3448,7 +3448,7 @@ keys:
       Block editable region (`_editables.block`), the Link editable region (`_editables.link`), the Text editable region
       (`_editables.text`), and Rich Text inputs (`_inputs.key_name.options`).
     examples: []
-    matching_file: markdown.options.subscript.yml
+    matching_file: type._editables.*.subscript.yml
   - label: superscript
     type_markdown: Boolean
     source_file: rich-text-editor-reference
@@ -3457,7 +3457,7 @@ keys:
       Block editable region (`_editables.block`), the Link editable region (`_editables.link`), the Text editable region
       (`_editables.text`), and Rich Text inputs (`_inputs.key_name.options`).
     examples: []
-    matching_file: markdown.options.superscript.yml
+    matching_file: type._editables.*.superscript.yml
   - label: tabbed
     type_markdown: Boolean
     source_file: structures-reference
@@ -3495,7 +3495,7 @@ keys:
       rich text editor. Available for the Content Editor (`_editables.content`), the Block editable region
       (`_editables.block`), and Rich Text inputs (`_inputs.key_name.options`).
     examples: []
-    matching_file: markdown.options.table.yml
+    matching_file: type._editables.*.table.yml
   - label: tags
     type_markdown: Array
     source_file: structures-reference
@@ -3547,7 +3547,7 @@ keys:
                                       image_path:
                                       videoUrl:
         annotations: []
-    matching_file: type.preview.tags.yml
+    matching_file: type.structure.values.[*].tags.yml
   - label: timezone
     type_markdown: String
     source_file: configuration-file-reference
@@ -3690,7 +3690,7 @@ keys:
                                 subtext: Add a related blog
                                 icon: post_add
         annotations: []
-    matching_file: type._inputs.*.options.values.yml
+    matching_file: type.structure.values.yml
   - label: values_from_glob
     type_markdown: Array of Strings
     source_file: configuration-file-reference
