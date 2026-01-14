@@ -2,11 +2,8 @@ gid: collections_config.*.schemas.*.reorder_inputs
 url: /collections_config/*/schemas/*/reorder_inputs/
 title: ''
 description: >-
-  Controls whether or not inputs are sorted to match the schema when editing
-  existing files. Defaults to `true`.
-
-
-  Non-schema inputs are ordered after schema inputs if not removed with
-  `remove_extra_inputs`.
+  This key toggles whether CloudCannon will reorder inputs in a file to match the order defined in a given Schema.
+  Non-schema inputs will appear after Schema. By default, this key is `true` (i.e, inputs are reordered to match the
+  Schema).
 examples: []
 show_in_navigation: false

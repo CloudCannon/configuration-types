@@ -1,6 +1,14 @@
 gid: type.structure.values.[*].remove_extra_inputs
 url: /types/structure/values/[*]/remove_extra_inputs/
 title: ''
-description: If checked, extra inputs are removed when editing. Defaults to true.
+description: >-
+  This key toggles whether CloudCannon will remove inputs that are not present in a given value from a Structure
+  from a file before loading it in an Editing Interface. If set to `true`, non-Structure inputs will not be  visible
+  in the [Visual Editor](/documentation/articles/what-is-the-visual-editor/),  [Content
+  Editor](/documentation/articles/what-is-the-content-editor/), or  [Data
+  Editor](/documentation/articles/what-is-the-data-editor/), and saving the file will remove  them from the file
+  before persisting the changes to your Git repository. By default, this key is `false` (i.e., inputs not present in
+  the Structure value are not removed from the file). You can also configure this behavior for all values of a
+  Structure using `structure.remove_extra_inputs`.
 examples: []
 show_in_navigation: false

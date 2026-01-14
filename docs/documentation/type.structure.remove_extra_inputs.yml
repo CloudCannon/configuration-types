@@ -2,13 +2,14 @@ gid: type.structure.remove_extra_inputs
 url: /types/structure/remove_extra_inputs/
 title: ''
 description: >-
-  This key toggles whether inputs that are not present in the Structure are
-  removed from the file before CloudCannon loads it in an editing interface.
-  Saving the file will push this change to your Git repository.
-
-
-  By default, this key is `false`(i.e., inputs not present in the Structure are
-  not removed from the file).
+  This key toggles whether CloudCannon will remove inputs that are not present in a Structure from a file before
+  loading it in an Editing Interface. If set to `true`, non-Structure inputs will not be  visible in the [Visual
+  Editor](/documentation/articles/what-is-the-visual-editor/),  [Content
+  Editor](/documentation/articles/what-is-the-content-editor/), or  [Data
+  Editor](/documentation/articles/what-is-the-data-editor/), and saving the file will remove  them from the file
+  before persisting the changes to your Git repository. By default, this key is `false`  (i.e., inputs not present
+  in the Structure are not removed from the file). You can also configure  this behavior for specific values of a
+  Structure using `structure.values.[*].remove_extra_inputs`.
 examples:
   - description: >-
       In this example, we want to delete old inputs that are not in the
