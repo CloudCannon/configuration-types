@@ -2,6 +2,8 @@ gid: collections_config.*.sort.order
 url: /collections_config/*/sort/order/
 title: ''
 description: |-
+  **⚠️ DEPRECATED:** This key is deprecated. Use `sort_options` with `sort_options[*].order` instead.
+
   This key defines the order in which Collection files are sorted in your *Collection browser*. CloudCannon will sort files according to the value of `sort.key`.
 
   Values can be one of the following: `asc`, `ascending`, `desc`, or `descending`.

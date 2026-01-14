@@ -2,6 +2,8 @@ gid: collections_config.*.sort
 url: /collections_config/*/sort/
 title: ''
 description: |-
+  **⚠️ DEPRECATED:** This key is deprecated. Use `sort_options` instead.
+
   This key defines how CloudCannon sorts your Collection files when you first open your *Collection browser*. Configuring this key allows you to sort your Collection using a structured data key in your files.
 
   The following nested keys are available:
