@@ -8,17 +8,12 @@ description: >-
   date and time, CloudCannon will require you to change it to a valid value to
   save your changes, or discard your unsaved changes.
 
-
   Value must be in
-  [ISO8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. If
-  `options.end_before` is also configured, this key cannot be a later date and
-  time.
+  [ISO8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. The
+  value can have quotation marks or no quotation marks. If `options.end_before` is also
+  configured, this key cannot be a later date and time.
 
-
-  This key has no default.
-
-
-  This key is available for Date and Time Inputs.
+  This key has no default. This key is available for Date and Time Inputs.
 examples:
   - description: >-
       In this example, we want our team to enter the date and time of an event
