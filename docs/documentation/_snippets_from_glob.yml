@@ -19,7 +19,7 @@ examples:
     language: yaml
     code: |-
       _snippets_imports:
-          eleventy_liquid: true
+        eleventy_liquid: true
       _snippets_from_glob:
         - '/.cloudcannon/snippets/callout.cloudcannon.snippets.yml'
     annotations: []

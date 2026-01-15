@@ -109,15 +109,4 @@ examples:
                 icon: face
     annotations: []
     source: cloudcannon.config.yml
-  - description: ''
-    language: yaml
-    code: |-
-      preview:
-        text:
-          - key: title
-          - key: name
-        icon:
-          - key: icon
-    annotations: []
-    source: cloudcannon.config.yml
 show_in_navigation: true
