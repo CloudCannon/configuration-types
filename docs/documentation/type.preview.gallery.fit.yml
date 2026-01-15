@@ -1,6 +1,28 @@
 gid: type.preview.gallery.fit
 url: /types/preview/gallery/fit/
 title: ''
-description: ''
-examples: []
+description: |-
+  This key defines how images fit within their containers in the gallery section of a *Card*.
+
+  Valid values are `padded` (default), `contain`, `cover`, or `cover-top`.
+
+  * The `padded` value adds padding around images to maintain aspect ratio.
+  * The `contain` value ensures images fit entirely within the container by setting the largest dimension of the image to the largest dimension of the container, while maintaining aspect ratio.
+  * The `cover` value ensures images cover the entire container while maintaining aspect ratio, aligning the center of the image with the center of the container.
+  * The `cover-top` value ensures images cover the entire container while maintaining aspect ratio, aligning the top of the image with the top of the container.
+
+  This key defaults to `contain`.
+examples:
+  - description: In this example, we have configured the gallery fit to use `cover` so images cover the entire container while maintaining aspect ratio, aligning the center of the image with the center of the container.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          preview:
+            gallery:
+              image:
+                - key: featured_image
+              fit: cover
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false
