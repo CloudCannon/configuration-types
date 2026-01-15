@@ -1,6 +1,43 @@
 gid: type._inputs.*.(color-input).options.palette
 url: /types/_inputs/*/(color-input)/options/palette/
 title: ''
-description: ''
-examples: []
+description: |-
+  This key defines a predefined color palette for *Color Inputs*.
+
+  The value is an array of color strings. Each string can be a hex code (e.g., `#ff0000`), CSS color name, or other valid color format.
+
+  When a palette is configured, users can select colors from the palette in addition to using the color picker (unless `hide_picker` is set to `true`).
+
+  This key has no default value.
+examples:
+  - description: In this example, we have configured a color input with a palette of brand colors for quick selection.
+    language: yaml
+    code: |-
+      _inputs:
+        primary_color:
+          type: color
+          label: Primary Color
+          options:
+            palette:
+              - '#ff0000'
+              - '#00ff00'
+              - '#0000ff'
+              - '#ffff00'
+    annotations: []
+    source: cloudcannon.config.yml
+  - description: In this example, we have configured a color input with a palette using CSS color names.
+    language: yaml
+    code: |-
+      _inputs:
+        accent_color:
+          type: color
+          label: Accent Color
+          options:
+            palette:
+              - red
+              - blue
+              - green
+              - yellow
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

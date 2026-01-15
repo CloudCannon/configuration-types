@@ -1,6 +1,40 @@
 gid: type._inputs.*.(text-input).options.icon_background_color
 url: /types/_inputs/*/(text-input)/options/icon_background_color/
 title: ''
-description: ''
-examples: []
+description: |-
+  This key defines the background color of the icon displayed beside a *Text Input*.
+
+  The value can be an array or a single value, and reference a key, template, or text string.
+
+  Color values can be hex codes (e.g., `#ff0000`), CSS color names, or reference a data key that contains a color value.
+
+  This key has no default value.
+examples:
+  - description: In this example, we have configured the icon background color for a text input with an array of values to provide fallback options. CloudCannon will use the value of `icon_bg_color` first, then fall back to the static hex color value.
+    language: yaml
+    code: |-
+      _inputs:
+        email_address:
+          type: text
+          label: Email
+          options:
+            icon: email
+            icon_background_color:
+              - key: icon_bg_color
+              - text: '#e3f2fd'
+    annotations: []
+    source: cloudcannon.config.yml
+  - description: In this example, we have configured the icon background color to use a static CSS color value.
+    language: yaml
+    code: |-
+      _inputs:
+        phone_number:
+          type: text
+          label: Phone
+          options:
+            icon: phone
+            icon_background_color:
+              - text: 'lightblue'
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false
