@@ -2,7 +2,7 @@ gid: type._inputs.*.hidden
 url: /types/_inputs/*/hidden/
 title: ''
 description: |-
-  This key toggles the visibility of an input in the Data Editor or the sidebar of the Visual or Content Editor.
+  This key defines the visibility of an input in the *Data Editor* or the sidebar of the *Visual Editor* or *Content Editor*.
   
   Hidden inputs are useful when you want an input to exist, but not be visible or editable outside of the Source Editor.
   

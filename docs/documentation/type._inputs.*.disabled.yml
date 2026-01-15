@@ -2,7 +2,7 @@ gid: type._inputs.*.disabled
 url: /types/_inputs/*/disabled/
 title: ''
 description: |-
-  This key toggles whether the value of an input is editable in the Data Editor or the sidebar of the Visual or Content Editor.
+  This key defines whether the value of an input is editable in the *Data Editor* or the sidebar of the *Visual Editor* or *Content Editor*.
   
   Disabled inputs are useful if you want CloudCannon to display the input value, but prevent team members from editing the value outside of the Source
   Editor.
