@@ -3,19 +3,7 @@ url: /types/_snippets/
 title: Snippets
 description: |-
   This key defines custom snippets for your Site.
-  
-  The following nested keys are available for each snippet inside `_snippets`:
-  
-  * `template`
-  
-  * `inline`
-  
-  * `preview`
-  
-  * `definitions`
-  
-  * `_inputs`
-  
+
   This key has no default.
 examples: []
 show_in_navigation: true

@@ -3,32 +3,14 @@ url: /types/preview/
 title: Preview
 description: |-
   This key defines the appearance of a Card.
-  
+
   You can configure Card preview for [Collections](/documentation/articles/what-is-a-collection/), [Schemas](/documentation/articles/what-is-a-schema/),
   [Object inputs](/documentation/articles/what-is-an-object-input/), [Array inputs](/documentation/articles/what-is-an-array-input/), [Select
   inputs](/documentation/articles/what-is-a-select-input/), [Structures](/documentation/articles/what-is-a-structure/), the Structure modal,
   [Snippets](/documentation/articles/what-is-a-snippet/), and the Snippet modal.
-  
-  The following nested keys are available:
-  
-  * `text`
-  
-  * `subtext`
-  
-  * `icon`
-  
-  * `icon_color`
-  
-  * `icon_background_color`
-  
-  * `image`
-  
-  * `metadata`
-  
-  * `gallery`
-  
+
   This key defaults to:
-  
+
   ````````
   preview:
    text:
@@ -36,14 +18,12 @@ description: |-
    - key: name
    icon:
    - key: icon
-  
+
   ````````
-  
+
   For more information about previews, please read our documentation on [configuring card previews](/documentation/articles/configure-your-card-previews/).
 examples:
-  - description: >-
-      In this example, we have configured the appearance of file Cards in the
-      *Collection browser*.
+  - description: In this example, we have configured the appearance of file Cards in the *Collection browser*.
     language: yaml
     code: |-
       collections_config:
@@ -68,9 +48,7 @@ examples:
               - key: featured_image
     annotations: []
     source: cloudcannon.config.yml
-  - description: >-
-      In this example, we have configured the appearance of Cards in inputs
-      using the Structure `staff`.
+  - description: In this example, we have configured the appearance of Cards in inputs using the Structure `staff`.
     language: yaml
     code: |-
       _structures:

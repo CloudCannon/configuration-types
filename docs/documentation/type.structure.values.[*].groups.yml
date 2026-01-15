@@ -3,21 +3,12 @@ url: /types/structure/values/[*]/groups/
 title: ''
 description: |-
   This key defines the order and customing grouping for inputs within a Structure.
-  
+
   Each groups can have a heading.
-  
-  The following nested keys are available for each entry in the `groups` array:
-  
-  * `heading`
-  
-  * `inputs`
-  
+
   By default, CloudCannon respects the order of inputs as configured in the `values.value` key and does not include any groups.
 examples:
-  - description: >-
-      In this example, we want to separate the inputs into two groups with
-      descriptive headings: `title` and `subtitle` under the `Titles` heading,
-      and `author` under the `Details` heading.
+  - description: 'In this example, we want to separate the inputs into two groups with descriptive headings: `title` and `subtitle` under the `Titles` heading, and `author` under the `Details` heading.'
     language: yaml
     code: |-
       _structures:

@@ -3,17 +3,11 @@ url: /collection_groups/
 title: Collection Groups
 description: |-
   This key defines the groups and order of Collections in your *Site Navigation*.
-  
+
   Each item in the array must contain the `heading` and `collections` keys.
-  
-  The following nested keys are available for each entry in `collection_groups`:
-  
-  * `heading`
-  
-  * `collections`
-  
+
   This key has no default.
-  
+
   If undefined, CloudCannon will sort your Collections in the following order: the *Pages* Collection, all output Collections in alphabetical order,
   then all non-output Collections in alphabetical order.
 examples: []
