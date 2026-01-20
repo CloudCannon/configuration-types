@@ -41,8 +41,7 @@ examples:
       collections_config:
         data:
           path: data
-          glob:
-            - '**/*.yml'
+          glob: '**/*.yml'
     annotations: []
     source: cloudcannon.config.yml
   - description: >-
