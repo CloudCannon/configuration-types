@@ -2,28 +2,27 @@ gid: collections_config.*.add_options.[*].(add-option).schema
 url: /collections_config/*/add_options/[*]/(add-option)/schema/
 title: ''
 description: |-
-  This key defines which Schema CloudCannon should use to populate a file created with an option in the *\+ Add* button dropdown.
+  This key defines which *Schema* CloudCannon should use to populate a file created with a standard add option in the *\+ Add* button dropdown.
   
-  This Schema is relative to the Collection configured in `add_options.collection`.
+  The value is a string that specifies the key name of a *Schema* defined in `schemas` to use as the default content for the new file.
   
   Configuring this key will override `add_options.default_content_file`.
   
-  The value for this key should be the key name of a Schema.
-  
-  By default, this key is the default Schema in the Collection configured in `add_options.collection`.
+  By default, this key uses the default *Schema* in the Collection configured in `add_options.collection` (or the containing collection if `collection` is not specified), if *Schemas* are configured for that collection. Otherwise, this key has no default value.
 examples:
-  - description: >-
-      In this example, we want CloudCannon to populate new files with the
-      contents of the `articles` Schema when a team member selects this option
-      from the + Add button dropdown.
+  - description: In this example, we have configured a standard add option for the `people` Collection that uses the `employee` *Schema* to populate new files.
     language: yaml
     code: |-
       collections_config:
-        articles:
+        people:
           add_options:
-            - name: Add articles
-              collection: new_articles
-              schema: articles
+            - name: Add Staff Member
+              schema: employee
+              icon: face
+              editor: data
+          schemas:
+            employee:
+              path: /.cloudcannon/schemas/employee.yml
     annotations: []
     source: cloudcannon.config.yml
 show_in_navigation: false

@@ -1,6 +1,24 @@
 gid: collections_config.*.add_options.[*].(href-add-option).icon
 url: /collections_config/*/add_options/[*]/(href-add-option)/icon/
 title: Icon
-description: The icon next to the text in the menu item.
-examples: []
+description: |-
+  This key defines the icon displayed next to the text for a URL option in the *\+ Add* button dropdown.
+
+  The value is a string that specifies an icon name from [Google's Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons).
+
+  By default, this key is `add`.
+examples:
+  - description: >-
+      In this example, the *\+ Add* button dropdown in the `team` *Collection
+      browser* uses a link option with the icon `map` to navigate to the Office Locations page on our live website.
+    language: yaml
+    code: |-
+      collections_config:
+        team:
+          add_options:
+            - name: Office Locations
+              icon: map
+              href: /our-offices
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

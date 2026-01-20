@@ -1,6 +1,22 @@
 gid: collections_config.*.add_options.[*].(href-add-option)
 url: /collections_config/*/add_options/[*]/(href-add-option)/
 title: HREF Add Option
-description: An option for the add menu that opens a link.
-examples: []
+description: |-
+  This key represents the URL add option object in a `collections_config.*.add_options` array.
+
+  The value is an object that defines an option available in the *+ Add* button dropdown at the top right of the *Collection browser*. URL add options must contain a required `href` key and can contain optional `name` and `icon` keys.
+
+  This key has no default value.
+examples:
+  - description: In this example, the *\+ Add* button dropdown in the `team` *Collection browser* has a link to the Office Locations page on our live website.
+    language: yaml
+    code: |-
+      collections_config:
+        team:
+          add_options:
+            - name: Office Locations
+              icon: map
+              href: /our-offices
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

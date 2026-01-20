@@ -12,16 +12,25 @@ description: |-
 
   For more information on these options, please read our reference documentation on [disable\_add](/documentation/articles/collections-reference/#disable_add), [disable\_add\_folder](/documentation/articles/collections-reference/#disable_add_folder), and [schemas](/documentation/articles/schemas-reference/#schemas).
 examples:
-  - description: In this example, we want team members in the `_posts` Collection to create new files in the`blog` subfolder of the `_drafts` Collection. CloudCannon will open these files in the [Content Editor](/documentation/articles/what-is-the-content-editor/).
+  - description: In this example, we have configured two standard add options for the `people` Collection. The first option uses the `employee` Schema, and the second option uses the `contractor` Schema and opens files in the [Data Editor](/documentation/articles/what-is-the-data-editor/).
     language: yaml
     code: |-
       collections_config:
-        _posts:
+        people:
           add_options:
-            - name: Add draft blog
-              icon: post_add
-              editor: content
-              base_path: /../_drafts/blog
+            - name: Add Staff Member
+              schema: employee
+              icon: face
+              editor: data
+            - name: Add Contractor
+              icon: support_agent
+              schema: contractor
+              editor: data
+          schemas:
+            employee:
+              path: /.cloudcannon/schemas/employee.yml
+            contractor:
+              path: /.cloudcannon/schemas/contractor.yml
     annotations: []
     source: cloudcannon.config.yml
   - description: In this example, the *\+ Add* button dropdown in the `team` *Collection browser* has a link to the Office Locations page on our live website.

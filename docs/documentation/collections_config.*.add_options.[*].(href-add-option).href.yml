@@ -4,13 +4,15 @@ title: ''
 description: |-
   This key defines the link for a URL option in the *\+ Add* button dropdown.
 
-  Values can be an external URL or an internal URL relative to the current Site.
+  The value is a string that specifies a URL. Values can be an external URL or an internal URL relative to the current Site.
 
-  This key has no default.
+  This key is required for URL add options in the `collections_config.*.add_options` array.
+
+  This key has no default value.
 examples:
   - description: >-
       In this example, the *\+ Add* button dropdown in the `team` *Collection
-      browser* has a link to the Office Locations page on our live website.
+      browser* uses a link option with the internal URL `/our-offices` to navigate to the Office Locations page on our live website.
     language: yaml
     code: |-
       collections_config:

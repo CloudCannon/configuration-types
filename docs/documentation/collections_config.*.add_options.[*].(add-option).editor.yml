@@ -10,18 +10,19 @@ description: |-
   
   If CloudCannon cannot determine an appropriate editing interface, it will show a warning.
 examples:
-  - description: >-
-      In this example, we want new draft blog files to open in the [Content
-      Editor](/documentation/articles/what-is-the-content-editor/).
+  - description: In this example, we have configured a standard add option for the `people` Collection that opens new files in the [Data Editor](/documentation/articles/what-is-the-data-editor/).
     language: yaml
     code: |-
       collections_config:
-        _posts:
+        people:
           add_options:
-            - name: Add draft blog
-              icon: post_add
-              editor: content
-              base_path: /../_drafts/blog
+            - name: Add Staff Member
+              schema: employee
+              icon: face
+              editor: data
+          schemas:
+            employee:
+              path: /.cloudcannon/schemas/employee.yml
     annotations: []
     source: cloudcannon.config.yml
 show_in_navigation: false
