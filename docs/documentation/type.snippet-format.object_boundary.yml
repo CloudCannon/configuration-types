@@ -1,11 +1,27 @@
 gid: type.snippet-format.object_boundary
 url: /types/snippet-format/object_boundary/
 title: ''
-description: >-
-  For snippets which can parse object literals, what characters start and end an
-  object?
+description: |-
+  This key defines the characters that start and end object literals when parsing snippet parameters.
 
+  The value is an object that contains `start` and `end` properties, each specifying a string token. For objects, this will usually be `{ start: "{", end: "}" }`.
 
-  If required, this will usually be `{ start: "{", end: "}" }`.
-examples: []
+  This key has no default value.
+examples:
+  - description: In this example, we have configured object boundaries to use curly braces.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[param]]>>"
+          params:
+            param:
+              parser: argument
+              options:
+                format:
+                  object_boundary:
+                    start: '{'
+                    end: '}'
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

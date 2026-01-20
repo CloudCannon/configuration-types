@@ -1,6 +1,25 @@
 gid: type.snippet-format.allow_booleans
 url: /types/snippet-format/allow_booleans/
 title: ''
-description: Whether unquoted booleans like `true` and `false` can be used as values.
-examples: []
+description: |-
+  This key toggles whether CloudCannon will allow unquoted boolean values like `true` and `false` when parsing snippet parameters.
+
+  Setting this key to `true` will allow unquoted boolean values in snippet parameter parsing.
+
+  By default, this key is `false` (i.e., unquoted boolean values are not allowed).
+examples:
+  - description: In this example, we have configured snippet format to allow unquoted boolean values.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[param]]>>"
+          params:
+            param:
+              parser: argument
+              options:
+                format:
+                  allow_booleans: true
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

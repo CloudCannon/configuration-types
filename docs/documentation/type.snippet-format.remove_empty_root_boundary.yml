@@ -1,8 +1,25 @@
 gid: type.snippet-format.remove_empty_root_boundary
 url: /types/snippet-format/remove_empty_root_boundary/
 title: ''
-description: >-
-  If a key-value segment is empty, but it has a root boundary, should that
-  boundary be removed from the source code?
-examples: []
+description: |-
+  This key toggles whether CloudCannon will remove root boundary tokens from the source code when a key-value segment is empty.
+
+  Setting this key to `true` will remove root boundary tokens when the segment is empty.
+
+  By default, this key is `false` (i.e., root boundary tokens are not removed when segments are empty).
+examples:
+  - description: In this example, we have configured snippet format to remove empty root boundaries from source code.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[param]]>>"
+          params:
+            param:
+              parser: argument
+              options:
+                format:
+                  remove_empty_root_boundary: true
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

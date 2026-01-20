@@ -1,6 +1,27 @@
 gid: type.snippet-format.root_value_boundary.start
 url: /types/snippet-format/root_value_boundary/start/
 title: ''
-description: ''
-examples: []
+description: |-
+  This key defines the start token for root value boundaries when parsing snippet parameters.
+
+  The value is a string that specifies the token that marks the start of a root-level value in snippet parameter parsing. This works together with `root_value_boundary.end` to define paired tokens that enclose root-level values.
+
+  This key has no default value.
+examples:
+  - description: In this example, we have configured root value boundaries to use double square brackets.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[param]]>>"
+          params:
+            param:
+              parser: argument
+              options:
+                format:
+                  root_value_boundary:
+                    start: '[['
+                    end: ']]'
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

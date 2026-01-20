@@ -1,6 +1,26 @@
 gid: type.snippet-format.allowed_string_cases.upper
 url: /types/snippet-format/allowed_string_cases/upper/
 title: ''
-description: ''
-examples: []
+description: |-
+  This key toggles whether CloudCannon will allow only uppercase strings when parsing snippet parameters.
+
+  Setting this key to `true` will require all characters to be uppercase in snippet parameter parsing.
+
+  By default, this key is `false` (i.e., uppercase-only strings are not required unless `any` is enabled).
+examples:
+  - description: In this example, we have configured snippet format to allow only uppercase strings.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[param]]>>"
+          params:
+            param:
+              parser: argument
+              options:
+                format:
+                  allowed_string_cases:
+                    upper: true
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

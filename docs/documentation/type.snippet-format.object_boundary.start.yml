@@ -1,6 +1,27 @@
 gid: type.snippet-format.object_boundary.start
 url: /types/snippet-format/object_boundary/start/
 title: ''
-description: ''
-examples: []
+description: |-
+  This key defines the start token for object boundaries when parsing snippet parameters.
+
+  The value is a string that specifies the token that marks the start of an object in snippet parameter parsing. This works together with `object_boundary.end` to define paired tokens that enclose objects.
+
+  This key has no default value.
+examples:
+  - description: In this example, we have configured object boundaries to use curly braces.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[param]]>>"
+          params:
+            param:
+              parser: argument
+              options:
+                format:
+                  object_boundary:
+                    start: '{'
+                    end: '}'
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

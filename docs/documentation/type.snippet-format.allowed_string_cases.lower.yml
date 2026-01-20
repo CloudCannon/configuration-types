@@ -1,6 +1,26 @@
 gid: type.snippet-format.allowed_string_cases.lower
 url: /types/snippet-format/allowed_string_cases/lower/
 title: ''
-description: ''
-examples: []
+description: |-
+  This key toggles whether CloudCannon will allow only lowercase strings when parsing snippet parameters.
+
+  Setting this key to `true` will require all characters to be lowercase in snippet parameter parsing.
+
+  By default, this key is `false` (i.e., lowercase-only strings are not required unless `any` is enabled).
+examples:
+  - description: In this example, we have configured snippet format to allow only lowercase strings.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[param]]>>"
+          params:
+            param:
+              parser: argument
+              options:
+                format:
+                  allowed_string_cases:
+                    lower: true
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

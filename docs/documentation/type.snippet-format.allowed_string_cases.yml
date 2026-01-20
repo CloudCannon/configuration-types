@@ -1,6 +1,26 @@
 gid: type.snippet-format.allowed_string_cases
 url: /types/snippet-format/allowed_string_cases/
 title: ''
-description: ''
-examples: []
+description: |-
+  This key defines which string case types are allowed when parsing snippet parameters.
+
+  The value is an object that can contain `any`, `leading_upper`, `leading_lower`, `lower`, or `upper` properties. Each property is a boolean that enables or disables that case type.
+
+  This key has no default value.
+examples:
+  - description: In this example, we have configured snippet format to allow only lowercase strings.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[param]]>>"
+          params:
+            param:
+              parser: argument
+              options:
+                format:
+                  allowed_string_cases:
+                    lower: true
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false
