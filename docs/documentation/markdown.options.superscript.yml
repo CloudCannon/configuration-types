@@ -1,6 +1,20 @@
 gid: markdown.options.superscript
 url: /markdown/options/superscript/
 title: ''
-description: Output superscript in wrapped in carets (e.g. `^super^`).
-examples: []
+description: |-
+  This key toggles whether CloudCannon will output superscript text wrapped in carets when converting HTML to Markdown.
+
+  Setting this key to `true` will output superscript text as `^super^` in Markdown.
+
+  By default, this key is `false` (i.e., superscript text is not output in carets format).
+examples:
+  - description: In this example, we have configured Markdown to output superscript text wrapped in carets.
+    language: yaml
+    code: |-
+      markdown:
+        engine: commonmark
+        options:
+          superscript: true
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

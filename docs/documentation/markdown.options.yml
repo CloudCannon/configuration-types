@@ -1,6 +1,24 @@
 gid: markdown.options
 url: /markdown/options/
 title: ''
-description: ''
-examples: []
+description: |-
+  This key defines configuration options for the Markdown processing engine.
+
+  The value is an object that can contain various options controlling how Markdown is converted to HTML and vice versa.
+
+  This key has no default value.
+
+  For more information, please read our documentation on [configuring your markdown engine](/documentation/articles/configure-your-markdown-engine/).
+examples:
+  - description: In this example, we have configured Markdown options to enable HTML output, convert line breaks, and enable GitHub Flavored Markdown.
+    language: yaml
+    code: |-
+      markdown:
+        engine: commonmark
+        options:
+          html: true
+          breaks: true
+          gfm: true
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

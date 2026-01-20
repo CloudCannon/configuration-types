@@ -1,6 +1,20 @@
 gid: markdown.options.treat_indentation_as_code
 url: /markdown/options/treat_indentation_as_code/
 title: ''
-description: Determines whether 4 spaces on indentation should be read as a code block.
-examples: []
+description: |-
+  This key toggles whether CloudCannon will treat 4 spaces of indentation as a code block when processing Markdown.
+
+  Setting this key to `true` will read indented blocks (4 spaces) as code blocks.
+
+  By default, this key is `false` (i.e., indented blocks are not treated as code blocks).
+examples:
+  - description: In this example, we have configured Markdown to treat 4 spaces of indentation as code blocks.
+    language: yaml
+    code: |-
+      markdown:
+        engine: commonmark
+        options:
+          treat_indentation_as_code: true
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

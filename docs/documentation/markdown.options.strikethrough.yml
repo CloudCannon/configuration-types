@@ -1,6 +1,20 @@
 gid: markdown.options.strikethrough
 url: /markdown/options/strikethrough/
 title: ''
-description: Output strikes in wrapped in double tildes (e.g. `~~strike~~`).
-examples: []
+description: |-
+  This key toggles whether CloudCannon will output strikethrough text wrapped in double tildes when converting HTML to Markdown.
+
+  Setting this key to `true` will output strikethrough text as `~~strike~~` in Markdown.
+
+  By default, this key is `false` (i.e., strikethrough text is not output in double tildes format).
+examples:
+  - description: In this example, we have configured Markdown to output strikethrough text wrapped in double tildes.
+    language: yaml
+    code: |-
+      markdown:
+        engine: commonmark
+        options:
+          strikethrough: true
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

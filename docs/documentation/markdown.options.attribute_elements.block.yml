@@ -1,6 +1,24 @@
 gid: markdown.options.attribute_elements.block
 url: /markdown/options/attribute_elements/block/
 title: Attribute List Position
-description: Positioning options for Markdown attribute elements.
-examples: []
+description: |-
+  This key defines where attribute lists are positioned for block-level elements when converting HTML to Markdown.
+
+  The value can be `none`, `right`, `space right`, `below`, `newline below`, or `right-of-prefix`. This applies to all block-level elements unless overridden by element-specific configuration.
+
+  This key only takes effect when `attributes` is enabled.
+
+  This key has no default value.
+examples:
+  - description: In this example, we have configured block-level elements to place attributes below the element.
+    language: yaml
+    code: |-
+      markdown:
+        engine: commonmark
+        options:
+          attributes: true
+          attribute_elements:
+            block: below
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

@@ -1,6 +1,25 @@
 gid: markdown.options.attribute_elements
 url: /markdown/options/attribute_elements/
 title: Markdown Attribute Element Options
-description: Define positioning behavior of Markdown attributes for different elements.
-examples: []
+description: |-
+  This key defines positioning behavior of Markdown attributes for different element types when converting HTML to Markdown.
+
+  The value is an object that can contain `inline`, `block`, or element-specific properties. Each property value specifies where attribute lists should be positioned for that element type. Valid values are `none`, `right`, `space right`, `below`, `newline below`, or `right-of-prefix`.
+
+  This key only takes effect when `attributes` is enabled.
+
+  This key has no default value.
+examples:
+  - description: In this example, we have configured attribute positioning for inline and block elements.
+    language: yaml
+    code: |-
+      markdown:
+        engine: commonmark
+        options:
+          attributes: true
+          attribute_elements:
+            inline: right
+            block: below
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

@@ -1,6 +1,20 @@
 gid: markdown.options.table
 url: /markdown/options/table/
 title: ''
-description: Output tables in Markdown format.
-examples: []
+description: |-
+  This key toggles whether CloudCannon will output tables in Markdown format when converting HTML to Markdown.
+
+  Setting this key to `true` will convert HTML tables to Markdown table format.
+
+  By default, this key is `false` (i.e., tables are not output in Markdown format).
+examples:
+  - description: In this example, we have configured Markdown to output tables in Markdown format.
+    language: yaml
+    code: |-
+      markdown:
+        engine: commonmark
+        options:
+          table: true
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false
