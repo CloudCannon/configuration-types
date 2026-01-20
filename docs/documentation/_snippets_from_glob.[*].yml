@@ -1,6 +1,24 @@
 gid: _snippets_from_glob.[*]
 url: /_snippets_from_glob/[*]/
 title: ''
-description: ''
-examples: []
+description: |-
+  This key represents an individual glob pattern string in the `_snippets_from_glob` array.
+
+  The value is a string that specifies a file path pattern relative to the root of your repository. The path must end in the file extension `.cloudcannon.snippets.yml`.
+
+  This key has no default value.
+examples:
+  - description: >-
+      In this example, each Custom Snippet has its own *Configuration File* in
+      the `.cloudcannon/snippets/` folder. The value of the
+      `_snippets_from_glob` key tells CloudCannon to use the
+      `callout.cloudcannon.snippets.yml` file in that folder.
+    language: yaml
+    code: |-
+      _snippets_imports:
+        eleventy_liquid: true
+      _snippets_from_glob:
+        - '/.cloudcannon/snippets/callout.cloudcannon.snippets.yml'
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false
