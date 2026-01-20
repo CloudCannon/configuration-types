@@ -1,6 +1,36 @@
 gid: pull_request_templates
 url: /pull_request_templates/
 title: ''
-description: Templates for pull requests.
-examples: []
+description: |-
+  This key defines the Pull Request templates available on your *Site*.
+
+  The value is an array of template objects. Each template object can contain optional `label`, `title`, `body`, `template_path`, and `_inputs` keys.
+
+  This key has no default.
+examples:
+  - description: In this example, we have two Pull Request templates in the `pull_request_templates` array.
+    language: yaml
+    code: |-
+      pull_request_templates:
+        - label: General changes
+          _inputs:
+            title:
+              options:
+                required: true
+            body:
+              type: markdown
+              options:
+                bold: true
+                italic: true
+                link: true
+                format: p h1 h2 h3
+        - label: Delete content
+          title: Delete content
+          _inputs:
+            title:
+              options:
+                disabled: true
+          template_path: .github/templates/delete-content.md
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false
