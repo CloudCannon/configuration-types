@@ -1,6 +1,25 @@
 gid: commit_templates.[*].extra_data.*
 url: /commit_templates/[*]/extra_data/*/
 title: ''
-description: ''
-examples: []
+description: |-
+  This key represents an individual extra data property in the `commit_templates.[*].extra_data` object.
+
+  The value can be any data type and specifies additional data to include in commit message templates.
+
+  This key has no default value.
+examples:
+  - description: In this example, we have configured an extra data property `breaking_change` with a template string.
+    language: yaml
+    code: |-
+      commit_templates:
+        - label: Breaking change
+          template_string: '{message}{breaking_change|if=breaking_change_message}'
+          _inputs:
+            breaking_change_message:
+              type: text
+          extra_data:
+            breaking_change: |-
+              ⚠️ {breaking_change_message}
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false
