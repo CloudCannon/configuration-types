@@ -1,6 +1,21 @@
 gid: type.preview.tags.[*]
 url: /types/preview/tags/[*]/
 title: ''
-description: ''
-examples: []
+description: |-
+  This key represents an individual tag string in the `type.preview.tags` array.
+
+  The value is a string that specifies a tag to display on *Cards* in the *Collection browser*, *Structures*, and *Snippets*.
+
+  This key has no default value.
+examples:
+  - description: In this example, we have configured a tag for *Cards* in the `blog` Collection.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          preview:
+            tags:
+              - featured
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

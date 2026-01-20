@@ -1,6 +1,11 @@
 gid: type.structure.values.[*].tags.[*]
 url: /types/structure/values/[*]/tags/[*]/
 title: ''
-description: ''
+description: |-
+  This key represents an individual tag string in the `type.structure.values.[*].tags` array.
+
+  The value is a string that specifies a tag associated with a structure value.
+
+  This key has no default value.
 examples: []
 show_in_navigation: false
