@@ -2,8 +2,23 @@ gid: collections_config.*.view_options
 url: /collections_config/*/view_options/
 title: ''
 description: |-
-  This key defines the options for the View dropdown in a _Collection browser_.
-  
-  The first option listed is used as the default view.
-examples: []
+  This key defines the options for the View dropdown in the *Collection browser*.
+
+  The value is an array of view option strings. Available values are `card`, `list`, or `gallery`. The first option listed is used as the default view.
+
+  This key has no default value.
+examples:
+  - description: In this example, we have configured three view options for the `developer_articles` Collection, with `card` as the default view.
+    language: yaml
+    code: |-
+      collections_config:
+        developer_articles:
+          path: developer/articles
+          icon: article
+          view_options:
+            - card
+            - list
+            - gallery
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false
