@@ -2,10 +2,23 @@ gid: type.create.extra_data
 url: /types/create/extra_data/
 title: ''
 description: |-
-  Adds to the available data placeholders coming from the file.
-  
-  Entry values follow the same format as path, and are processed sequentially before path.
-  
-  These values are not saved back to your file.
-examples: []
+  This key enables you to add additional data placeholders for use in create path templates.
+
+  The value is an object where each property is a string that specifies a data placeholder. Entry values follow the same format as `path`, and are processed sequentially before `path`. These values are not saved back to your file.
+
+  This key has no default value.
+
+  For more information, please read our documentation on [Create Paths](/documentation/articles/set-the-path-for-new-files/).
+examples:
+  - description: In this example, we have configured extra data placeholders to generate a filename from date and title fields for use in the create path.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          create:
+            extra_data:
+              filename: '{date|year}-{date|month}-{date|day}-{title}'
+            path: '[relative_base_path]/{filename|slugify}.[ext]'
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false
