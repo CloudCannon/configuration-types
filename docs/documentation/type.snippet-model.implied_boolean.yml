@@ -1,11 +1,12 @@
 gid: type.snippet-model.implied_boolean
 url: /types/snippet-model/implied_boolean/
 title: ''
-description: >-
-  If `implied_boolean` is set to `true`, then any value in this argument will
-  alias to `true`, and an empty value will alias
-
-  to `false`.
+description: |-
+  This key toggles whether any value in this argument will alias to `true`, and an empty value will alias to `false`.
+  
+  Setting this key to `true` will cause any value in this argument to alias to `true`, and an empty value to alias to `false`.
+  
+  By default, this key is `false` (i.e., values are not aliased to boolean).
 examples:
   - description: In this example, we have configured implied boolean so any value in this argument will alias to `true`, and an empty value will alias to `false`.
     language: yaml

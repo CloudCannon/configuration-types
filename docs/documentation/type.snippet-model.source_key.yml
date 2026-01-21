@@ -2,7 +2,7 @@ gid: type.snippet-model.source_key
 url: /types/snippet-model/source_key/
 title: ''
 description: |-
-  Specifies the key that the parser should look for in the source text.
+  This key defines the key that the parser should look for in the source text.
 
   This only needs to be set if it differs from the `editor_key`.
 examples:

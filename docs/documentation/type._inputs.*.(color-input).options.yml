@@ -1,6 +1,7 @@
 gid: type._inputs.*.(color-input).options
 url: /types/_inputs/*/(color-input)/options/
 title: ''
-description: Options that are specific to Color Inputs.
+description: |-
+  This key defines options that are specific to Color Inputs.
 examples: []
 show_in_navigation: false

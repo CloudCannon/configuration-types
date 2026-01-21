@@ -1,8 +1,7 @@
 gid: type.snippet.snippet
 url: /types/snippet/snippet/
 title: ''
-description: >-
-  The snippet string contains the text to match for your snippet, with any
-  dynamic sections represented using a placeholder in double square brackets.
+description: |-
+  This key defines the snippet string that contains the text to match for your snippet, with any dynamic sections represented using a placeholder in double square brackets.
 examples: []
 show_in_navigation: false

@@ -1,8 +1,7 @@
 gid: type._select_data.*
 url: /types/_select_data/*/
 title: ''
-description: >-
-  Data formats for populating select and multiselect input options, supporting
-  arrays and objects.
+description: |-
+  This key defines data formats for populating select and multiselect input options, supporting arrays and objects.
 examples: []
 show_in_navigation: false

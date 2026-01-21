@@ -2,9 +2,9 @@ gid: type.snippet.params.*.(content-parser-config).options.indented_by
 url: /types/snippet/params/*/(content-parser-config)/options/indented_by/
 title: ''
 description: |-
-  Configures the content parser to **require** whitespace indentation when parsing.
+  This key defines the whitespace indentation required when parsing content.
   
-  Used when a snippet continues for as long as content is indented.
+  Configures the content parser to require whitespace indentation when parsing. Used when a snippet continues for as long as content is indented.
   
   This option should only be used if required, since it prevents your Snippet from parsing if the whitespace does not match.
   

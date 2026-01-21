@@ -1,8 +1,9 @@
 gid: type._inputs.*.(multiselect-input)
 url: /types/_inputs/*/(multiselect-input)/
 title: Multiselect Input
-description: >-
-  Provides an editing interface for data with multiple predefined options.
+description: |-
+  This key defines an editing interface for data with multiple predefined options.
+  
   Multiselect inputs allow several values.
 examples: []
 show_in_navigation: false

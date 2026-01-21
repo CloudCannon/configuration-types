@@ -1,6 +1,7 @@
 gid: type._inputs.*.options.picker_view
 url: /types/_inputs/*/options/picker_view/
 title: ''
-description: Controls how selectable options are rendered.
+description: |-
+  This key defines how selectable options are rendered.
 examples: []
 show_in_navigation: false

@@ -1,6 +1,7 @@
 gid: type.snippet.alternate_formats
 url: /types/snippet/alternate_formats/
 title: ''
-description: Alternate configurations for this snippet.
+description: |-
+  This key defines alternate configurations for this snippet.
 examples: []
 show_in_navigation: false

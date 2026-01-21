@@ -2,7 +2,7 @@ gid: type.snippet.params.*.(argument-parser-config)
 url: /types/snippet/params/*/(argument-parser-config)/
 title: Argument Parser Config
 description: |-
-  Parses a single argument, optionally delimited by characters.
+  This key defines a parser configuration that parses a single argument, optionally delimited by characters.
   
   Useful for matching a single positional argument.
   

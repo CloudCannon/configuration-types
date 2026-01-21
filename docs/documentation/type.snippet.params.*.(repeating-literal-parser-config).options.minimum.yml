@@ -1,13 +1,9 @@
 gid: type.snippet.params.*.(repeating-literal-parser-config).options.minimum
 url: /types/snippet/params/*/(repeating-literal-parser-config)/options/minimum/
 title: ''
-description: >-
-  The minimum number of times that the literal string must occur to match this
-  parser.
-
-  A good example is a markdown code block, which can open with any number of
-  backticks
-
-  greater than or equal to three.
+description: |-
+  This key defines the minimum number of times that the literal string must occur to match this parser.
+  
+  A good example is a markdown code block, which can open with any number of backticks greater than or equal to three.
 examples: []
 show_in_navigation: false

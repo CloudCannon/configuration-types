@@ -1,6 +1,7 @@
 gid: type._inputs.*.(date-input).type
 url: /types/_inputs/*/(date-input)/type/
 title: Type
-description: Sets an input type, which controls how this input appears and behaves.
+description: |-
+  This key defines the input type, which controls how this input appears and behaves.
 examples: []
 show_in_navigation: false

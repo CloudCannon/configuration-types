@@ -2,7 +2,7 @@ gid: type._inputs.*.options.value_key
 url: /types/_inputs/*/options/value_key/
 title: ''
 description: |-
-  Defines the key used for mapping between saved values and objects in values.
+  This key defines the key used for mapping between saved values and objects in values.
   
   This changes how the input saves selected values to match.
   

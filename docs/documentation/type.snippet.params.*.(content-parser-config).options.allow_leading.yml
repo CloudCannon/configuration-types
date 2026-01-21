@@ -1,11 +1,12 @@
 gid: type.snippet.params.*.(content-parser-config).options.allow_leading
 url: /types/snippet/params/*/(content-parser-config)/options/allow_leading/
 title: ''
-description: >-
-  If an `indented_by` value is set, `allow_leading: true` signifies that the
-  _first_
-
-  line of the content does **not** need to be indented, but subsequent lines do.
+description: |-
+  This key toggles whether the first line of the content needs to be indented when an `indented_by` value is set.
+  
+  Setting this key to `true` signifies that the first line of the content does not need to be indented, but subsequent lines do.
+  
+  By default, this key is `false` (i.e., all lines including the first must be indented).
 examples:
   - description: ''
     language: yaml

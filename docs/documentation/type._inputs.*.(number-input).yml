@@ -1,6 +1,7 @@
 gid: type._inputs.*.(number-input)
 url: /types/_inputs/*/(number-input)/
 title: Number Input
-description: Provides an editing interface for numeric values.
+description: |-
+  This key defines an editing interface for numeric values.
 examples: []
 show_in_navigation: false

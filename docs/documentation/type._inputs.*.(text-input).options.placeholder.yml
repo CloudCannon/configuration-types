@@ -1,6 +1,7 @@
 gid: type._inputs.*.(text-input).options.placeholder
 url: /types/_inputs/*/(text-input)/options/placeholder/
 title: ''
-description: Text shown when this input has no value.
+description: |-
+  This key defines the text shown when this input has no value.
 examples: []
 show_in_navigation: false

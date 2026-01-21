@@ -1,6 +1,7 @@
 gid: upstream_commit_template
 url: /upstream_commit_template/
 title: ''
-description: The commit template to use when pulling changes from the upstream repository.
+description: |-
+  This key defines the commit template to use when pulling changes from the upstream repository.
 examples: []
 show_in_navigation: false

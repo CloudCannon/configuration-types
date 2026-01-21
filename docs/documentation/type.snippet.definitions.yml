@@ -1,6 +1,7 @@
 gid: type.snippet.definitions
 url: /types/snippet/definitions/
 title: ''
-description: The variables required for the selected template.
+description: |-
+  This key defines the variables required for the selected template.
 examples: []
 show_in_navigation: false

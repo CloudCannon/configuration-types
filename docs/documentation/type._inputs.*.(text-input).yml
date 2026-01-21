@@ -1,6 +1,7 @@
 gid: type._inputs.*.(text-input)
 url: /types/_inputs/*/(text-input)/
 title: Text Input
-description: Provides a simple editing interface for plain text.
+description: |-
+  This key defines a simple editing interface for plain text.
 examples: []
 show_in_navigation: false
