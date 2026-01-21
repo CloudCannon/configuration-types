@@ -4,7 +4,7 @@ title: ''
 description: |-
   This key toggles whether the first line of the content needs to be indented when an `indented_by` value is set.
   
-  Setting this key to `true` signifies that the first line of the content does not need to be indented, but subsequent lines do.
+  Setting this key to `true` will allow the first line of the content to not be indented, but subsequent lines must be indented.
   
   By default, this key is `false` (i.e., all lines including the first must be indented).
 examples:
