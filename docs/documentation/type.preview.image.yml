@@ -4,7 +4,7 @@ title: ''
 description: |-
   This key defines the image displayed on *Cards* in the *Collection browser*, *Structures*, and *Snippets*.
 
-  The value can be an array or a single value, and reference a key, template, or text string that results in a file path or URL to an image file.
+  The value can be an array or a single value, and reference a key, template, or text string that results in a file path or URL to an image file. When multiple entries are provided, CloudCannon will use them in order as fallback options.
 
   This key has no default value.
 examples:

@@ -4,11 +4,11 @@ title: Array
 description: |-
   This key represents an array of preview entries for displaying data on *Cards* in the *Collection browser*, *Structures*, and *Snippets*.
 
-  The value is an array of preview entry objects, strings, or `false` values. When multiple entries are provided, CloudCannon will use them in order as fallback options.
+  The value is an array of preview entry objects, strings, or `false` values. Each preview entry object can contain a `key`, `template`, or `text` property. When multiple entries are provided, CloudCannon will use them in order as fallback options.
 
   This key has no default value.
 examples:
-  - description: In this example, we have configured an array of preview entries with fallback options. CloudCannon will use the value of `title` first, then the `{name}` template, and finally fall back to the static text value.
+  - description: In this example, we have configured an array of preview entries with an array of values to provide fallback options. CloudCannon will use the value of `title` first, then the `{name}` template, and finally fall back to the static text value.
     language: yaml
     code: |-
       collections_config:
