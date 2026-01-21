@@ -5,7 +5,7 @@ description: >-
   Parses rich multiline content, such as the content between paired tags. Can be
   configured to parse nested snippets within.
 examples:
-  - description: ''
+  - description: In this example, we have configured a content parser to parse rich multiline content between paired tags.
     language: liquid
     code: |-
       {% highlight "js" %} let a = b; {% endhighlight %}

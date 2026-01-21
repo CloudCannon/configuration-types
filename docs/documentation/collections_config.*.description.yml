@@ -11,7 +11,7 @@ description: |-
   
   This key has no default.
 examples:
-  - description: ''
+  - description: In this example, we have configured a description for the `blog` Collection with markdown formatting.
     language: yaml
     code: |-
       collections_config:

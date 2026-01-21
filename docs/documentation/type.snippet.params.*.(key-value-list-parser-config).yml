@@ -8,13 +8,13 @@ description: |-
   
   Can be configured to handle most syntax forms of key value pairs.
 examples:
-  - description: ''
+  - description: In this example, we have configured a key-value list parser to parse repeating pairs of keys and values in Liquid syntax.
     language: liquid
     code: |-
       {% include "image.html" image: "tree.png" alt: "Image of a tree" %}
                               └──────────────────────────────────────┘
     annotations: []
-  - description: ''
+  - description: In this example, we have configured a key-value list parser to parse repeating pairs of keys and values in Markdown syntax.
     language: markdown
     code: |-
       <Link href="/about/" new_tab={true}/>

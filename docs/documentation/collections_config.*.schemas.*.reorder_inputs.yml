@@ -3,6 +3,9 @@ url: /collections_config/*/schemas/*/reorder_inputs/
 title: ''
 description: |-
   This key toggles whether CloudCannon will reorder inputs in a file to match the order defined in a given Schema.
-  Non-schema inputs will appear after Schema. By default, this key is `true` (i.e., inputs are reordered to match the Schema).
+
+  Setting this key to `true` will reorder inputs in a file to match the order defined in a given Schema. Non-schema inputs will appear after Schema.
+
+  By default, this key is `true` (i.e., inputs are reordered to match the Schema).
 examples: []
 show_in_navigation: false

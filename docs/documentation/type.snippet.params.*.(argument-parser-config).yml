@@ -8,13 +8,13 @@ description: |-
   
   The argument parser is also used to parse a list of repeating arguments.
 examples:
-  - description: ''
+  - description: In this example, we have configured an argument parser to parse a single positional argument.
     language: markdown
     code: |-
       {{<figure image.png>}}
                 └───────┘
     annotations: []
-  - description: ''
+  - description: In this example, we have configured an argument parser to parse a list of repeating arguments.
     language: markdown
     code: |-
       {{<images image1.png image2.png image3.png>}}
