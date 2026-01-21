@@ -1,6 +1,7 @@
 gid: file_config.[*].glob
 url: /file_config/[*]/glob/
 title: ''
-description: The glob pattern(s) targeting a path to one or more files.
+description: |-
+  This key defines the glob pattern(s) targeting a path to one or more files.
 examples: []
 show_in_navigation: false
