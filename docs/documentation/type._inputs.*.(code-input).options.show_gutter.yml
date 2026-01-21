@@ -4,7 +4,7 @@ title: ''
 description: |-
   This key toggles whether CloudCannon displays line numbers in the gutter of *Code Inputs*.
 
-  Setting this key to `true` will show line numbers in the left gutter of the code editor.
+  Setting this key to `false` will hide line numbers in the left gutter of the code editor.
 
   By default, this key is `true` (i.e., line numbers are displayed).
 examples:

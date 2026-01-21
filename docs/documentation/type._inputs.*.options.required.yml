@@ -4,7 +4,7 @@ title: ''
 description: |-
   This key toggles whether CloudCannon requires this Input to have a value.
   
-  If set to `true`, CloudCannon will require you to enter a value to save your changes, or discard your unsaved changes.
+  Setting this key to `true` will require you to enter a value to save your changes, or discard your unsaved changes.
   
   By default, this key is `false` (i.e., CloudCannon does not require this Input to have a value).
   

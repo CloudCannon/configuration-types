@@ -4,9 +4,8 @@ title: ''
 description: |-
   This key toggles whether CloudCannon will remove inputs that are not present in a Schema from a file before loading it in an Editing Interface.
   
-  If set to `true`, non-Schema inputs will not be visible in the [Visual Editor](/documentation/articles/what-is-the-visual-editor/), [Content
-  Editor](/documentation/articles/what-is-the-content-editor/), or [Data Editor](/documentation/articles/what-is-the-data-editor/), and saving the file
-  will remove them from the file before persisting the changes to your Git repository.
+  Setting this key to `false` will preserve inputs that are not present in a Schema, making them visible in the [Visual Editor](/documentation/articles/what-is-the-visual-editor/), [Content
+  Editor](/documentation/articles/what-is-the-content-editor/), and [Data Editor](/documentation/articles/what-is-the-data-editor/), and they will be saved to your Git repository.
   
   By default, this key is `true` (i.e., inputs not present in the Schema are removed from the file).
 examples: []

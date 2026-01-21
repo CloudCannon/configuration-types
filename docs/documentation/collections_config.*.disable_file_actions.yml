@@ -9,7 +9,7 @@ description: |-
   
   This key does not affect file actions in the *File browser*.
   
-  Setting this key to true will prevent team members from using file actions in the *Collection browser*.
+  Setting this key to `true` will prevent team members from using file actions in the *Collection browser*.
   
   By default, this key is `false` (i.e., team members can use file actions) for most SSGs.
   

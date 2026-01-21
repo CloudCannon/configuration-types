@@ -4,6 +4,8 @@ title: ''
 description: |-
   This key toggles whether CloudCannon will reorder inputs in a file to match the order defined in a given value from a Structure.
   
+  Setting this key to `false` will preserve the existing order of inputs in a file, regardless of the order defined in the Structure value.
+  
   By default, this key is `true` (i.e., inputs are reordered to match the Structure value).
   
   You can also configure this behavior for all values of a Structure using `structure.reorder_inputs`.

@@ -6,7 +6,7 @@ title: ''
 description: |-
   This key toggles whether CloudCannon will ignore unpaired backticks when parsing content.
 
-  Setting this key to `true` will ignore unpaired backticks in the content, preventing parsing errors.
+  Setting this key to `false` will cause CloudCannon to treat unpaired backticks as parsing errors.
 
   By default, this key is `true` (i.e., unpaired backticks are ignored).
 examples:

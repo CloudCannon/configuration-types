@@ -6,7 +6,7 @@ description: |-
   
   This key does not affect your ability to add subfolders using the *File browser*.
   
-  Setting this key to *true* will prevent team members from adding new subfolders through the *Collection browser*.
+  Setting this key to `true` will prevent team members from adding new subfolders through the *Collection browser*.
   
   By default, this key is `false` (i.e., team members can add folders to the Collection) for most SSGs.
   

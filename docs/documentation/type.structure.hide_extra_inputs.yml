@@ -4,6 +4,8 @@ title: ''
 description: |-
   This key toggles whether CloudCannon will hide inputs that are not present in a Structure from the [Data Editor](/documentation/articles/what-is-the-data-editor/).
   
+  Setting this key to `true` will hide inputs that are not present in a Structure from the Data Editor.
+  
   Hiding these inputs does not delete the data.
   
   You can see non-structure data keys by opening a file in the [Source Editor](/documentation/articles/what-is-the-source-editor/).
