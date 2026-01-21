@@ -1,6 +1,25 @@
 gid: type.snippet-style.output
 url: /types/snippet-style/output/
 title: ''
-description: ''
-examples: []
+description: |-
+  This key determines the output format style for snippet content.
+
+  The value can be `legacy`, `inline`, or `block`. This controls how snippet content is formatted when output to source code.
+
+  This key has no default value.
+examples:
+  - description: In this example, we have configured snippet output style to use block formatting.
+    language: yaml
+    code: |-
+      _snippets:
+        highlight:
+          snippet: "<<highlight>> [[content]] <</highlight>>"
+          params:
+            content:
+              parser: content
+              options:
+                style:
+                  output: block
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

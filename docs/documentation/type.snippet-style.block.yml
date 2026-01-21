@@ -1,6 +1,28 @@
 gid: type.snippet-style.block
 url: /types/snippet-style/block/
 title: ''
-description: ''
-examples: []
+description: |-
+  This key defines block-level formatting options for snippet output.
+
+  The value is an object that can contain `leading`, `trailing`, and `indent` properties. These options control whitespace and indentation for multi-line snippet content.
+
+  This key has no default value.
+examples:
+  - description: In this example, we have configured block formatting with leading, trailing, and indent options.
+    language: yaml
+    code: |-
+      _snippets:
+        highlight:
+          snippet: "<<highlight>> [[content]] <</highlight>>"
+          params:
+            content:
+              parser: content
+              options:
+                style:
+                  block:
+                    leading: '\n'
+                    trailing: '\n'
+                    indent: '  '
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

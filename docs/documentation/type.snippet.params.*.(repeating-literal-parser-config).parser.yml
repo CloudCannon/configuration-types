@@ -1,6 +1,25 @@
 gid: type.snippet.params.*.(repeating-literal-parser-config).parser
 url: /types/snippet/params/*/(repeating-literal-parser-config)/parser/
 title: ''
-description: ''
-examples: []
+description: |-
+  This key determines the parser type for repeating literal parser configurations.
+
+  The value must be `repeating_literal`. This specifies that the parameter uses the repeating literal parser, which matches a literal string that can appear multiple times.
+
+  This key has no default value.
+examples:
+  - description: In this example, we have configured a repeating literal parser for a snippet parameter.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[literal_param]]>>"
+          params:
+            literal_param:
+              parser: repeating_literal
+              options:
+                literal: 'separator'
+                default: 1
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

@@ -1,6 +1,24 @@
 gid: type.snippet.params.*.(literal-parser-config).parser
 url: /types/snippet/params/*/(literal-parser-config)/parser/
 title: ''
-description: ''
-examples: []
+description: |-
+  This key determines the parser type for literal parser configurations.
+
+  The value must be `literal`. This specifies that the parameter uses the literal parser, which matches a specific literal string value.
+
+  This key has no default value.
+examples:
+  - description: In this example, we have configured a literal parser for a snippet parameter.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[literal_param]]>>"
+          params:
+            literal_param:
+              parser: literal
+              options:
+                literal: 'specific-value'
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

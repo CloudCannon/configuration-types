@@ -1,6 +1,26 @@
 gid: type.snippet.params.*.(repeating-literal-parser-config).options.editor_key
 url: /types/snippet/params/*/(repeating-literal-parser-config)/options/editor_key/
 title: ''
-description: ''
-examples: []
+description: |-
+  This key defines the editor key for repeating literal parser configurations.
+
+  The value is a string that specifies the key name of an input to use for editing the repeating literal value.
+
+  This key has no default value.
+examples:
+  - description: In this example, we have configured an editor key for repeating literal parser.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[literal_param]]>>"
+          params:
+            literal_param:
+              parser: repeating_literal
+              options:
+                literal: 'separator'
+                default: 1
+                editor_key: separator_count
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

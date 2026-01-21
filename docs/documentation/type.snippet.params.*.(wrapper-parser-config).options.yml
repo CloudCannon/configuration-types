@@ -1,6 +1,24 @@
 gid: type.snippet.params.*.(wrapper-parser-config).options
 url: /types/snippet/params/*/(wrapper-parser-config)/options/
 title: ''
-description: ''
-examples: []
+description: |-
+  This key defines configuration options for wrapper parser configurations.
+
+  The value is an object that can contain `snippet` and `remove_empty` properties. These options control which snippet configuration is wrapped and whether empty values are removed.
+
+  This key has no default value.
+examples:
+  - description: In this example, we have configured wrapper parser options with a snippet reference.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[wrapped_content]]>>"
+          params:
+            wrapped_content:
+              parser: wrapper
+              options:
+                snippet: 'content'
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

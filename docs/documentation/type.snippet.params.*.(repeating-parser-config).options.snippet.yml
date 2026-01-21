@@ -1,6 +1,31 @@
 gid: type.snippet.params.*.(repeating-parser-config).options.snippet
 url: /types/snippet/params/*/(repeating-parser-config)/options/snippet/
 title: ''
-description: ''
-examples: []
+description: |-
+  This key defines the snippet configuration to repeat for repeating parser configurations.
+
+  The value is a string that specifies the key name of another snippet configuration defined in `_snippets`. This snippet configuration will be repeated multiple times.
+
+  This key has no default value.
+examples:
+  - description: In this example, we have configured a snippet reference for repeating parser.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[repeating_content]]>>"
+          params:
+            repeating_content:
+              parser: repeating
+              options:
+                snippet: 'content'
+        content:
+          snippet: "<<content [[text]]>>"
+          params:
+            text:
+              parser: content
+              options:
+                editor_key: content_text
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

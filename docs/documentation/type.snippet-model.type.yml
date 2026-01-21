@@ -1,6 +1,25 @@
 gid: type.snippet-model.type
 url: /types/snippet-model/type/
 title: ''
-description: ''
-examples: []
+description: |-
+  This key determines the data type for snippet parameter parsing.
+
+  The value can be `array`, `object`, `string`, `boolean`, or `number`. This specifies the expected data type when parsing snippet parameters.
+
+  This key has no default value.
+examples:
+  - description: In this example, we have configured a snippet model to expect a string type.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[param]]>>"
+          params:
+            param:
+              parser: argument
+              options:
+                model:
+                  type: string
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false
