@@ -8,7 +8,7 @@ description: |-
 
   This key has no default value.
 examples:
-  - description: In this example, we have configured a preview entry with a key, template, and text value to provide fallback options. CloudCannon will use the value of `title` first, then the `{name}` template, and finally fall back to the static text value.
+  - description: In this example, we have configured a preview entry with an array of values to provide fallback options. CloudCannon will use the value of `title` first, then the `{name}` template, and finally fall back to the static text value.
     language: yaml
     code: |-
       collections_config:
