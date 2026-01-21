@@ -1,6 +1,21 @@
 gid: type.preview-entry.(template).template
 url: /types/preview-entry/(template)/template/
 title: Template Value
-description: ''
-examples: []
+description: |-
+  This key defines the template string to use in a template preview entry.
+
+  The value is a string that specifies a template with placeholders (e.g., `{name}`, `{date}`) that will be replaced with data values when displayed on *Cards* in the *Collection browser*, *Structures*, and *Snippets*.
+
+  This key has no default value.
+examples:
+  - description: In this example, we have configured the template value to display author and date.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          preview:
+            text:
+              - template: '{author} - {date}'
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

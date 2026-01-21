@@ -1,6 +1,21 @@
 gid: type.preview-entry
 url: /types/preview-entry/
 title: Preview Entry
-description: ''
-examples: []
+description: |-
+  This key defines a preview entry configuration for displaying data on *Cards* in the *Collection browser*, *Structures*, and *Snippets*.
+
+  The value can be an object with a `key`, `template`, or `text` property, a raw text string, `false`, or an array of these values. Preview entries are used to configure how data is displayed in card previews.
+
+  This key has no default value.
+examples:
+  - description: In this example, we have configured a preview entry to display the `title` key.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          preview:
+            text:
+              - key: title
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: true

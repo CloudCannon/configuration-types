@@ -1,6 +1,23 @@
 gid: type.preview-entry.(array)
 url: /types/preview-entry/(array)/
 title: Array
-description: ''
-examples: []
+description: |-
+  This key represents an array of preview entries for displaying data on *Cards* in the *Collection browser*, *Structures*, and *Snippets*.
+
+  The value is an array of preview entry objects, strings, or `false` values. When multiple entries are provided, CloudCannon will use them in order as fallback options.
+
+  This key has no default value.
+examples:
+  - description: In this example, we have configured an array of preview entries with fallback options. CloudCannon will use the value of `title` first, then the `{name}` template, and finally fall back to the static text value.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          preview:
+            text:
+              - key: title
+              - template: '{name}'
+              - text: 'Untitled'
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false
