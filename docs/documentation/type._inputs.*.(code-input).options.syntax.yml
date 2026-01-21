@@ -2,7 +2,7 @@ gid: type._inputs.*.(code-input).options.syntax
 url: /types/_inputs/*/(code-input)/options/syntax/
 title: Syntax
 description: |-
-  Changes how the editor parses your content for syntax highlighting.
+  This key determines how the editor parses your content for syntax highlighting.
   
   Should be set to the language of the code going into the input.
 examples: []

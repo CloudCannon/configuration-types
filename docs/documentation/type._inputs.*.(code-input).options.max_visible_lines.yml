@@ -2,7 +2,7 @@ gid: type._inputs.*.(code-input).options.max_visible_lines
 url: /types/_inputs/*/(code-input)/options/max_visible_lines/
 title: ''
 description: |-
-  Sets the maximum number of visible lines for this input, effectively controlling maximum height.
+  This key defines the maximum number of visible lines for this input, effectively controlling maximum height.
   
   When the containing text exceeds this number, the input becomes a scroll area.
 examples: []

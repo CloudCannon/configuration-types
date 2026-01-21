@@ -1,6 +1,11 @@
 gid: type._inputs.*.(array-input).options.disable_reorder
 url: /types/_inputs/*/(array-input)/options/disable_reorder/
 title: ''
-description: Hides the controls on each item for moving them.
+description: |-
+  This key toggles whether CloudCannon will hide the controls on each item for moving them.
+  
+  Setting this key to `true` will hide the controls for moving items.
+  
+  By default, this key is `false` (i.e., the controls for moving items are displayed).
 examples: []
 show_in_navigation: false
