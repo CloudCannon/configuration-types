@@ -4,9 +4,7 @@ title: ''
 description: |-
   This key toggles whether team members can use the *+ Add* button in the top right of the *Collection browser* to add files to a Collection.
   
-  This key does not affect your ability to add files using the *File browser*.
-  
-  Setting this key to `true` will prevent team members from adding new files through the *Collection browser*.
+  Setting this key to `true` will prevent team members from adding new files through the *Collection browser*. This key does not affect your ability to add files using the *File browser*.
   
   By default, this key is `false` (i.e., team members can add to the Collection) for most SSGs.
   
