@@ -1,8 +1,7 @@
 gid: type._inputs.*.options.pattern_flags
 url: /types/_inputs/*/options/pattern_flags/
 title: ''
-description: >-
-  This key defines the flags (e.g. case-insensitive searching) for the regular
-  expression set in `options.pattern`.
+description: |-
+  This key defines the flags (e.g. case-insensitive searching) for the regular expression set in `options.pattern`.
 examples: []
 show_in_navigation: false

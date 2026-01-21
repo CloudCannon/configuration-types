@@ -1,11 +1,9 @@
 gid: type.documentation.text
 url: /types/documentation/text/
 title: ''
-description: >-
-  This key defines the link text for the documentation link at the top of a
-  *Collection browser*.
-
-
+description: |-
+  This key defines the link text for the documentation link at the top of a *Collection browser*.
+  
   By default, this key is `Documentation`.
 examples:
   - description: >-

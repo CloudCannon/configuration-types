@@ -1,6 +1,7 @@
 gid: source_editor.theme
 url: /source_editor/theme/
 title: ''
-description: This key defines the color theme for syntax highlighting.
+description: |-
+  This key defines the color theme for syntax highlighting.
 examples: []
 show_in_navigation: false

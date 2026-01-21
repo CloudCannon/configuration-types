@@ -1,11 +1,9 @@
 gid: collections_config.*.sort_options.[*].label
 url: /collections_config/*/sort_options/[*]/label/
 title: ''
-description: >-
-  This key defines the label used for a file sorting option in the *Sort*
-  dropdown.
-
-
+description: |-
+  This key defines the label used for a file sorting option in the *Sort* dropdown.
+  
   This key has no default.
 examples:
   - description: >-
