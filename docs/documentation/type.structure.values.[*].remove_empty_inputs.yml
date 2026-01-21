@@ -12,7 +12,7 @@ description: |-
   
   For this key to function, you must also configure `id_key` for the Structure, as removing inputs prevents CloudCannon from comparing Structure values.
   
-  By default, this key is `false` (i.e, CloudCannon does not remove empty inputs).
+  By default, this key is `false` (i.e., CloudCannon does not remove empty inputs).
   
   You can also configure this behavior for all values of a Structure using structure.remove_empty_inputs.
 examples: []

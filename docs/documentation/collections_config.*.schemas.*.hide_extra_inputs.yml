@@ -10,6 +10,6 @@ description: |-
   
   This key has no effect if `remove_extra_inputs` is `true`.
   
-  By default, this key is `false` (i.e, non-schema inputs are visible in the Data Editor).
+  By default, this key is `false` (i.e., non-schema inputs are visible in the Data Editor).
 examples: []
 show_in_navigation: false

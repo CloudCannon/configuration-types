@@ -12,6 +12,6 @@ description: |-
   
   For this key to function, you must also define _schema in your file.
   
-  By default, this key is `false` (i.e, CloudCannon does not remove empty inputs).
+  By default, this key is `false` (i.e., CloudCannon does not remove empty inputs).
 examples: []
 show_in_navigation: false

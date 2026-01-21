@@ -11,7 +11,7 @@ description: |-
   
   This key has no effect if `remove_extra_inputs` is `true`.
   
-  By default, this key is `false` (i.e, non-structure inputs are visible in the Data Editor).
+  By default, this key is `false` (i.e., non-structure inputs are visible in the Data Editor).
   
   You can also configure this behavior for all values of a Structure using `structure.hide_extra_inputs`.
 examples: []
