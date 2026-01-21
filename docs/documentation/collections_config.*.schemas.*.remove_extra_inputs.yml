@@ -8,5 +8,15 @@ description: |-
   Editor](/documentation/articles/what-is-the-content-editor/), and [Data Editor](/documentation/articles/what-is-the-data-editor/), and they will be saved to your Git repository.
   
   By default, this key is `true` (i.e., inputs not present in the Schema are removed from the file).
-examples: []
+examples:
+  - description: In this example, CloudCannon will preserve extra inputs in files using the `article` schema in the `blog` Collection.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          schemas:
+            article:
+              remove_extra_inputs: false
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

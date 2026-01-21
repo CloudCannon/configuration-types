@@ -7,5 +7,12 @@ description: |-
   Setting this key to `true` will enable soft wrapping of code, allowing long lines to wrap to the next line without horizontal scrolling.
   
   By default, this key is `false` (i.e., soft wrapping is disabled).
-examples: []
+examples:
+  - description: In this example, CloudCannon will enable soft wrapping of code in the Source Editor.
+    language: yaml
+    code: |-
+      source_editor:
+        soft_wrap: true
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

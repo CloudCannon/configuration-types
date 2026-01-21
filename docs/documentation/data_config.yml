@@ -5,5 +5,21 @@ description: |-
   This key defines which file or folder data in your Site is available to populate [Select and Multiselect inputs](/documentation/articles/what-is-a-select-input/).
   
   This key has no default.
-examples: []
+examples:
+  - description: In this example, we have configured data config to make data files available for *Select Inputs* and *Multiselect Inputs*.
+    language: yaml
+    code: |-
+      data_config___1___:
+        authors:
+          path___2___: data/authors.csv
+        offices:
+          path___3___: data/offices
+    annotations:
+      - number: 1
+        content: Configure all data files or folders under the `data_config` key in your [CloudCannon configuration file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
+      - number: 2
+        content: "*Select Inputs* and *Multiselect Inputs* which use the `authors` key are populated by the contents of the `authors.csv` file."
+      - number: 3
+        content: "*Select Inputs* and *Multiselect Inputs* which use the `offices` key are populated by the contents of each file in the `offices` folder."
+    source: cloudcannon.config.yml
 show_in_navigation: false

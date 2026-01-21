@@ -3,5 +3,18 @@ url: /upstream_commit_template/
 title: ''
 description: |-
   This key defines the commit template to use when pulling changes from the upstream repository.
-examples: []
+  
+  An upstream commit message template can contain plain text and placeholders. Placeholders insert data related to the commit and use `[ ]` brackets. CloudCannon supports the following commit placeholders:
+  
+  * `[branch]` — the name of the current branch.
+  * `[publish_branch]` — the name of the Publish Branch from which you merge upstream changes.
+  * `[author]` — the email address of the person responsible for the upstream merge.
+  * `[date]` — the date of the upstream merge in the format "Tue Nov 28 2023 21:46:17 GMT+0000".
+examples:
+  - description: In this example, we have configured a commit template with placeholders for upstream pulls.
+    language: yaml
+    code: |-
+      upstream_commit_template: "Merge branch [publish_branch] into develop of [branch] by [author] at [date]"
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

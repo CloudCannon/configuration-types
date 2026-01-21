@@ -3,5 +3,17 @@ url: /file_config/[*]/glob/
 title: ''
 description: |-
   This key defines the glob pattern(s) targeting a path to one or more files.
-examples: []
+examples:
+  - description: In this example, we have configured a file config to target the `data/tabs.yml` file with object input configuration.
+    language: yaml
+    code: |-
+      file_config:
+        - glob: data/tabs.yml
+          _inputs:
+            $:
+              type: object
+              options:
+                subtype: tabbed
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

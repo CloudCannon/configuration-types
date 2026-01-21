@@ -3,5 +3,23 @@ url: /source_editor/theme/
 title: ''
 description: |-
   This key defines the color theme for syntax highlighting.
-examples: []
+
+  Value can be one of the following: `ambiance` `chaos` `chrome` `clouds`
+  `clouds_midnight` `cobalt` `crimson_editor` `dawn` `dracula` `dreamweaver`
+  `eclipse` `github` `gob` `gruvbox` `idle_fingers` `iplastic` `katzenmilch`
+  `kr_theme` `kuroir` `merbivore` `merbivore_soft` `mono_industrial` `monokai`
+  `nord_dark` `pastel_on_dark` `solarized_dark` `solarized_light` `sqlserver`
+  `terminal` `textmate` `tomorrow` `tomorrow_night` `tomorrow_night_blue`
+  `tomorrow_night_bright` `tomorrow_night_eighties` `twilight` `vibrant_ink`
+  `xcode`
+
+  By default, this key is `basic_dark`.
+examples:
+  - description: In this example, we have configured the Source Editor to use the `dark` theme for syntax highlighting.
+    language: yaml
+    code: |-
+      source_editor:
+        theme: dark
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

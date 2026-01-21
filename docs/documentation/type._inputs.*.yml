@@ -10,7 +10,7 @@ description: |-
 
   For more information, please read our documentation on [inputs](/documentation/articles/what-are-inputs/).
 examples:
-  - description: In this example, we have configured a text input for the `title` key in the `blog` Collection.
+  - description: In this example, we have configured the `title` key as a *Text Input* in the `blog` Collection.
     language: yaml
     code: |-
       collections_config:

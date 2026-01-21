@@ -9,5 +9,11 @@ description: |-
   By default, this key is empty.
   
   For more information, please read our documentation on the [Site source](/documentation/articles/what-is-the-cloudcannon-configuration-file/#the-source-folder) folder in your configuration file.
-examples: []
+examples:
+  - description: In this example, we have configured the source path to `src` so CloudCannon will look for source files in the `src` folder.
+    language: yaml
+    code: |-
+      source: src
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

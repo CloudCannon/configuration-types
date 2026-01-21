@@ -3,5 +3,13 @@ url: /types/snippet/template/
 title: ''
 description: |-
   This key defines the template that this snippet should inherit, out of the available Snippet Templates.
-examples: []
+examples:
+  - description: In this example, we have configured a snippet to use the `button` template.
+    language: yaml
+    code: |-
+      _snippets_definitions:
+        custom_button:
+          template: button
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

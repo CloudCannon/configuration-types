@@ -7,5 +7,14 @@ description: |-
   This key has no default.
 
   For more information, please read our documentation on the [Source Editor](/documentation/articles/what-is-the-source-editor/).
-examples: []
+examples:
+  - description: In this example, we have configured the Source Editor with custom theme, tab size, and gutter settings.
+    language: yaml
+    code: |-
+      source_editor:
+        theme: basic_dark
+        tab_size: 2
+        show_gutter: true
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

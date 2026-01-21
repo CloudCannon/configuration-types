@@ -9,7 +9,7 @@ description: |-
   If undefined at higher levels of the [configuration cascade](/documentation/articles/using-the-configuration-cascade/), `_inputs` will default to any
   values configured in the [CloudCannon configuration file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
 examples:
-  - description: In this example, we have configured the `date_created` Date input, which will automatically populate when you create a file using this input. Editors cannot alter this input as the interface is disabled.
+  - description: In this example, we have configured the `date_created` key as a *Date and Time Input*, which will automatically populate when you create a file using this input. Editors cannot alter this input as the interface is disabled.
     language: yaml
     code: |-
       _inputs:
@@ -30,7 +30,7 @@ examples:
             timezone: Etc/UTC
     annotations: []
     source: cloudcannon.config.yml
-  - description: In this example, we have configured the `blog_tags` Multiselect input for the `blog` Collection.
+  - description: In this example, we have configured the `blog_tags` key as a *Multiselect Input* in the `blog` Collection.
     language: yaml
     code: |-
       collections_config:

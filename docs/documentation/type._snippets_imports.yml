@@ -10,5 +10,15 @@ description: |-
 
   For more information, please read our documentation on [Docusaurus Components](/documentation/articles/snippets-using-docusaurus-components/),
   [Eleventy Shortcodes](/documentation/articles/snippets-using-eleventy-shortcodes/), [Hugo Shortcodes](/documentation/articles/snippets-using-hugo-shortcodes/), [MDX Components](/documentation/articles/snippets-using-mdx-components/), or [Python Markdown](/documentation/articles/snippets-using-python-markdown/).
-examples: []
+examples:
+  - description: In this example, we have configured Hugo shortcode imports for the Site.
+    language: yaml
+    code: |-
+      _snippets_imports:
+        hugo:
+          include:
+            - figure
+            - youtube
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: true

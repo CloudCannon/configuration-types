@@ -3,5 +3,21 @@ url: /data_config/*/path/
 title: Path
 description: |-
   This key defines the path to a file or folder of files containing data.
-examples: []
+examples:
+  - description: In this example, we have configured data config paths for both a CSV file and a folder of files.
+    language: yaml
+    code: |-
+      data_config___1___:
+        authors:
+          path___2___: data/authors.csv
+        offices:
+          path___3___: data/offices
+    annotations:
+      - number: 1
+        content: Configure all data files or folders under the `data_config` key in your [CloudCannon configuration file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
+      - number: 2
+        content: "*Select Inputs* and *Multiselect Inputs* which use the `authors` key are populated by the contents of the `authors.csv` file."
+      - number: 3
+        content: "*Select Inputs* and *Multiselect Inputs* which use the `offices` key are populated by the contents of each file in the `offices` folder."
+    source: cloudcannon.config.yml
 show_in_navigation: false
