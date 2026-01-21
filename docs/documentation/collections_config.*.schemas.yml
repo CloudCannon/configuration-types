@@ -10,8 +10,6 @@ description: |-
 
   If undefined, clicking the *\+ Add* button to add a new file to a Collection will clone the last file in the Collection and clear any markup content
   and the values of any structured data keys.
-
-  For more information, please read our documentation on [Schemas](/documentation/articles/what-is-a-schema/).
 examples:
   - description: In this example, the *\+ Add* button in the *Collection browser* has an option for `Customer Story` which will populate a new file in the `blog` Collection with the contents of the `customer_story.mdx` file. If the Schema file is updated, CloudCannon will preserve the old inputs to prevent you from losing structured data in older files.
     language: yaml

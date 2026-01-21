@@ -5,7 +5,5 @@ description: |-
   This key defines your markdown engine for parsing Markdown content into HTML and any configuration options for your engine.
 
   This key has no default.
-
-  For more information, please read our documentation on [configuring your markdown engine](/documentation/articles/configure-your-markdown-engine/).
 examples: []
 show_in_navigation: false

@@ -7,8 +7,6 @@ description: |-
   The value can be `commonmark` or `kramdown`.
 
   By default, this key is `commonmark`.
-
-  For more information, please read our documentation on [configuring your markdown engine](/documentation/articles/configure-your-markdown-engine/).
 examples:
   - description: In this example, we have configured CloudCannon to use the `kramdown` Markdown engine.
     language: yaml
