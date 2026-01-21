@@ -3,5 +3,14 @@ url: /types/_inputs/*/(number-input)/
 title: Number Input
 description: |-
   This key defines an editing interface for numeric values.
-examples: []
+examples:
+  - description: In this example, we have configured the `quantity` key as a *Number Input*.
+    language: yaml
+    code: |-
+      _inputs:
+        quantity:
+          type: number
+          label: Quantity
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

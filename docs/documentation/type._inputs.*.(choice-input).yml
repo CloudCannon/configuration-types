@@ -5,5 +5,19 @@ description: |-
   This key defines an editing interface for data with multiple predefined options.
   
   Choice inputs only allow one value.
-examples: []
+examples:
+  - description: In this example, we have configured the `status` key as a *Choice Input*.
+    language: yaml
+    code: |-
+      _inputs:
+        status:
+          type: choice
+          label: Status
+          options:
+            values:
+              - draft
+              - published
+              - archived
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

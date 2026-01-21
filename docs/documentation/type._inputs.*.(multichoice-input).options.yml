@@ -3,5 +3,18 @@ url: /types/_inputs/*/(multichoice-input)/options/
 title: ''
 description: |-
   This key defines options that are specific to Multichoice Inputs.
-examples: []
+examples:
+  - description: In this example, we have configured *Multichoice Input* options including values.
+    language: yaml
+    code: |-
+      _inputs:
+        categories:
+          type: multichoice
+          options:
+            values:
+              - technology
+              - design
+              - business
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

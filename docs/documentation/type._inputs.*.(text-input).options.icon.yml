@@ -3,5 +3,15 @@ url: /types/_inputs/*/(text-input)/options/icon/
 title: Icon
 description: |-
   This key defines the icon shown beside the input.
-examples: []
+examples:
+  - description: In this example, we have configured an icon for the *Text Input* `title`.
+    language: yaml
+    code: |-
+      _inputs:
+        title:
+          type: text
+          options:
+            icon: title
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false
