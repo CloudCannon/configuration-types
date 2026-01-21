@@ -2,7 +2,11 @@ gid: type._editables.*.superscript
 url: /types/_editables/*/superscript/
 title: ''
 description: |-
-  This key enables a tool to superscript selected text.
+  This key toggles whether CloudCannon will display a tool in your WYSIWYG toolbar to superscript selected text.
+  
+  Setting this key to `true` will enable a tool in your WYSIWYG toolbar to superscript selected text.
+  
+  By default, this key is `false` (i.e., the superscript tool is not displayed).
   
   Available for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), the Link editable region (`_editables.link`),
   the Text editable region (`_editables.text`), and Rich Text inputs (`_inputs.key_name.options`).

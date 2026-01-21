@@ -2,7 +2,11 @@ gid: type._editables.*.horizontalrule
 url: /types/_editables/*/horizontalrule/
 title: ''
 description: |-
-  This key enables a tool to insert a horizontal line.
+  This key toggles whether CloudCannon will display a tool in your WYSIWYG toolbar to insert a horizontal line.
+  
+  Setting this key to `true` will enable a tool in your WYSIWYG toolbar to insert a horizontal line.
+  
+  By default, this key is `false` (i.e., the horizontal rule tool is not displayed).
   
   Available for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), and Rich Text inputs
   (`_inputs.key_name.options`).

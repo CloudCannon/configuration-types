@@ -2,7 +2,11 @@ gid: type._editables.*.code
 url: /types/_editables/*/code/
 title: ''
 description: |-
-  This key enables two tools to turn selected text into inline code and selected text into a code block.
+  This key toggles whether CloudCannon will display tools in your WYSIWYG toolbar to turn selected text into inline code and selected text into a code block.
+  
+  Setting this key to `true` will enable two tools in your WYSIWYG toolbar to turn selected text into inline code and selected text into a code block.
+  
+  By default, this key is `false` (i.e., the code tools are not displayed).
   
   Available for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), and Rich Text inputs
   (`_inputs.key_name.options`).

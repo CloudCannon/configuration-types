@@ -2,11 +2,11 @@ gid: type._editables.*.remove_custom_markup
 url: /types/_editables/*/remove_custom_markup/
 title: ''
 description: |-
-  This key enables you to strip custom markup from content edited in a rich text editor, allowing you to clean files of unnecessary HTML content.
+  This key toggles whether CloudCannon will allow you to strip custom markup from content edited in a rich text editor, allowing you to clean files of unnecessary HTML content.
   
-  By default, `remove_custom_markup` is `false` for inputs, the Content Editor, and editable regions.
+  Setting this key to `true` will enable stripping custom markup from content. The `remove_custom_markup` key is disabled if `allow_custom_markup` is enabled.
   
-  The `remove_custom_markup` key is disabled if `allow_custom_markup` is enabled.
+  By default, `remove_custom_markup` is `false` (i.e., custom markup removal is disabled) for inputs, the Content Editor, and editable regions.
   
   Available for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), the Link editable region (`_editables.link`),
   the Text editable region (`_editables.text`), and Rich Text inputs (`_inputs.key_name.options`).
