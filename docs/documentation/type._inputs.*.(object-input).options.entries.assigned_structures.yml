@@ -2,7 +2,7 @@ gid: type._inputs.*.(object-input).options.entries.assigned_structures
 url: /types/_inputs/*/(object-input)/options/entries/assigned_structures/
 title: ''
 description: |-
-  This key enables you to assign structures to specific key names for entries in the *Object Input*.
+  This key defines how to assign structures to specific key names for entries in the *Object Input*.
 
   The value is an object where each property key is an allowed key name, and each property value is an array of structure key name strings. When selecting an entry key name, CloudCannon will prompt team members to choose one of the assigned structures for that allowed key. Structure values are referred to by their `id`.
 

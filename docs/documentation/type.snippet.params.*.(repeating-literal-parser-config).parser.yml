@@ -2,7 +2,7 @@ gid: type.snippet.params.*.(repeating-literal-parser-config).parser
 url: /types/snippet/params/*/(repeating-literal-parser-config)/parser/
 title: ''
 description: |-
-  This key determines the parser type for repeating literal parser configurations.
+  This key defines the parser type for repeating literal parser configurations.
 
   The value must be `repeating_literal`. This specifies that the parameter uses the repeating literal parser, which matches a literal string that can appear multiple times.
 

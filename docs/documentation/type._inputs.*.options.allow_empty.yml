@@ -1,6 +1,11 @@
 gid: type._inputs.*.options.allow_empty
 url: /types/_inputs/*/options/allow_empty/
 title: ''
-description: Provides an empty option alongside the options provided by values.
+description: |-
+  This key toggles whether CloudCannon will provide an empty option alongside the options provided by values.
+  
+  Setting this key to `true` will provide an empty option alongside the options provided by values.
+  
+  By default, this key is `false` (i.e., no empty option is provided).
 examples: []
 show_in_navigation: false

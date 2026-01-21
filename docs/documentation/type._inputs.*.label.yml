@@ -2,7 +2,7 @@ gid: type._inputs.*.label
 url: /types/_inputs/*/label/
 title: ''
 description: >-
-  This key changes the bold title text above an Input.
+  This key defines the bold title text above an Input.
 
 
   By default, CloudCannon generates the value from the Input key name, in title

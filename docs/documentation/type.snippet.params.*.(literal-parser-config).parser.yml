@@ -2,7 +2,7 @@ gid: type.snippet.params.*.(literal-parser-config).parser
 url: /types/snippet/params/*/(literal-parser-config)/parser/
 title: ''
 description: |-
-  This key determines the parser type for literal parser configurations.
+  This key defines the parser type for literal parser configurations.
 
   The value must be `literal`. This specifies that the parameter uses the literal parser, which matches a specific literal string value.
 

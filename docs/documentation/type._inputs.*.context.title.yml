@@ -2,7 +2,7 @@ gid: type._inputs.*.context.title
 url: /types/_inputs/*/context/title/
 title: ''
 description: |-
-  This key determines the title of the context box.
+  This key defines the title of the context box.
 
   By default, this key value is "Context".
 examples:

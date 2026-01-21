@@ -2,7 +2,7 @@ gid: type.create.extra_data
 url: /types/create/extra_data/
 title: ''
 description: |-
-  This key enables you to add additional data placeholders for use in create path templates.
+  This key defines additional data placeholders for use in create path templates.
 
   The value is an object where each property is a string that specifies a data placeholder. Entry values follow the same format as `path`, and are processed sequentially before `path`. These values are not saved back to your file.
 

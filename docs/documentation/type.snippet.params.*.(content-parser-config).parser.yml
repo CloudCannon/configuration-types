@@ -2,7 +2,7 @@ gid: type.snippet.params.*.(content-parser-config).parser
 url: /types/snippet/params/*/(content-parser-config)/parser/
 title: ''
 description: |-
-  This key determines the parser type for content parser configurations.
+  This key defines the parser type for content parser configurations.
 
   The value must be `content`. This specifies that the parameter uses the content parser, which parses content between snippet boundaries.
 

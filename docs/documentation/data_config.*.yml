@@ -2,6 +2,6 @@ gid: data_config.*
 url: /data_config/*/
 title: Data Configuration Entry
 description: |-
-  This key determines what data sets are available to populate select and multiselect inputs.
+  This key defines what data sets are available to populate select and multiselect inputs.
 examples: []
 show_in_navigation: false

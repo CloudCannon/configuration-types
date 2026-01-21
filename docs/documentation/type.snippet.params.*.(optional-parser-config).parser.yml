@@ -2,7 +2,7 @@ gid: type.snippet.params.*.(optional-parser-config).parser
 url: /types/snippet/params/*/(optional-parser-config)/parser/
 title: ''
 description: |-
-  This key determines the parser type for optional parser configurations.
+  This key defines the parser type for optional parser configurations.
 
   The value must be `optional`. This specifies that the parameter uses the optional parser, which wraps another snippet configuration and makes it optional.
 

@@ -1,8 +1,7 @@
 gid: type._inputs.*.options.pattern_flags.multiline
 url: /types/_inputs/*/options/pattern_flags/multiline/
 title: ''
-description: >-
-  `m` - `^` and `$` match the start and end of each line rather than the entire
-  string.
+description: |-
+  This key defines the `m` flag - `^` and `$` match the start and end of each line rather than the entire string.
 examples: []
 show_in_navigation: false

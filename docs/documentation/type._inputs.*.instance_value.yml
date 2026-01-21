@@ -2,7 +2,7 @@ gid: type._inputs.*.instance_value
 url: /types/_inputs/*/instance_value/
 title: Instance Value
 description: |-
-  This key determines whether an input is automatically populated with a value when the input is created.
+  This key defines whether an input is automatically populated with a value when the input is created.
   
   This occurs when creating a new file, or adding array items containing this input.
   

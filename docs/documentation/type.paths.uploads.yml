@@ -2,7 +2,7 @@ gid: type.paths.uploads
 url: /types/paths/uploads/
 title: ''
 description: |-
-  This key enables you to define the paths for the default location of newly uploaded site files.
+  This key defines the paths for the default location of newly uploaded site files.
   
   You can use [dynamic placeholders](/documentation/articles/configure-your-template-strings/) for `uploads` and `dam_uploads`.
   

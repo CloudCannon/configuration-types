@@ -2,7 +2,7 @@ gid: type.paths
 url: /types/paths/
 title: Paths
 description: |-
-  This key enables you to define paths for your Rich Text editors or File inputs.
+  This key defines paths for your Rich Text editors or File inputs.
 
   This key has no default.
 

@@ -1,8 +1,11 @@
 gid: type._inputs.*.disable_instance_value_rehydration
 url: /types/_inputs/*/disable_instance_value_rehydration/
 title: ''
-description: >-
-  Prevents the default where inputs configured with an `instance_value` are
-  rehydrated with a new value when duplicated in the CMS.
+description: |-
+  This key toggles whether CloudCannon will rehydrate inputs configured with an `instance_value` with a new value when duplicated.
+  
+  Setting this key to `true` will prevent rehydration of instance values when inputs are duplicated.
+  
+  By default, this key is `false` (i.e., inputs are rehydrated with new values when duplicated).
 examples: []
 show_in_navigation: false

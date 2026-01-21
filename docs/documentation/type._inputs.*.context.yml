@@ -2,9 +2,7 @@ gid: type._inputs.*.context
 url: /types/_inputs/*/context/
 title: ''
 description: |-
-  This key enables you to define a context box for extra information about an Input.
-
-   (required)
+  This key defines a context box for extra information about an Input.
 
   This key has no default.
 examples:

@@ -2,7 +2,7 @@ gid: type.snippet.params.*.(key-value-list-parser-config).parser
 url: /types/snippet/params/*/(key-value-list-parser-config)/parser/
 title: ''
 description: |-
-  This key determines the parser type for key-value list parser configurations.
+  This key defines the parser type for key-value list parser configurations.
 
   The value must be `key_values`. This specifies that the parameter uses the key-value list parser, which parses multiple key-value pairs.
 

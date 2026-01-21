@@ -2,7 +2,7 @@ gid: type._inputs.*.cascade
 url: /types/_inputs/*/cascade/
 title: ''
 description: |-
-  This key determines whether CloudCannon should merge this input configuration with any matching, less specific configurations elsewhere in the
+  This key defines whether CloudCannon should merge this input configuration with any matching, less specific configurations elsewhere in the
   configuration cascade.
   
   The [configuration cascade](/documentation/articles/using-the-configuration-cascade/) works by finding the most specific `_inputs` entry.

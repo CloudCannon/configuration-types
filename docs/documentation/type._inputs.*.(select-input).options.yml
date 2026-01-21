@@ -1,6 +1,7 @@
 gid: type._inputs.*.(select-input).options
 url: /types/_inputs/*/(select-input)/options/
 title: ''
-description: Options that are specific to Select Inputs.
+description: |-
+  This key defines options that are specific to Select Inputs.
 examples: []
 show_in_navigation: false

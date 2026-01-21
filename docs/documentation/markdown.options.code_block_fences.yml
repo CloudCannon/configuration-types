@@ -2,7 +2,7 @@ gid: markdown.options.code_block_fences
 url: /markdown/options/code_block_fences/
 title: ''
 description: |-
-  This key determines which style of code block fences CloudCannon will use when converting HTML to Markdown.
+  This key defines which style of code block fences CloudCannon will use when converting HTML to Markdown.
 
   The value can be `\`\`\`` (three backticks) or `~~~` (three tildes).
 

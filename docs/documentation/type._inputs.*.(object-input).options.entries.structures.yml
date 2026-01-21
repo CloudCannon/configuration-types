@@ -2,7 +2,7 @@ gid: type._inputs.*.(object-input).options.entries.structures
 url: /types/_inputs/*/(object-input)/options/entries/structures/
 title: ''
 description: |-
-  This key determines which predefined templates to use for populating entries nested in the *Object Input*.
+  This key defines which predefined templates to use for populating entries nested in the *Object Input*.
 
   The value can be a string or an object. When configured, team members can select a [structure](/documentation/developer-articles/what-is-a-structure/) to populate the Object with input/input groups.
 

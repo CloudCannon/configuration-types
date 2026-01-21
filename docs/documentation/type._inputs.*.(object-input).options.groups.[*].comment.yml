@@ -2,7 +2,7 @@ gid: type._inputs.*.(object-input).options.groups.[*].comment
 url: /types/_inputs/*/(object-input)/options/groups/[*]/comment/
 title: ''
 description: |-
-  Changes the subtext below the `heading`.
+  This key defines the subtext below the `heading`.
   
   Has no default.
   

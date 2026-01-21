@@ -2,7 +2,7 @@ gid: type._inputs.*.(multichoice-input).type
 url: /types/_inputs/*/(multichoice-input)/type/
 title: Type
 description: |-
-  This key changes the type of editing interface used for an Input.
+  This key defines the type of editing interface used for an Input.
   
   Each Input type has a different appearance and functionality, processes and accepts different types of values, and has different configuration
   options.

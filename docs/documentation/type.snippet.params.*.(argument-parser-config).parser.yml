@@ -2,7 +2,7 @@ gid: type.snippet.params.*.(argument-parser-config).parser
 url: /types/snippet/params/*/(argument-parser-config)/parser/
 title: ''
 description: |-
-  This key determines the parser type for argument parser configurations.
+  This key defines the parser type for argument parser configurations.
 
   The value must be `argument`. This specifies that the parameter uses the argument parser, which parses a single argument value.
 

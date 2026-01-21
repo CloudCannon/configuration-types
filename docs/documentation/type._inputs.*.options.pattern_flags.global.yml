@@ -1,6 +1,7 @@
 gid: type._inputs.*.options.pattern_flags.global
 url: /types/_inputs/*/options/pattern_flags/global/
 title: ''
-description: '`g` - Search globally.'
+description: |-
+  This key defines the `g` flag - Search globally.
 examples: []
 show_in_navigation: false

@@ -2,7 +2,7 @@ gid: markdown.engine
 url: /markdown/engine/
 title: ''
 description: |-
-  This key determines which Markdown processing engine CloudCannon will use to convert between HTML and Markdown.
+  This key defines which Markdown processing engine CloudCannon will use to convert between HTML and Markdown.
 
   The value can be `commonmark` or `kramdown`.
 

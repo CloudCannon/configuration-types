@@ -1,6 +1,7 @@
 gid: type._inputs.*.(rich-text-input).options.initial_height
 url: /types/_inputs/*/(rich-text-input)/options/initial_height/
 title: ''
-description: Defines the initial height of this input in pixels (px).
+description: |-
+  This key defines the initial height of this input in pixels (px).
 examples: []
 show_in_navigation: false

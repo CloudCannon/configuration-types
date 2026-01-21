@@ -2,7 +2,7 @@ gid: type.snippet-style.output
 url: /types/snippet-style/output/
 title: ''
 description: |-
-  This key determines the output format style for snippet content.
+  This key defines the output format style for snippet content.
 
   The value can be `legacy`, `inline`, or `block`. This controls how snippet content is formatted when output to source code.
 
