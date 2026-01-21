@@ -3,5 +3,15 @@ url: /types/_inputs/*/options/empty_type_object/
 title: ''
 description: |-
   This key defines how an 'empty' value will be saved. Does not apply to existing empty values.
-examples: []
+examples:
+  - description: In this example, we have configured how empty object values will be saved.
+    language: yaml
+    code: |-
+      _inputs:
+        metadata:
+          type: object
+          options:
+            empty_type_object: {}
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

@@ -2,10 +2,26 @@ gid: type._inputs.*.options.allow_empty
 url: /types/_inputs/*/options/allow_empty/
 title: ''
 description: |-
-  This key toggles whether CloudCannon will provide an empty option alongside the options provided by values.
+  **⚠️ DEPRECATED:** This key is deprecated. If you want to prevent empty values, we recommend using `_inputs.*.options.required: true` instead.
+
+  This key toggles whether CloudCannon will accept empty values.
   
-  Setting this key to `true` will provide an empty option alongside the options provided by values.
+  Setting this key to `true` will allow CloudCannon to accept empty values.
   
-  By default, this key is `false` (i.e., no empty option is provided).
-examples: []
+  By default, this key is `false` (i.e., CloudCannon does not accept empty values).
+examples:
+  - description: In this example, CloudCannon will accept empty values for a *Select Input*.
+    language: yaml
+    code: |-
+      _inputs:
+        category:
+          type: select
+          options:
+            values:
+              - Blog
+              - News
+              - Events
+            allow_empty: true
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

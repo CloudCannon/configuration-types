@@ -18,5 +18,15 @@ description: |-
   You can stop the cascade at any point in the configuration cascade by setting `cascade` to `false`.
   
   By default, this key is `true` (i.e., merges all configurations for an input in the cascade).
-examples: []
+examples:
+  - description: In this example, we have configured cascade to merge input configurations across the configuration cascade.
+    language: yaml
+    code: |-
+      _inputs:
+        title:
+          type: text
+          cascade: true
+          comment: Global comment for all title inputs
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

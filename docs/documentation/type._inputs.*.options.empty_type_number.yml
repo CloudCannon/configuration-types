@@ -3,5 +3,15 @@ url: /types/_inputs/*/options/empty_type_number/
 title: ''
 description: |-
   This key defines how an 'empty' value will be saved. Does not apply to existing empty values.
-examples: []
+examples:
+  - description: In this example, we have configured how empty number values will be saved.
+    language: yaml
+    code: |-
+      _inputs:
+        quantity:
+          type: number
+          options:
+            empty_type_number: null
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false
