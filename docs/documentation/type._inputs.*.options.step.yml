@@ -3,5 +3,17 @@ url: /types/_inputs/*/options/step/
 title: ''
 description: |-
   This key defines a number that specifies the granularity that the value must adhere to, or the special value any, which allows any decimal value between `max` and `min`.
-examples: []
+examples:
+  - description: In this example, we have configured a *Range Input* to use a step value of 5.
+    language: yaml
+    code: |-
+      _inputs:
+        rating:
+          type: range
+          options:
+            min: 0
+            max: 100
+            step: 5
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false

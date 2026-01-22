@@ -16,5 +16,17 @@ description: |-
   
   Available for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), the Image editable region
   (`_editables.image`), and Rich Text inputs (`_inputs.key_name.options`).
-examples: []
+examples:
+  - description: In this example, we have configured an *Image Input* to resize images using the `cover` style to ensure images cover the bounding box while maintaining aspect ratio.
+    language: yaml
+    code: |-
+      _inputs:
+        hero_image:
+          type: image
+          options:
+            width: 1200
+            height: 600
+            resize_style: cover
+    annotations: []
+    source: cloudcannon.config.yml
 show_in_navigation: false
