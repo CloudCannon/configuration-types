@@ -6,7 +6,6 @@ description: |-
 
   The value is an array of view option strings. Available values are `card`, `list`, or `gallery`. The first option listed is used as the default view.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured three view options for the `developer_articles` Collection, with `card` as the default view.
     language: yaml

@@ -6,7 +6,6 @@ description: |-
 
   The value can be an object with a `key`, `template`, or `text` property, a raw text string, `false`, or an array of these values. When multiple entries are provided, CloudCannon will use them in order as fallback options. Preview entries are used to configure how data is displayed in card previews.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured a preview entry with an array of values to provide fallback options. CloudCannon will use the value of `title` first, then the `{name}` template, and finally fall back to the static text value.
     language: yaml

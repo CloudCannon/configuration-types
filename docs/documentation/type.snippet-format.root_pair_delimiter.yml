@@ -6,7 +6,6 @@ description: |-
 
   The value is an array of strings, where each string specifies a delimiter token. For segments such as `href="about" title="Hello World"`, this would be `[" "]` (a space). For segments such as `href: about, title: "Hello World"`, this would be `[","]`.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured root pair delimiter to use a space.
     language: yaml

@@ -8,7 +8,6 @@ description: |-
 
   If undefined, CloudCannon will sort your Collections in the following order: the *Pages* Collection, all output Collections in alphabetical order, then all non-output Collections in alphabetical order.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured Collection groups to organize Collections into "Content" and "Data Files" sections in the *Site Navigation*.
     language: yaml

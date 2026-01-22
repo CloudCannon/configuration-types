@@ -8,8 +8,6 @@ description: |-
   
   This key does not affect the URL for your [Testing Domain](/documentation/articles/what-is-a-testing-domain/) or [Custom
   Domain](/documentation/articles/what-is-a-custom-domain/).
-  
-  This key has no default.
 examples:
   - description: >-
       In this example, the Visual Editor will open the `/about/` page when you

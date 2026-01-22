@@ -6,7 +6,6 @@ description: |-
 
   The value is a string that specifies a key name that can exist on the data within an *Object Input*. This set is used when entries are added and renamed with `allow_create` enabled.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured an allowed key name for entries in a mutable *Object Input*.
     language: yaml

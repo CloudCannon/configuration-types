@@ -6,7 +6,6 @@ description: |-
 
   The value must be `argument`. This specifies that the parameter uses the argument parser, which parses a single argument value.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured an argument parser for a snippet parameter.
     language: yaml

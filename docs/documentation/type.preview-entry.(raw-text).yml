@@ -6,7 +6,6 @@ description: |-
 
   The value is a string that specifies static text to display in card previews. This is equivalent to using `{ text: "..." }` but in a simpler format.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured a raw text preview entry to display static text.
     language: yaml

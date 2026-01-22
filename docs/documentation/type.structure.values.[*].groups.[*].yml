@@ -6,7 +6,6 @@ description: |-
 
   The value is an object that groups inputs together within a structure value without changing the data structure. Each group typically contains a `heading` and `inputs` array.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured a group with a heading and inputs array to organize structure inputs.
     language: yaml

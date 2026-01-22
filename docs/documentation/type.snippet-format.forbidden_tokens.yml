@@ -6,7 +6,6 @@ description: |-
 
   The value is an array of strings, where each string specifies a forbidden token. This is useful when the content parser is being greedy and consuming more input than intended.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured forbidden tokens to stop parsing when encountering a less-than sign.
     language: yaml

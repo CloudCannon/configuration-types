@@ -6,7 +6,6 @@ description: |-
 
   The value is a string that specifies static text to display on *Cards* in the *Collection browser*, *Structures*, and *Snippets*.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured the text value to display a static fallback message.
     language: yaml

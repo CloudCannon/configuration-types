@@ -6,7 +6,6 @@ description: |-
 
   The value is a string that specifies the delimiter token. For pairs such as `key="value"`, this would be `=`. For pairs such as `key: "value"`, this would be `: `.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured root value delimiter to use an equals sign.
     language: yaml

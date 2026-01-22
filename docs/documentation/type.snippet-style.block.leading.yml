@@ -6,7 +6,6 @@ description: |-
 
   The value is a string that specifies whitespace tokens (typically newlines) inserted before block-level snippet content.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured block leading whitespace to use a newline.
     language: yaml

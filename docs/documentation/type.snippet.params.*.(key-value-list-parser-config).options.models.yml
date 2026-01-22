@@ -6,7 +6,6 @@ description: |-
 
   The value is an object where each property key is a key name and each property value is a model configuration object. These models define how each key-value pair is parsed and validated.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured models for key-value pairs in a key-value list parser.
     language: yaml

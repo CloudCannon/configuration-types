@@ -6,7 +6,6 @@ description: |-
 
   The value is a string that specifies a color in the predefined palette for *Color Inputs*. Each string can be a hex code (e.g., `#ff0000`), CSS color name, or other valid color format.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured a color input with a palette containing a hex code color value.
     language: yaml

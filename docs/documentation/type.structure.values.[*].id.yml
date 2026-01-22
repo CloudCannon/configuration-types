@@ -3,8 +3,6 @@ url: /types/structure/values/[*]/id/
 title: ''
 description: |-
   This key defines the string used to identify a given Structure value when refering to it from other input configuration.
-  
-  This key has no default.
 examples:
   - description: In this example, we have configured the `blog_post` ID for the entry labeled `Blog` in the `article_information` Structure.
     language: yaml

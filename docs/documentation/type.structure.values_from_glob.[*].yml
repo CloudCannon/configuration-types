@@ -6,7 +6,6 @@ description: |-
 
   The value is a string that specifies a file path pattern relative to the root of your repository. The path must end in the file extension `.cloudcannon.structure-value.yml` (note the singular form of "value").
 
-  This key has no default value.
 examples:
   - description: >-
       In this example, the `staff` Array Input uses inline *Structure* values

@@ -4,7 +4,6 @@ title: ''
 description: |-
   This key defines the text displayed for a URL option in the *\+ Add* button dropdown.
 
-  This key has no default value.
 examples:
   - description: >-
       In this example, the *\+ Add* button dropdown in the `team` *Collection

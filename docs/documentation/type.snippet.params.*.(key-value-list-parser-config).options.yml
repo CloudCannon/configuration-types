@@ -6,7 +6,6 @@ description: |-
 
   The value is an object that can contain `models`, `format`, and `style` properties. These options control how multiple key-value pairs are parsed and validated.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured key-value list parser options with models.
     language: yaml

@@ -6,7 +6,6 @@ description: |-
 
   The value must be `literal`. This specifies that the parameter uses the literal parser, which matches a specific literal string value.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured a literal parser for a snippet parameter.
     language: yaml

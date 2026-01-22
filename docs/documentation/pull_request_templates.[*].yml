@@ -6,7 +6,6 @@ description: |-
 
   The value is an object that defines a template for pull requests. Each template can contain `label`, `title`, `body`, `template_path`, and `_inputs` keys.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured a Pull Request template with a label, title, body, and input configuration.
     language: yaml

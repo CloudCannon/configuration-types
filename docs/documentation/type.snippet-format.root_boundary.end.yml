@@ -6,7 +6,6 @@ description: |-
 
   The value is a string that specifies the token that marks the end of the root-level structure in snippet parameter parsing. This works together with `root_boundary.start` to define paired tokens that enclose the root parameter structure.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured root boundaries to use angle brackets.
     language: yaml

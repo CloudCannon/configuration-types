@@ -18,8 +18,6 @@ description: |-
   Defining a negative glob for a Collection does not remove a file from the associated Collection folder in your Git repository.
   
   Similarly, defining a positive glob for a file in a folder outside your Collection path does not move the file.
-  
-  This key has no default.
 examples:
   - description: >-
       In this example, the *Collection browser* will show all files in the

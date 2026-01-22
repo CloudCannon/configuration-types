@@ -6,7 +6,6 @@ description: |-
 
   The value must be `wrapper`. This specifies that the parameter uses the wrapper parser, which wraps another snippet configuration.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured a wrapper parser for a snippet parameter.
     language: yaml

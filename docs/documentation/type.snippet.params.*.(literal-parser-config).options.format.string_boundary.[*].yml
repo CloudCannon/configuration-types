@@ -8,7 +8,6 @@ description: |-
 
   The value is a string that specifies a valid boundary token for strings. The parser will ensure the matched end token is the same as the start token.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured a string boundary to use double quotes for literal parser.
     language: yaml

@@ -6,7 +6,6 @@ description: |-
 
   The value can be `array`, `object`, `string`, `boolean`, or `number`. This specifies the expected data type when parsing snippet parameters.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured a snippet model to expect a string type.
     language: yaml

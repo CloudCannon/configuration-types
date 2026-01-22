@@ -6,6 +6,5 @@ description: |-
 
   The value is a string that specifies the key name of an input to include in a group within an *Object Input*.
 
-  This key has no default value.
 examples: []
 show_in_navigation: false

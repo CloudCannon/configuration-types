@@ -8,7 +8,6 @@ description: |-
 
   This key only takes effect when `attributes` is enabled.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured attribute positioning for inline and block elements.
     language: yaml

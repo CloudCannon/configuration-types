@@ -10,7 +10,6 @@ description: |-
 
   Use the array format when you want to explicitly list multiple MIME types, making it easier to read and maintain in your configuration.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured a *File Input* to accept only image files using an array of image MIME types.
     language: yaml

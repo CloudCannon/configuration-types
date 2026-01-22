@@ -5,8 +5,6 @@ description: |-
   This key defines configuration options for the Markdown processing engine.
 
   The value is an object that can contain various options controlling how Markdown is converted to HTML and vice versa.
-
-  This key has no default value.
 examples:
   - description: In this example, we have configured Markdown options to enable HTML output, convert line breaks, and enable GitHub Flavored Markdown.
     language: yaml

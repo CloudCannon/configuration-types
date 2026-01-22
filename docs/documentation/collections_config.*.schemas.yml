@@ -6,8 +6,6 @@ description: |-
 
   Defining a Schema for a collection will add it to the *\+ Add* button dropdown at the top right of the *Collection browser*.
 
-  This key has no default.
-
   If undefined, clicking the *\+ Add* button to add a new file to a Collection will clone the last file in the Collection and clear any markup content
   and the values of any structured data keys.
 examples:

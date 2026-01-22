@@ -7,8 +7,6 @@ description: |-
   The value for this key is relative to your [Site source](/documentation/articles/configuration-file-reference/#source).
   
   Each Collection must have a unique path.
-  
-  This key has no default.
 examples:
   - description: >-
       In this example, the files for the `blog` Collection are located in the

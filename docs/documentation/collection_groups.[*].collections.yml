@@ -8,7 +8,6 @@ description: |-
 
   This key is required for each group entry in the `collection_groups` array.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured two Collection groups with collections arrays.
     language: yaml

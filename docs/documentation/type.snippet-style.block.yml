@@ -6,7 +6,6 @@ description: |-
 
   The value is an object that can contain `leading`, `trailing`, and `indent` properties. These options control whitespace and indentation for multi-line snippet content.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured block formatting with leading, trailing, and indent options.
     language: yaml

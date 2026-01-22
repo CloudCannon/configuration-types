@@ -6,7 +6,6 @@ description: |-
 
   The value is an object that can contain `text`, `image`, `icon`, `icon_color`, and `icon_background_color` properties. Each metadata entry is displayed on *Cards* in the *Collection browser*, *Structures*, and *Snippets*.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured a metadata entry for *Cards* in the `blog` Collection to display the URL using a template.
     language: yaml

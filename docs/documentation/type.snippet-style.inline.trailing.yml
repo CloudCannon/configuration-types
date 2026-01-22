@@ -6,7 +6,6 @@ description: |-
 
   The value is a string that specifies whitespace tokens (typically spaces) inserted after inline snippet content.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured inline trailing whitespace to use a space.
     language: yaml

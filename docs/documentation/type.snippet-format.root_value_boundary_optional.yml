@@ -6,7 +6,6 @@ description: |-
 
   The value is an object where each property key is a value type name and each property value is a boolean. When set to `true`, that value type does not require root value boundaries. For example, MDX specifies `{ string: true }`, which allows strings to exist as `<Component arg="true" />` rather than `<Component arg={"true"} />`.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured root value boundaries to be optional for strings.
     language: yaml

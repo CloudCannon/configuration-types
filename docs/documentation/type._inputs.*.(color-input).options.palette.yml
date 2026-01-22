@@ -8,7 +8,6 @@ description: |-
 
   When a palette is configured, users can select colors from the palette in addition to using the color picker (unless `hide_picker` is set to `true`).
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured a color input with a palette of brand colors for quick selection.
     language: yaml

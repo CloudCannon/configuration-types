@@ -6,7 +6,6 @@ description: |-
 
   The value is an object that can contain `literal`, `default`, `minimum`, and `editor_key` properties. These options control what literal string is matched and how many times it can appear.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured repeating literal parser options with a literal value and default count.
     language: yaml

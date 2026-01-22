@@ -7,8 +7,6 @@ description: |-
   The value is an array of template objects. Each template object can contain optional `label`, `template_path`, `template_string`, `wrap_width`, `extra_data`, and `_inputs` keys.
 
   Commit messages appear on the *Review changes* modal when you save your changes.
-
-  This key has no default.
 examples:
   - description: In this example, we have configured a commit template with a template string and input configuration.
     language: yaml

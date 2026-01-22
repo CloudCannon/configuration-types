@@ -7,7 +7,6 @@ description: |-
 
   The value is an array of strings, where each string specifies a valid boundary token. The parser will ensure the matched end token is the same as the start token. To handle common strings with either single or double quotes, this would usually be `["'", "\""]`.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured string boundaries to allow single and double quotes for literal parser.
     language: yaml

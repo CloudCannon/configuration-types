@@ -6,8 +6,6 @@ description: |-
 
   Some libraries are SSG specific while others work for most SSGs.
 
-  This key has no default.
-
   For more information, please read our documentation on [Docusaurus Components](/documentation/articles/snippets-using-docusaurus-components/),
   [Eleventy Shortcodes](/documentation/articles/snippets-using-eleventy-shortcodes/), [Hugo Shortcodes](/documentation/articles/snippets-using-hugo-shortcodes/), [MDX Components](/documentation/articles/snippets-using-mdx-components/), or [Python Markdown](/documentation/articles/snippets-using-python-markdown/).
 examples:

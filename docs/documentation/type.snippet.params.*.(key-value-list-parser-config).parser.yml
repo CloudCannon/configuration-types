@@ -6,7 +6,6 @@ description: |-
 
   The value must be `key_values`. This specifies that the parameter uses the key-value list parser, which parses multiple key-value pairs.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured a key-value list parser for a snippet parameter.
     language: yaml

@@ -6,7 +6,6 @@ description: |-
 
   The value is a string that specifies the token that marks the end of an array in snippet parameter parsing. This works together with `array_boundary.start` to define paired tokens that enclose arrays.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured array boundaries to use square brackets.
     language: yaml

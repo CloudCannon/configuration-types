@@ -6,7 +6,6 @@ description: |-
 
   The value must be `false`. Setting a preview entry to `false` will hide that preview element.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured the preview text to be disabled.
     language: yaml

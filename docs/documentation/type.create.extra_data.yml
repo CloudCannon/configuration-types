@@ -6,8 +6,6 @@ description: |-
 
   The value is an object where each property is a string that specifies a data placeholder. Entry values follow the same format as `path`, and are processed sequentially before `path`. These values are not saved back to your file.
 
-  This key has no default value.
-
   For more information, please read our documentation on [Create Paths](/documentation/articles/set-the-path-for-new-files/).
 examples:
   - description: In this example, we have configured extra data placeholders to generate a filename from date and title fields for use in the create path.

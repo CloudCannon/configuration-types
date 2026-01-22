@@ -10,7 +10,6 @@ description: |-
 
   For reverse values in YAML files, the string should be wrapped in single or double quotation marks.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured an input to be hidden when the `published` input is truthy.
     language: yaml

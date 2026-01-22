@@ -12,7 +12,6 @@ description: |-
 
   The special value `"*"` means any file type is accepted.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured a *File Input* to accept only image files using a comma-separated string of image MIME types.
     language: yaml

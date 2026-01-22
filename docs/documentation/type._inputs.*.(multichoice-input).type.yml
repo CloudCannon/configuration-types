@@ -13,8 +13,6 @@ description: |-
   If the type or value of an Input is misconfigured, CloudCannon will display an orange warning instead of an Input.
   
   If type is not configured for an Input, CloudCannon will attempt to determine Input type based on value or key name conventions.
-  
-  This key has no default.
 examples:
   - description: In this example, we have configured the `categories` key as a *Multichoice Input* type.
     language: yaml

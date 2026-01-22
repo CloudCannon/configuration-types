@@ -6,7 +6,6 @@ description: |-
 
   The value can be an array or a single value, and reference a key, template, or text string that results in a file path or URL to an image file. When multiple entries are provided, CloudCannon will use them in order as fallback options.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured the image for *Cards* in the `blog` Collection with an array of values to provide fallback options. CloudCannon will use the value of `featured_image` first, then the `{thumbnail}` template, and finally fall back to the static text value.
     language: yaml

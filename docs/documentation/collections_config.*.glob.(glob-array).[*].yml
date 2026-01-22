@@ -6,7 +6,6 @@ description: |-
 
   The value is a string that specifies a file path pattern relative to the Collection path. Globs can be positive (e.g., `*.yml`) or negative (e.g., `!**/*.json`).
 
-  This key has no default value.
 examples:
   - description: In this example, the `data` Collection uses a negative glob pattern to exclude the `secret.yml` file from the *Collection browser*.
     language: yaml

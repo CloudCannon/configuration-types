@@ -6,7 +6,6 @@ description: |-
 
   The value is a string that specifies the indentation tokens (typically spaces or tabs) applied to each line of block-level snippet content.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured block indentation to use two spaces.
     language: yaml

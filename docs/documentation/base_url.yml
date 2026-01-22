@@ -5,8 +5,6 @@ description: |-
   This key defines the base URL (or subpath) when generating output URLs for your Site.
   
   The base URL will prefix the output URL of each file.
-  
-  This key has no default.
 examples:
   - description: In this example, we have configured the base URL to `/documentation/` so all output URLs will be prefixed with this path.
     language: yaml

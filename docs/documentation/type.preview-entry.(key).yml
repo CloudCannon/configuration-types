@@ -6,7 +6,6 @@ description: |-
 
   The value is an object that contains a `key` property with a string value. This displays the value of the specified data key in card previews.
 
-  This key has no default value.
 examples:
   - description: In this example, we have configured a key preview entry to display the `title` key.
     language: yaml
