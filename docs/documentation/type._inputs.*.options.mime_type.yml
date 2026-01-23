@@ -4,8 +4,6 @@ title: Mime Type
 description: |-
   This key defines what format an image is converted to prior to upload.
   
-  Defaults to keeping the mime type of the uploaded file.
-  
   Valid values are `image/jpeg`, `image/png`, or `image/webp`.
   
   Available for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), the Image editable region

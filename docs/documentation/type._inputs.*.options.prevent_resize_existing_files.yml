@@ -5,8 +5,6 @@ description: |-
   This key toggles whether CloudCannon will skip the image resizing process configured for this input when selecting existing images.
   
   Setting this key to `true` will skip the image resizing process when selecting existing images.
-  
-  By default, this key is `false` (i.e., the image resizing process is applied when selecting existing images).
 examples:
   - description: In this example, CloudCannon will skip the image resizing process when selecting existing images for an *Image Input*.
     language: yaml

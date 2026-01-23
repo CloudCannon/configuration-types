@@ -2,7 +2,8 @@ gid: type._inputs.*.options.expandable
 url: /types/_inputs/*/options/expandable/
 title: Expandable
 description: |-
-  This key defines whether you can upscale an image to fit the bounding box while resizing an image prior to upload. Defaults to `false`.
+  This key defines whether you can upscale an image to fit the bounding box while resizing an image prior to upload.
+  
   Has no effect if files are not resized.
   
   Available for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), the Image editable region

@@ -3,8 +3,6 @@ url: /editor/default_path/
 title: ''
 description: |-
   This key defines the link for the *Home* button on the *Dashboard* page.
-
-  By default, this key is set to `/` (i.e., your index output URL).
 examples:
   - description: In this example, we have configured the Home button to link to `/blog/` instead of the default `/`.
     language: yaml

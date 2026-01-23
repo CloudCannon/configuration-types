@@ -5,8 +5,6 @@ description: |-
   This key toggles whether a character counter is shown below the input.
   
   Setting this key to `true` will show a character counter below the input.
-  
-  By default, this key is `false` (i.e., the character counter is not shown).
 examples:
   - description: In this example, CloudCannon will show a character counter below the *Textarea Input*.
     language: yaml

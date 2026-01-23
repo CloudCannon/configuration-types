@@ -14,8 +14,6 @@ description: |-
   
   > For more information about data placeholders and fixed placeholders, please read our documentation on [configuring your template
   strings](/documentation/articles/configure-your-template-strings/).
-  
-  By default, CloudCannon will use the key name of the Collection.
 examples:
   - description: >-
       In this example, the output URL for files in this Collection will be

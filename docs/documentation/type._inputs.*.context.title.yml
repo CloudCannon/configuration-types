@@ -3,8 +3,6 @@ url: /types/_inputs/*/context/title/
 title: ''
 description: |-
   This key defines the title of the context box.
-
-  By default, this key value is "Context".
 examples:
   - description: >-
       In this example, we want to customize the context box title to be more

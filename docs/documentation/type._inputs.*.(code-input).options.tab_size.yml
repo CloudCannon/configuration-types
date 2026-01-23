@@ -5,8 +5,6 @@ description: |-
   This key defines the number of spaces inserted when the Tab key is pressed in a *Code Input*.
 
   The value is a number representing the number of spaces. This affects both indentation behavior and how existing tabs are displayed.
-
-  By default, this key is `2`.
 examples:
   - description: In this example, we have configured a code input to use 4 spaces for indentation instead of the default 2.
     language: yaml

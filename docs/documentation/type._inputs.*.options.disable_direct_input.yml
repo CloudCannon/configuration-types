@@ -5,8 +5,6 @@ description: |-
   This key toggles whether CloudCannon will prevent typing into the *Text Input*, while still allowing context menu options to change the value.
   
   Setting this key to `true` will prevent typing into the *Text Input*.
-  
-  By default, this key is `false` (i.e., typing into the *Text Input* is allowed).
 examples:
   - description: In this example, CloudCannon will prevent typing into the *Text Input* `url`.
     language: yaml

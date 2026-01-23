@@ -10,9 +10,6 @@ description: |-
   key.
   
   Values can be from [Google's Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons) library.
-  
-  By default, CloudCannon uses the 'notes' or `data_usage` icons, or the Material Icon with the closest name to your Collection key name if you use
-  *Configuration Mode* to create your *Collection*.
 examples:
   - description: >-
       In this example, we have configured the `post_add` icon for the `blog`

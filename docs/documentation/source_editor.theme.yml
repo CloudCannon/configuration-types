@@ -12,8 +12,6 @@ description: |-
   `terminal` `textmate` `tomorrow` `tomorrow_night` `tomorrow_night_blue`
   `tomorrow_night_bright` `tomorrow_night_eighties` `twilight` `vibrant_ink`
   `xcode`
-
-  By default, this key is `basic_dark`.
 examples:
   - description: In this example, we have configured the Source Editor to use the `dark` theme for syntax highlighting.
     language: yaml

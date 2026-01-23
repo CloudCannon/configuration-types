@@ -5,8 +5,6 @@ description: |-
   This key defines the icon for the documentation link at the top of a *Collection browser*.
   
   Values can be from [Google's Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons) library.
-  
-  By default, this key is `auto_stories`.
 examples:
   - description: >-
       In this example, we have configured the `star` icon for the `blog`

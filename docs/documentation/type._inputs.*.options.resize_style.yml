@@ -4,8 +4,6 @@ title: Resize Style
 description: |-
   This key defines how image files are resized prior to upload, using a bounding box defined by `width` and `height` options.
   
-  Defaults to `contain`.
-  
   Valid values are `contain`, `cover` or `stretch`:
   
   * `cover` keeps aspect ratio and ensures the image covers the bounding box

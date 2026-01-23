@@ -5,8 +5,6 @@ description: |-
   This key defines which Markdown processing engine CloudCannon will use to convert between HTML and Markdown.
 
   The value can be `commonmark` or `kramdown`.
-
-  By default, this key is `commonmark`.
 examples:
   - description: In this example, we have configured CloudCannon to use the `kramdown` Markdown engine.
     language: yaml

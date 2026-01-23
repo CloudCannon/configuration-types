@@ -6,8 +6,6 @@ description: |-
   
   Value must be in IANA timezone format.
   
-  By default, this key is `Etc/UTC`.
-  
   For more information, please read our documentation on [Date and Time inputs](/documentation/articles/what-are-date-and-time-inputs/).
 examples: []
 show_in_navigation: true

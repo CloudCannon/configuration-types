@@ -9,8 +9,6 @@ description: |-
   Modals are useful when you have several value options for your Structure.
   
   Values can be one of the following: `select`, or `modal`.
-  
-  By default, this key is `select`.
 examples:
   - description: >-
       In this example, the `related_articles` Structure only has one option so a

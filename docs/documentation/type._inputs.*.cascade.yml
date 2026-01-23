@@ -16,8 +16,6 @@ description: |-
   For example, define a `comment` globally, but use collection-specific `label` for inputs in different collections.
   
   You can stop the cascade at any point in the configuration cascade by setting `cascade` to `false`.
-  
-  By default, this key is `true` (i.e., merges all configurations for an input in the cascade).
 examples:
   - description: In this example, we have configured cascade to merge input configurations across the configuration cascade.
     language: yaml

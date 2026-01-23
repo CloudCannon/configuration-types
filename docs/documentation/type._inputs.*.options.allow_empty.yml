@@ -7,8 +7,6 @@ description: |-
   This key toggles whether CloudCannon will accept empty values.
   
   Setting this key to `true` will allow CloudCannon to accept empty values.
-  
-  By default, this key is `false` (i.e., CloudCannon does not accept empty values).
 examples:
   - description: In this example, CloudCannon will accept empty values for a *Select Input*.
     language: yaml

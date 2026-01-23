@@ -5,8 +5,6 @@ description: |-
   This key toggles whether CloudCannon will disable the context menu option and the drop area for uploading files.
   
   Setting this key to `true` will disable the context menu option and prevent uploading file through drag-and-drop in a *File Input*.
-  
-  By default, this key is `false` (i.e., the context menu option and drop area for uploading files are enabled).
 examples:
   - description: In this example, CloudCannon will disable the option to upload a file in the context menu and prevent uploading file through drag-and-drop in a *File Input*.
     language: yaml

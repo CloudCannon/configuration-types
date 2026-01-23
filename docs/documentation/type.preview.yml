@@ -9,18 +9,6 @@ description: |-
   inputs](/documentation/articles/what-is-a-select-input/), [Structures](/documentation/articles/what-is-a-structure/), the Structure modal,
   [Snippets](/documentation/articles/what-is-a-snippet/), and the Snippet modal.
 
-  This key defaults to:
-
-  ````````
-  preview:
-   text:
-   - key: title
-   - key: name
-   icon:
-   - key: icon
-
-  ````````
-
   For more information about previews, please read our documentation on [configuring card previews](/documentation/articles/configure-your-card-previews/).
 examples:
   - description: In this example, we have configured the appearance of file Cards in the *Collection browser*.
