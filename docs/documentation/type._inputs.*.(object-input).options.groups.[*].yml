@@ -2,7 +2,7 @@ gid: type._inputs.*.(object-input).options.groups.[*]
 url: /types/_inputs/*/(object-input)/options/groups/[*]/
 title: ''
 description: |-
-  This key represents an individual group object in the `type._inputs.*.(object-input).options.groups` array.
+  This key represents an individual group object in the `_inputs.*(object-input).options.groups` array.
 
   The value is an object that groups inputs together inside an *Object Input* without changing the data structure. Each group typically contains a `heading` and `inputs` array.
 

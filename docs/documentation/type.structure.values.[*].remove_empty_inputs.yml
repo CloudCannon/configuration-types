@@ -10,7 +10,5 @@ description: |-
   Editor](/documentation/articles/what-is-the-source-editor/). For this key to function, you must also configure `id_key` for the Structure, as removing inputs prevents CloudCannon from comparing Structure values.
   
   You can also configure this behavior for all values of a Structure using `remove_empty_inputs` inside `_structures.*`.
-  
-  You can also configure this behavior for all values of a Structure using structure.remove_empty_inputs.
 examples: []
 show_in_navigation: false

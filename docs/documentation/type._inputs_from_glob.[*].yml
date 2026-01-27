@@ -21,7 +21,7 @@ examples:
           icon: event
           inputs_from_glob:
             - '/.cloudcannon/inputs/seo.cloudcannon.inputs.yml'
-            - '/.cloudcannon/inputs/blogDetails.cloudcannon.inputs.yml'
+            - '/.cloudcannon/inputs/blog-details.cloudcannon.inputs.yml'
     annotations: []
     source: cloudcannon.config.yml
 show_in_navigation: false

@@ -11,7 +11,7 @@ examples:
         metadata:
           type: object
           options:
-            empty_type_object: {}
+            empty_type: object
     annotations: []
     source: cloudcannon.config.yml
 show_in_navigation: false

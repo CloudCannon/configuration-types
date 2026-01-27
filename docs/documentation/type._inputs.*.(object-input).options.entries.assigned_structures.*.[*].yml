@@ -2,7 +2,7 @@ gid: type._inputs.*.(object-input).options.entries.assigned_structures.*.[*]
 url: /types/_inputs/*/(object-input)/options/entries/assigned_structures/*/[*]/
 title: ''
 description: |-
-  This key represents an individual assigned structure string in the `type._inputs.*.(object-input).options.entries.assigned_structures.*` array.
+  This key represents an individual assigned structure string in the `_inputs.*(object-input).options.entries.assigned_structures.*` array.
 
   The value is a string that specifies a structure key name assigned to entries in an *Object Input*.
 

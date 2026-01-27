@@ -11,7 +11,7 @@ description: |-
   
   This key is required for `range` inputs.
   
-  Value can be any integer.
+  Value can be any number.
   
   If `options.max` is also configured, this key cannot be a greater number.
   

@@ -11,7 +11,7 @@ examples:
         quantity:
           type: number
           options:
-            empty_type_number: null
+            empty_type: number
     annotations: []
     source: cloudcannon.config.yml
 show_in_navigation: false

@@ -10,6 +10,11 @@ examples:
       _inputs:
         category:
           type: select
+          options:
+            values:
+              - Blog
+              - News
+              - Events
     annotations: []
     source: cloudcannon.config.yml
 show_in_navigation: false

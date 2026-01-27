@@ -11,7 +11,7 @@ examples:
         tags:
           type: array
           options:
-            empty_type_array: []
+            empty_type: array
     annotations: []
     source: cloudcannon.config.yml
 show_in_navigation: false

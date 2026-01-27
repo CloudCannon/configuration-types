@@ -2,7 +2,7 @@ gid: type._structures_from_glob.[*]
 url: /types/_structures_from_glob/[*]/
 title: ''
 description: |-
-  This key represents an individual glob pattern string in the `type._structures_from_glob` array.
+  This key represents an individual glob pattern string in the `_structures_from_glob` array.
 
   The value is a string that specifies a file path pattern relative to the root of your repository. The path must end in the file extension `.cloudcannon.structures.yml`.
 

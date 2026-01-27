@@ -2,7 +2,7 @@ gid: type.create.extra_data.*
 url: /types/create/extra_data/*/
 title: ''
 description: |-
-  This key represents an individual extra data property in the `type.create.extra_data` object.
+  This key represents an individual extra data property in the `create.extra_data` object.
 
   The value is a string that specifies a data placeholder for use in create path templates. Entry values follow the same format as `path`, and are processed sequentially before `path`. These values are not saved back to your file.
 

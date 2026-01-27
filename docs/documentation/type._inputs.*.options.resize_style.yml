@@ -4,10 +4,11 @@ title: Resize Style
 description: |-
   This key defines how image files are resized prior to upload, using a bounding box defined by `width` and `height` options.
   
-  Valid values are `contain`, `cover` or `stretch`:
+  Valid values are `cover`, `contain`, `crop`, or `stretch`:
   
   * `cover` keeps aspect ratio and ensures the image covers the bounding box
   * `contain` keeps aspect ratio and ensures the image fits inside the bounding box
+  * `crop` prompts the user with and interface to select an aspect-ratio-respecting area
   * `stretch` ignores aspect ratio and resizes the image to the bounding box
   
   This key does not apply to existing images, and does not work if `width` and `height` options are not defined.
