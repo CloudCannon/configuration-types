@@ -9,7 +9,7 @@ description: |-
   If the Input already contains a later date and time, CloudCannon will require you to change it to a valid value to save your changes, or discard your
   unsaved changes.
   
-  Value must be in [ISO8601](https://www.iso.org/iso-8601-date-and-time-format.html) format and should be in quotes.
+  Value must be in [ISO8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
   
   If `options.start_from` is also configured, this key cannot be an earlier date and time.
   

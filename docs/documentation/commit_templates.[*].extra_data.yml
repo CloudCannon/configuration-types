@@ -17,8 +17,7 @@ examples:
             breaking_change_message:
               type: text
           extra_data:
-            breaking_change: |-
-              ⚠️ {breaking_change_message}
+            breaking_change: '⚠️ {breaking_change_message}'
     annotations: []
     source: cloudcannon.config.yml
 show_in_navigation: false

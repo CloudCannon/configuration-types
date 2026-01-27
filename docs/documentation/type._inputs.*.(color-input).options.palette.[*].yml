@@ -2,7 +2,7 @@ gid: type._inputs.*.(color-input).options.palette.[*]
 url: /types/_inputs/*/(color-input)/options/palette/[*]/
 title: ''
 description: |-
-  This key represents an individual color string in the `type._inputs.*.(color-input).options.palette` array.
+  This key represents an individual color string in the `_inputs.*.(color-input).options.palette` array.
 
   The value is a string that specifies a color in the predefined palette for *Color Inputs*. Each string can be a hex code (e.g., `#ff0000`), CSS color name, or other valid color format.
 

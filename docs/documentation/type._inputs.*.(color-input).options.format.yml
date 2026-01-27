@@ -4,6 +4,6 @@ title: ''
 description: |-
   This key defines what format the color value is saved as.
   
-  Defaults to the naming convention, or HEX if that is unset.
+  Defaults to the naming convention, or "hex" if that is unset.
 examples: []
 show_in_navigation: false

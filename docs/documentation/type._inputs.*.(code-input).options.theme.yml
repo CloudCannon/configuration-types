@@ -4,7 +4,6 @@ title: ''
 description: |-
   This key defines the color theme used for syntax highlighting in *Code Inputs*.
 
-  The value is a string that must match one of the available theme names. Available themes include `atomone`, `basic_dark`, `basic_light`, `darcula`, `dracula`, `duotone_dark`, `duotone_light`, `eclipse`, `github_dark`, `github_light`, `gruvbox_dark`, `gruvbox_light`, `material_dark`, `material_light`, `solarized_dark`, `solarized_light`, `sublime`, `tokyo_night`, `tokyo_night_day`, `tokyo_night_storm`, `tomorrow_night_blue`, `vscode_dark`, `vscode_light`, `xcode_dark`, and `xcode_light`.
 
   By default, this key is `basic_dark`.
 examples:

@@ -2,7 +2,7 @@ gid: type.structure.values_from_glob.[*]
 url: /types/structure/values_from_glob/[*]/
 title: ''
 description: |-
-  This key represents an individual glob pattern string in the `type.structure.values_from_glob` array.
+  This key represents an individual glob pattern string in the `values_from_glob` array.
 
   The value is a string that specifies a file path pattern relative to the root of your repository. The path must end in the file extension `.cloudcannon.structure-value.yml` (note the singular form of "value").
 
@@ -10,7 +10,7 @@ examples:
   - description: >-
       In this example, the `staff` Array Input uses inline *Structure* values
       from the main *Configuration File* and also references another value from
-      the `boardMember.cloudcannon.structure_value.yml` in the
+      the `boardMember.cloudcannon.structure-value.yml` in the
       `/.cloudcannon/structures/` folder.
     language: yaml
     code: |-
