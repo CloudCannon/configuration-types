@@ -10,7 +10,5 @@ description: |-
   will remove them from the file before persisting the changes to your Git repository.
   
   You can also configure this behavior for all values of a Structure using `remove_extra_inputs` inside `_structures.*`.
-  
-  You can also configure this behavior for all values of a Structure using `structure.remove_extra_inputs`.
 examples: []
 show_in_navigation: false
