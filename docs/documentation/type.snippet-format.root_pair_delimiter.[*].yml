@@ -2,7 +2,7 @@ gid: type.snippet-format.root_pair_delimiter.[*]
 url: /types/snippet-format/root_pair_delimiter/[*]/
 title: ''
 description: |-
-  This key represents an individual delimiter string in the `type.snippet-format.root_pair_delimiter` array.
+  This key represents an individual delimiter string in the `root_pair_delimiter` array.
 
   The value is a string that specifies a delimiter token that separates key-value pairs when parsing snippet parameters.
 

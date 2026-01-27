@@ -8,6 +8,6 @@ description: |-
   
   By default, this key is `true` (i.e., inputs are reordered to match the Structure value).
   
-  You can also configure this behavior for all values of a Structure using `structure.reorder_inputs`.
+  You can also configure this behavior for all values of a Structure using `reorder_inputs` inside `_structures.*`.
 examples: []
 show_in_navigation: false

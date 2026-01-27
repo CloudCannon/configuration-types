@@ -2,7 +2,7 @@ gid: type.snippet.params.*
 url: /types/snippet/params/*/
 title: ''
 description: |-
-  This key represents an individual snippet parameter configuration in the `type.snippet.params` object.
+  This key represents an individual snippet parameter configuration in the `params` object.
 
   The value is an object that defines a parser configuration for a snippet parameter. Each parameter can use different parser types (argument, content, literal, etc.) with their specific options.
 

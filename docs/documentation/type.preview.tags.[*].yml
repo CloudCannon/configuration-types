@@ -2,7 +2,7 @@ gid: type.preview.tags.[*]
 url: /types/preview/tags/[*]/
 title: ''
 description: |-
-  This key represents an individual tag string in the `type.preview.tags` array.
+  This key represents an individual tag string in the `preview.tags` array.
 
   The value is a string that specifies a tag to display on *Cards* in the *Collection browser*, *Structures*, and *Snippets*.
 

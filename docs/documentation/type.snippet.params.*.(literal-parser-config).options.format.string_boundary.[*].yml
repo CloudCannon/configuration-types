@@ -4,7 +4,7 @@ url: >-
   /types/snippet/params/*/(literal-parser-config)/options/format/string_boundary/[*]/
 title: ''
 description: |-
-  This key represents an individual string boundary token in the `type.snippet.params.*.(literal-parser-config).options.format.string_boundary` array.
+  This key represents an individual string boundary token in the `params.*(literal-parser-config).options.format.string_boundary` array.
 
   The value is a string that specifies a valid boundary token for strings. The parser will ensure the matched end token is the same as the start token.
 

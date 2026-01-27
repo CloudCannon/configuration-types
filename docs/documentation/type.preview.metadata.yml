@@ -15,7 +15,8 @@ examples:
         blog:
           preview:
             metadata:
-              - template: [url]
+              - text:
+                - key: url
               - icon: event
                 icon_color: light-blue
                 text:

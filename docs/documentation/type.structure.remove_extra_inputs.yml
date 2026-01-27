@@ -8,7 +8,7 @@ description: |-
   Editor](/documentation/articles/what-is-the-content-editor/), or [Data Editor](/documentation/articles/what-is-the-data-editor/), and saving the file
   will remove them from the file before persisting the changes to your Git repository.
   
-  By default, this key is `false` (i.e., inputs not present in the Structure are not removed from the file).
+  You can also configure this behavior for specific values of a Structure using `values[*].remove_extra_inputs`.
   
   You can also configure this behavior for specific values of a Structure using `structure.values.[*].remove_extra_inputs`.
 examples:

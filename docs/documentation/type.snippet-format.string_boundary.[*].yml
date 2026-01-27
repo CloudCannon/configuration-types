@@ -2,7 +2,7 @@ gid: type.snippet-format.string_boundary.[*]
 url: /types/snippet-format/string_boundary/[*]/
 title: ''
 description: |-
-  This key represents an individual string boundary token in the `type.snippet-format.string_boundary` array.
+  This key represents an individual string boundary token in the `string_boundary` array.
 
   The value is a string that specifies a valid boundary token for strings. The parser will ensure the matched end token is the same as the start token.
 

@@ -6,8 +6,6 @@ description: |-
   
   You can use tags to group and filter Structure options when selecting from a modal.
   
-  The `style` key must be set to `modal` for this key to function.
-  
   This key has no default.
 examples:
   - description: >-

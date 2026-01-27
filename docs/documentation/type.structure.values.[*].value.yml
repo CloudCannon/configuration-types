@@ -2,9 +2,9 @@ gid: type.structure.values.[*].value
 url: /types/structure/values/[*]/value/
 title: ''
 description: |-
-  This key defines which nested inputs the Structure should add to an Object or Array input.
+  This key defines which nested inputs the Structure value should add to an Object or Array input.
   
-  You must define this key for the Structure to function.
+  You must define this key for the Structure value to function.
   
   Nested keys can be any [input](/documentation/articles/what-are-inputs/) you require in your Object or Array.
   

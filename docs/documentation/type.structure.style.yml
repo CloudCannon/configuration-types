@@ -4,7 +4,7 @@ title: ''
 description: |-
   This key defines how CloudCannon shows Structure options to populate an Object or Array input.
   
-  This can be using a Select-style search bar or a pop-up modal.
+  This can be using a select-style search bar or a pop-up modal.
   
   Modals are useful when you have several value options for your Structure.
   
