@@ -2,7 +2,7 @@ gid: data_config
 url: /data_config/
 title: Data Configuration
 description: |-
-  This key defines which file or folder data in your Site is available to populate [Select and Multiselect inputs](/documentation/articles/what-is-a-select-input/).
+  This key defines which file or folder data in your Site is available to populate [Select Inputs](/documentation/articles/what-is-a-select-input/).
 examples:
   - description: In this example, we have configured data config to make data files available for *Select Inputs* and *Multiselect Inputs*.
     language: yaml

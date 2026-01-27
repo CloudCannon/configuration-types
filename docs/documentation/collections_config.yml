@@ -3,8 +3,6 @@ url: /collections_config/
 title: ''
 description: |-
   This key defines your Collections.
-
-  By default, CloudCannon uses your `source` key to make assumptions about your Collections.
 examples:
   - description: In this example, we have configured a `blog` Collection. Key settings include two Schemas to populate files with different content, a Blog Tags input populated by a fixed data set, and a custom Create Path to generate file names from structured data.
     language: yaml

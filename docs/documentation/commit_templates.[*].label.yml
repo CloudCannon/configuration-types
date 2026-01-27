@@ -5,8 +5,6 @@ description: |-
   This key defines the name of a commit template, which appears in the dropdown menu when saving changes.
 
   The value is a string that specifies the label text for the template.
-
-  This key has no default.
 examples:
   - description: In this example, we have configured a commit template with the label "Default".
     language: yaml

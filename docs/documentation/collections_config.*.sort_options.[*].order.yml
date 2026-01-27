@@ -4,11 +4,7 @@ title: ''
 description: |-
   This key defines which order an option in the *Sort* dropdown should use to sort files in your *Collection browser*.
   
-  CloudCannon will sort files according to the value of `sort_options.key` for each option in the *Sort* dropdown.
-  
-  Values can be one of the following: `asc`, `ascending`, `desc`, or `descending`.
-  
-  By default, this key is `ascending`.
+  CloudCannon will sort files according to the value of `sort_options[*].key` for each option in the *Sort* dropdown.
 examples:
   - description: >-
       In this example, the "Author (A-Z)" option in the *Sort* dropdown will

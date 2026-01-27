@@ -9,7 +9,7 @@ description: |-
   
   Values for this key can be a mix of plain text and template strings, and should begin and end with the `/` character.
   
-  Template strings can contain data placholders and fixed placeholders, which CloudCannon will replace with the data it references when generating the
+  Template strings can contain data placeholders and fixed placeholders, which CloudCannon will replace with the data it references when generating the
   output URL.
   
   > For more information about data placeholders and fixed placeholders, please read our documentation on [configuring your template
