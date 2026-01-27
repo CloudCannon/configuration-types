@@ -6,7 +6,7 @@ description: |-
 
   The value is an array of group objects. Each group object must contain a `heading` key and a `collections` key.
 
-  If undefined, CloudCannon will sort your Collections in the following order: the *Pages* Collection, all output Collections in alphabetical order, then all non-output Collections in alphabetical order.
+  If undefined, CloudCannon will sort your Collections in the order they are defined under the `collections_config` key.
 
 examples:
   - description: In this example, we have configured Collection groups to organize Collections into "Content" and "Data Files" sections in the *Site Navigation*.

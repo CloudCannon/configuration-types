@@ -4,7 +4,7 @@ title: Icon
 description: |-
   This key defines the icon for the documentation link at the top of a *Collection browser*.
   
-  Values can be from [Google's Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons) library.
+  Values can be from [Google's Material Symbols](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded) library.
 examples:
   - description: >-
       In this example, we have configured the `star` icon for the `blog`

@@ -4,7 +4,7 @@ title: Icon
 description: |-
   This key defines the icon displayed next to the text for a URL option in the *\+ Add* button dropdown.
 
-  The value is a string that specifies an icon name from [Google's Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons).
+  The value is a string that specifies an icon name from [Google's Material Symbols](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded).
 examples:
   - description: >-
       In this example, the *\+ Add* button dropdown in the `team` *Collection

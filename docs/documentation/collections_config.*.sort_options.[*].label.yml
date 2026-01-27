@@ -4,7 +4,6 @@ title: ''
 description: |-
   This key defines the label used for a file sorting option in the *Sort* dropdown.
   
-  This key has no default.
 examples:
   - description: >-
       In this example, the sorting method which uses the `author` key is called

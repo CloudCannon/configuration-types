@@ -4,7 +4,7 @@ title: Icon
 description: |-
   This key defines which icon appears next to the context box title.
   
-  The value must match an icon name from Google's [Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons) list.
+  The value must match an icon name from [Google's Material Symbols](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded) list.
   
   This key has no default.
 examples:

@@ -4,7 +4,7 @@ title: Icon
 description: |-
   This key defines the icon displayed next to the text for a standard add option in the *\+ Add* button dropdown.
 
-  The value is a string that specifies an icon name from [Google's Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons).
+  The value is a string that specifies an icon name from [Google's Material Symbols](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded).
 
   By default, this key uses the icon of the matching Schema if `add_options.schema` is configured. Otherwise, this key defaults to `add`.
 examples:

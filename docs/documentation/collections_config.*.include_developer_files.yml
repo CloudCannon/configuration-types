@@ -9,7 +9,6 @@ description: |-
   assuming they are not filtered out by any configured
   [globs](/documentation/articles/collections-reference/#glob). 
   
-  By default, this key is `false` (i.e., do not include developer files).
 examples:
   - description: >-
       In this example, we want to see developer files in the *Collection

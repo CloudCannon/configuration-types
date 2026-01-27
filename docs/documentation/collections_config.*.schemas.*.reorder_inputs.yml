@@ -6,6 +6,5 @@ description: |-
 
   Setting this key to `false` will preserve the existing order of inputs in a file, regardless of the order defined in the Schema.
 
-  By default, this key is `true` (i.e., inputs are reordered to match the Schema).
 examples: []
 show_in_navigation: false

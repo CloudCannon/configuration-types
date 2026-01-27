@@ -9,7 +9,7 @@ description: |-
   For more information about the preview icon, please read our documentation on the [preview](/documentation/articles/configure-your-card-previews/)
   key.
   
-  Values can be from [Google's Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons) library.
+  Values can be from [Google's Material Symbols](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded) library.
 examples:
   - description: >-
       In this example, we have configured the `post_add` icon for the `blog`
