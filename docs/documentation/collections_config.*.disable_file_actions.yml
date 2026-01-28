@@ -6,8 +6,6 @@ description: |-
   the *Collection browser* or in an editing interface.
   
   Setting this key to `true` will prevent team members from using file actions in the *Collection browser*.  This key does not affect file actions in the *File browser*.
-  
-  For Eleventy, Hugo, and Jekyll, this key defaults to `true` for the `data` Collection.
 examples:
   - description: >-
       In this example, we want to prevent team members from using file actions
