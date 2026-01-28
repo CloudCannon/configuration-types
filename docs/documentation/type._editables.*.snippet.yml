@@ -1,14 +1,22 @@
 gid: type._editables.*.snippet
 url: /types/_editables/*/snippet/
 title: ''
-description: |-
-  This key toggles whether CloudCannon will display a tool in your WYSIWYG toolbar to insert a [Snippet](/documentation/articles/what-is-a-snippet/), if any are available.
-  
-  Setting this key to `true` will enable a tool in your WYSIWYG toolbar to insert a Snippet.
-  
+description: >-
+  This key toggles whether CloudCannon will display a tool in your WYSIWYG
+  toolbar to insert a [Snippet](/documentation/articles/what-is-a-snippet/), if
+  any are available.
+
+
+  Setting this key to `true` will enable a tool in your WYSIWYG toolbar to
+  insert a Snippet.
+
+
   By default, this key is `false` (i.e., the snippet tool is not displayed).
-  
-  Available for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), and Rich Text inputs
+
+
+  Available for the Content Editor (`_editables.content`), the Block editable
+  region (`_editables.block`), and Rich Text inputs
+
   (`_inputs.key_name.options`).
 examples: []
 show_in_navigation: false

@@ -1,12 +1,16 @@
 gid: type._inputs.*.(select-input)
 url: /types/_inputs/*/(select-input)/
 title: Select Input
-description: |-
-  This key defines an editing interface for data with multiple predefined options.
-  
+description: >-
+  This key defines an editing interface for data with multiple predefined
+  options.
+
+
   Select inputs only allow one value.
 examples:
-  - description: In this example, we have configured the `category` key as a *Select Input*.
+  - description: >-
+      In this example, we have configured the `category` key as a *Select
+      Input*.
     language: yaml
     code: |-
       _inputs:

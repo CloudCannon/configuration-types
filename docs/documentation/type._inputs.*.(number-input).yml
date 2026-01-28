@@ -1,10 +1,11 @@
 gid: type._inputs.*.(number-input)
 url: /types/_inputs/*/(number-input)/
 title: Number Input
-description: |-
-  This key defines an editing interface for numeric values.
+description: This key defines an editing interface for numeric values.
 examples:
-  - description: In this example, we have configured the `quantity` key as a *Number Input*.
+  - description: >-
+      In this example, we have configured the `quantity` key as a *Number
+      Input*.
     language: yaml
     code: |-
       _inputs:

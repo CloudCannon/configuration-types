@@ -1,17 +1,24 @@
 gid: source
 url: /source/
 title: ''
-description: |-
-  This key defines the base path for your source files, relative to the root folder of your repository.
-  
-  Unless you use a nested folder as the source for your Site you can leave this key empty or set it to `/`.
-  
-  For more information, please read our documentation on the [Site source](/documentation/articles/what-is-the-cloudcannon-configuration-file/#the-source-folder) folder in your configuration file.
+description: >-
+  This key defines the base path for your source files, relative to the root
+  folder of your repository.
+
+
+  Unless you use a nested folder as the source for your Site you can leave this
+  key empty or set it to `/`.
+
+
+  For more information, please read our documentation on the [Site
+  source](/documentation/articles/what-is-the-cloudcannon-configuration-file/#the-source-folder)
+  folder in your configuration file.
 examples:
-  - description: In this example, we have configured the source path to `src` so CloudCannon will look for source files in the `src` folder.
+  - description: >-
+      In this example, we have configured the source path to `src` so
+      CloudCannon will look for source files in the `src` folder.
     language: yaml
-    code: |-
-      source: src
+    code: 'source: src'
     annotations: []
     source: cloudcannon.config.yml
 show_in_navigation: false

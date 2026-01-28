@@ -1,10 +1,13 @@
 gid: type._inputs.*.(number-input).type
 url: /types/_inputs/*/(number-input)/type/
 title: Type
-description: |-
-  This key defines the input type, which controls how this input appears and behaves.
+description: >-
+  This key defines the input type, which controls how this input appears and
+  behaves.
 examples:
-  - description: In this example, we have configured the `quantity` key as a *Number Input* type.
+  - description: >-
+      In this example, we have configured the `quantity` key as a *Number Input*
+      type.
     language: yaml
     code: |-
       _inputs:

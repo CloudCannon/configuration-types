@@ -1,15 +1,22 @@
 gid: collection_groups
 url: /collection_groups/
 title: Collection Groups
-description: |-
-  This key defines custom order and grouping for Collections in your *Site Navigation*.
+description: >-
+  This key defines custom order and grouping for Collections in your *Site
+  Navigation*.
 
-  The value is an array of group objects. Each group object must contain a `heading` key and a `collections` key.
 
-  If undefined, CloudCannon will sort your Collections in the order they are defined under the `collections_config` key.
+  The value is an array of group objects. Each group object must contain a
+  `heading` key and a `collections` key.
 
+
+  If undefined, CloudCannon will sort your Collections in the order they are
+  defined under the `collections_config` key.
 examples:
-  - description: In this example, we have configured Collection groups to organize Collections into "Content" and "Data Files" sections in the *Site Navigation*.
+  - description: >-
+      In this example, we have configured Collection groups to organize
+      Collections into "Content" and "Data Files" sections in the *Site
+      Navigation*.
     language: yaml
     code: |-
       collection_groups:

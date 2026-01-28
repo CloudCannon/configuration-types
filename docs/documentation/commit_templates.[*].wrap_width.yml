@@ -1,13 +1,16 @@
 gid: commit_templates.[*].wrap_width
 url: /commit_templates/[*]/wrap_width/
 title: ''
-description: |-
+description: >-
   This key defines the width of the text wrap in the commit message editor.
 
-  The value is a number that specifies the character width at which text wraps in the editor.
 
+  The value is a number that specifies the character width at which text wraps
+  in the editor.
 examples:
-  - description: In this example, we have configured a commit template with a wrap width of 72 characters.
+  - description: >-
+      In this example, we have configured a commit template with a wrap width of
+      72 characters.
     language: yaml
     code: |-
       commit_templates:

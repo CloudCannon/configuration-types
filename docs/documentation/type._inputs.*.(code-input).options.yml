@@ -1,7 +1,6 @@
 gid: type._inputs.*.(code-input).options
 url: /types/_inputs/*/(code-input)/options/
 title: ''
-description: |-
-  This key defines options that are specific to Code Inputs.
+description: This key defines options that are specific to Code Inputs.
 examples: []
 show_in_navigation: false

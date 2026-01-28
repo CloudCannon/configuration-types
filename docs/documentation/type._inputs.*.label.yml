@@ -1,8 +1,7 @@
 gid: type._inputs.*.label
 url: /types/_inputs/*/label/
 title: ''
-description: |-
-  This key defines the bold title text above an Input.
+description: This key defines the bold title text above an Input.
 examples:
   - description: >-
       In this example, we want to customize the label for our `page_title` Input

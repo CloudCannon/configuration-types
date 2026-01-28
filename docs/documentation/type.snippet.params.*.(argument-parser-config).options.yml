@@ -1,13 +1,16 @@
 gid: type.snippet.params.*.(argument-parser-config).options
 url: /types/snippet/params/*/(argument-parser-config)/options/
 title: ''
-description: |-
+description: >-
   This key defines configuration options for argument parser configurations.
 
-  The value is an object that can contain `model` and `format` properties. These options control how a single argument value is parsed and validated.
 
+  The value is an object that can contain `model` and `format` properties. These
+  options control how a single argument value is parsed and validated.
 examples:
-  - description: In this example, we have configured argument parser options with a model and format.
+  - description: >-
+      In this example, we have configured argument parser options with a model
+      and format.
     language: yaml
     code: |-
       _snippets:

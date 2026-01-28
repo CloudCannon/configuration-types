@@ -1,11 +1,15 @@
 gid: type.snippet-model.editor_key
 url: /types/snippet-model/editor_key/
 title: ''
-description: |-
-  This key defines the key that a user in CloudCannon will see when editing this value.
-  
-  This key will also be used if you want to specify any input configuration using `_inputs`.
-  
+description: >-
+  This key defines the key that a user in CloudCannon will see when editing this
+  value.
+
+
+  This key will also be used if you want to specify any input configuration
+  using `_inputs`.
+
+
   If no `source_key` is set, this key will also be assumed to be the source key.
 examples:
   - description: ''

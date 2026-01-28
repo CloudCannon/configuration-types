@@ -1,13 +1,16 @@
 gid: type.preview.tags.[*]
 url: /types/preview/tags/[*]/
 title: ''
-description: |-
+description: >-
   This key represents an individual tag string in the `preview.tags` array.
 
-  The value is a string that specifies a tag to display on *Cards* in the *Collection browser*, *Structures*, and *Snippets*.
 
+  The value is a string that specifies a tag to display on *Cards* in the
+  *Collection browser*, *Structures*, and *Snippets*.
 examples:
-  - description: In this example, we have configured a tag for *Cards* in the `blog` Collection.
+  - description: >-
+      In this example, we have configured a tag for *Cards* in the `blog`
+      Collection.
     language: yaml
     code: |-
       collections_config:

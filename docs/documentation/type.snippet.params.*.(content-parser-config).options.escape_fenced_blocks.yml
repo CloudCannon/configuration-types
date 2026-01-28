@@ -1,14 +1,20 @@
 gid: type.snippet.params.*.(content-parser-config).options.escape_fenced_blocks
 url: /types/snippet/params/*/(content-parser-config)/options/escape_fenced_blocks/
 title: ''
-description: |-
-  This key toggles whether CloudCannon will escape fenced code blocks (triple backticks) when parsing content.
+description: >-
+  This key toggles whether CloudCannon will escape fenced code blocks (triple
+  backticks) when parsing content.
 
-  Setting this key to `true` will escape fenced code blocks in the content, preventing them from being interpreted as code blocks.
+
+  Setting this key to `true` will escape fenced code blocks in the content,
+  preventing them from being interpreted as code blocks.
+
 
   By default, this key is `false` (i.e., fenced code blocks are not escaped).
 examples:
-  - description: In this example, we have configured content parser to escape fenced code blocks.
+  - description: >-
+      In this example, we have configured content parser to escape fenced code
+      blocks.
     language: yaml
     code: |-
       _snippets:

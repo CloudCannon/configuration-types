@@ -1,14 +1,19 @@
 gid: type._inputs.*.options.accepts_mime_types
 url: /types/_inputs/*/options/accepts_mime_types/
 title: ''
-description: |-
-  This key defines which file types are available to select or upload to this input.
-  
+description: >-
+  This key defines which file types are available to select or upload to this
+  input.
+
+
   Accepted format is an array or comma-separated string of MIME types.
-  
+
+
   The special value "*" means any type is accepted.
 examples:
-  - description: In this example, we have configured a *Image Input* to accept only JPEG or PNG files.
+  - description: >-
+      In this example, we have configured a *Image Input* to accept only JPEG or
+      PNG files.
     language: yaml
     code: |-
       _inputs:

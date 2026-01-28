@@ -3,7 +3,9 @@ url: /source_editor/theme/
 title: ''
 description: This key defines the color theme for syntax highlighting.
 examples:
-  - description: In this example, we have configured the Source Editor to use the `dark` theme for syntax highlighting.
+  - description: >-
+      In this example, we have configured the Source Editor to use the `dark`
+      theme for syntax highlighting.
     language: yaml
     code: |-
       source_editor:

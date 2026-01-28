@@ -1,10 +1,13 @@
 gid: type._inputs.*.(select-input).type
 url: /types/_inputs/*/(select-input)/type/
 title: Type
-description: |-
-  This key defines the input type, which controls how this input appears and behaves.
+description: >-
+  This key defines the input type, which controls how this input appears and
+  behaves.
 examples:
-  - description: In this example, we have configured the `category` key as a *Select Input* type.
+  - description: >-
+      In this example, we have configured the `category` key as a *Select Input*
+      type.
     language: yaml
     code: |-
       _inputs:

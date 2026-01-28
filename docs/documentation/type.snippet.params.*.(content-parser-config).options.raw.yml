@@ -1,11 +1,15 @@
 gid: type.snippet.params.*.(content-parser-config).options.raw
 url: /types/snippet/params/*/(content-parser-config)/options/raw/
 title: ''
-description: |-
+description: >-
   This key toggles whether the parser performs no parsing of the inner text.
-  
-  Setting this key to `true` will perform no parsing of the inner text. This is a stricter version of `allow_nested: false`. Useful to improve the performance of the content parser, but can misbehave.
-  
+
+
+  Setting this key to `true` will perform no parsing of the inner text. This is
+  a stricter version of `allow_nested: false`. Useful to improve the performance
+  of the content parser, but can misbehave.
+
+
   By default, this key is `false` (i.e., inner text is parsed).
 examples:
   - description: ''

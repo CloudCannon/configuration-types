@@ -1,13 +1,20 @@
 gid: collections_config.*.add_options.[*].(add-option)
 url: /collections_config/*/add_options/[*]/(add-option)/
 title: Add Option
-description: |-
-  This key represents the standard add option entry in a `collections_config.*.add_options` array.
+description: >-
+  This key represents the standard add option entry in a
+  `collections_config.*.add_options` array.
 
-  The value is an object that defines an option available in the *+ Add* button dropdown at the top right of the *Collection browser*. Standard add options can contain optional `name`, `icon`, `editor`, `base_path`, `collection`, `schema`, and `default_content_file` keys.
 
+  The value is an object that defines an option available in the *+ Add* button
+  dropdown at the top right of the *Collection browser*. Standard add options
+  can contain optional `name`, `icon`, `editor`, `base_path`, `collection`,
+  `schema`, and `default_content_file` keys.
 examples:
-  - description: In this example, we have configured a standard add option for the `people` Collection that uses the `employee` Schema and opens files in the [Data Editor](/documentation/articles/what-is-the-data-editor/).
+  - description: >-
+      In this example, we have configured a standard add option for the `people`
+      Collection that uses the `employee` Schema and opens files in the [Data
+      Editor](/documentation/articles/what-is-the-data-editor/).
     language: yaml
     code: |-
       collections_config:

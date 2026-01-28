@@ -1,12 +1,19 @@
 gid: collections_config.*.disable_add
 url: /collections_config/*/disable_add/
 title: ''
-description: |-
-  This key toggles whether team members can use the *+ Add* button in the top right of the *Collection browser* to add files to a Collection.
-  
-  Setting this key to `true` will prevent team members from adding new files through the *Collection browser*. This key does not affect your ability to add files using the *File browser*.
-  
-  If both `disable_add` and `disable_add_folder` are set to `true`, the *\+ Add* button will not
+description: >-
+  This key toggles whether team members can use the *+ Add* button in the top
+  right of the *Collection browser* to add files to a Collection.
+
+
+  Setting this key to `true` will prevent team members from adding new files
+  through the *Collection browser*. This key does not affect your ability to add
+  files using the *File browser*.
+
+
+  If both `disable_add` and `disable_add_folder` are set to `true`, the *\+ Add*
+  button will not
+
   appear in the top right of the *Collection browser*.
 examples:
   - description: >-

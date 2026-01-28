@@ -1,13 +1,16 @@
 gid: type.snippet.params.*.(wrapper-parser-config).parser
 url: /types/snippet/params/*/(wrapper-parser-config)/parser/
 title: ''
-description: |-
+description: >-
   This key defines the parser type for wrapper parser configurations.
 
-  The value must be `wrapper`. This specifies that the parameter uses the wrapper parser, which wraps another snippet configuration.
 
+  The value must be `wrapper`. This specifies that the parameter uses the
+  wrapper parser, which wraps another snippet configuration.
 examples:
-  - description: In this example, we have configured a wrapper parser for a snippet parameter.
+  - description: >-
+      In this example, we have configured a wrapper parser for a snippet
+      parameter.
     language: yaml
     code: |-
       _snippets:

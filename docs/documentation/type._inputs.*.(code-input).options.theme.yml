@@ -1,13 +1,17 @@
 gid: type._inputs.*.(code-input).options.theme
 url: /types/_inputs/*/(code-input)/options/theme/
 title: ''
-description: |-
-  This key defines the color theme used for syntax highlighting in *Code Inputs*.
+description: >-
+  This key defines the color theme used for syntax highlighting in *Code
+  Inputs*.
+
 
 
   By default, this key is `basic_dark`.
 examples:
-  - description: In this example, we have configured a code input to use the `dracula` theme for a dark-colored editing experience.
+  - description: >-
+      In this example, we have configured a code input to use the `dracula`
+      theme for a dark-colored editing experience.
     language: yaml
     code: |-
       _inputs:

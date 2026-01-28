@@ -1,7 +1,6 @@
 gid: type._inputs.*.(object-input).options.view
 url: /types/_inputs/*/(object-input)/options/view/
 title: ''
-description: |-
-  This key defines how object previews are rendered.
+description: This key defines how object previews are rendered.
 examples: []
 show_in_navigation: false

@@ -1,13 +1,17 @@
 gid: type.structure.style
 url: /types/structure/style/
 title: ''
-description: |-
-  This key defines how CloudCannon shows Structure options to populate an Object or Array input.
-  
+description: >-
+  This key defines how CloudCannon shows Structure options to populate an Object
+  or Array input.
+
+
   This can be using a select-style search bar or a pop-up modal.
-  
+
+
   Modals are useful when you have several value options for your Structure.
-  
+
+
   Values can be one of the following: `select`, or `modal`.
 examples:
   - description: >-

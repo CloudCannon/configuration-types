@@ -1,10 +1,14 @@
 gid: type.snippet.snippet
 url: /types/snippet/snippet/
 title: ''
-description: |-
-  This key defines the snippet string that contains the text to match for your snippet, with any dynamic sections represented using a placeholder in double square brackets.
+description: >-
+  This key defines the snippet string that contains the text to match for your
+  snippet, with any dynamic sections represented using a placeholder in double
+  square brackets.
 examples:
-  - description: In this example, we have configured a snippet string for a custom button snippet.
+  - description: >-
+      In this example, we have configured a snippet string for a custom button
+      snippet.
     language: yaml
     code: |-
       _snippets_definitions:

@@ -3,7 +3,7 @@ url: /types/_inputs/*/(color-input)/options/format/
 title: ''
 description: |-
   This key defines what format the color value is saved as.
-  
+
   Defaults to the naming convention, or "hex" if that is unset.
 examples: []
 show_in_navigation: false

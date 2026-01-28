@@ -3,7 +3,7 @@ url: /collections_config/*/schemas/*/name/
 title: ''
 description: |-
   This key defines the name displayed in the add menu when creating new files.
-  
+
   Defaults to a formatted version of the key.
 examples: []
 show_in_navigation: false

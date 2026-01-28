@@ -1,14 +1,20 @@
 gid: markdown.options.xhtml
 url: /markdown/options/xhtml/
 title: ''
-description: |-
-  This key toggles whether CloudCannon will use XHTML-style closing for single tags when converting Markdown to HTML.
+description: >-
+  This key toggles whether CloudCannon will use XHTML-style closing for single
+  tags when converting Markdown to HTML.
 
-  Setting this key to `true` will use `/` to close single tags (e.g., `<br />` instead of `<br>`).
+
+  Setting this key to `true` will use `/` to close single tags (e.g., `<br />`
+  instead of `<br>`).
+
 
   By default, this key is `false` (i.e., single tags are not closed with `/`).
 examples:
-  - description: In this example, we have configured Markdown to use XHTML-style closing for single tags.
+  - description: >-
+      In this example, we have configured Markdown to use XHTML-style closing
+      for single tags.
     language: yaml
     code: |-
       markdown:

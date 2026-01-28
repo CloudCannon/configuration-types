@@ -1,15 +1,20 @@
 gid: type._inputs.*.(object-input).options.entries
 url: /types/_inputs/*/(object-input)/options/entries/
 title: ''
-description: |-
-  This key defines the appearance and function of entries in a mutable *Object Input*.
+description: >-
+  This key defines the appearance and function of entries in a mutable *Object
+  Input*.
 
-  The value is an object that can contain optional `allowed_keys`, `structures`, `assigned_structures`, `comment`, and `documentation` keys.
+
+  The value is an object that can contain optional `allowed_keys`, `structures`,
+  `assigned_structures`, `comment`, and `documentation` keys.
+
 
   Available for Mutable Objects only.
-
 examples:
-  - description: In this example, we have configured entries options with assigned structures for specific allowed keys.
+  - description: >-
+      In this example, we have configured entries options with assigned
+      structures for specific allowed keys.
     language: yaml
     code: |-
       _inputs:

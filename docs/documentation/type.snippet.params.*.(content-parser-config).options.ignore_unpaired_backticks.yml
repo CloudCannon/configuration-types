@@ -3,14 +3,20 @@ gid: >-
 url: >-
   /types/snippet/params/*/(content-parser-config)/options/ignore_unpaired_backticks/
 title: ''
-description: |-
-  This key toggles whether CloudCannon will ignore unpaired backticks when parsing content.
+description: >-
+  This key toggles whether CloudCannon will ignore unpaired backticks when
+  parsing content.
 
-  Setting this key to `false` will cause CloudCannon to treat unpaired backticks as parsing errors.
+
+  Setting this key to `false` will cause CloudCannon to treat unpaired backticks
+  as parsing errors.
+
 
   By default, this key is `true` (i.e., unpaired backticks are ignored).
 examples:
-  - description: In this example, we have configured content parser to ignore unpaired backticks.
+  - description: >-
+      In this example, we have configured content parser to ignore unpaired
+      backticks.
     language: yaml
     code: |-
       _snippets:

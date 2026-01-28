@@ -1,10 +1,11 @@
 gid: type._inputs.*.(boolean-input)
 url: /types/_inputs/*/(boolean-input)/
 title: Boolean Input
-description: |-
-  This key defines an editing interface for true or false values.
+description: This key defines an editing interface for true or false values.
 examples:
-  - description: In this example, we have configured the `featured` key as a *Boolean Input*.
+  - description: >-
+      In this example, we have configured the `featured` key as a *Boolean
+      Input*.
     language: yaml
     code: |-
       _inputs:

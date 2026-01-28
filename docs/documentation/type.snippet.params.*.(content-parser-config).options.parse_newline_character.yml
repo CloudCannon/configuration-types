@@ -2,11 +2,16 @@ gid: type.snippet.params.*.(content-parser-config).options.parse_newline_charact
 url: >-
   /types/snippet/params/*/(content-parser-config)/options/parse_newline_character/
 title: ''
-description: |-
-  This key toggles whether the parser treats `\n` as line breaks instead of literal characters.
-  
-  Setting this key to `true` will treat `\n` as line breaks instead of literal characters. This is useful if you are editing your content in a multiline editing interface.
-  
+description: >-
+  This key toggles whether the parser treats `\n` as line breaks instead of
+  literal characters.
+
+
+  Setting this key to `true` will treat `\n` as line breaks instead of literal
+  characters. This is useful if you are editing your content in a multiline
+  editing interface.
+
+
   By default, this key is `false` (i.e., `\n` is treated as literal characters).
 examples:
   - description: ''

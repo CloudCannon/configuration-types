@@ -1,12 +1,15 @@
 gid: type.snippet.params.*.(content-parser-config).options.allow_nested
 url: /types/snippet/params/*/(content-parser-config)/options/allow_nested/
 title: ''
-description: |-
+description: >-
   This key toggles whether nested snippets will be parsed and returned.
-  
+
+
   Setting this key to `true` will parse and return nested snippets.
-  
-  By default, this key is `false` (i.e., nested snippets are not parsed and returned).
+
+
+  By default, this key is `false` (i.e., nested snippets are not parsed and
+  returned).
 examples:
   - description: ''
     language: yaml

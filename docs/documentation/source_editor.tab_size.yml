@@ -1,10 +1,13 @@
 gid: source_editor.tab_size
 url: /source_editor/tab_size/
 title: ''
-description: |-
-  This key defines the auto-indentation of each line and how many spaces a tab indentation counts as.
+description: >-
+  This key defines the auto-indentation of each line and how many spaces a tab
+  indentation counts as.
 examples:
-  - description: In this example, we have configured the Source Editor to use 2 spaces for tab indentation.
+  - description: >-
+      In this example, we have configured the Source Editor to use 2 spaces for
+      tab indentation.
     language: yaml
     code: |-
       source_editor:

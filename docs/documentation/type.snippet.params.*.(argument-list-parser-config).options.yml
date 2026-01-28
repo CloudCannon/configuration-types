@@ -1,13 +1,17 @@
 gid: type.snippet.params.*.(argument-list-parser-config).options
 url: /types/snippet/params/*/(argument-list-parser-config)/options/
 title: ''
-description: |-
-  This key defines configuration options for argument list parser configurations.
+description: >-
+  This key defines configuration options for argument list parser
+  configurations.
 
-  The value is an object that can contain `models` and `format` properties. These options control how multiple argument values are parsed and validated.
 
+  The value is an object that can contain `models` and `format` properties.
+  These options control how multiple argument values are parsed and validated.
 examples:
-  - description: In this example, we have configured argument list parser options with multiple models.
+  - description: >-
+      In this example, we have configured argument list parser options with
+      multiple models.
     language: yaml
     code: |-
       _snippets:

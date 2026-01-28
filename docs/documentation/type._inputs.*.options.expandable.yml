@@ -1,15 +1,22 @@
 gid: type._inputs.*.options.expandable
 url: /types/_inputs/*/options/expandable/
 title: Expandable
-description: |-
-  This key defines whether you can upscale an image to fit the bounding box while resizing an image prior to upload.
-  
+description: >-
+  This key defines whether you can upscale an image to fit the bounding box
+  while resizing an image prior to upload.
+
+
   Has no effect if files are not resized.
-  
-  Available for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), the Image editable region
+
+
+  Available for the Content Editor (`_editables.content`), the Block editable
+  region (`_editables.block`), the Image editable region
+
   (`_editables.image`), and Rich Text inputs (`_inputs.key_name.options`).
 examples:
-  - description: In this example, we have configured an *Image Input* to allow upscaling images to fit the bounding box while resizing.
+  - description: >-
+      In this example, we have configured an *Image Input* to allow upscaling
+      images to fit the bounding box while resizing.
     language: yaml
     code: |-
       _inputs:

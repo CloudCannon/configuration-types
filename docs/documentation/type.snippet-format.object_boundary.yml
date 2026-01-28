@@ -1,11 +1,14 @@
 gid: type.snippet-format.object_boundary
 url: /types/snippet-format/object_boundary/
 title: ''
-description: |-
-  This key defines the characters that start and end object literals when parsing snippet parameters.
+description: >-
+  This key defines the characters that start and end object literals when
+  parsing snippet parameters.
 
-  The value is an object that contains `start` and `end` properties, each specifying a string token. For objects, this will usually be `{ start: "{", end: "}" }`.
 
+  The value is an object that contains `start` and `end` properties, each
+  specifying a string token. For objects, this will usually be `{ start: "{",
+  end: "}" }`.
 examples:
   - description: In this example, we have configured object boundaries to use curly braces.
     language: yaml

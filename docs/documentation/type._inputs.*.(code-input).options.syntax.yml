@@ -3,7 +3,7 @@ url: /types/_inputs/*/(code-input)/options/syntax/
 title: Syntax
 description: |-
   This key defines how the editor parses your content for syntax highlighting.
-  
+
   Should be set to the language of the code going into the input.
 examples: []
 show_in_navigation: false

@@ -1,13 +1,18 @@
 gid: type.preview-entry.(key)
 url: /types/preview-entry/(key)/
 title: Key
-description: |-
-  This key represents a key preview entry type for displaying data from a specific key on *Cards* in the *Collection browser*, *Structures*, and *Snippets*.
+description: >-
+  This key represents a key preview entry type for displaying data from a
+  specific key on *Cards* in the *Collection browser*, *Structures*, and
+  *Snippets*.
 
-  The value is an object that contains a `key` property with a string value. This displays the value of the specified data key in card previews.
 
+  The value is an object that contains a `key` property with a string value.
+  This displays the value of the specified data key in card previews.
 examples:
-  - description: In this example, we have configured a key preview entry to display the `title` key.
+  - description: >-
+      In this example, we have configured a key preview entry to display the
+      `title` key.
     language: yaml
     code: |-
       collections_config:

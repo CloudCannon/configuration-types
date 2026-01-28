@@ -1,14 +1,21 @@
 gid: _snippets_imports_from_glob
 url: /_snippets_imports_from_glob/
 title: ''
-description: |-
-  This key defines globs that filter which files CloudCannon should use for *Collection* configuration.
-  
-  Values in this array are relative to the root of your repository (i.e., `/`, not the value of `source`) and must end in the file extension
+description: >-
+  This key defines globs that filter which files CloudCannon should use for
+  *Collection* configuration.
+
+
+  Values in this array are relative to the root of your repository (i.e., `/`,
+  not the value of `source`) and must end in the file extension
+
   `.cloudcannon.snippets-imports.yml`.
-  
-  You can use this key anywhere you would use the `_snippets_imports` key in the configuration cascade.
-  
+
+
+  You can use this key anywhere you would use the `_snippets_imports` key in the
+  configuration cascade.
+
+
   This key has no default.
 examples:
   - description: >-

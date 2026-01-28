@@ -1,7 +1,6 @@
 gid: type._inputs.*.(file-input).options
 url: /types/_inputs/*/(file-input)/options/
 title: ''
-description: |-
-  This key defines options that are specific to File Inputs.
+description: This key defines options that are specific to File Inputs.
 examples: []
 show_in_navigation: false

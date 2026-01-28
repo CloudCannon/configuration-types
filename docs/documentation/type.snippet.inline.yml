@@ -1,11 +1,15 @@
 gid: type.snippet.inline
 url: /types/snippet/inline/
 title: ''
-description: |-
+description: >-
   This key toggles whether this snippet can appear inline (within a sentence).
-  
-  Setting this key to `true` will allow this snippet to appear inline (within a sentence).
-  
-  By default, this key is `false` (i.e., this snippet is treated as a block-level element in the content editor).
+
+
+  Setting this key to `true` will allow this snippet to appear inline (within a
+  sentence).
+
+
+  By default, this key is `false` (i.e., this snippet is treated as a
+  block-level element in the content editor).
 examples: []
 show_in_navigation: false

@@ -1,14 +1,24 @@
 gid: type._editables.*.styles
 url: /types/_editables/*/styles/
 title: ''
-description: |-
-  This key toggles whether CloudCannon will display a dropdown menu in your WYSIWYG toolbar to apply a style to selected text.
-  
-  Setting this key to `true` will enable a dropdown menu in your WYSIWYG toolbar to apply a style to selected text. Styles are the combination of an element and class name. The value for this option is the path (either source or build output) for the CSS file containing styles.
-  
-  By default, this key is `false` (i.e., the styles dropdown menu is not displayed).
-  
-  Available for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), and Rich Text inputs
+description: >-
+  This key toggles whether CloudCannon will display a dropdown menu in your
+  WYSIWYG toolbar to apply a style to selected text.
+
+
+  Setting this key to `true` will enable a dropdown menu in your WYSIWYG toolbar
+  to apply a style to selected text. Styles are the combination of an element
+  and class name. The value for this option is the path (either source or build
+  output) for the CSS file containing styles.
+
+
+  By default, this key is `false` (i.e., the styles dropdown menu is not
+  displayed).
+
+
+  Available for the Content Editor (`_editables.content`), the Block editable
+  region (`_editables.block`), and Rich Text inputs
+
   (`_inputs.key_name.options`).
 examples: []
 show_in_navigation: false

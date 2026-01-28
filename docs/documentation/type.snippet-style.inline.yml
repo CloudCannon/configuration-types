@@ -1,13 +1,16 @@
 gid: type.snippet-style.inline
 url: /types/snippet-style/inline/
 title: ''
-description: |-
+description: >-
   This key defines inline formatting options for snippet output.
 
-  The value is an object that can contain `leading` and `trailing` properties. These options control whitespace for single-line snippet content.
 
+  The value is an object that can contain `leading` and `trailing` properties.
+  These options control whitespace for single-line snippet content.
 examples:
-  - description: In this example, we have configured inline formatting with leading and trailing spaces.
+  - description: >-
+      In this example, we have configured inline formatting with leading and
+      trailing spaces.
     language: yaml
     code: |-
       _snippets:

@@ -1,11 +1,14 @@
 gid: type.structure.values.[*].tags
 url: /types/structure/values/[*]/tags/
 title: ''
-description: |-
+description: >-
   This key defines which tags are associated with a given value in a Structure.
-  
-  You can use tags to group and filter Structure options when selecting from a modal.
-  
+
+
+  You can use tags to group and filter Structure options when selecting from a
+  modal.
+
+
   This key has no default.
 examples:
   - description: >-

@@ -1,8 +1,7 @@
 gid: type._inputs.*.context.title
 url: /types/_inputs/*/context/title/
 title: ''
-description: |-
-  This key defines the title of the context box.
+description: This key defines the title of the context box.
 examples:
   - description: >-
       In this example, we want to customize the context box title to be more

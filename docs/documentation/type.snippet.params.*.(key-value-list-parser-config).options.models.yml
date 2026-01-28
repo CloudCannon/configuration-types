@@ -1,13 +1,18 @@
 gid: type.snippet.params.*.(key-value-list-parser-config).options.models
 url: /types/snippet/params/*/(key-value-list-parser-config)/options/models/
 title: ''
-description: |-
-  This key defines the models for each key in key-value list parser configurations.
+description: >-
+  This key defines the models for each key in key-value list parser
+  configurations.
 
-  The value is an object where each property key is a key name and each property value is a model configuration object. These models define how each key-value pair is parsed and validated.
 
+  The value is an object where each property key is a key name and each property
+  value is a model configuration object. These models define how each key-value
+  pair is parsed and validated.
 examples:
-  - description: In this example, we have configured models for key-value pairs in a key-value list parser.
+  - description: >-
+      In this example, we have configured models for key-value pairs in a
+      key-value list parser.
     language: yaml
     code: |-
       _snippets:

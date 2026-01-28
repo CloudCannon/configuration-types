@@ -1,12 +1,16 @@
 gid: type._inputs.*.comment
 url: /types/_inputs/*/comment/
 title: ''
-description: |-
+description: >-
   This key defines the subtitle text above an Input.
-  
-  CloudCannon supports a limited selection of Markdown formatting for the value of this key: links, bold, italic, subscript, superscript, and inline
+
+
+  CloudCannon supports a limited selection of Markdown formatting for the value
+  of this key: links, bold, italic, subscript, superscript, and inline
+
   code.
-  
+
+
   This key has no default.
 examples:
   - description: >-

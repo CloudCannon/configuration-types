@@ -1,13 +1,17 @@
 gid: type.snippet-format.string_escape_character
 url: /types/snippet-format/string_escape_character/
 title: ''
-description: |-
-  This key defines the character that can be placed before a string boundary to escape it when parsing snippet parameters.
+description: >-
+  This key defines the character that can be placed before a string boundary to
+  escape it when parsing snippet parameters.
 
-  The value is a string that specifies the escape character. If required, this will usually be `\`.
 
+  The value is a string that specifies the escape character. If required, this
+  will usually be `\`.
 examples:
-  - description: In this example, we have configured string escape character to use a backslash.
+  - description: >-
+      In this example, we have configured string escape character to use a
+      backslash.
     language: yaml
     code: |-
       _snippets:

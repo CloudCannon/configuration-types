@@ -1,18 +1,32 @@
 gid: type._structures
 url: /types/_structures/
 title: Structures
-description: |-
-  This key defines which structures are available for [Object inputs](/documentation/articles/what-is-an-object-input/) and [Array
-  inputs](/documentation/articles/what-is-an-array-input/) at a given level of the configuration cascade.
+description: >-
+  This key defines which structures are available for [Object
+  inputs](/documentation/articles/what-is-an-object-input/) and [Array
+
+  inputs](/documentation/articles/what-is-an-array-input/) at a given level of
+  the configuration cascade.
+
 
   This key has no default.
 
-  If undefined at higher levels of the [configuration cascade](/documentation/articles/using-the-configuration-cascade/), `_structures` will default to
-  any values configured in the [CloudCannon configuration file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
 
-  For more information, please read our documentation on [structures](/documentation/articles/what-is-a-structure/).
+  If undefined at higher levels of the [configuration
+  cascade](/documentation/articles/using-the-configuration-cascade/),
+  `_structures` will default to
+
+  any values configured in the [CloudCannon configuration
+  file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
+
+
+  For more information, please read our documentation on
+  [structures](/documentation/articles/what-is-a-structure/).
 examples:
-  - description: In this example, we want to populate an Array input in the `blog` Collection with Related Articles, including the `name`, `description`, and `url` fields.
+  - description: >-
+      In this example, we want to populate an Array input in the `blog`
+      Collection with Related Articles, including the `name`, `description`, and
+      `url` fields.
     language: yaml
     code: |-
       collections_config:
@@ -32,7 +46,10 @@ examples:
                     url:
     annotations: []
     source: cloudcannon.config.yml
-  - description: In this example, we want to populate an Array input with Staff members, including the `name`, `job_description`, and `profile_picture` fields for all staff types, and the `url` field for Managers only.
+  - description: >-
+      In this example, we want to populate an Array input with Staff members,
+      including the `name`, `job_description`, and `profile_picture` fields for
+      all staff types, and the `url` field for Managers only.
     language: yaml
     code: |-
       _structures:

@@ -3,7 +3,7 @@ url: /types/snippet/view/
 title: ''
 description: |-
   This key defines how selected items are rendered.
-  
+
   Defaults to 'card', or 'inline' if `inline` is true.
 examples: []
 show_in_navigation: false

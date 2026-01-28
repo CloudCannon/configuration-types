@@ -1,16 +1,26 @@
 gid: type._inputs.*.disabled.(boolean)
 url: /types/_inputs/*/disabled/(boolean)/
 title: Boolean
-description: |-
-  This key represents a boolean value for the `disabled` key that toggles whether CloudCannon prevents editing of an input value.
+description: >-
+  This key represents a boolean value for the `disabled` key that toggles
+  whether CloudCannon prevents editing of an input value.
 
-  When set to `true`, CloudCannon prevents team members from editing the input value in the *Data Editor* or the sidebar of the *Visual Editor* or *Content Editor*. The input value is still displayed but cannot be modified outside of the *Source Editor*.
+
+  When set to `true`, CloudCannon prevents team members from editing the input
+  value in the *Data Editor* or the sidebar of the *Visual Editor* or *Content
+  Editor*. The input value is still displayed but cannot be modified outside of
+  the *Source Editor*.
+
 
   When set to `false`, team members can edit the input value normally.
 
+
   By default, this key is `false` (i.e., team members can edit input values).
 examples:
-  - description: In this example, we have configured a datetime input to be disabled using a boolean value, preventing editors from modifying the automatically generated date.
+  - description: >-
+      In this example, we have configured a datetime input to be disabled using
+      a boolean value, preventing editors from modifying the automatically
+      generated date.
     language: yaml
     code: |-
       _inputs:

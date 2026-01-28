@@ -1,14 +1,20 @@
 gid: type.snippet.params.*.(repeating-parser-config).options.optional
 url: /types/snippet/params/*/(repeating-parser-config)/options/optional/
 title: ''
-description: |-
-  This key toggles whether CloudCannon will treat repeating snippets as optional when parsing snippet parameters.
+description: >-
+  This key toggles whether CloudCannon will treat repeating snippets as optional
+  when parsing snippet parameters.
 
-  Setting this key to `true` will make the repeating snippet instances optional, allowing snippets to match even when no instances are present.
+
+  Setting this key to `true` will make the repeating snippet instances optional,
+  allowing snippets to match even when no instances are present.
+
 
   By default, this key is `false` (i.e., at least one instance is required).
 examples:
-  - description: In this example, we have configured repeating parser to treat instances as optional.
+  - description: >-
+      In this example, we have configured repeating parser to treat instances as
+      optional.
     language: yaml
     code: |-
       _snippets:

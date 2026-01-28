@@ -1,11 +1,15 @@
 gid: type._inputs.*.(object-input).options.groups.[*].collapsed
 url: /types/_inputs/*/(object-input)/options/groups/[*]/collapsed/
 title: ''
-description: |-
-  This key toggles whether this group is collapsed or expanded when first viewed.
-  
+description: >-
+  This key toggles whether this group is collapsed or expanded when first
+  viewed.
+
+
   Setting this key to `true` will collapse this group when first viewed.
-  
-  By default, this key is `false` (i.e., the group is expanded when first viewed).
+
+
+  By default, this key is `false` (i.e., the group is expanded when first
+  viewed).
 examples: []
 show_in_navigation: false

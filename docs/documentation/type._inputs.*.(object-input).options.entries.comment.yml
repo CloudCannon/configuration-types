@@ -1,15 +1,21 @@
 gid: type._inputs.*.(object-input).options.entries.comment
 url: /types/_inputs/*/(object-input)/options/entries/comment/
 title: ''
-description: |-
-  This key defines the subtitle text above the key input when adding or renaming entries within a mutable *Object Input*.
+description: >-
+  This key defines the subtitle text above the key input when adding or renaming
+  entries within a mutable *Object Input*.
 
-  The value is a string that supports a limited selection of Markdown formatting: links, bold, italic, subscript, superscript, and inline code elements are allowed.
+
+  The value is a string that supports a limited selection of Markdown
+  formatting: links, bold, italic, subscript, superscript, and inline code
+  elements are allowed.
+
 
   Available for Mutable Objects only.
-
 examples:
-  - description: In this example, we have configured a comment with Markdown formatting to provide help text above the key input.
+  - description: >-
+      In this example, we have configured a comment with Markdown formatting to
+      provide help text above the key input.
     language: yaml
     code: |-
       _inputs:

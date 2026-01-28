@@ -1,10 +1,13 @@
 gid: type._inputs.*.options.sizes.[*].size
 url: /types/_inputs/*/options/sizes/[*]/size/
 title: ''
-description: |-
-  This key defines a number suffixed with "x" (relative size) or "w" (fixed width) for setting the dimensions of the image (e.g. 2x, 3x, 100w, 360w).
+description: >-
+  This key defines a number suffixed with "x" (relative size) or "w" (fixed
+  width) for setting the dimensions of the image (e.g. 2x, 3x, 100w, 360w).
 examples:
-  - description: In this example, we have configured a size definition for an *Image Input* to create a 2x relative size image.
+  - description: >-
+      In this example, we have configured a size definition for an *Image Input*
+      to create a 2x relative size image.
     language: yaml
     code: |-
       _inputs:

@@ -1,20 +1,27 @@
 gid: type.snippet.params.*.(key-value-list-parser-config)
 url: /types/snippet/params/*/(key-value-list-parser-config)/
 title: Key Value List Parser Config
-description: |-
-  This key defines a parser configuration that parses repeating pairs of keys and values.
-  
+description: >-
+  This key defines a parser configuration that parses repeating pairs of keys
+  and values.
+
+
   Useful for most SSG snippets that take properties.
-  
+
+
   Can be configured to handle most syntax forms of key value pairs.
 examples:
-  - description: In this example, we have configured a key-value list parser to parse repeating pairs of keys and values in Liquid syntax.
+  - description: >-
+      In this example, we have configured a key-value list parser to parse
+      repeating pairs of keys and values in Liquid syntax.
     language: liquid
     code: |-
       {% include "image.html" image: "tree.png" alt: "Image of a tree" %}
                               └──────────────────────────────────────┘
     annotations: []
-  - description: In this example, we have configured a key-value list parser to parse repeating pairs of keys and values in Markdown syntax.
+  - description: >-
+      In this example, we have configured a key-value list parser to parse
+      repeating pairs of keys and values in Markdown syntax.
     language: markdown
     code: |-
       <Link href="/about/" new_tab={true}/>

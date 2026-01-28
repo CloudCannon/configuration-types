@@ -1,13 +1,16 @@
 gid: type.preview-entry.(text).text
 url: /types/preview-entry/(text)/text/
 title: Text Value
-description: |-
+description: >-
   This key defines the static text string to display in a text preview entry.
 
-  The value is a string that specifies static text to display on *Cards* in the *Collection browser*, *Structures*, and *Snippets*.
 
+  The value is a string that specifies static text to display on *Cards* in the
+  *Collection browser*, *Structures*, and *Snippets*.
 examples:
-  - description: In this example, we have configured the text value to display a static fallback message.
+  - description: >-
+      In this example, we have configured the text value to display a static
+      fallback message.
     language: yaml
     code: |-
       collections_config:

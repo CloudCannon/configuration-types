@@ -1,10 +1,13 @@
 gid: type._inputs.*.options.values.(object-array).[*]
 url: /types/_inputs/*/options/values/(object-array)/[*]/
 title: ''
-description: |-
-  This key represents an individual object in the `options.values` array for *Select Inputs*.
+description: >-
+  This key represents an individual object in the `options.values` array for
+  *Select Inputs*.
 examples:
-  - description: In this example, we have configured an array of object values for a select input.
+  - description: >-
+      In this example, we have configured an array of object values for a select
+      input.
     language: yaml
     code: |-
       _inputs:

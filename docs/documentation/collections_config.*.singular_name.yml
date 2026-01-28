@@ -1,12 +1,16 @@
 gid: collections_config.*.singular_name
 url: /collections_config/*/singular_name/
 title: ''
-description: |-
+description: >-
   This key defines the singular noun for your Collection name.
-  
-  CloudCannon uses the singular noun in the *\+ Add* button in the top right of the *Collection browser* when you select the option to add a new file.
-  
-  This is useful if your Collection name is an irregular plural (e.g., "syllabi" or "syllabuses" to "syllabus").
+
+
+  CloudCannon uses the singular noun in the *\+ Add* button in the top right of
+  the *Collection browser* when you select the option to add a new file.
+
+
+  This is useful if your Collection name is an irregular plural (e.g., "syllabi"
+  or "syllabuses" to "syllabus").
 examples:
   - description: >-
       In this example, the *\+ Add* button option to add a Collection file will

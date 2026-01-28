@@ -1,12 +1,17 @@
 gid: collections_config.*.schemas.*.icon
 url: /collections_config/*/schemas/*/icon/
 title: Icon
-description: |-
-  This key defines the icon displayed in the add menu when creating new files, also used as the icon for collection files if no other preview is found.
-  
-  Must be a [Material Icon](https://fonts.google.com/icons?icon.set=Material+Icons) name.
+description: >-
+  This key defines the icon displayed in the add menu when creating new files,
+  also used as the icon for collection files if no other preview is found.
+
+
+  Must be a [Material
+  Icon](https://fonts.google.com/icons?icon.set=Material+Icons) name.
 examples:
-  - description: In this example, we have configured a custom icon for the `article` schema in the `blog` Collection.
+  - description: >-
+      In this example, we have configured a custom icon for the `article` schema
+      in the `blog` Collection.
     language: yaml
     code: |-
       collections_config:

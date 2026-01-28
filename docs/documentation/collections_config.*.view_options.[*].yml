@@ -1,13 +1,17 @@
 gid: collections_config.*.view_options.[*]
 url: /collections_config/*/view_options/[*]/
 title: ''
-description: |-
-  This key represents an individual view option string in the `collections_config.*.view_options` array.
+description: >-
+  This key represents an individual view option string in the
+  `collections_config.*.view_options` array.
 
-  The value is a string that specifies a view option for the View dropdown in the *Collection browser*. The first option listed is used as the default view.
 
+  The value is a string that specifies a view option for the View dropdown in
+  the *Collection browser*. The first option listed is used as the default view.
 examples:
-  - description: In this example, we have configured a view option for the `developer_articles` Collection.
+  - description: >-
+      In this example, we have configured a view option for the
+      `developer_articles` Collection.
     language: yaml
     code: |-
       collections_config:

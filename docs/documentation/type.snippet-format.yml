@@ -1,10 +1,13 @@
 gid: type.snippet-format
 url: /types/snippet-format/
 title: Snippet Format
-description: |-
+description: >-
   This key defines formatting options for parsing snippet parameters.
 
-  The value is an object that can contain various options controlling how snippet parameters are parsed, including boundaries, delimiters, allowed value types, and string formatting options.
+
+  The value is an object that can contain various options controlling how
+  snippet parameters are parsed, including boundaries, delimiters, allowed value
+  types, and string formatting options.
 examples:
   - description: |-
       A common option to configure for the

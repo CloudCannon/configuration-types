@@ -1,12 +1,16 @@
 gid: pull_request_templates.[*].label
 url: /pull_request_templates/[*]/label/
 title: ''
-description: |-
-  This key defines the name of a Pull Request template, which appears in the dropdown menu on the *Publishing* page.
+description: >-
+  This key defines the name of a Pull Request template, which appears in the
+  dropdown menu on the *Publishing* page.
+
 
   This key has no default.
 examples:
-  - description: In this example, the name of the Pull Request template in the dropdown menu on the *Publishing* page will be "Content Update".
+  - description: >-
+      In this example, the name of the Pull Request template in the dropdown
+      menu on the *Publishing* page will be "Content Update".
     language: yaml
     code: |-
       pull_request_templates:

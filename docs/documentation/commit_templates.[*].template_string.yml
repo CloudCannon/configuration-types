@@ -1,14 +1,20 @@
 gid: commit_templates.[*].template_string
 url: /commit_templates/[*]/template_string/
 title: ''
-description: |-
+description: >-
   This key defines the template string for the commit message.
 
-  The value is a string that specifies the commit message template. This template can include template variables and filters.
 
-  CloudCannon will only use this template string if `template_path` is not set for the commit template.
+  The value is a string that specifies the commit message template. This
+  template can include template variables and filters.
+
+
+  CloudCannon will only use this template string if `template_path` is not set
+  for the commit template.
 examples:
-  - description: In this example, we have configured a commit template with a template string that includes template variables.
+  - description: >-
+      In this example, we have configured a commit template with a template
+      string that includes template variables.
     language: yaml
     code: |-
       commit_templates:

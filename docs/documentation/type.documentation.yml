@@ -6,7 +6,9 @@ description: |-
 
   Collection documentation is useful for assisting your team members.
 examples:
-  - description: In this example, the documentation link for the `data` Collection goes to [CloudCannon Documentation](/documentation/).
+  - description: >-
+      In this example, the documentation link for the `data` Collection goes to
+      [CloudCannon Documentation](/documentation/).
     language: yaml
     code: |-
       collections_config:

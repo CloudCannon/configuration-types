@@ -1,14 +1,23 @@
 gid: type.create
 url: /types/create/
 title: Create
-description: |-
-  This key defines the path to which CloudCannon will save new files in a Collection.
+description: >-
+  This key defines the path to which CloudCannon will save new files in a
+  Collection.
+
 
   CloudCannon generates "Create Paths" when you open the *Review changes* modal.
 
-  For more information, please read our documentation on [Create Paths](/documentation/articles/set-the-path-for-new-files/).
+
+  For more information, please read our documentation on [Create
+  Paths](/documentation/articles/set-the-path-for-new-files/).
 examples:
-  - description: In this example, CloudCannon will generate a Create Path for new files in the `blog` Collection using the `date` and `title` structured data keys. For example, CloudCannon will generate a create path of `blog/2024-10-31-spooky-getaway.md` for a file with the date 31st October 2024 and the title "Spooky Getaway".
+  - description: >-
+      In this example, CloudCannon will generate a Create Path for new files in
+      the `blog` Collection using the `date` and `title` structured data keys.
+      For example, CloudCannon will generate a create path of
+      `blog/2024-10-31-spooky-getaway.md` for a file with the date 31st October
+      2024 and the title "Spooky Getaway".
     language: yaml
     code: |-
       collections_config:

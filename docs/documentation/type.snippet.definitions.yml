@@ -1,10 +1,11 @@
 gid: type.snippet.definitions
 url: /types/snippet/definitions/
 title: ''
-description: |-
-  This key defines the variables required for the selected template.
+description: This key defines the variables required for the selected template.
 examples:
-  - description: In this example, we have configured snippet definitions for a custom snippet template.
+  - description: >-
+      In this example, we have configured snippet definitions for a custom
+      snippet template.
     language: yaml
     code: |-
       _snippets_definitions:

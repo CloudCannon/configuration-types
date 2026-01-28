@@ -1,9 +1,11 @@
 gid: type._inputs.*.(object-input).options.groups.[*].comment
 url: /types/_inputs/*/(object-input)/options/groups/[*]/comment/
 title: ''
-description: |-
+description: >-
   This key defines the subtext below the `heading`.
-  
-  Supports a limited set of Markdown: links, bold, italic, subscript, superscript, and inline code elements are allowed.
+
+
+  Supports a limited set of Markdown: links, bold, italic, subscript,
+  superscript, and inline code elements are allowed.
 examples: []
 show_in_navigation: false

@@ -1,14 +1,24 @@
 gid: type._editables.*.format
 url: /types/_editables/*/format/
 title: ''
-description: |-
-  This key toggles whether CloudCannon will display a dropdown menu tool in your WYSIWYG toolbar for structured text.
-  
-  Setting this key to `true` will enable a dropdown menu tool in your WYSIWYG toolbar for structured text. Valid values include for `p`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `pre`, `address`, and `div`. Include a space between each values, e.g. `format: p h1 h2`.
-  
-  By default, this key is `false` (i.e., the format dropdown menu tool is not displayed).
-  
-  Available for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), the Link editable region (`_editables.link`),
+description: >-
+  This key toggles whether CloudCannon will display a dropdown menu tool in your
+  WYSIWYG toolbar for structured text.
+
+
+  Setting this key to `true` will enable a dropdown menu tool in your WYSIWYG
+  toolbar for structured text. Valid values include for `p`, `h1`, `h2`, `h3`,
+  `h4`, `h5`, `h6`, `pre`, `address`, and `div`. Include a space between each
+  values, e.g. `format: p h1 h2`.
+
+
+  By default, this key is `false` (i.e., the format dropdown menu tool is not
+  displayed).
+
+
+  Available for the Content Editor (`_editables.content`), the Block editable
+  region (`_editables.block`), the Link editable region (`_editables.link`),
+
   and Rich Text inputs (`_inputs.key_name.options`).
 examples: []
 show_in_navigation: false

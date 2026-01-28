@@ -1,13 +1,17 @@
 gid: type._inputs.*.options.max_items_message
 url: /types/_inputs/*/options/max_items_message/
 title: ''
-description: |-
-  This key defines a custom error message that explains why a value has failed the validation criteria from `options.max_items`.
-  
+description: >-
+  This key defines a custom error message that explains why a value has failed
+  the validation criteria from `options.max_items`.
+
+
   This key requires you to define `options.max_items`.
-  
+
+
   This key has no default.
-  
+
+
   This key is available for Array and Multiselect or Multichoice Inputs.
 examples:
   - description: >-

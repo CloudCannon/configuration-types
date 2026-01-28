@@ -1,13 +1,17 @@
 gid: collection_groups.[*]
 url: /collection_groups/[*]/
 title: Collection Group
-description: |-
-  This key represents an individual group entry in the `collection_groups` array.
+description: >-
+  This key represents an individual group entry in the `collection_groups`
+  array.
 
-  The value defines a group of Collections displayed in the *Site Navigation*. Each group entry must contain a `heading` key and a `collections` key.
 
+  The value defines a group of Collections displayed in the *Site Navigation*.
+  Each group entry must contain a `heading` key and a `collections` key.
 examples:
-  - description: In this example, we have configured two Collection groups with a heading and collections array.
+  - description: >-
+      In this example, we have configured two Collection groups with a heading
+      and collections array.
     language: yaml
     code: |-
       collection_groups:

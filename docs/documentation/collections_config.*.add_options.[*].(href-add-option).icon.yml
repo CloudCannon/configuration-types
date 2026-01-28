@@ -1,14 +1,18 @@
 gid: collections_config.*.add_options.[*].(href-add-option).icon
 url: /collections_config/*/add_options/[*]/(href-add-option)/icon/
 title: Icon
-description: |-
-  This key defines the icon displayed next to the text for a URL option in the *\+ Add* button dropdown.
+description: >-
+  This key defines the icon displayed next to the text for a URL option in the
+  *\+ Add* button dropdown.
 
-  The value is a string that specifies an icon name from [Google's Material Symbols](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded).
+
+  The value is a string that specifies an icon name from [Google's Material
+  Symbols](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded).
 examples:
   - description: >-
       In this example, the *\+ Add* button dropdown in the `team` *Collection
-      browser* uses a link option with the icon `map` to navigate to the Office Locations page on our live website.
+      browser* uses a link option with the icon `map` to navigate to the Office
+      Locations page on our live website.
     language: yaml
     code: |-
       collections_config:

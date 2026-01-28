@@ -1,11 +1,15 @@
 gid: type._inputs.*.context.icon
 url: /types/_inputs/*/context/icon/
 title: Icon
-description: |-
+description: >-
   This key defines which icon appears next to the context box title.
-  
-  The value must match an icon name from [Google's Material Symbols](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded) list.
-  
+
+
+  The value must match an icon name from [Google's Material
+  Symbols](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded)
+  list.
+
+
   This key has no default.
 examples:
   - description: >-

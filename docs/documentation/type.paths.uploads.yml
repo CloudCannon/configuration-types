@@ -1,17 +1,29 @@
 gid: type.paths.uploads
 url: /types/paths/uploads/
 title: ''
-description: |-
-  This key defines the paths for the default location of newly uploaded site files.
-  
-  You can use [dynamic placeholders](/documentation/articles/configure-your-template-strings/) for `uploads` and `dam_uploads`.
-  
-  For more information, please read our documentation on [adjusting file upload paths](/documentation/articles/adjusting-the-uploads-path/).
-  
-  Available for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), the Image editable region
-  (`_editables.image`), the Text editable region (`_editables.text`), and Rich Text inputs (`_inputs.key_name.options`).
+description: >-
+  This key defines the paths for the default location of newly uploaded site
+  files.
+
+
+  You can use [dynamic
+  placeholders](/documentation/articles/configure-your-template-strings/) for
+  `uploads` and `dam_uploads`.
+
+
+  For more information, please read our documentation on [adjusting file upload
+  paths](/documentation/articles/adjusting-the-uploads-path/).
+
+
+  Available for the Content Editor (`_editables.content`), the Block editable
+  region (`_editables.block`), the Image editable region
+
+  (`_editables.image`), the Text editable region (`_editables.text`), and Rich
+  Text inputs (`_inputs.key_name.options`).
 examples:
-  - description: In this example, we have configured the uploads path for the `blog` Collection.
+  - description: >-
+      In this example, we have configured the uploads path for the `blog`
+      Collection.
     language: yaml
     code: |-
       collections_config:

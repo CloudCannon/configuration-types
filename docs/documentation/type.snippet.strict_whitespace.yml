@@ -3,9 +3,9 @@ url: /types/snippet/strict_whitespace/
 title: ''
 description: |-
   This key toggles whether this snippet treats whitespace as-is or not.
-  
+
   Setting this key to `true` will make the snippet treat whitespace as-is.
-  
+
   By default, this key is `false` (i.e., whitespace is normalized).
 examples: []
 show_in_navigation: false

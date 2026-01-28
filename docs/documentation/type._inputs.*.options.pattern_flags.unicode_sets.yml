@@ -1,7 +1,6 @@
 gid: type._inputs.*.options.pattern_flags.unicode_sets
 url: /types/_inputs/*/options/pattern_flags/unicode_sets/
 title: ''
-description: |-
-  This key defines the `v` flag for extended `unicode` mode.
+description: This key defines the `v` flag for extended `unicode` mode.
 examples: []
 show_in_navigation: false

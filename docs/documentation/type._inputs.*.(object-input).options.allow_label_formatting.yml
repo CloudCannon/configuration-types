@@ -3,9 +3,9 @@ url: /types/_inputs/*/(object-input)/options/allow_label_formatting/
 title: ''
 description: |-
   This key toggles whether labels on mutable object entries are formatted.
-  
+
   Setting this key to `true` will format labels on mutable object entries.
-  
+
   By default, this key is `false` (i.e., labels are not formatted).
 examples: []
 show_in_navigation: false

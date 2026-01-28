@@ -1,14 +1,21 @@
 gid: markdown.options.linkify
 url: /markdown/options/linkify/
 title: ''
-description: |-
-  This key toggles whether CloudCannon will automatically convert URL-like text to links when converting Markdown to HTML.
+description: >-
+  This key toggles whether CloudCannon will automatically convert URL-like text
+  to links when converting Markdown to HTML.
 
-  Setting this key to `true` will automatically convert text that looks like URLs into clickable links.
 
-  By default, this key is `false` (i.e., URL-like text is not automatically converted to links).
+  Setting this key to `true` will automatically convert text that looks like
+  URLs into clickable links.
+
+
+  By default, this key is `false` (i.e., URL-like text is not automatically
+  converted to links).
 examples:
-  - description: In this example, we have configured Markdown to automatically convert URL-like text to links.
+  - description: >-
+      In this example, we have configured Markdown to automatically convert
+      URL-like text to links.
     language: yaml
     code: |-
       markdown:

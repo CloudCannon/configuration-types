@@ -1,8 +1,7 @@
 gid: type._inputs.*.(text-input).options.placeholder
 url: /types/_inputs/*/(text-input)/options/placeholder/
 title: ''
-description: |-
-  This key defines the text shown when this input has no value.
+description: This key defines the text shown when this input has no value.
 examples:
   - description: In this example, we have configured a placeholder for a *Text Input*.
     language: yaml

@@ -1,13 +1,16 @@
 gid: type.snippet.params.*.(argument-parser-config).parser
 url: /types/snippet/params/*/(argument-parser-config)/parser/
 title: ''
-description: |-
+description: >-
   This key defines the parser type for argument parser configurations.
 
-  The value must be `argument`. This specifies that the parameter uses the argument parser, which parses a single argument value.
 
+  The value must be `argument`. This specifies that the parameter uses the
+  argument parser, which parses a single argument value.
 examples:
-  - description: In this example, we have configured an argument parser for a snippet parameter.
+  - description: >-
+      In this example, we have configured an argument parser for a snippet
+      parameter.
     language: yaml
     code: |-
       _snippets:

@@ -1,15 +1,26 @@
 gid: collections_config.*.schemas
 url: /collections_config/*/schemas/
 title: ''
-description: |-
-  This key defines which Schemas are available to populate files in this Collection.
+description: >-
+  This key defines which Schemas are available to populate files in this
+  Collection.
 
-  Defining a Schema for a collection will add it to the *\+ Add* button dropdown at the top right of the *Collection browser*.
 
-  If undefined, clicking the *\+ Add* button to add a new file to a Collection will clone the last file in the Collection and clear any markup content
+  Defining a Schema for a collection will add it to the *\+ Add* button dropdown
+  at the top right of the *Collection browser*.
+
+
+  If undefined, clicking the *\+ Add* button to add a new file to a Collection
+  will clone the last file in the Collection and clear any markup content
+
   and the values of any structured data keys.
 examples:
-  - description: In this example, the *\+ Add* button in the *Collection browser* has an option for `Customer Story` which will populate a new file in the `blog` Collection with the contents of the `customer_story.mdx` file. If the Schema file is updated, CloudCannon will preserve the old inputs to prevent you from losing structured data in older files.
+  - description: >-
+      In this example, the *\+ Add* button in the *Collection browser* has an
+      option for `Customer Story` which will populate a new file in the `blog`
+      Collection with the contents of the `customer_story.mdx` file. If the
+      Schema file is updated, CloudCannon will preserve the old inputs to
+      prevent you from losing structured data in older files.
     language: yaml
     code: |-
       collections_config:
@@ -25,7 +36,12 @@ examples:
               icon: notes
     annotations: []
     source: cloudcannon.config.yml
-  - description: In this example, the *\+ Add* button in the *Collection browser* has an option for `Term Definition` which will populate a new file in the `glossary` Collection with the contents of the `glossary_term.yml` file. The `term_description` input is configured specifically for files created with this Schema.
+  - description: >-
+      In this example, the *\+ Add* button in the *Collection browser* has an
+      option for `Term Definition` which will populate a new file in the
+      `glossary` Collection with the contents of the `glossary_term.yml` file.
+      The `term_description` input is configured specifically for files created
+      with this Schema.
     language: yaml
     code: |-
       collections_config:

@@ -1,13 +1,19 @@
 gid: type.snippet.params.*.(wrapper-parser-config)
 url: /types/snippet/params/*/(wrapper-parser-config)/
 title: Wrapper Parser Config
-description: |-
-  This key defines a wrapper parser configuration for wrapping another snippet configuration.
+description: >-
+  This key defines a wrapper parser configuration for wrapping another snippet
+  configuration.
 
-  The value is an object that contains a `parser` property set to `wrapper` and an `options` object with `snippet` and optional `remove_empty` properties. The wrapper parser wraps another snippet configuration, allowing it to be used within a different snippet context.
 
+  The value is an object that contains a `parser` property set to `wrapper` and
+  an `options` object with `snippet` and optional `remove_empty` properties. The
+  wrapper parser wraps another snippet configuration, allowing it to be used
+  within a different snippet context.
 examples:
-  - description: In this example, we have configured a wrapper parser to wrap a content snippet.
+  - description: >-
+      In this example, we have configured a wrapper parser to wrap a content
+      snippet.
     language: yaml
     code: |-
       _snippets:

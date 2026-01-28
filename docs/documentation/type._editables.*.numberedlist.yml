@@ -1,14 +1,22 @@
 gid: type._editables.*.numberedlist
 url: /types/_editables/*/numberedlist/
 title: ''
-description: |-
-  This key toggles whether CloudCannon will display a tool in your WYSIWYG toolbar to insert an ordered list or convert selected text to an ordered list.
-  
-  Setting this key to `true` will enable a tool in your WYSIWYG toolbar to insert an ordered list or convert selected text to an ordered list.
-  
-  By default, this key is `false` (i.e., the numbered list tool is not displayed).
-  
-  Available for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), and Rich Text inputs
+description: >-
+  This key toggles whether CloudCannon will display a tool in your WYSIWYG
+  toolbar to insert an ordered list or convert selected text to an ordered list.
+
+
+  Setting this key to `true` will enable a tool in your WYSIWYG toolbar to
+  insert an ordered list or convert selected text to an ordered list.
+
+
+  By default, this key is `false` (i.e., the numbered list tool is not
+  displayed).
+
+
+  Available for the Content Editor (`_editables.content`), the Block editable
+  region (`_editables.block`), and Rich Text inputs
+
   (`_inputs.key_name.options`).
 examples: []
 show_in_navigation: false

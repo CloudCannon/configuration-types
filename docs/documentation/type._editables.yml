@@ -1,12 +1,17 @@
 gid: type._editables
 url: /types/_editables/
 title: Editables
-description: |-
-  This key defines which Rich Text editors have custom configuration for the associated WYSIWYG toolbar.
+description: >-
+  This key defines which Rich Text editors have custom configuration for the
+  associated WYSIWYG toolbar.
 
-  For more information, please read our documentation on [Rich Text editors](/documentation/articles/what-are-rich-text-editors/).
+
+  For more information, please read our documentation on [Rich Text
+  editors](/documentation/articles/what-are-rich-text-editors/).
 examples:
-  - description: In this example, we have configured the Snippet tool for WYSIWYG toolbars in the `blog` Collection.
+  - description: >-
+      In this example, we have configured the Snippet tool for WYSIWYG toolbars
+      in the `blog` Collection.
     language: yaml
     code: |-
       collections_config:

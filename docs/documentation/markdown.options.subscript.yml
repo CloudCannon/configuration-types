@@ -1,14 +1,20 @@
 gid: markdown.options.subscript
 url: /markdown/options/subscript/
 title: ''
-description: |-
-  This key toggles whether CloudCannon will output subscript text wrapped in tildes when converting HTML to Markdown.
+description: >-
+  This key toggles whether CloudCannon will output subscript text wrapped in
+  tildes when converting HTML to Markdown.
+
 
   Setting this key to `true` will output subscript text as `~sub~` in Markdown.
 
-  By default, this key is `false` (i.e., subscript text is not output in tildes format).
+
+  By default, this key is `false` (i.e., subscript text is not output in tildes
+  format).
 examples:
-  - description: In this example, we have configured Markdown to output subscript text wrapped in tildes.
+  - description: >-
+      In this example, we have configured Markdown to output subscript text
+      wrapped in tildes.
     language: yaml
     code: |-
       markdown:

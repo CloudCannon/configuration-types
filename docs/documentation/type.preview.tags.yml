@@ -1,10 +1,13 @@
 gid: type.preview.tags
 url: /types/preview/tags/
 title: ''
-description: |-
-  This key defines tags displayed on *Cards* in the *Collection browser*, *Structures*, and *Snippets*.
+description: >-
+  This key defines tags displayed on *Cards* in the *Collection browser*,
+  *Structures*, and *Snippets*.
 examples:
-  - description: In this example, we have configured tags for *Cards* in the `blog` Collection to display category tags.
+  - description: >-
+      In this example, we have configured tags for *Cards* in the `blog`
+      Collection to display category tags.
     language: yaml
     code: |-
       collections_config:

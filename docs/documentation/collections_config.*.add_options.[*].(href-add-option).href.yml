@@ -1,13 +1,16 @@
 gid: collections_config.*.add_options.[*].(href-add-option).href
 url: /collections_config/*/add_options/[*]/(href-add-option)/href/
 title: ''
-description: |-
+description: >-
   This key defines the link for a URL option in the *\+ Add* button dropdown.
 
-  The value is a string that specifies a URL. Values can be an external URL or an internal URL relative to the current Site.
 
-  This key is required for URL add options in the `collections_config.*.add_options` array.
+  The value is a string that specifies a URL. Values can be an external URL or
+  an internal URL relative to the current Site.
 
+
+  This key is required for URL add options in the
+  `collections_config.*.add_options` array.
 examples:
   - description: >-
       In this example, the *\+ Add* button dropdown in the `team` *Collection

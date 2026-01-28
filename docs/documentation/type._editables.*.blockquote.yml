@@ -1,14 +1,21 @@
 gid: type._editables.*.blockquote
 url: /types/_editables/*/blockquote/
 title: ''
-description: |-
-  This key toggles whether CloudCannon will display a tool in your WYSIWYG toolbar to wrap selected blocks of text in a block quote.
-  
-  Setting this key to `true` will enable a tool in your WYSIWYG toolbar to wrap selected blocks of text in a block quote.
-  
+description: >-
+  This key toggles whether CloudCannon will display a tool in your WYSIWYG
+  toolbar to wrap selected blocks of text in a block quote.
+
+
+  Setting this key to `true` will enable a tool in your WYSIWYG toolbar to wrap
+  selected blocks of text in a block quote.
+
+
   By default, this key is `false` (i.e., the blockquote tool is not displayed).
-  
-  Available for the Content Editor (`_editables.content`), the Block editable region (`_editables.block`), the Link editable region (`_editables.link`),
+
+
+  Available for the Content Editor (`_editables.content`), the Block editable
+  region (`_editables.block`), the Link editable region (`_editables.link`),
+
   and Rich Text inputs (`_inputs.key_name.options`).
 examples: []
 show_in_navigation: false

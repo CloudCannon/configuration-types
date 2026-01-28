@@ -1,13 +1,17 @@
 gid: type._inputs.*.(object-input).options.entries.assigned_structures.*.[*]
 url: /types/_inputs/*/(object-input)/options/entries/assigned_structures/*/[*]/
 title: ''
-description: |-
-  This key represents an individual assigned structure string in the `_inputs.*(object-input).options.entries.assigned_structures.*` array.
+description: >-
+  This key represents an individual assigned structure string in the
+  `_inputs.*(object-input).options.entries.assigned_structures.*` array.
 
-  The value is a string that specifies a structure key name assigned to entries in an *Object Input*.
 
+  The value is a string that specifies a structure key name assigned to entries
+  in an *Object Input*.
 examples:
-  - description: In this example, we have configured an assigned structure for entries in a mutable *Object Input*.
+  - description: >-
+      In this example, we have configured an assigned structure for entries in a
+      mutable *Object Input*.
     language: yaml
     code: |-
       _inputs:

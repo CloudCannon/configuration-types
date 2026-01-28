@@ -1,10 +1,11 @@
 gid: file_config.[*].glob
 url: /file_config/[*]/glob/
 title: ''
-description: |-
-  This key defines the glob pattern(s) targeting a path to one or more files.
+description: This key defines the glob pattern(s) targeting a path to one or more files.
 examples:
-  - description: In this example, we have configured a file config to target the `data/tabs.yml` file with object input configuration.
+  - description: >-
+      In this example, we have configured a file config to target the
+      `data/tabs.yml` file with object input configuration.
     language: yaml
     code: |-
       file_config:

@@ -1,13 +1,17 @@
 gid: commit_templates.[*].extra_data
 url: /commit_templates/[*]/extra_data/
 title: ''
-description: |-
+description: >-
   This key defines additional template strings for building nested templates.
 
-  The value is an object that can contain any properties. Each property value can be any data type and specifies additional data to include in commit message templates.
 
+  The value is an object that can contain any properties. Each property value
+  can be any data type and specifies additional data to include in commit
+  message templates.
 examples:
-  - description: In this example, we have configured a commit template with extra data to include a breaking change message.
+  - description: >-
+      In this example, we have configured a commit template with extra data to
+      include a breaking change message.
     language: yaml
     code: |-
       commit_templates:

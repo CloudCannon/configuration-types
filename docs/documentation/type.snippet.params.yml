@@ -1,7 +1,6 @@
 gid: type.snippet.params
 url: /types/snippet/params/
 title: Parser Config
-description: |-
-  This key defines the parameters of this snippet.
+description: This key defines the parameters of this snippet.
 examples: []
 show_in_navigation: false

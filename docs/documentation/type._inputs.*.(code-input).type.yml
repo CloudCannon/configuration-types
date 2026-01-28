@@ -1,7 +1,8 @@
 gid: type._inputs.*.(code-input).type
 url: /types/_inputs/*/(code-input)/type/
 title: Type
-description: |-
-  This key defines the input type, which controls how this input appears and behaves.
+description: >-
+  This key defines the input type, which controls how this input appears and
+  behaves.
 examples: []
 show_in_navigation: false

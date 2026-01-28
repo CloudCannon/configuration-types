@@ -1,11 +1,15 @@
 gid: type.snippet-format.root_pair_delimiter
 url: /types/snippet-format/root_pair_delimiter/
 title: ''
-description: |-
-  This key defines the delimiters that separate each key-value pair from the next when parsing snippet parameters.
+description: >-
+  This key defines the delimiters that separate each key-value pair from the
+  next when parsing snippet parameters.
 
-  The value is an array of strings, where each string specifies a delimiter token. For segments such as `href="about" title="Hello World"`, this would be `[" "]` (a space). For segments such as `href: about, title: "Hello World"`, this would be `[","]`.
 
+  The value is an array of strings, where each string specifies a delimiter
+  token. For segments such as `href="about" title="Hello World"`, this would be
+  `[" "]` (a space). For segments such as `href: about, title: "Hello World"`,
+  this would be `[","]`.
 examples:
   - description: In this example, we have configured root pair delimiter to use a space.
     language: yaml

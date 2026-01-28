@@ -1,14 +1,21 @@
 gid: commit_templates
 url: /commit_templates/
 title: ''
-description: |-
+description: >-
   This key defines commit message templates available when saving changes.
 
-  The value is an array of template objects. Each template object can contain optional `label`, `template_path`, `template_string`, `wrap_width`, `extra_data`, and `_inputs` keys.
 
-  Commit messages appear on the *Review changes* modal when you save your changes.
+  The value is an array of template objects. Each template object can contain
+  optional `label`, `template_path`, `template_string`, `wrap_width`,
+  `extra_data`, and `_inputs` keys.
+
+
+  Commit messages appear on the *Review changes* modal when you save your
+  changes.
 examples:
-  - description: In this example, we have configured a commit template with a template string and input configuration.
+  - description: >-
+      In this example, we have configured a commit template with a template
+      string and input configuration.
     language: yaml
     code: |-
       commit_templates:
@@ -26,7 +33,9 @@ examples:
               cascade: true
     annotations: []
     source: cloudcannon.config.yml
-  - description: In this example, we have configured a commit template that uses a file for the template content.
+  - description: >-
+      In this example, we have configured a commit template that uses a file for
+      the template content.
     language: yaml
     code: |-
       commit_templates:
@@ -34,7 +43,9 @@ examples:
           template_path: /.git/commit-message.txt
     annotations: []
     source: cloudcannon.config.yml
-  - description: In this example, we have configured a commit template with a template string, input configuration, and extra data for nested templates.
+  - description: >-
+      In this example, we have configured a commit template with a template
+      string, input configuration, and extra data for nested templates.
     language: yaml
     code: |-
       commit_templates:

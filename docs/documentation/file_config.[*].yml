@@ -1,7 +1,8 @@
 gid: file_config.[*]
 url: /file_config/[*]/
 title: File Configuration Entry
-description: |-
-  This key defines scope to configure at a file level, without adding configuration to files.
+description: >-
+  This key defines scope to configure at a file level, without adding
+  configuration to files.
 examples: []
 show_in_navigation: false

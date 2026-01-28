@@ -1,12 +1,16 @@
 gid: type._inputs.*.(multiselect-input)
 url: /types/_inputs/*/(multiselect-input)/
 title: Multiselect Input
-description: |-
-  This key defines an editing interface for data with multiple predefined options.
-  
+description: >-
+  This key defines an editing interface for data with multiple predefined
+  options.
+
+
   Multiselect inputs allow several values.
 examples:
-  - description: In this example, we have configured the `tags` key as a *Multiselect Input*.
+  - description: >-
+      In this example, we have configured the `tags` key as a *Multiselect
+      Input*.
     language: yaml
     code: |-
       _inputs:

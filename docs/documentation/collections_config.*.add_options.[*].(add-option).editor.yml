@@ -1,16 +1,25 @@
 gid: collections_config.*.add_options.[*].(add-option).editor
 url: /collections_config/*/add_options/[*]/(add-option)/editor/
 title: Editor Key
-description: |-
-  This key defines which editing interface CloudCannon will use when you select an option from the *\+ Add* button dropdown.
-  
+description: >-
+  This key defines which editing interface CloudCannon will use when you select
+  an option from the *\+ Add* button dropdown.
+
+
   Values can be one of the following: `visual`, `content`, or `data`.
-  
-  By default, CloudCannon will open the new file in an appropriate editing interface for that file type.
-  
-  If CloudCannon cannot determine an appropriate editing interface, it will show a warning.
+
+
+  By default, CloudCannon will open the new file in an appropriate editing
+  interface for that file type.
+
+
+  If CloudCannon cannot determine an appropriate editing interface, it will show
+  a warning.
 examples:
-  - description: In this example, we have configured a standard add option for the `people` Collection that opens new files in the [Data Editor](/documentation/articles/what-is-the-data-editor/).
+  - description: >-
+      In this example, we have configured a standard add option for the `people`
+      Collection that opens new files in the [Data
+      Editor](/documentation/articles/what-is-the-data-editor/).
     language: yaml
     code: |-
       collections_config:

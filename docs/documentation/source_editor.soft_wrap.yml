@@ -1,12 +1,17 @@
 gid: source_editor.soft_wrap
 url: /source_editor/soft_wrap/
 title: ''
-description: |-
-  This key toggles whether CloudCannon will enable soft wrapping of code in the Source Editor.
-  
-  Setting this key to `true` will enable soft wrapping of code, allowing long lines to wrap to the next line without horizontal scrolling.
+description: >-
+  This key toggles whether CloudCannon will enable soft wrapping of code in the
+  Source Editor.
+
+
+  Setting this key to `true` will enable soft wrapping of code, allowing long
+  lines to wrap to the next line without horizontal scrolling.
 examples:
-  - description: In this example, CloudCannon will enable soft wrapping of code in the Source Editor.
+  - description: >-
+      In this example, CloudCannon will enable soft wrapping of code in the
+      Source Editor.
     language: yaml
     code: |-
       source_editor:

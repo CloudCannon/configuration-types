@@ -1,10 +1,11 @@
 gid: type._inputs.*.(textarea-input)
 url: /types/_inputs/*/(textarea-input)/
 title: Textarea Input
-description: |-
-  This key defines an editing interface for plain text.
+description: This key defines an editing interface for plain text.
 examples:
-  - description: In this example, we have configured the `description` key as a *Textarea Input*.
+  - description: >-
+      In this example, we have configured the `description` key as a *Textarea
+      Input*.
     language: yaml
     code: |-
       _inputs:

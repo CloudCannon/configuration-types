@@ -1,11 +1,14 @@
 gid: type._inputs.*.(url-input).options.hide_link_to_page
 url: /types/_inputs/*/(url-input)/options/hide_link_to_page/
 title: ''
-description: |-
+description: >-
   This key toggles whether CloudCannon will hide the option to link to a page.
-  
-  Setting this key to `true` will hide the option to link to a page. This does not prevent typing a file's output URL in the input.
-  
+
+
+  Setting this key to `true` will hide the option to link to a page. This does
+  not prevent typing a file's output URL in the input.
+
+
   By default, this key is `false` (i.e., the option to link to a page is shown).
 examples: []
 show_in_navigation: false

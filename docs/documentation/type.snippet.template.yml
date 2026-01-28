@@ -1,10 +1,13 @@
 gid: type.snippet.template
 url: /types/snippet/template/
 title: ''
-description: |-
-  This key defines the template that this snippet should inherit, out of the available Snippet Templates.
+description: >-
+  This key defines the template that this snippet should inherit, out of the
+  available Snippet Templates.
 examples:
-  - description: In this example, we have configured a snippet to use the `button` template.
+  - description: >-
+      In this example, we have configured a snippet to use the `button`
+      template.
     language: yaml
     code: |-
       _snippets_definitions:

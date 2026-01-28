@@ -1,13 +1,19 @@
 gid: collections_config.*.add_options.[*].(add-option).default_content_file
 url: /collections_config/*/add_options/[*]/(add-option)/default_content_file/
 title: ''
-description: |-
-  This key defines which file CloudCannon should use to populate a file created with an option in the *\+ Add* button dropdown.
+description: >-
+  This key defines which file CloudCannon should use to populate a file created
+  with an option in the *\+ Add* button dropdown.
 
-  The value is a string that specifies a file path relative to the root of your repository. This file is used to populate the initial contents of a new file if the Collection defined in `add_options.collection` has no Schemas configured.
 
-  The `add_options.schema` key will override `default_content_file` if configured.
+  The value is a string that specifies a file path relative to the root of your
+  repository. This file is used to populate the initial contents of a new file
+  if the Collection defined in `add_options.collection` has no Schemas
+  configured.
 
+
+  The `add_options.schema` key will override `default_content_file` if
+  configured.
 examples:
   - description: >-
       In this example, we want CloudCannon to populate the initial contents of

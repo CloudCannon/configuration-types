@@ -1,13 +1,18 @@
 gid: type.snippet.params.*.(wrapper-parser-config).options.snippet
 url: /types/snippet/params/*/(wrapper-parser-config)/options/snippet/
 title: ''
-description: |-
-  This key defines the snippet configuration to wrap for wrapper parser configurations.
+description: >-
+  This key defines the snippet configuration to wrap for wrapper parser
+  configurations.
 
-  The value is a string that specifies the key name of another snippet configuration defined in `_snippets`. This snippet configuration will be wrapped by the wrapper parser.
 
+  The value is a string that specifies the key name of another snippet
+  configuration defined in `_snippets`. This snippet configuration will be
+  wrapped by the wrapper parser.
 examples:
-  - description: In this example, we have configured a snippet reference for wrapper parser.
+  - description: >-
+      In this example, we have configured a snippet reference for wrapper
+      parser.
     language: yaml
     code: |-
       _snippets:

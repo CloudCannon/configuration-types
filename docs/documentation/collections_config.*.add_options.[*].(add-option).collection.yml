@@ -1,14 +1,20 @@
 gid: collections_config.*.add_options.[*].(add-option).collection
 url: /collections_config/*/add_options/[*]/(add-option)/collection/
 title: ''
-description: |-
-  This key defines the Collection for files created using an option in the *\+ Add* button dropdown.
-  
-  This Collections overrides the current Collection open in the *Collection browser*.
-  
+description: >-
+  This key defines the Collection for files created using an option in the *\+
+  Add* button dropdown.
+
+
+  This Collections overrides the current Collection open in the *Collection
+  browser*.
+
+
   The value for this key should be the key name of a Collection.
-  
-  By default, this key is the current Collection open in the *Collection browser*.
+
+
+  By default, this key is the current Collection open in the *Collection
+  browser*.
 examples:
   - description: >-
       In this example, we want team members in the articles Collection to create

@@ -1,14 +1,21 @@
 gid: type.structure.reorder_inputs
 url: /types/structure/reorder_inputs/
 title: ''
-description: |-
-  This key toggles whether CloudCannon will reorder inputs in a file to match the order defined in a given Structure.
-  
-  Setting this key to `false` will preserve the existing order of inputs in a file, regardless of the order defined in the Structure.
-  
-  By default, this key is `true` (i.e., inputs are reordered to match the Structure).
-  
-  You can also configure this behavior for specific values of a Structure using `values[*].reorder_inputs`.
+description: >-
+  This key toggles whether CloudCannon will reorder inputs in a file to match
+  the order defined in a given Structure.
+
+
+  Setting this key to `false` will preserve the existing order of inputs in a
+  file, regardless of the order defined in the Structure.
+
+
+  By default, this key is `true` (i.e., inputs are reordered to match the
+  Structure).
+
+
+  You can also configure this behavior for specific values of a Structure using
+  `values[*].reorder_inputs`.
 examples:
   - description: >-
       In this example, we want to preserve the order of the inputs in a file

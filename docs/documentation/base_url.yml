@@ -1,15 +1,18 @@
 gid: base_url
 url: /base_url/
 title: ''
-description: |-
-  This key defines which base URL (or subpath) CloudCannon should use when matching output URLs for your *Site*.
-  
+description: >-
+  This key defines which base URL (or subpath) CloudCannon should use when
+  matching output URLs for your *Site*.
+
+
   The base URL will prefix the output URL of each file.
 examples:
-  - description: In this example, we have configured the base URL to `/documentation/` so all output URLs will be prefixed with this path.
+  - description: >-
+      In this example, we have configured the base URL to `/documentation/` so
+      all output URLs will be prefixed with this path.
     language: yaml
-    code: |-
-      base_url: /documentation/
+    code: 'base_url: /documentation/'
     annotations: []
     source: cloudcannon.config.yml
 show_in_navigation: false

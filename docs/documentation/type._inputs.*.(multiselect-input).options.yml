@@ -1,10 +1,11 @@
 gid: type._inputs.*.(multiselect-input).options
 url: /types/_inputs/*/(multiselect-input)/options/
 title: ''
-description: |-
-  This key defines options that are specific to Multiselect Inputs.
+description: This key defines options that are specific to Multiselect Inputs.
 examples:
-  - description: In this example, we have configured *Multiselect Input* options including values.
+  - description: >-
+      In this example, we have configured *Multiselect Input* options including
+      values.
     language: yaml
     code: |-
       _inputs:

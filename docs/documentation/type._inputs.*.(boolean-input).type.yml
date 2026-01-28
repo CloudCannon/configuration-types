@@ -1,10 +1,13 @@
 gid: type._inputs.*.(boolean-input).type
 url: /types/_inputs/*/(boolean-input)/type/
 title: Type
-description: |-
-  This key defines the input type, which controls how this input appears and behaves.
+description: >-
+  This key defines the input type, which controls how this input appears and
+  behaves.
 examples:
-  - description: In this example, we have configured the `featured` key as a *Boolean Input* type.
+  - description: >-
+      In this example, we have configured the `featured` key as a *Boolean
+      Input* type.
     language: yaml
     code: |-
       _inputs:

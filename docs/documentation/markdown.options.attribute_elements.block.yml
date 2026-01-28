@@ -1,15 +1,21 @@
 gid: markdown.options.attribute_elements.block
 url: /markdown/options/attribute_elements/block/
 title: Attribute List Position
-description: |-
-  This key defines where attribute lists are positioned for block-level elements when converting HTML to Markdown.
+description: >-
+  This key defines where attribute lists are positioned for block-level elements
+  when converting HTML to Markdown.
 
-  The value can be `none`, `right`, `space right`, `below`, `newline below`, or `right-of-prefix`. This applies to all block-level elements unless overridden by element-specific configuration.
+
+  The value can be `none`, `right`, `space right`, `below`, `newline below`, or
+  `right-of-prefix`. This applies to all block-level elements unless overridden
+  by element-specific configuration.
+
 
   This key only takes effect when `attributes` is enabled.
-
 examples:
-  - description: In this example, we have configured block-level elements to place attributes below the element.
+  - description: >-
+      In this example, we have configured block-level elements to place
+      attributes below the element.
     language: yaml
     code: |-
       markdown:

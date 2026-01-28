@@ -1,10 +1,13 @@
 gid: type.structure.values.[*].id
 url: /types/structure/values/[*]/id/
 title: ''
-description: |-
-  This key defines the string used to identify a given Structure value when refering to it from other input configuration.
+description: >-
+  This key defines the string used to identify a given Structure value when
+  refering to it from other input configuration.
 examples:
-  - description: In this example, we have configured the `blog_post` ID for the entry labeled `Blog` in the `article_information` Structure.
+  - description: >-
+      In this example, we have configured the `blog_post` ID for the entry
+      labeled `Blog` in the `article_information` Structure.
     language: yaml
     code: |-
       _structures:

@@ -1,14 +1,21 @@
 gid: markdown.options.breaks
 url: /markdown/options/breaks/
 title: ''
-description: |-
-  This key toggles whether CloudCannon will convert line breaks (`\n`) in paragraphs into `<br>` tags when converting Markdown to HTML.
+description: >-
+  This key toggles whether CloudCannon will convert line breaks (`\n`) in
+  paragraphs into `<br>` tags when converting Markdown to HTML.
 
-  Setting this key to `true` will convert line breaks within paragraphs into `<br>` tags.
 
-  By default, this key is `false` (i.e., line breaks in paragraphs are not converted to `<br>` tags).
+  Setting this key to `true` will convert line breaks within paragraphs into
+  `<br>` tags.
+
+
+  By default, this key is `false` (i.e., line breaks in paragraphs are not
+  converted to `<br>` tags).
 examples:
-  - description: In this example, we have configured Markdown to convert line breaks in paragraphs into `<br>` tags.
+  - description: >-
+      In this example, we have configured Markdown to convert line breaks in
+      paragraphs into `<br>` tags.
     language: yaml
     code: |-
       markdown:

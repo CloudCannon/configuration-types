@@ -1,14 +1,21 @@
 gid: collections_config.*.add_options.[*].(add-option).icon
 url: /collections_config/*/add_options/[*]/(add-option)/icon/
 title: Icon
-description: |-
-  This key defines the icon displayed next to the text for a standard add option in the *\+ Add* button dropdown.
+description: >-
+  This key defines the icon displayed next to the text for a standard add option
+  in the *\+ Add* button dropdown.
 
-  The value is a string that specifies an icon name from [Google's Material Symbols](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded).
 
-  By default, this key uses the icon of the matching Schema if `add_options.schema` is configured. Otherwise, this key defaults to `add`.
+  The value is a string that specifies an icon name from [Google's Material
+  Symbols](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded).
+
+
+  By default, this key uses the icon of the matching Schema if
+  `add_options.schema` is configured. Otherwise, this key defaults to `add`.
 examples:
-  - description: In this example, we have configured a standard add option for the `people` Collection with the custom icon `support_agent`.
+  - description: >-
+      In this example, we have configured a standard add option for the `people`
+      Collection with the custom icon `support_agent`.
     language: yaml
     code: |-
       collections_config:

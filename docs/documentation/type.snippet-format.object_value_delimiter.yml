@@ -1,11 +1,13 @@
 gid: type.snippet-format.object_value_delimiter
 url: /types/snippet-format/object_value_delimiter/
 title: ''
-description: |-
-  This key defines the delimiter that separates a key from its value within an object when parsing snippet parameters.
+description: >-
+  This key defines the delimiter that separates a key from its value within an
+  object when parsing snippet parameters.
 
-  The value is a string that specifies the delimiter token. If required, this will usually be `:`.
 
+  The value is a string that specifies the delimiter token. If required, this
+  will usually be `:`.
 examples:
   - description: In this example, we have configured object value delimiter to use a colon.
     language: yaml

@@ -1,13 +1,18 @@
 gid: type.snippet-format.root_value_boundary_optional.*
 url: /types/snippet-format/root_value_boundary_optional/*/
 title: ''
-description: |-
-  This key represents an individual optional root value boundary configuration in the `root_value_boundary_optional` object.
+description: >-
+  This key represents an individual optional root value boundary configuration
+  in the `root_value_boundary_optional` object.
 
-  The value is a boolean that determines whether the root value boundary is optional for a specific parameter name. When set to `true`, the boundary tokens are optional for that parameter.
 
+  The value is a boolean that determines whether the root value boundary is
+  optional for a specific parameter name. When set to `true`, the boundary
+  tokens are optional for that parameter.
 examples:
-  - description: In this example, we have configured root value boundaries to be optional for the `title` parameter.
+  - description: >-
+      In this example, we have configured root value boundaries to be optional
+      for the `title` parameter.
     language: yaml
     code: |-
       _snippets:

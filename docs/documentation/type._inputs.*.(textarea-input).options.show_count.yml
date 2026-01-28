@@ -3,10 +3,12 @@ url: /types/_inputs/*/(textarea-input)/options/show_count/
 title: ''
 description: |-
   This key toggles whether a character counter is shown below the input.
-  
+
   Setting this key to `true` will show a character counter below the input.
 examples:
-  - description: In this example, CloudCannon will show a character counter below the *Textarea Input*.
+  - description: >-
+      In this example, CloudCannon will show a character counter below the
+      *Textarea Input*.
     language: yaml
     code: |-
       _inputs:

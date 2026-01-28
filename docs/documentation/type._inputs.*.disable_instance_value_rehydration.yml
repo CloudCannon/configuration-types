@@ -1,12 +1,17 @@
 gid: type._inputs.*.disable_instance_value_rehydration
 url: /types/_inputs/*/disable_instance_value_rehydration/
 title: ''
-description: |-
-  This key toggles whether CloudCannon will rehydrate inputs configured with an `instance_value` with a new value when duplicated.
-  
-  Setting this key to `true` will prevent rehydration of instance values when inputs are duplicated.
+description: >-
+  This key toggles whether CloudCannon will rehydrate inputs configured with an
+  `instance_value` with a new value when duplicated.
+
+
+  Setting this key to `true` will prevent rehydration of instance values when
+  inputs are duplicated.
 examples:
-  - description: In this example, CloudCannon will prevent rehydration of instance values when inputs are duplicated.
+  - description: >-
+      In this example, CloudCannon will prevent rehydration of instance values
+      when inputs are duplicated.
     language: yaml
     code: |-
       _inputs:

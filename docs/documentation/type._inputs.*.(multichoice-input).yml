@@ -1,12 +1,16 @@
 gid: type._inputs.*.(multichoice-input)
 url: /types/_inputs/*/(multichoice-input)/
 title: Multichoice Input
-description: |-
-  This key defines an editing interface for data with multiple predefined options.
-  
+description: >-
+  This key defines an editing interface for data with multiple predefined
+  options.
+
+
   Multichoice inputs allow several values.
 examples:
-  - description: In this example, we have configured the `categories` key as a *Multichoice Input*.
+  - description: >-
+      In this example, we have configured the `categories` key as a *Multichoice
+      Input*.
     language: yaml
     code: |-
       _inputs:

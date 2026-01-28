@@ -1,14 +1,21 @@
 gid: markdown.options.html
 url: /markdown/options/html/
 title: ''
-description: |-
-  This key toggles whether CloudCannon will output HTML tags from source when converting Markdown to HTML.
+description: >-
+  This key toggles whether CloudCannon will output HTML tags from source when
+  converting Markdown to HTML.
 
-  Setting this key to `true` will allow HTML tags in the Markdown source to be output in the resulting HTML.
 
-  By default, this key is `false` (i.e., HTML tags in Markdown source are not output).
+  Setting this key to `true` will allow HTML tags in the Markdown source to be
+  output in the resulting HTML.
+
+
+  By default, this key is `false` (i.e., HTML tags in Markdown source are not
+  output).
 examples:
-  - description: In this example, we have configured Markdown to output HTML tags from source.
+  - description: >-
+      In this example, we have configured Markdown to output HTML tags from
+      source.
     language: yaml
     code: |-
       markdown:

@@ -1,6 +1,6 @@
 gid: type.structure-reference
 url: /types/structure-reference/
 title: Structure Reference
-description: ''
+description: A reference to an existing structure.
 examples: []
 show_in_navigation: true

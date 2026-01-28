@@ -1,10 +1,14 @@
 gid: type.preview.gallery
 url: /types/preview/gallery/
 title: ''
-description: |-
-  This key defines the appearance of the gallery section on *Cards* in the *Collection browser*, *Structures*, and *Snippets*.
+description: >-
+  This key defines the appearance of the gallery section on *Cards* in the
+  *Collection browser*, *Structures*, and *Snippets*.
 examples:
-  - description: In this example, we have configured the gallery section for *Cards* in the `blog` Collection to display the image stored under the `featured_image` key with a padded fit.
+  - description: >-
+      In this example, we have configured the gallery section for *Cards* in the
+      `blog` Collection to display the image stored under the `featured_image`
+      key with a padded fit.
     language: yaml
     code: |-
       collections_config:

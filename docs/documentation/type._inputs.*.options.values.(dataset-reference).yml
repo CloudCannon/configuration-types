@@ -1,7 +1,6 @@
 gid: type._inputs.*.options.values.(dataset-reference)
 url: /types/_inputs/*/options/values/(dataset-reference)/
 title: Dataset Reference
-description: |-
-  This key defines a reference to a dataset.
+description: This key defines a reference to a dataset.
 examples: []
 show_in_navigation: false

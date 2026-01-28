@@ -1,14 +1,23 @@
 gid: pull_request_templates.[*].template_path
 url: /pull_request_templates/[*]/template_path/
 title: ''
-description: |-
-  This key defines the path to the file CloudCannon should use as the value of the `body` field in a Pull Request template. This file path must be relative to the root of your repository (i.e., `/`, not the value of `source`). This allows you to create more complex default content for your Pull Request.
+description: >-
+  This key defines the path to the file CloudCannon should use as the value of
+  the `body` field in a Pull Request template. This file path must be relative
+  to the root of your repository (i.e., `/`, not the value of `source`). This
+  allows you to create more complex default content for your Pull Request.
 
-  CloudCannon will not use the content of this file if the `body` key is also defined for the Pull Request template.
+
+  CloudCannon will not use the content of this file if the `body` key is also
+  defined for the Pull Request template.
+
 
   This key has no default.
 examples:
-  - description: In this example, the `body` field of our Pull Request template is populated by the contents of `.github/templates/delete-content.md` by default.
+  - description: >-
+      In this example, the `body` field of our Pull Request template is
+      populated by the contents of `.github/templates/delete-content.md` by
+      default.
     language: yaml
     code: |-
       pull_request_templates:

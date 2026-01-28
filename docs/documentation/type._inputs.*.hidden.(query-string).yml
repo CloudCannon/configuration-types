@@ -1,17 +1,26 @@
 gid: type._inputs.*.hidden.(query-string)
 url: /types/_inputs/*/hidden/(query-string)/
 title: Query String
-description: |-
-  This key represents a query string value for the `hidden` key that conditionally hides an input based on another input's value.
+description: >-
+  This key represents a query string value for the `hidden` key that
+  conditionally hides an input based on another input's value.
 
-  The value is a string that references a sibling input key name. CloudCannon evaluates the referenced input's value to determine whether to hide this input.
 
-  When the referenced input is truthy, CloudCannon hides this input. You can reverse this behavior by prefixing the string with `!`.
+  The value is a string that references a sibling input key name. CloudCannon
+  evaluates the referenced input's value to determine whether to hide this
+  input.
 
-  For reverse values in YAML files, the string should be wrapped in single or double quotation marks.
 
+  When the referenced input is truthy, CloudCannon hides this input. You can
+  reverse this behavior by prefixing the string with `!`.
+
+
+  For reverse values in YAML files, the string should be wrapped in single or
+  double quotation marks.
 examples:
-  - description: In this example, we have configured an input to be hidden when the `published` input is truthy.
+  - description: >-
+      In this example, we have configured an input to be hidden when the
+      `published` input is truthy.
     language: yaml
     code: |-
       _inputs:
@@ -24,7 +33,9 @@ examples:
           hidden: published
     annotations: []
     source: cloudcannon.config.yml
-  - description: In this example, we have configured an input to be hidden when the `published` input is falsy using the `!` prefix.
+  - description: >-
+      In this example, we have configured an input to be hidden when the
+      `published` input is falsy using the `!` prefix.
     language: yaml
     code: |-
       _inputs:

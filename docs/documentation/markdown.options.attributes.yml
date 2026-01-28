@@ -1,14 +1,21 @@
 gid: markdown.options.attributes
 url: /markdown/options/attributes/
 title: ''
-description: |-
-  This key toggles whether CloudCannon will save element attributes in Markdown format instead of converting them to HTML when converting HTML to Markdown.
+description: >-
+  This key toggles whether CloudCannon will save element attributes in Markdown
+  format instead of converting them to HTML when converting HTML to Markdown.
 
-  Setting this key to `true` will preserve element attributes in Markdown format (using attribute lists) rather than converting them to HTML.
 
-  By default, this key is `false` (i.e., element attributes are converted to HTML).
+  Setting this key to `true` will preserve element attributes in Markdown format
+  (using attribute lists) rather than converting them to HTML.
+
+
+  By default, this key is `false` (i.e., element attributes are converted to
+  HTML).
 examples:
-  - description: In this example, we have configured Markdown to save element attributes in Markdown format.
+  - description: >-
+      In this example, we have configured Markdown to save element attributes in
+      Markdown format.
     language: yaml
     code: |-
       markdown:
