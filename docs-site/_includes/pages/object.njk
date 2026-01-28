@@ -5,13 +5,8 @@
 			<article class="condensed">
 				{% set propDoc = propRef | docFromRef %}
 
-				{% if propDoc.url %}
-					<strong><a href="{{ propDoc.url }}">{{ key }}</a></strong>
-				{% else %}
-					<strong>{{ key }}</strong>
-				{% endif %}
-
-				– <code>{% renderFile "./_includes/doc-type.njk", propDoc %}</code>
+				<strong>{% renderFile "./_includes/doc-link.njk", propDoc %}</strong> —
+				<code>{% renderFile "./_includes/doc-type.njk", propDoc %}</code>
 
 				{%- if propDoc.required %}
 					<small style="color: red;">(Required)</small>

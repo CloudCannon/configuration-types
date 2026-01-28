@@ -1,0 +1,7 @@
+{% if description %}{{ description | renderContent('md') | safe }}{% endif %}
+
+{% if source %}
+	<p class="code-block-label"><code>{{ source }}</code></p>
+{% endif %}
+
+{% highlight language %}{{ code | safe }}{% endhighlight %}

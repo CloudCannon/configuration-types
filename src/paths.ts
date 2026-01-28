@@ -10,6 +10,7 @@ export const PathsSchema = z
 		dam_static: z.string().optional().meta({ id: 'paths.dam_static' }),
 		uploads_use_relative_path: z
 			.boolean()
+			.default(false)
 			.optional()
 			.meta({ id: 'paths.uploads_use_relative_path' }),
 	})

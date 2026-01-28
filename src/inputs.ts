@@ -102,23 +102,23 @@ const TextValidationSchema = z.object({
 	}),
 	pattern_flags: z
 		.object({
-			global: z.boolean().optional().meta({
+			global: z.boolean().default(false).optional().meta({
 				description: '`g` - Search globally.',
 			}),
-			ignore_case: z.boolean().optional().meta({
+			ignore_case: z.boolean().default(false).optional().meta({
 				description: '`i` - Case-insensitive.',
 			}),
-			multiline: z.boolean().optional().meta({
+			multiline: z.boolean().default(false).optional().meta({
 				description:
 					'`m` - `^` and `$` match the start and end of each line rather than the entire string.',
 			}),
-			dot_all: z.boolean().optional().meta({
+			dot_all: z.boolean().default(false).optional().meta({
 				description: '`s` - `.` matches newline characters.',
 			}),
-			unicode: z.boolean().optional().meta({
+			unicode: z.boolean().default(false).optional().meta({
 				description: '`u` - Pattern is treated as a sequence of Unicode code points.',
 			}),
-			unicode_sets: z.boolean().optional().meta({
+			unicode_sets: z.boolean().default(false).optional().meta({
 				description: '`v` - Extended `unicode` mode.',
 			}),
 		})
@@ -385,7 +385,7 @@ export const ColorInputOptionsSchema = z
 				'Toggles showing a control for adjusting the transparency of the selected color. Defaults to using the naming convention, enabled if the input key ends with "a".',
 		}),
 		palette: z.array(z.string()).optional(),
-		hide_picker: z.boolean().optional(),
+		hide_picker: z.boolean().default(false).optional(),
 	})
 	.meta({
 		description: 'Options that are specific to Color Inputs.',

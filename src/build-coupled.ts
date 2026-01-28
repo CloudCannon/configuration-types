@@ -97,7 +97,7 @@ export const ReaderCollectionConfigSchema = z.object({
 
 export const HugoCollectionConfigSchema = z.object({
 	...BuildCoupledCollectionConfigSchema.shape,
-	parse_branch_index: z.boolean().optional().meta({
+	parse_branch_index: z.boolean().default(false).optional().meta({
 		description:
 			'Controls whether branch index files (e.g. `_index.md`) are assigned to this collection or not. The "pages" collection defaults this to true, and false otherwise.',
 	}),
@@ -105,7 +105,7 @@ export const HugoCollectionConfigSchema = z.object({
 
 export const BuildCoupledConfigurationSchema = z.object({
 	...ConfigurationSchema.omit({ version: true }).shape,
-	collections_config_override: z.boolean().optional().meta({
+	collections_config_override: z.boolean().default(false).optional().meta({
 		id: 'collections_config_override',
 		description:
 			'Prevents CloudCannon from automatically discovering collections for supported SSGs if true. Defaults to false.',

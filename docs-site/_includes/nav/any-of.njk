@@ -4,12 +4,12 @@
 		{% if anyOfDoc.url == doc.url %}
 			<li>
 				<span class="icon">&bull;</span>
-				<span>{{ anyOfDoc.title | default(anyOfDoc.key, true) }}</span>
+				<span>{% renderFile "./_includes/doc-label.njk", anyOfDoc %}</span>
 			</li>
 		{% elif anyOfDoc.url %}
 			<li>
 				<span class="icon">&bull;</span>
-				<a href="{{ anyOfDoc.url }}">{{ anyOfDoc.title | default(anyOfDoc.key, true) }}</a>
+				{% renderFile "./_includes/doc-link.njk", anyOfDoc %}
 			</li>
 		{% endif %}
 	{% endfor %}
