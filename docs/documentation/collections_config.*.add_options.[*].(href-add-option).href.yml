@@ -11,15 +11,15 @@ description: |-
 examples:
   - description: >-
       In this example, the *\+ Add* button dropdown in the `team` *Collection
-      browser* uses a link option with the internal URL `/our-offices` to navigate to the Office Locations page on our live website.
+      browser* uses a link option with the URL `https://forms.gle/xxxxxxx`.
     language: yaml
     code: |-
       collections_config:
         team:
           add_options:
-            - name: Office Locations
-              icon: map
-              href: /our-offices
+            - name: Submit Form
+              icon: assignment_add
+              href: https://forms.gle/xxxxxxx
     annotations: []
     source: cloudcannon.config.yml
 show_in_navigation: false
