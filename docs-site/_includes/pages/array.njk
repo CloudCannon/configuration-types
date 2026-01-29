@@ -5,10 +5,7 @@
 			<article>
 				{% set itemDoc = itemRef | docFromRef %}
 				<p>
-					{% if itemDoc.url %}
-						<em><a href="{{ itemDoc.url }}">{{ itemDoc.title | default(itemDoc.key, true) }}</a></em> —
-					{% endif %}
-
+					<em>{% renderFile "./_includes/doc-link.njk", itemDoc %}</em> —
 					<code>{% renderFile "./_includes/doc-type.njk", itemDoc %}</code>
 				</p>
 				{% renderFile "./_includes/doc-summary.njk", itemDoc %}

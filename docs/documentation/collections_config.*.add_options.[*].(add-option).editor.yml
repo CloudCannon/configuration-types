@@ -1,6 +1,6 @@
 gid: collections_config.*.add_options.[*].(add-option).editor
 url: /collections_config/*/add_options/[*]/(add-option)/editor/
-title: Editor Key
+title: ''
 description: >-
   This key defines which editing interface CloudCannon will use when you select
   an option from the *\+ Add* button dropdown.
@@ -10,21 +10,28 @@ description: >-
 
 
   By default, CloudCannon will open the new file in an appropriate editing
-  interface for that file type. If CloudCannon cannot determine an appropriate
-  editing interface, it will show a warning.
+  interface for that file type.
+
+
+  If CloudCannon cannot determine an appropriate editing interface, it will show
+  a warning.
 examples:
   - description: >-
-      In this example, we want new draft blog files to open in the [Content
-      Editor](/documentation/articles/what-is-the-content-editor/).
+      In this example, we have configured a standard add option for the `people`
+      Collection that opens new files in the [Data
+      Editor](/documentation/articles/what-is-the-data-editor/).
     language: yaml
     code: |-
       collections_config:
-        _posts:
+        people:
           add_options:
-            - name: Add draft blog
-              icon: post_add
-              editor: content
-              base_path: /../_drafts/blog
+            - name: Add Staff Member
+              schema: employee
+              icon: face
+              editor: data
+          schemas:
+            employee:
+              path: /.cloudcannon/schemas/employee.yml
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

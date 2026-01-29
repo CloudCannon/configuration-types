@@ -1,6 +1,32 @@
 gid: type.structure.values.[*].groups.[*].heading
 url: /types/structure/values/[*]/groups/[*]/heading/
 title: ''
-description: The main text for the group shown when collapsed or expanded.
-examples: []
+description: |-
+  This key defines the main text for the group shown when collapsed or expanded.
+
+  The value is a string that specifies the heading text displayed for the group.
+examples:
+  - description: >-
+      In this example, we have configured a group heading to organize structure
+      inputs under the "Titles" heading.
+    language: yaml
+    code: |-
+      _structures:
+        article_information:
+          values:
+            - label: Blog
+              value:
+                title:
+                subtitle:
+                author:
+              groups:
+                - heading: Titles
+                  inputs:
+                    - title
+                    - subtitle
+                - heading: Details
+                  inputs:
+                    - author
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

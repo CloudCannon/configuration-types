@@ -1,6 +1,31 @@
 gid: type.snippet-format.allow_numbers
 url: /types/snippet-format/allow_numbers/
 title: ''
-description: Whether unquoted numbers like `5` and `-0.4` can be used as values.
-examples: []
+description: >-
+  This key toggles whether CloudCannon will allow unquoted numbers like `5` and
+  `-0.4` when parsing snippet parameters.
+
+
+  Setting this key to `true` will allow unquoted numeric values in snippet
+  parameter parsing.
+
+
+  By default, this key is `false` (i.e., unquoted numbers are not allowed).
+examples:
+  - description: >-
+      In this example, we have configured snippet format to allow unquoted
+      numbers.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[param]]>>"
+          params:
+            param:
+              parser: argument
+              options:
+                format:
+                  allow_numbers: true
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

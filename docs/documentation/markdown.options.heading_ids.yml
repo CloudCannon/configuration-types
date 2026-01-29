@@ -1,6 +1,24 @@
 gid: markdown.options.heading_ids
 url: /markdown/options/heading_ids/
 title: ''
-description: Generate IDs for headings.
-examples: []
+description: >-
+  This key toggles whether CloudCannon will generate IDs for headings when
+  converting Markdown to HTML.
+
+
+  Setting this key to `true` will automatically generate ID attributes for
+  heading elements based on their text content.
+
+
+  By default, this key is `false` (i.e., IDs are not generated for headings).
+examples:
+  - description: In this example, we have configured Markdown to generate IDs for headings.
+    language: yaml
+    code: |-
+      markdown:
+        engine: commonmark
+        options:
+          heading_ids: true
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -1,22 +1,32 @@
 gid: collection_groups
 url: /collection_groups/
-title: Collection Groups
+title: ''
 description: >-
-  This key defines the groups and order of Collections in your *Site
-  Navigation*. Each item in the array must contain the `heading` and
-  `collections` keys.
+  This key defines custom order and grouping for Collections in your *Site
+  Navigation*.
 
 
-  The following nested keys are available for each entry in `collection_groups`:
+  The value is an array of group objects. Each group object must contain a
+  `heading` key and a `collections` key.
 
 
-  * `heading`
-
-  * `collections`
-
-
-  This key has no default. If undefined, CloudCannon will sort your Collections
-  in the following order: the *Pages* Collection, all output Collections in
-  alphabetical order, then all non-output Collections in alphabetical order.
-examples: []
+  If undefined, CloudCannon will sort your Collections in the order they are
+  defined under the `collections_config` key.
+examples:
+  - description: >-
+      In this example, we have configured Collection groups to organize
+      Collections into "Content" and "Data Files" sections in the *Site
+      Navigation*.
+    language: yaml
+    code: |-
+      collection_groups:
+        - heading: Content
+          collections:
+            - pages
+            - blog
+        - heading: Data Files
+          collections:
+            - data
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

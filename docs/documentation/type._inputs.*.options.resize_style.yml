@@ -1,10 +1,12 @@
 gid: type._inputs.*.options.resize_style
 url: /types/_inputs/*/options/resize_style/
-title: Resize Style
+title: ''
 description: >-
   This key defines how image files are resized prior to upload, using a bounding
-  box defined by `width` and `height` options. Defaults to `contain`. Valid
-  values are `contain`, `cover` or `stretch`:
+  box defined by `width` and `height` options.
+
+
+  Valid values are `cover`, `contain`, `crop`, or `stretch`:
 
 
   * `cover` keeps aspect ratio and ensures the image covers the bounding box
@@ -12,15 +14,28 @@ description: >-
   * `contain` keeps aspect ratio and ensures the image fits inside the bounding
   box
 
+  * `crop` prompts the user with and interface to select an
+  aspect-ratio-respecting area
+
   * `stretch` ignores aspect ratio and resizes the image to the bounding box
 
 
   This key does not apply to existing images, and does not work if `width` and
   `height` options are not defined.
-
-
-  Available for the Content Editor (`_editables.content`), the Block editable
-  region (`_editables.block`), the Image editable region (`_editables.image`),
-  and Rich Text inputs (`_inputs.key_name.options`).
-examples: []
+examples:
+  - description: >-
+      In this example, we have configured an *Image Input* to resize images
+      using the `cover` style to ensure images cover the bounding box while
+      maintaining aspect ratio.
+    language: yaml
+    code: |-
+      _inputs:
+        hero_image:
+          type: image
+          options:
+            width: 1200
+            height: 600
+            resize_style: cover
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

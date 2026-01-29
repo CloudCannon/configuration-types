@@ -1,21 +1,33 @@
 gid: type._inputs.*.options.image_size_attributes
 url: /types/_inputs/*/options/image_size_attributes/
-title: Image Size Attributes
+title: ''
 description: >-
-  This key instructs a rich text editor to save `width` and `height` on image
-  elements. This can [prevent
-  pop-in](/documentation/articles/why-cloudcannon-injects-width-and-height-onto-images/)
-  as a page loads. Defaults to `false`.
+  This key toggles whether CloudCannon will instruct a rich text editor to save
+  `width` and `height` attributes on image elements.
 
 
-  > This defaults to `true` for sites created before June 23 2023, in order to
-  keep those sites working. Use the [Image Size Attributes
-  Default](/documentation/articles/legacy-option-flags/#image-size-attributes-default-behaviour)
-  flag to update this for your site, if needed.
+  Setting this key to `true` will instruct the rich text editor to save `width`
+  and `height` attributes on image elements. This can prevent pop-in as a page
+  loads.
 
 
-  Available for the Content Editor (`_editables.content`), the Block editable
-  region (`_editables.block`), the Image editable region (`_editables.image`),
-  and Rich Text inputs (`_inputs.key_name.options`).
-examples: []
+  By default, this key is `false` (i.e., width and height attributes are not
+  saved on image elements). This defaults to `true` if the [Image Size
+  Attributes site
+  flag](/documentation/articles/legacy-option-flags/#image-size-attributes-default-behaviour)
+  is enabled (this is enabled for sites created before June 23 2023, in order to
+  keep those sites working).
+examples:
+  - description: >-
+      In this example, CloudCannon will save width and height attributes on
+      image elements in a *Rich Text Input*.
+    language: yaml
+    code: |-
+      _inputs:
+        content:
+          type: markdown
+          options:
+            image_size_attributes: true
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

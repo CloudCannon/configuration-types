@@ -2,7 +2,18 @@ gid: type.create.path
 url: /types/create/path/
 title: ''
 description: >-
-  The raw template to be processed when creating files. Relative to the
-  containing collection's path.
-examples: []
+  This key defines the raw template to be processed when creating files.
+  Relative to the containing collection's path.
+examples:
+  - description: >-
+      In this example, we have configured a create path template for the `blog`
+      Collection using the `date` and `title` fields.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          create:
+            path: '[relative_base_path]/{date|year}-{date|month}-{date|day}-{title|slugify}.[ext]'
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -2,13 +2,12 @@ gid: type._editables.*.image
 url: /types/_editables/*/image/
 title: ''
 description: >-
-  This key enables a tool to insert an image and enter alternative text and
-  title text. Select an existing image, upload an image, or use an external
+  This key toggles whether CloudCannon will display a tool in your WYSIWYG
+  toolbar to insert an image and enter alternative text and title text.
+
+
+  Setting this key to `true` will enable a tool in your WYSIWYG toolbar to
+  insert an image. Select an existing image, upload an image, or use an external
   link.
-
-
-  Available for the Content Editor (`_editables.content`), the Block editable
-  region (`_editables.block`), and Rich Text inputs
-  (`_inputs.key_name.options`).
 examples: []
 show_in_navigation: false

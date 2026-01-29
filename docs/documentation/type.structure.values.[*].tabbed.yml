@@ -6,9 +6,8 @@ description: >-
   you have two layers of nested object within your Structure.
 
 
-  > CloudCannon would create tabs automatically for Non-unified Configuration
-  Sites, but it must be explicitly configured in the Unified Configuration file
-  format.
+  Setting this key to `true` will create tabs in the Data Editor for two layers
+  of nested objects within your Structure.
 
 
   By default, this key is `false` (i.e., Object and Array inputs using this
@@ -33,5 +32,5 @@ examples:
                   color:
                   font:
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

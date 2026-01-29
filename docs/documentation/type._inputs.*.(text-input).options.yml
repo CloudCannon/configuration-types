@@ -1,6 +1,19 @@
 gid: type._inputs.*.(text-input).options
 url: /types/_inputs/*/(text-input)/options/
 title: ''
-description: Options that are specific to Text Inputs.
-examples: []
+description: This key defines options that are specific to Text Inputs.
+examples:
+  - description: >-
+      In this example, we have configured *Text Input* options including comment
+      and icon.
+    language: yaml
+    code: |-
+      _inputs:
+        title:
+          type: text
+          options:
+            comment: Enter a title
+            icon: title
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

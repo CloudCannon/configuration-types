@@ -3,8 +3,11 @@ url: /collections_config/*/add_options/[*]/(add-option)/collection/
 title: ''
 description: >-
   This key defines the Collection for files created using an option in the *\+
-  Add* button dropdown. This Collections overrides the current Collection open
-  in the *Collection browser*.
+  Add* button dropdown.
+
+
+  This Collections overrides the current Collection open in the *Collection
+  browser*.
 
 
   The value for this key should be the key name of a Collection.
@@ -29,5 +32,5 @@ examples:
               collection: new_articles
               schema: articles
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

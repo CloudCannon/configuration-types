@@ -1,6 +1,29 @@
 gid: type.snippet-style.block.leading
 url: /types/snippet-style/block/leading/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key defines the leading whitespace string for block-level snippet
+  content.
+
+
+  The value is a string that specifies whitespace tokens (typically newlines)
+  inserted before block-level snippet content.
+examples:
+  - description: >-
+      In this example, we have configured block leading whitespace to use a
+      newline.
+    language: yaml
+    code: |-
+      _snippets:
+        highlight:
+          snippet: "<<highlight>> [[content]] <</highlight>>"
+          params:
+            content:
+              parser: content
+              options:
+                style:
+                  block:
+                    leading: '\n'
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

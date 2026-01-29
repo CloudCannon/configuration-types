@@ -3,11 +3,16 @@ url: >-
   /types/snippet/params/*/(content-parser-config)/options/parse_newline_character/
 title: ''
 description: >-
-  This tells the parser to treat `\n` as line breaks instead of literal
-  characters.
+  This key toggles whether the parser treats `\n` as line breaks instead of
+  literal characters.
 
-  This is useful if you are editing your content in a multiline editing
-  interface.
+
+  Setting this key to `true` will treat `\n` as line breaks instead of literal
+  characters. This is useful if you are editing your content in a multiline
+  editing interface.
+
+
+  By default, this key is `false` (i.e., `\n` is treated as literal characters).
 examples:
   - description: ''
     language: yaml
@@ -16,7 +21,7 @@ examples:
       options:
         parse_newline_character: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: 'Example usage:'
     language: markdown
     code: |-
@@ -30,5 +35,5 @@ examples:
           interface, instead of
 
           showing the literal `\n` characters.
-    source: page.md
+    source: /page.md
 show_in_navigation: false

@@ -1,7 +1,15 @@
 gid: type.snippet.params.*.(content-parser-config).options.allow_nested
 url: /types/snippet/params/*/(content-parser-config)/options/allow_nested/
 title: ''
-description: If set, nested snippets will be parsed and returned.
+description: >-
+  This key toggles whether nested snippets will be parsed and returned.
+
+
+  Setting this key to `true` will parse and return nested snippets.
+
+
+  By default, this key is `false` (i.e., nested snippets are not parsed and
+  returned).
 examples:
   - description: ''
     language: yaml
@@ -11,7 +19,7 @@ examples:
         editor_key: highlighted_text
         allow_nested: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: 'Example usage:'
     language: markdown
     code: |-
@@ -50,5 +58,5 @@ examples:
 
           `My highlighted <<highlight>>content!`. This is the behavior of the
           `raw` option.
-    source: page.md
+    source: /page.md
 show_in_navigation: false

@@ -1,6 +1,6 @@
 gid: type._editables.content
 url: /types/_editables/content/
-title: Content Editable
-description: Contains input options for the Content Editor.
+title: ''
+description: This key defines input options for the Content Editor.
 examples: []
 show_in_navigation: false

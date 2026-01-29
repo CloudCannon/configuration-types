@@ -1,10 +1,7 @@
 gid: type._inputs.*.context.title
 url: /types/_inputs/*/context/title/
 title: ''
-description: |-
-  This key determines the title of the context box.
-
-  By default, this key value is "Context".
+description: This key defines the title of the context box.
 examples:
   - description: >-
       In this example, we want to customize the context box title to be more
@@ -20,5 +17,5 @@ examples:
             icon: edit
             content: Write a brief, professional biography (2-3 sentences) that highlights your expertise and experience.
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

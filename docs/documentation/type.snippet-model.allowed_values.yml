@@ -2,8 +2,11 @@ gid: type.snippet-model.allowed_values
 url: /types/snippet-model/allowed_values/
 title: ''
 description: >-
-  A list of valid values for the parser. If specified, values not in the
-  provided list will cause this snippet to be skipped,
+  This key defines a list of valid values for the parser.
+
+
+  If specified, values not in the provided list will cause this snippet to be
+  skipped,
 
   and a different snippet will be matched if possible.
 
@@ -21,7 +24,7 @@ examples:
           editor_key: video_id
           allowed_values: ["riXoAr6gO-E", "CZcNgDN81Sw", "0iwNjcFIHNM"]
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: 'Example usage:'
     language: markdown
     code: |-
@@ -45,5 +48,5 @@ examples:
           `video` snippet.
 
           It may still parse as another snippet, or will remain as plain text.
-    source: page.md
+    source: /page.md
 show_in_navigation: false

@@ -1,6 +1,26 @@
 gid: markdown.options.gfm
 url: /markdown/options/gfm/
 title: ''
-description: Enable GFM mode.
-examples: []
+description: >-
+  This key toggles whether CloudCannon will enable GitHub Flavored Markdown
+  (GFM) mode when processing Markdown.
+
+
+  Setting this key to `true` will enable GFM mode, which includes features like
+  tables, strikethrough, task lists, and autolinks.
+
+
+  By default, this key is `false` (i.e., GFM mode is disabled).
+examples:
+  - description: >-
+      In this example, we have configured Markdown to enable GitHub Flavored
+      Markdown mode.
+    language: yaml
+    code: |-
+      markdown:
+        engine: commonmark
+        options:
+          gfm: true
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

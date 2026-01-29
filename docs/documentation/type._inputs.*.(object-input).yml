@@ -1,6 +1,6 @@
 gid: type._inputs.*.(object-input)
 url: /types/_inputs/*/(object-input)/
 title: Object Input
-description: Provides a user interface for a group of inputs.
+description: This key defines a user interface for a group of inputs.
 examples: []
 show_in_navigation: false

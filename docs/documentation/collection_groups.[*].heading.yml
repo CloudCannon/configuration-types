@@ -1,6 +1,26 @@
 gid: collection_groups.[*].heading
 url: /collection_groups/[*]/heading/
 title: ''
-description: Short, descriptive label for this group of Collections.
-examples: []
+description: >-
+  This key defines a short, descriptive label for a group of Collections
+  displayed in the *Site Navigation*.
+
+
+  This key is required for each group entry in the `collection_groups` array.
+examples:
+  - description: >-
+      In this example, we have configured two Collection groups with a heading
+      that labels the group in the *Site Navigation*.
+    language: yaml
+    code: |-
+      collection_groups:
+        - heading: Content
+          collections:
+            - pages
+            - blog
+        - heading: Data Files
+          collections:
+            - data
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

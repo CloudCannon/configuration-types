@@ -1,6 +1,27 @@
 gid: markdown.options.spaced_lists
 url: /markdown/options/spaced_lists/
 title: ''
-description: Output lists with an extra space in Markdown.
-examples: []
+description: >-
+  This key toggles whether CloudCannon will output lists with an extra space
+  when converting HTML to Markdown.
+
+
+  Setting this key to `true` will add an extra space in list items when
+  outputting Markdown.
+
+
+  By default, this key is `false` (i.e., lists are output without an extra
+  space).
+examples:
+  - description: >-
+      In this example, we have configured Markdown to output lists with an extra
+      space.
+    language: yaml
+    code: |-
+      markdown:
+        engine: commonmark
+        options:
+          spaced_lists: true
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

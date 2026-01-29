@@ -1,12 +1,7 @@
 gid: type._inputs.*.label
 url: /types/_inputs/*/label/
 title: ''
-description: >-
-  This key changes the bold title text above an Input.
-
-
-  By default, CloudCannon generates the value from the Input key name, in title
-  case (e.g., `page_title` will become "Page Title").
+description: This key defines the bold title text above an Input.
 examples:
   - description: >-
       In this example, we want to customize the label for our `page_title` Input
@@ -19,5 +14,5 @@ examples:
           label: Article Title
           comment: Enter the main title for this article
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

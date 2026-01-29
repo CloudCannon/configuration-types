@@ -2,13 +2,31 @@ gid: type.snippet-format.string_boundary
 url: /types/snippet-format/string_boundary/
 title: ''
 description: >-
-  The valid tokens that can bound a string. The parser will ensure the matched
-  end token
-
-  is the same as the start token.
+  This key defines the valid tokens that can bound a string when parsing snippet
+  parameters.
 
 
-  To handle common strings with either single or double quotes, this would
-  usually be `["'", "\""]`
-examples: []
+  The value is an array of strings, where each string specifies a valid boundary
+  token. The parser will ensure the matched end token is the same as the start
+  token. To handle common strings with either single or double quotes, this
+  would usually be `["'", "\""]`.
+examples:
+  - description: >-
+      In this example, we have configured string boundaries to allow single and
+      double quotes.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[param]]>>"
+          params:
+            param:
+              parser: argument
+              options:
+                format:
+                  string_boundary:
+                    - '"'
+                    - "'"
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

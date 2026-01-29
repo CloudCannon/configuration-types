@@ -2,12 +2,11 @@ gid: type._editables.*.strike
 url: /types/_editables/*/strike/
 title: ''
 description: >-
-  This key enables a tool to strike through selected text.
+  This key toggles whether CloudCannon will display a tool in your WYSIWYG
+  toolbar to strike through selected text.
 
 
-  Available for the Content Editor (`_editables.content`), the Block editable
-  region (`_editables.block`), the Link editable region (`_editables.link`), the
-  Text editable region (`_editables.text`), and Rich Text inputs
-  (`_inputs.key_name.options`).
+  Setting this key to `true` will enable a tool in your WYSIWYG toolbar to
+  strike through selected text.
 examples: []
 show_in_navigation: false

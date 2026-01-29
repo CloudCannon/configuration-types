@@ -5,8 +5,10 @@ description: >-
   This key toggles whether CloudCannon removes developer files from your
   *Collection browser*. CloudCannon excludes files that probably shouldn't be
   edited in a CMS from your *Collection browser*, for example files like
-  `README.md` or `package.json`. CloudCannon excludes these files even if you
-  have configured globs to allow them.
+  `README.md` or
+
+  `package.json`. CloudCannon excludes these files even if you have configured
+  globs to allow them.
 
 
   Setting this key to `true` will allow CloudCannon to show developer files,
@@ -14,9 +16,6 @@ description: >-
   assuming they are not filtered out by any configured
 
   [globs](/documentation/articles/collections-reference/#glob).
-
-
-  By default, this key is `false` (i.e., do not include developer files).
 examples:
   - description: >-
       In this example, we want to see developer files in the *Collection
@@ -27,5 +26,5 @@ examples:
         data:
           include_developer_files: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

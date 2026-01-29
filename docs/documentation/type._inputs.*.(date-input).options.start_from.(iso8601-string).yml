@@ -1,6 +1,33 @@
 gid: type._inputs.*.(date-input).options.start_from.(iso8601-string)
 url: /types/_inputs/*/(date-input)/options/start_from/(iso8601-string)/
-title: ISO8601 String
-description: ''
+title: String Start From
+description: >-
+  This key defines the earliest date and time, inclusive, that CloudCannon will
+  allow in an Input.
+
+
+  When configured, CloudCannon will prevent you from selecting an earlier date
+  and time.
+
+
+  If the Input already contains an earlier date and time, CloudCannon will
+  require you to change it to a valid value to save your changes, or discard
+
+  your unsaved changes.
+
+
+  Value must be in
+  [ISO8601](https://www.iso.org/iso-8601-date-and-time-format.html) format and
+  should be in quotes.
+
+
+  If `options.end_before` is also configured, this key cannot be a later date
+  and time.
+
+
+  This key has no default.
+
+
+  This key is available for Date and Time Inputs.
 examples: []
 show_in_navigation: false

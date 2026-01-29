@@ -3,8 +3,9 @@ url: /types/_inputs/*/options/max_message/
 title: ''
 description: >-
   This key defines a custom error message that explains why a value has failed
-  the validation criteria from `options.max`. This key requires you to define
-  `options.max`.
+  the validation criteria from `options.max`.
+
+  This key requires you to define `options.max`.
 
 
   This key has no default.
@@ -27,5 +28,5 @@ examples:
             min: 1
             min_message: Cannot be less than 1
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

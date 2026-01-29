@@ -3,10 +3,17 @@ url: /_snippets_from_glob/
 title: ''
 description: >-
   This key defines globs that filter which files CloudCannon should use for
-  Snippet configuration. Values in this array are relative to the root of your
-  repository (i.e., `/`, not the value of `source`) and must end in the file
-  extension `.cloudcannon.snippets.yml`. You can use this key anywhere you would
-  use the `_snippets` key in the configuration cascade.
+  Snippet configuration.
+
+
+  Values in this array are relative to the root of your repository (i.e., `/`,
+  not the value of `source`) and must end in the file extension
+
+  `.cloudcannon.snippets.yml`.
+
+
+  You can use this key anywhere you would use the `_snippets` key in the
+  configuration cascade.
 
 
   This key has no default.
@@ -19,11 +26,11 @@ examples:
     language: yaml
     code: |-
       _snippets_imports:
-          eleventy_liquid: true
+        eleventy_liquid: true
       _snippets_from_glob:
         - '/.cloudcannon/snippets/callout.cloudcannon.snippets.yml'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: ''
     language: yaml
     code: |-

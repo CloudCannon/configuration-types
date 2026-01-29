@@ -5,10 +5,7 @@
 			<article>
 				{% set anyOfDoc = anyOfRef | docFromRef %}
 				<p>
-					{% if anyOfDoc.url %}
-						<em><a href="{{ anyOfDoc.url }}">{{ anyOfDoc.title | default(anyOfDoc.key, true) }}</a></em> —
-					{% endif %}
-
+					<em>{% renderFile "./_includes/doc-link.njk", anyOfDoc %}</em> —
 					<code>{% renderFile "./_includes/doc-type.njk", anyOfDoc %}</code>
 				</p>
 				{% renderFile "./_includes/doc-summary.njk", anyOfDoc %}

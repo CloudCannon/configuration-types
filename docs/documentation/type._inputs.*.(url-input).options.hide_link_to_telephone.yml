@@ -2,7 +2,15 @@ gid: type._inputs.*.(url-input).options.hide_link_to_telephone
 url: /types/_inputs/*/(url-input)/options/hide_link_to_telephone/
 title: ''
 description: >-
-  Hides the option to link to a telephone number. This does not prevent typing a
-  `tel:` link in the input.
+  This key toggles whether CloudCannon will hide the option to link to a
+  telephone number.
+
+
+  Setting this key to `true` will hide the option to link to a telephone number.
+  This does not prevent typing a `tel:` link in the input.
+
+
+  By default, this key is `false` (i.e., the option to link to a telephone
+  number is shown).
 examples: []
 show_in_navigation: false

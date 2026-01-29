@@ -2,7 +2,7 @@ gid: type._inputs.*.context.open
 url: /types/_inputs/*/context/open/
 title: ''
 description: >-
-  This key determines whether the context box is open to display text content by
+  This key defines whether the context box is open to display text content by
   default.
 
 
@@ -23,5 +23,5 @@ examples:
             icon: info
             content: Keep descriptions between 150-160 characters for optimal search engine display.
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

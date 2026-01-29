@@ -3,21 +3,15 @@ url: /collections_config/*/schema_key/
 title: ''
 description: >-
   This key defines the name for the structured data key that references the
-  Schema a file uses. CloudCannon automatically adds this key to the top of your
-  file when you create it using a Schema.
+  Schema a file uses.
+
+
+  CloudCannon automatically adds this key to the top of your file when you
+  create it using a Schema.
 
 
   Values which beginning with the `_` character are hidden from the Data Editor
   and the sidebar of the Content and Visual Editors.
-
-
-  By default, this key is `_schema`.
-
-
-
-
-  For more information, please read our documentation on
-  [Schemas](/documentation/articles/what-is-a-schema/).
 examples:
   - description: >-
       In this example, we want to make Schemas more friendly for our
@@ -29,5 +23,5 @@ examples:
         blog:
           schema_key: _blog_template
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

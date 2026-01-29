@@ -1,20 +1,15 @@
-<editable-text
-	data-prop="@file[/docs/documentation/{{ gid }}.yml].description"
-	data-type="block"
->{% if description %}{{ description | renderContent('md') | safe }}{% endif %}</editable-text>
+{% if description %}{{ description | renderContent('md') | safe }}{% endif %}
 
-<details{% if not documentation.examples | length %} class="show-in-cms"{% endif %}>
-	<summary><em>Examples</em></summary>
-	<editable-array data-prop="@file[/docs/documentation/{{ gid }}.yml].examples">
+{% if documentation.examples | length %}
+	<details>
+		<summary><em>Examples</em></summary>
 		{% for example in documentation.examples %}
-			{% if example.description %}{{ example.description | renderContent('md') | safe }}{% endif %}
-			<pre data-editable="array-item"><code>{{ example.code }}</code></pre>
-			<p>{% if example.language %}{{ example.language }}{% endif %} | {% if example.source %}{{ example.source }}{% endif %}</p>
+			{% renderFile "./_includes/example.njk", example %}
 		{% endfor %}
-	</editable-array>
-</details>
+	</details>
+{% endif %}
 
-{% if default %}
+{% if default or default == false or default == 0 %}
 	<p><em>Defaults to:</em> <code>{{ default }}</code></p>
 {% endif %}
 

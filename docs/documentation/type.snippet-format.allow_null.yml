@@ -1,6 +1,31 @@
 gid: type.snippet-format.allow_null
 url: /types/snippet-format/allow_null/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key toggles whether CloudCannon will allow `null` values when parsing
+  snippet parameters.
+
+
+  Setting this key to `true` will allow `null` values in snippet parameter
+  parsing.
+
+
+  By default, this key is `false` (i.e., `null` values are not allowed).
+examples:
+  - description: >-
+      In this example, we have configured snippet format to allow null values in
+      parameter parsing.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[param]]>>"
+          params:
+            param:
+              parser: argument
+              options:
+                format:
+                  allow_null: true
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

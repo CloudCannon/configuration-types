@@ -1,6 +1,27 @@
 gid: type.snippet-format.root_pair_delimiter.[*]
 url: /types/snippet-format/root_pair_delimiter/[*]/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key represents an individual delimiter string in the
+  `root_pair_delimiter` array.
+
+
+  The value is a string that specifies a delimiter token that separates
+  key-value pairs when parsing snippet parameters.
+examples:
+  - description: In this example, we have configured a root pair delimiter to use a space.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[param]]>>"
+          params:
+            param:
+              parser: argument
+              options:
+                format:
+                  root_pair_delimiter:
+                    - ' '
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

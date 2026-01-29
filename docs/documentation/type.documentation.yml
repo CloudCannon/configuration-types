@@ -1,22 +1,10 @@
 gid: type.documentation
 url: /types/documentation/
-title: Documentation
-description: >-
+title: ''
+description: |-
   This key defines the documentation link at the top of a *Collection browser*.
+
   Collection documentation is useful for assisting your team members.
-
-
-  The following nested keys are available:
-
-
-  * `url` (required)
-
-  * `text`
-
-  * `icon`
-
-
-  This key has no default.
 examples:
   - description: >-
       In this example, the documentation link for the `data` Collection goes to
@@ -30,5 +18,5 @@ examples:
             text: CloudCannon Documentation
             icon: star
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: true

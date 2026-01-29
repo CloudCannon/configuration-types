@@ -1,6 +1,6 @@
 gid: type._editables.text
 url: /types/_editables/text/
-title: Text Editable
-description: Contains input options for text Editable Regions.
+title: ''
+description: This key defines input options for text Editable Regions.
 examples: []
 show_in_navigation: false

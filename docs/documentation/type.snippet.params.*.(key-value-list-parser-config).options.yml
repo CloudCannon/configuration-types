@@ -1,6 +1,32 @@
 gid: type.snippet.params.*.(key-value-list-parser-config).options
 url: /types/snippet/params/*/(key-value-list-parser-config)/options/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key defines configuration options for key-value list parser
+  configurations.
+
+
+  The value is an object that can contain `models`, `format`, and `style`
+  properties. These options control how multiple key-value pairs are parsed and
+  validated.
+examples:
+  - description: >-
+      In this example, we have configured key-value list parser options with
+      models.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example key1=value1 key2=value2>>"
+          params:
+            params:
+              parser: key_values
+              options:
+                models:
+                  key1:
+                    editor_key: value1_input
+                  key2:
+                    editor_key: value2_input
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

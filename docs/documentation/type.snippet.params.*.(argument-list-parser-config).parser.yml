@@ -1,6 +1,28 @@
 gid: type.snippet.params.*.(argument-list-parser-config).parser
 url: /types/snippet/params/*/(argument-list-parser-config)/parser/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key defines the parser type for argument list parser configurations.
+
+
+  The value must be `argument_list`. This specifies that the parameter uses the
+  argument list parser, which parses multiple argument values.
+examples:
+  - description: >-
+      In this example, we have configured an argument list parser for a snippet
+      parameter.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[param1]] [[param2]]>>"
+          params:
+            params:
+              parser: argument_list
+              options:
+                models:
+                  - editor_key: param1
+                  - editor_key: param2
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

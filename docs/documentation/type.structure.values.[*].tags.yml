@@ -3,8 +3,10 @@ url: /types/structure/values/[*]/tags/
 title: ''
 description: >-
   This key defines which tags are associated with a given value in a Structure.
+
+
   You can use tags to group and filter Structure options when selecting from a
-  modal. The `style` key must be set to `modal` for this key to function.
+  modal.
 
 
   This key has no default.
@@ -52,5 +54,5 @@ examples:
                 image_path:
                 videoUrl:
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

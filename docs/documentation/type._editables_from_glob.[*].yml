@@ -1,6 +1,25 @@
 gid: type._editables_from_glob.[*]
 url: /types/_editables_from_glob/[*]/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key represents an individual glob pattern string in the
+  `_editables_from_glob` array.
+
+
+  The value is a string that specifies a file path pattern relative to the root
+  of your repository. The path must end in the file extension
+  `.cloudcannon.editables.yml`.
+examples:
+  - description: >-
+      In this example, we have several WYSIWYG Toolbar *Configuration Files* in
+      the `.cloudcannon/editables/` folder, with each file containing multiple
+      definitions. The value of the `_editables_from_glob` key tells CloudCannon
+      all files in that folder that match the glob
+      `*.cloudcannon.editables.yml`.
+    language: yaml
+    code: |-
+      _editables_from_glob:
+        - '/.cloudcannon/editables/*.cloudcannon.editables.yml'
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -3,8 +3,11 @@ url: /types/_inputs/*/options/max_file_size/
 title: ''
 description: >-
   This key defines the maximum file size in kB that CloudCannon will allow you
-  to upload. When configured, CloudCannon will prevent you from saving your
-  changes until you select a valid file size, or discard your unsaved changes.
+  to upload.
+
+
+  When configured, CloudCannon will prevent you from saving your changes until
+  you select a valid file size, or discard your unsaved changes.
 
 
   Value can be any positive integer.
@@ -28,5 +31,5 @@ examples:
           options:
             max_file_size: 140
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

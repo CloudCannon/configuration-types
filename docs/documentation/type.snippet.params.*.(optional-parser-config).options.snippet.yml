@@ -2,7 +2,7 @@ gid: type.snippet.params.*.(optional-parser-config).options.snippet
 url: /types/snippet/params/*/(optional-parser-config)/options/snippet/
 title: ''
 description: >-
-  A snippet string to wrap and make repeatable.
+  This key defines a snippet string to wrap and make repeatable.
 
 
   This shares the same params as the outermost snippet, so may reference itself

@@ -1,6 +1,33 @@
 gid: type._inputs.*.hidden.(boolean)
 url: /types/_inputs/*/hidden/(boolean)/
-title: Boolean
-description: ''
-examples: []
+title: Boolean Hidden
+description: >-
+  This key represents a boolean value for the `hidden` key that toggles whether
+  CloudCannon hides an input from view.
+
+
+  When set to `true`, CloudCannon hides the input from the *Data Editor* and the
+  sidebar of the *Visual Editor* or *Content Editor*. The input still exists in
+  the file and can be edited in the *Source Editor*.
+
+
+  When set to `false`, CloudCannon displays the input normally.
+
+
+  By default, this key follows the input naming convention where key names
+  beginning with an underscore are hidden (`true`). Otherwise, this key defaults
+  to `false` (i.e., the input is visible).
+examples:
+  - description: >-
+      In this example, we have configured an input to be hidden using a boolean
+      value, making it only editable in the *Source Editor*.
+    language: yaml
+    code: |-
+      _inputs:
+        internal_id:
+          type: text
+          label: Internal ID
+          hidden: true
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

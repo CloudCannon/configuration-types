@@ -3,11 +3,17 @@ url: /types/_inputs/*/options/unique_on/
 title: ''
 description: >-
   This key defines the JSON Path selector that CloudCannon should use to
-  determine if the value of an Input is unique. When configured, CloudCannon
-  will require the value of the Input to be unique compared to the value defined
-  on the JSON Path. If the Input already contains a non-unique value,
-  CloudCannon will require you to change it to a valid value to save your
-  changes, or discard your unsaved changes.
+  determine if the value of an Input is unique.
+
+
+  When configured, CloudCannon will require the value of the Input to be unique
+  compared to the value defined on the JSON Path.
+
+
+  If the Input already contains a non-unique value, CloudCannon will require you
+  to change it to a valid value to save your changes, or discard your
+
+  unsaved changes.
 
 
   Value must be a valid JSON Path.
@@ -30,7 +36,7 @@ examples:
           options:
             unique_on: '$.path'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: ''
     language: yaml
     code: |-
@@ -40,5 +46,5 @@ examples:
         - path: /articles/second-article.md
           featured: false
     annotations: []
-    source: blog-article.yml
+    source: /blog-article.yml
 show_in_navigation: false

@@ -2,7 +2,19 @@ gid: type.snippet.snippet
 url: /types/snippet/snippet/
 title: ''
 description: >-
-  The snippet string contains the text to match for your snippet, with any
-  dynamic sections represented using a placeholder in double square brackets.
-examples: []
+  This key defines the snippet string that contains the text to match for your
+  snippet, with any dynamic sections represented using a placeholder in double
+  square brackets.
+examples:
+  - description: >-
+      In this example, we have configured a snippet string for a custom button
+      snippet.
+    language: yaml
+    code: |-
+      _snippets_definitions:
+        custom_button:
+          snippet: "[[text]]"
+          template: button
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

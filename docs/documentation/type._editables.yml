@@ -1,28 +1,9 @@
 gid: type._editables
 url: /types/_editables/
-title: Editables
+title: ''
 description: >-
   This key defines which Rich Text editors have custom configuration for the
   associated WYSIWYG toolbar.
-
-
-  The following nested keys are available:
-
-
-  * `content`
-
-  * `block`
-
-  * `link`
-
-  * `text`
-
-  * `image`
-
-
-  This key has no default.
-
-
 
 
   For more information, please read our documentation on [Rich Text
@@ -39,5 +20,5 @@ examples:
             content:
               snippet: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: true

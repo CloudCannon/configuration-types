@@ -1,7 +1,13 @@
 gid: type.snippet-format
 url: /types/snippet-format/
 title: Snippet Format
-description: This should be an object containing keys from the available Format keys.
+description: >-
+  This key defines formatting options for parsing snippet parameters.
+
+
+  The value is an object that can contain various options controlling how
+  snippet parameters are parsed, including boundaries, delimiters, allowed value
+  types, and string formatting options.
 examples:
   - description: |-
       A common option to configure for the
@@ -20,7 +26,7 @@ examples:
                 format:
                   string_boundary: ['"', "`"]
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       This would make our snippet match `<<video "CZcNgDN81Sw">>` or `` <<video
       `CZcNgDN81Sw`>> `` but not `<<video 'CZcNgDN81Sw'>>` or `<<video
@@ -47,5 +53,5 @@ examples:
                   string_boundary:
                     - ""
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

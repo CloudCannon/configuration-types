@@ -1,6 +1,24 @@
 gid: type._inputs.*.options.picker_view
 url: /types/_inputs/*/options/picker_view/
 title: ''
-description: Controls how selectable options are rendered.
-examples: []
+description: >-
+  This key defines how CloudCannon should render selectable options in the
+  dropdown of a *Select Input*.
+examples:
+  - description: >-
+      In this example, we have configured a *Select Input* to display options
+      using the card view.
+    language: yaml
+    code: |-
+      _inputs:
+        category:
+          type: select
+          options:
+            values:
+              - Blog
+              - News
+              - Events
+            picker_view: card
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

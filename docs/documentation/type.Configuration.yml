@@ -1,6 +1,6 @@
 gid: type.Configuration
 url: /
 title: Configuration
-description: The main CloudCannon configuration schema.
+description: This key represents the main CloudCannon configuration schema.
 examples: []
 show_in_navigation: true

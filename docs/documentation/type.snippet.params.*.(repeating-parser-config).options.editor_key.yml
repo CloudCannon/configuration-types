@@ -1,6 +1,25 @@
 gid: type.snippet.params.*.(repeating-parser-config).options.editor_key
 url: /types/snippet/params/*/(repeating-parser-config)/options/editor_key/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key defines the editor key for repeating parser configurations.
+
+
+  The value is a string that specifies the key name of an input to use for
+  editing repeating snippet instances.
+examples:
+  - description: In this example, we have configured an editor key for repeating parser.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[repeating_content]]>>"
+          params:
+            repeating_content:
+              parser: repeating
+              options:
+                snippet: 'content'
+                editor_key: content_items
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

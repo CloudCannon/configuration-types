@@ -1,6 +1,33 @@
 gid: type.snippet-format.allowed_string_cases.leading_lower
 url: /types/snippet-format/allowed_string_cases/leading_lower/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key toggles whether CloudCannon will allow strings starting with a
+  lowercase letter when parsing snippet parameters.
+
+
+  Setting this key to `true` will allow strings that begin with a lowercase
+  letter in snippet parameter parsing.
+
+
+  By default, this key is `false` (i.e., strings starting with lowercase are not
+  allowed unless `any` is enabled).
+examples:
+  - description: >-
+      In this example, we have configured snippet format to allow strings
+      starting with a lowercase letter.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[param]]>>"
+          params:
+            param:
+              parser: argument
+              options:
+                format:
+                  allowed_string_cases:
+                    leading_lower: true
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

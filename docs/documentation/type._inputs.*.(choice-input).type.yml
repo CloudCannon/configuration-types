@@ -1,6 +1,18 @@
 gid: type._inputs.*.(choice-input).type
 url: /types/_inputs/*/(choice-input)/type/
-title: Type
-description: Sets an input type, which controls how this input appears and behaves.
-examples: []
+title: ''
+description: >-
+  This key defines the input type, which controls how this input appears and
+  behaves.
+examples:
+  - description: >-
+      In this example, we have configured the `status` key as a *Choice Input*
+      type.
+    language: yaml
+    code: |-
+      _inputs:
+        status:
+          type: choice
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

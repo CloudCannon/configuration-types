@@ -1,6 +1,36 @@
 gid: type.structure.values.[*].groups.[*]
 url: /types/structure/values/[*]/groups/[*]/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key represents an individual group object in the `values[*].groups`
+  array.
+
+
+  The value is an object that groups inputs together within a structure value
+  without changing the data structure. Each group typically contains a `heading`
+  and `inputs` array.
+examples:
+  - description: >-
+      In this example, we have configured a group with a heading and inputs
+      array to organize structure inputs.
+    language: yaml
+    code: |-
+      _structures:
+        article_information:
+          values:
+            - label: Blog
+              value:
+                title:
+                subtitle:
+                author:
+              groups:
+                - heading: Titles
+                  inputs:
+                    - title
+                    - subtitle
+                - heading: Details
+                  inputs:
+                    - author
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

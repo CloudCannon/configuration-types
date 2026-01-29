@@ -8,10 +8,6 @@ description: >-
 
   Setting this key to `true` will prevent CloudCannon from generating an output
   URL for a Collection.
-
-
-  By default, this key is `false` (i.e., generate an output URL for this
-  Collection).
 examples:
   - description: >-
       In this example, `data` is an non-output Collection and we don't want
@@ -22,5 +18,5 @@ examples:
         data:
           disable_url: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

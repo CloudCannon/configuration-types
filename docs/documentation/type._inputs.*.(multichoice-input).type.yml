@@ -1,6 +1,38 @@
 gid: type._inputs.*.(multichoice-input).type
 url: /types/_inputs/*/(multichoice-input)/type/
-title: Type
-description: Sets an input type, which controls how this input appears and behaves.
-examples: []
+title: ''
+description: >-
+  This key defines the type of editing interface used for an Input.
+
+
+  Each Input type has a different appearance and functionality, processes and
+  accepts different types of values, and has different configuration
+
+  options.
+
+
+  Value can be one of the following: `auto`, `checkbox`, `switch`, `code`,
+  `color`, `datetime`, `date`, `time`, `file`, `document`, `image`, `number`,
+
+  `range`, `object`, `array`, `select`, `multiselect`, `choice`, `multichoice`,
+  `text`, `textarea`, `email`, `html`, `markdown`, or `url`.
+
+
+  If the type or value of an Input is misconfigured, CloudCannon will display an
+  orange warning instead of an Input.
+
+
+  If type is not configured for an Input, CloudCannon will attempt to determine
+  Input type based on value or key name conventions.
+examples:
+  - description: >-
+      In this example, we have configured the `categories` key as a *Multichoice
+      Input* type.
+    language: yaml
+    code: |-
+      _inputs:
+        categories:
+          type: multichoice
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

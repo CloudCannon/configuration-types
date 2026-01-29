@@ -1,6 +1,25 @@
 gid: type._inputs.*.(code-input).options.tab_size
 url: /types/_inputs/*/(code-input)/options/tab_size/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key defines the number of spaces inserted when the Tab key is pressed in
+  a *Code Input*.
+
+
+  The value is a number representing the number of spaces. This affects both
+  indentation behavior and how existing tabs are displayed.
+examples:
+  - description: >-
+      In this example, we have configured a code input to use 4 spaces for
+      indentation instead of the default 2.
+    language: yaml
+    code: |-
+      _inputs:
+        python_code:
+          type: code
+          label: Python Code
+          options:
+            tab_size: 4
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

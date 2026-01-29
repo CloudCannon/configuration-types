@@ -1,34 +1,10 @@
 gid: type.structure.values
 url: /types/structure/values/
 title: ''
-description: >-
-  This key defines the options available for a Structure. You must define this
-  key for the Structure to function.
+description: |-
+  This key defines the options available for a Structure.
 
-
-  The following nested keys are available for each entry in the `values` array:
-
-
-  * `id`
-
-  * `default`
-
-  * `tabbed`
-
-  * `_inputs`
-
-  * `tags`
-
-  * `value` (required)
-
-  * `groups`
-
-  * `label`
-
-  * `picker_preview`
-
-  * `preview`
-
+  You must define this key for the Structure to function.
 
   This key has no default.
 examples:
@@ -81,5 +57,5 @@ examples:
                 subtext: Add a related blog
                 icon: post_add
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

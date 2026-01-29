@@ -1,6 +1,29 @@
 gid: type.snippet.params.*.(literal-parser-config).options.format
 url: /types/snippet/params/*/(literal-parser-config)/options/format/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key defines formatting options for literal parser configurations.
+
+
+  The value is an object that can contain `string_boundary` properties. These
+  options control how the literal value is parsed and matched.
+examples:
+  - description: >-
+      In this example, we have configured literal parser format options with
+      string boundaries.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[literal_param]]>>"
+          params:
+            literal_param:
+              parser: literal
+              options:
+                literal: 'specific-value'
+                format:
+                  string_boundary:
+                    - '"'
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

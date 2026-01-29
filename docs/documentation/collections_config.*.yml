@@ -1,8 +1,8 @@
 gid: collections_config.*
 url: /collections_config/*/
-title: Collection Config
+title: ''
 description: >-
-  Definitions for your Collections, which are the sets of content files for your
-  site grouped by folder.
+  This key defines your Collections, which are the sets of content files for
+  your site grouped by folder.
 examples: []
 show_in_navigation: false

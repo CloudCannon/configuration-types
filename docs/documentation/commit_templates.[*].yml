@@ -1,6 +1,33 @@
 gid: commit_templates.[*]
 url: /commit_templates/[*]/
-title: Commit Template
-description: A template for commit messages when saving changes.
-examples: []
+title: ''
+description: >-
+  This key represents an individual commit template object in the
+  `commit_templates` array.
+
+
+  The value is an object that defines a template for commit messages when saving
+  changes. Each template object can contain optional `label`, `template_path`,
+  `template_string`, `wrap_width`, `extra_data`, and `_inputs` keys.
+examples:
+  - description: >-
+      In this example, we have configured a commit template with a template
+      string and input configuration.
+    language: yaml
+    code: |-
+      commit_templates:
+        - label: Default
+          template_string: '{commit_type}: {message|trim}'
+          _inputs:
+            commit_type:
+              type: select
+              options:
+                allow_empty: true
+                values:
+                  - feature
+                  - fix
+                  - test
+              cascade: true
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

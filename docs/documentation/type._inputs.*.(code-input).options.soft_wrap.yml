@@ -1,6 +1,28 @@
 gid: type._inputs.*.(code-input).options.soft_wrap
 url: /types/_inputs/*/(code-input)/options/soft_wrap/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key toggles whether long lines wrap to the next line in *Code Inputs*.
+
+
+  Setting this key to `true` will wrap lines that exceed the width of the code
+  area to the next line without adding a line break character.
+
+
+  By default, this key is `false` (i.e., long lines extend horizontally and
+  require horizontal scrolling).
+examples:
+  - description: >-
+      In this example, we have configured a code input to enable soft line
+      wrapping for better readability of long lines.
+    language: yaml
+    code: |-
+      _inputs:
+        markdown_content:
+          type: code
+          label: Markdown
+          options:
+            soft_wrap: true
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

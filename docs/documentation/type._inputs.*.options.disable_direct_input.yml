@@ -2,7 +2,22 @@ gid: type._inputs.*.options.disable_direct_input
 url: /types/_inputs/*/options/disable_direct_input/
 title: ''
 description: >-
-  Prevents typing into the text input, while still allowing context menu options
-  to change the value.
-examples: []
+  This key toggles whether CloudCannon will prevent typing into the *Text
+  Input*, while still allowing context menu options to change the value.
+
+
+  Setting this key to `true` will prevent typing into the *Text Input*.
+examples:
+  - description: >-
+      In this example, CloudCannon will prevent typing into the *Text Input*
+      `url`.
+    language: yaml
+    code: |-
+      _inputs:
+        url:
+          type: url
+          options:
+            disable_direct_input: true
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

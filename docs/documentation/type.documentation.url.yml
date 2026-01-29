@@ -3,7 +3,10 @@ url: /types/documentation/url/
 title: ''
 description: >-
   This key defines the URL for the documentation link at the top of a
-  *Collection browser*. You must define this key for the
+  *Collection browser*.
+
+
+  You must define this key for the
 
   `documentation` object to function.
 
@@ -20,5 +23,5 @@ examples:
           documentation:
             url: https://example.com
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

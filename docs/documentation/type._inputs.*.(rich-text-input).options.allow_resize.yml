@@ -1,6 +1,14 @@
 gid: type._inputs.*.(rich-text-input).options.allow_resize
 url: /types/_inputs/*/(rich-text-input)/options/allow_resize/
 title: ''
-description: Shows or hides the resize handler to vertically resize the input.
+description: >-
+  This key toggles whether CloudCannon will show the resize handler to
+  vertically resize the input.
+
+
+  Setting this key to `false` will hide the resize handler.
+
+
+  By default, this key is `true` (i.e., the resize handler is shown).
 examples: []
 show_in_navigation: false

@@ -2,19 +2,28 @@ gid: collections_config.*.schemas.*.remove_extra_inputs
 url: /collections_config/*/schemas/*/remove_extra_inputs/
 title: ''
 description: >-
-  Sets the behavior when editing existing files with inputs not present in the
-  schema. Defaults to `true`.
+  This key toggles whether CloudCannon will remove inputs that are not present
+  in a Schema from a file before loading it in an Editing Interface.
 
 
-  If `true`, non-schema inputs are removed before the editor loads, and
-  subsequently removed from the source file if saved.
+  Setting this key to `false` will preserve inputs that are not present in a
+  Schema, making them visible in the [Visual
+  Editor](/documentation/articles/what-is-the-visual-editor/), [Content
 
-
-  If `false`, non-schema inputs are either hidden or visible in the editor
-  depending on `hide_extra_inputs`, but still kept in the source file on save.
-
-
-  If any inputs conflict with schema (e.g. a file's `title` is a string and the
-  schema's `title` is an object), the schema version takes priority.
-examples: []
+  Editor](/documentation/articles/what-is-the-content-editor/), and [Data
+  Editor](/documentation/articles/what-is-the-data-editor/), and they will be
+  saved to your Git repository.
+examples:
+  - description: >-
+      In this example, CloudCannon will preserve extra inputs in files using the
+      `article` schema in the `blog` Collection.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          schemas:
+            article:
+              remove_extra_inputs: false
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

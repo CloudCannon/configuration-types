@@ -1,6 +1,6 @@
 import * as z from 'zod';
 import { ReducedCascadeSchema } from './cascade.ts';
-import { PreviewSchema } from './preview.ts';
+import { PickerPreviewSchema, PreviewSchema } from './preview.ts';
 
 export const ParserModelSchema = z
 	.object({
@@ -188,7 +188,7 @@ export const SnippetConfigSchema = z
 	.object({
 		...ReducedCascadeSchema.shape,
 		preview: PreviewSchema.optional(),
-		picker_preview: PreviewSchema.optional(),
+		picker_preview: PickerPreviewSchema.optional(),
 	})
 	.extend({
 		snippet: z.string().optional().meta({

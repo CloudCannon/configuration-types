@@ -2,9 +2,11 @@ gid: type.structure.values.[*].label
 url: /types/structure/values/[*]/label/
 title: ''
 description: >-
-  This key defines the dispaly name for a given value in a Structure. The name
-  will appear in the *+ Add* button dropdown below an Object or Array input or
-  in the Structures modal (if configured).
+  This key defines the display name for a given value in a Structure.
+
+
+  The name will appear in the *+ Add* button dropdown below an Object or Array
+  input or in the Structures modal (if configured).
 
 
   By default, this key falls back to `unknown`.
@@ -29,5 +31,5 @@ examples:
                 profile_picture:
                 url:
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

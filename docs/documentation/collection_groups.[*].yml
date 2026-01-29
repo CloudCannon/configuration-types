@@ -1,6 +1,27 @@
 gid: collection_groups.[*]
 url: /collection_groups/[*]/
-title: Collection Group
-description: A group of Collections shown in the Site Navigation.
-examples: []
+title: ''
+description: >-
+  This key represents an individual group entry in the `collection_groups`
+  array.
+
+
+  The value defines a group of Collections displayed in the *Site Navigation*.
+  Each group entry must contain a `heading` key and a `collections` key.
+examples:
+  - description: >-
+      In this example, we have configured two Collection groups with a heading
+      and collections array.
+    language: yaml
+    code: |-
+      collection_groups:
+        - heading: Content
+          collections:
+            - pages
+            - blog
+        - heading: Data Files
+          collections:
+            - data
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

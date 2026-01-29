@@ -2,8 +2,26 @@ gid: type.structure.values.[*].remove_empty_inputs
 url: /types/structure/values/[*]/remove_empty_inputs/
 title: ''
 description: >-
-  If checked, empty inputs are removed from the source file on save. Removed
-  inputs will be available for editing again, provided they are in the matching
-  schema/structure. Defaults to false.
+  This key toggles whether CloudCannon will remove empty nested inputs from an
+  Object Input or Array Input using a given value from a Structure before
+
+  persisting them to your file.
+
+
+  Setting this key to `true` will remove empty nested inputs from an Object
+  Input or Array Input using a given value from a Structure before
+
+  persisting them to your file. CloudCannon considers an input to be empty when
+  its value is `null`, `' '`, or undefined. If this key is true, empty inputs
+  will be visible in the [Data
+  Editor](/documentation/articles/what-is-the-data-editor/) but not the [Source
+
+  Editor](/documentation/articles/what-is-the-source-editor/). For this key to
+  function, you must also configure `id_key` for the Structure, as removing
+  inputs prevents CloudCannon from comparing Structure values.
+
+
+  You can also configure this behavior for all values of a Structure using
+  `remove_empty_inputs` inside `_structures.*`.
 examples: []
 show_in_navigation: false

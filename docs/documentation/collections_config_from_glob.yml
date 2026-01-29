@@ -3,13 +3,13 @@ url: /collections_config_from_glob/
 title: ''
 description: >-
   This key defines globs that filter which files CloudCannon should use for
-  *Collection* configuration. Values in this array are relative to the root of
-  your repository (i.e., `/`, not the value of `source`) and must end in the
-  file extension `.cloudcannon.collections.yml`. You can use this key anywhere
-  you would use the `collections_config` key.
+  *Collection* configuration.
 
 
-  This key has no default.
+  Values in this array are relative to the root of your repository (i.e., `/`,
+  not the value of `source`) and must end in the file extension
+
+  `.cloudcannon.collections.yml`.
 examples:
   - description: >-
       In this example, each *Collection* has its own *Configuration File* in the
@@ -21,7 +21,7 @@ examples:
       collections_config_from_glob:
         - '/.cloudcannon/collections/*.cloudcannon.collections.yml'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: ''
     language: yaml
     code: |-

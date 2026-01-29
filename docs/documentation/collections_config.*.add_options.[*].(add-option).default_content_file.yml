@@ -3,12 +3,17 @@ url: /collections_config/*/add_options/[*]/(add-option)/default_content_file/
 title: ''
 description: >-
   This key defines which file CloudCannon should use to populate a file created
-  with an option in the *\+ Add* button dropdown if the Collection defined in
-  `add_options.collection` has no Schemas configured. The `add_options.schema`
-  key will override `default_content_file`.
+  with an option in the *\+ Add* button dropdown.
 
 
-  This key has no default.
+  The value is a string that specifies a file path relative to the root of your
+  repository. This file is used to populate the initial contents of a new file
+  if the Collection defined in `add_options.collection` has no Schemas
+  configured.
+
+
+  The `add_options.schema` key will override `default_content_file` if
+  configured.
 examples:
   - description: >-
       In this example, we want CloudCannon to populate the initial contents of
@@ -22,5 +27,5 @@ examples:
             collection: upcoming_events
             default_content_file: event_template.yml
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

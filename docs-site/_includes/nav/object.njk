@@ -4,12 +4,12 @@
 		{% if innerPropDoc.url == doc.url %}
 			<li>
 				<span class="icon flip-x">&crarr;</span>
-				{{ innerKey }}
+				<code>{{ innerKey }}</code>
 			</li>
 		{% elif innerPropDoc.url %}
 			<li>
 				<span class="icon flip-x">&crarr;</span>
-				<a href="{{ innerPropDoc.url }}">{{ innerKey }}</a>
+				<a href="{{ innerPropDoc.url }}"><code>{{ innerKey }}</code></a>
 			</li>
 		{% endif %}
 	{% endfor %}
@@ -19,12 +19,12 @@
 		{% if additionalPropDoc.url == doc.url %}
 			<li>
 				<span class="icon">&searr;</span>
-				<span>{{ additionalPropDoc.title | default(additionalPropDoc.key, true) }}</span>
+				<span>{% renderFile "./_includes/doc-label.njk", additionalPropDoc %}</span>
 			</li>
 		{% elif additionalPropDoc.url %}
 			<li>
 				<span class="icon">&searr;</span>
-				<a href="{{ additionalPropDoc.url }}">{{ additionalPropDoc.title | default(additionalPropDoc.key, true) }}</a>
+				{% renderFile "./_includes/doc-link.njk", additionalPropDoc %}
 			</li>
 		{% endif %}
 	{% endfor %}

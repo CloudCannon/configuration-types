@@ -1,6 +1,29 @@
 gid: markdown.options.attribute_elements.inline
 url: /markdown/options/attribute_elements/inline/
-title: Attribute List Position
-description: Positioning options for Markdown attribute elements.
-examples: []
+title: ''
+description: >-
+  This key defines where attribute lists are positioned for inline elements when
+  converting HTML to Markdown.
+
+
+  The value can be `none`, `right`, `space right`, `below`, `newline below`, or
+  `right-of-prefix`. This applies to all inline elements unless overridden by
+  element-specific configuration.
+
+
+  This key only takes effect when `attributes` is enabled.
+examples:
+  - description: >-
+      In this example, we have configured inline elements to place attributes on
+      the right.
+    language: yaml
+    code: |-
+      markdown:
+        engine: commonmark
+        options:
+          attributes: true
+          attribute_elements:
+            inline: right
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

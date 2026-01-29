@@ -2,23 +2,31 @@ gid: collections_config.*.add_options.[*].(add-option).name
 url: /collections_config/*/add_options/[*]/(add-option)/name/
 title: ''
 description: >-
-  This key defines the name of an option in the *\+ Add* button dropdown.
+  This key defines the text displayed for a standard add option in the *\+ Add*
+  button dropdown.
 
 
-  This key has no default, unless you have configured `add_options.schema`. In
-  this case, this key defaults to the name of the matching Schema.
+  The value is a string that specifies the label text for the menu item.
+
+
+  By default, this key uses the name of the matching Schema if
+  `add_options.schema` is configured. Otherwise, this key has no default value.
 examples:
   - description: >-
-      In this example, the *\+ Add* button dropdown in the `team` *Collection
-      browser* has a link to the Office Locations page on our live website.
+      In this example, we have configured a standard add option for the `people`
+      Collection with the custom name "Add Staff Member".
     language: yaml
     code: |-
       collections_config:
-        team:
+        people:
           add_options:
-            - name: Office Locations
-              icon: map
-              href: /our-offices
+            - name: Add Staff Member
+              schema: employee
+              icon: face
+              editor: data
+          schemas:
+            employee:
+              path: /.cloudcannon/schemas/employee.yml
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

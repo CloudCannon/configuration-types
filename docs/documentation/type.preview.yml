@@ -1,41 +1,22 @@
 gid: type.preview
 url: /types/preview/
-title: Preview
+title: ''
 description: >-
-  This key defines the appearance of a Card. You can configure Card preview for
+  This key defines the appearance of a Card.
+
+
+  You can configure Card preview for
   [Collections](/documentation/articles/what-is-a-collection/),
-  [Schemas](/documentation/articles/what-is-a-schema/), [Object
-  inputs](/documentation/articles/what-is-an-object-input/), [Array
+  [Schemas](/documentation/articles/what-is-a-schema/),
+
+  [Object inputs](/documentation/articles/what-is-an-object-input/), [Array
   inputs](/documentation/articles/what-is-an-array-input/), [Select
+
   inputs](/documentation/articles/what-is-a-select-input/),
   [Structures](/documentation/articles/what-is-a-structure/), the Structure
-  modal, [Snippets](/documentation/articles/what-is-a-snippet/), and the Snippet
-  modal.
+  modal,
 
-
-  The following nested keys are available:
-
-
-  * `text`
-
-  * `subtext`
-
-  * `icon`
-
-  * `icon_color`
-
-  * `icon_background_color`
-
-  * `image`
-
-  * `metadata`
-
-  * `gallery`
-
-
-  This key defaults to:
-
-
+  [Snippets](/documentation/articles/what-is-a-snippet/), and the Snippet modal.
 
 
   For more information about previews, please read our documentation on
@@ -68,7 +49,7 @@ examples:
             gallery:
               - key: featured_image
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       In this example, we have configured the appearance of Cards in inputs
       using the Structure `staff`.
@@ -109,16 +90,5 @@ examples:
                   - key: profile_picture
                 icon: face
     annotations: []
-    source: cloudcannon.config.yml
-  - description: ''
-    language: yaml
-    code: |-
-      preview:
-        text:
-          - key: title
-          - key: name
-        icon:
-          - key: icon
-    annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: true

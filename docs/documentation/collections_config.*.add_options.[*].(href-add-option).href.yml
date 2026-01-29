@@ -1,24 +1,28 @@
 gid: collections_config.*.add_options.[*].(href-add-option).href
 url: /collections_config/*/add_options/[*]/(href-add-option)/href/
 title: ''
-description: |-
+description: >-
   This key defines the link for a URL option in the *\+ Add* button dropdown.
 
-  Values can be an external URL or an internal URL relative to the current Site.
 
-  This key has no default.
+  The value is a string that specifies a URL. Values can be an external URL or
+  an internal URL relative to the current Site.
+
+
+  This key is required for URL add options in the
+  `collections_config.*.add_options` array.
 examples:
   - description: >-
       In this example, the *\+ Add* button dropdown in the `team` *Collection
-      browser* has a link to the Office Locations page on our live website.
+      browser* uses a link option with the URL `https://forms.gle/xxxxxxx`.
     language: yaml
     code: |-
       collections_config:
         team:
           add_options:
-            - name: Office Locations
-              icon: map
-              href: /our-offices
+            - name: Submit Form
+              icon: assignment_add
+              href: https://forms.gle/xxxxxxx
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

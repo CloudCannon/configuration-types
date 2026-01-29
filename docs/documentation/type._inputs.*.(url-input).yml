@@ -2,7 +2,7 @@ gid: type._inputs.*.(url-input)
 url: /types/_inputs/*/(url-input)/
 title: URL Input
 description: >-
-  Provides an editing interface for relative, absolute, and fully qualified
-  URLs.
+  This key defines an editing interface for relative, absolute, and fully
+  qualified URLs.
 examples: []
 show_in_navigation: false

@@ -211,15 +211,15 @@ export const CollectionConfigSchema = z
 					'This key defines the options available in the _+ Add_ button dropdown at the top right of your _Collection browser_.',
 			}),
 		create: CreateSchema.optional(),
-		disable_add: z.boolean().optional().meta({
+		disable_add: z.boolean().default(false).optional().meta({
 			description:
 				'This key toggles whether team members can use the _+ Add_ button in the top right of the _Collection browser_ to add files to a Collection.',
 		}),
-		disable_add_folder: z.boolean().optional().meta({
+		disable_add_folder: z.boolean().default(false).optional().meta({
 			description:
 				'This key toggles whether team members can use the _+ Add_ button in the top right of the _Collection browser_ to add subfolders to a Collection.',
 		}),
-		disable_file_actions: z.boolean().optional().meta({
+		disable_file_actions: z.boolean().default(false).optional().meta({
 			description:
 				'This key toggles whether team members can use the _+ Add_ button in the top right of the _Collection browser_ to add files to a Collection.',
 		}),

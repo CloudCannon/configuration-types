@@ -1,6 +1,6 @@
 gid: type._select_data.*.(object)
 url: /types/_select_data/*/(object)/
-title: Object
+title: Object Select Data
 description: ''
 examples: []
 show_in_navigation: false

@@ -2,7 +2,22 @@ gid: type.structure.values.[*].image
 url: /types/structure/values/[*]/image/
 title: ''
 description: >-
-  Path to an image in your source files used when displaying the structure. Can
-  be either a source (has priority) or output path.
-examples: []
+  This key defines the path to an image in your source files used when
+  displaying the structure value.
+
+
+  Can be either a source (has priority) or output path.
+examples:
+  - description: >-
+      In this example, we have configured the `/images/blog-icon.png` image for
+      the entry labeled `Blog` in the `article_information` Structure.
+    language: yaml
+    code: |-
+      _structures:
+        article_information:
+          values:
+            - label: Blog
+              image: /images/blog-icon.png
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

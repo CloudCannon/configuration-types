@@ -1,6 +1,6 @@
 gid: type._editables.link
 url: /types/_editables/link/
-title: Link Editable
-description: Contains input options for link Editable Regions.
+title: ''
+description: This key defines input options for link Editable Regions.
 examples: []
 show_in_navigation: false

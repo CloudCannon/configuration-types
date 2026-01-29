@@ -2,13 +2,13 @@ gid: type._editables.*.center
 url: /types/_editables/*/center/
 title: ''
 description: >-
-  This key enables a tool to center align selected text by toggling a class name
-  for that text block. The value is the class name to align the text. The styles
-  for this class must be defined in the `styles` file.
+  This key toggles whether CloudCannon will display a tool in your WYSIWYG
+  toolbar to center align selected text by toggling a class name for that text
+  block.
 
 
-  Available for the Content Editor (`_editables.content`), the Block editable
-  region (`_editables.block`), and Rich Text inputs
-  (`_inputs.key_name.options`).
+  Setting this key to `true` will enable a tool in your WYSIWYG toolbar to
+  center align selected text. The value is the class name to align the text. The
+  styles for this class must be defined in the `styles` file.
 examples: []
 show_in_navigation: false

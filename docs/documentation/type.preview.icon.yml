@@ -1,6 +1,45 @@
 gid: type.preview.icon
 url: /types/preview/icon/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key defines the icon displayed on *Cards* in the *Collection browser*,
+  *Structures*, and *Snippets*.
+
+
+  The value can be an array or a single value, and reference a key, template,
+  text string, that results in one of [Google's Material
+  Symbols](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded).
+  When multiple entries are provided, CloudCannon will use them in order as
+  fallback options.
+
+
+  For *Cards* in the *Collection Browser*, this key defaults to the value of
+  `collections_config.*.icon`. Otherwise, this key has no default.
+examples:
+  - description: >-
+      In this example, we have configured the icon for *Cards* in the `blog`
+      Collection to use the `edit_note` icon.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          preview:
+            icon: edit_note
+    annotations: []
+    source: /cloudcannon.config.yml
+  - description: >-
+      In this example, we have configured the icon for *Cards* in the `blog`
+      Collection with an array of values to provide fallback options.
+      CloudCannon will use the value of `logo` first, then fall back to the
+      `edit_note` icon.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          preview:
+            icon:
+              - key: logo
+              - edit_note
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

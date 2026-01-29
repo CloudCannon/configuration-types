@@ -1,13 +1,22 @@
 gid: type._inputs.*.options.height
 url: /types/_inputs/*/options/height/
-title: Height
+title: ''
 description: >-
   This key defines the height of the bounding box used in the resizing method
   defined by `resize_style`.
-
-
-  Available for the Content Editor (`_editables.content`), the Block editable
-  region (`_editables.block`), the Image editable region (`_editables.image`),
-  and Rich Text inputs (`_inputs.key_name.options`).
-examples: []
+examples:
+  - description: >-
+      In this example, we have configured the height of the bounding box for an
+      *Image Input*.
+    language: yaml
+    code: |-
+      _inputs:
+        hero_image:
+          type: image
+          options:
+            width: 1200
+            height: 600
+            resize_style: cover
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

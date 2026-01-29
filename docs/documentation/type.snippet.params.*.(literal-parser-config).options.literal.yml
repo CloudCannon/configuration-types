@@ -1,6 +1,25 @@
 gid: type.snippet.params.*.(literal-parser-config).options.literal
 url: /types/snippet/params/*/(literal-parser-config)/options/literal/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key defines the literal string value that must be matched for literal
+  parser configurations.
+
+
+  The value is a string that specifies the exact text that must appear in the
+  snippet for the parameter to match.
+examples:
+  - description: In this example, we have configured a literal value that must be matched.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[literal_param]]>>"
+          params:
+            literal_param:
+              parser: literal
+              options:
+                literal: 'specific-value'
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

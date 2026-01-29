@@ -2,12 +2,14 @@ gid: type._inputs.*.options.required
 url: /types/_inputs/*/options/required/
 title: ''
 description: >-
-  This key toggles whether CloudCannon requires this Input to have a value. If
-  set to `true`, CloudCannon will require you to enter a value to save your
+  This key toggles whether CloudCannon requires this Input to have a value.
+
+
+  Setting this key to `true` will require you to enter a value to save your
   changes, or discard your unsaved changes.
 
 
-  By default, this key is `false` (i.e, CloudCannon does not require this Input
+  By default, this key is `false` (i.e., CloudCannon does not require this Input
   to have a value).
 
 
@@ -26,5 +28,5 @@ examples:
           options:
             required: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

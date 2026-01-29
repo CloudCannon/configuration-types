@@ -3,10 +3,16 @@ url: /collections_config/*/schemas_from_glob/
 title: ''
 description: >-
   This key defines globs that filter which files CloudCannon should use for
-  *Schema* configuration. Values in this array are relative to the root of your
-  repository (i.e., `/`, not the value of `source`) and must end in the file
-  extension `.cloudcannon.schemas.yml`. You can use this key anywhere you would
-  use the `schemas` key.
+  *Schema* configuration.
+
+
+  Values in this array are relative to the root of your repository (i.e., `/`,
+  not the value of `source`) and must end in the file extension
+
+  `.cloudcannon.schemas.yml`.
+
+
+  You can use this key anywhere you would use the `schemas` key.
 
 
   This key has no default.

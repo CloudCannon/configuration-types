@@ -1,6 +1,29 @@
 gid: markdown.options.attribute_elements.*
 url: /markdown/options/attribute_elements/*/
-title: Attribute List Position
-description: Positioning options for Markdown attribute elements.
-examples: []
+title: ''
+description: >-
+  This key represents an individual element-specific attribute positioning
+  configuration in the `markdown.options.attribute_elements` object.
+
+
+  The value can be `none`, `right`, `space right`, `below`, `newline below`, or
+  `right-of-prefix`. This determines where attribute lists are positioned for
+  the specified element type when converting HTML to Markdown.
+
+
+  This key only takes effect when `attributes` is enabled.
+examples:
+  - description: >-
+      In this example, we have configured attribute positioning for paragraph
+      elements to place attributes on the right.
+    language: yaml
+    code: |-
+      markdown:
+        engine: commonmark
+        options:
+          attributes: true
+          attribute_elements:
+            p: right
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

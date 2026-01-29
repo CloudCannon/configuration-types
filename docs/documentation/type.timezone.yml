@@ -1,12 +1,11 @@
 gid: type.timezone
 url: /types/timezone/
-title: Timezone
+title: ''
 description: >-
-  This key defines the timezone for your Site. Value must be in IANA timezone
-  format.
+  This key defines the timezone for your Site.
 
 
-  By default, this key is `Etc/UTC`.
+  Value must be in IANA timezone format.
 
 
   For more information, please read our documentation on [Date and Time

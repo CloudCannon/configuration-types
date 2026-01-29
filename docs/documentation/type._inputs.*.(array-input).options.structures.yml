@@ -2,7 +2,10 @@ gid: type._inputs.*.(array-input).options.structures
 url: /types/_inputs/*/(array-input)/options/structures/
 title: ''
 description: >-
-  Provides data formats for value of this object. When choosing an item, team
-  members are prompted to choose from a number of values you have defined.
+  This key defines data formats for value of this object.
+
+
+  When choosing an item, team members are prompted to choose from a number of
+  values you have defined.
 examples: []
 show_in_navigation: false

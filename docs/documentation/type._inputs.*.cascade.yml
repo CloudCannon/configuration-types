@@ -2,26 +2,46 @@ gid: type._inputs.*.cascade
 url: /types/_inputs/*/cascade/
 title: ''
 description: >-
-  This key determines whether CloudCannon should merge this input configuration
-  with any matching, less specific configurations elsewhere in the configuration
-  cascade.
+  This key defines whether CloudCannon should merge this input configuration
+  with any matching, less specific configurations elsewhere in the
+
+  configuration cascade.
 
 
   The [configuration
   cascade](/documentation/articles/using-the-configuration-cascade/) works by
-  finding the most specific `_inputs` entry. Usually, once an option is found in
-  the cascade, there's no reason to keep looking. When this key is `true`, the
-  cascade continues looking and each entry found is merged.
+  finding the most specific `_inputs` entry.
+
+
+  Usually, once an option is found in the cascade, there's no reason to keep
+  looking.
+
+
+  When this key is `true`, the cascade continues looking and each entry found is
+  merged.
 
 
   This key allows you to define some options globally while using specific
-  options for other keys at different levels of the cascade. For example, define
-  a `comment` globally, but use collection-specific `label` for inputs in
-  different collections. You can stop the cascade at any point in the
-  configuration cascade by setting `cascade` to `false`.
+  options for other keys at different levels of the cascade.
 
 
-  By default, this key is `true` (i.e., merges all configurations for an input
-  in the cascade).
-examples: []
+  For example, define a `comment` globally, but use collection-specific `label`
+  for inputs in different collections.
+
+
+  You can stop the cascade at any point in the configuration cascade by setting
+  `cascade` to `false`.
+examples:
+  - description: >-
+      In this example, we have configured cascade to merge input configurations
+      across the configuration cascade.
+    language: yaml
+    code: |-
+      _inputs:
+        title:
+          type: text
+          cascade: true
+          comment: Global comment for all title inputs
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

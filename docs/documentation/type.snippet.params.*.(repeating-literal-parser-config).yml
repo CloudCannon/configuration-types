@@ -1,6 +1,8 @@
 gid: type.snippet.params.*.(repeating-literal-parser-config)
 url: /types/snippet/params/*/(repeating-literal-parser-config)/
 title: Repeating Literal Parser Config
-description: Parses a repeating set of exact literal values.
+description: >-
+  This key defines a parser configuration that parses a repeating set of exact
+  literal values.
 examples: []
 show_in_navigation: false

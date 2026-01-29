@@ -2,10 +2,17 @@ gid: type.snippet.params.*.(content-parser-config).options.trim_text
 url: /types/snippet/params/*/(content-parser-config)/options/trim_text/
 title: ''
 description: >-
-  If true, all whitespace and newlines will be trimmed from the start and end of
-  the content
+  This key toggles whether all whitespace and newlines will be trimmed from the
+  start and end of the content before it is presented to an editor in
+  CloudCannon.
 
-  before it is presented to an editor in CloudCannon.
+
+  Setting this key to `true` will trim all whitespace and newlines from the
+  start and end of the content.
+
+
+  By default, this key is `false` (i.e., whitespace and newlines are not
+  trimmed).
 examples:
   - description: ''
     language: yaml
@@ -15,7 +22,7 @@ examples:
         editor_key: highlighted_text
         trim_text: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: 'Example usage:'
     language: markdown
     code: |-
@@ -39,5 +46,5 @@ examples:
 
           To add whitespace back in when outputting the snippet, use the Style
           options.
-    source: page.md
+    source: /page.md
 show_in_navigation: false

@@ -1,8 +1,9 @@
 gid: type._snippets_imports.hugo.(include-list).include
 url: /types/_snippets_imports/hugo/(include-list)/include/
 title: ''
-description: >-
-  The list of included snippets. If unset, all snippets are included unless
-  defined in `exclude`.
+description: |-
+  This key defines the list of included snippets.
+
+  If unset, all snippets are included unless defined in `exclude`.
 examples: []
 show_in_navigation: false

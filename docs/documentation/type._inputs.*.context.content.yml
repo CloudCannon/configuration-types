@@ -2,9 +2,13 @@ gid: type._inputs.*.context.content
 url: /types/_inputs/*/context/content/
 title: ''
 description: >-
-  This key determines the text content inside the context box. CloudCannon
-  supports a limited selection of Markdown formatting for the value of this key:
-  links, headings, bold, italic, subscript, superscript, and inline code.
+  This key defines the text content inside the context box.
+
+
+  CloudCannon supports a limited selection of Markdown formatting for the value
+  of this key: links, headings, bold, italic, subscript, superscript, and
+
+  inline code.
 
 
   This key is required for the `context` object to function.
@@ -32,5 +36,5 @@ examples:
               **Good examples:** technology, web development, tutorials
               **Avoid:** generic terms like "blog" or "article"
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

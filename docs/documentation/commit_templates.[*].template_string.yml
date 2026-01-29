@@ -2,7 +2,31 @@ gid: commit_templates.[*].template_string
 url: /commit_templates/[*]/template_string/
 title: ''
 description: >-
-  Set the string for the commit template. This will only be used if
-  `template_path` is not set.
-examples: []
+  This key defines the template string for the commit message.
+
+
+  The value is a string that specifies the commit message template. This
+  template can include template variables and filters.
+
+
+  CloudCannon will only use this template string if `template_path` is not set
+  for the commit template.
+examples:
+  - description: >-
+      In this example, we have configured a commit template with a template
+      string that includes template variables.
+    language: yaml
+    code: |-
+      commit_templates:
+        - label: Default
+          template_string: '{commit_type}: {message|trim}'
+          _inputs:
+            commit_type:
+              type: select
+              options:
+                values:
+                  - feature
+                  - fix
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

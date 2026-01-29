@@ -1,6 +1,6 @@
 gid: type._inputs.*.(object-input).options
 url: /types/_inputs/*/(object-input)/options/
 title: ''
-description: Options that are specific to Object Inputs.
+description: This key defines options that are specific to Object Inputs.
 examples: []
 show_in_navigation: false

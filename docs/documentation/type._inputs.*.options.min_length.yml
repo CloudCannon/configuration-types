@@ -3,22 +3,33 @@ url: /types/_inputs/*/options/min_length/
 title: ''
 description: >-
   This key defines the minimum string length, in characters, that CloudCannon
-  will allow in an Input. When configured, CloudCannon will warn you when an
-  Input value is too short. If the Input already contains a shorter value,
-  CloudCannon will require you to add characters until the Input contains a
-  valid string to save your changes, or discard your unsaved changes.
+  will allow in an Input.
 
 
-  Value can be any positive integer. If `options.max_length` is also configured,
-  this key cannot be a greater number.
+  When configured, CloudCannon will warn you when an Input value is too short.
+
+
+  If the Input already contains a shorter value, CloudCannon will require you to
+  add characters until the Input contains a valid string to save your
+
+  changes, or discard your unsaved changes.
+
+
+  Value can be any positive integer.
+
+
+  If `options.max_length` is also configured, this key cannot be a greater
+  number.
 
 
   This key has no default.
 
 
   This key is available for Code, Color, File, Select, Text, Rich Text, and URL
-  Inputs. To use this key in a Select Input, `allow_create` must be set to
-  `true`.
+  Inputs.
+
+
+  To use this key in a Select Input, `allow_create` must be set to `true`.
 examples:
   - description: >-
       In this example, we want our team to enter a blog description using the
@@ -34,5 +45,5 @@ examples:
             max_length: 125
             min_length: 25
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

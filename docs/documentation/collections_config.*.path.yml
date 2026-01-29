@@ -6,11 +6,10 @@ description: >-
 
 
   The value for this key is relative to your [Site
-  source](/documentation/articles/configuration-file-reference/#source). Each
-  Collection must have a unique path.
+  source](/documentation/articles/configuration-file-reference/#source).
 
 
-  This key has no default.
+  Each Collection must have a unique path.
 examples:
   - description: >-
       In this example, the files for the `blog` Collection are located in the
@@ -21,5 +20,5 @@ examples:
         blog:
           path: content/blog
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

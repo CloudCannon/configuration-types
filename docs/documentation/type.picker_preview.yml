@@ -1,0 +1,68 @@
+gid: type.picker_preview
+url: /types/picker_preview/
+title: ''
+description: >-
+  This key defines the appearance of a Card when choosing an item to create.
+  This uses `preview` as a base, and keys inside this object are overrides.
+
+
+  You can configure Card preview for
+  [Collections](/documentation/articles/what-is-a-collection/),
+  [Schemas](/documentation/articles/what-is-a-schema/),
+
+  [Object inputs](/documentation/articles/what-is-an-object-input/), [Array
+  inputs](/documentation/articles/what-is-an-array-input/), [Select
+
+  inputs](/documentation/articles/what-is-a-select-input/),
+  [Structures](/documentation/articles/what-is-a-structure/), the Structure
+  modal,
+
+  [Snippets](/documentation/articles/what-is-a-snippet/), and the Snippet modal.
+
+
+  For more information about previews, please read our documentation on
+  [configuring card
+  previews](/documentation/articles/configure-your-card-previews/).
+examples:
+  - description: >-
+      In this example, we have configured the appearance of Cards in inputs
+      using the Structure `staff` when adding items.
+    language: yaml
+    code: |-
+      _structures:
+        staff:
+          values:
+            - value:
+                _type: Employee
+                name:
+                job_description:
+                profile_picture:
+              picker_preview:
+                text:
+                  - key: name
+                  - Employee
+                subtext:
+                  - key: job_description
+                  - Description of position
+                image:
+                  - key: profile_picture
+                icon: support_agent
+            - value:
+                _type: Manager
+                name:
+                job_description:
+                profile_picture:
+                url:
+              picker_preview:
+                text:
+                  - key: name
+                  - Manager
+                subtext:
+                  - key: job_description
+                  - Description of position
+                image:
+                  - key: profile_picture
+                icon: face
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: true

@@ -1,6 +1,16 @@
 gid: type._inputs.*.(array-input).options.disable_remove
 url: /types/_inputs/*/(array-input)/options/disable_remove/
 title: ''
-description: Hides the context menu actions on each item for removing them.
+description: >-
+  This key toggles whether CloudCannon will hide the context menu actions on
+  each item for removing them.
+
+
+  Setting this key to `true` will hide the context menu actions for removing
+  items.
+
+
+  By default, this key is `false` (i.e., the context menu actions for removing
+  items are displayed).
 examples: []
 show_in_navigation: false

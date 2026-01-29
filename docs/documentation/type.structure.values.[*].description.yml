@@ -2,9 +2,14 @@ gid: type.structure.values.[*].description
 url: /types/structure/values/[*]/description/
 title: ''
 description: >-
-  Provides short descriptive text for editors shown in the Data Editor for
-  expanded values matching this Structure value. Has no default. Supports a
-  limited set of Markdown: links, bold, italic, subscript, superscript, and
-  inline code elements are allowed.
+  This key defines short descriptive text for editors shown in the Data Editor
+  for expanded values matching this Structure value.
+
+
+  Has no default.
+
+
+  Supports a limited set of Markdown: links, bold, italic, subscript,
+  superscript, and inline code elements are allowed.
 examples: []
 show_in_navigation: false

@@ -1,6 +1,29 @@
 gid: type.snippet-format.root_boundary
 url: /types/snippet-format/root_boundary/
 title: ''
-description: For key-value segments, what boundary is required (if any).
-examples: []
+description: >-
+  This key defines the boundary tokens required for key-value segments when
+  parsing snippet parameters.
+
+
+  The value is an object that contains `start` and `end` properties, each
+  specifying a string token. This defines paired tokens that enclose the root
+  parameter structure.
+examples:
+  - description: In this example, we have configured root boundaries to use angle brackets.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[param]]>>"
+          params:
+            param:
+              parser: argument
+              options:
+                format:
+                  root_boundary:
+                    start: '<<'
+                    end: '>>'
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

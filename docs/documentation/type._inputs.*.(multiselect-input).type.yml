@@ -1,6 +1,18 @@
 gid: type._inputs.*.(multiselect-input).type
 url: /types/_inputs/*/(multiselect-input)/type/
-title: Type
-description: Sets an input type, which controls how this input appears and behaves.
-examples: []
+title: ''
+description: >-
+  This key defines the input type, which controls how this input appears and
+  behaves.
+examples:
+  - description: >-
+      In this example, we have configured the `tags` key as a *Multiselect
+      Input* type.
+    language: yaml
+    code: |-
+      _inputs:
+        tags:
+          type: multiselect
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

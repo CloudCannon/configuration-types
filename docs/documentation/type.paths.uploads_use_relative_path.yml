@@ -1,6 +1,24 @@
 gid: type.paths.uploads_use_relative_path
 url: /types/paths/uploads_use_relative_path/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key toggles whether CloudCannon will use relative paths instead of
+  absolute paths for uploaded files.
+
+
+  Setting this key to `true` will make CloudCannon use relative paths for
+  uploaded files, which are relative to the file being edited rather than the
+  repository root.
+examples:
+  - description: >-
+      In this example, we have configured uploads to use relative paths for
+      files uploaded in the Content Editor.
+    language: yaml
+    code: |-
+      _editables:
+        content:
+          paths:
+            uploads_use_relative_path: true
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

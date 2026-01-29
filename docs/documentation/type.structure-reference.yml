@@ -2,6 +2,5 @@ gid: type.structure-reference
 url: /types/structure-reference/
 title: Structure Reference
 description: A reference to an existing structure.
-examples:
-  - 'structures: _structures.content_blocks'
+examples: []
 show_in_navigation: true

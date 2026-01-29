@@ -2,8 +2,14 @@ gid: type.snippet-model.optional
 url: /types/snippet-model/optional/
 title: ''
 description: >-
-  Whether a value must exist for this parser. Useful for long sets of key-value
-  pairs that are not all required.
+  This key toggles whether a value must exist for this parser.
+
+
+  Setting this key to `true` will make the value optional for this parser.
+  Useful for long sets of key-value pairs that are not all required.
+
+
+  By default, this key is `false` (i.e., a value must exist for this parser).
 examples:
   - description: ''
     language: yaml
@@ -17,7 +23,7 @@ examples:
           - editor_key: class
             optional: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: 'Example usage:'
     language: markdown
     code: |-
@@ -41,5 +47,5 @@ examples:
         content: >-
           This anchor tag will not be parsed, as the `href` key is absent and is
           not marked as `optional`.
-    source: page.md
+    source: /page.md
 show_in_navigation: false

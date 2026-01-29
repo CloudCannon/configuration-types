@@ -3,6 +3,30 @@ gid: >-
 url: >-
   /types/snippet/params/*/(literal-parser-config)/options/format/string_boundary/[*]/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key represents an individual string boundary token in the
+  `params.*(literal-parser-config).options.format.string_boundary` array.
+
+
+  The value is a string that specifies a valid boundary token for strings. The
+  parser will ensure the matched end token is the same as the start token.
+examples:
+  - description: >-
+      In this example, we have configured a string boundary to use double quotes
+      for literal parser.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[literal_param]]>>"
+          params:
+            literal_param:
+              parser: literal
+              options:
+                literal: 'specific-value'
+                format:
+                  string_boundary:
+                    - '"'
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

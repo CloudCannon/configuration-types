@@ -3,23 +3,18 @@ url: /collections_config/*/disable_add/
 title: ''
 description: >-
   This key toggles whether team members can use the *+ Add* button in the top
-  right of the *Collection browser* to add files to a Collection. This key does
-  not affect your ability to add files using the *File browser*.
+  right of the *Collection browser* to add files to a Collection.
 
 
-  Setting this key to *true* will prevent team members from adding new files
-  through the *Collection browser*.
+  Setting this key to `true` will prevent team members from adding new files
+  through the *Collection browser*. This key does not affect your ability to add
+  files using the *File browser*.
 
 
-  By default, this key is `false` (i.e., team members can add to the Collection)
-  for most SSGs. For Eleventy, Hugo, and Jekyll, this key defaults to `true` for
-  the `data` Collection (all subfolders in the `data` folder are non-output
-  Collections).
+  If both `disable_add` and `disable_add_folder` are set to `true`, the *\+ Add*
+  button will not
 
-
-  If both `disable_add` and`disable_add_folder` are set to `true`, and you have
-  not defined any other `add_options`, then the *\+ Add* button will not appear
-  in the top right of the *Collection browser*.
+  appear in the top right of the *Collection browser*.
 examples:
   - description: >-
       In this example, we want to prevent team members from adding new files to
@@ -30,5 +25,5 @@ examples:
         data:
           disable_add: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

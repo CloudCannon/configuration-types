@@ -3,8 +3,9 @@ url: /types/_inputs/*/(date-input)/options/end_before_message/
 title: ''
 description: >-
   This key defines a custom error message that explains why a value has failed
-  the validation criteria from `options.end_before`. This key requires you to
-  define `options.end_before`.
+  the validation criteria from `options.end_before`.
+
+  This key requires you to define `options.end_before`.
 
 
   This key has no default.
@@ -26,5 +27,5 @@ examples:
             end_before: 2023-01-01T00:00:00Z
             end_before_message: Date is too late. Must be during 2022.
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

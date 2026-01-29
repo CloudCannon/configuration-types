@@ -1,9 +1,28 @@
 gid: type.snippet-format.string_escape_character
 url: /types/snippet-format/string_escape_character/
 title: ''
-description: |-
-  What character can be placed before a string boundary to escape it?
+description: >-
+  This key defines the character that can be placed before a string boundary to
+  escape it when parsing snippet parameters.
 
-  If required, this will usually be `\`.
-examples: []
+
+  The value is a string that specifies the escape character. If required, this
+  will usually be `\`.
+examples:
+  - description: >-
+      In this example, we have configured string escape character to use a
+      backslash.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[param]]>>"
+          params:
+            param:
+              parser: argument
+              options:
+                format:
+                  string_escape_character: '\\'
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

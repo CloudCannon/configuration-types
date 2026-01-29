@@ -1,6 +1,6 @@
 gid: editor
 url: /editor/
 title: ''
-description: Contains settings for the default editor actions on your site.
+description: This key defines settings for the default editor actions on your site.
 examples: []
 show_in_navigation: false

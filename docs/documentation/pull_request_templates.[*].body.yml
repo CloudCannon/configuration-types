@@ -1,6 +1,21 @@
 gid: pull_request_templates.[*].body
 url: /pull_request_templates/[*]/body/
 title: ''
-description: The default value for the pull request body.
-examples: []
+description: |-
+  This key defines the default value of the "Body" field in your Pull Request.
+
+  This key has no default.
+examples:
+  - description: >-
+      In this example, the `body` field of our Pull Request template is
+      populated by the string "In this update, I have made the following
+      changes..." by default.
+    language: yaml
+    code: |-
+      pull_request_templates:
+        - label: Content Update
+          title: Updates to...
+          body: In this update, I have made the following changes...
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

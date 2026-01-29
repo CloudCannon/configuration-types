@@ -3,8 +3,10 @@ url: /types/_inputs/*/options/max_length_message/
 title: ''
 description: >-
   This key defines a custom error message that explains why a value has failed
-  the validation criteria from `options.max_length`. This key requires you to
-  define `options.max_length`.
+  the validation criteria from `options.max_length`.
+
+
+  This key requires you to define `options.max_length`.
 
 
   This key has no default.
@@ -28,5 +30,5 @@ examples:
             min_length: 25
             min_length_message: Please write more than 25 characters.
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

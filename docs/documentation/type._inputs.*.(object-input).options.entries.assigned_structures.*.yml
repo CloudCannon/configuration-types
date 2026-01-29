@@ -1,6 +1,16 @@
 gid: type._inputs.*.(object-input).options.entries.assigned_structures.*
 url: /types/_inputs/*/(object-input)/options/entries/assigned_structures/*/
 title: ''
-description: ''
+description: >-
+  This key represents the assigned structures for a specific allowed key name in
+  the `_inputs.*(object-input).options.entries.assigned_structures` object.
+
+
+  The value is an array of structure key name strings. When team members select
+  this allowed key name, CloudCannon will prompt them to choose one of these
+  structures.
+
+
+  Available for Mutable Objects only.
 examples: []
 show_in_navigation: false

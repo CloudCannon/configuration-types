@@ -1,6 +1,6 @@
 gid: type._inputs.*.(array-input)
 url: /types/_inputs/*/(array-input)/
 title: Array Input
-description: Provides a user interface for lists of inputs or input groups.
+description: This key defines a user interface for lists of inputs or input groups.
 examples: []
 show_in_navigation: false

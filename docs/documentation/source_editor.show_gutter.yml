@@ -4,5 +4,14 @@ title: ''
 description: >-
   This key toggles the gutter on the left of the editing interface, displaying
   line numbers and code folding controls.
-examples: []
+examples:
+  - description: >-
+      In this example, CloudCannon will show the gutter with line numbers in the
+      Source Editor.
+    language: yaml
+    code: |-
+      source_editor:
+        show_gutter: true
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

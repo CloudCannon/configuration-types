@@ -2,10 +2,30 @@ gid: type.snippet-format.array_boundary
 url: /types/snippet-format/array_boundary/
 title: ''
 description: >-
-  For snippets which can parse array literals, what characters start and end an
-  array?
+  This key defines the characters that start and end array literals when parsing
+  snippet parameters.
 
 
-  If required, this will usually be `{ start: "[", end: "]" }`.
-examples: []
+  The value is an object that contains `start` and `end` properties, each
+  specifying a string token. For arrays, this will usually be `{ start: "[",
+  end: "]" }`.
+examples:
+  - description: >-
+      In this example, we have configured array boundaries to use square
+      brackets.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[param]]>>"
+          params:
+            param:
+              parser: argument
+              options:
+                format:
+                  array_boundary:
+                    start: '['
+                    end: ']'
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false
