@@ -17,12 +17,6 @@ description: >-
   flag](/documentation/articles/legacy-option-flags/#image-size-attributes-default-behaviour)
   is enabled (this is enabled for sites created before June 23 2023, in order to
   keep those sites working).
-
-
-  Available for the Content Editor (`_editables.content`), the Block editable
-  region (`_editables.block`), the Image editable region
-
-  (`_editables.image`), and Rich Text inputs (`_inputs.key_name.options`).
 examples:
   - description: >-
       In this example, CloudCannon will save width and height attributes on

@@ -3,15 +3,6 @@ url: /types/_inputs/*/options/mime_type/
 title: Mime Type
 description: >-
   This key defines what format an image is converted to prior to upload.
-
-
-  Valid values are `image/jpeg`, `image/png`, or `image/webp`.
-
-
-  Available for the Content Editor (`_editables.content`), the Block editable
-  region (`_editables.block`), the Image editable region
-
-  (`_editables.image`), and Rich Text inputs (`_inputs.key_name.options`).
 examples:
   - description: >-
       In this example, we have configured an *Image Input* to convert images to

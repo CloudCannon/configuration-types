@@ -9,16 +9,6 @@ description: >-
   Setting this key to `true` will make CloudCannon use relative paths for
   uploaded files, which are relative to the file being edited rather than the
   repository root.
-
-
-  By default, this key is `false` (i.e., CloudCannon uses absolute paths for
-  uploaded files).
-
-
-  Available for the Content Editor (`_editables.content`), the Block editable
-  region (`_editables.block`), the Image editable region (`_editables.image`),
-  the Text editable region (`_editables.text`), and Rich Text inputs
-  (`_inputs.key_name.options`).
 examples:
   - description: >-
       In this example, we have configured uploads to use relative paths for

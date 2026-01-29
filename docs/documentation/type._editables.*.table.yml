@@ -9,14 +9,5 @@ description: >-
   Setting this key to `true` will enable a tool in your WYSIWYG toolbar to
   insert a table. Further table options are available from the table context
   menu in the rich text editor.
-
-
-  By default, this key is `false` (i.e., the table tool is not displayed).
-
-
-  Available for the Content Editor (`_editables.content`), the Block editable
-  region (`_editables.block`), and Rich Text inputs
-
-  (`_inputs.key_name.options`).
 examples: []
 show_in_navigation: false

@@ -9,14 +9,5 @@ description: >-
 
   Setting this key to `true` will enable a tool in your WYSIWYG toolbar to merge
   a list item with the item below it.
-
-
-  By default, this key is `false` (i.e., the join below tool is not displayed).
-
-
-  Available for the Content Editor (`_editables.content`), the Block editable
-  region (`_editables.block`), and Rich Text inputs
-
-  (`_inputs.key_name.options`).
 examples: []
 show_in_navigation: false

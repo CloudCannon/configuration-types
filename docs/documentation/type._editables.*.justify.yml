@@ -9,14 +9,5 @@ description: >-
   Setting this key to `true` will enable a tool in your WYSIWYG toolbar to
   justify selected text. The value is the class name to align the text. The
   styles for this class must be defined in the `styles` file.
-
-
-  By default, this key is `false` (i.e., the justify tool is not displayed).
-
-
-  Available for the Content Editor (`_editables.content`), the Block editable
-  region (`_editables.block`), and Rich Text inputs
-
-  (`_inputs.key_name.options`).
 examples: []
 show_in_navigation: false

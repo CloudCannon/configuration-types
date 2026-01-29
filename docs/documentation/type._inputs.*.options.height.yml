@@ -4,12 +4,6 @@ title: Height
 description: >-
   This key defines the height of the bounding box used in the resizing method
   defined by `resize_style`.
-
-
-  Available for the Content Editor (`_editables.content`), the Block editable
-  region (`_editables.block`), the Image editable region
-
-  (`_editables.image`), and Rich Text inputs (`_inputs.key_name.options`).
 examples:
   - description: >-
       In this example, we have configured the height of the bounding box for an
