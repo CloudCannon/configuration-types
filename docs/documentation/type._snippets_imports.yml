@@ -1,6 +1,6 @@
 gid: type._snippets_imports
 url: /types/_snippets_imports/
-title: Snippets Imports
+title: ''
 description: >-
   This key defines snippet templates or libraries for your Site.
 
@@ -26,5 +26,5 @@ examples:
             - figure
             - youtube
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: true

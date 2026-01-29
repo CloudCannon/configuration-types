@@ -1,8 +1,7 @@
 gid: type.paths.static
 url: /types/paths/static/
 title: ''
-description: >-
-  This key defines the path for the location of statically copied assets.
+description: This key defines the path for the location of statically copied assets.
 examples:
   - description: >-
       In this example, we have configured the static path for the `blog`
@@ -14,5 +13,5 @@ examples:
           paths:
             static: /assets/
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

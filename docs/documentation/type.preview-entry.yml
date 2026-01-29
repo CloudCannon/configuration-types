@@ -26,7 +26,7 @@ examples:
               - template: '{name}'
               - text: 'Untitled'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       In this example, we have configured a preview entry to display the `title`
       key.
@@ -38,5 +38,5 @@ examples:
             text:
               - key: title
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: true

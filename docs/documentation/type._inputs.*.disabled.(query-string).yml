@@ -33,7 +33,7 @@ examples:
           label: Last edited
           disabled: published
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       In this example, we have configured an input to be disabled when the
       `published` input is falsy using the `!` prefix.
@@ -48,5 +48,5 @@ examples:
           label: Draft notes
           disabled: '!published'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -1,6 +1,6 @@
 gid: type.preview-entry.(raw-text)
 url: /types/preview-entry/(raw-text)/
-title: Raw Text
+title: Raw Text Preview Entry
 description: >-
   This key represents a raw text preview entry type for displaying static text
   on *Cards* in the *Collection browser*, *Structures*, and *Snippets*.
@@ -19,5 +19,5 @@ examples:
           preview:
             text: 'Untitled'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

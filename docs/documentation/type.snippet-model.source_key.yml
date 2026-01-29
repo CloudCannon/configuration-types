@@ -25,7 +25,7 @@ examples:
           match the order
 
           of they keys in the source code.
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: 'Example usage:'
     language: markdown
     code: |-
@@ -34,7 +34,7 @@ examples:
       <a href="#link" target="_blank" class="my_link"> ... </a>
       Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
     annotations: []
-    source: page.md
+    source: /page.md
   - description: |-
       When edited in CloudCannon, this will edit as the data model:
 

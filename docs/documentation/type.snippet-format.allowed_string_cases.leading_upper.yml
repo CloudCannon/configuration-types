@@ -29,5 +29,5 @@ examples:
                   allowed_string_cases:
                     leading_upper: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -1,6 +1,6 @@
 gid: type.preview-entry.(false)
 url: /types/preview-entry/(false)/
-title: 'False'
+title: False Preview Entry
 description: >-
   This key represents a preview entry that disables the preview display for a
   specific field on *Cards* in the *Collection browser*, *Structures*, and
@@ -18,5 +18,5 @@ examples:
           preview:
             text: false
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

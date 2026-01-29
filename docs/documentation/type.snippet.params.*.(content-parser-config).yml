@@ -1,6 +1,6 @@
 gid: type.snippet.params.*.(content-parser-config)
 url: /types/snippet/params/*/(content-parser-config)/
-title: Content Parser Config
+title: Content Parser Configuration
 description: >-
   This key defines a parser configuration that parses rich multiline content,
   such as the content between paired tags. Can be configured to parse nested

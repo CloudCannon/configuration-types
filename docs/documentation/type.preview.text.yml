@@ -25,7 +25,7 @@ examples:
               - template: '{name}'
               - text: 'Untitled'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       In this example, we have configured the main text for *Cards* in the
       `blog` Collection to display the `title` key.
@@ -37,5 +37,5 @@ examples:
             text:
               - key: title
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

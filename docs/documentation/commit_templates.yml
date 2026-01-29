@@ -32,7 +32,7 @@ examples:
                   - test
               cascade: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       In this example, we have configured a commit template that uses a file for
       the template content.
@@ -42,7 +42,7 @@ examples:
         - label: Commit message from file
           template_path: /.git/commit-message.txt
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       In this example, we have configured a commit template with a template
       string, input configuration, and extra data for nested templates.
@@ -57,5 +57,5 @@ examples:
           extra_data:
             breaking_change: '⚠️ {breaking_change_message}'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

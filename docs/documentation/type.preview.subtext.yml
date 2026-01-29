@@ -25,7 +25,7 @@ examples:
               - template: '{writer}'
               - text: 'Unknown author'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       In this example, we have configured the subtext for *Cards* in the `blog`
       Collection to display the `author` key.
@@ -37,5 +37,5 @@ examples:
             subtext:
               - key: author
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

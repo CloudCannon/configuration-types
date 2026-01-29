@@ -22,5 +22,5 @@ examples:
               filename: '{date|year}-{date|month}-{date|day}-{title}'
             path: '[relative_base_path]/{filename|slugify}.[ext]'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

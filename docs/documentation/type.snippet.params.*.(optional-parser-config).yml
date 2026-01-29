@@ -1,6 +1,6 @@
 gid: type.snippet.params.*.(optional-parser-config)
 url: /types/snippet/params/*/(optional-parser-config)/
-title: Optional Parser Config
+title: Optional Parser Configuration
 description: >-
   This key toggles whether matching zero times is a valid state for this parser.
 

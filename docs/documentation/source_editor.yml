@@ -18,5 +18,5 @@ examples:
         tab_size: 2
         show_gutter: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

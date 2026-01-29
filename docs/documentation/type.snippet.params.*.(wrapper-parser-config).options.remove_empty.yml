@@ -25,5 +25,5 @@ examples:
                 snippet: 'content'
                 remove_empty: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

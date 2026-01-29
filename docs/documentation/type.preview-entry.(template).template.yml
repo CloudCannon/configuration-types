@@ -1,6 +1,6 @@
 gid: type.preview-entry.(template).template
 url: /types/preview-entry/(template)/template/
-title: Template Value
+title: ''
 description: >-
   This key defines the template string to use in a template preview entry.
 
@@ -20,5 +20,5 @@ examples:
             text:
               - template: '{author} - {date}'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

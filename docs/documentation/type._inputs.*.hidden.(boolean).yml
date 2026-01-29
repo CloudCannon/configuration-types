@@ -1,6 +1,6 @@
 gid: type._inputs.*.hidden.(boolean)
 url: /types/_inputs/*/hidden/(boolean)/
-title: Boolean
+title: Boolean Hidden
 description: >-
   This key represents a boolean value for the `hidden` key that toggles whether
   CloudCannon hides an input from view.
@@ -29,5 +29,5 @@ examples:
           label: Internal ID
           hidden: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

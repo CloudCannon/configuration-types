@@ -22,5 +22,5 @@ examples:
             icon: help
             content: This date field will automatically populate when you create an article.
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

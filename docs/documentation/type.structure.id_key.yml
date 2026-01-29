@@ -62,5 +62,5 @@ examples:
         content: >-
           Each option in the `values` array has the `component` key with a
           different value to identify that option.
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

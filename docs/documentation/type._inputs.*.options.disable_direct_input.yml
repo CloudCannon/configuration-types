@@ -19,5 +19,5 @@ examples:
           options:
             disable_direct_input: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -23,5 +23,5 @@ examples:
             icon: info
             content: Keep descriptions between 150-160 characters for optimal search engine display.
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

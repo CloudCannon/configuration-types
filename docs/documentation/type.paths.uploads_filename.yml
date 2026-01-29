@@ -1,8 +1,7 @@
 gid: type.paths.uploads_filename
 url: /types/paths/uploads_filename/
 title: ''
-description: >-
-  This key defines the path for the name of the uploaded file.
+description: This key defines the path for the name of the uploaded file.
 examples:
   - description: >-
       In this example, we have configured the uploads filename path for the
@@ -14,5 +13,5 @@ examples:
           paths:
             uploads_filename: '{filename|slugify}'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

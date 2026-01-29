@@ -15,5 +15,5 @@ examples:
             min: 1
             max: 100
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

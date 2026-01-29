@@ -1,6 +1,6 @@
 gid: type._inputs.*.(color-input).type
 url: /types/_inputs/*/(color-input)/type/
-title: Type
+title: ''
 description: >-
   This key defines the input type, which controls how this input appears and
   behaves.

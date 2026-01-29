@@ -29,7 +29,7 @@ examples:
               - key: icon_color
               - text: '#2196F3'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       In this example, we have configured the icon color to use a static CSS
       color value.
@@ -44,5 +44,5 @@ examples:
             icon_color:
               - text: 'blue'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

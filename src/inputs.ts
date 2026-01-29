@@ -5,7 +5,7 @@ import { IconSchema } from './icon.ts';
 import { ImageOptionsSchema } from './image-options.ts';
 import { MimeTypeSchema } from './mimetype.ts';
 import { PathsSchema } from './paths.ts';
-import { PreviewEntriesSchema, PreviewSchema } from './preview.ts';
+import { PickerPreviewSchema, PreviewEntriesSchema, PreviewSchema } from './preview.ts';
 import { SelectDataValuesSchema } from './select-values.ts';
 import { SourceEditorSchema } from './source-editor.ts';
 import { StructureReferenceSchema, StructureSchema } from './structures.ts';
@@ -689,7 +689,7 @@ export const UrlInputSchema = z
 export const SharedSelectInputOptionsSchema = z.object({
 	...RequiredValidationSchema.shape,
 	preview: PreviewSchema.optional(),
-	picker_preview: PreviewSchema.optional(),
+	picker_preview: PickerPreviewSchema.optional(),
 	allow_create: z.boolean().default(false).optional().meta({
 		id: 'type._inputs.*.options.allow_create',
 		description: 'Allows new text values to be created at edit time.',

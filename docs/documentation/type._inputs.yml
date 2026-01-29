@@ -1,6 +1,6 @@
 gid: type._inputs
 url: /types/_inputs/
-title: Inputs
+title: ''
 description: >-
   This key defines which inputs are available at a given level of the
   configuration cascade.
@@ -40,7 +40,7 @@ examples:
           options:
             timezone: Etc/UTC
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       In this example, we have configured the `blog_tags` key as a *Multiselect
       Input* in the `blog` Collection.
@@ -65,5 +65,5 @@ examples:
                   - Feature
                   - Resource
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: true

@@ -17,5 +17,5 @@ examples:
             icon: edit
             content: Write a brief, professional biography (2-3 sentences) that highlights your expertise and experience.
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -50,7 +50,7 @@ examples:
                   profile_picture:
                   url:
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: ''
     language: yaml
     code: |-

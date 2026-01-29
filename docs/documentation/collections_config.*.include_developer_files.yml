@@ -15,7 +15,7 @@ description: >-
 
   assuming they are not filtered out by any configured
 
-  [globs](/documentation/articles/collections-reference/#glob). 
+  [globs](/documentation/articles/collections-reference/#glob).
 examples:
   - description: >-
       In this example, we want to see developer files in the *Collection
@@ -26,5 +26,5 @@ examples:
         data:
           include_developer_files: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

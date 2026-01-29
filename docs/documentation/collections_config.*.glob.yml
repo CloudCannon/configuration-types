@@ -47,7 +47,7 @@ examples:
           glob:
             - '!secret.yml'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       In this example, the *Collection browser* will show only `.yml` files in
       the `data` folder or any nested folders.
@@ -58,7 +58,7 @@ examples:
           path: data
           glob: '**/*.yml'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       In this example, the *Collection browser* will show only `.yml` files in
       the `data` folder, except for the `secret.yml` file.
@@ -71,5 +71,5 @@ examples:
             - '**/*.yml'
             - '!secret.yml'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

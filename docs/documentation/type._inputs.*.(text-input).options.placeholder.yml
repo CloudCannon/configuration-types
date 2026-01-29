@@ -12,5 +12,5 @@ examples:
           options:
             placeholder: Enter a title
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

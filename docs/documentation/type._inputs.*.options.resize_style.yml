@@ -1,6 +1,6 @@
 gid: type._inputs.*.options.resize_style
 url: /types/_inputs/*/options/resize_style/
-title: Resize Style
+title: ''
 description: >-
   This key defines how image files are resized prior to upload, using a bounding
   box defined by `width` and `height` options.
@@ -37,5 +37,5 @@ examples:
             height: 600
             resize_style: cover
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

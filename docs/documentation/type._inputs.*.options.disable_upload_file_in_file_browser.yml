@@ -20,5 +20,5 @@ examples:
           options:
             disable_upload_file_in_file_browser: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

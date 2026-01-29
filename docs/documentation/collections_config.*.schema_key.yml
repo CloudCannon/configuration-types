@@ -23,5 +23,5 @@ examples:
         blog:
           schema_key: _blog_template
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

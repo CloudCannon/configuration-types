@@ -1,6 +1,6 @@
 gid: type.preview-entry.(text)
 url: /types/preview-entry/(text)/
-title: Text
+title: Text Preview Entry
 description: >-
   This key represents a text preview entry type for displaying static text on
   *Cards* in the *Collection browser*, *Structures*, and *Snippets*.
@@ -20,5 +20,5 @@ examples:
             text:
               - text: 'Untitled'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

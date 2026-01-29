@@ -1,8 +1,7 @@
 gid: type._inputs.*.options.mime_type
 url: /types/_inputs/*/options/mime_type/
-title: Mime Type
-description: >-
-  This key defines what format an image is converted to prior to upload.
+title: ''
+description: This key defines what format an image is converted to prior to upload.
 examples:
   - description: >-
       In this example, we have configured an *Image Input* to convert images to
@@ -15,5 +14,5 @@ examples:
           options:
             mime_type: image/webp
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

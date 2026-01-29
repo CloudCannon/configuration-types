@@ -31,7 +31,7 @@ examples:
               - key: icon_bg_color
               - text: '#e3f2fd'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       In this example, we have configured the icon background color to use a
       static CSS color value.
@@ -46,5 +46,5 @@ examples:
             icon_background_color:
               - text: 'lightblue'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

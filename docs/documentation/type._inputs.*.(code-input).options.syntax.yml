@@ -1,6 +1,6 @@
 gid: type._inputs.*.(code-input).options.syntax
 url: /types/_inputs/*/(code-input)/options/syntax/
-title: Syntax
+title: ''
 description: |-
   This key defines how the editor parses your content for syntax highlighting.
 

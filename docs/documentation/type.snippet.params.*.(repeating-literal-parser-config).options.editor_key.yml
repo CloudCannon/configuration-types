@@ -24,5 +24,5 @@ examples:
                 default: 1
                 editor_key: separator_count
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

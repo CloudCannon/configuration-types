@@ -42,5 +42,5 @@ examples:
             min_items: 2
             min_items_message: Cannot be less than 2
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

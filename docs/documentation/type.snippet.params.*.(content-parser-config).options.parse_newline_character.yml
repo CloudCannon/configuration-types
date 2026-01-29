@@ -21,7 +21,7 @@ examples:
       options:
         parse_newline_character: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: 'Example usage:'
     language: markdown
     code: |-
@@ -35,5 +35,5 @@ examples:
           interface, instead of
 
           showing the literal `\n` characters.
-    source: page.md
+    source: /page.md
 show_in_navigation: false

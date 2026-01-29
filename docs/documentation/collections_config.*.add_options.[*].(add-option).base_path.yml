@@ -34,5 +34,5 @@ examples:
               editor: content
               base_path: /../_drafts/blog
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

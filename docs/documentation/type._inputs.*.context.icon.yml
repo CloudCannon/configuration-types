@@ -1,6 +1,6 @@
 gid: type._inputs.*.context.icon
 url: /types/_inputs/*/context/icon/
-title: Icon
+title: ''
 description: >-
   This key defines which icon appears next to the context box title.
 
@@ -28,5 +28,5 @@ examples:
           options:
             max_file_size: 10000
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

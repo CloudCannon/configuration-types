@@ -1,6 +1,6 @@
 gid: type.preview-entry.(array)
 url: /types/preview-entry/(array)/
-title: Array
+title: Array Preview Entry
 description: >-
   This key represents an array of preview entries for displaying data on *Cards*
   in the *Collection browser*, *Structures*, and *Snippets*.
@@ -26,5 +26,5 @@ examples:
               - template: '{name}'
               - text: 'Untitled'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

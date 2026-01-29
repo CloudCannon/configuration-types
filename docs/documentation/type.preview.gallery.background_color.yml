@@ -32,7 +32,7 @@ examples:
                 - template: '{bg_color}'
                 - text: '#ffffff'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       In this example, we have configured the gallery background color to use a
       static CSS color value.
@@ -47,5 +47,5 @@ examples:
               background_color:
                 - 'red'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

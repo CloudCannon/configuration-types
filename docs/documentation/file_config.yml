@@ -1,6 +1,6 @@
 gid: file_config
 url: /file_config/
-title: File Configuration
+title: ''
 description: >-
   This key defines file-specific configuration without configuring a collection
   or modifying files.

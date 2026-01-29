@@ -24,5 +24,5 @@ examples:
               icon: assignment_add
               href: https://forms.gle/xxxxxxx
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

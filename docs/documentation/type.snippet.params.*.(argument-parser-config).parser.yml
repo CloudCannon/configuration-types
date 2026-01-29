@@ -23,5 +23,5 @@ examples:
                 model:
                   editor_key: example_id
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

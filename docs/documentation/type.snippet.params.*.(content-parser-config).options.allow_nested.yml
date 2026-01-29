@@ -19,7 +19,7 @@ examples:
         editor_key: highlighted_text
         allow_nested: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: 'Example usage:'
     language: markdown
     code: |-
@@ -58,5 +58,5 @@ examples:
 
           `My highlighted <<highlight>>content!`. This is the behavior of the
           `raw` option.
-    source: page.md
+    source: /page.md
 show_in_navigation: false

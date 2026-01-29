@@ -23,5 +23,5 @@ examples:
           extra_data:
             breaking_change: '⚠️ {breaking_change_message}'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

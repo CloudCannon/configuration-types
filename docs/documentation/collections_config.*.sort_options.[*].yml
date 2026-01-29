@@ -1,6 +1,6 @@
 gid: collections_config.*.sort_options.[*]
 url: /collections_config/*/sort_options/[*]/
-title: SortOption
+title: ''
 description: This key represents a sort option for a Collection.
 examples: []
 show_in_navigation: false

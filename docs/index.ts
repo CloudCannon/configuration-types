@@ -138,7 +138,7 @@ function docToPage(
 
 	const page: Page = {
 		gid,
-		title: documentation?.title || doc.title,
+		title: documentation?.title,
 		description: documentation?.description || doc.description,
 		examples: documentation?.examples?.length
 			? documentation.examples

@@ -1,6 +1,6 @@
 gid: type.snippet.params.*.(wrapper-parser-config)
 url: /types/snippet/params/*/(wrapper-parser-config)/
-title: Wrapper Parser Config
+title: Wrapper Parser Configuration
 description: >-
   This key defines a wrapper parser configuration for wrapping another snippet
   configuration.
@@ -32,5 +32,5 @@ examples:
               options:
                 editor_key: content_text
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

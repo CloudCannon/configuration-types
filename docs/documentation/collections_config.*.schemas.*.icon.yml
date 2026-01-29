@@ -1,6 +1,6 @@
 gid: collections_config.*.schemas.*.icon
 url: /collections_config/*/schemas/*/icon/
-title: Icon
+title: ''
 description: >-
   This key defines the icon displayed in the add menu when creating new files,
   also used as the icon for collection files if no other preview is found.
@@ -20,5 +20,5 @@ examples:
             article:
               icon: article
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

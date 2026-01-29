@@ -14,5 +14,5 @@ examples:
           label: Article Title
           comment: Enter the main title for this article
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

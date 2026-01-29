@@ -23,5 +23,5 @@ examples:
         options:
           treat_indentation_as_code: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -24,7 +24,7 @@ examples:
           editor_key: video_id
           allowed_values: ["riXoAr6gO-E", "CZcNgDN81Sw", "0iwNjcFIHNM"]
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: 'Example usage:'
     language: markdown
     code: |-
@@ -48,5 +48,5 @@ examples:
           `video` snippet.
 
           It may still parse as another snippet, or will remain as plain text.
-    source: page.md
+    source: /page.md
 show_in_navigation: false

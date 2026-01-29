@@ -48,5 +48,5 @@ examples:
             max_length: 125
             min_length: 25
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -37,5 +37,5 @@ examples:
         blog:
           url: /travel/[slug]/
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

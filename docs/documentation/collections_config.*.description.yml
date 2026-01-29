@@ -30,5 +30,5 @@ examples:
 
             If your have any questions, please contact Heather.
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

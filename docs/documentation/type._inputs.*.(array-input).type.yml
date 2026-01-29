@@ -1,6 +1,6 @@
 gid: type._inputs.*.(array-input).type
 url: /types/_inputs/*/(array-input)/type/
-title: Type
+title: ''
 description: >-
   This key defines the input type, which controls how this input appears and
   behaves.

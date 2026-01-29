@@ -36,5 +36,5 @@ examples:
               **Good examples:** technology, web development, tutorials
               **Avoid:** generic terms like "blog" or "article"
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

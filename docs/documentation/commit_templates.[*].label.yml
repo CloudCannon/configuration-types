@@ -17,5 +17,5 @@ examples:
         - label: Default
           template_string: '{commit_type}: {message|trim}'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

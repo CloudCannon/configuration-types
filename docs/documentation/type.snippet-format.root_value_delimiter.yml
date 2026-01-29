@@ -25,5 +25,5 @@ examples:
                 format:
                   root_value_delimiter: '='
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

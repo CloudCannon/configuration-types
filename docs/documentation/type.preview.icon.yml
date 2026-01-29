@@ -26,7 +26,7 @@ examples:
           preview:
             icon: edit_note
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       In this example, we have configured the icon for *Cards* in the `blog`
       Collection with an array of values to provide fallback options.
@@ -41,5 +41,5 @@ examples:
               - key: logo
               - edit_note
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

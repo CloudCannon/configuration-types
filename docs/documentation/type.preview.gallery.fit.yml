@@ -40,5 +40,5 @@ examples:
                 - key: featured_image
               fit: cover
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

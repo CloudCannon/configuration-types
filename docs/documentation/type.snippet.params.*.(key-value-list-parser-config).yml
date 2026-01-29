@@ -1,6 +1,6 @@
 gid: type.snippet.params.*.(key-value-list-parser-config)
 url: /types/snippet/params/*/(key-value-list-parser-config)/
-title: Key Value List Parser Config
+title: Key Value List Parser Configuration
 description: >-
   This key defines a parser configuration that parses repeating pairs of keys
   and values.

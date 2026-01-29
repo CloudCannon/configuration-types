@@ -34,7 +34,7 @@ examples:
             - '/.cloudcannon/inputs/seo.cloudcannon.inputs.yml'
             - '/.cloudcannon/inputs/blogDetails.cloudcannon.inputs.yml'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: ''
     language: yaml
     code: |-

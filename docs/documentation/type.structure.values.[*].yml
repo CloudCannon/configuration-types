@@ -1,6 +1,6 @@
 gid: type.structure.values.[*]
 url: /types/structure/values/[*]/
-title: Structure Value
+title: ''
 description: >-
   This key represents a single value option within a structure, defining the
   data format and appearance for content editors.

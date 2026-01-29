@@ -39,5 +39,5 @@ examples:
               order: descending
               label: Date (Oldest First)
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

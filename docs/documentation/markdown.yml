@@ -1,6 +1,6 @@
 gid: markdown
 url: /markdown/
-title: Markdown Settings
+title: ''
 description: >-
   This key defines your markdown engine for parsing Markdown content into HTML
   and any configuration options for your engine.
@@ -27,5 +27,5 @@ examples:
             table: below
             li: none
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -1,6 +1,6 @@
 gid: type._inputs.*.options.accepts_mime_types.(array)
 url: /types/_inputs/*/options/accepts_mime_types/(array)/
-title: Array
+title: Array Accepts Mime Types
 description: >-
   This key represents an array format for the `accepts_mime_types` key that
   restricts which file types are available to select or upload in *File Inputs*.
@@ -38,7 +38,7 @@ examples:
               - image/png
               - image/webp
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       In this example, we have configured a *File Input* to accept only document
       files using an array of document MIME types.
@@ -54,5 +54,5 @@ examples:
               - application/msword
               - application/vnd.openxmlformats-officedocument.wordprocessingml.document
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

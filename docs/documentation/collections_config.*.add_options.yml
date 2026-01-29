@@ -43,7 +43,7 @@ examples:
             contractor:
               path: /.cloudcannon/schemas/contractor.yml
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       In this example, the *\+ Add* button dropdown in the `team` *Collection
       browser* has a link to the Office Locations page on our live website.
@@ -56,5 +56,5 @@ examples:
               icon: map
               href: /our-offices
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

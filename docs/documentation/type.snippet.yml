@@ -1,6 +1,6 @@
 gid: type.snippet
 url: /types/snippet/
-title: Snippet Configuration
+title: Snippet
 description: This key defines a snippet configuration.
 examples: []
 show_in_navigation: true

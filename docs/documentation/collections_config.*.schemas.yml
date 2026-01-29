@@ -35,7 +35,7 @@ examples:
               name: Customer Story
               icon: notes
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       In this example, the *\+ Add* button in the *Collection browser* has an
       option for `Term Definition` which will populate a new file in the
@@ -65,5 +65,5 @@ examples:
                   options:
                     show_count: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

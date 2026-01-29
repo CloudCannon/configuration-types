@@ -1,6 +1,6 @@
 gid: commit_templates.[*]
 url: /commit_templates/[*]/
-title: Commit Template
+title: ''
 description: >-
   This key represents an individual commit template object in the
   `commit_templates` array.
@@ -29,5 +29,5 @@ examples:
                   - test
               cascade: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

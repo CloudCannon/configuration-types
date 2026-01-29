@@ -1,6 +1,6 @@
 gid: data_config
 url: /data_config/
-title: Data Configuration
+title: ''
 description: >-
   This key defines which file or folder data in your Site is available to
   populate [Select Inputs](/documentation/articles/what-is-a-select-input/).
@@ -29,5 +29,5 @@ examples:
         content: >-
           *Select Inputs* and *Multiselect Inputs* which use the `offices` key
           are populated by the contents of each file in the `offices` folder.
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

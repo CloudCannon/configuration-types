@@ -1,6 +1,6 @@
 gid: type._inputs.*.options.width
 url: /types/_inputs/*/options/width/
-title: Width
+title: ''
 description: >-
   This key defines the width of the bounding box used in the resizing method
   defined by `resize_style`.
