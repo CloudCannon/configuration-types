@@ -7,7 +7,8 @@ description: >-
 
 
   Must be a [Material
-  Icon](https://fonts.google.com/icons?icon.set=Material+Icons) name.
+  Symbols](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded)
+  name.
 examples:
   - description: >-
       In this example, we have configured a custom icon for the `article` schema

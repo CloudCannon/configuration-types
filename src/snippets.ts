@@ -6,22 +6,25 @@ export const ParserModelSchema = z
 	.object({
 		source_key: z.string().optional(),
 		editor_key: z.string().optional(),
-		remove_empty: z.boolean(),
-		optional: z.boolean(),
+		remove_empty: z.boolean().default(false).optional(),
+		optional: z.boolean().default(false).optional(),
 		type: z.enum(['array', 'object', 'string', 'boolean', 'number']).optional(),
 		allowed_values: z.array(z.any()).optional(),
-		implied_boolean: z.boolean(),
+		implied_boolean: z.boolean().default(false).optional(),
 		default: z.any().optional(),
 	})
+	.optional()
 	.meta({
 		id: 'type.snippet-model',
 		title: 'Snippet Model',
 	});
 
-export const PairedTokenSchema = z.object({
-	start: z.string(),
-	end: z.string(),
-});
+export const PairedTokenSchema = z
+	.object({
+		start: z.string().default('').optional(),
+		end: z.string().default('').optional(),
+	})
+	.optional();
 
 export const SnippetStyleSchema = z
 	.object({
@@ -31,7 +34,6 @@ export const SnippetStyleSchema = z
 				leading: z.string().optional(),
 				trailing: z.string().optional(),
 			})
-
 			.optional(),
 		block: z
 			.object({
@@ -39,9 +41,9 @@ export const SnippetStyleSchema = z
 				trailing: z.string().optional(),
 				indent: z.string().optional(),
 			})
-
 			.optional(),
 	})
+	.optional()
 	.meta({
 		id: 'type.snippet-style',
 		title: 'Snippet Style',
@@ -51,30 +53,33 @@ export const ParserFormatSchema = z
 	.object({
 		root_boundary: PairedTokenSchema,
 		root_value_boundary: PairedTokenSchema,
-		root_value_boundary_optional: z.record(z.string(), z.boolean()),
-		root_value_delimiter: z.string().optional(),
-		root_pair_delimiter: z.array(z.string()),
-		remove_empty_root_boundary: z.boolean(),
+		root_value_boundary_optional: z.record(z.string(), z.boolean()).optional(),
+		root_value_delimiter: z.string().optional().optional(),
+		root_pair_delimiter: z.array(z.string()).optional(),
+		remove_empty_root_boundary: z.boolean().optional(),
 		object_boundary: PairedTokenSchema,
-		object_value_delimiter: z.string(),
-		object_pair_delimiter: z.string(),
+		object_value_delimiter: z.string().optional(),
+		object_pair_delimiter: z.string().optional(),
 		array_boundary: PairedTokenSchema,
-		array_delimiter: z.string(),
-		string_boundary: z.array(z.string()),
-		string_escape_character: z.string(),
-		allow_booleans: z.boolean(),
-		allow_numbers: z.boolean(),
-		allow_implied_values: z.boolean(),
-		allow_null: z.boolean(),
-		forbidden_tokens: z.array(z.string()),
-		allowed_string_cases: z.object({
-			any: z.boolean().optional(),
-			leading_upper: z.boolean().optional(),
-			leading_lower: z.boolean().optional(),
-			lower: z.boolean().optional(),
-			upper: z.boolean().optional(),
-		}),
+		array_delimiter: z.string().optional(),
+		string_boundary: z.array(z.string()).optional(),
+		string_escape_character: z.string().optional(),
+		allow_booleans: z.boolean().optional(),
+		allow_numbers: z.boolean().optional(),
+		allow_implied_values: z.boolean().optional(),
+		allow_null: z.boolean().optional(),
+		forbidden_tokens: z.array(z.string()).optional(),
+		allowed_string_cases: z
+			.object({
+				any: z.boolean().optional(),
+				leading_upper: z.boolean().optional(),
+				leading_lower: z.boolean().optional(),
+				lower: z.boolean().optional(),
+				upper: z.boolean().optional(),
+			})
+			.optional(),
 	})
+	.optional()
 	.meta({
 		id: 'type.snippet-format',
 		title: 'Snippet Format',
@@ -83,7 +88,7 @@ export const ParserFormatSchema = z
 export const ArgumentListParserConfigSchema = z.object({
 	parser: z.literal('argument_list'),
 	options: z.object({
-		models: z.array(ParserModelSchema),
+		models: z.array(ParserModelSchema).optional(),
 		format: ParserFormatSchema,
 	}),
 });
@@ -112,17 +117,19 @@ export const ContentParserConfigSchema = z.object({
 		parse_newline_character: z.boolean().default(false).optional(),
 		ignore_unpaired_backticks: z.boolean().default(true).optional(),
 		escape_fenced_blocks: z.boolean().default(false).optional(),
-		style: SnippetStyleSchema.optional(),
+		style: SnippetStyleSchema,
 	}),
 });
 
 export const KeyValueListParserConfigSchema = z.object({
 	parser: z.literal('key_values'),
-	options: z.object({
-		models: z.array(ParserModelSchema),
-		format: ParserFormatSchema,
-		style: SnippetStyleSchema,
-	}),
+	options: z
+		.object({
+			models: z.array(ParserModelSchema),
+			format: ParserFormatSchema,
+			style: SnippetStyleSchema,
+		})
+		.optional(),
 });
 
 export const LiteralParserConfigSchema = z.object({
@@ -145,8 +152,8 @@ export const RepeatingLiteralParserConfigSchema = z.object({
 	parser: z.literal('repeating_literal'),
 	options: z.object({
 		literal: z.string(),
-		default: z.number(),
-		minimum: z.number(),
+		default: z.number().optional(),
+		minimum: z.number().optional(),
 		editor_key: z.string().optional(),
 	}),
 });
@@ -158,7 +165,7 @@ export const RepeatingParserConfigSchema = z.object({
 		editor_key: z.string().optional(),
 		output_delimiter: z.string().optional(),
 		default_length: z.number().optional(),
-		style: SnippetStyleSchema.optional(),
+		style: SnippetStyleSchema,
 		optional: z.boolean().optional(),
 	}),
 });
@@ -168,7 +175,7 @@ export const WrapperParserConfigSchema = z.object({
 	options: z.object({
 		snippet: z.string(),
 		remove_empty: z.boolean().optional(),
-		style: SnippetStyleSchema.optional(),
+		style: SnippetStyleSchema,
 	}),
 });
 

@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=../dist/cloudcannon-collections.schema.json
+
+pages:
+  icon: rss_feed
+  disable_add_folder: true
+  path: content
+  create:
+    path: "{title|slugify}.md"
+  schemas:
+    default:
+      path: schemas/page.html
+  _enabled_editors:
+    - visual
+articles:
+  icon: article
+  path: content/blog
+  disable_add_folder: true
+  schemas:
+    default:
+      path: schemas/post.md
+  add_options:
+    - name: Add Article
+      editor: content
+      schema: default
+  _enabled_editors:
+    - content
+    - visual
+data:
+  disable_url: true
+  path: data
+  icon: settings
+  documentation:
+    url: https://example.com
+  disable_add: true
+  disable_add_folder: true
+  _enabled_editors:
+    - data

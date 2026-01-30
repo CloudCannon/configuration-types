@@ -180,22 +180,22 @@ const ArrayControlOptionsSchema = z.object({
 });
 
 const EmptyTypeTextSchema = z.enum(['null', 'string']).default('null').meta({
-	id: 'type._inputs.*.options.empty_type_text',
+	id: 'type._inputs.*.options.empty_type(text)',
 	description: 'Set how an ‘empty’ value will be saved. Does not apply to existing empty values.',
 });
 
 const EmptyTypeNumberSchema = z.enum(['null', 'number']).default('null').meta({
-	id: 'type._inputs.*.options.empty_type_number',
+	id: 'type._inputs.*.options.empty_type(number)',
 	description: 'Set how an ‘empty’ value will be saved. Does not apply to existing empty values.',
 });
 
 const EmptyTypeObjectSchema = z.enum(['null', 'object']).default('null').meta({
-	id: 'type._inputs.*.options.empty_type_object',
+	id: 'type._inputs.*.options.empty_type(object)',
 	description: 'Set how an ‘empty’ value will be saved. Does not apply to existing empty values.',
 });
 
 const EmptyTypeArraySchema = z.enum(['null', 'array']).default('null').meta({
-	id: 'type._inputs.*.options.empty_type_array',
+	id: 'type._inputs.*.options.empty_type(array)',
 	description: 'Set how an ‘empty’ value will be saved. Does not apply to existing empty values.',
 });
 

@@ -1,13 +1,14 @@
-import fs from 'node:fs';
+import fs from 'node:fs/promises';
 import path from 'node:path';
 import * as z from 'zod';
+import { redocumentSchema } from './redocument-schemas';
 import {
 	EleventyConfigurationSchema,
 	HugoConfigurationSchema,
 	JekyllConfigurationSchema,
 	ReaderConfigurationSchema,
 } from './src/build-coupled';
-import { CollectionConfigSchema } from './src/collections';
+import { CollectionConfigSchema, CollectionsConfigSchema } from './src/collections';
 import { ConfigurationSchema } from './src/configuration';
 import { EditablesSchema } from './src/editables';
 import { InputsSchema } from './src/inputs';
@@ -31,6 +32,7 @@ const schemas = [
 		convertSchemaAnys: true,
 		addMarkdownDescription: true,
 		stripId: true,
+		redocument: true,
 	},
 	{
 		schema: JekyllConfigurationSchema.meta({
@@ -78,6 +80,7 @@ const schemas = [
 		convertSchemaAnys: true,
 		addMarkdownDescription: true,
 		stripId: true,
+		redocument: true,
 	},
 	{
 		// keys: _inputs_from_glob
@@ -89,6 +92,7 @@ const schemas = [
 		convertSchemaAnys: true,
 		addMarkdownDescription: true,
 		stripId: true,
+		redocument: true,
 	},
 	{
 		// keys: values_from_glob
@@ -100,6 +104,7 @@ const schemas = [
 		convertSchemaAnys: true,
 		addMarkdownDescription: true,
 		stripId: true,
+		redocument: true,
 	},
 	{
 		// keys: _snippets_from_glob, _snippets_templates_from_glob
@@ -111,6 +116,7 @@ const schemas = [
 		convertSchemaAnys: true,
 		addMarkdownDescription: true,
 		stripId: true,
+		redocument: true,
 	},
 	{
 		// keys: _snippets_imports_from_glob
@@ -122,6 +128,7 @@ const schemas = [
 		convertSchemaAnys: true,
 		addMarkdownDescription: true,
 		stripId: true,
+		redocument: true,
 	},
 	{
 		// keys: _snippets_definitions_from_glob
@@ -144,28 +151,32 @@ const schemas = [
 		convertSchemaAnys: true,
 		addMarkdownDescription: true,
 		stripId: true,
+		redocument: true,
 	},
 	{
 		// keys: collections_config_from_glob
 		// files: *.cloudcannon.collections.(yml|yaml|json)
-		schema: ConfigurationSchema.shape.collections_config.unwrap().meta({
+		schema: CollectionsConfigSchema.meta({
 			$id: 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-collections.schema.json',
 		}),
 		filename: 'cloudcannon-collections.schema.json',
 		convertSchemaAnys: true,
 		addMarkdownDescription: true,
 		stripId: true,
+		redocument: true,
 	},
 	{
 		// keys: schemas_from_glob
 		// files: *.cloudcannon.schemas.(yml|yaml|json)
 		schema: CollectionConfigSchema.shape.schemas.unwrap().meta({
+			id: 'collections_config.*.schemas',
 			$id: 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-schemas.schema.json',
 		}),
 		filename: 'cloudcannon-schemas.schema.json',
 		convertSchemaAnys: true,
 		addMarkdownDescription: true,
 		stripId: true,
+		redocument: true,
 	},
 ];
 
@@ -189,22 +200,29 @@ for (const schema of schemas) {
 				delete ctx.jsonSchema.documentationType;
 			}
 
-			if (schema.stripId && ctx.jsonSchema.id) {
+			if (schema.stripId && ctx.jsonSchema.id && !schema.redocument) {
 				// AJV (Node JSONSchema library) errors when 'id' is present in non draft-04 schemas.
+				// redocumentSchema() needs this id, and strips it after using it.
 				delete ctx.jsonSchema.id;
 			}
 
-			if (schema.addMarkdownDescription && ctx.jsonSchema.description) {
+			if (schema.addMarkdownDescription && ctx.jsonSchema.description && !schema.redocument) {
 				// YAML/JSON LSP integrations won't format descriptions unless set in markdownDescription.
+				// redocumentSchema() adds this as well.
 				ctx.jsonSchema.markdownDescription = ctx.jsonSchema.description;
 			}
 		},
 	});
 
-	fs.writeFileSync(
-		path.join(process.cwd(), 'dist', schema.filename),
-		JSON.stringify(jsonSchema, null, '  ')
-	);
+	const fullSchemaPath = path.join(process.cwd(), 'dist', schema.filename);
+	await fs.writeFile(fullSchemaPath, JSON.stringify(jsonSchema, null, '  '));
+
+	if (schema.redocument) {
+		await redocumentSchema(fullSchemaPath, {
+			stripId: schema.stripId,
+			addMarkdownDescription: schema.addMarkdownDescription,
+		});
+	}
 
 	console.log(`✅ ${schema.filename}`);
 }

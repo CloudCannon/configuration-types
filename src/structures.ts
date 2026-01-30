@@ -96,6 +96,8 @@ export const StructureValueSchema = StructureBaseSchema.extend({
 			'Provides a custom link for documentation for editors shown in the Data Editor for expanded values matching this Structure value. Has no default.',
 	}),
 }).meta({
+	// Need to override id to what would be generated here to force the structure-value JSON schema to redocument.
+	id: 'type.structure.values.[*]',
 	title: 'Structure Value',
 	description:
 		'A single value option within a structure, defining the data format and appearance for content editors.',

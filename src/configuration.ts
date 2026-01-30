@@ -1,6 +1,10 @@
 import * as z from 'zod';
 import { CascadeSchema } from './cascade.ts';
-import { CollectionConfigSchema, CollectionGroupSchema } from './collections.ts';
+import {
+	CollectionConfigSchema,
+	CollectionGroupSchema,
+	CollectionsConfigSchema,
+} from './collections.ts';
 import { InputsSchema } from './inputs.ts';
 import { MarkdownSettingsSchema } from './markdown.ts';
 import { PathsSchema } from './paths.ts';
@@ -78,10 +82,7 @@ export const ConfigurationSchema = z
 		paths: PathsSchema.optional(),
 		version: z.literal('latest').optional().meta({ id: 'version', excludeFromDocumentation: true }),
 		source: z.string().optional().meta({ id: 'source' }),
-		collections_config: z
-			.record(z.string(), CollectionConfigSchema)
-			.optional()
-			.meta({ id: 'collections_config' }),
+		collections_config: CollectionsConfigSchema,
 		collections_config_from_glob: z.array(z.string()).optional(),
 		collection_groups: z
 			.array(CollectionGroupSchema)

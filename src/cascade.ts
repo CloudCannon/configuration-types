@@ -27,12 +27,7 @@ export const CascadeSchema = z.object({
 			'Set a preferred editor and/or disable the others. The first value sets which editor opens by default, and the following values specify which editors are accessible.',
 		uniqueItems: true,
 	}),
-	_editables: EditablesSchema.optional().meta({
-		id: 'type._editables',
-		title: 'Editables',
-		description:
-			'Configuration for editable regions in the Visual Editor, including content, block, link, image, and text editing options.',
-	}),
+	_editables: EditablesSchema,
 	_editables_from_glob: EditablesFromGlobSchema.optional(),
 });
 

@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../dist/cloudcannon-schemas.schema.json
+
+default:
+  path: schemas/post.md
+  name: Post
