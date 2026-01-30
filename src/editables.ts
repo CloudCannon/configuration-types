@@ -213,37 +213,45 @@ export const LinkEditableSchema = z.object({
 	paths: PathsSchema.optional(),
 });
 
-export const EditablesSchema = z.object({
-	content: BlockEditableSchema.optional().meta({
-		id: 'ContentEditable',
-		title: 'Content Editable',
-		description: 'Contains input options for the Content Editor.',
-	}),
+export const EditablesSchema = z
+	.object({
+		content: BlockEditableSchema.optional().meta({
+			id: 'ContentEditable',
+			title: 'Content Editable',
+			description: 'Contains input options for the Content Editor.',
+		}),
 
-	block: BlockEditableSchema.optional().meta({
-		id: 'BlockEditable',
-		title: 'Block Editable',
-		description: 'Contains input options for block Editable Regions.',
-	}),
+		block: BlockEditableSchema.optional().meta({
+			id: 'BlockEditable',
+			title: 'Block Editable',
+			description: 'Contains input options for block Editable Regions.',
+		}),
 
-	link: LinkEditableSchema.optional().meta({
-		id: 'LinkEditable',
-		title: 'Link Editable',
-		description: 'Contains input options for link Editable Regions.',
-	}),
+		link: LinkEditableSchema.optional().meta({
+			id: 'LinkEditable',
+			title: 'Link Editable',
+			description: 'Contains input options for link Editable Regions.',
+		}),
 
-	image: ImageEditableSchema.optional().meta({
-		id: 'ImageEditable',
-		title: 'Image Editable',
-		description: 'Contains input options for image Editable Regions.',
-	}),
+		image: ImageEditableSchema.optional().meta({
+			id: 'ImageEditable',
+			title: 'Image Editable',
+			description: 'Contains input options for image Editable Regions.',
+		}),
 
-	text: TextEditableSchema.optional().meta({
-		id: 'TextEditable',
-		title: 'Text Editable',
-		description: 'Contains input options for text Editable Regions.',
-	}),
-});
+		text: TextEditableSchema.optional().meta({
+			id: 'TextEditable',
+			title: 'Text Editable',
+			description: 'Contains input options for text Editable Regions.',
+		}),
+	})
+	.optional()
+	.meta({
+		id: 'type._editables',
+		title: 'Editables',
+		description:
+			'Configuration for editable regions in the Visual Editor, including content, block, link, image, and text editing options.',
+	});
 
 export const EditablesFromGlobSchema = z.array(z.string()).meta({
 	id: 'type._editables_from_glob',
@@ -254,4 +262,4 @@ export type TextEditable = z.infer<typeof TextEditableSchema>;
 export type BlockEditable = z.infer<typeof BlockEditableSchema>;
 export type ImageEditable = z.infer<typeof ImageEditableSchema>;
 export type LinkEditable = z.infer<typeof LinkEditableSchema>;
-export type Editables = z.infer<typeof EditablesSchema>;
+export type Editables = NonNullable<z.infer<typeof EditablesSchema>>;

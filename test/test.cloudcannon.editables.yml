@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../dist/cloudcannon-editables.schema.json
+
+content:
+  resize_style: contain
+  expandable: false
+  image_size_attributes: true
+  prevent_resize_existing_files: false
+  bold: true
+  copyformatting: false
+  italic: true
+  link: true
+  redo: false
+  removeformat: true
+  strike: false
+  subscript: false
+  superscript: false
+  underline: false
+  undo: false
+  blockquote: true
+  bulletedlist: true
+  code_inline: false
+  code_block: false
+  code: false
+  embed: false
+  format: p h1 h2 h3 h4 h5 h6
+  horizontalrule: false
+  image: true
+  indent: false
+  numberedlist: true
+  outdent: false
+  snippet: true
+  table: false
+  join_above: false
+  join_below: false

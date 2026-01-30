@@ -5,7 +5,22 @@
 			<article class="condensed">
 				{% set propDoc = propRef | docFromRef %}
 
-				<strong>{% renderFile "./_includes/doc-link.njk", propDoc %}</strong> —
+				<strong>
+					{% if propDoc.url %}
+						<a href="{{ propDoc.url }}">
+							{%- if propDoc.title -%}
+								{{ propDoc.title }}
+							{%- else -%}
+								<code>{{ key }}</code>
+							{%- endif -%}
+						</a>
+					{%- elif propDoc.title -%}
+						{{ propDoc.title }}
+					{%- else -%}
+						<code>{{ key }}</code>
+					{%- endif -%}
+
+				</strong> —
 				<code>{% renderFile "./_includes/doc-type.njk", propDoc %}</code>
 
 				{%- if propDoc.required %}
