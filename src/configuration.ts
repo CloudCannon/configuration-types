@@ -1,10 +1,6 @@
 import * as z from 'zod';
 import { CascadeSchema } from './cascade.ts';
-import {
-	CollectionConfigSchema,
-	CollectionGroupSchema,
-	CollectionsConfigSchema,
-} from './collections.ts';
+import { CollectionGroupSchema, CollectionsConfigSchema } from './collections.ts';
 import { InputsSchema } from './inputs.ts';
 import { MarkdownSettingsSchema } from './markdown.ts';
 import { PathsSchema } from './paths.ts';
