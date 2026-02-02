@@ -1,5 +1,5 @@
 gid: type._editables.*.code
-url: /types/_editables/*/code/
+url: /configuration-file/types/_editables/*/code/
 title: ''
 description: >-
   This key toggles whether CloudCannon will display tools in your WYSIWYG

@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.values
-url: /types/_inputs/*/options/values/
+url: /configuration-file/types/_inputs/*/options/values/
 title: ''
 description: >-
   This key defines the values available to choose from.

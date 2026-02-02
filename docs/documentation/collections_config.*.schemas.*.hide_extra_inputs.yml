@@ -1,5 +1,5 @@
 gid: collections_config.*.schemas.*.hide_extra_inputs
-url: /collections_config/*/schemas/*/hide_extra_inputs/
+url: /configuration-file/collections_config/*/schemas/*/hide_extra_inputs/
 title: ''
 description: >-
   This key toggles whether CloudCannon will hide inputs that are not present in

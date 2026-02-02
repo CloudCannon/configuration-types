@@ -1,5 +1,5 @@
 gid: type.snippet.params.*.(argument-parser-config).options
-url: /types/snippet/params/*/(argument-parser-config)/options/
+url: /configuration-file/types/snippet/params/*/(argument-parser-config)/options/
 title: ''
 description: >-
   This key defines configuration options for argument parser configurations.

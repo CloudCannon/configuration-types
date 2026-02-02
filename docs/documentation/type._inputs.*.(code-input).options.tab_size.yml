@@ -1,5 +1,5 @@
 gid: type._inputs.*.(code-input).options.tab_size
-url: /types/_inputs/*/(code-input)/options/tab_size/
+url: /configuration-file/types/_inputs/*/(code-input)/options/tab_size/
 title: ''
 description: >-
   This key defines the number of spaces inserted when the Tab key is pressed in

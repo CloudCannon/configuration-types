@@ -1,5 +1,5 @@
 gid: type._editables.*.copyformatting
-url: /types/_editables/*/copyformatting/
+url: /configuration-file/types/_editables/*/copyformatting/
 title: ''
 description: >-
   This key toggles whether CloudCannon will display a tool in your WYSIWYG

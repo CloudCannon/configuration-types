@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.max_items
-url: /types/_inputs/*/options/max_items/
+url: /configuration-file/types/_inputs/*/options/max_items/
 title: ''
 description: >-
   This key defines the maximum number of items CloudCannon will allow in an

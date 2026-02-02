@@ -1,5 +1,5 @@
 gid: type.documentation
-url: /types/documentation/
+url: /configuration-file/types/documentation/
 title: ''
 description: |-
   This key defines the documentation link at the top of a *Collection browser*.

@@ -1,5 +1,5 @@
 gid: collection_groups.[*].collections.[*]
-url: /collection_groups/[*]/collections/[*]/
+url: /configuration-file/collection_groups/[*]/collections/[*]/
 title: ''
 description: >-
   This key represents an individual Collection key name string in the

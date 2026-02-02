@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.empty_type(number)
-url: /types/_inputs/*/options/empty_type(number)/
+url: /configuration-file/types/_inputs/*/options/empty_type(number)/
 title: Number Empty Type
 description: >-
   This key defines how an 'empty' value will be saved. Does not apply to

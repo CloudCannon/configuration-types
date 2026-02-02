@@ -1,5 +1,5 @@
 gid: type._inputs.*.(url-input).options.hide_link_to_page
-url: /types/_inputs/*/(url-input)/options/hide_link_to_page/
+url: /configuration-file/types/_inputs/*/(url-input)/options/hide_link_to_page/
 title: ''
 description: >-
   This key toggles whether CloudCannon will hide the option to link to a page.

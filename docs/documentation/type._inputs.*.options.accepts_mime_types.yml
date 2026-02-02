@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.accepts_mime_types
-url: /types/_inputs/*/options/accepts_mime_types/
+url: /configuration-file/types/_inputs/*/options/accepts_mime_types/
 title: ''
 description: >-
   This key defines which file types are available to select or upload to this

@@ -1,5 +1,5 @@
 gid: type.snippet-format.allow_null
-url: /types/snippet-format/allow_null/
+url: /configuration-file/types/snippet-format/allow_null/
 title: ''
 description: >-
   This key toggles whether CloudCannon will allow `null` values when parsing

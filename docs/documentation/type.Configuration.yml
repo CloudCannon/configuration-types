@@ -1,5 +1,5 @@
 gid: type.Configuration
-url: /
+url: /configuration-file/
 title: Configuration
 description: This key represents the main CloudCannon configuration schema.
 examples: []

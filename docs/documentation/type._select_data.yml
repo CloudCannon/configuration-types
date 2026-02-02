@@ -1,5 +1,5 @@
 gid: type._select_data
-url: /types/_select_data/
+url: /configuration-file/types/_select_data/
 title: ''
 description: >-
   This key defines defines fixed data sets to populate Select and Multiselect

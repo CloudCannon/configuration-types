@@ -1,5 +1,5 @@
 gid: type._inputs.*.context.icon
-url: /types/_inputs/*/context/icon/
+url: /configuration-file/types/_inputs/*/context/icon/
 title: ''
 description: >-
   This key defines which icon appears next to the context box title.

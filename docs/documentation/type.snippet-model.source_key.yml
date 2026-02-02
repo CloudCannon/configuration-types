@@ -1,5 +1,5 @@
 gid: type.snippet-model.source_key
-url: /types/snippet-model/source_key/
+url: /configuration-file/types/snippet-model/source_key/
 title: ''
 description: |-
   This key defines the key that the parser should look for in the source text.

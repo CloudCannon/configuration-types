@@ -1,5 +1,5 @@
 gid: type._inputs.*.disabled.(boolean)
-url: /types/_inputs/*/disabled/(boolean)/
+url: /configuration-file/types/_inputs/*/disabled/(boolean)/
 title: Boolean
 description: >-
   This key represents a boolean value for the `disabled` key that toggles

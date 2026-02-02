@@ -1,5 +1,5 @@
 gid: type._inputs.*.(object-input).options.entries.comment
-url: /types/_inputs/*/(object-input)/options/entries/comment/
+url: /configuration-file/types/_inputs/*/(object-input)/options/entries/comment/
 title: ''
 description: >-
   This key defines the subtitle text above the key input when adding or renaming

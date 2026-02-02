@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.min_items
-url: /types/_inputs/*/options/min_items/
+url: /configuration-file/types/_inputs/*/options/min_items/
 title: ''
 description: >-
   This key defines the minimum number of items CloudCannon will allow in an

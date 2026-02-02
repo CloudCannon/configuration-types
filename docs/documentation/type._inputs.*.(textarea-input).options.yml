@@ -1,5 +1,5 @@
 gid: type._inputs.*.(textarea-input).options
-url: /types/_inputs/*/(textarea-input)/options/
+url: /configuration-file/types/_inputs/*/(textarea-input)/options/
 title: ''
 description: This key defines options that are specific to Textarea Inputs.
 examples:

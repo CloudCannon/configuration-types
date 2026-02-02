@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.values.(dataset-reference)
-url: /types/_inputs/*/options/values/(dataset-reference)/
+url: /configuration-file/types/_inputs/*/options/values/(dataset-reference)/
 title: Dataset Reference Values
 description: This key defines a reference to a dataset.
 examples: []

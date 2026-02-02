@@ -1,5 +1,5 @@
 gid: collections_config.*.new_preview_url
-url: /collections_config/*/new_preview_url/
+url: /configuration-file/collections_config/*/new_preview_url/
 title: ''
 description: >-
   This key defines a new URL for previewing your unbuilt pages in the [Visual

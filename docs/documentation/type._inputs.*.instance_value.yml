@@ -1,5 +1,5 @@
 gid: type._inputs.*.instance_value
-url: /types/_inputs/*/instance_value/
+url: /configuration-file/types/_inputs/*/instance_value/
 title: ''
 description: >-
   This key defines whether an input is automatically populated with a value when

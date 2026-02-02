@@ -1,5 +1,5 @@
 gid: source
-url: /source/
+url: /configuration-file/source/
 title: ''
 description: >-
   This key defines the base path for your source files, relative to the root

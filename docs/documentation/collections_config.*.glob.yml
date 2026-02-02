@@ -1,5 +1,5 @@
 gid: collections_config.*.glob
-url: /collections_config/*/glob/
+url: /configuration-file/collections_config/*/glob/
 title: ''
 description: >-
   This key defines globs which filter the files visible in the *Collection

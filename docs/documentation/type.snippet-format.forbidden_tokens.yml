@@ -1,5 +1,5 @@
 gid: type.snippet-format.forbidden_tokens
-url: /types/snippet-format/forbidden_tokens/
+url: /configuration-file/types/snippet-format/forbidden_tokens/
 title: ''
 description: >-
   This key defines tokens that stop parsing content as soon as they are

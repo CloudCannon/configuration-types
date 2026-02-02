@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.values.(text-object).*
-url: /types/_inputs/*/options/values/(text-object)/*/
+url: /configuration-file/types/_inputs/*/options/values/(text-object)/*/
 title: ''
 description: ''
 examples: []

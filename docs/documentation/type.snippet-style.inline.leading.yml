@@ -1,5 +1,5 @@
 gid: type.snippet-style.inline.leading
-url: /types/snippet-style/inline/leading/
+url: /configuration-file/types/snippet-style/inline/leading/
 title: ''
 description: >-
   This key defines the leading whitespace string for inline snippet content.

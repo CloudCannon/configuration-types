@@ -1,5 +1,5 @@
 gid: collections_config.*.disable_url
-url: /collections_config/*/disable_url/
+url: /configuration-file/collections_config/*/disable_url/
 title: ''
 description: >-
   This key toggles whether CloudCannon will generate an output URL for a given

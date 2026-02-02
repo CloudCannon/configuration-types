@@ -1,5 +1,5 @@
 gid: type.paths.uploads_use_relative_path
-url: /types/paths/uploads_use_relative_path/
+url: /configuration-file/types/paths/uploads_use_relative_path/
 title: ''
 description: >-
   This key toggles whether CloudCannon will use relative paths instead of

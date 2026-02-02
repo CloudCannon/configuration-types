@@ -1,5 +1,6 @@
 gid: type.snippet.params.*.(content-parser-config).options.allow_nested
-url: /types/snippet/params/*/(content-parser-config)/options/allow_nested/
+url: >-
+  /configuration-file/types/snippet/params/*/(content-parser-config)/options/allow_nested/
 title: ''
 description: >-
   This key toggles whether nested snippets will be parsed and returned.

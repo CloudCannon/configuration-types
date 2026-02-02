@@ -1,5 +1,5 @@
 gid: markdown.options.treat_indentation_as_code
-url: /markdown/options/treat_indentation_as_code/
+url: /configuration-file/markdown/options/treat_indentation_as_code/
 title: ''
 description: >-
   This key toggles whether CloudCannon will treat 4 spaces of indentation as a

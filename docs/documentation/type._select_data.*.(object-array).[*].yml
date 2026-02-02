@@ -1,5 +1,5 @@
 gid: type._select_data.*.(object-array).[*]
-url: /types/_select_data/*/(object-array)/[*]/
+url: /configuration-file/types/_select_data/*/(object-array)/[*]/
 title: ''
 description: ''
 examples: []

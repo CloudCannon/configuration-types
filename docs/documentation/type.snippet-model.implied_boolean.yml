@@ -1,5 +1,5 @@
 gid: type.snippet-model.implied_boolean
-url: /types/snippet-model/implied_boolean/
+url: /configuration-file/types/snippet-model/implied_boolean/
 title: ''
 description: >-
   This key toggles whether any value in this argument will alias to `true`, and

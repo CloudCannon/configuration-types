@@ -1,5 +1,5 @@
 gid: type._inputs.*.hidden.(boolean)
-url: /types/_inputs/*/hidden/(boolean)/
+url: /configuration-file/types/_inputs/*/hidden/(boolean)/
 title: Boolean Hidden
 description: >-
   This key represents a boolean value for the `hidden` key that toggles whether

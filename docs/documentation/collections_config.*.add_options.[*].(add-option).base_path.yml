@@ -1,5 +1,6 @@
 gid: collections_config.*.add_options.[*].(add-option).base_path
-url: /collections_config/*/add_options/[*]/(add-option)/base_path/
+url: >-
+  /configuration-file/collections_config/*/add_options/[*]/(add-option)/base_path/
 title: ''
 description: >-
   This key defines a path for files created using an option in the *\+ Add*

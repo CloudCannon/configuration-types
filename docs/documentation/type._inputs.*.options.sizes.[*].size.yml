@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.sizes.[*].size
-url: /types/_inputs/*/options/sizes/[*]/size/
+url: /configuration-file/types/_inputs/*/options/sizes/[*]/size/
 title: ''
 description: >-
   This key defines a number suffixed with "x" (relative size) or "w" (fixed

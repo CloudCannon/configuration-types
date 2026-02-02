@@ -1,5 +1,5 @@
 gid: type.snippet-format.allowed_string_cases.leading_upper
-url: /types/snippet-format/allowed_string_cases/leading_upper/
+url: /configuration-file/types/snippet-format/allowed_string_cases/leading_upper/
 title: ''
 description: >-
   This key toggles whether CloudCannon will allow strings starting with an

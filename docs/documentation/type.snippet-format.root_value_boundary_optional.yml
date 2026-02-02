@@ -1,5 +1,5 @@
 gid: type.snippet-format.root_value_boundary_optional
-url: /types/snippet-format/root_value_boundary_optional/
+url: /configuration-file/types/snippet-format/root_value_boundary_optional/
 title: ''
 description: >-
   This key defines which value types do not require root value boundaries when

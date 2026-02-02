@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.min
-url: /types/_inputs/*/options/min/
+url: /configuration-file/types/_inputs/*/options/min/
 title: ''
 description: >-
   This key defines the minimum numerical value CloudCannon will allow in an

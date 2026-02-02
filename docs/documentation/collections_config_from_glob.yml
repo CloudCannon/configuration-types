@@ -1,5 +1,5 @@
 gid: collections_config_from_glob
-url: /collections_config_from_glob/
+url: /configuration-file/collections_config_from_glob/
 title: ''
 description: >-
   This key defines globs that filter which files CloudCannon should use for

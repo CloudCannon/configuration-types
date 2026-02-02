@@ -1,5 +1,5 @@
 gid: commit_templates.[*].label
-url: /commit_templates/[*]/label/
+url: /configuration-file/commit_templates/[*]/label/
 title: ''
 description: >-
   This key defines the name of a commit template, which appears in the dropdown

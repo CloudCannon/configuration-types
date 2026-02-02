@@ -1,5 +1,5 @@
 gid: collections_config.*.add_options.[*]
-url: /collections_config/*/add_options/[*]/
+url: /configuration-file/collections_config/*/add_options/[*]/
 title: ''
 description: >-
   This key represents an individual add option object in the

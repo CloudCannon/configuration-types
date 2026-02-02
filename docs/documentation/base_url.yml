@@ -1,5 +1,5 @@
 gid: base_url
-url: /base_url/
+url: /configuration-file/base_url/
 title: ''
 description: >-
   This key defines which base URL (or subpath) CloudCannon should use when

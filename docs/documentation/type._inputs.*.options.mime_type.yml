@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.mime_type
-url: /types/_inputs/*/options/mime_type/
+url: /configuration-file/types/_inputs/*/options/mime_type/
 title: ''
 description: This key defines what format an image is converted to prior to upload.
 examples:

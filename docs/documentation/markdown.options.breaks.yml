@@ -1,5 +1,5 @@
 gid: markdown.options.breaks
-url: /markdown/options/breaks/
+url: /configuration-file/markdown/options/breaks/
 title: ''
 description: >-
   This key toggles whether CloudCannon will convert line breaks (`\n`) in

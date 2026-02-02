@@ -1,5 +1,5 @@
 gid: pull_request_templates
-url: /pull_request_templates/
+url: /configuration-file/pull_request_templates/
 title: ''
 description: >-
   This key defines the Pull Request templates available on your *Site*.

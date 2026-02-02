@@ -1,5 +1,6 @@
 gid: type.snippet.params.*.(content-parser-config).options.editor_key
-url: /types/snippet/params/*/(content-parser-config)/options/editor_key/
+url: >-
+  /configuration-file/types/snippet/params/*/(content-parser-config)/options/editor_key/
 title: ''
 description: >-
   This key defines the key that a user in CloudCannon will see to edit this

@@ -1,5 +1,5 @@
 gid: type.structure.remove_extra_inputs
-url: /types/structure/remove_extra_inputs/
+url: /configuration-file/types/structure/remove_extra_inputs/
 title: ''
 description: >-
   This key toggles whether CloudCannon will remove inputs that are not present

@@ -1,5 +1,5 @@
 gid: type.structure.values.[*].tabbed
-url: /types/structure/values/[*]/tabbed/
+url: /configuration-file/types/structure/values/[*]/tabbed/
 title: ''
 description: >-
   This key toggles whether CloudCannon should create tabs in the Data Editor if

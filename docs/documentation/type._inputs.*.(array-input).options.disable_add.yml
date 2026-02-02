@@ -1,5 +1,5 @@
 gid: type._inputs.*.(array-input).options.disable_add
-url: /types/_inputs/*/(array-input)/options/disable_add/
+url: /configuration-file/types/_inputs/*/(array-input)/options/disable_add/
 title: ''
 description: >-
   This key toggles whether CloudCannon will hide the add button, and context

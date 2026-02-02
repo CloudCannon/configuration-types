@@ -1,5 +1,5 @@
 gid: type.snippet.inline
-url: /types/snippet/inline/
+url: /configuration-file/types/snippet/inline/
 title: ''
 description: >-
   This key toggles whether this snippet can appear inline (within a sentence).

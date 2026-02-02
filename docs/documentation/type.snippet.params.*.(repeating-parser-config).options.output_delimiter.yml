@@ -1,5 +1,6 @@
 gid: type.snippet.params.*.(repeating-parser-config).options.output_delimiter
-url: /types/snippet/params/*/(repeating-parser-config)/options/output_delimiter/
+url: >-
+  /configuration-file/types/snippet/params/*/(repeating-parser-config)/options/output_delimiter/
 title: ''
 description: >-
   This key defines how to format the output for parsers such as the content and

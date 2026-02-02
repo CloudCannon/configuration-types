@@ -1,5 +1,5 @@
 gid: type._inputs.*.(color-input).options.palette.[*]
-url: /types/_inputs/*/(color-input)/options/palette/[*]/
+url: /configuration-file/types/_inputs/*/(color-input)/options/palette/[*]/
 title: ''
 description: >-
   This key represents an individual color string in the

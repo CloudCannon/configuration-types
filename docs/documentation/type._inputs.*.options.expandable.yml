@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.expandable
-url: /types/_inputs/*/options/expandable/
+url: /configuration-file/types/_inputs/*/options/expandable/
 title: ''
 description: >-
   This key defines whether you can upscale an image to fit the bounding box

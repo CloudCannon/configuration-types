@@ -1,5 +1,5 @@
 gid: type.snippet.definitions
-url: /types/snippet/definitions/
+url: /configuration-file/types/snippet/definitions/
 title: ''
 description: This key defines the variables required for the selected template.
 examples:

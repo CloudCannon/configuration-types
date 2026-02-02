@@ -1,5 +1,5 @@
 gid: _snippets_imports_from_glob
-url: /_snippets_imports_from_glob/
+url: /configuration-file/_snippets_imports_from_glob/
 title: ''
 description: >-
   This key defines globs that filter which files CloudCannon should use for

@@ -1,6 +1,6 @@
 gid: type.snippet.params.*.(literal-parser-config).options.format.string_boundary
 url: >-
-  /types/snippet/params/*/(literal-parser-config)/options/format/string_boundary/
+  /configuration-file/types/snippet/params/*/(literal-parser-config)/options/format/string_boundary/
 title: ''
 description: >-
   This key defines the valid tokens that can bound a string when parsing literal

@@ -1,5 +1,5 @@
 gid: type.create
-url: /types/create/
+url: /configuration-file/types/create/
 title: ''
 description: >-
   This key defines the path to which CloudCannon will save new files in a

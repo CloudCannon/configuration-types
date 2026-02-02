@@ -1,5 +1,5 @@
 gid: collections_config.*.schemas.*.icon
-url: /collections_config/*/schemas/*/icon/
+url: /configuration-file/collections_config/*/schemas/*/icon/
 title: ''
 description: >-
   This key defines the icon displayed in the add menu when creating new files,

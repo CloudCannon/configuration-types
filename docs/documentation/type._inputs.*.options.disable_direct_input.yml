@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.disable_direct_input
-url: /types/_inputs/*/options/disable_direct_input/
+url: /configuration-file/types/_inputs/*/options/disable_direct_input/
 title: ''
 description: >-
   This key toggles whether CloudCannon will prevent typing into the *Text

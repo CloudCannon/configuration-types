@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.max_file_size
-url: /types/_inputs/*/options/max_file_size/
+url: /configuration-file/types/_inputs/*/options/max_file_size/
 title: ''
 description: >-
   This key defines the maximum file size in kB that CloudCannon will allow you

@@ -1,5 +1,5 @@
 gid: type._inputs.*.context
-url: /types/_inputs/*/context/
+url: /configuration-file/types/_inputs/*/context/
 title: ''
 description: |-
   This key defines a context box for extra information about an Input.

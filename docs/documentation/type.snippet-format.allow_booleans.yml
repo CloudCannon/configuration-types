@@ -1,5 +1,5 @@
 gid: type.snippet-format.allow_booleans
-url: /types/snippet-format/allow_booleans/
+url: /configuration-file/types/snippet-format/allow_booleans/
 title: ''
 description: >-
   This key toggles whether CloudCannon will allow unquoted boolean values like

@@ -17,7 +17,7 @@ export const docSchemas: DocSchemaConfig[] = [
 		schemaFile: 'cloudcannon-config.documentation.schema.json',
 		docsFolder: 'docs/documentation',
 		rootTypeId: 'type.Configuration',
-		urlPrefix: '/',
+		urlPrefix: '/configuration-file/',
 	},
 	{
 		name: 'Routing',

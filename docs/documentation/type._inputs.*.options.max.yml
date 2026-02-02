@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.max
-url: /types/_inputs/*/options/max/
+url: /configuration-file/types/_inputs/*/options/max/
 title: ''
 description: >-
   This key defines the maximum numerical value CloudCannon will allow in an

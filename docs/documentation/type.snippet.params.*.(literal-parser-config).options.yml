@@ -1,5 +1,5 @@
 gid: type.snippet.params.*.(literal-parser-config).options
-url: /types/snippet/params/*/(literal-parser-config)/options/
+url: /configuration-file/types/snippet/params/*/(literal-parser-config)/options/
 title: ''
 description: >-
   This key defines configuration options for literal parser configurations.

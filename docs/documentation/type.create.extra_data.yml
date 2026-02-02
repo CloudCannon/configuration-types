@@ -1,5 +1,5 @@
 gid: type.create.extra_data
-url: /types/create/extra_data/
+url: /configuration-file/types/create/extra_data/
 title: ''
 description: >-
   This key defines additional data placeholders for use in create path

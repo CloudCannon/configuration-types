@@ -1,5 +1,5 @@
 gid: data_config.*
-url: /data_config/*/
+url: /configuration-file/data_config/*/
 title: ''
 description: This key defines what data sets are available to populate *Select Inputs*.
 examples:

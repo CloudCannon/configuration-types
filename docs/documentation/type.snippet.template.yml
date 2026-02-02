@@ -1,5 +1,5 @@
 gid: type.snippet.template
-url: /types/snippet/template/
+url: /configuration-file/types/snippet/template/
 title: ''
 description: >-
   This key defines the template that this snippet should inherit, out of the

@@ -1,5 +1,5 @@
 gid: pull_request_templates.[*].title
-url: /pull_request_templates/[*]/title/
+url: /configuration-file/pull_request_templates/[*]/title/
 title: ''
 description: |-
   This key defines the default value of the "Title" field in your Pull Request.

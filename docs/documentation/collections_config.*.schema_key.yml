@@ -1,5 +1,5 @@
 gid: collections_config.*.schema_key
-url: /collections_config/*/schema_key/
+url: /configuration-file/collections_config/*/schema_key/
 title: ''
 description: >-
   This key defines the name for the structured data key that references the

@@ -1,5 +1,5 @@
 gid: type.snippet-format
-url: /types/snippet-format/
+url: /configuration-file/types/snippet-format/
 title: Snippet Format
 description: >-
   This key defines formatting options for parsing snippet parameters.

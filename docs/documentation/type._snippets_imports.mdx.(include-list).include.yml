@@ -1,5 +1,5 @@
 gid: type._snippets_imports.mdx.(include-list).include
-url: /types/_snippets_imports/mdx/(include-list)/include/
+url: /configuration-file/types/_snippets_imports/mdx/(include-list)/include/
 title: ''
 description: |-
   This key defines the list of included snippets.

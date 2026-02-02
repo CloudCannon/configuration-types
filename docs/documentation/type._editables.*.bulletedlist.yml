@@ -1,5 +1,5 @@
 gid: type._editables.*.bulletedlist
-url: /types/_editables/*/bulletedlist/
+url: /configuration-file/types/_editables/*/bulletedlist/
 title: ''
 description: >-
   This key toggles whether CloudCannon will display a tool in your WYSIWYG

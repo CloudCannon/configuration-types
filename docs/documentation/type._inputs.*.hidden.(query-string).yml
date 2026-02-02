@@ -1,5 +1,5 @@
 gid: type._inputs.*.hidden.(query-string)
-url: /types/_inputs/*/hidden/(query-string)/
+url: /configuration-file/types/_inputs/*/hidden/(query-string)/
 title: Query String Hidden
 description: >-
   This key represents a query string value for the `hidden` key that

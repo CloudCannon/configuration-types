@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.pattern_flags.global
-url: /types/_inputs/*/options/pattern_flags/global/
+url: /configuration-file/types/_inputs/*/options/pattern_flags/global/
 title: ''
 description: This key defines the `g` flag - Search globally.
 examples: []

@@ -1,5 +1,5 @@
 gid: markdown.options.sentence_per_line
-url: /markdown/options/sentence_per_line/
+url: /configuration-file/markdown/options/sentence_per_line/
 title: ''
 description: >-
   This key toggles whether CloudCannon will add line breaks between sentences

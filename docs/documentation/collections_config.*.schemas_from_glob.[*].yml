@@ -1,5 +1,5 @@
 gid: collections_config.*.schemas_from_glob.[*]
-url: /collections_config/*/schemas_from_glob/[*]/
+url: /configuration-file/collections_config/*/schemas_from_glob/[*]/
 title: ''
 description: >-
   This key represents an individual glob pattern string in the

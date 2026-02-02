@@ -1,5 +1,5 @@
 gid: type._inputs.*.(code-input).options.min_visible_lines
-url: /types/_inputs/*/(code-input)/options/min_visible_lines/
+url: /configuration-file/types/_inputs/*/(code-input)/options/min_visible_lines/
 title: ''
 description: >-
   This key defines the minimum number of visible lines for this input,

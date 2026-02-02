@@ -1,5 +1,5 @@
 gid: type._inputs.*.context.content
-url: /types/_inputs/*/context/content/
+url: /configuration-file/types/_inputs/*/context/content/
 title: ''
 description: >-
   This key defines the text content inside the context box.

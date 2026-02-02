@@ -1,5 +1,5 @@
 gid: type.preview-entry.(text)
-url: /types/preview-entry/(text)/
+url: /configuration-file/types/preview-entry/(text)/
 title: Text Preview Entry
 description: >-
   This key represents a text preview entry type for displaying static text on

@@ -1,5 +1,5 @@
 gid: type._inputs.*.(code-input).options.show_gutter
-url: /types/_inputs/*/(code-input)/options/show_gutter/
+url: /configuration-file/types/_inputs/*/(code-input)/options/show_gutter/
 title: ''
 description: >-
   This key toggles whether CloudCannon displays line numbers in the gutter of

@@ -1,5 +1,6 @@
 gid: type._inputs.*.(object-input).options.allow_label_formatting
-url: /types/_inputs/*/(object-input)/options/allow_label_formatting/
+url: >-
+  /configuration-file/types/_inputs/*/(object-input)/options/allow_label_formatting/
 title: ''
 description: |-
   This key toggles whether labels on mutable object entries are formatted.

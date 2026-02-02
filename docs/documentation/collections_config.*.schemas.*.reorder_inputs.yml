@@ -1,5 +1,5 @@
 gid: collections_config.*.schemas.*.reorder_inputs
-url: /collections_config/*/schemas/*/reorder_inputs/
+url: /configuration-file/collections_config/*/schemas/*/reorder_inputs/
 title: ''
 description: >-
   This key toggles whether CloudCannon will reorder inputs in a file to match

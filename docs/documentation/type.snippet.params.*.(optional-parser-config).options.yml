@@ -1,5 +1,5 @@
 gid: type.snippet.params.*.(optional-parser-config).options
-url: /types/snippet/params/*/(optional-parser-config)/options/
+url: /configuration-file/types/snippet/params/*/(optional-parser-config)/options/
 title: ''
 description: >-
   This key defines configuration options for optional parser configurations.

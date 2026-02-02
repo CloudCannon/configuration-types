@@ -1,5 +1,5 @@
 gid: collection_groups.[*].collections
-url: /collection_groups/[*]/collections/
+url: /configuration-file/collection_groups/[*]/collections/
 title: ''
 description: >-
   This key defines the Collections displayed in a group in the *Site
