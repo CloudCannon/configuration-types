@@ -7,7 +7,6 @@ export async function readDocs(folder: string): Promise<Record<string, Documenta
 	const docs: Record<string, DocumentationEntry> = {};
 	const folderPath = path.join(process.cwd(), folder);
 
-	// Check if folder exists, return empty if not
 	try {
 		await fs.access(folderPath);
 	} catch {
@@ -48,11 +47,10 @@ export async function moveOldDocs(folder: string, gidsInUse: Set<string>): Promi
 	const unusedFolder = `${folder}-unused`;
 	const unusedPath = path.join(process.cwd(), unusedFolder);
 
-	// Check if folder exists
 	try {
 		await fs.access(folderPath);
 	} catch {
-		return; // Nothing to move
+		return;
 	}
 
 	const allFiles = await fs.readdir(folderPath);
@@ -85,7 +83,6 @@ export async function writeNewDocs(
 	const folderPath = path.join(process.cwd(), folder);
 	const pageFiles: any[] = [];
 
-	// Ensure folder exists
 	await fs.mkdir(folderPath, { recursive: true });
 
 	let existingGids: Record<string, boolean> = {};
@@ -95,9 +92,7 @@ export async function writeNewDocs(
 			memo[file.replace(/\.yml$/, '')] = true;
 			return memo;
 		}, {});
-	} catch {
-		// Folder doesn't exist yet, no existing files
-	}
+	} catch {}
 
 	let newCount = 0;
 

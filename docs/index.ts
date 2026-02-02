@@ -108,7 +108,6 @@ function docToPage(
 
 	const { config, pages } = ctx;
 
-	// Determine the type of entry
 	const isRootType = doc.id === config.rootTypeId;
 	const isTypeRef = doc.id?.startsWith('type.') && !isRootType;
 	const hasExplicitId = config.gidPrefix && doc.id?.startsWith(`${config.gidPrefix}.`);
@@ -117,19 +116,15 @@ function docToPage(
 	let gid: string;
 
 	if (isRootType) {
-		// Root type (e.g., type.Configuration, type.Routing)
 		thisPath = [];
 		gid = config.rootTypeId;
 	} else if (isTypeRef) {
-		// Type reference (e.g., type.structure, type.icon) - use doc.id directly
 		thisPath = [doc.id!];
 		gid = doc.id!;
 	} else if (hasExplicitId) {
-		// Entry has explicit ID with prefix (e.g., routing.routes, iss.build)
 		gid = doc.id!;
-		// Strip prefix for URL path generation
 		const idParts = doc.id!.split('.');
-		thisPath = idParts.slice(1); // Remove prefix for URL
+		thisPath = idParts.slice(1);
 	} else if (key) {
 		thisPath = [...docPath, key];
 		gid = config.gidPrefix ? `${config.gidPrefix}.${thisPath.join('.')}` : thisPath.join('.');
@@ -163,12 +158,10 @@ function docToPage(
 			.map((code) => ({ code })),
 	};
 
-	// Generate URL
 	let url: string;
 	if (!thisPath.length) {
 		url = '/';
 	} else {
-		// Replace 'type.' prefix with 'types/' for type entries, then convert dots to slashes
 		url = `/${thisPath.join('/').replace(/^type\./, 'types/').replaceAll('.', '/')}/`.replace(
 			/\/+/g,
 			'/'
@@ -359,15 +352,12 @@ async function processSchema(config: DocSchemaConfig): Promise<{
 }> {
 	console.log(`\n📖 Processing ${config.name}`);
 
-	// Read the schema
 	const schemaPath = path.join(process.cwd(), 'dist', config.schemaFile);
 	const schemaRaw = await fs.readFile(schemaPath, { encoding: 'utf8' });
 	const schema: JsonSchema = JSON.parse(schemaRaw);
 
-	// Read documentation entries
 	const documentationEntries = await readDocs(config.docsFolder);
 
-	// Create processing context
 	const ctx: ProcessContext = {
 		schema,
 		config,
@@ -377,20 +367,17 @@ async function processSchema(config: DocSchemaConfig): Promise<{
 		pages: {},
 	};
 
-	// Process the schema
 	docToPage(schema, { path: [] }, ctx);
 
-	// Report untitled GIDs
 	if (ctx.untitledGids.size) {
 		console.error(
 			[
-				`🔠 \x1b[31mNeeds developer title (${ctx.untitledGids.size})\x1b[0m`, // Red text
+				`🔠 \x1b[31mNeeds developer title (${ctx.untitledGids.size})\x1b[0m`,
 				...ctx.untitledGids.values(),
 			].join('\n     ')
 		);
 	}
 
-	// Move old docs and write new ones
 	await moveOldDocs(config.docsFolder, ctx.attemptedGids);
 	await writeNewDocs(config.docsFolder, ctx.attemptedGids, ctx.pages);
 
@@ -401,7 +388,6 @@ async function processSchema(config: DocSchemaConfig): Promise<{
 	};
 }
 
-// Main execution
 const allPages: Record<string, Page> = {};
 
 for (const config of docSchemas) {

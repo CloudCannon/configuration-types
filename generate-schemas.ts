@@ -180,8 +180,6 @@ const schemas = [
 		stripId: true,
 		redocument: true,
 	},
-	// Routing file - .cloudcannon/routing.json
-	// Note: RoutingSchema already has id: 'type.Routing' in its definition
 	{
 		schema: RoutingSchema,
 		keepDocumentationType: true,
@@ -196,8 +194,6 @@ const schemas = [
 		addMarkdownDescription: true,
 		stripId: true,
 	},
-	// Initial site settings file - .cloudcannon/initial-site-settings.json
-	// Note: InitialSiteSettingsSchema already has id: 'type.InitialSiteSettings' in its definition
 	{
 		schema: InitialSiteSettingsSchema,
 		keepDocumentationType: true,
@@ -252,7 +248,6 @@ for (const schemaConfig of schemas) {
 		},
 	});
 
-	// Add $id to the root of the JSON schema if specified in config
 	if (schemaConfig.$id) {
 		(jsonSchema as any).$id = schemaConfig.$id;
 	}

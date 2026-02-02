@@ -2,7 +2,6 @@ import fs from 'node:fs/promises';
 import { readDocs } from './docs/docs.js';
 import { type DocumentationEntry, type JsonSchema, slugify } from './docs/util.js';
 
-// Read config documentation for redocumenting IDE schemas
 const documentationEntries: Record<string, DocumentationEntry> = await readDocs(
 	'docs/documentation'
 );
