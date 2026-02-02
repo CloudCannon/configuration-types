@@ -1,0 +1,6 @@
+gid: routing.routes.[*].status.(any-of-6)
+url: /routes/[*]/status/(any-of-6)/
+title: ''
+description: ''
+examples: []
+show_in_navigation: false

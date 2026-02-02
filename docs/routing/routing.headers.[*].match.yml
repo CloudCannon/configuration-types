@@ -1,0 +1,8 @@
+gid: routing.headers.[*].match
+url: /headers/[*]/match/
+title: ''
+description: >-
+  A glob pattern to match request paths against. Headers will be applied to
+  responses for matching paths.
+examples: []
+show_in_navigation: false

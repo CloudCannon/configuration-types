@@ -1,0 +1,6 @@
+gid: iss.build.ruby_version
+url: /build/ruby_version/
+title: ''
+description: Ruby version to use for the build.
+examples: []
+show_in_navigation: false

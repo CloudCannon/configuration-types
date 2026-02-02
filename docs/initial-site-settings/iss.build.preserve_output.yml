@@ -1,0 +1,6 @@
+gid: iss.build.preserve_output
+url: /build/preserve_output/
+title: ''
+description: Keep the output directory between builds instead of clearing it.
+examples: []
+show_in_navigation: false

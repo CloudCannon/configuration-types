@@ -1,0 +1,6 @@
+gid: iss.build.preserved_paths
+url: /build/preserved_paths/
+title: ''
+description: Newline-separated list of paths to preserve between builds.
+examples: []
+show_in_navigation: false

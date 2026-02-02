@@ -1,0 +1,6 @@
+gid: routing.headers.[*].headers
+url: /headers/[*]/headers/
+title: ''
+description: The list of HTTP headers to set for matching requests.
+examples: []
+show_in_navigation: false

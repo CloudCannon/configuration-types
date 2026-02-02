@@ -1,0 +1,6 @@
+gid: iss.build.environment_variables.[*]
+url: /build/environment_variables/[*]/
+title: ''
+description: A single environment variable as a key-value pair.
+examples: []
+show_in_navigation: false

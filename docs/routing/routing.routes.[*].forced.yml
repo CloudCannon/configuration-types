@@ -1,0 +1,8 @@
+gid: routing.routes.[*].forced
+url: /routes/[*]/forced/
+title: ''
+description: >-
+  When true, the redirect will be applied even if a file exists at the `from`
+  path. Default is false.
+examples: []
+show_in_navigation: false

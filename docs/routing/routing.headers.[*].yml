@@ -1,0 +1,6 @@
+gid: routing.headers.[*]
+url: /headers/[*]/
+title: ''
+description: A rule for applying custom HTTP headers to matching requests.
+examples: []
+show_in_navigation: false

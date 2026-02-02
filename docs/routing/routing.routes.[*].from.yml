@@ -1,0 +1,8 @@
+gid: routing.routes.[*].from
+url: /routes/[*]/from/
+title: ''
+description: >-
+  The URL pattern to match incoming requests against. CloudCannon routing
+  supports glob-style patterns.
+examples: []
+show_in_navigation: false

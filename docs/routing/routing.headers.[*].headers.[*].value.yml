@@ -1,0 +1,6 @@
+gid: routing.headers.[*].headers.[*].value
+url: /headers/[*]/headers/[*]/value/
+title: ''
+description: The value of the HTTP header.
+examples: []
+show_in_navigation: false
