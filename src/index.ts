@@ -1,5 +1,3 @@
-import * as z from 'zod';
-
 export * from './build-coupled.ts';
 export * from './cascade.ts';
 export * from './collections.ts';
@@ -17,27 +15,6 @@ export * from './routing.ts';
 export * from './select-values.ts';
 export * from './snippets.ts';
 export * from './source-editor.ts';
+export * from './ssg.ts';
 export * from './structures.ts';
 export * from './timezone.ts';
-
-export const SsgKeySchema = z.enum([
-	'hugo',
-	'jekyll',
-	'eleventy',
-	'astro',
-	'lume',
-	'mkdocs',
-	'nextjs',
-	'sveltekit',
-	'bridgetown',
-	'docusaurus',
-	'gatsby',
-	'hexo',
-	'nuxtjs',
-	'sphinx',
-	'static',
-	'legacy',
-	'other',
-]);
-
-export type SsgKey = z.infer<typeof SsgKeySchema>;
