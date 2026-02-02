@@ -1,5 +1,6 @@
 gid: type.snippet.params.*.(repeating-parser-config).options.snippet
-url: /types/snippet/params/*/(repeating-parser-config)/options/snippet/
+url: >-
+  /configuration-file/types/snippet/params/*/(repeating-parser-config)/options/snippet/
 title: ''
 description: >-
   This key defines the snippet configuration to repeat for repeating parser

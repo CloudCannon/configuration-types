@@ -1,5 +1,5 @@
 gid: type.snippet-format.allowed_string_cases.leading_lower
-url: /types/snippet-format/allowed_string_cases/leading_lower/
+url: /configuration-file/types/snippet-format/allowed_string_cases/leading_lower/
 title: ''
 description: >-
   This key toggles whether CloudCannon will allow strings starting with a

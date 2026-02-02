@@ -1,5 +1,5 @@
 gid: type.snippet.params.*.(wrapper-parser-config)
-url: /types/snippet/params/*/(wrapper-parser-config)/
+url: /configuration-file/types/snippet/params/*/(wrapper-parser-config)/
 title: Wrapper Parser Configuration
 description: >-
   This key defines a wrapper parser configuration for wrapping another snippet

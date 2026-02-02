@@ -1,5 +1,5 @@
 gid: type.snippet-format.string_escape_character
-url: /types/snippet-format/string_escape_character/
+url: /configuration-file/types/snippet-format/string_escape_character/
 title: ''
 description: >-
   This key defines the character that can be placed before a string boundary to

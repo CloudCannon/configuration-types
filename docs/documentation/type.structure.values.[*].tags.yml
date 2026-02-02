@@ -1,5 +1,5 @@
 gid: type.structure.values.[*].tags
-url: /types/structure/values/[*]/tags/
+url: /configuration-file/types/structure/values/[*]/tags/
 title: ''
 description: >-
   This key defines which tags are associated with a given value in a Structure.

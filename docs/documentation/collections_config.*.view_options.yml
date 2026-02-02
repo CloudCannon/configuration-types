@@ -1,5 +1,5 @@
 gid: collections_config.*.view_options
-url: /collections_config/*/view_options/
+url: /configuration-file/collections_config/*/view_options/
 title: ''
 description: >-
   This key defines the options for the View dropdown in the *Collection

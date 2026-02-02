@@ -1,5 +1,5 @@
 gid: type.preview-entry.(text).text
-url: /types/preview-entry/(text)/text/
+url: /configuration-file/types/preview-entry/(text)/text/
 title: ''
 description: >-
   This key defines the static text string to display in a text preview entry.

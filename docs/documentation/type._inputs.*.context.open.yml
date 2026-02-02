@@ -1,5 +1,5 @@
 gid: type._inputs.*.context.open
-url: /types/_inputs/*/context/open/
+url: /configuration-file/types/_inputs/*/context/open/
 title: ''
 description: >-
   This key defines whether the context box is open to display text content by

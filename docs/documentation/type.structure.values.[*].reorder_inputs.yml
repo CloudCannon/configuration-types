@@ -1,5 +1,5 @@
 gid: type.structure.values.[*].reorder_inputs
-url: /types/structure/values/[*]/reorder_inputs/
+url: /configuration-file/types/structure/values/[*]/reorder_inputs/
 title: ''
 description: >-
   This key toggles whether CloudCannon will reorder inputs in a file to match

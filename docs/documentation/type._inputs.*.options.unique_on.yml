@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.unique_on
-url: /types/_inputs/*/options/unique_on/
+url: /configuration-file/types/_inputs/*/options/unique_on/
 title: ''
 description: >-
   This key defines the JSON Path selector that CloudCannon should use to

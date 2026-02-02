@@ -1,5 +1,5 @@
 gid: type._inputs.*.(range-input)
-url: /types/_inputs/*/(range-input)/
+url: /configuration-file/types/_inputs/*/(range-input)/
 title: Range Input
 description: This key defines a slider interface for selecting a numeric value.
 examples: []

@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.value_key
-url: /types/_inputs/*/options/value_key/
+url: /configuration-file/types/_inputs/*/options/value_key/
 title: ''
 description: >-
   This key defines the key used for mapping between saved values and objects in

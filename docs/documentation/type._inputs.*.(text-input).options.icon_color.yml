@@ -1,5 +1,5 @@
 gid: type._inputs.*.(text-input).options.icon_color
-url: /types/_inputs/*/(text-input)/options/icon_color/
+url: /configuration-file/types/_inputs/*/(text-input)/options/icon_color/
 title: ''
 description: >-
   This key defines the color of the icon displayed beside a *Text Input*.

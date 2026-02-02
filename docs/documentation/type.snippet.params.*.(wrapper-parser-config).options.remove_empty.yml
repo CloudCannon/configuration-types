@@ -1,5 +1,6 @@
 gid: type.snippet.params.*.(wrapper-parser-config).options.remove_empty
-url: /types/snippet/params/*/(wrapper-parser-config)/options/remove_empty/
+url: >-
+  /configuration-file/types/snippet/params/*/(wrapper-parser-config)/options/remove_empty/
 title: ''
 description: >-
   This key toggles whether CloudCannon will remove empty values from wrapper

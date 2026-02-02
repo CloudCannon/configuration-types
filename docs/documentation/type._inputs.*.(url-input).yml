@@ -1,5 +1,5 @@
 gid: type._inputs.*.(url-input)
-url: /types/_inputs/*/(url-input)/
+url: /configuration-file/types/_inputs/*/(url-input)/
 title: URL Input
 description: >-
   This key defines an editing interface for relative, absolute, and fully

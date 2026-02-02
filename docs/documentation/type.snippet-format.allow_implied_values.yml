@@ -1,5 +1,5 @@
 gid: type.snippet-format.allow_implied_values
-url: /types/snippet-format/allow_implied_values/
+url: /configuration-file/types/snippet-format/allow_implied_values/
 title: ''
 description: >-
   This key toggles whether CloudCannon will allow keys without values to imply a

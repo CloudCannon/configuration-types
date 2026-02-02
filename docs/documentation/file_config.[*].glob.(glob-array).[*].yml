@@ -1,5 +1,5 @@
 gid: file_config.[*].glob.(glob-array).[*]
-url: /file_config/[*]/glob/(glob-array)/[*]/
+url: /configuration-file/file_config/[*]/glob/(glob-array)/[*]/
 title: ''
 description: ''
 examples: []

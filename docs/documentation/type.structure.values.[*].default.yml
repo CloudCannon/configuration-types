@@ -1,5 +1,5 @@
 gid: type.structure.values.[*].default
-url: /types/structure/values/[*]/default/
+url: /configuration-file/types/structure/values/[*]/default/
 title: ''
 description: >-
   This key toggles whether CloudCannon should treat an entry in the `values`

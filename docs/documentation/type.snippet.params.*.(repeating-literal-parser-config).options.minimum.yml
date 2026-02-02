@@ -1,5 +1,6 @@
 gid: type.snippet.params.*.(repeating-literal-parser-config).options.minimum
-url: /types/snippet/params/*/(repeating-literal-parser-config)/options/minimum/
+url: >-
+  /configuration-file/types/snippet/params/*/(repeating-literal-parser-config)/options/minimum/
 title: ''
 description: >-
   This key defines the minimum number of times that the literal string must

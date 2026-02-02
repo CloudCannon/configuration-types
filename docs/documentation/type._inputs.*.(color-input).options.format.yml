@@ -1,5 +1,5 @@
 gid: type._inputs.*.(color-input).options.format
-url: /types/_inputs/*/(color-input)/options/format/
+url: /configuration-file/types/_inputs/*/(color-input)/options/format/
 title: ''
 description: |-
   This key defines what format the color value is saved as.

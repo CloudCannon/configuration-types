@@ -1,5 +1,6 @@
 gid: collections_config.*.add_options.[*].(href-add-option).icon
-url: /collections_config/*/add_options/[*]/(href-add-option)/icon/
+url: >-
+  /configuration-file/collections_config/*/add_options/[*]/(href-add-option)/icon/
 title: ''
 description: >-
   This key defines the icon displayed next to the text for a URL option in the

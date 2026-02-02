@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.pattern_message
-url: /types/_inputs/*/options/pattern_message/
+url: /configuration-file/types/_inputs/*/options/pattern_message/
 title: ''
 description: >-
   This key defines a custom error message that explains why a value has failed

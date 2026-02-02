@@ -1,5 +1,5 @@
 gid: type.create.publish_to
-url: /types/create/publish_to/
+url: /configuration-file/types/create/publish_to/
 title: ''
 description: >-
   This key defines a target collection when publishing.

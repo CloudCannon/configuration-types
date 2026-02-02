@@ -1,5 +1,5 @@
 gid: type.snippet-format.root_value_boundary
-url: /types/snippet-format/root_value_boundary/
+url: /configuration-file/types/snippet-format/root_value_boundary/
 title: ''
 description: >-
   This key defines the boundary tokens required for arguments and values when

@@ -1,5 +1,5 @@
 gid: type._inputs.*.(number-input)
-url: /types/_inputs/*/(number-input)/
+url: /configuration-file/types/_inputs/*/(number-input)/
 title: Number Input
 description: This key defines an editing interface for numeric values.
 examples:

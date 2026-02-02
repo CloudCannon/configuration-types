@@ -1,5 +1,5 @@
 gid: type.structure.values.[*].image
-url: /types/structure/values/[*]/image/
+url: /configuration-file/types/structure/values/[*]/image/
 title: ''
 description: >-
   This key defines the path to an image in your source files used when

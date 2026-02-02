@@ -1,5 +1,5 @@
 gid: type._inputs.*.(time-input)
-url: /types/_inputs/*/(time-input)/
+url: /configuration-file/types/_inputs/*/(time-input)/
 title: Time Input
 description: This key defines an editing interface for time values only.
 examples: []

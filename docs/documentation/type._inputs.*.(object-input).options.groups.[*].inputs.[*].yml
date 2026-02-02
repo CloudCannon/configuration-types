@@ -1,5 +1,6 @@
 gid: type._inputs.*.(object-input).options.groups.[*].inputs.[*]
-url: /types/_inputs/*/(object-input)/options/groups/[*]/inputs/[*]/
+url: >-
+  /configuration-file/types/_inputs/*/(object-input)/options/groups/[*]/inputs/[*]/
 title: ''
 description: >-
   This key represents an individual input key name string in the

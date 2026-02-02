@@ -1,5 +1,5 @@
 gid: type.snippet-format.array_boundary.start
-url: /types/snippet-format/array_boundary/start/
+url: /configuration-file/types/snippet-format/array_boundary/start/
 title: ''
 description: >-
   This key defines the start token for array boundaries when parsing snippet

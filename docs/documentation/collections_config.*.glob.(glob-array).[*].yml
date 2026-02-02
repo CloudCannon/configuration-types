@@ -1,5 +1,5 @@
 gid: collections_config.*.glob.(glob-array).[*]
-url: /collections_config/*/glob/(glob-array)/[*]/
+url: /configuration-file/collections_config/*/glob/(glob-array)/[*]/
 title: ''
 description: >-
   This key represents an individual glob pattern string in the

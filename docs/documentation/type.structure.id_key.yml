@@ -1,5 +1,5 @@
 gid: type.structure.id_key
-url: /types/structure/id_key/
+url: /configuration-file/types/structure/id_key/
 title: ''
 description: >-
   This key defines which key within `values[*].value` CloudCannon should use to

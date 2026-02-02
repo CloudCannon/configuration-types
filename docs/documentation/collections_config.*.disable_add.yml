@@ -1,5 +1,5 @@
 gid: collections_config.*.disable_add
-url: /collections_config/*/disable_add/
+url: /configuration-file/collections_config/*/disable_add/
 title: ''
 description: >-
   This key toggles whether team members can use the *+ Add* button in the top

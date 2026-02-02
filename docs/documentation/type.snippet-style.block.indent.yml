@@ -1,5 +1,5 @@
 gid: type.snippet-style.block.indent
-url: /types/snippet-style/block/indent/
+url: /configuration-file/types/snippet-style/block/indent/
 title: ''
 description: >-
   This key defines the indentation string used for block-level snippet content.

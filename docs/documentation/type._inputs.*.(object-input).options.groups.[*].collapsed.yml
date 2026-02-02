@@ -1,5 +1,6 @@
 gid: type._inputs.*.(object-input).options.groups.[*].collapsed
-url: /types/_inputs/*/(object-input)/options/groups/[*]/collapsed/
+url: >-
+  /configuration-file/types/_inputs/*/(object-input)/options/groups/[*]/collapsed/
 title: ''
 description: >-
   This key toggles whether this group is collapsed or expanded when first

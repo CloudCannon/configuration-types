@@ -1,5 +1,5 @@
 gid: collections_config.*.description
-url: /collections_config/*/description/
+url: /configuration-file/collections_config/*/description/
 title: ''
 description: >-
   This key defines the description text that appears on the *Collection browser*

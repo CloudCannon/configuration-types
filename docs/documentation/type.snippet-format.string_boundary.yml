@@ -1,5 +1,5 @@
 gid: type.snippet-format.string_boundary
-url: /types/snippet-format/string_boundary/
+url: /configuration-file/types/snippet-format/string_boundary/
 title: ''
 description: >-
   This key defines the valid tokens that can bound a string when parsing snippet

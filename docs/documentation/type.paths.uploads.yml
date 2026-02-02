@@ -1,5 +1,5 @@
 gid: type.paths.uploads
-url: /types/paths/uploads/
+url: /configuration-file/types/paths/uploads/
 title: ''
 description: >-
   This key defines the paths for the default location of newly uploaded site

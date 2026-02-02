@@ -1,5 +1,5 @@
 gid: type._editables.*.remove_custom_markup
-url: /types/_editables/*/remove_custom_markup/
+url: /configuration-file/types/_editables/*/remove_custom_markup/
 title: ''
 description: >-
   This key toggles whether CloudCannon will allow you to strip custom markup

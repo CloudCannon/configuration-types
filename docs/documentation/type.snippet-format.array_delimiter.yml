@@ -1,5 +1,5 @@
 gid: type.snippet-format.array_delimiter
-url: /types/snippet-format/array_delimiter/
+url: /configuration-file/types/snippet-format/array_delimiter/
 title: ''
 description: >-
   This key defines the delimiter that separates each value from the next within

@@ -1,5 +1,5 @@
 gid: type.preview-entry.(template).template
-url: /types/preview-entry/(template)/template/
+url: /configuration-file/types/preview-entry/(template)/template/
 title: ''
 description: >-
   This key defines the template string to use in a template preview entry.

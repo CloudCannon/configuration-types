@@ -1,5 +1,5 @@
 gid: type.structure.values.[*].value
-url: /types/structure/values/[*]/value/
+url: /configuration-file/types/structure/values/[*]/value/
 title: ''
 description: >-
   This key defines which nested inputs the Structure value should add to an

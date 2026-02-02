@@ -1,5 +1,5 @@
 gid: type._inputs.*.(object-input).options.entries.structures
-url: /types/_inputs/*/(object-input)/options/entries/structures/
+url: /configuration-file/types/_inputs/*/(object-input)/options/entries/structures/
 title: ''
 description: >-
   This key defines which predefined templates to use for populating entries

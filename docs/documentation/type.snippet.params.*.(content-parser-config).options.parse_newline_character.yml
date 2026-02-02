@@ -1,6 +1,6 @@
 gid: type.snippet.params.*.(content-parser-config).options.parse_newline_character
 url: >-
-  /types/snippet/params/*/(content-parser-config)/options/parse_newline_character/
+  /configuration-file/types/snippet/params/*/(content-parser-config)/options/parse_newline_character/
 title: ''
 description: >-
   This key toggles whether the parser treats `\n` as line breaks instead of

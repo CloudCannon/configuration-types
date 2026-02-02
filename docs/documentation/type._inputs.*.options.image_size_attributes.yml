@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.image_size_attributes
-url: /types/_inputs/*/options/image_size_attributes/
+url: /configuration-file/types/_inputs/*/options/image_size_attributes/
 title: ''
 description: >-
   This key toggles whether CloudCannon will instruct a rich text editor to save

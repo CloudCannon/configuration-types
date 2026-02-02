@@ -1,5 +1,5 @@
 gid: type.preview.metadata.[*]
-url: /types/preview/metadata/[*]/
+url: /configuration-file/types/preview/metadata/[*]/
 title: ''
 description: >-
   This key represents an individual metadata entry object in the

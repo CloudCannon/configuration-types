@@ -1,0 +1,6 @@
+gid: build
+url: /initial-site-settings-file/build/
+title: ''
+description: Build configuration. Ignored when `mode` is `headless`.
+examples: []
+show_in_navigation: false

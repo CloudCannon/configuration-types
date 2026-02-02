@@ -1,5 +1,5 @@
 gid: type.preview-entry.(raw-text)
-url: /types/preview-entry/(raw-text)/
+url: /configuration-file/types/preview-entry/(raw-text)/
 title: Raw Text Preview Entry
 description: >-
   This key represents a raw text preview entry type for displaying static text

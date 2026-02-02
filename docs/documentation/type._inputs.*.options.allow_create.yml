@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.allow_create
-url: /types/_inputs/*/options/allow_create/
+url: /configuration-file/types/_inputs/*/options/allow_create/
 title: ''
 description: >-
   This key toggles whether CloudCannon will allow new text values to be created

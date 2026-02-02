@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.sizes
-url: /types/_inputs/*/options/sizes/
+url: /configuration-file/types/_inputs/*/options/sizes/
 title: ''
 description: >-
   This key defines definitions for creating additional images of different sizes

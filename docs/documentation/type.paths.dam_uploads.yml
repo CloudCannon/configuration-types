@@ -1,5 +1,5 @@
 gid: type.paths.dam_uploads
-url: /types/paths/dam_uploads/
+url: /configuration-file/types/paths/dam_uploads/
 title: ''
 description: >-
   This key defines the path for the default location of newly uploaded

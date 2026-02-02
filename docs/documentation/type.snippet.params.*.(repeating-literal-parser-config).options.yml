@@ -1,5 +1,6 @@
 gid: type.snippet.params.*.(repeating-literal-parser-config).options
-url: /types/snippet/params/*/(repeating-literal-parser-config)/options/
+url: >-
+  /configuration-file/types/snippet/params/*/(repeating-literal-parser-config)/options/
 title: ''
 description: >-
   This key defines configuration options for repeating literal parser

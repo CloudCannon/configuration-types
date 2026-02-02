@@ -1,5 +1,5 @@
 gid: type._inputs.*.(multiselect-input).type
-url: /types/_inputs/*/(multiselect-input)/type/
+url: /configuration-file/types/_inputs/*/(multiselect-input)/type/
 title: ''
 description: >-
   This key defines the input type, which controls how this input appears and

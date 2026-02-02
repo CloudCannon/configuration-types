@@ -1,5 +1,5 @@
 gid: collection_groups.[*].heading
-url: /collection_groups/[*]/heading/
+url: /configuration-file/collection_groups/[*]/heading/
 title: ''
 description: >-
   This key defines a short, descriptive label for a group of Collections

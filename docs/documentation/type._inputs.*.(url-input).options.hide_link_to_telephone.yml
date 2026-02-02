@@ -1,5 +1,6 @@
 gid: type._inputs.*.(url-input).options.hide_link_to_telephone
-url: /types/_inputs/*/(url-input)/options/hide_link_to_telephone/
+url: >-
+  /configuration-file/types/_inputs/*/(url-input)/options/hide_link_to_telephone/
 title: ''
 description: >-
   This key toggles whether CloudCannon will hide the option to link to a

@@ -1,5 +1,5 @@
 gid: type._inputs.*.(date-input).options.start_from_message
-url: /types/_inputs/*/(date-input)/options/start_from_message/
+url: /configuration-file/types/_inputs/*/(date-input)/options/start_from_message/
 title: ''
 description: >-
   This key defines a custom error message that explains why a value has failed

@@ -1,5 +1,5 @@
 gid: type._editables_from_glob
-url: /types/_editables_from_glob/
+url: /configuration-file/types/_editables_from_glob/
 title: ''
 description: >-
   This key defines globs that filter which files CloudCannon should use for

@@ -1,5 +1,5 @@
 gid: collections_config.*.sort_options.[*].label
-url: /collections_config/*/sort_options/[*]/label/
+url: /configuration-file/collections_config/*/sort_options/[*]/label/
 title: ''
 description: >-
   This key defines the label used for a file sorting option in the *Sort*

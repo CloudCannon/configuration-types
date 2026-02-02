@@ -1,5 +1,5 @@
 gid: type._editables.*.blockquote
-url: /types/_editables/*/blockquote/
+url: /configuration-file/types/_editables/*/blockquote/
 title: ''
 description: >-
   This key toggles whether CloudCannon will display a tool in your WYSIWYG

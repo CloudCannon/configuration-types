@@ -1,5 +1,5 @@
 gid: commit_templates.[*].template_path
-url: /commit_templates/[*]/template_path/
+url: /configuration-file/commit_templates/[*]/template_path/
 title: ''
 description: >-
   This key defines the path to a file containing your commit template.

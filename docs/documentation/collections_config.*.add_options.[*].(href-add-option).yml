@@ -1,5 +1,5 @@
 gid: collections_config.*.add_options.[*].(href-add-option)
-url: /collections_config/*/add_options/[*]/(href-add-option)/
+url: /configuration-file/collections_config/*/add_options/[*]/(href-add-option)/
 title: HREF Add Option
 description: >-
   This key represents the URL add option object in a

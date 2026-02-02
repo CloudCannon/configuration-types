@@ -1,5 +1,5 @@
 gid: type.structure.values.[*].groups
-url: /types/structure/values/[*]/groups/
+url: /configuration-file/types/structure/values/[*]/groups/
 title: ''
 description: >-
   This key defines the order and custom grouping for inputs within a Structure.

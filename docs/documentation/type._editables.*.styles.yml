@@ -1,5 +1,5 @@
 gid: type._editables.*.styles
-url: /types/_editables/*/styles/
+url: /configuration-file/types/_editables/*/styles/
 title: ''
 description: >-
   This key toggles whether CloudCannon will display a dropdown menu in your

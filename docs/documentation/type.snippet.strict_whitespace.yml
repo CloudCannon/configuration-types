@@ -1,5 +1,5 @@
 gid: type.snippet.strict_whitespace
-url: /types/snippet/strict_whitespace/
+url: /configuration-file/types/snippet/strict_whitespace/
 title: ''
 description: |-
   This key toggles whether this snippet treats whitespace as-is or not.

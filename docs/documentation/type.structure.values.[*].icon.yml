@@ -1,5 +1,5 @@
 gid: type.structure.values.[*].icon
-url: /types/structure/values/[*]/icon/
+url: /configuration-file/types/structure/values/[*]/icon/
 title: ''
 description: >-
   This key defines an icon used when displaying the structure (defaults to

@@ -1,5 +1,5 @@
 gid: type._inputs.*.(boolean-input)
-url: /types/_inputs/*/(boolean-input)/
+url: /configuration-file/types/_inputs/*/(boolean-input)/
 title: Boolean Input
 description: This key defines an editing interface for true or false values.
 examples:

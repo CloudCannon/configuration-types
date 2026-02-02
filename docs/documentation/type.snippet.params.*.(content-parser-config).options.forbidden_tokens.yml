@@ -1,5 +1,6 @@
 gid: type.snippet.params.*.(content-parser-config).options.forbidden_tokens
-url: /types/snippet/params/*/(content-parser-config)/options/forbidden_tokens/
+url: >-
+  /configuration-file/types/snippet/params/*/(content-parser-config)/options/forbidden_tokens/
 title: ''
 description: >-
   This key defines tokens that stop parsing content when encountered in content

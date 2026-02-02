@@ -1,5 +1,5 @@
 gid: collection_groups.[*]
-url: /collection_groups/[*]/
+url: /configuration-file/collection_groups/[*]/
 title: ''
 description: >-
   This key represents an individual group entry in the `collection_groups`

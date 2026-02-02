@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.pattern
-url: /types/_inputs/*/options/pattern/
+url: /configuration-file/types/_inputs/*/options/pattern/
 title: ''
 description: >-
   This key defines a [regular expression](https://re2js.leopard.in.ua/) that the

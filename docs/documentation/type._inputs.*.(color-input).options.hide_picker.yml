@@ -1,5 +1,5 @@
 gid: type._inputs.*.(color-input).options.hide_picker
-url: /types/_inputs/*/(color-input)/options/hide_picker/
+url: /configuration-file/types/_inputs/*/(color-input)/options/hide_picker/
 title: ''
 description: >-
   This key toggles whether CloudCannon hides the color picker UI in *Color

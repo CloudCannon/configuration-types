@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.min_length
-url: /types/_inputs/*/options/min_length/
+url: /configuration-file/types/_inputs/*/options/min_length/
 title: ''
 description: >-
   This key defines the minimum string length, in characters, that CloudCannon

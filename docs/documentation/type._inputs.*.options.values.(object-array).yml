@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.values.(object-array)
-url: /types/_inputs/*/options/values/(object-array)/
+url: /configuration-file/types/_inputs/*/options/values/(object-array)/
 title: Object Array Values
 description: >-
   This key represents an individual object in the `options.values` array for

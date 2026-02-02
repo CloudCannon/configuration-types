@@ -1,5 +1,5 @@
 gid: type._inputs.*.comment
-url: /types/_inputs/*/comment/
+url: /configuration-file/types/_inputs/*/comment/
 title: ''
 description: >-
   This key defines the subtitle text above an Input.

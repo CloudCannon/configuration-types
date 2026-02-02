@@ -1,5 +1,5 @@
 gid: type._inputs.*.(date-input).options.start_from
-url: /types/_inputs/*/(date-input)/options/start_from/
+url: /configuration-file/types/_inputs/*/(date-input)/options/start_from/
 title: ''
 description: >-
   This key defines the earliest date and time, inclusive, that CloudCannon will

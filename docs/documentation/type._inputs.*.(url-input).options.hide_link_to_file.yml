@@ -1,5 +1,5 @@
 gid: type._inputs.*.(url-input).options.hide_link_to_file
-url: /types/_inputs/*/(url-input)/options/hide_link_to_file/
+url: /configuration-file/types/_inputs/*/(url-input)/options/hide_link_to_file/
 title: ''
 description: >-
   This key toggles whether CloudCannon will hide the options to link to an

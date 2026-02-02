@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.values.(text-array)
-url: /types/_inputs/*/options/values/(text-array)/
+url: /configuration-file/types/_inputs/*/options/values/(text-array)/
 title: Text Array Values
 description: >-
   This key represents an individual text string in the `options.values` array

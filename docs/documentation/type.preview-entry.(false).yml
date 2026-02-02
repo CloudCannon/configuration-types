@@ -1,5 +1,5 @@
 gid: type.preview-entry.(false)
-url: /types/preview-entry/(false)/
+url: /configuration-file/types/preview-entry/(false)/
 title: False Preview Entry
 description: >-
   This key represents a preview entry that disables the preview display for a

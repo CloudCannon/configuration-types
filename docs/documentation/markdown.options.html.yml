@@ -1,5 +1,5 @@
 gid: markdown.options.html
-url: /markdown/options/html/
+url: /configuration-file/markdown/options/html/
 title: ''
 description: >-
   This key toggles whether CloudCannon will output HTML tags from source when

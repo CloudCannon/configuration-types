@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.allow_empty
-url: /types/_inputs/*/options/allow_empty/
+url: /configuration-file/types/_inputs/*/options/allow_empty/
 title: ''
 description: >-
   **⚠️ DEPRECATED:** This key is deprecated. If you want to prevent empty

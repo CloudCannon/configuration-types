@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.pattern_flags.ignore_case
-url: /types/_inputs/*/options/pattern_flags/ignore_case/
+url: /configuration-file/types/_inputs/*/options/pattern_flags/ignore_case/
 title: ''
 description: This key defines the `i` flag - Case-insensitive.
 examples: []

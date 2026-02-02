@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.sizes.[*]
-url: /types/_inputs/*/options/sizes/[*]/
+url: /configuration-file/types/_inputs/*/options/sizes/[*]/
 title: ''
 description: >-
   This key represents an individual size definition in the `options.sizes` array

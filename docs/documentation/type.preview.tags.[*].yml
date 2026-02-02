@@ -1,5 +1,5 @@
 gid: type.preview.tags.[*]
-url: /types/preview/tags/[*]/
+url: /configuration-file/types/preview/tags/[*]/
 title: ''
 description: >-
   This key represents an individual tag string in the `preview.tags` array.

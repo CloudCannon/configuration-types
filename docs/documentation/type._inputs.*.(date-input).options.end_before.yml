@@ -1,5 +1,5 @@
 gid: type._inputs.*.(date-input).options.end_before
-url: /types/_inputs/*/(date-input)/options/end_before/
+url: /configuration-file/types/_inputs/*/(date-input)/options/end_before/
 title: ''
 description: >-
   This key defines the date and time, exclusive, that CloudCannon will allow in

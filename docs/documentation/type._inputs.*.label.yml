@@ -1,5 +1,5 @@
 gid: type._inputs.*.label
-url: /types/_inputs/*/label/
+url: /configuration-file/types/_inputs/*/label/
 title: ''
 description: This key defines the bold title text above an Input.
 examples:

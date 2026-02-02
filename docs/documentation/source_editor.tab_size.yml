@@ -1,5 +1,5 @@
 gid: source_editor.tab_size
-url: /source_editor/tab_size/
+url: /configuration-file/source_editor/tab_size/
 title: ''
 description: >-
   This key defines the auto-indentation of each line and how many spaces a tab

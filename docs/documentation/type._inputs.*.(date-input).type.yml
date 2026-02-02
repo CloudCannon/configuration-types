@@ -1,5 +1,5 @@
 gid: type._inputs.*.(date-input).type
-url: /types/_inputs/*/(date-input)/type/
+url: /configuration-file/types/_inputs/*/(date-input)/type/
 title: ''
 description: >-
   This key defines the input type, which controls how this input appears and

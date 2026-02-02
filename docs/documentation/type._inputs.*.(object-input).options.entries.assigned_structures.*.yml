@@ -1,5 +1,6 @@
 gid: type._inputs.*.(object-input).options.entries.assigned_structures.*
-url: /types/_inputs/*/(object-input)/options/entries/assigned_structures/*/
+url: >-
+  /configuration-file/types/_inputs/*/(object-input)/options/entries/assigned_structures/*/
 title: ''
 description: >-
   This key represents the assigned structures for a specific allowed key name in

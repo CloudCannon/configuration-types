@@ -1,5 +1,5 @@
 gid: source_editor.soft_wrap
-url: /source_editor/soft_wrap/
+url: /configuration-file/source_editor/soft_wrap/
 title: ''
 description: >-
   This key toggles whether CloudCannon will enable soft wrapping of code in the

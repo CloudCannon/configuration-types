@@ -1,5 +1,5 @@
 gid: commit_templates.[*].template_string
-url: /commit_templates/[*]/template_string/
+url: /configuration-file/commit_templates/[*]/template_string/
 title: ''
 description: >-
   This key defines the template string for the commit message.

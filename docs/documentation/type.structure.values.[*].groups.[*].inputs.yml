@@ -1,5 +1,5 @@
 gid: type.structure.values.[*].groups.[*].inputs
-url: /types/structure/values/[*]/groups/[*]/inputs/
+url: /configuration-file/types/structure/values/[*]/groups/[*]/inputs/
 title: ''
 description: >-
   This key defines which inputs are included in a group within a structure

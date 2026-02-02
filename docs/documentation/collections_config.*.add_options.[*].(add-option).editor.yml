@@ -1,5 +1,5 @@
 gid: collections_config.*.add_options.[*].(add-option).editor
-url: /collections_config/*/add_options/[*]/(add-option)/editor/
+url: /configuration-file/collections_config/*/add_options/[*]/(add-option)/editor/
 title: ''
 description: >-
   This key defines which editing interface CloudCannon will use when you select

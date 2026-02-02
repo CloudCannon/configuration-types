@@ -1,5 +1,6 @@
 gid: collections_config.*.add_options.[*].(add-option).default_content_file
-url: /collections_config/*/add_options/[*]/(add-option)/default_content_file/
+url: >-
+  /configuration-file/collections_config/*/add_options/[*]/(add-option)/default_content_file/
 title: ''
 description: >-
   This key defines which file CloudCannon should use to populate a file created

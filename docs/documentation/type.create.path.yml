@@ -1,5 +1,5 @@
 gid: type.create.path
-url: /types/create/path/
+url: /configuration-file/types/create/path/
 title: ''
 description: >-
   This key defines the raw template to be processed when creating files.

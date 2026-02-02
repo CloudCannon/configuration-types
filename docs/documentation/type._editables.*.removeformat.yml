@@ -1,5 +1,5 @@
 gid: type._editables.*.removeformat
-url: /types/_editables/*/removeformat/
+url: /configuration-file/types/_editables/*/removeformat/
 title: ''
 description: >-
   This key toggles whether CloudCannon will display a tool in your WYSIWYG

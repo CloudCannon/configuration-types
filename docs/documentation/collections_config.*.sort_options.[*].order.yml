@@ -1,5 +1,5 @@
 gid: collections_config.*.sort_options.[*].order
-url: /collections_config/*/sort_options/[*]/order/
+url: /configuration-file/collections_config/*/sort_options/[*]/order/
 title: ''
 description: >-
   This key defines which order an option in the *Sort* dropdown should use to

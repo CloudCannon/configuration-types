@@ -1,0 +1,6 @@
+gid: ssg
+url: /initial-site-settings-file/ssg/
+title: ''
+description: The Static Site Generator used by this site.
+examples: []
+show_in_navigation: false

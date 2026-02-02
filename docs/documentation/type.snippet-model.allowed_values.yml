@@ -1,5 +1,5 @@
 gid: type.snippet-model.allowed_values
-url: /types/snippet-model/allowed_values/
+url: /configuration-file/types/snippet-model/allowed_values/
 title: ''
 description: >-
   This key defines a list of valid values for the parser.

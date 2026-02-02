@@ -1,5 +1,6 @@
 gid: type.snippet.params.*.(optional-parser-config).options.snippet
-url: /types/snippet/params/*/(optional-parser-config)/options/snippet/
+url: >-
+  /configuration-file/types/snippet/params/*/(optional-parser-config)/options/snippet/
 title: ''
 description: >-
   This key defines a snippet string to wrap and make repeatable.

@@ -1,5 +1,5 @@
 gid: type._inputs.*.(choice-input).options
-url: /types/_inputs/*/(choice-input)/options/
+url: /configuration-file/types/_inputs/*/(choice-input)/options/
 title: ''
 description: This key defines options that are specific to Choice Inputs.
 examples:

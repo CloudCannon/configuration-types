@@ -1,5 +1,5 @@
 gid: type._inputs.*.(multichoice-input).options
-url: /types/_inputs/*/(multichoice-input)/options/
+url: /configuration-file/types/_inputs/*/(multichoice-input)/options/
 title: ''
 description: This key defines options that are specific to Multichoice Inputs.
 examples:

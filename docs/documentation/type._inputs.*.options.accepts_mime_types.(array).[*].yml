@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.accepts_mime_types.(array).[*]
-url: /types/_inputs/*/options/accepts_mime_types/(array)/[*]/
+url: /configuration-file/types/_inputs/*/options/accepts_mime_types/(array)/[*]/
 title: ''
 description: >-
   This key represents an array format for the `accepts_mime_types` key that

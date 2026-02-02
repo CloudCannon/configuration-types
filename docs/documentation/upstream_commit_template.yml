@@ -1,5 +1,5 @@
 gid: upstream_commit_template
-url: /upstream_commit_template/
+url: /configuration-file/upstream_commit_template/
 title: ''
 description: >-
   This key defines the commit template to use when pulling changes from the

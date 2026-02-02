@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.pattern_flags
-url: /types/_inputs/*/options/pattern_flags/
+url: /configuration-file/types/_inputs/*/options/pattern_flags/
 title: ''
 description: >-
   This key defines the flags (e.g. case-insensitive searching) for the regular

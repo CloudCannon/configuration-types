@@ -1,5 +1,6 @@
 gid: type.snippet.params.*.(repeating-parser-config).options.editor_key
-url: /types/snippet/params/*/(repeating-parser-config)/options/editor_key/
+url: >-
+  /configuration-file/types/snippet/params/*/(repeating-parser-config)/options/editor_key/
 title: ''
 description: >-
   This key defines the editor key for repeating parser configurations.

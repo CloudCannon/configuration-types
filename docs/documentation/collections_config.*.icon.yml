@@ -1,5 +1,5 @@
 gid: collections_config.*.icon
-url: /collections_config/*/icon/
+url: /configuration-file/collections_config/*/icon/
 title: ''
 description: >-
   This key defines the icon for a Collection.

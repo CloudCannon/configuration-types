@@ -1,5 +1,5 @@
 gid: markdown.options
-url: /markdown/options/
+url: /configuration-file/markdown/options/
 title: ''
 description: >-
   This key defines configuration options for the Markdown processing engine.

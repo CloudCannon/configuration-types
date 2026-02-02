@@ -1,5 +1,5 @@
 gid: type.preview-entry.(array)
-url: /types/preview-entry/(array)/
+url: /configuration-file/types/preview-entry/(array)/
 title: Array Preview Entry
 description: >-
   This key represents an array of preview entries for displaying data on *Cards*

@@ -1,5 +1,5 @@
 gid: type.paths.uploads_filename
-url: /types/paths/uploads_filename/
+url: /configuration-file/types/paths/uploads_filename/
 title: ''
 description: This key defines the path for the name of the uploaded file.
 examples:

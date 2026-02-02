@@ -1,5 +1,5 @@
 gid: type.paths.static
-url: /types/paths/static/
+url: /configuration-file/types/paths/static/
 title: ''
 description: This key defines the path for the location of statically copied assets.
 examples:

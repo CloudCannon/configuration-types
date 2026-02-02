@@ -1,5 +1,5 @@
 gid: type.snippet-model
-url: /types/snippet-model/
+url: /configuration-file/types/snippet-model/
 title: Snippet Model
 description: This key defines the parsing configuration for this argument.
 examples: []

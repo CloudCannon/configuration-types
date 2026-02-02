@@ -1,5 +1,5 @@
 gid: commit_templates.[*]
-url: /commit_templates/[*]/
+url: /configuration-file/commit_templates/[*]/
 title: ''
 description: >-
   This key represents an individual commit template object in the

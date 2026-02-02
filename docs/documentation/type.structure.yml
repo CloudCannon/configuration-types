@@ -1,5 +1,5 @@
 gid: type.structure
-url: /types/structure/
+url: /configuration-file/types/structure/
 title: Structure
 description: >-
   This key defines data formats when adding new items to arrays and objects,

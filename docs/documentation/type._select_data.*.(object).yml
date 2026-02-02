@@ -1,5 +1,5 @@
 gid: type._select_data.*.(object)
-url: /types/_select_data/*/(object)/
+url: /configuration-file/types/_select_data/*/(object)/
 title: Object Select Data
 description: ''
 examples: []

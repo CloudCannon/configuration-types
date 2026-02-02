@@ -1,5 +1,5 @@
 gid: type._inputs.*.(choice-input)
-url: /types/_inputs/*/(choice-input)/
+url: /configuration-file/types/_inputs/*/(choice-input)/
 title: Choice Input
 description: >-
   This key defines an editing interface for data with multiple predefined

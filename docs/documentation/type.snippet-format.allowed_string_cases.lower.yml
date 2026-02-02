@@ -1,5 +1,5 @@
 gid: type.snippet-format.allowed_string_cases.lower
-url: /types/snippet-format/allowed_string_cases/lower/
+url: /configuration-file/types/snippet-format/allowed_string_cases/lower/
 title: ''
 description: >-
   This key toggles whether CloudCannon will allow only lowercase strings when

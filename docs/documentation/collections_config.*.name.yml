@@ -1,5 +1,5 @@
 gid: collections_config.*.name
-url: /collections_config/*/name/
+url: /configuration-file/collections_config/*/name/
 title: ''
 description: >-
   This key defines the display name for a Collection.

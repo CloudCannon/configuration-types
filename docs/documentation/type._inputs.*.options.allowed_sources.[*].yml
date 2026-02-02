@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.allowed_sources.[*]
-url: /types/_inputs/*/options/allowed_sources/[*]/
+url: /configuration-file/types/_inputs/*/options/allowed_sources/[*]/
 title: ''
 description: >-
   This key defines which sources and DAMs you are allowed to upload to and

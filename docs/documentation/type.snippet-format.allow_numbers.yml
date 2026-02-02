@@ -1,5 +1,5 @@
 gid: type.snippet-format.allow_numbers
-url: /types/snippet-format/allow_numbers/
+url: /configuration-file/types/snippet-format/allow_numbers/
 title: ''
 description: >-
   This key toggles whether CloudCannon will allow unquoted numbers like `5` and

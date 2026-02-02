@@ -1,5 +1,6 @@
 gid: type.snippet.params.*.(key-value-list-parser-config).options.models
-url: /types/snippet/params/*/(key-value-list-parser-config)/options/models/
+url: >-
+  /configuration-file/types/snippet/params/*/(key-value-list-parser-config)/options/models/
 title: ''
 description: >-
   This key defines the models for each key in key-value list parser
