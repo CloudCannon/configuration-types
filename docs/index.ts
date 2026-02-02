@@ -78,10 +78,7 @@ function flattenNestedAnyOf(doc: JsonSchema, schema: JsonSchema): void {
 	}
 }
 
-function getDocumentationEntry(
-	gid: string,
-	ctx: ProcessContext
-): DocumentationEntry | undefined {
+function getDocumentationEntry(gid: string, ctx: ProcessContext): DocumentationEntry | undefined {
 	ctx.attemptedGids.add(gid);
 	return ctx.documentationEntries[gid];
 }
@@ -117,9 +114,9 @@ function docToPage(
 	if (isRootType) {
 		thisPath = [];
 		gid = config.rootTypeId;
-	} else if (isTypeRef) {
-		thisPath = [doc.id!];
-		gid = doc.id!;
+	} else if (isTypeRef && doc.id) {
+		thisPath = [doc.id];
+		gid = doc.id;
 	} else if (key) {
 		thisPath = [...docPath, key];
 		gid = thisPath.join('.');
@@ -157,10 +154,10 @@ function docToPage(
 	if (!thisPath.length) {
 		url = config.urlPrefix;
 	} else {
-		url = `${config.urlPrefix}${thisPath.join('/').replace(/^type\./, 'types/').replaceAll('.', '/')}/`.replace(
-			/\/+/g,
-			'/'
-		);
+		url = `${config.urlPrefix}${thisPath
+			.join('/')
+			.replace(/^type\./, 'types/')
+			.replaceAll('.', '/')}/`.replace(/\/+/g, '/');
 	}
 
 	const page: Page = {

@@ -196,6 +196,8 @@ const schemas = [
 		convertSchemaAnys: true,
 		addMarkdownDescription: true,
 		stripId: true,
+		redocument: true,
+		docsFolder: 'docs/routing',
 	},
 	{
 		schema: InitialSiteSettingsSchema.meta({
@@ -213,6 +215,8 @@ const schemas = [
 		convertSchemaAnys: true,
 		addMarkdownDescription: true,
 		stripId: true,
+		redocument: true,
+		docsFolder: 'docs/initial-site-settings',
 	},
 ];
 
@@ -258,7 +262,9 @@ for (const schemaConfig of schemas) {
 	await fs.writeFile(fullSchemaPath, JSON.stringify(jsonSchema, null, '  '));
 
 	if (schemaConfig.redocument) {
-		await redocumentSchema(fullSchemaPath, {
+		const docsFolder =
+			'docsFolder' in schemaConfig ? schemaConfig.docsFolder : 'docs/documentation';
+		await redocumentSchema(fullSchemaPath, docsFolder, {
 			stripId: schemaConfig.stripId,
 			addMarkdownDescription: schemaConfig.addMarkdownDescription,
 		});

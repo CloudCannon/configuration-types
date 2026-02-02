@@ -1,11 +1,11 @@
-import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { RenderPlugin } from '@11ty/eleventy';
+import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
 import documentation from '../dist/documentation.json' with { type: 'json' };
 
 export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(syntaxHighlight);
 	eleventyConfig.addPlugin(RenderPlugin);
-	eleventyConfig.addGlobalData('docs', Object.values(documentation["type.Configuration"]));
+	eleventyConfig.addGlobalData('docs', Object.values(documentation['type.Configuration']));
 
 	eleventyConfig.addFilter('json', (json) => {
 		if (typeof json === 'object') {

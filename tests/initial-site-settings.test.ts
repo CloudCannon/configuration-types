@@ -1,8 +1,8 @@
 import assert from 'node:assert';
 import { test } from 'node:test';
 import {
-	InitialSiteSettingsSchema,
 	BuildConfigSchema,
+	InitialSiteSettingsSchema,
 	SiteModeSchema,
 } from '../src/initial-site-settings.ts';
 

@@ -12,10 +12,13 @@ const RouteStatusCodes = {
 	Gone: 410,
 } as const;
 
-export const RouteStatusSchema = z.enum(RouteStatusCodes).default(RouteStatusCodes.MovedPermanently).meta({
-	description:
-		'The HTTP status code for this redirect rule. When using 200, 404, and 410 status codes, `to` must refer to a path on the same Site.',
-});
+export const RouteStatusSchema = z
+	.enum(RouteStatusCodes)
+	.default(RouteStatusCodes.MovedPermanently)
+	.meta({
+		description:
+			'The HTTP status code for this redirect rule. When using 200, 404, and 410 status codes, `to` must refer to a path on the same Site.',
+	});
 
 export const RouteSchema = z
 	.object({

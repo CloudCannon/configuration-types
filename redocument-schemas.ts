@@ -2,14 +2,13 @@ import fs from 'node:fs/promises';
 import { readDocs } from './docs/docs.js';
 import { type DocumentationEntry, type JsonSchema, slugify } from './docs/util.js';
 
-const documentationEntries: Record<string, DocumentationEntry> = await readDocs(
-	'docs/documentation'
-);
-
 export async function redocumentSchema(
 	fullSchemaPath: string,
+	folder: string,
 	options?: { stripId?: boolean; addMarkdownDescription?: boolean }
 ): Promise<void> {
+	const documentationEntries: Record<string, DocumentationEntry> = await readDocs(folder);
+
 	const schemaRaw: string = await fs.readFile(fullSchemaPath, { encoding: 'utf8' });
 	const schema: JsonSchema = JSON.parse(schemaRaw);
 
