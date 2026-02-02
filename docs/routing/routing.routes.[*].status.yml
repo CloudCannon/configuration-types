@@ -1,5 +1,5 @@
 gid: routing.routes.[*].status
-url: /routes/[*]/status/
+url: /routing-file/routes/[*]/status/
 title: ''
 description: >-
   The HTTP status code for this redirect rule. When using 200, 404, and 410

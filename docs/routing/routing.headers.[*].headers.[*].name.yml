@@ -1,5 +1,5 @@
 gid: routing.headers.[*].headers.[*].name
-url: /headers/[*]/headers/[*]/name/
+url: /routing-file/headers/[*]/headers/[*]/name/
 title: ''
 description: The name of the HTTP header to set.
 examples: []

@@ -181,29 +181,35 @@ const schemas = [
 		redocument: true,
 	},
 	{
-		schema: RoutingSchema,
+		schema: RoutingSchema.meta({
+			id: 'type.Routing',
+		}),
 		keepDocumentationType: true,
 		target: 'draft-2020-12' as const,
 		filename: 'cloudcannon-routing.documentation.schema.json',
 	},
 	{
-		schema: RoutingSchema,
+		schema: RoutingSchema.meta({
+			$id: 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-routing.schema.json',
+		}),
 		filename: 'cloudcannon-routing.schema.json',
-		$id: 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-routing.schema.json',
 		convertSchemaAnys: true,
 		addMarkdownDescription: true,
 		stripId: true,
 	},
 	{
-		schema: InitialSiteSettingsSchema,
+		schema: InitialSiteSettingsSchema.meta({
+			id: 'type.InitialSiteSettings',
+		}),
 		keepDocumentationType: true,
 		target: 'draft-2020-12' as const,
 		filename: 'cloudcannon-initial-site-settings.documentation.schema.json',
 	},
 	{
-		schema: InitialSiteSettingsSchema,
+		schema: InitialSiteSettingsSchema.meta({
+			$id: 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-initial-site-settings.schema.json',
+		}),
 		filename: 'cloudcannon-initial-site-settings.schema.json',
-		$id: 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-initial-site-settings.schema.json',
 		convertSchemaAnys: true,
 		addMarkdownDescription: true,
 		stripId: true,

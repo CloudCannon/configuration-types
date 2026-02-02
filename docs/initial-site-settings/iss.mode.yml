@@ -1,5 +1,5 @@
 gid: iss.mode
-url: /mode/
+url: /initial-site-settings-file/mode/
 title: ''
 description: >-
   The mode for this site. `hosted` sites are built and hosted by CloudCannon.

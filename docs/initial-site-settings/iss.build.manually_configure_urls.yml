@@ -1,5 +1,5 @@
 gid: iss.build.manually_configure_urls
-url: /build/manually_configure_urls/
+url: /initial-site-settings-file/build/manually_configure_urls/
 title: ''
 description: Disable automatic URL configuration for the SSG.
 examples: []

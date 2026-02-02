@@ -1,5 +1,5 @@
 gid: routing.routes.[*]
-url: /routes/[*]/
+url: /routing-file/routes/[*]/
 title: ''
 description: A single route rule for redirects or rewrites.
 examples: []

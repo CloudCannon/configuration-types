@@ -1,5 +1,5 @@
 gid: iss.build.node_version
-url: /build/node_version/
+url: /initial-site-settings-file/build/node_version/
 title: ''
 description: Node.js version to use for the build.
 examples: []

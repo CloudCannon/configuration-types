@@ -1,5 +1,5 @@
 gid: iss.build.environment_variables.[*].value
-url: /build/environment_variables/[*]/value/
+url: /initial-site-settings-file/build/environment_variables/[*]/value/
 title: ''
 description: The value of the environment variable.
 examples: []

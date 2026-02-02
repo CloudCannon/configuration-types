@@ -1,5 +1,5 @@
 gid: iss.build.install_command
-url: /build/install_command/
+url: /initial-site-settings-file/build/install_command/
 title: ''
 description: Command to install dependencies before building.
 examples: []

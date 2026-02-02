@@ -1,5 +1,5 @@
 gid: routing.routes.[*].from
-url: /routes/[*]/from/
+url: /routing-file/routes/[*]/from/
 title: ''
 description: >-
   The URL pattern to match incoming requests against. CloudCannon routing

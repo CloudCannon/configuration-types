@@ -1,5 +1,5 @@
 gid: routing.headers.[*].headers
-url: /headers/[*]/headers/
+url: /routing-file/headers/[*]/headers/
 title: ''
 description: The list of HTTP headers to set for matching requests.
 examples: []

@@ -1,5 +1,5 @@
 gid: routing.routes
-url: /routes/
+url: /routing-file/routes/
 title: ''
 description: >-
   An array of route rules for redirects and rewrites. Rules are processed in

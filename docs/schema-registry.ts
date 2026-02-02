@@ -9,6 +9,8 @@ export interface DocSchemaConfig {
 	gidPrefix: string;
 	/** Root type identifier (e.g., 'type.Configuration') */
 	rootTypeId: string;
+	/** URL prefix for this schema's pages (e.g., '/routing-file/') */
+	urlPrefix: string;
 }
 
 export const docSchemas: DocSchemaConfig[] = [
@@ -18,6 +20,7 @@ export const docSchemas: DocSchemaConfig[] = [
 		docsFolder: 'docs/documentation',
 		gidPrefix: '',
 		rootTypeId: 'type.Configuration',
+		urlPrefix: '/',
 	},
 	{
 		name: 'Routing',
@@ -25,6 +28,7 @@ export const docSchemas: DocSchemaConfig[] = [
 		docsFolder: 'docs/routing',
 		gidPrefix: 'routing',
 		rootTypeId: 'type.Routing',
+		urlPrefix: '/routing-file/',
 	},
 	{
 		name: 'Initial Site Settings',
@@ -32,5 +36,6 @@ export const docSchemas: DocSchemaConfig[] = [
 		docsFolder: 'docs/initial-site-settings',
 		gidPrefix: 'iss',
 		rootTypeId: 'type.InitialSiteSettings',
+		urlPrefix: '/initial-site-settings-file/',
 	},
 ];

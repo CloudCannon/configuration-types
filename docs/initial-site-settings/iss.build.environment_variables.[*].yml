@@ -1,5 +1,5 @@
 gid: iss.build.environment_variables.[*]
-url: /build/environment_variables/[*]/
+url: /initial-site-settings-file/build/environment_variables/[*]/
 title: ''
 description: A single environment variable as a key-value pair.
 examples: []

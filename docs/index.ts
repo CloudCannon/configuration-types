@@ -160,9 +160,9 @@ function docToPage(
 
 	let url: string;
 	if (!thisPath.length) {
-		url = '/';
+		url = config.urlPrefix;
 	} else {
-		url = `/${thisPath.join('/').replace(/^type\./, 'types/').replaceAll('.', '/')}/`.replace(
+		url = `${config.urlPrefix}${thisPath.join('/').replace(/^type\./, 'types/').replaceAll('.', '/')}/`.replace(
 			/\/+/g,
 			'/'
 		);

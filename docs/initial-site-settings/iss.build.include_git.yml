@@ -1,5 +1,5 @@
 gid: iss.build.include_git
-url: /build/include_git/
+url: /initial-site-settings-file/build/include_git/
 title: ''
 description: Include the .git folder in the build environment.
 examples: []
