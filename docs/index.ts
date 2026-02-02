@@ -383,11 +383,11 @@ async function processSchema(config: DocSchemaConfig): Promise<{
 	};
 }
 
-const allPages: Record<string, Page> = {};
+const allPages: Record<string, Record<string, Page>> = {};
 
 for (const config of docSchemas) {
 	const result = await processSchema(config);
-	Object.assign(allPages, result.pages);
+	allPages[config.rootTypeId] = result.pages;
 }
 
 console.log('\n📝 Write to dist/documentation.json');
