@@ -1,0 +1,8 @@
+gid: headers.[*].match
+url: /headers/[*]/match/
+title: ''
+description: >-
+  URL pattern to match. Supports plain text or REGEX (re2 syntax). Must start
+  with `/`.
+examples: []
+show_in_navigation: false

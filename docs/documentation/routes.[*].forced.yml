@@ -1,0 +1,8 @@
+gid: routes.[*].forced
+url: /routes/[*]/forced/
+title: ''
+description: >-
+  Whether the redirect takes priority even if the web server finds content at
+  the requested URL. Set to `false` to only redirect when no content exists.
+examples: []
+show_in_navigation: false

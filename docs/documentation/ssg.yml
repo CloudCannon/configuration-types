@@ -1,0 +1,6 @@
+gid: ssg
+url: /ssg/
+title: ''
+description: The Static Site Generator for build suggestions. Use `other` for custom SSGs.
+examples: []
+show_in_navigation: false

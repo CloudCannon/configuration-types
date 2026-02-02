@@ -1,0 +1,8 @@
+gid: routes.[*].from
+url: /routes/[*]/from/
+title: ''
+description: >-
+  Defines which URL should trigger this redirect rule. Supports plain text or
+  REGEX (re2 syntax). URLs must start with `/`.
+examples: []
+show_in_navigation: false

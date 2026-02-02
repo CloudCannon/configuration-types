@@ -1,0 +1,6 @@
+gid: headers.[*].headers
+url: /headers/[*]/headers/
+title: ''
+description: Headers to apply to matching URLs.
+examples: []
+show_in_navigation: false

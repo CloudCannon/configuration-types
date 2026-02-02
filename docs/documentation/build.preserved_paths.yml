@@ -1,0 +1,6 @@
+gid: build.preserved_paths
+url: /build/preserved_paths/
+title: ''
+description: Comma-separated path prefixes to cache between builds.
+examples: []
+show_in_navigation: false

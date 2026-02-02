@@ -1,0 +1,6 @@
+gid: build.environment_variables.[*]
+url: /build/environment_variables/[*]/
+title: ''
+description: A key-value pair for build environment variables.
+examples: []
+show_in_navigation: false

@@ -1,0 +1,6 @@
+gid: build.deno_version
+url: /build/deno_version/
+title: ''
+description: Deno version for the build environment.
+examples: []
+show_in_navigation: false

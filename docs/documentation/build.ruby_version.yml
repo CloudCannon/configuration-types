@@ -1,0 +1,6 @@
+gid: build.ruby_version
+url: /build/ruby_version/
+title: ''
+description: Ruby version for the build environment.
+examples: []
+show_in_navigation: false

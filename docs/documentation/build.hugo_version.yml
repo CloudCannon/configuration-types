@@ -1,0 +1,6 @@
+gid: build.hugo_version
+url: /build/hugo_version/
+title: ''
+description: Hugo version for the build environment.
+examples: []
+show_in_navigation: false

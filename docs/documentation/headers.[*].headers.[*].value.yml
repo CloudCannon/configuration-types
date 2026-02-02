@@ -1,0 +1,6 @@
+gid: headers.[*].headers.[*].value
+url: /headers/[*]/headers/[*]/value/
+title: ''
+description: The header value. Accepted values depend on the header name.
+examples: []
+show_in_navigation: false

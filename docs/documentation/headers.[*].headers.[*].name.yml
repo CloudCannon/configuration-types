@@ -1,0 +1,6 @@
+gid: headers.[*].headers.[*].name
+url: /headers/[*]/headers/[*]/name/
+title: ''
+description: The HTTP header name to provide to the client.
+examples: []
+show_in_navigation: false

@@ -1,0 +1,6 @@
+gid: build.node_version
+url: /build/node_version/
+title: ''
+description: Node.js version for the build environment.
+examples: []
+show_in_navigation: false

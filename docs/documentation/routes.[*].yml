@@ -1,0 +1,6 @@
+gid: routes.[*]
+url: /routes/[*]/
+title: ''
+description: A redirect rule for URLs on CloudCannon hosted Sites.
+examples: []
+show_in_navigation: false

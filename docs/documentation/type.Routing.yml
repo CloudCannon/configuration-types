@@ -1,0 +1,6 @@
+gid: type.Routing
+url: /
+title: ''
+description: Configure custom redirects and headers for your CloudCannon hosted Site.
+examples: []
+show_in_navigation: true

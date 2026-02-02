@@ -1,0 +1,6 @@
+gid: build.include_git
+url: /build/include_git/
+title: ''
+description: Include the `.git` folder in the build.
+examples: []
+show_in_navigation: false

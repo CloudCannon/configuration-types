@@ -1,0 +1,8 @@
+gid: mode
+url: /mode/
+title: ''
+description: >-
+  `hosted` enables builds and visual editing; `headless` disables builds for
+  externally-hosted Sites.
+examples: []
+show_in_navigation: false

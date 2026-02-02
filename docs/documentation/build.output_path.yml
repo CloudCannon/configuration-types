@@ -1,0 +1,6 @@
+gid: build.output_path
+url: /build/output_path/
+title: ''
+description: Directory where built files are output.
+examples: []
+show_in_navigation: false

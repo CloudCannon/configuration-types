@@ -1,0 +1,8 @@
+gid: routes.[*].substitutions
+url: /routes/[*]/substitutions/
+title: ''
+description: >-
+  Whether to process REGEX substitutions in the `to` value. Set to `false` if
+  your URL contains characters like `$1` that should be literal.
+examples: []
+show_in_navigation: false

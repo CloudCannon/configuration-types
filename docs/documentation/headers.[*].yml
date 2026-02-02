@@ -1,0 +1,6 @@
+gid: headers.[*]
+url: /headers/[*]/
+title: ''
+description: Defines custom headers for matching URLs.
+examples: []
+show_in_navigation: false

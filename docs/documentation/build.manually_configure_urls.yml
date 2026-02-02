@@ -1,0 +1,6 @@
+gid: build.manually_configure_urls
+url: /build/manually_configure_urls/
+title: ''
+description: Skip automatic URL detection; use URLs from your CloudCannon config instead.
+examples: []
+show_in_navigation: false

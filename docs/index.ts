@@ -9,23 +9,28 @@ import {
 	slugify,
 } from './util.js';
 
-const schemaRaw: string = await fs.readFile(
-	path.join(process.cwd(), 'dist/cloudcannon-config.documentation.schema.json'),
-	{ encoding: 'utf8' }
-);
-const schema: JsonSchema = JSON.parse(schemaRaw);
+// Schema configurations to process
+const schemaConfigs = [
+	{ filename: 'cloudcannon-config.documentation.schema.json' },
+	{ filename: 'cloudcannon-routing.documentation.schema.json' },
+	{ filename: 'cloudcannon-initial-site-settings.documentation.schema.json' },
+];
+
 const documentationEntries: Record<string, DocumentationEntry> = await readDocs();
 const attemptedGids: Set<string> = new Set();
 const untitledGids: Set<string> = new Set();
 const pages: Record<string, Page> = {};
+
+// Current schema being processed (set before processing each schema)
+let currentSchema: JsonSchema;
 
 function deref(doc: JsonSchema): JsonSchema {
 	if (typeof doc !== 'object') {
 		return doc;
 	}
 
-	if (doc?.$ref && schema.$defs) {
-		const refDoc = deref(schema.$defs[doc.$ref.replace('#/$defs/', '')]);
+	if (doc?.$ref && currentSchema.$defs) {
+		const refDoc = deref(currentSchema.$defs[doc.$ref.replace('#/$defs/', '')]);
 
 		Object.keys(refDoc).forEach((key) => {
 			if (doc[key] === undefined) {
@@ -104,12 +109,21 @@ function docToPage(
 
 	const isType = doc.id?.startsWith('type.');
 	let thisPath = isType ? [doc.id || ''] : key ? [...path, key] : [...path];
-	let gid = thisPath.join('.');
+	let baseGid = thisPath.join('.');
 
+	// Handle root type entries for each schema type
 	if (doc.id === 'type.Configuration') {
 		thisPath = [];
-		gid = 'type.Configuration';
+		baseGid = 'type.Configuration';
+	} else if (doc.id === 'type.Routing') {
+		thisPath = [];
+		baseGid = 'type.Routing';
+	} else if (doc.id === 'type.InitialSiteSettings') {
+		thisPath = [];
+		baseGid = 'type.InitialSiteSettings';
 	}
+
+	const gid = baseGid;
 
 	const seenPage = pages[gid];
 
@@ -277,6 +291,13 @@ function docToPage(
 		for (let i = 0; i < doc.anyOf.length; i++) {
 			deref(doc.anyOf[i]);
 
+			// Skip unnamed const values (simple enum literals) - they don't need their own pages
+			// But keep named const values (with id/title) as they have documentation
+			if (doc.anyOf[i].const !== undefined && !doc.anyOf[i].id && !doc.anyOf[i].title) {
+				page.anyOf.push({ type: String(doc.anyOf[i].const) });
+				continue;
+			}
+
 			const anyOfKey = `(${slugify(doc.anyOf[i].title || doc.anyOf[i].id || `any-of-${i}`)})`;
 
 			if (anyOfKey.startsWith('(any-of-')) {
@@ -302,7 +323,24 @@ function docToPage(
 	return page;
 }
 
-docToPage(schema, { path: [] });
+// Process each schema configuration
+for (const config of schemaConfigs) {
+	const schemaPath = path.join(process.cwd(), 'dist', config.filename);
+	
+	// Check if schema file exists (routing and ISS schemas may not exist yet)
+	try {
+		await fs.access(schemaPath);
+	} catch {
+		console.log(`⏭️  Skipping ${config.filename} (not found)`);
+		continue;
+	}
+
+	const schemaRaw: string = await fs.readFile(schemaPath, { encoding: 'utf8' });
+	currentSchema = JSON.parse(schemaRaw);
+
+	console.log(`📖 Processing ${config.filename}`);
+	docToPage(currentSchema, { path: [] });
+}
 
 console.log('📝 Write to dist/documentation.json');
 

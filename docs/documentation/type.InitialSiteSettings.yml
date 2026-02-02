@@ -1,0 +1,8 @@
+gid: type.InitialSiteSettings
+url: /
+title: ''
+description: >-
+  Pre-configure SSG, hosting mode, and build settings for new Sites from this
+  repository.
+examples: []
+show_in_navigation: true

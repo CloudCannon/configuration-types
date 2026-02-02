@@ -1,0 +1,6 @@
+gid: routes
+url: /routes/
+title: ''
+description: Custom redirects for URLs on your hosted Site.
+examples: []
+show_in_navigation: false

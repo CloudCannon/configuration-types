@@ -1,0 +1,6 @@
+gid: build.environment_variables.[*].value
+url: /build/environment_variables/[*]/value/
+title: ''
+description: Environment variable value.
+examples: []
+show_in_navigation: false

@@ -1,0 +1,8 @@
+gid: routes.[*].to
+url: /routes/[*]/to/
+title: ''
+description: >-
+  The destination URL for this redirect. Supports REGEX substitutions like `$1`
+  or `$2`.
+examples: []
+show_in_navigation: false
