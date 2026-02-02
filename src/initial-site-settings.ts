@@ -1,5 +1,25 @@
 import * as z from 'zod';
-import { SsgKeySchema } from './index.ts';
+
+// Define SSG keys locally to avoid circular dependency with index.ts
+const SsgKeySchema = z.enum([
+	'hugo',
+	'jekyll',
+	'eleventy',
+	'astro',
+	'lume',
+	'mkdocs',
+	'nextjs',
+	'sveltekit',
+	'bridgetown',
+	'docusaurus',
+	'gatsby',
+	'hexo',
+	'nuxtjs',
+	'sphinx',
+	'static',
+	'legacy',
+	'other',
+]);
 
 export const EnvironmentVariableSchema = z
 	.object({
