@@ -254,10 +254,6 @@ for (const schemaConfig of schemas) {
 		},
 	});
 
-	if (schemaConfig.$id) {
-		(jsonSchema as any).$id = schemaConfig.$id;
-	}
-
 	const fullSchemaPath = path.join(process.cwd(), 'dist', schemaConfig.filename);
 	await fs.writeFile(fullSchemaPath, JSON.stringify(jsonSchema, null, '  '));
 

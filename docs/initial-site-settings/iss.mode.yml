@@ -1,8 +1,0 @@
-gid: iss.mode
-url: /initial-site-settings-file/mode/
-title: ''
-description: >-
-  The mode for this site. `hosted` sites are built and hosted by CloudCannon.
-  `headless` sites are not built or hosted.
-examples: []
-show_in_navigation: false

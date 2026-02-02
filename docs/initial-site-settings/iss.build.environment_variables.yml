@@ -1,6 +1,0 @@
-gid: iss.build.environment_variables
-url: /initial-site-settings-file/build/environment_variables/
-title: ''
-description: Environment variables to set during the build process.
-examples: []
-show_in_navigation: false

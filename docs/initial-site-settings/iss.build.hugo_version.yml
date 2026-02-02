@@ -1,6 +1,0 @@
-gid: iss.build.hugo_version
-url: /initial-site-settings-file/build/hugo_version/
-title: ''
-description: Hugo version to use for the build.
-examples: []
-show_in_navigation: false

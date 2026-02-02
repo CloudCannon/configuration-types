@@ -1,6 +1,0 @@
-gid: iss.build.deno_version
-url: /initial-site-settings-file/build/deno_version/
-title: ''
-description: Deno version to use for the build.
-examples: []
-show_in_navigation: false

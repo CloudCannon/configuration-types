@@ -1,8 +1,0 @@
-gid: routing.routes.[*].substitutions
-url: /routing-file/routes/[*]/substitutions/
-title: ''
-description: >-
-  When true, captured segments from glob patterns in `from` will be substituted
-  into the `to` path.
-examples: []
-show_in_navigation: false

@@ -1,8 +1,0 @@
-gid: routing.routes.[*].status
-url: /routing-file/routes/[*]/status/
-title: ''
-description: >-
-  The HTTP status code for this redirect rule. When using 200, 404, and 410
-  status codes, `to` must refer to a path on the same Site.
-examples: []
-show_in_navigation: false

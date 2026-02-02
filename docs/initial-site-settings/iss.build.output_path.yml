@@ -1,6 +1,0 @@
-gid: iss.build.output_path
-url: /initial-site-settings-file/build/output_path/
-title: ''
-description: Path to the built site output directory.
-examples: []
-show_in_navigation: false

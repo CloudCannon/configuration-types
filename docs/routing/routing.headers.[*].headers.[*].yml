@@ -1,6 +1,0 @@
-gid: routing.headers.[*].headers.[*]
-url: /routing-file/headers/[*]/headers/[*]/
-title: ''
-description: A single HTTP header name-value pair.
-examples: []
-show_in_navigation: false

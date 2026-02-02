@@ -110,7 +110,6 @@ function docToPage(
 
 	const isRootType = doc.id === config.rootTypeId;
 	const isTypeRef = doc.id?.startsWith('type.') && !isRootType;
-	const hasExplicitId = config.gidPrefix && doc.id?.startsWith(`${config.gidPrefix}.`);
 
 	let thisPath: string[];
 	let gid: string;
@@ -121,16 +120,12 @@ function docToPage(
 	} else if (isTypeRef) {
 		thisPath = [doc.id!];
 		gid = doc.id!;
-	} else if (hasExplicitId) {
-		gid = doc.id!;
-		const idParts = doc.id!.split('.');
-		thisPath = idParts.slice(1);
 	} else if (key) {
 		thisPath = [...docPath, key];
-		gid = config.gidPrefix ? `${config.gidPrefix}.${thisPath.join('.')}` : thisPath.join('.');
+		gid = thisPath.join('.');
 	} else {
 		thisPath = [...docPath];
-		gid = config.gidPrefix ? `${config.gidPrefix}.${thisPath.join('.')}` : thisPath.join('.');
+		gid = thisPath.join('.');
 	}
 
 	const seenPage = pages[gid];

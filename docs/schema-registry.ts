@@ -5,8 +5,6 @@ export interface DocSchemaConfig {
 	schemaFile: string;
 	/** Folder for YAML documentation files */
 	docsFolder: string;
-	/** GID prefix for this schema type (empty string for config) */
-	gidPrefix: string;
 	/** Root type identifier (e.g., 'type.Configuration') */
 	rootTypeId: string;
 	/** URL prefix for this schema's pages (e.g., '/routing-file/') */
@@ -18,7 +16,6 @@ export const docSchemas: DocSchemaConfig[] = [
 		name: 'Configuration',
 		schemaFile: 'cloudcannon-config.documentation.schema.json',
 		docsFolder: 'docs/documentation',
-		gidPrefix: '',
 		rootTypeId: 'type.Configuration',
 		urlPrefix: '/',
 	},
@@ -26,7 +23,6 @@ export const docSchemas: DocSchemaConfig[] = [
 		name: 'Routing',
 		schemaFile: 'cloudcannon-routing.documentation.schema.json',
 		docsFolder: 'docs/routing',
-		gidPrefix: 'routing',
 		rootTypeId: 'type.Routing',
 		urlPrefix: '/routing-file/',
 	},
@@ -34,7 +30,6 @@ export const docSchemas: DocSchemaConfig[] = [
 		name: 'Initial Site Settings',
 		schemaFile: 'cloudcannon-initial-site-settings.documentation.schema.json',
 		docsFolder: 'docs/initial-site-settings',
-		gidPrefix: 'iss',
 		rootTypeId: 'type.InitialSiteSettings',
 		urlPrefix: '/initial-site-settings-file/',
 	},

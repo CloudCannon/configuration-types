@@ -1,0 +1,8 @@
+gid: routes.[*].to
+url: /routing-file/routes/[*]/to/
+title: ''
+description: >-
+  The destination path or URL for this route. Can be a relative path on the same
+  site or an absolute URL for external redirects.
+examples: []
+show_in_navigation: false

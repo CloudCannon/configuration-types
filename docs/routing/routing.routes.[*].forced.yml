@@ -1,8 +1,0 @@
-gid: routing.routes.[*].forced
-url: /routing-file/routes/[*]/forced/
-title: ''
-description: >-
-  When true, the redirect will be applied even if a file exists at the `from`
-  path.
-examples: []
-show_in_navigation: false
