@@ -1,21 +1,22 @@
 import * as z from 'zod';
 
-export const RouteStatusSchema = z
-	.union([
-		z.literal(200),
-		z.literal(301),
-		z.literal(302),
-		z.literal(303),
-		z.literal(307),
-		z.literal(308),
-		z.literal(404),
-		z.literal(410),
-	])
-	.meta({
-		id: 'routing.routes.[*].status',
-		description:
-			'The HTTP status code for this redirect rule. When using 200, 404, and 410 status codes, `to` must refer to a path on the same Site.',
-	});
+// Using a const object with numeric values to generate an enum in JSON Schema
+const RouteStatusCodes = {
+	Rewrite: 200,
+	MovedPermanently: 301,
+	Found: 302,
+	SeeOther: 303,
+	TemporaryRedirect: 307,
+	PermanentRedirect: 308,
+	NotFound: 404,
+	Gone: 410,
+} as const;
+
+export const RouteStatusSchema = z.nativeEnum(RouteStatusCodes).meta({
+	id: 'routing.routes.[*].status',
+	description:
+		'The HTTP status code for this redirect rule. When using 200, 404, and 410 status codes, `to` must refer to a path on the same Site.',
+});
 
 export const RouteSchema = z
 	.object({

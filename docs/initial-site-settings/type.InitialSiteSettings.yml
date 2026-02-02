@@ -1,6 +1,6 @@
 gid: type.InitialSiteSettings
 url: /
-title: ''
+title: Initial Site Settings
 description: >-
   Configuration for the `.cloudcannon/initial-site-settings.json` file. Defines
   build settings and site mode for new sites.

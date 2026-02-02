@@ -1,6 +1,0 @@
-gid: routing.routes.[*].status.(any-of-7)
-url: /routes/[*]/status/(any-of-7)/
-title: ''
-description: ''
-examples: []
-show_in_navigation: false
