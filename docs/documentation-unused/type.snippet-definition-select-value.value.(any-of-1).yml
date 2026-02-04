@@ -1,0 +1,6 @@
+gid: type.snippet-definition-select-value.value.(any-of-1)
+url: /configuration-file/types/snippet-definition-select-value/value/(any-of-1)/
+title: Number
+description: A numeric value for this select option.
+examples: []
+show_in_navigation: false

@@ -1,0 +1,8 @@
+gid: type.snippet-definition-select-value.value
+url: /configuration-file/types/snippet-definition-select-value/value/
+title: Value
+description: >-
+  The actual value used when this option is selected. Can be a string, number,
+  or boolean. For example, "js" for JavaScript or 4 for an indentation level.
+examples: []
+show_in_navigation: false

@@ -1,0 +1,10 @@
+gid: type.snippet-definition-value.(parser-model-array)
+url: /configuration-file/types/snippet-definition-value/(parser-model-array)/
+title: Parser Model Array
+description: >-
+  An array of parser model configurations. Typically used for `positional_args`
+  or `named_args` definitions that specify the arguments a snippet accepts. Each
+  model defines an argument's editor key, type, default value, and whether it's
+  optional.
+examples: []
+show_in_navigation: false

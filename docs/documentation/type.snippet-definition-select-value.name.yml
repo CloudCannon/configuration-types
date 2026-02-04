@@ -1,0 +1,8 @@
+gid: type.snippet-definition-select-value.name
+url: /configuration-file/types/snippet-definition-select-value/name/
+title: Name
+description: >-
+  The display name shown to users when selecting this option. For example,
+  "JavaScript" for a language with value "js".
+examples: []
+show_in_navigation: false

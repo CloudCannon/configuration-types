@@ -298,5 +298,90 @@ export const SnippetsImportsSchema = z
 	})
 	.meta({ id: 'type._snippets_imports', title: 'Snippets Imports' });
 
+// Definition values that can be referenced via { ref: "key" } or { spread_ref: "key" }
+// These are reusable values that get substituted into snippet templates at runtime
+
+export const SnippetDefinitionSelectValueSchema = z
+	.object({
+		name: z.string().optional().meta({ description: 'The display name for this option.' }),
+		value: z
+			.union([
+				z.string().meta({ title: 'String' }),
+				z.number().meta({ title: 'Number' }),
+				z.boolean().meta({ title: 'Boolean' }),
+			])
+			.meta({
+				description: 'The value for this option.',
+			}),
+	})
+	.meta({
+		id: 'type.snippet-definition-select-value',
+		title: 'Snippet Definition Select Value',
+		description: 'A value option for select inputs, typically used in language lists.',
+	});
+
+export const SnippetDefinitionValueSchema = z
+	.union([
+		// Parser format - for format definitions like hugo_shortcode_format
+		ParserFormatSchema.meta({
+			title: 'Parser Format',
+			description: 'A format configuration for parsing snippet arguments.',
+		}),
+		// Parser model - for single model definitions
+		ParserModelSchema.meta({
+			title: 'Parser Model',
+			description: 'A model configuration for a snippet argument.',
+		}),
+		// Array of parser models - for positional_args, named_args
+		z.array(ParserModelSchema).meta({
+			title: 'Parser Model Array',
+			description:
+				'An array of model configurations, typically used for positional_args or named_args.',
+		}),
+		// Array of select values - for language lists
+		z.array(SnippetDefinitionSelectValueSchema).meta({
+			title: 'Select Values Array',
+			description: 'An array of select options, typically used for language lists.',
+		}),
+		// Simple string value - for shortcode_name, tag_name, content_key, etc.
+		z.string().meta({
+			title: 'String Value',
+			description:
+				'A string value, commonly used for shortcode_name, tag_name, content_key, and similar definitions.',
+		}),
+		// Simple number value
+		z.number().meta({
+			title: 'Number Value',
+			description: 'A numeric value.',
+		}),
+		// Simple boolean value
+		z.boolean().meta({
+			title: 'Boolean Value',
+			description: 'A boolean value.',
+		}),
+		// Array of strings
+		z.array(z.string()).meta({
+			title: 'String Array',
+			description: 'An array of strings.',
+		}),
+	])
+	.meta({
+		id: 'type.snippet-definition-value',
+		title: 'Snippet Definition Value',
+		description:
+			'A reusable value that can be referenced in snippet templates via { ref: "key" } or { spread_ref: "key" }.',
+	});
+
+export const SnippetDefinitionsSchema = z
+	.record(z.string(), SnippetDefinitionValueSchema)
+	.meta({
+		id: 'type._snippets_definitions',
+		title: 'Snippets Definitions',
+		description:
+			'A record of reusable values that can be referenced in snippet templates. Values are substituted using { ref: "key" } for direct replacement or { spread_ref: "key" } for spreading arrays/objects.',
+	});
+
 export type SnippetConfig = z.infer<typeof SnippetConfigSchema>;
 export type SnippetsImports = z.infer<typeof SnippetsImportsSchema>;
+export type SnippetDefinitionValue = z.infer<typeof SnippetDefinitionValueSchema>;
+export type SnippetDefinitions = z.infer<typeof SnippetDefinitionsSchema>;
