@@ -1,6 +1,6 @@
 gid: type._snippets_definitions
 url: /configuration-file/types/_snippets_definitions/
-title: Snippets Definitions
+title: ''
 description: >-
   A record of reusable values that can be referenced in snippet templates.
   Values are substituted using `{ ref: "key" }` for direct replacement or `{

@@ -115,7 +115,7 @@ export const ConfigurationSchema = z
 			description: 'Extended option used when creating more complex custom snippets.',
 		}),
 		_snippets_templates_from_glob: z.array(z.string()).optional(),
-		_snippets_definitions: SnippetDefinitionsSchema.optional(),
+		_snippets_definitions: SnippetDefinitionsSchema,
 		_snippets_definitions_from_glob: z.array(z.string()).optional(),
 	})
 	.meta({

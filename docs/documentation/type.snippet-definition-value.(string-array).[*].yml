@@ -1,6 +1,6 @@
 gid: type.snippet-definition-value.(string-array).[*]
 url: /configuration-file/types/snippet-definition-value/(string-array)/[*]/
-title: String Array Item
+title: ''
 description: A string item in the array.
 examples: []
 show_in_navigation: false

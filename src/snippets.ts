@@ -323,15 +323,9 @@ export const SnippetDefinitionSelectValueSchema = z
 export const SnippetDefinitionValueSchema = z
 	.union([
 		// Parser format - for format definitions like hugo_shortcode_format
-		ParserFormatSchema.meta({
-			title: 'Parser Format',
-			description: 'A format configuration for parsing snippet arguments.',
-		}),
+		ParserFormatSchema,
 		// Parser model - for single model definitions
-		ParserModelSchema.meta({
-			title: 'Parser Model',
-			description: 'A model configuration for a snippet argument.',
-		}),
+		ParserModelSchema,
 		// Array of parser models - for positional_args, named_args
 		z.array(ParserModelSchema).meta({
 			title: 'Parser Model Array',
@@ -374,6 +368,7 @@ export const SnippetDefinitionValueSchema = z
 
 export const SnippetDefinitionsSchema = z
 	.record(z.string(), SnippetDefinitionValueSchema)
+	.optional()
 	.meta({
 		id: 'type._snippets_definitions',
 		title: 'Snippets Definitions',
@@ -384,4 +379,4 @@ export const SnippetDefinitionsSchema = z
 export type SnippetConfig = z.infer<typeof SnippetConfigSchema>;
 export type SnippetsImports = z.infer<typeof SnippetsImportsSchema>;
 export type SnippetDefinitionValue = z.infer<typeof SnippetDefinitionValueSchema>;
-export type SnippetDefinitions = z.infer<typeof SnippetDefinitionsSchema>;
+export type SnippetDefinitions = NonNullable<z.infer<typeof SnippetDefinitionsSchema>>;
