@@ -1,0 +1,9 @@
+gid: type.snippet-definition-value
+url: /configuration-file/types/snippet-definition-value/
+title: Snippet Definition Value
+description: >-
+  A reusable value that can be referenced in snippet templates via `{ ref: "key"
+  }` or `{ spread_ref: "key" }`. Can be a string, number, boolean, parser
+  format, parser model, array of models, or array of select options.
+examples: []
+show_in_navigation: true

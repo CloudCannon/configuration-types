@@ -4,7 +4,11 @@ import { CollectionGroupSchema, CollectionsConfigSchema } from './collections.ts
 import { InputsSchema } from './inputs.ts';
 import { MarkdownSettingsSchema } from './markdown.ts';
 import { PathsSchema } from './paths.ts';
-import { SnippetConfigSchema, SnippetsImportsSchema } from './snippets.ts';
+import {
+	SnippetConfigSchema,
+	SnippetDefinitionsSchema,
+	SnippetsImportsSchema,
+} from './snippets.ts';
 import { SourceEditorSchema } from './source-editor.ts';
 import { TimezoneSchema } from './timezone.ts';
 
@@ -111,11 +115,7 @@ export const ConfigurationSchema = z
 			description: 'Extended option used when creating more complex custom snippets.',
 		}),
 		_snippets_templates_from_glob: z.array(z.string()).optional(),
-		_snippets_definitions: z.record(z.string(), z.unknown()).optional().meta({
-			id: 'type._snippets_definitions',
-			title: 'Snippets Definitions',
-			description: 'Extended option used when creating more complex custom snippets.',
-		}),
+		_snippets_definitions: SnippetDefinitionsSchema,
 		_snippets_definitions_from_glob: z.array(z.string()).optional(),
 	})
 	.meta({
