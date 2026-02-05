@@ -17,7 +17,7 @@ description: >-
 
 
   Please see our documentation on
-  [values_from_glob](/documentation/articles/configuration-file-reference/#values_from_glob)
+  [values_from_glob](/documentation/developer-reference/configuration-file/types/structure/values_from_glob/)
   for defining individual
 
   *Structure* values in a split *Configuration File*.

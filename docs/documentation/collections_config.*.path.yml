@@ -6,7 +6,7 @@ description: >-
 
 
   The value for this key is relative to your [Site
-  source](/documentation/articles/configuration-file-reference/#source).
+  source](/documentation/developer-reference/configuration-file/source/).
 
 
   Each Collection must have a unique path.

@@ -13,10 +13,6 @@ description: >-
 
   This key is useful if you need to specify a specific subfolder within a
   Collection.
-
-
-  The value for this key is relative to your Collection
-  [path](/documentation/articles/collections-reference/#path).
 examples:
   - description: >-
       In this example, we want team members in the `_posts` Collection to create
