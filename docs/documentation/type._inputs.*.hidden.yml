@@ -1,5 +1,5 @@
 gid: type._inputs.*.hidden
-url: /types/_inputs/*/hidden/
+url: /configuration-file/types/_inputs/*/hidden/
 title: ''
 description: >-
   This key defines the visibility of an input in the *Data Editor* or the

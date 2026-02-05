@@ -1,5 +1,5 @@
 gid: type.preview.gallery.fit
-url: /types/preview/gallery/fit/
+url: /configuration-file/types/preview/gallery/fit/
 title: ''
 description: >-
   This key defines how images fit within their containers in the gallery section
@@ -40,5 +40,5 @@ examples:
                 - key: featured_image
               fit: cover
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

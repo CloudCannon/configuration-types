@@ -1,5 +1,5 @@
 gid: commit_templates.[*].label
-url: /commit_templates/[*]/label/
+url: /configuration-file/commit_templates/[*]/label/
 title: ''
 description: >-
   This key defines the name of a commit template, which appears in the dropdown
@@ -17,5 +17,5 @@ examples:
         - label: Default
           template_string: '{commit_type}: {message|trim}'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

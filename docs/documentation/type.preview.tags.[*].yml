@@ -1,5 +1,5 @@
 gid: type.preview.tags.[*]
-url: /types/preview/tags/[*]/
+url: /configuration-file/types/preview/tags/[*]/
 title: ''
 description: >-
   This key represents an individual tag string in the `preview.tags` array.
@@ -19,5 +19,5 @@ examples:
             tags:
               - featured
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

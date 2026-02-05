@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=../dist/cloudcannon-structure-value.schema.json
+
+reorder_inputs: true
+hide_extra_inputs: false
+remove_empty_inputs: false
+remove_extra_inputs: true
+default: false
+place_groups_below: false
+tabbed: false
+value:
+  title:
+  description:

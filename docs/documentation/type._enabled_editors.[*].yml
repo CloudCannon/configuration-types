@@ -1,6 +1,6 @@
 gid: type._enabled_editors.[*]
-url: /types/_enabled_editors/[*]/
-title: Editor Key
+url: /configuration-file/types/_enabled_editors/[*]/
+title: ''
 description: >-
   This key defines the available editors in CloudCannon: visual, content, and
   data editors.

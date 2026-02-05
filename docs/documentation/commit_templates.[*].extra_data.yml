@@ -1,5 +1,5 @@
 gid: commit_templates.[*].extra_data
-url: /commit_templates/[*]/extra_data/
+url: /configuration-file/commit_templates/[*]/extra_data/
 title: ''
 description: >-
   This key defines additional template strings for building nested templates.
@@ -23,5 +23,5 @@ examples:
           extra_data:
             breaking_change: '⚠️ {breaking_change_message}'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -1,5 +1,6 @@
 gid: type._inputs.*.(text-input).options.icon_background_color
-url: /types/_inputs/*/(text-input)/options/icon_background_color/
+url: >-
+  /configuration-file/types/_inputs/*/(text-input)/options/icon_background_color/
 title: ''
 description: >-
   This key defines the background color of the icon displayed beside a *Text
@@ -31,7 +32,7 @@ examples:
               - key: icon_bg_color
               - text: '#e3f2fd'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       In this example, we have configured the icon background color to use a
       static CSS color value.
@@ -46,5 +47,5 @@ examples:
             icon_background_color:
               - text: 'lightblue'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

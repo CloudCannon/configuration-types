@@ -1,5 +1,5 @@
 gid: upstream_commit_template
-url: /upstream_commit_template/
+url: /configuration-file/upstream_commit_template/
 title: ''
 description: >-
   This key defines the commit template to use when pulling changes from the
@@ -30,5 +30,5 @@ examples:
       upstream_commit_template: "Merge branch [publish_branch] into develop of
       [branch] by [author] at [date]"
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

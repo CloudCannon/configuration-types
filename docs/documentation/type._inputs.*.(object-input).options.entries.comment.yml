@@ -1,5 +1,5 @@
 gid: type._inputs.*.(object-input).options.entries.comment
-url: /types/_inputs/*/(object-input)/options/entries/comment/
+url: /configuration-file/types/_inputs/*/(object-input)/options/entries/comment/
 title: ''
 description: >-
   This key defines the subtitle text above the key input when adding or renaming
@@ -26,5 +26,5 @@ examples:
             entries:
               comment: Key names should be **lowercase** and use underscores (e.g., `article_title`)
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

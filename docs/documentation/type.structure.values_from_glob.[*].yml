@@ -1,5 +1,5 @@
 gid: type.structure.values_from_glob.[*]
-url: /types/structure/values_from_glob/[*]/
+url: /configuration-file/types/structure/values_from_glob/[*]/
 title: ''
 description: >-
   This key represents an individual glob pattern string in the
@@ -36,5 +36,5 @@ examples:
                   profile_picture:
                   url:
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

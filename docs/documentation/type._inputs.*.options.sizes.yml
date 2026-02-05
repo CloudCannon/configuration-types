@@ -1,6 +1,6 @@
 gid: type._inputs.*.options.sizes
-url: /types/_inputs/*/options/sizes/
-title: Sizes
+url: /configuration-file/types/_inputs/*/options/sizes/
+title: ''
 description: >-
   This key defines definitions for creating additional images of different sizes
   when uploading or selecting existing files.
@@ -18,5 +18,5 @@ examples:
               - size: 2x
               - size: 3x
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -1,6 +1,6 @@
 gid: type._inputs.*.hidden.(query-string)
-url: /types/_inputs/*/hidden/(query-string)/
-title: Query String
+url: /configuration-file/types/_inputs/*/hidden/(query-string)/
+title: Query String Hidden
 description: >-
   This key represents a query string value for the `hidden` key that
   conditionally hides an input based on another input's value.
@@ -32,7 +32,7 @@ examples:
           label: Draft notes
           hidden: published
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       In this example, we have configured an input to be hidden when the
       `published` input is falsy using the `!` prefix.
@@ -47,5 +47,5 @@ examples:
           label: Publish date
           hidden: '!published'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -1,5 +1,5 @@
 gid: collections_config.*.glob.(glob)
-url: /collections_config/*/glob/(glob)/
+url: /configuration-file/collections_config/*/glob/(glob)/
 title: Glob
 description: >-
   This key represents a single glob pattern string format for the
@@ -24,5 +24,5 @@ examples:
           path: data
           glob: '**/*.yml'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

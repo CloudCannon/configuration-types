@@ -1,5 +1,5 @@
 gid: type._structures_from_glob.[*]
-url: /types/_structures_from_glob/[*]/
+url: /configuration-file/types/_structures_from_glob/[*]/
 title: ''
 description: >-
   This key represents an individual glob pattern string in the
@@ -20,5 +20,5 @@ examples:
       _structures_from_glob:
         - '/.cloudcannon/structures/staffMembers.cloudcannon.structures.yml'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -1,5 +1,5 @@
 gid: commit_templates.[*].template_string
-url: /commit_templates/[*]/template_string/
+url: /configuration-file/commit_templates/[*]/template_string/
 title: ''
 description: >-
   This key defines the template string for the commit message.
@@ -28,5 +28,5 @@ examples:
                   - feature
                   - fix
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

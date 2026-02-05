@@ -1,5 +1,5 @@
 gid: type._inputs.*.disabled.(boolean)
-url: /types/_inputs/*/disabled/(boolean)/
+url: /configuration-file/types/_inputs/*/disabled/(boolean)/
 title: Boolean
 description: >-
   This key represents a boolean value for the `disabled` key that toggles
@@ -30,5 +30,5 @@ examples:
           disabled: true
           instance_value: NOW
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

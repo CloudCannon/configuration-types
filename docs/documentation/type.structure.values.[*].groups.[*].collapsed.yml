@@ -1,5 +1,5 @@
 gid: type.structure.values.[*].groups.[*].collapsed
-url: /types/structure/values/[*]/groups/[*]/collapsed/
+url: /configuration-file/types/structure/values/[*]/groups/[*]/collapsed/
 title: ''
 description: >-
   This key defines whether a group is collapsed or expanded when first viewed.
@@ -35,5 +35,5 @@ examples:
                   inputs:
                     - author
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

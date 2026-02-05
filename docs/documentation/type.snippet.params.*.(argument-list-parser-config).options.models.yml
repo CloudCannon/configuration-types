@@ -1,5 +1,6 @@
 gid: type.snippet.params.*.(argument-list-parser-config).options.models
-url: /types/snippet/params/*/(argument-list-parser-config)/options/models/
+url: >-
+  /configuration-file/types/snippet/params/*/(argument-list-parser-config)/options/models/
 title: ''
 description: |-
   This key defines the parsing configurations for each argument.

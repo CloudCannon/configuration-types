@@ -1,5 +1,5 @@
 gid: type.structure.style
-url: /types/structure/style/
+url: /configuration-file/types/structure/style/
 title: ''
 description: >-
   This key defines how CloudCannon shows Structure options to populate an Object
@@ -28,5 +28,5 @@ examples:
               description:
               url:
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

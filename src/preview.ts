@@ -51,28 +51,29 @@ export const PreviewEntriesSchema = z
 	])
 	.meta({ id: 'PreviewEntries' });
 
-const TextPreviewEntriesSchema = PreviewEntriesSchema.optional().meta({ id: 'type.preview.text' });
-const SubtextPreviewEntriesSchema = PreviewEntriesSchema.optional().meta({
+const PreviewTextSchema = PreviewEntriesSchema.optional().meta({ id: 'type.preview.text' });
+const PreviewSubtextSchema = PreviewEntriesSchema.optional().meta({
 	id: 'type.preview.subtext',
 });
-const ImagePreviewEntriesSchema = PreviewEntriesSchema.optional().meta({
+const PreviewImageSchema = PreviewEntriesSchema.optional().meta({
 	id: 'type.preview.image',
 });
-const IconPreviewEntriesSchema = PreviewEntriesSchema.optional().meta({ id: 'type.preview.icon' });
-const IconColorPreviewEntriesSchema = PreviewEntriesSchema.optional().meta({
+const PreviewIconSchema = PreviewEntriesSchema.optional().meta({ id: 'type.preview.icon' });
+const PreviewIconColorSchema = PreviewEntriesSchema.optional().meta({
 	id: 'type.preview.icon_color',
 });
-const IconBackgroundColorPreviewEntriesSchema = PreviewEntriesSchema.optional().meta({
+const PreviewIconBackgroundColorSchema = PreviewEntriesSchema.optional().meta({
 	id: 'type.preview.icon_background_color',
 });
+const TagsPreviewEntriesSchema = z.array(z.string()).optional().meta({ id: 'type.preview.tags' });
 
 export const PreviewGallerySchema = z
 	.object({
-		text: TextPreviewEntriesSchema,
-		image: ImagePreviewEntriesSchema,
-		icon: IconPreviewEntriesSchema,
-		icon_color: IconColorPreviewEntriesSchema,
-		icon_background_color: IconBackgroundColorPreviewEntriesSchema,
+		text: PreviewTextSchema,
+		image: PreviewImageSchema,
+		icon: PreviewIconSchema,
+		icon_color: PreviewIconColorSchema,
+		icon_background_color: PreviewIconBackgroundColorSchema,
 		fit: z
 			.enum(['padded', 'cover', 'contain', 'cover-top'])
 			.default('padded')
@@ -82,33 +83,44 @@ export const PreviewGallerySchema = z
 			id: 'type.preview.gallery.background_color',
 		}),
 	})
-	.meta({ id: 'preview.gallery' });
+	.optional()
+	.meta({ id: 'type.preview.gallery' });
 
-const PreviewMetadataEntrySchema = z
+const MetadataPreviewEntrySchema = z
 	.object({
-		text: TextPreviewEntriesSchema,
-		image: ImagePreviewEntriesSchema,
-		icon: IconPreviewEntriesSchema,
-		icon_color: IconColorPreviewEntriesSchema,
-		icon_background_color: IconBackgroundColorPreviewEntriesSchema,
+		text: PreviewTextSchema,
+		image: PreviewImageSchema,
+		icon: PreviewIconSchema,
+		icon_color: PreviewIconColorSchema,
+		icon_background_color: PreviewIconBackgroundColorSchema,
 	})
 	.meta({ id: 'PreviewMetadataEntry' });
 
+const PreviewMetadataSchema = z
+	.array(MetadataPreviewEntrySchema)
+	.optional()
+	.meta({ id: 'type.preview.metadata' });
+
 export const PreviewSchema = z
 	.object({
-		text: TextPreviewEntriesSchema,
-		subtext: SubtextPreviewEntriesSchema,
-		image: ImagePreviewEntriesSchema,
-		icon: IconPreviewEntriesSchema,
-		icon_color: IconColorPreviewEntriesSchema,
-		icon_background_color: IconBackgroundColorPreviewEntriesSchema,
-		tags: z.array(z.string()).optional().meta({ id: 'preview.tags' }),
-		metadata: z.array(PreviewMetadataEntrySchema).optional().meta({ id: 'preview.metadata' }),
-		gallery: PreviewGallerySchema.optional(),
+		text: PreviewTextSchema,
+		subtext: PreviewSubtextSchema,
+		image: PreviewImageSchema,
+		icon: PreviewIconSchema,
+		icon_color: PreviewIconColorSchema,
+		icon_background_color: PreviewIconBackgroundColorSchema,
+		tags: TagsPreviewEntriesSchema,
+		metadata: PreviewMetadataSchema,
+		gallery: PreviewGallerySchema,
 	})
 	.meta({ id: 'type.preview', title: 'Preview' });
 
+export const PickerPreviewSchema = PreviewSchema.meta({
+	id: 'type.picker_preview',
+	title: 'Picker Preview',
+});
+
 export type PreviewEntry = z.infer<typeof PreviewEntrySchema>;
 export type PreviewEntries = z.infer<typeof PreviewEntriesSchema>;
-export type PreviewGallery = z.infer<typeof PreviewGallerySchema>;
+export type PreviewGallery = NonNullable<z.infer<typeof PreviewGallerySchema>>;
 export type Preview = z.infer<typeof PreviewSchema>;

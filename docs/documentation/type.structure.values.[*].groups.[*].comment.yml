@@ -1,5 +1,5 @@
 gid: type.structure.values.[*].groups.[*].comment
-url: /types/structure/values/[*]/groups/[*]/comment/
+url: /configuration-file/types/structure/values/[*]/groups/[*]/comment/
 title: ''
 description: >-
   This key defines the subtext displayed below the `heading` for a group.
@@ -31,5 +31,5 @@ examples:
                   inputs:
                     - author
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

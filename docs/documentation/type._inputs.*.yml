@@ -1,6 +1,6 @@
 gid: type._inputs.*
-url: /types/_inputs/*/
-title: Input
+url: /configuration-file/types/_inputs/*/
+title: ''
 description: >-
   This key defines an input configuration at a given level of the configuration
   cascade.
@@ -27,5 +27,5 @@ examples:
               type: text
               label: Title
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

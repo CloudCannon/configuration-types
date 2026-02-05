@@ -1,5 +1,6 @@
 gid: type.snippet.params.*.(literal-parser-config).options.literal
-url: /types/snippet/params/*/(literal-parser-config)/options/literal/
+url: >-
+  /configuration-file/types/snippet/params/*/(literal-parser-config)/options/literal/
 title: ''
 description: >-
   This key defines the literal string value that must be matched for literal
@@ -21,5 +22,5 @@ examples:
               options:
                 literal: 'specific-value'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -1,5 +1,5 @@
 gid: type._inputs.*.(textarea-input).options.show_count
-url: /types/_inputs/*/(textarea-input)/options/show_count/
+url: /configuration-file/types/_inputs/*/(textarea-input)/options/show_count/
 title: ''
 description: |-
   This key toggles whether a character counter is shown below the input.
@@ -17,5 +17,5 @@ examples:
           options:
             show_count: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -1,5 +1,5 @@
 gid: type.snippet-format.root_pair_delimiter
-url: /types/snippet-format/root_pair_delimiter/
+url: /configuration-file/types/snippet-format/root_pair_delimiter/
 title: ''
 description: >-
   This key defines the delimiters that separate each key-value pair from the
@@ -25,5 +25,5 @@ examples:
                   root_pair_delimiter:
                     - ' '
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -1,6 +1,6 @@
 gid: type._inputs.*.options.expandable
-url: /types/_inputs/*/options/expandable/
-title: Expandable
+url: /configuration-file/types/_inputs/*/options/expandable/
+title: ''
 description: >-
   This key defines whether you can upscale an image to fit the bounding box
   while resizing an image prior to upload.
@@ -22,5 +22,5 @@ examples:
             resize_style: cover
             expandable: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

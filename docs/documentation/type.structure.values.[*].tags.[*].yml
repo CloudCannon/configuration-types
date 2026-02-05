@@ -1,5 +1,5 @@
 gid: type.structure.values.[*].tags.[*]
-url: /types/structure/values/[*]/tags/[*]/
+url: /configuration-file/types/structure/values/[*]/tags/[*]/
 title: ''
 description: |-
   This key represents an individual tag string in the `values[*].tags` array.
@@ -19,5 +19,5 @@ examples:
                 - featured
                 - news
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

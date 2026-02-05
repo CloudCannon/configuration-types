@@ -1,6 +1,6 @@
 gid: type.preview
-url: /types/preview/
-title: Preview
+url: /configuration-file/types/preview/
+title: ''
 description: >-
   This key defines the appearance of a Card.
 
@@ -49,7 +49,7 @@ examples:
             gallery:
               - key: featured_image
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       In this example, we have configured the appearance of Cards in inputs
       using the Structure `staff`.
@@ -90,5 +90,5 @@ examples:
                   - key: profile_picture
                 icon: face
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: true

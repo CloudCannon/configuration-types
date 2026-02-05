@@ -1,5 +1,6 @@
 gid: type._inputs.*.(object-input).options.entries.allowed_keys
-url: /types/_inputs/*/(object-input)/options/entries/allowed_keys/
+url: >-
+  /configuration-file/types/_inputs/*/(object-input)/options/entries/allowed_keys/
 title: ''
 description: >-
   This key defines a limited set of key names for nested keys within your
@@ -33,5 +34,5 @@ examples:
               allowed_keys:
                 - title
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

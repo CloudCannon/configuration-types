@@ -1,5 +1,5 @@
 gid: source_editor.show_gutter
-url: /source_editor/show_gutter/
+url: /configuration-file/source_editor/show_gutter/
 title: ''
 description: >-
   This key toggles the gutter on the left of the editing interface, displaying
@@ -13,5 +13,5 @@ examples:
       source_editor:
         show_gutter: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

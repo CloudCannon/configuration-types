@@ -1,5 +1,5 @@
 gid: type.structure.remove_empty_inputs
-url: /types/structure/remove_empty_inputs/
+url: /configuration-file/types/structure/remove_empty_inputs/
 title: ''
 description: >-
   This key toggles whether CloudCannon will remove empty nested inputs from an
@@ -46,5 +46,5 @@ examples:
               place:
               sponsor:
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

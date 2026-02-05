@@ -1,5 +1,5 @@
 gid: type.snippet-model.type
-url: /types/snippet-model/type/
+url: /configuration-file/types/snippet-model/type/
 title: ''
 description: >-
   This key defines the data type for snippet parameter parsing.
@@ -23,5 +23,5 @@ examples:
                 model:
                   type: string
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

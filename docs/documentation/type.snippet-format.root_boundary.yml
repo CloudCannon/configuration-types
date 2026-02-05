@@ -1,5 +1,5 @@
 gid: type.snippet-format.root_boundary
-url: /types/snippet-format/root_boundary/
+url: /configuration-file/types/snippet-format/root_boundary/
 title: ''
 description: >-
   This key defines the boundary tokens required for key-value segments when
@@ -25,5 +25,5 @@ examples:
                     start: '<<'
                     end: '>>'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

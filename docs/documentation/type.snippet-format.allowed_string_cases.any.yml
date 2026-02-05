@@ -1,5 +1,5 @@
 gid: type.snippet-format.allowed_string_cases.any
-url: /types/snippet-format/allowed_string_cases/any/
+url: /configuration-file/types/snippet-format/allowed_string_cases/any/
 title: ''
 description: >-
   This key toggles whether CloudCannon will allow any string case type when
@@ -29,5 +29,5 @@ examples:
                   allowed_string_cases:
                     any: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

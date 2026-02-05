@@ -1,5 +1,5 @@
 gid: source_editor
-url: /source_editor/
+url: /configuration-file/source_editor/
 title: ''
 description: >-
   This key defines the appearance and behavior of the Source Editor.
@@ -18,5 +18,5 @@ examples:
         tab_size: 2
         show_gutter: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

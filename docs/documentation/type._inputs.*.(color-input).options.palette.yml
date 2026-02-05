@@ -1,5 +1,5 @@
 gid: type._inputs.*.(color-input).options.palette
-url: /types/_inputs/*/(color-input)/options/palette/
+url: /configuration-file/types/_inputs/*/(color-input)/options/palette/
 title: ''
 description: >-
   This key defines a predefined color palette for *Color Inputs*.
@@ -28,7 +28,7 @@ examples:
               - '#0000ff'
               - '#ffff00'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       In this example, we have configured a color input with a palette using CSS
       color names.
@@ -45,5 +45,5 @@ examples:
               - green
               - yellow
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

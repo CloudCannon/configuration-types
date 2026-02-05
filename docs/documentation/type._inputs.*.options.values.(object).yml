@@ -1,6 +1,6 @@
 gid: type._inputs.*.options.values.(object)
-url: /types/_inputs/*/options/values/(object)/
-title: Object
+url: /configuration-file/types/_inputs/*/options/values/(object)/
+title: Object Values
 description: ''
 examples: []
 show_in_navigation: false

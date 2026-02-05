@@ -1,6 +1,7 @@
 gid: type._inputs.*.(date-input).options.start_from.(iso8601-string)
-url: /types/_inputs/*/(date-input)/options/start_from/(iso8601-string)/
-title: ISO8601 String
+url: >-
+  /configuration-file/types/_inputs/*/(date-input)/options/start_from/(iso8601-string)/
+title: String Start From
 description: >-
   This key defines the earliest date and time, inclusive, that CloudCannon will
   allow in an Input.

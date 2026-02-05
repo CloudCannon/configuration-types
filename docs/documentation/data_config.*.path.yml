@@ -1,6 +1,6 @@
 gid: data_config.*.path
-url: /data_config/*/path/
-title: Path
+url: /configuration-file/data_config/*/path/
+title: ''
 description: This key defines the path to a file or folder of files containing data.
 examples:
   - description: >-
@@ -27,5 +27,5 @@ examples:
         content: >-
           *Select Inputs* and *Multiselect Inputs* which use the `offices` key
           are populated by the contents of each file in the `offices` folder.
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

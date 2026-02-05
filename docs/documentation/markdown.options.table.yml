@@ -1,5 +1,5 @@
 gid: markdown.options.table
-url: /markdown/options/table/
+url: /configuration-file/markdown/options/table/
 title: ''
 description: >-
   This key toggles whether CloudCannon will output tables in Markdown format
@@ -22,5 +22,5 @@ examples:
         options:
           table: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

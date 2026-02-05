@@ -1,5 +1,5 @@
 gid: type.snippet-style.block.leading
-url: /types/snippet-style/block/leading/
+url: /configuration-file/types/snippet-style/block/leading/
 title: ''
 description: >-
   This key defines the leading whitespace string for block-level snippet
@@ -25,5 +25,5 @@ examples:
                   block:
                     leading: '\n'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

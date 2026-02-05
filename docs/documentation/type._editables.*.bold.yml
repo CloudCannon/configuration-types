@@ -1,5 +1,5 @@
 gid: type._editables.*.bold
-url: /types/_editables/*/bold/
+url: /configuration-file/types/_editables/*/bold/
 title: ''
 description: >-
   This key toggles whether CloudCannon will display a tool in your WYSIWYG

@@ -1,5 +1,5 @@
 gid: collections_config.*.schemas.*.remove_empty_inputs
-url: /collections_config/*/schemas/*/remove_empty_inputs/
+url: /configuration-file/collections_config/*/schemas/*/remove_empty_inputs/
 title: ''
 description: >-
   This key toggles whether CloudCannon will remove empty inputs from a file
@@ -30,5 +30,5 @@ examples:
             article:
               remove_empty_inputs: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

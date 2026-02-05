@@ -1,5 +1,5 @@
 gid: collections_config.*.singular_name
-url: /collections_config/*/singular_name/
+url: /configuration-file/collections_config/*/singular_name/
 title: ''
 description: >-
   This key defines the singular noun for your Collection name.
@@ -21,5 +21,5 @@ examples:
         team:
           singular_name: Team Member
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

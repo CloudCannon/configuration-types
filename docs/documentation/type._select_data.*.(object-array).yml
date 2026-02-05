@@ -1,6 +1,6 @@
 gid: type._select_data.*.(object-array)
-url: /types/_select_data/*/(object-array)/
-title: Object Array
+url: /configuration-file/types/_select_data/*/(object-array)/
+title: Object Array Select Data
 description: ''
 examples: []
 show_in_navigation: false

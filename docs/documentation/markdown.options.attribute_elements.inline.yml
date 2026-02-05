@@ -1,6 +1,6 @@
 gid: markdown.options.attribute_elements.inline
-url: /markdown/options/attribute_elements/inline/
-title: Attribute List Position
+url: /configuration-file/markdown/options/attribute_elements/inline/
+title: ''
 description: >-
   This key defines where attribute lists are positioned for inline elements when
   converting HTML to Markdown.
@@ -25,5 +25,5 @@ examples:
           attribute_elements:
             inline: right
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

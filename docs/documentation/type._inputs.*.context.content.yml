@@ -1,5 +1,5 @@
 gid: type._inputs.*.context.content
-url: /types/_inputs/*/context/content/
+url: /configuration-file/types/_inputs/*/context/content/
 title: ''
 description: >-
   This key defines the text content inside the context box.
@@ -36,5 +36,5 @@ examples:
               **Good examples:** technology, web development, tutorials
               **Avoid:** generic terms like "blog" or "article"
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

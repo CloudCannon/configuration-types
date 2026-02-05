@@ -1,6 +1,6 @@
 gid: collections_config.*.add_options.[*].(add-option).icon
-url: /collections_config/*/add_options/[*]/(add-option)/icon/
-title: Icon
+url: /configuration-file/collections_config/*/add_options/[*]/(add-option)/icon/
+title: ''
 description: >-
   This key defines the icon displayed next to the text for a standard add option
   in the *\+ Add* button dropdown.
@@ -29,5 +29,5 @@ examples:
             contractor:
               path: /.cloudcannon/schemas/contractor.yml
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

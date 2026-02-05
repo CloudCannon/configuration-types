@@ -1,5 +1,5 @@
 gid: type._inputs.*.(textarea-input)
-url: /types/_inputs/*/(textarea-input)/
+url: /configuration-file/types/_inputs/*/(textarea-input)/
 title: Textarea Input
 description: This key defines an editing interface for plain text.
 examples:
@@ -13,5 +13,5 @@ examples:
           type: textarea
           label: Description
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -1,5 +1,5 @@
 gid: type.create.path
-url: /types/create/path/
+url: /configuration-file/types/create/path/
 title: ''
 description: >-
   This key defines the raw template to be processed when creating files.
@@ -15,5 +15,5 @@ examples:
           create:
             path: '[relative_base_path]/{date|year}-{date|month}-{date|day}-{title|slugify}.[ext]'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

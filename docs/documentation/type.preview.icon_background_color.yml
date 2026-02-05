@@ -1,5 +1,5 @@
 gid: type.preview.icon_background_color
-url: /types/preview/icon_background_color/
+url: /configuration-file/types/preview/icon_background_color/
 title: ''
 description: >-
   This key defines the background color of the icon displayed on *Cards* in the
@@ -28,5 +28,5 @@ examples:
               - key: bg_color
               - text: '#f0f0f0'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

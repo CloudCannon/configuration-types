@@ -1,5 +1,5 @@
 gid: type._inputs.*.(code-input).options.theme
-url: /types/_inputs/*/(code-input)/options/theme/
+url: /configuration-file/types/_inputs/*/(code-input)/options/theme/
 title: ''
 description: >-
   This key defines the color theme used for syntax highlighting in *Code
@@ -21,5 +21,5 @@ examples:
           options:
             theme: dracula
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

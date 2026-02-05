@@ -1,5 +1,5 @@
 gid: markdown.options.linkify
-url: /markdown/options/linkify/
+url: /configuration-file/markdown/options/linkify/
 title: ''
 description: >-
   This key toggles whether CloudCannon will automatically convert URL-like text
@@ -23,5 +23,5 @@ examples:
         options:
           linkify: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

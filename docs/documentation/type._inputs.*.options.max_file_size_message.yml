@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.max_file_size_message
-url: /types/_inputs/*/options/max_file_size_message/
+url: /configuration-file/types/_inputs/*/options/max_file_size_message/
 title: ''
 description: >-
   This key defines a custom error message that explains why a value has failed
@@ -27,5 +27,5 @@ examples:
             max_file_size: 140
             max_file_size_message: For SEO, keep this under 140kB
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

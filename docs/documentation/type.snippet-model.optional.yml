@@ -1,5 +1,5 @@
 gid: type.snippet-model.optional
-url: /types/snippet-model/optional/
+url: /configuration-file/types/snippet-model/optional/
 title: ''
 description: >-
   This key toggles whether a value must exist for this parser.
@@ -23,7 +23,7 @@ examples:
           - editor_key: class
             optional: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: 'Example usage:'
     language: markdown
     code: |-
@@ -47,5 +47,5 @@ examples:
         content: >-
           This anchor tag will not be parsed, as the `href` key is absent and is
           not marked as `optional`.
-    source: page.md
+    source: /page.md
 show_in_navigation: false

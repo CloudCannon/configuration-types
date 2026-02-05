@@ -1,5 +1,5 @@
 gid: type._snippets_imports.jekyll.(exclude-list).exclude
-url: /types/_snippets_imports/jekyll/(exclude-list)/exclude/
+url: /configuration-file/types/_snippets_imports/jekyll/(exclude-list)/exclude/
 title: ''
 description: |-
   This key defines the list of excluded snippets.

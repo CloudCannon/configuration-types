@@ -1,5 +1,5 @@
 gid: type._inputs.*.disabled
-url: /types/_inputs/*/disabled/
+url: /configuration-file/types/_inputs/*/disabled/
 title: ''
 description: >-
   This key defines whether the value of an input is editable in the *Data
@@ -50,5 +50,5 @@ examples:
           options:
             timezone: Etc/UTC
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

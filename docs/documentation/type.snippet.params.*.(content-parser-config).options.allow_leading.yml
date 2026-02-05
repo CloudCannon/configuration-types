@@ -1,5 +1,6 @@
 gid: type.snippet.params.*.(content-parser-config).options.allow_leading
-url: /types/snippet/params/*/(content-parser-config)/options/allow_leading/
+url: >-
+  /configuration-file/types/snippet/params/*/(content-parser-config)/options/allow_leading/
 title: ''
 description: >-
   This key toggles whether the first line of the content needs to be indented
@@ -22,7 +23,7 @@ examples:
         indented_by: "  "
         allow_leading: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: 'Example usage:'
     language: markdown
     code: |-
@@ -46,5 +47,5 @@ examples:
           highlighted content!`,
 
           despite the first line not being indented.
-    source: page.md
+    source: /page.md
 show_in_navigation: false

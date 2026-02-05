@@ -1,5 +1,5 @@
 gid: markdown.options.spaced_lists
-url: /markdown/options/spaced_lists/
+url: /configuration-file/markdown/options/spaced_lists/
 title: ''
 description: >-
   This key toggles whether CloudCannon will output lists with an extra space
@@ -23,5 +23,5 @@ examples:
         options:
           spaced_lists: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

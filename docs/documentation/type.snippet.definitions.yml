@@ -1,5 +1,5 @@
 gid: type.snippet.definitions
-url: /types/snippet/definitions/
+url: /configuration-file/types/snippet/definitions/
 title: ''
 description: This key defines the variables required for the selected template.
 examples:
@@ -15,5 +15,5 @@ examples:
             text: Button Text
             url: Button URL
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

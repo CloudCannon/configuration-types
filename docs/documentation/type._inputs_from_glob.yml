@@ -1,5 +1,5 @@
 gid: type._inputs_from_glob
-url: /types/_inputs_from_glob/
+url: /configuration-file/types/_inputs_from_glob/
 title: ''
 description: >-
   This key defines globs that filter which files CloudCannon should use for
@@ -34,7 +34,7 @@ examples:
             - '/.cloudcannon/inputs/seo.cloudcannon.inputs.yml'
             - '/.cloudcannon/inputs/blogDetails.cloudcannon.inputs.yml'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: ''
     language: yaml
     code: |-

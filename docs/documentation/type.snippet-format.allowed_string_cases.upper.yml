@@ -1,5 +1,5 @@
 gid: type.snippet-format.allowed_string_cases.upper
-url: /types/snippet-format/allowed_string_cases/upper/
+url: /configuration-file/types/snippet-format/allowed_string_cases/upper/
 title: ''
 description: >-
   This key toggles whether CloudCannon will allow only uppercase strings when
@@ -29,5 +29,5 @@ examples:
                   allowed_string_cases:
                     upper: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

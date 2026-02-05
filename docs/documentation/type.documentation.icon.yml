@@ -1,6 +1,6 @@
 gid: type.documentation.icon
-url: /types/documentation/icon/
-title: Icon
+url: /configuration-file/types/documentation/icon/
+title: ''
 description: >-
   This key defines the icon for the documentation link at the top of a
   *Collection browser*.
@@ -21,5 +21,5 @@ examples:
             url: https://www.cloudcannon.com/documentation/
             icon: star
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

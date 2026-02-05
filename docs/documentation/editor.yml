@@ -1,5 +1,5 @@
 gid: editor
-url: /editor/
+url: /configuration-file/editor/
 title: ''
 description: This key defines settings for the default editor actions on your site.
 examples: []

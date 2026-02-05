@@ -1,6 +1,6 @@
 gid: collections_config.*.add_options.[*].(add-option).editor
-url: /collections_config/*/add_options/[*]/(add-option)/editor/
-title: Editor Key
+url: /configuration-file/collections_config/*/add_options/[*]/(add-option)/editor/
+title: ''
 description: >-
   This key defines which editing interface CloudCannon will use when you select
   an option from the *\+ Add* button dropdown.
@@ -33,5 +33,5 @@ examples:
             employee:
               path: /.cloudcannon/schemas/employee.yml
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

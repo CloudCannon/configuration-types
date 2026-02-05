@@ -1,5 +1,5 @@
 gid: type.structure.values.[*].place_groups_below
-url: /types/structure/values/[*]/place_groups_below/
+url: /configuration-file/types/structure/values/[*]/place_groups_below/
 title: ''
 description: This key defines which order input groups and ungrouped inputs appear in.
 examples: []

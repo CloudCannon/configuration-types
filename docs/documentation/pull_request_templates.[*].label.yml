@@ -1,5 +1,5 @@
 gid: pull_request_templates.[*].label
-url: /pull_request_templates/[*]/label/
+url: /configuration-file/pull_request_templates/[*]/label/
 title: ''
 description: >-
   This key defines the name of a Pull Request template, which appears in the
@@ -18,5 +18,5 @@ examples:
           title: Updates to...
           body: In this update, I have made the following changes...
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

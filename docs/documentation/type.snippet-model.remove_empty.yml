@@ -1,5 +1,5 @@
 gid: type.snippet-model.remove_empty
-url: /types/snippet-model/remove_empty/
+url: /configuration-file/types/snippet-model/remove_empty/
 title: ''
 description: >-
   This key toggles whether this key-value pair should be omitted altogether if
@@ -25,7 +25,7 @@ examples:
             optional: true
             remove_empty: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: 'Example usage:'
     language: markdown
     code: |-
@@ -49,5 +49,5 @@ examples:
 
           The empty `class` key would be written even if it did not originally
           appear in the parsed source.
-    source: page.md
+    source: /page.md
 show_in_navigation: false

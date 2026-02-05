@@ -1,0 +1,9 @@
+gid: type.snippet-definition-value.(string-array)
+url: /configuration-file/types/snippet-definition-value/(string-array)/
+title: String Array
+description: >-
+  An array of string values. Useful for defining lists of allowed values,
+  delimiters, or other string collections that can be referenced in snippet
+  templates.
+examples: []
+show_in_navigation: false

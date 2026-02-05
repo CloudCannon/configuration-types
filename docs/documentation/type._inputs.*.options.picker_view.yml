@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.picker_view
-url: /types/_inputs/*/options/picker_view/
+url: /configuration-file/types/_inputs/*/options/picker_view/
 title: ''
 description: >-
   This key defines how CloudCannon should render selectable options in the
@@ -20,5 +20,5 @@ examples:
               - Events
             picker_view: card
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

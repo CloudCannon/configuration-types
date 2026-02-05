@@ -1,6 +1,6 @@
 gid: type._inputs.*.options.height
-url: /types/_inputs/*/options/height/
-title: Height
+url: /configuration-file/types/_inputs/*/options/height/
+title: ''
 description: >-
   This key defines the height of the bounding box used in the resizing method
   defined by `resize_style`.
@@ -18,5 +18,5 @@ examples:
             height: 600
             resize_style: cover
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

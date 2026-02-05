@@ -1,5 +1,5 @@
 gid: collections_config_from_glob
-url: /collections_config_from_glob/
+url: /configuration-file/collections_config_from_glob/
 title: ''
 description: >-
   This key defines globs that filter which files CloudCannon should use for
@@ -21,7 +21,7 @@ examples:
       collections_config_from_glob:
         - '/.cloudcannon/collections/*.cloudcannon.collections.yml'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: ''
     language: yaml
     code: |-

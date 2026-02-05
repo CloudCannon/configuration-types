@@ -1,5 +1,5 @@
 gid: collections_config.*.add_options.[*].(add-option).name
-url: /collections_config/*/add_options/[*]/(add-option)/name/
+url: /configuration-file/collections_config/*/add_options/[*]/(add-option)/name/
 title: ''
 description: >-
   This key defines the text displayed for a standard add option in the *\+ Add*
@@ -28,5 +28,5 @@ examples:
             employee:
               path: /.cloudcannon/schemas/employee.yml
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

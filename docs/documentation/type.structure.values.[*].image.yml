@@ -1,5 +1,5 @@
 gid: type.structure.values.[*].image
-url: /types/structure/values/[*]/image/
+url: /configuration-file/types/structure/values/[*]/image/
 title: ''
 description: >-
   This key defines the path to an image in your source files used when
@@ -19,5 +19,5 @@ examples:
             - label: Blog
               image: /images/blog-icon.png
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

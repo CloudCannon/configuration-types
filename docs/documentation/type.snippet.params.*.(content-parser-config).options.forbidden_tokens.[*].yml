@@ -1,5 +1,6 @@
 gid: type.snippet.params.*.(content-parser-config).options.forbidden_tokens.[*]
-url: /types/snippet/params/*/(content-parser-config)/options/forbidden_tokens/[*]/
+url: >-
+  /configuration-file/types/snippet/params/*/(content-parser-config)/options/forbidden_tokens/[*]/
 title: ''
 description: >-
   This key represents an individual forbidden token string in the
@@ -26,5 +27,5 @@ examples:
                 forbidden_tokens:
                   - '<'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

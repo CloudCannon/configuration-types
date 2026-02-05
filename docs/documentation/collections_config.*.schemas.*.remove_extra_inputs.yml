@@ -1,5 +1,5 @@
 gid: collections_config.*.schemas.*.remove_extra_inputs
-url: /collections_config/*/schemas/*/remove_extra_inputs/
+url: /configuration-file/collections_config/*/schemas/*/remove_extra_inputs/
 title: ''
 description: >-
   This key toggles whether CloudCannon will remove inputs that are not present
@@ -25,5 +25,5 @@ examples:
             article:
               remove_extra_inputs: false
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

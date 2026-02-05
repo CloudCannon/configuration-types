@@ -1,5 +1,5 @@
 gid: markdown.options.code_block_fences
-url: /markdown/options/code_block_fences/
+url: /configuration-file/markdown/options/code_block_fences/
 title: ''
 description: >-
   This key defines which style of code block fences CloudCannon will use when
@@ -18,5 +18,5 @@ examples:
         options:
           code_block_fences: '~~~'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

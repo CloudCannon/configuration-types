@@ -1,5 +1,5 @@
 gid: type._inputs.*.(object-input).options.groups.[*].comment
-url: /types/_inputs/*/(object-input)/options/groups/[*]/comment/
+url: /configuration-file/types/_inputs/*/(object-input)/options/groups/[*]/comment/
 title: ''
 description: >-
   This key defines the subtext below the `heading`.

@@ -1,5 +1,5 @@
 gid: type._inputs.*.(file-input)
-url: /types/_inputs/*/(file-input)/
+url: /configuration-file/types/_inputs/*/(file-input)/
 title: File Input
 description: >-
   This key defines an editing interface for uploading files to your repository

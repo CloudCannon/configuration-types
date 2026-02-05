@@ -1,5 +1,5 @@
 gid: pull_request_templates
-url: /pull_request_templates/
+url: /configuration-file/pull_request_templates/
 title: ''
 description: >-
   This key defines the Pull Request templates available on your *Site*.
@@ -37,5 +37,5 @@ examples:
                 disabled: true
           template_path: .github/templates/delete-content.md
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

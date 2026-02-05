@@ -1,5 +1,5 @@
 gid: type._inputs.*.(url-input).options
-url: /types/_inputs/*/(url-input)/options/
+url: /configuration-file/types/_inputs/*/(url-input)/options/
 title: ''
 description: This key defines options that are specific to URL Inputs.
 examples: []

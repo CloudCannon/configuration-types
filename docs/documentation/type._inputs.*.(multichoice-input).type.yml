@@ -1,6 +1,6 @@
 gid: type._inputs.*.(multichoice-input).type
-url: /types/_inputs/*/(multichoice-input)/type/
-title: Type
+url: /configuration-file/types/_inputs/*/(multichoice-input)/type/
+title: ''
 description: >-
   This key defines the type of editing interface used for an Input.
 
@@ -34,5 +34,5 @@ examples:
         categories:
           type: multichoice
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -1,5 +1,5 @@
 gid: markdown.engine
-url: /markdown/engine/
+url: /configuration-file/markdown/engine/
 title: ''
 description: >-
   This key defines which Markdown processing engine CloudCannon will use to
@@ -13,7 +13,7 @@ examples:
       markdown:
         engine: kramdown
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       In this example, we have configured CloudCannon to use the `commonmark`
       Markdown engine with custom options.
@@ -25,5 +25,5 @@ examples:
           html: true
           breaks: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

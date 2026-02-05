@@ -1,5 +1,5 @@
 gid: type._editables.*.snippet
-url: /types/_editables/*/snippet/
+url: /configuration-file/types/_editables/*/snippet/
 title: ''
 description: >-
   This key toggles whether CloudCannon will display a tool in your WYSIWYG

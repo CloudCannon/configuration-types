@@ -1,5 +1,5 @@
 gid: type.snippet-format.allowed_string_cases
-url: /types/snippet-format/allowed_string_cases/
+url: /configuration-file/types/snippet-format/allowed_string_cases/
 title: ''
 description: >-
   This key defines which string case types are allowed when parsing snippet
@@ -26,5 +26,5 @@ examples:
                   allowed_string_cases:
                     lower: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

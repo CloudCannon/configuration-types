@@ -1,5 +1,5 @@
 gid: type.preview.icon_color
-url: /types/preview/icon_color/
+url: /configuration-file/types/preview/icon_color/
 title: ''
 description: >-
   This key defines the color of the icon displayed on *Cards* in the *Collection
@@ -28,5 +28,5 @@ examples:
               - key: color
               - text: '#ff0000'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

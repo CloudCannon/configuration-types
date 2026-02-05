@@ -1,5 +1,5 @@
 gid: type.snippet-style.block
-url: /types/snippet-style/block/
+url: /configuration-file/types/snippet-style/block/
 title: ''
 description: >-
   This key defines block-level formatting options for snippet output.
@@ -27,5 +27,5 @@ examples:
                     trailing: '\n'
                     indent: '  '
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

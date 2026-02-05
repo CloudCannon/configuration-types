@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.unique_on_message
-url: /types/_inputs/*/options/unique_on_message/
+url: /configuration-file/types/_inputs/*/options/unique_on_message/
 title: ''
 description: >-
   This key defines a custom error message that explains why a value has failed
@@ -26,7 +26,7 @@ examples:
             unique_on: '$.path'
             unique_on_message: The value for path must be different for all items.
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: ''
     language: yaml
     code: |-
@@ -36,5 +36,5 @@ examples:
         - path: /articles/first-article.md
           featured: false
     annotations: []
-    source: blog-article.yml
+    source: /blog-article.yml
 show_in_navigation: false

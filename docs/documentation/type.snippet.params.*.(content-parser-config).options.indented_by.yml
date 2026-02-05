@@ -1,5 +1,6 @@
 gid: type.snippet.params.*.(content-parser-config).options.indented_by
-url: /types/snippet/params/*/(content-parser-config)/options/indented_by/
+url: >-
+  /configuration-file/types/snippet/params/*/(content-parser-config)/options/indented_by/
 title: ''
 description: >-
   This key defines the whitespace indentation required when parsing content.
@@ -29,7 +30,7 @@ examples:
                 editor_key: highlighted_text
                 indented_by___0___: "  "
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: 'Example usage:'
     language: markdown
     code: |-
@@ -59,5 +60,5 @@ examples:
         content: |-
           This will **not** match this parser, as indentation is required.
           Use the `style.block.indent` option instead.
-    source: page.md
+    source: /page.md
 show_in_navigation: false

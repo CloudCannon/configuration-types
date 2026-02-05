@@ -1,5 +1,5 @@
 gid: type.structure.values.[*].id
-url: /types/structure/values/[*]/id/
+url: /configuration-file/types/structure/values/[*]/id/
 title: ''
 description: >-
   This key defines the string used to identify a given Structure value when
@@ -16,5 +16,5 @@ examples:
             - label: Blog
               id: blog_post
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

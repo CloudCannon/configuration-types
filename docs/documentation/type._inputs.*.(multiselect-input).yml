@@ -1,5 +1,5 @@
 gid: type._inputs.*.(multiselect-input)
-url: /types/_inputs/*/(multiselect-input)/
+url: /configuration-file/types/_inputs/*/(multiselect-input)/
 title: Multiselect Input
 description: >-
   This key defines an editing interface for data with multiple predefined
@@ -23,5 +23,5 @@ examples:
               - news
               - events
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

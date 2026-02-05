@@ -1,5 +1,5 @@
 gid: type._editables.*.code_block
-url: /types/_editables/*/code_block/
+url: /configuration-file/types/_editables/*/code_block/
 title: ''
 description: >-
   This key toggles whether CloudCannon will display a control in your WYSIWYG

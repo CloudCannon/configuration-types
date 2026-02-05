@@ -1,0 +1,8 @@
+gid: type.Routing
+url: /routing-file/
+title: ''
+description: >-
+  Configuration for the `.cloudcannon/routing.json` file. Defines redirects,
+  rewrites, and custom HTTP headers for your site.
+examples: []
+show_in_navigation: true

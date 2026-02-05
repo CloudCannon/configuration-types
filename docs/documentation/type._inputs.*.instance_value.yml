@@ -1,6 +1,6 @@
 gid: type._inputs.*.instance_value
-url: /types/_inputs/*/instance_value/
-title: Instance Value
+url: /configuration-file/types/_inputs/*/instance_value/
+title: ''
 description: >-
   This key defines whether an input is automatically populated with a value when
   the input is created.
@@ -30,5 +30,5 @@ examples:
           type: text
           instance_value: UUID
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

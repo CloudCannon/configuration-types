@@ -1,5 +1,5 @@
 gid: type.snippet-format.object_boundary.start
-url: /types/snippet-format/object_boundary/start/
+url: /configuration-file/types/snippet-format/object_boundary/start/
 title: ''
 description: >-
   This key defines the start token for object boundaries when parsing snippet
@@ -25,5 +25,5 @@ examples:
                     start: '{'
                     end: '}'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

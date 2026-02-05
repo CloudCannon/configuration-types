@@ -1,5 +1,5 @@
 gid: type.preview.tags
-url: /types/preview/tags/
+url: /configuration-file/types/preview/tags/
 title: ''
 description: >-
   This key defines tags displayed on *Cards* in the *Collection browser*,
@@ -17,5 +17,5 @@ examples:
               - featured
               - tutorial
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

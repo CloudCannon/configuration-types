@@ -1,5 +1,5 @@
 gid: editor.default_path
-url: /editor/default_path/
+url: /configuration-file/editor/default_path/
 title: ''
 description: This key defines the link for the *Home* button on the *Dashboard* page.
 examples:
@@ -11,5 +11,5 @@ examples:
       editor:
         default_path: /blog/
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

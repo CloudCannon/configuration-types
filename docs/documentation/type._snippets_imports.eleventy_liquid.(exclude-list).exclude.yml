@@ -1,5 +1,6 @@
 gid: type._snippets_imports.eleventy_liquid.(exclude-list).exclude
-url: /types/_snippets_imports/eleventy_liquid/(exclude-list)/exclude/
+url: >-
+  /configuration-file/types/_snippets_imports/eleventy_liquid/(exclude-list)/exclude/
 title: ''
 description: |-
   This key defines the list of excluded snippets.

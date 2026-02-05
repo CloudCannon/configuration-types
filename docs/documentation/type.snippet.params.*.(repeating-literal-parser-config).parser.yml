@@ -1,5 +1,6 @@
 gid: type.snippet.params.*.(repeating-literal-parser-config).parser
-url: /types/snippet/params/*/(repeating-literal-parser-config)/parser/
+url: >-
+  /configuration-file/types/snippet/params/*/(repeating-literal-parser-config)/parser/
 title: ''
 description: >-
   This key defines the parser type for repeating literal parser configurations.
@@ -24,5 +25,5 @@ examples:
                 literal: 'separator'
                 default: 1
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

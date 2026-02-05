@@ -1,6 +1,6 @@
 gid: collections_config.*.schemas.*
-url: /collections_config/*/schemas/*/
-title: Schema
+url: /configuration-file/collections_config/*/schemas/*/
+title: ''
 description: >-
   This key defines your schemas, which are the structured data formats for your
   content files.

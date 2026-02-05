@@ -1,8 +1,103 @@
 gid: type._snippets_definitions
-url: /types/_snippets_definitions/
-title: Snippets Definitions
+url: /configuration-file/types/_snippets_definitions/
+title: ''
 description: >-
-  This key defines extended options used when creating more complex custom
-  snippets.
-examples: []
-show_in_navigation: true
+  A record of reusable values that can be referenced in snippet templates.
+  Values are substituted using `{ ref: "key" }` for direct replacement or `{
+  spread_ref: "key" }` for spreading arrays/objects. Common definition types
+  include parser formats, argument models, select option lists, and simple
+  string values like shortcode names.
+examples:
+  - description: >-
+      Define reusable values like shortcode names, argument models, and parser
+      formats that can be referenced in snippet templates.
+    language: yaml
+    code: |-
+      _snippets_definitions:
+        # Simple string value for the shortcode name
+        shortcode_name: "highlight"
+        content_key: "content"
+
+        # Array of argument models for positional arguments
+        positional_args:
+          - editor_key: "language"
+            type: "string"
+          - editor_key: "linenos"
+            type: "boolean"
+            optional: true
+            default: false
+
+        # Parser format configuration
+        custom_format:
+          root_pair_delimiter:
+            - " "
+          root_value_delimiter: "="
+          string_boundary:
+            - '"'
+            - "'"
+            - ""
+          allow_booleans: true
+          allow_numbers: true
+    annotations: []
+    source: /cloudcannon.config.yml
+  - description: >-
+      Reference definitions in snippet templates using `{ ref: "key" }` syntax.
+      This allows you to reuse common configurations across multiple snippets.
+    language: yaml
+    code: |-
+      _snippets_definitions:
+        shortcode_name: "figure"
+        named_args:
+          - editor_key: "src"
+            type: "string"
+          - editor_key: "alt"
+            type: "string"
+            optional: true
+
+      _snippets_templates:
+        my_shortcode_template:
+          snippet: "{{< [[name]] [[args]] >}}"
+          params:
+            name:
+              parser: "literal"
+              options:
+                literal:
+                  ref: "shortcode_name"
+            args:
+              parser: "key_values"
+              options:
+                models:
+                  ref: "named_args"
+
+      _snippets:
+        figure:
+          template: "my_shortcode_template"
+          definitions:
+            shortcode_name: "figure"
+            named_args:
+              - editor_key: "src"
+                type: "string"
+              - editor_key: "alt"
+                type: "string"
+    annotations: []
+    source: /cloudcannon.config.yml
+  - description: >-
+      Define a list of select options for use in snippet inputs, such as a list
+      of programming languages for a code highlighting snippet.
+    language: yaml
+    code: |-
+      _snippets_definitions:
+        languages:
+          - name: "JavaScript"
+            value: "js"
+          - name: "Python"
+            value: "python"
+          - name: "Ruby"
+            value: "ruby"
+          - name: "HTML"
+            value: "html"
+          - name: "CSS"
+            value: "css"
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

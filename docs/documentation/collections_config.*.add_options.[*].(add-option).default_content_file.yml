@@ -1,5 +1,6 @@
 gid: collections_config.*.add_options.[*].(add-option).default_content_file
-url: /collections_config/*/add_options/[*]/(add-option)/default_content_file/
+url: >-
+  /configuration-file/collections_config/*/add_options/[*]/(add-option)/default_content_file/
 title: ''
 description: >-
   This key defines which file CloudCannon should use to populate a file created
@@ -27,5 +28,5 @@ examples:
             collection: upcoming_events
             default_content_file: event_template.yml
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

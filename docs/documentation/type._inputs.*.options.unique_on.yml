@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.unique_on
-url: /types/_inputs/*/options/unique_on/
+url: /configuration-file/types/_inputs/*/options/unique_on/
 title: ''
 description: >-
   This key defines the JSON Path selector that CloudCannon should use to
@@ -36,7 +36,7 @@ examples:
           options:
             unique_on: '$.path'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: ''
     language: yaml
     code: |-
@@ -46,5 +46,5 @@ examples:
         - path: /articles/second-article.md
           featured: false
     annotations: []
-    source: blog-article.yml
+    source: /blog-article.yml
 show_in_navigation: false

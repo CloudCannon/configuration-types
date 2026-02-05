@@ -1,6 +1,7 @@
 gid: type._inputs.*.(date-input).options.end_before.(iso8601-string)
-url: /types/_inputs/*/(date-input)/options/end_before/(iso8601-string)/
-title: ISO8601 String
+url: >-
+  /configuration-file/types/_inputs/*/(date-input)/options/end_before/(iso8601-string)/
+title: String End Before
 description: >-
   This key defines the date and time, exclusive, that CloudCannon will allow in
   an Input.

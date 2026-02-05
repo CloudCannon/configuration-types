@@ -1,5 +1,5 @@
 gid: file_config.[*].glob
-url: /file_config/[*]/glob/
+url: /configuration-file/file_config/[*]/glob/
 title: ''
 description: This key defines the glob pattern(s) targeting a path to one or more files.
 examples:
@@ -16,5 +16,5 @@ examples:
               options:
                 subtype: tabbed
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

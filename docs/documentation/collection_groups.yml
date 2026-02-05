@@ -1,6 +1,6 @@
 gid: collection_groups
-url: /collection_groups/
-title: Collection Groups
+url: /configuration-file/collection_groups/
+title: ''
 description: >-
   This key defines custom order and grouping for Collections in your *Site
   Navigation*.
@@ -28,5 +28,5 @@ examples:
           collections:
             - data
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

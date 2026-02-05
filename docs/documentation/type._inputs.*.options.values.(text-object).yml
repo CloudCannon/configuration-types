@@ -1,6 +1,6 @@
 gid: type._inputs.*.options.values.(text-object)
-url: /types/_inputs/*/options/values/(text-object)/
-title: Text Object
+url: /configuration-file/types/_inputs/*/options/values/(text-object)/
+title: Text Object Values
 description: ''
 examples: []
 show_in_navigation: false

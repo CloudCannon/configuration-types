@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../dist/cloudcannon-inputs.schema.json
+
+image:
+  type: image
+  options:
+    accepts_mime_types: image/png,image/jpeg
+    mime_type: image/webp
+images[*]:
+  type: image
+  options:
+    accepts_mime_types:
+      - image/png
+      - image/jpeg
+    mime_type: image/png
+range:
+  type: range
+  context:
+    content: hi
+  options:
+    max: 1
+    min: 2
+    step: 5
+quote:
+  type: object
+  options:
+    structures:
+      values:
+        - value:
+            text:
+            icon:
+content:
+  type: markdown
+icon:
+  type: select
+  options:
+    values:
+      - ph-user-square
+description:
+  type: markdown
+  options:
+    bold: true
+who_knows:
+  hidden: false

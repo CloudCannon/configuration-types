@@ -1,5 +1,5 @@
 gid: type.structure.values.[*].hide_extra_inputs
-url: /types/structure/values/[*]/hide_extra_inputs/
+url: /configuration-file/types/structure/values/[*]/hide_extra_inputs/
 title: ''
 description: >-
   This key toggles whether CloudCannon will hide inputs that are not present in

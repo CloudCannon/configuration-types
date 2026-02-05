@@ -1,5 +1,5 @@
 gid: type._inputs.*.(object-input).options.groups.[*]
-url: /types/_inputs/*/(object-input)/options/groups/[*]/
+url: /configuration-file/types/_inputs/*/(object-input)/options/groups/[*]/
 title: ''
 description: >-
   This key represents an individual group object in the

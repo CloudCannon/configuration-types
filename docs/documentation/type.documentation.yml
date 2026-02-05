@@ -1,6 +1,6 @@
 gid: type.documentation
-url: /types/documentation/
-title: Documentation
+url: /configuration-file/types/documentation/
+title: ''
 description: |-
   This key defines the documentation link at the top of a *Collection browser*.
 
@@ -18,5 +18,5 @@ examples:
             text: CloudCannon Documentation
             icon: star
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: true

@@ -1,5 +1,5 @@
 gid: type._inputs.*.(color-input).options.palette.[*]
-url: /types/_inputs/*/(color-input)/options/palette/[*]/
+url: /configuration-file/types/_inputs/*/(color-input)/options/palette/[*]/
 title: ''
 description: >-
   This key represents an individual color string in the
@@ -23,7 +23,7 @@ examples:
             palette:
               - '#ff0000'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       In this example, we have configured a color input with a palette
       containing a CSS color name.
@@ -37,5 +37,5 @@ examples:
             palette:
               - red
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

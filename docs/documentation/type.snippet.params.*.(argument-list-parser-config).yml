@@ -1,6 +1,6 @@
 gid: type.snippet.params.*.(argument-list-parser-config)
-url: /types/snippet/params/*/(argument-list-parser-config)/
-title: Argument List Parser Config
+url: /configuration-file/types/snippet/params/*/(argument-list-parser-config)/
+title: Argument List Parser Configuration
 description: >-
   This key defines a parser configuration that parses a list of distinct
   positional arguments based on their position.

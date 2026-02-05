@@ -1,6 +1,6 @@
 gid: markdown.options.attribute_elements.*
-url: /markdown/options/attribute_elements/*/
-title: Attribute List Position
+url: /configuration-file/markdown/options/attribute_elements/*/
+title: ''
 description: >-
   This key represents an individual element-specific attribute positioning
   configuration in the `markdown.options.attribute_elements` object.
@@ -25,5 +25,5 @@ examples:
           attribute_elements:
             p: right
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

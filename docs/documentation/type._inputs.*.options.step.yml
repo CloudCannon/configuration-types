@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.step
-url: /types/_inputs/*/options/step/
+url: /configuration-file/types/_inputs/*/options/step/
 title: ''
 description: >-
   This key defines a number that specifies the granularity that the value must
@@ -19,5 +19,5 @@ examples:
             max: 100
             step: 5
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

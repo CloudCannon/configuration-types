@@ -1,5 +1,5 @@
 gid: type.snippet.params.*.(optional-parser-config).parser
-url: /types/snippet/params/*/(optional-parser-config)/parser/
+url: /configuration-file/types/snippet/params/*/(optional-parser-config)/parser/
 title: ''
 description: >-
   This key defines the parser type for optional parser configurations.
@@ -23,5 +23,5 @@ examples:
               options:
                 snippet: 'content'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

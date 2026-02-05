@@ -1,5 +1,5 @@
 gid: type.snippet-style.inline
-url: /types/snippet-style/inline/
+url: /configuration-file/types/snippet-style/inline/
 title: ''
 description: >-
   This key defines inline formatting options for snippet output.
@@ -25,5 +25,5 @@ examples:
                     leading: ' '
                     trailing: ' '
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -1,5 +1,5 @@
 gid: type._inputs.*.context
-url: /types/_inputs/*/context/
+url: /configuration-file/types/_inputs/*/context/
 title: ''
 description: |-
   This key defines a context box for extra information about an Input.
@@ -22,5 +22,5 @@ examples:
             icon: help
             content: This date field will automatically populate when you create an article.
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

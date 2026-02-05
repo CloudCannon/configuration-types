@@ -1,6 +1,6 @@
 gid: type._inputs.*.(text-input).options.icon
-url: /types/_inputs/*/(text-input)/options/icon/
-title: Icon
+url: /configuration-file/types/_inputs/*/(text-input)/options/icon/
+title: ''
 description: This key defines the icon shown beside the input.
 examples:
   - description: In this example, we have configured an icon for the *Text Input* `title`.
@@ -12,5 +12,5 @@ examples:
           options:
             icon: title
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

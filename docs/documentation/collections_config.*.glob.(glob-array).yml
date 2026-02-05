@@ -1,5 +1,5 @@
 gid: collections_config.*.glob.(glob-array)
-url: /collections_config/*/glob/(glob-array)/
+url: /configuration-file/collections_config/*/glob/(glob-array)/
 title: Glob Array
 description: >-
   This key represents an array format for the `collections_config.*.glob` key.
@@ -25,5 +25,5 @@ examples:
             - '**/*.yml'
             - '!secret.yml'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

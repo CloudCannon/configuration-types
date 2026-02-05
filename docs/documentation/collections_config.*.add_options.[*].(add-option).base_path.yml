@@ -1,5 +1,6 @@
 gid: collections_config.*.add_options.[*].(add-option).base_path
-url: /collections_config/*/add_options/[*]/(add-option)/base_path/
+url: >-
+  /configuration-file/collections_config/*/add_options/[*]/(add-option)/base_path/
 title: ''
 description: >-
   This key defines a path for files created using an option in the *\+ Add*
@@ -30,5 +31,5 @@ examples:
               editor: content
               base_path: /../_drafts/blog
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -1,5 +1,5 @@
 gid: type._inputs.*.(code-input).options.soft_wrap
-url: /types/_inputs/*/(code-input)/options/soft_wrap/
+url: /configuration-file/types/_inputs/*/(code-input)/options/soft_wrap/
 title: ''
 description: >-
   This key toggles whether long lines wrap to the next line in *Code Inputs*.
@@ -24,5 +24,5 @@ examples:
           options:
             soft_wrap: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

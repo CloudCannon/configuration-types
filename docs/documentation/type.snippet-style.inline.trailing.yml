@@ -1,5 +1,5 @@
 gid: type.snippet-style.inline.trailing
-url: /types/snippet-style/inline/trailing/
+url: /configuration-file/types/snippet-style/inline/trailing/
 title: ''
 description: >-
   This key defines the trailing whitespace string for inline snippet content.
@@ -24,5 +24,5 @@ examples:
                   inline:
                     trailing: ' '
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

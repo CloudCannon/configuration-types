@@ -1,6 +1,6 @@
 gid: markdown.options.attribute_elements.block
-url: /markdown/options/attribute_elements/block/
-title: Attribute List Position
+url: /configuration-file/markdown/options/attribute_elements/block/
+title: ''
 description: >-
   This key defines where attribute lists are positioned for block-level elements
   when converting HTML to Markdown.
@@ -25,5 +25,5 @@ examples:
           attribute_elements:
             block: below
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

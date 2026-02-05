@@ -1,5 +1,6 @@
 gid: type.snippet.params.*.(content-parser-config).options.optional
-url: /types/snippet/params/*/(content-parser-config)/options/optional/
+url: >-
+  /configuration-file/types/snippet/params/*/(content-parser-config)/options/optional/
 title: ''
 description: >-
   This key toggles whether CloudCannon will treat content as optional when
@@ -27,5 +28,5 @@ examples:
                 editor_key: highlighted_text
                 optional: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

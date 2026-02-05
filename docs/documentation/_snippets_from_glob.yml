@@ -1,5 +1,5 @@
 gid: _snippets_from_glob
-url: /_snippets_from_glob/
+url: /configuration-file/_snippets_from_glob/
 title: ''
 description: >-
   This key defines globs that filter which files CloudCannon should use for
@@ -30,7 +30,7 @@ examples:
       _snippets_from_glob:
         - '/.cloudcannon/snippets/callout.cloudcannon.snippets.yml'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: ''
     language: yaml
     code: |-

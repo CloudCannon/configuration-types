@@ -1,5 +1,5 @@
 gid: type._inputs.*.(text-input).options
-url: /types/_inputs/*/(text-input)/options/
+url: /configuration-file/types/_inputs/*/(text-input)/options/
 title: ''
 description: This key defines options that are specific to Text Inputs.
 examples:
@@ -15,5 +15,5 @@ examples:
             comment: Enter a title
             icon: title
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

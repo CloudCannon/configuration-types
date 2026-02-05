@@ -1,6 +1,6 @@
 gid: type._structures
-url: /types/_structures/
-title: Structures
+url: /configuration-file/types/_structures/
+title: ''
 description: >-
   This key defines which structures are available for [Object
   inputs](/documentation/articles/what-is-an-object-input/) and [Array
@@ -45,7 +45,7 @@ examples:
                     description:
                     url:
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       In this example, we want to populate an Array input with Staff members,
       including the `name`, `job_description`, and `profile_picture` fields for
@@ -89,5 +89,5 @@ examples:
                   - key: profile_picture
                 icon: face
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: true

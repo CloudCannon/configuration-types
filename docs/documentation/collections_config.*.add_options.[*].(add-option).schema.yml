@@ -1,5 +1,5 @@
 gid: collections_config.*.add_options.[*].(add-option).schema
-url: /collections_config/*/add_options/[*]/(add-option)/schema/
+url: /configuration-file/collections_config/*/add_options/[*]/(add-option)/schema/
 title: ''
 description: >-
   This key defines which *Schema* CloudCannon should use to populate a file
@@ -34,5 +34,5 @@ examples:
             employee:
               path: /.cloudcannon/schemas/employee.yml
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -1,5 +1,5 @@
 gid: type.preview.image
-url: /types/preview/image/
+url: /configuration-file/types/preview/image/
 title: ''
 description: >-
   This key defines the image displayed on *Cards* in the *Collection browser*,
@@ -25,7 +25,7 @@ examples:
               - template: '{thumbnail}'
               - text: 'default-image.jpg'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       In this example, we have configured the image for *Structure Cards* to
       display the `profile_picture` key.
@@ -42,5 +42,5 @@ examples:
                 image:
                   - key: profile_picture
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

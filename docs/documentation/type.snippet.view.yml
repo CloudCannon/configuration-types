@@ -1,5 +1,5 @@
 gid: type.snippet.view
-url: /types/snippet/view/
+url: /configuration-file/types/snippet/view/
 title: ''
 description: |-
   This key defines how selected items are rendered.

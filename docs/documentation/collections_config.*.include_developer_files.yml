@@ -1,5 +1,5 @@
 gid: collections_config.*.include_developer_files
-url: /collections_config/*/include_developer_files/
+url: /configuration-file/collections_config/*/include_developer_files/
 title: ''
 description: >-
   This key toggles whether CloudCannon removes developer files from your
@@ -26,5 +26,5 @@ examples:
         data:
           include_developer_files: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -1,5 +1,5 @@
 gid: type._inputs.*.(array-input).options.disable_reorder
-url: /types/_inputs/*/(array-input)/options/disable_reorder/
+url: /configuration-file/types/_inputs/*/(array-input)/options/disable_reorder/
 title: ''
 description: >-
   This key toggles whether CloudCannon will hide the controls on each item for

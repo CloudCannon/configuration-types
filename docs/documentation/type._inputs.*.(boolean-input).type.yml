@@ -1,6 +1,6 @@
 gid: type._inputs.*.(boolean-input).type
-url: /types/_inputs/*/(boolean-input)/type/
-title: Type
+url: /configuration-file/types/_inputs/*/(boolean-input)/type/
+title: ''
 description: >-
   This key defines the input type, which controls how this input appears and
   behaves.
@@ -14,5 +14,5 @@ examples:
         featured:
           type: switch
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

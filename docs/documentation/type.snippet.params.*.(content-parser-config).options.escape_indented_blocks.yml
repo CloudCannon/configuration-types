@@ -1,6 +1,6 @@
 gid: type.snippet.params.*.(content-parser-config).options.escape_indented_blocks
 url: >-
-  /types/snippet/params/*/(content-parser-config)/options/escape_indented_blocks/
+  /configuration-file/types/snippet/params/*/(content-parser-config)/options/escape_indented_blocks/
 title: ''
 description: >-
   This key toggles whether CloudCannon will escape indented code blocks (4
@@ -28,5 +28,5 @@ examples:
                 editor_key: highlighted_text
                 escape_indented_blocks: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

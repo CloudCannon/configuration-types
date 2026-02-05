@@ -1,5 +1,6 @@
 gid: type.snippet.params.*.(content-parser-config).options.raw
-url: /types/snippet/params/*/(content-parser-config)/options/raw/
+url: >-
+  /configuration-file/types/snippet/params/*/(content-parser-config)/options/raw/
 title: ''
 description: >-
   This key toggles whether the parser performs no parsing of the inner text.
@@ -20,7 +21,7 @@ examples:
         editor_key: highlighted_text
         raw: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: 'Example usage:'
     language: markdown
     code: |-
@@ -44,5 +45,5 @@ examples:
           parsed content
 
           `My highlighted <<highlight>>content!`.
-    source: page.md
+    source: /page.md
 show_in_navigation: false

@@ -1,6 +1,6 @@
 gid: type.create
-url: /types/create/
-title: Create
+url: /configuration-file/types/create/
+title: ''
 description: >-
   This key defines the path to which CloudCannon will save new files in a
   Collection.
@@ -27,5 +27,5 @@ examples:
               filename: '{date|year}-{date|month}-{date|day}-{title}'
             path: '[relative_base_path]/{filename|slugify}.[ext]'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: true

@@ -1,5 +1,5 @@
 gid: collections_config.*.disable_file_actions
-url: /collections_config/*/disable_file_actions/
+url: /configuration-file/collections_config/*/disable_file_actions/
 title: ''
 description: >-
   This key toggles whether team members can use the *Move*, *Clone*, *Rename*,
@@ -23,5 +23,5 @@ examples:
         data:
           disable_file_actions: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

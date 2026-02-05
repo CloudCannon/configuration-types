@@ -1,5 +1,6 @@
 gid: type._snippets_imports.python_markdown_extensions.(include-list).include
-url: /types/_snippets_imports/python_markdown_extensions/(include-list)/include/
+url: >-
+  /configuration-file/types/_snippets_imports/python_markdown_extensions/(include-list)/include/
 title: ''
 description: |-
   This key defines the list of included snippets.

@@ -1,5 +1,5 @@
 gid: collections_config.*.schema_key
-url: /collections_config/*/schema_key/
+url: /configuration-file/collections_config/*/schema_key/
 title: ''
 description: >-
   This key defines the name for the structured data key that references the
@@ -23,5 +23,5 @@ examples:
         blog:
           schema_key: _blog_template
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

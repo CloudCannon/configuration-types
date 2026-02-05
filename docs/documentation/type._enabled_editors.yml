@@ -1,6 +1,6 @@
 gid: type._enabled_editors
-url: /types/_enabled_editors/
-title: Enabled Editors
+url: /configuration-file/types/_enabled_editors/
+title: ''
 description: >-
   This key defines which editing interfaces are available by default for files
   at a given level of the configuration cascade.
@@ -50,5 +50,5 @@ examples:
           _enabled_editors:
             - content
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: true

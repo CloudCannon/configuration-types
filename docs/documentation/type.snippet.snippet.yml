@@ -1,5 +1,5 @@
 gid: type.snippet.snippet
-url: /types/snippet/snippet/
+url: /configuration-file/types/snippet/snippet/
 title: ''
 description: >-
   This key defines the snippet string that contains the text to match for your
@@ -16,5 +16,5 @@ examples:
           snippet: "[[text]]"
           template: button
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

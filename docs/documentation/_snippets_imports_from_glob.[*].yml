@@ -1,5 +1,5 @@
 gid: _snippets_imports_from_glob.[*]
-url: /_snippets_imports_from_glob/[*]/
+url: /configuration-file/_snippets_imports_from_glob/[*]/
 title: ''
 description: >-
   This key represents an individual glob pattern string in the
@@ -20,5 +20,5 @@ examples:
       _snippets_imports_from_glob:
         - '/.cloudcannon/snippets/*.cloudcannon.snippets-imports.yml'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

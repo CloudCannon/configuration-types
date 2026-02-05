@@ -239,7 +239,7 @@ export const CollectionConfigSchema = z
 		preview: PreviewSchema.optional(),
 		...CascadeSchema.shape,
 	})
-	.meta({ id: 'CollectionConfig', title: 'Collection Config' });
+	.meta({ id: 'collections_config.*', title: 'Collection Config' });
 
 export const CollectionGroupSchema = z
 	.object({
@@ -253,10 +253,16 @@ export const CollectionGroupSchema = z
 	})
 	.meta({ id: 'CollectionGroup', title: 'Collection Group' });
 
+export const CollectionsConfigSchema = z
+	.record(z.string(), CollectionConfigSchema)
+	.optional()
+	.meta({ id: 'collections_config' });
+
 export type HrefAddOption = z.infer<typeof HrefAddOptionSchema>;
 export type AddOption = z.infer<typeof AddOptionSchema>;
 export type SortOption = z.infer<typeof SortOptionSchema>;
 export type Create = z.infer<typeof CreateSchema>;
 export type Schema = z.infer<typeof SchemaSchema>;
 export type CollectionConfig = z.infer<typeof CollectionConfigSchema>;
+export type CollectionsConfig = NonNullable<z.infer<typeof CollectionsConfigSchema>>;
 export type CollectionGroup = z.infer<typeof CollectionGroupSchema>;

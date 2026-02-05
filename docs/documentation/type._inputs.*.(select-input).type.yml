@@ -1,6 +1,6 @@
 gid: type._inputs.*.(select-input).type
-url: /types/_inputs/*/(select-input)/type/
-title: Type
+url: /configuration-file/types/_inputs/*/(select-input)/type/
+title: ''
 description: >-
   This key defines the input type, which controls how this input appears and
   behaves.
@@ -19,5 +19,5 @@ examples:
               - News
               - Events
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

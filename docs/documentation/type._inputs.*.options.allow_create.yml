@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.allow_create
-url: /types/_inputs/*/options/allow_create/
+url: /configuration-file/types/_inputs/*/options/allow_create/
 title: ''
 description: >-
   This key toggles whether CloudCannon will allow new text values to be created
@@ -23,5 +23,5 @@ examples:
               - News
             allow_create: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -1,6 +1,6 @@
 gid: type.paths
-url: /types/paths/
-title: Paths
+url: /configuration-file/types/paths/
+title: ''
 description: >-
   This key defines paths for your Rich Text editors or File inputs.
 
@@ -23,5 +23,5 @@ examples:
             uploads: /uploads/blog/
             static: /assets/
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: true

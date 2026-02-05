@@ -1,6 +1,6 @@
 gid: type._editables
-url: /types/_editables/
-title: Editables
+url: /configuration-file/types/_editables/
+title: ''
 description: >-
   This key defines which Rich Text editors have custom configuration for the
   associated WYSIWYG toolbar.
@@ -20,5 +20,5 @@ examples:
             content:
               snippet: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: true

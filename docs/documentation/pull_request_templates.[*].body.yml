@@ -1,5 +1,5 @@
 gid: pull_request_templates.[*].body
-url: /pull_request_templates/[*]/body/
+url: /configuration-file/pull_request_templates/[*]/body/
 title: ''
 description: |-
   This key defines the default value of the "Body" field in your Pull Request.
@@ -17,5 +17,5 @@ examples:
           title: Updates to...
           body: In this update, I have made the following changes...
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

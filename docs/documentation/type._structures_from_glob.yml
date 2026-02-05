@@ -1,5 +1,5 @@
 gid: type._structures_from_glob
-url: /types/_structures_from_glob/
+url: /configuration-file/types/_structures_from_glob/
 title: ''
 description: >-
   This key defines globs that filter which files CloudCannon should use for
@@ -35,7 +35,7 @@ examples:
       _structures_from_glob:
         - '/.cloudcannon/structures/staffMembers.cloudcannon.structures.yml'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: ''
     language: yaml
     code: |-

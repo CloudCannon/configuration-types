@@ -1,5 +1,5 @@
 gid: type._inputs.*.(date-input).options.end_before
-url: /types/_inputs/*/(date-input)/options/end_before/
+url: /configuration-file/types/_inputs/*/(date-input)/options/end_before/
 title: ''
 description: >-
   This key defines the date and time, exclusive, that CloudCannon will allow in
@@ -45,5 +45,5 @@ examples:
             start_from: 2022-01-01T00:00:00Z
             end_before: 2023-01-01T00:00:00Z
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -1,5 +1,6 @@
 gid: collections_config.*.add_options.[*].(href-add-option).href
-url: /collections_config/*/add_options/[*]/(href-add-option)/href/
+url: >-
+  /configuration-file/collections_config/*/add_options/[*]/(href-add-option)/href/
 title: ''
 description: >-
   This key defines the link for a URL option in the *\+ Add* button dropdown.
@@ -24,5 +25,5 @@ examples:
               icon: assignment_add
               href: https://forms.gle/xxxxxxx
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

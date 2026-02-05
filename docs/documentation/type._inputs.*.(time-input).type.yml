@@ -1,6 +1,6 @@
 gid: type._inputs.*.(time-input).type
-url: /types/_inputs/*/(time-input)/type/
-title: Type
+url: /configuration-file/types/_inputs/*/(time-input)/type/
+title: ''
 description: >-
   This key defines the input type, which controls how this input appears and
   behaves.

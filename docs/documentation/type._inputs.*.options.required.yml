@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.required
-url: /types/_inputs/*/options/required/
+url: /configuration-file/types/_inputs/*/options/required/
 title: ''
 description: >-
   This key toggles whether CloudCannon requires this Input to have a value.
@@ -28,5 +28,5 @@ examples:
           options:
             required: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

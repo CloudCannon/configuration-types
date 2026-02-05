@@ -1,5 +1,5 @@
 gid: type.structure.values.[*].label
-url: /types/structure/values/[*]/label/
+url: /configuration-file/types/structure/values/[*]/label/
 title: ''
 description: >-
   This key defines the display name for a given value in a Structure.
@@ -31,5 +31,5 @@ examples:
                 profile_picture:
                 url:
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

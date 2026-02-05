@@ -3,11 +3,20 @@ import path from 'node:path';
 import { dump, load } from 'js-yaml';
 import { type DocumentationEntry, type Page, verbose } from './util';
 
-export async function readDocs(): Promise<Record<string, DocumentationEntry>> {
+export async function readDocs(folder: string): Promise<Record<string, DocumentationEntry>> {
 	const docs: Record<string, DocumentationEntry> = {};
-	const files = await fs.readdir(path.join(process.cwd(), 'docs/documentation'));
+	const folderPath = path.join(process.cwd(), folder);
 
-	console.log(`📄 Read from docs/documentation/*.yml (${files.length})`);
+	try {
+		await fs.access(folderPath);
+	} catch {
+		console.log(`📄 Read from ${folder}/*.yml (0 - folder does not exist)`);
+		return docs;
+	}
+
+	const files = await fs.readdir(folderPath);
+
+	console.log(`📄 Read from ${folder}/*.yml (${files.length})`);
 
 	for (let i = 0; i < files.length; i++) {
 		if (files[i].endsWith('.yml')) {
@@ -15,7 +24,7 @@ export async function readDocs(): Promise<Record<string, DocumentationEntry>> {
 				console.log(`     ${files[i]}`);
 			}
 
-			const content = await fs.readFile(path.join(process.cwd(), 'docs/documentation', files[i]), {
+			const content = await fs.readFile(path.join(folderPath, files[i]), {
 				encoding: 'utf8',
 			});
 
@@ -33,40 +42,61 @@ export async function readDocs(): Promise<Record<string, DocumentationEntry>> {
 	return docs;
 }
 
-export async function moveOldDocs(gidsInUse: Set<string>): Promise<void> {
-	const allFiles = await fs.readdir(path.join(process.cwd(), 'docs/documentation'));
+export async function moveOldDocs(folder: string, gidsInUse: Set<string>): Promise<void> {
+	const folderPath = path.join(process.cwd(), folder);
+	const unusedFolder = `${folder}-unused`;
+	const unusedPath = path.join(process.cwd(), unusedFolder);
+
+	try {
+		await fs.access(folderPath);
+	} catch {
+		return;
+	}
+
+	const allFiles = await fs.readdir(folderPath);
 	const files = allFiles.filter(
 		(file) => file.endsWith('.yml') && !gidsInUse.has(file.replace(/\.yml$/, ''))
 	);
 
-	await fs.mkdir(path.join(process.cwd(), 'docs/documentation-unused'), { recursive: true });
+	if (files.length === 0) {
+		return;
+	}
 
-	console.log(`🚚 Move to docs/documentation-unused/*.yml (${files.length})`);
+	await fs.mkdir(unusedPath, { recursive: true });
+
+	console.log(`🚚 Move to ${unusedFolder}/*.yml (${files.length})`);
 
 	for (let i = 0; i < files.length; i++) {
 		if (verbose) {
 			console.log(`     ${files[i]}`);
 		}
 
-		await fs.rename(
-			path.join(process.cwd(), 'docs/documentation', files[i]),
-			path.join(process.cwd(), 'docs/documentation-unused', files[i])
-		);
+		await fs.rename(path.join(folderPath, files[i]), path.join(unusedPath, files[i]));
 	}
 }
 
-export async function writeNewDocs(gids: Set<string>, pages: Record<string, Page>): Promise<void> {
+export async function writeNewDocs(
+	folder: string,
+	gids: Set<string>,
+	pages: Record<string, Page>
+): Promise<void> {
+	const folderPath = path.join(process.cwd(), folder);
 	const pageFiles: any[] = [];
 
-	const files = await fs.readdir(path.join(process.cwd(), 'docs/documentation'));
-	const existingGids = files.reduce((memo: Record<string, boolean>, file) => {
-		memo[file.replace(/\.yml$/, '')] = true;
-		return memo;
-	}, {});
+	await fs.mkdir(folderPath, { recursive: true });
+
+	let existingGids: Record<string, boolean> = {};
+	try {
+		const files = await fs.readdir(folderPath);
+		existingGids = files.reduce((memo: Record<string, boolean>, file) => {
+			memo[file.replace(/\.yml$/, '')] = true;
+			return memo;
+		}, {});
+	} catch {}
 
 	let newCount = 0;
 
-	console.log(`📝 Write to docs/documentation/*.yml (${gids.size})`);
+	console.log(`📝 Write to ${folder}/*.yml (${gids.size})`);
 
 	gids.forEach((gid) => {
 		if (!existingGids[gid]) {
@@ -85,8 +115,6 @@ export async function writeNewDocs(gids: Set<string>, pages: Record<string, Page
 		});
 	});
 
-	await fs.mkdir(path.join(process.cwd(), 'docs/documentation'), { recursive: true });
-
 	for (let i = 0; i < pageFiles.length; i++) {
 		const pageFile = pageFiles[i];
 		const filename = `${pageFile.gid}.yml`;
@@ -95,10 +123,7 @@ export async function writeNewDocs(gids: Set<string>, pages: Record<string, Page
 			console.log(`     ${filename}`);
 		}
 
-		await fs.writeFile(
-			path.join(process.cwd(), 'docs/documentation', filename),
-			dump(pageFile, { noRefs: true })
-		);
+		await fs.writeFile(path.join(folderPath, filename), dump(pageFile, { noRefs: true }));
 	}
 
 	console.log(`     🆕 New (${newCount})`);

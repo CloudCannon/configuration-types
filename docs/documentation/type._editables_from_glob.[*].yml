@@ -1,5 +1,5 @@
 gid: type._editables_from_glob.[*]
-url: /types/_editables_from_glob/[*]/
+url: /configuration-file/types/_editables_from_glob/[*]/
 title: ''
 description: >-
   This key represents an individual glob pattern string in the
@@ -21,5 +21,5 @@ examples:
       _editables_from_glob:
         - '/.cloudcannon/editables/*.cloudcannon.editables.yml'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -7,13 +7,13 @@
 	{% if appears_in | length or parent %}
 		<dt>Appears in:</dt>
 		{% if parent %}
-			<dd>{% renderFile "./_includes/doc-link.njk", parent %}</dd>
+			<dd>{% renderFile "./_includes/doc-link-full.njk", parent %}</dd>
 		{% endif %}
 
 		{% if appears_in | length %}
 			{% for appearsInGid in appears_in %}
 				{% set appearsInDoc = appearsInGid | docFromGid %}
-				<dd>{% renderFile "./_includes/doc-link.njk", appearsInDoc %}</dd>
+				<dd>{% renderFile "./_includes/doc-link-full.njk", appearsInDoc %}</dd>
 			{% endfor %}
 		{% endif %}
 	{% endif %}

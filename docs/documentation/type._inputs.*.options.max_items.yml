@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.max_items
-url: /types/_inputs/*/options/max_items/
+url: /configuration-file/types/_inputs/*/options/max_items/
 title: ''
 description: >-
   This key defines the maximum number of items CloudCannon will allow in an
@@ -42,5 +42,5 @@ examples:
             min_items: 2
             min_items_message: Cannot be less than 2
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

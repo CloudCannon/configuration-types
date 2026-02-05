@@ -1,5 +1,5 @@
 gid: type.structure.values.[*].tags
-url: /types/structure/values/[*]/tags/
+url: /configuration-file/types/structure/values/[*]/tags/
 title: ''
 description: >-
   This key defines which tags are associated with a given value in a Structure.
@@ -54,5 +54,5 @@ examples:
                 image_path:
                 videoUrl:
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

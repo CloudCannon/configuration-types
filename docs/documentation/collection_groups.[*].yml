@@ -1,6 +1,6 @@
 gid: collection_groups.[*]
-url: /collection_groups/[*]/
-title: Collection Group
+url: /configuration-file/collection_groups/[*]/
+title: ''
 description: >-
   This key represents an individual group entry in the `collection_groups`
   array.
@@ -23,5 +23,5 @@ examples:
           collections:
             - data
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

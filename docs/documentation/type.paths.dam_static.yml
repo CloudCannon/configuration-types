@@ -1,5 +1,5 @@
 gid: type.paths.dam_static
-url: /types/paths/dam_static/
+url: /configuration-file/types/paths/dam_static/
 title: ''
 description: >-
   This key defines the path for the location of statically copied assets for
@@ -15,5 +15,5 @@ examples:
           paths:
             dam_static: /assets/dam/
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

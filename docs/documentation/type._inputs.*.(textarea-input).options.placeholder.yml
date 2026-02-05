@@ -1,5 +1,5 @@
 gid: type._inputs.*.(textarea-input).options.placeholder
-url: /types/_inputs/*/(textarea-input)/options/placeholder/
+url: /configuration-file/types/_inputs/*/(textarea-input)/options/placeholder/
 title: ''
 description: This key defines the text shown when this input has no value.
 examples:
@@ -12,5 +12,5 @@ examples:
           options:
             placeholder: Enter a description
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

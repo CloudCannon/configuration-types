@@ -1,5 +1,5 @@
 gid: type._inputs.*.(text-input)
-url: /types/_inputs/*/(text-input)/
+url: /configuration-file/types/_inputs/*/(text-input)/
 title: Text Input
 description: This key defines a simple editing interface for plain text.
 examples:
@@ -11,5 +11,5 @@ examples:
           type: text
           label: Blog Title
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

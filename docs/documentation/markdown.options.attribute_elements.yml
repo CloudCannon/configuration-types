@@ -1,6 +1,6 @@
 gid: markdown.options.attribute_elements
-url: /markdown/options/attribute_elements/
-title: Markdown Attribute Element Options
+url: /configuration-file/markdown/options/attribute_elements/
+title: ''
 description: >-
   This key defines positioning behavior of Markdown attributes for different
   element types when converting HTML to Markdown.
@@ -27,5 +27,5 @@ examples:
             inline: right
             block: below
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

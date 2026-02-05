@@ -1,6 +1,6 @@
 gid: type._select_data.*.(text-object)
-url: /types/_select_data/*/(text-object)/
-title: Text Object
+url: /configuration-file/types/_select_data/*/(text-object)/
+title: Text Object Select Data
 description: ''
 examples: []
 show_in_navigation: false

@@ -1,5 +1,5 @@
 gid: type.snippet-format.string_boundary.[*]
-url: /types/snippet-format/string_boundary/[*]/
+url: /configuration-file/types/snippet-format/string_boundary/[*]/
 title: ''
 description: >-
   This key represents an individual string boundary token in the
@@ -25,5 +25,5 @@ examples:
                   string_boundary:
                     - '"'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

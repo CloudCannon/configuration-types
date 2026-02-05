@@ -1,5 +1,5 @@
 gid: collections_config.*.description
-url: /collections_config/*/description/
+url: /configuration-file/collections_config/*/description/
 title: ''
 description: >-
   This key defines the description text that appears on the *Collection browser*
@@ -30,5 +30,5 @@ examples:
 
             If your have any questions, please contact Heather.
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

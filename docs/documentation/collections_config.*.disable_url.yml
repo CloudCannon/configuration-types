@@ -1,5 +1,5 @@
 gid: collections_config.*.disable_url
-url: /collections_config/*/disable_url/
+url: /configuration-file/collections_config/*/disable_url/
 title: ''
 description: >-
   This key toggles whether CloudCannon will generate an output URL for a given
@@ -18,5 +18,5 @@ examples:
         data:
           disable_url: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

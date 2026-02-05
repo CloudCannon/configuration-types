@@ -1,5 +1,5 @@
 gid: type.snippet-format.object_boundary
-url: /types/snippet-format/object_boundary/
+url: /configuration-file/types/snippet-format/object_boundary/
 title: ''
 description: >-
   This key defines the characters that start and end object literals when
@@ -25,5 +25,5 @@ examples:
                     start: '{'
                     end: '}'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

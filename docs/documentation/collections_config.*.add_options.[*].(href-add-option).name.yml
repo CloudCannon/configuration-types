@@ -1,5 +1,6 @@
 gid: collections_config.*.add_options.[*].(href-add-option).name
-url: /collections_config/*/add_options/[*]/(href-add-option)/name/
+url: >-
+  /configuration-file/collections_config/*/add_options/[*]/(href-add-option)/name/
 title: ''
 description: >-
   This key defines the text displayed for a URL option in the *\+ Add* button
@@ -18,5 +19,5 @@ examples:
               icon: map
               href: /our-offices
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

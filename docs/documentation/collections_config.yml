@@ -1,5 +1,5 @@
 gid: collections_config
-url: /collections_config/
+url: /configuration-file/collections_config/
 title: ''
 description: This key defines your Collections.
 examples:
@@ -66,7 +66,7 @@ examples:
           schema_key: _blog_template
           include_developer_files: false
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       In this example, we have configured a `team` Collection. Key settings
       include custom sorting options, add options, and Card previews.
@@ -120,5 +120,5 @@ examples:
               name: Employee
               icon: support_agent
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

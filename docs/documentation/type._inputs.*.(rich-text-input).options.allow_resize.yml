@@ -1,5 +1,5 @@
 gid: type._inputs.*.(rich-text-input).options.allow_resize
-url: /types/_inputs/*/(rich-text-input)/options/allow_resize/
+url: /configuration-file/types/_inputs/*/(rich-text-input)/options/allow_resize/
 title: ''
 description: >-
   This key toggles whether CloudCannon will show the resize handler to

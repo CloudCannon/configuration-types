@@ -1,5 +1,5 @@
 gid: collection_groups.[*].collections
-url: /collection_groups/[*]/collections/
+url: /configuration-file/collection_groups/[*]/collections/
 title: ''
 description: >-
   This key defines the Collections displayed in a group in the *Site
@@ -26,5 +26,5 @@ examples:
           collections:
             - data
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

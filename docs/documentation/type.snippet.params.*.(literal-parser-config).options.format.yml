@@ -1,5 +1,6 @@
 gid: type.snippet.params.*.(literal-parser-config).options.format
-url: /types/snippet/params/*/(literal-parser-config)/options/format/
+url: >-
+  /configuration-file/types/snippet/params/*/(literal-parser-config)/options/format/
 title: ''
 description: >-
   This key defines formatting options for literal parser configurations.
@@ -25,5 +26,5 @@ examples:
                   string_boundary:
                     - '"'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

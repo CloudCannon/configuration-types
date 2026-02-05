@@ -1,6 +1,6 @@
 gid: collections_config.*.icon
-url: /collections_config/*/icon/
-title: Icon
+url: /configuration-file/collections_config/*/icon/
+title: ''
 description: >-
   This key defines the icon for a Collection.
 
@@ -29,5 +29,5 @@ examples:
         blog:
           icon: post_add
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

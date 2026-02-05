@@ -1,5 +1,5 @@
 gid: type.preview.metadata.[*]
-url: /types/preview/metadata/[*]/
+url: /configuration-file/types/preview/metadata/[*]/
 title: ''
 description: >-
   This key represents an individual metadata entry object in the
@@ -21,5 +21,5 @@ examples:
             metadata:
               - template: '[url]'
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -1,5 +1,6 @@
 gid: type.snippet.params.*.(key-value-list-parser-config).options
-url: /types/snippet/params/*/(key-value-list-parser-config)/options/
+url: >-
+  /configuration-file/types/snippet/params/*/(key-value-list-parser-config)/options/
 title: ''
 description: >-
   This key defines configuration options for key-value list parser
@@ -28,5 +29,5 @@ examples:
                   key2:
                     editor_key: value2_input
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

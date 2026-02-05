@@ -1,5 +1,5 @@
 gid: type._inputs.*.(code-input).options.max_visible_lines
-url: /types/_inputs/*/(code-input)/options/max_visible_lines/
+url: /configuration-file/types/_inputs/*/(code-input)/options/max_visible_lines/
 title: ''
 description: >-
   This key defines the maximum number of visible lines for this input,

@@ -1,6 +1,6 @@
 gid: type._inputs.*.(number-input).type
-url: /types/_inputs/*/(number-input)/type/
-title: Type
+url: /configuration-file/types/_inputs/*/(number-input)/type/
+title: ''
 description: >-
   This key defines the input type, which controls how this input appears and
   behaves.
@@ -14,5 +14,5 @@ examples:
         quantity:
           type: number
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

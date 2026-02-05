@@ -2,7 +2,7 @@ import * as z from 'zod';
 import { DocumentationSchema } from './documentation.ts';
 import { IconSchema } from './icon.ts';
 import { InputsFromGlobSchema, InputsSchema, ObjectInputGroupSchema } from './inputs.ts';
-import { PreviewSchema } from './preview.ts';
+import { PickerPreviewSchema, PreviewSchema } from './preview.ts';
 import { SelectDataSchema } from './select-values.ts';
 
 export const StructureReferenceSchema = z.string().meta({
@@ -35,7 +35,7 @@ export const StructuresFromGlobSchema = z.array(z.string()).meta({
 
 export const StructureValueSchema = StructureBaseSchema.extend({
 	preview: PreviewSchema.optional(),
-	picker_preview: PreviewSchema.optional(),
+	picker_preview: PickerPreviewSchema.optional(),
 
 	// This is the ReducedCascadeSchema - can't seem to reuse it due to Zod's limitations.
 	get _inputs() {
@@ -96,6 +96,8 @@ export const StructureValueSchema = StructureBaseSchema.extend({
 			'Provides a custom link for documentation for editors shown in the Data Editor for expanded values matching this Structure value. Has no default.',
 	}),
 }).meta({
+	// Need to override id to what would be generated here to force the structure-value JSON schema to redocument.
+	id: 'type.structure.values.[*]',
 	title: 'Structure Value',
 	description:
 		'A single value option within a structure, defining the data format and appearance for content editors.',

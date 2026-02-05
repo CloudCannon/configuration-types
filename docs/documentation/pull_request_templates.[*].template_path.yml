@@ -1,5 +1,5 @@
 gid: pull_request_templates.[*].template_path
-url: /pull_request_templates/[*]/template_path/
+url: /configuration-file/pull_request_templates/[*]/template_path/
 title: ''
 description: >-
   This key defines the path to the file CloudCannon should use as the value of
@@ -29,5 +29,5 @@ examples:
                 disabled: true
           template_path: .github/templates/delete-content.md
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

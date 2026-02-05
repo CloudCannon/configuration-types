@@ -1,5 +1,5 @@
 gid: type._inputs.*.options.disable_upload_file
-url: /types/_inputs/*/options/disable_upload_file/
+url: /configuration-file/types/_inputs/*/options/disable_upload_file/
 title: ''
 description: >-
   This key toggles whether CloudCannon will disable the context menu option and
@@ -21,5 +21,5 @@ examples:
           options:
             disable_upload_file: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

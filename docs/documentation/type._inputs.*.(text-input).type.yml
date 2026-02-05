@@ -1,6 +1,6 @@
 gid: type._inputs.*.(text-input).type
-url: /types/_inputs/*/(text-input)/type/
-title: Type
+url: /configuration-file/types/_inputs/*/(text-input)/type/
+title: ''
 description: >-
   This key defines the input type, which controls how this input appears and
   behaves.
@@ -14,5 +14,5 @@ examples:
         title:
           type: text
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false

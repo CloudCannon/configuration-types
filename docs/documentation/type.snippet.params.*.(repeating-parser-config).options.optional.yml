@@ -1,5 +1,6 @@
 gid: type.snippet.params.*.(repeating-parser-config).options.optional
-url: /types/snippet/params/*/(repeating-parser-config)/options/optional/
+url: >-
+  /configuration-file/types/snippet/params/*/(repeating-parser-config)/options/optional/
 title: ''
 description: >-
   This key toggles whether CloudCannon will treat repeating snippets as optional
@@ -27,5 +28,5 @@ examples:
                 snippet: 'content'
                 optional: true
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
 show_in_navigation: false
