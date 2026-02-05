@@ -16,7 +16,7 @@ description: >-
 
 
   Please see our documentation on
-  [structures_from_glob](/documentation/articles/configuration-file-reference/#_structures_from_glob)
+  [structures_from_glob](/documentation/developer-reference/configuration-file/types/_structures_from_glob/)
   for defining a
 
   *Structure* in a split *Configuration File*.
