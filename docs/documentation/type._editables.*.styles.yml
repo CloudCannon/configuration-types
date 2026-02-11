@@ -1,5 +1,5 @@
 gid: type._editables.*.styles
-url: /types/_editables/*/styles/
+url: /configuration-file/types/_editables/*/styles/
 title: ''
 description: >-
   This key toggles whether CloudCannon will display a dropdown menu in your
@@ -17,7 +17,8 @@ examples:
     annotations: []
     source: cloudcannon.config.yml
   - description: >-
-      This example file defines the styles that CloudCannon can add to your WYSIWYG toolbar.
+      This example file defines the styles that CloudCannon can add to your
+      WYSIWYG toolbar.
     language: css
     code: |-
       /* Can be applied to blocks of content */
