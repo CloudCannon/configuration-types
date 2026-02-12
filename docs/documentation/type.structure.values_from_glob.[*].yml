@@ -22,20 +22,20 @@ examples:
           type: array
           options:
             structures:
-            values_from_glob:
-              - /.cloudcannon/structures/boardMember.cloudcannon.structure-value.yml
-            values:
-              - label: Employee
-                value:
-                  name:
-                  title:
-                  profile_picture:
-              - label: Manager
-                value:
-                  name:
-                  title:
-                  profile_picture:
-                  url:
+              values_from_glob:
+                - /.cloudcannon/structures/boardMember.cloudcannon.structure-value.yml
+              values:
+                - label: Employee
+                  value:
+                    name:
+                    title:
+                    profile_picture:
+                - label: Manager
+                  value:
+                    name:
+                    title:
+                    profile_picture:
+                    url:
     annotations: []
     source: /cloudcannon.config.yml
 show_in_navigation: false
