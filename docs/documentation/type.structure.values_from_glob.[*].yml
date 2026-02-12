@@ -22,7 +22,8 @@ examples:
           type: array
           options:
             structures:
-            values_from_glob: /.cloudcannon/structures/boardMember.cloudcannon.structure-value.yml
+            values_from_glob:
+              - /.cloudcannon/structures/boardMember.cloudcannon.structure-value.yml
             values:
               - label: Employee
                 value:
