@@ -7,7 +7,7 @@ description: >-
 examples:
   - description: >-
       In this example, we have enabled a dropdown menu in our WYSIWYG toolbar to
-      apply a style to selected text. The styles are defined in the `styles.css`
+      apply a style to selected text. The styles are defined in the `/css/styles.css`
       file.
     language: yaml
     code: |-
@@ -15,7 +15,7 @@ examples:
         content:
           styles: /css/styles.css
     annotations: []
-    source: cloudcannon.config.yml
+    source: /cloudcannon.config.yml
   - description: >-
       This example file defines the styles that CloudCannon can add to your
       WYSIWYG toolbar.
