@@ -1,0 +1,15 @@
+gid: type._editables.*.embed
+url: /configuration-file/types/_editables/*/embed/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will display a tool in your WYSIWYG
+  toolbar to insert a region of raw HTML for YouTube, Vimeo, social media posts,
+  or other media.
+
+
+  Setting this key to `true` will enable a tool in your WYSIWYG toolbar to
+  insert a region of raw HTML. Embedded content is sanitized to mitigate XSS
+  risks, which includes removing `style` tags. Embeds containing `script` tags
+  are not loaded a rich text editor.
+examples: []
+show_in_navigation: false

@@ -1,0 +1,28 @@
+gid: type.snippet-style.inline.leading
+url: /configuration-file/types/snippet-style/inline/leading/
+title: ''
+description: >-
+  This key defines the leading whitespace string for inline snippet content.
+
+
+  The value is a string that specifies whitespace tokens (typically spaces)
+  inserted before inline snippet content.
+examples:
+  - description: >-
+      In this example, we have configured inline leading whitespace to use a
+      space.
+    language: yaml
+    code: |-
+      _snippets:
+        highlight:
+          snippet: "<<highlight>> [[content]] <</highlight>>"
+          params:
+            content:
+              parser: content
+              options:
+                style:
+                  inline:
+                    leading: ' '
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

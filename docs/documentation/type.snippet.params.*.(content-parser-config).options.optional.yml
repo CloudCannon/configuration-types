@@ -1,5 +1,32 @@
 gid: type.snippet.params.*.(content-parser-config).options.optional
-url: /types/snippet/params/*/(content-parser-config)/options/optional/
+url: >-
+  /configuration-file/types/snippet/params/*/(content-parser-config)/options/optional/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key toggles whether CloudCannon will treat content as optional when
+  parsing snippet parameters.
+
+
+  Setting this key to `true` will make the content parameter optional, allowing
+  snippets to match even when the content is missing.
+
+
+  By default, this key is `false` (i.e., content is required).
+examples:
+  - description: >-
+      In this example, we have configured content parser to treat content as
+      optional.
+    language: yaml
+    code: |-
+      _snippets:
+        highlight:
+          snippet: "<<highlight>> [[content]] <</highlight>>"
+          params:
+            content:
+              parser: content
+              options:
+                editor_key: highlighted_text
+                optional: true
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

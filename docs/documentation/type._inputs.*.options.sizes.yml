@@ -1,0 +1,22 @@
+gid: type._inputs.*.options.sizes
+url: /configuration-file/types/_inputs/*/options/sizes/
+title: ''
+description: >-
+  This key defines definitions for creating additional images of different sizes
+  when uploading or selecting existing files.
+examples:
+  - description: >-
+      In this example, we have configured an *Image Input* to create additional
+      images of different sizes when uploading or selecting files.
+    language: yaml
+    code: |-
+      _inputs:
+        hero_image:
+          type: image
+          options:
+            sizes:
+              - size: 2x
+              - size: 3x
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

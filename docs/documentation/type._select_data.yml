@@ -1,7 +1,37 @@
 gid: type._select_data
-url: /types/_select_data/
-title: Select Data
+url: /configuration-file/types/_select_data/
+title: ''
 description: >-
-  Fixed datasets that can be referenced by the _Values_ configuration for
-  _Select_ and _Multiselect_ inputs.
-examples: []
+  This key defines defines fixed data sets to populate Select and Multiselect
+  inputs at a given level of the configuration cascade.
+
+
+  This key has no default.
+
+
+  If undefined at higher levels of the [configuration
+  cascade](/documentation/articles/using-the-configuration-cascade/),
+  `_select_data` will default to
+
+  any values configured in the [CloudCannon configuration
+  file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
+
+
+  For more information, please read our documentation on [Select and Multiselect
+  inputs](/documentation/articles/what-is-a-select-input/#fixed-data-sets).
+examples:
+  - description: >-
+      In this example, we have configured the `blog_tags` Multiselect input for
+      the `blog` Collection.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          _select_data:
+            blog_topics:
+              - Opinion
+              - Feature
+              - Resource
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: true

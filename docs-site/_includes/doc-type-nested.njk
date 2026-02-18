@@ -1,7 +1,11 @@
 {%- if url and title -%}
 	<a href="{{ url }}">{{ title }}</a>
 {%- elif type == "array" -%}
-	Array
+	{%- if url and page.url != url -%}
+		<a href="{{ url }}">Array</a>
+	{%- else -%}
+		Array
+	{%- endif -%}
 	{%- if items | length -%}
 		{%- set join = joiner(" | ") -%}
 		<span style="opacity: 0.5;">&lt;</span>
@@ -13,19 +17,59 @@
 		<span style="opacity: 0.5;">&gt;</span>
 	{%- endif -%}
 {%- elif type == "object" -%}
+	{%- if url and page.url != url -%}
+		<a href="{{ url }}">Object</a>
+	{%- else -%}
 		Object
-		{%- if additionalProperties.length == 1 -%}
-			{%- set additionalPropDoc = additionalProperties[0] | docFromRef -%}
-			<span style="opacity: 0.5;">&lt;</span>
-			{%- renderFile "./_includes/doc-type-nested.njk", additionalPropDoc -%}
-			<span style="opacity: 0.5;">&gt;</span>
-		{%- endif -%}
+	{%- endif -%}
+	{%- if additionalProperties.length == 1 -%}
+		{%- set additionalPropDoc = additionalProperties[0] | docFromRef -%}
+		<span style="opacity: 0.5;">&lt;</span>
+		{%- renderFile "./_includes/doc-type-nested.njk", additionalPropDoc -%}
+		<span style="opacity: 0.5;">&gt;</span>
+	{%- endif -%}
 {%- elif type == "string" -%}
-	{%- if const -%}"{{ const }}"{%- else -%}string{%- endif -%}
+	{%- if const -%}
+		{%- if url and page.url != url -%}
+			<a href="{{ url }}">"{{ const }}"</a>
+		{%- else -%}
+			"{{ const }}"
+		{%- endif -%}
+	{%- else -%}
+		{%- if url and page.url != url -%}
+			<a href="{{ url }}">{{ type }}</a>
+		{%- else -%}
+			{{ type }}
+		{%- endif -%}
+	{%- endif -%}
 {%- elif type == "number" or type == "integer" -%}
-	{%- if const or const == 0 -%}{{ const }}{%- else -%}number{%- endif -%}
+	{%- if const or const == 0 -%}
+		{%- if url and page.url != url -%}
+			<a href="{{ url }}">{{ const }}</a>
+		{%- else -%}
+			{{ const }}
+		{%- endif -%}
+	{%- else -%}
+		{%- if url and page.url != url -%}
+			<a href="{{ url }}">{{ type }}</a>
+		{%- else -%}
+			{{ type }}
+		{%- endif -%}
+	{%- endif -%}
 {%- elif type == "boolean" -%}
-	{%- if const or const == false -%}{{ const }}{%- else -%}boolean{%- endif -%}
+	{%- if const or const == false -%}
+		{%- if url and page.url != url -%}
+			<a href="{{ url }}">{{ const }}</a>
+		{%- else -%}
+			{{ const }}
+		{%- endif -%}
+	{%- else -%}
+		{%- if url and page.url != url -%}
+			<a href="{{ url }}">{{ type }}</a>
+		{%- else -%}
+			{{ type }}
+		{%- endif -%}
+	{%- endif -%}
 {%- elif anyOf | length -%}
 	{%- set join = joiner(" | ") -%}
 	{%- for anyOfRef in anyOf -%}
@@ -33,12 +77,10 @@
 		{%- set anyOfDoc = anyOfRef | docFromRef -%}
 		{%- renderFile "./_includes/doc-type-nested.njk", anyOfDoc -%}
 	{%- endfor -%}
-{%- elif type == "null" -%}
-	null
-{%- elif type == "date" -%}
-	date
-{%- elif title -%}
-	{{ title }}
 {%- else -%}
-	unknown
+	{%- if url and page.url != url -%}
+		<a href="{{ url }}">{{ type | default(title) | default('unknown') }}</a>
+	{%- else -%}
+		{{ type | default(title) | default('unknown') }}
+	{%- endif -%}
 {%- endif -%}

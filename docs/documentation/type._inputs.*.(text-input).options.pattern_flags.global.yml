@@ -1,5 +1,0 @@
-gid: type._inputs.*.(text-input).options.pattern_flags.global
-url: /types/_inputs/*/(text-input)/options/pattern_flags/global/
-title: ''
-description: '`g` - Search globally.'
-examples: []

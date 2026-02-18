@@ -1,0 +1,12 @@
+gid: type._editables.*.superscript
+url: /configuration-file/types/_editables/*/superscript/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will display a tool in your WYSIWYG
+  toolbar to superscript selected text.
+
+
+  Setting this key to `true` will enable a tool in your WYSIWYG toolbar to
+  superscript selected text.
+examples: []
+show_in_navigation: false

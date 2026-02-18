@@ -26,19 +26,19 @@ export const MarkdownSettingsSchema = z
 		}),
 		options: z
 			.object({
-				html: z.boolean().optional().meta({
+				html: z.boolean().default(false).optional().meta({
 					description: 'Output HTML tags from source.',
 				}),
-				xhtml: z.boolean().optional().meta({
+				xhtml: z.boolean().default(false).optional().meta({
 					description: 'Use `/` to close single tags (e.g. `<br />`).',
 				}),
-				breaks: z.boolean().optional().meta({
+				breaks: z.boolean().default(false).optional().meta({
 					description: 'Convert `\\n` in paragraphs into `<br>`.',
 				}),
-				linkify: z.boolean().optional().meta({
+				linkify: z.boolean().default(false).optional().meta({
 					description: 'Autoconvert URL-like text to links.',
 				}),
-				typographer: z.boolean().optional().meta({
+				typographer: z.boolean().default(false).optional().meta({
 					description:
 						'Enable some language-neutral replacement, as well as quotes beautification.',
 				}),
@@ -46,10 +46,10 @@ export const MarkdownSettingsSchema = z
 					description:
 						'Double + single quotes replacement pairs, when typographer enabled and smartquotes on. For example, you can use "«»„"" for Russian, ""„"‚"" for German, and ["«\\xA0", "\\xA0»", "‹\\xA0", "\\xA0›"] for French (including `nbsp`).',
 				}),
-				spaced_lists: z.boolean().optional().meta({
+				spaced_lists: z.boolean().default(false).optional().meta({
 					description: 'Output lists with an extra space in Markdown.',
 				}),
-				sentence_per_line: z.boolean().optional().meta({
+				sentence_per_line: z.boolean().default(false).optional().meta({
 					description: 'Add linebreaks between sentences in Markdown.',
 				}),
 				gfm: z.boolean().optional().meta({
@@ -58,28 +58,28 @@ export const MarkdownSettingsSchema = z
 				code_block_fences: z.enum(['```', '~~~']).optional().meta({
 					description: 'Determines which style of code block fences to use.',
 				}),
-				treat_indentation_as_code: z.boolean().optional().meta({
+				treat_indentation_as_code: z.boolean().default(false).optional().meta({
 					description: 'Determines whether 4 spaces on indentation should be read as a code block.',
 				}),
-				escape_snippets_in_code_blocks: z.boolean().optional().meta({
+				escape_snippets_in_code_blocks: z.boolean().default(false).optional().meta({
 					description: 'Render snippets as plain text within code blocks.',
 				}),
-				table: z.boolean().optional().meta({
+				table: z.boolean().default(false).optional().meta({
 					description: 'Output tables in Markdown format.',
 				}),
-				strikethrough: z.boolean().optional().meta({
+				strikethrough: z.boolean().default(false).optional().meta({
 					description: 'Output strikes in wrapped in double tildes (e.g. `~~strike~~`).',
 				}),
-				subscript: z.boolean().optional().meta({
+				subscript: z.boolean().default(false).optional().meta({
 					description: 'Output subscript in wrapped in tildes (e.g. `~sub~`).',
 				}),
-				superscript: z.boolean().optional().meta({
+				superscript: z.boolean().default(false).optional().meta({
 					description: 'Output superscript in wrapped in carets (e.g. `^super^`).',
 				}),
-				heading_ids: z.boolean().optional().meta({
+				heading_ids: z.boolean().default(false).optional().meta({
 					description: 'Generate IDs for headings.',
 				}),
-				attributes: z.boolean().optional().meta({
+				attributes: z.boolean().default(false).optional().meta({
 					description: 'Save element attributes in Markdown format instead of converting to HTML.',
 				}),
 				attribute_elements: MarkdownAttributeElementOptionsSchema.optional().meta({

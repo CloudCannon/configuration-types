@@ -1,5 +1,31 @@
 gid: type.snippet.params.*.(content-parser-config).options.forbidden_tokens.[*]
-url: /types/snippet/params/*/(content-parser-config)/options/forbidden_tokens/[*]/
+url: >-
+  /configuration-file/types/snippet/params/*/(content-parser-config)/options/forbidden_tokens/[*]/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key represents an individual forbidden token string in the
+  `params.*(content-parser-config).options.forbidden_tokens` array.
+
+
+  The value is a string that specifies a token that will stop parsing content
+  when encountered. This is useful when the content parser is being greedy and
+  consuming more input than intended.
+examples:
+  - description: >-
+      In this example, we have configured a forbidden token to stop parsing when
+      encountering a less-than sign.
+    language: yaml
+    code: |-
+      _snippets:
+        highlight:
+          snippet: "<<highlight>> [[content]] <</highlight>>"
+          params:
+            content:
+              parser: content
+              options:
+                editor_key: highlighted_text
+                forbidden_tokens:
+                  - '<'
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

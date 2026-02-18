@@ -1,0 +1,29 @@
+gid: collections_config.*.schemas_from_glob.[*]
+url: /configuration-file/collections_config/*/schemas_from_glob/[*]/
+title: ''
+description: >-
+  This key represents an individual glob pattern string in the
+  `collections_config.*.schemas_from_glob` array.
+
+
+  The value is a string that specifies a file path pattern relative to the root
+  of your repository. The path must end in the file extension
+  `.cloudcannon.schemas.yml`.
+examples:
+  - description: >-
+      In this example, we have several *Schema Configuration Files* in the
+      `.cloudcannon/schemas/` folder. The value of the `schemas_from_glob` key
+      tells CloudCannon to use all files in that folder that match the glob
+      `*.cloudcannon.schemas.yml` except for `pages.cloudcannon.schemas.yml` due
+      to the negative glob.
+    language: yaml
+    code: |-
+      posts:
+        path: content/posts
+        icon: event
+        schemas_from_glob:
+          - '/.cloudcannon/schemas/*.cloudcannon.schemas.yml'
+          - '!/.cloudcannon/schemas/pages.cloudcannon.schemas.yml'
+    annotations: []
+    source: /.cloudcannon/collections/posts.cloudcannon.collections.yml
+show_in_navigation: false

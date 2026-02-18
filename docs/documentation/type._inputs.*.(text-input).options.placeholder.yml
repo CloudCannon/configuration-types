@@ -1,5 +1,16 @@
 gid: type._inputs.*.(text-input).options.placeholder
-url: /types/_inputs/*/(text-input)/options/placeholder/
+url: /configuration-file/types/_inputs/*/(text-input)/options/placeholder/
 title: ''
-description: Text shown when this input has no value.
-examples: []
+description: This key defines the text shown when this input has no value.
+examples:
+  - description: In this example, we have configured a placeholder for a *Text Input*.
+    language: yaml
+    code: |-
+      _inputs:
+        title:
+          type: text
+          options:
+            placeholder: Enter a title
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

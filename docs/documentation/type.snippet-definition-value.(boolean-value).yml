@@ -1,0 +1,8 @@
+gid: type.snippet-definition-value.(boolean-value)
+url: /configuration-file/types/snippet-definition-value/(boolean-value)/
+title: Boolean Value
+description: >-
+  A boolean value definition. Use for flags and toggles that can be referenced
+  in snippet templates.
+examples: []
+show_in_navigation: false

@@ -1,7 +1,21 @@
 gid: collections_config.*.sort_options.[*].label
-url: /collections_config/*/sort_options/[*]/label/
+url: /configuration-file/collections_config/*/sort_options/[*]/label/
 title: ''
 description: >-
-  The text to display in the sort option list. Defaults to a generated label
-  from key and order.
-examples: []
+  This key defines the label used for a file sorting option in the *Sort*
+  dropdown.
+examples:
+  - description: >-
+      In this example, the sorting method which uses the `author` key is called
+      "Author (A-Z)" in the *Sort* dropdown.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          sort_options:
+            - key: author
+              order: ascending
+              label: Author (A-Z)
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

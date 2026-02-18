@@ -1,5 +1,51 @@
 gid: type.preview.gallery.background_color
-url: /types/preview/gallery/background_color/
+url: /configuration-file/types/preview/gallery/background_color/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key defines the background color of the gallery area on *Cards* in the
+  *Collection browser*, *Structures*, and *Snippets*.
+
+
+  The value can be an array or a single value, and reference a key, template, or
+  text string. When multiple entries are provided, CloudCannon will use them in
+  order as fallback options.
+
+
+  Color values can be hex codes (e.g., `#ff0000`), CSS color names, or reference
+  a data key that contains a color value.
+examples:
+  - description: >-
+      In this example, we have configured the gallery background color with an
+      array of values to provide fallback options. CloudCannon will use the
+      value of `gallery_bg_color` first, then the `{bg_color}` template, and
+      finally fall back to the static hex color value.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          preview:
+            gallery:
+              image:
+                - key: featured_image
+              background_color:
+                - key: gallery_bg_color
+                - template: '{bg_color}'
+                - text: '#ffffff'
+    annotations: []
+    source: /cloudcannon.config.yml
+  - description: >-
+      In this example, we have configured the gallery background color to use a
+      static CSS color value.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          preview:
+            gallery:
+              image:
+                - key: featured_image
+              background_color:
+                - 'red'
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

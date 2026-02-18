@@ -1,5 +1,29 @@
 gid: markdown.engine
-url: /markdown/engine/
+url: /configuration-file/markdown/engine/
 title: ''
-description: The flavor of Markdown to use to convert between HTML and Markdown.
-examples: []
+description: >-
+  This key defines which Markdown processing engine CloudCannon will use to
+  convert between HTML and Markdown.
+examples:
+  - description: >-
+      In this example, we have configured CloudCannon to use the `kramdown`
+      Markdown engine.
+    language: yaml
+    code: |-
+      markdown:
+        engine: kramdown
+    annotations: []
+    source: /cloudcannon.config.yml
+  - description: >-
+      In this example, we have configured CloudCannon to use the `commonmark`
+      Markdown engine with custom options.
+    language: yaml
+    code: |-
+      markdown:
+        engine: commonmark
+        options:
+          html: true
+          breaks: true
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

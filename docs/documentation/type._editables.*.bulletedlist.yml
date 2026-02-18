@@ -1,0 +1,13 @@
+gid: type._editables.*.bulletedlist
+url: /configuration-file/types/_editables/*/bulletedlist/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will display a tool in your WYSIWYG
+  toolbar to insert an unordered list or convert selected text to an unordered
+  list.
+
+
+  Setting this key to `true` will enable a tool in your WYSIWYG toolbar to
+  insert an unordered list or convert selected text to an unordered list.
+examples: []
+show_in_navigation: false

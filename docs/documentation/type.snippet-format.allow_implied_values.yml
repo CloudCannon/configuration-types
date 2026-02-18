@@ -1,0 +1,31 @@
+gid: type.snippet-format.allow_implied_values
+url: /configuration-file/types/snippet-format/allow_implied_values/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will allow keys without values to imply a
+  value of `true` when parsing key-value pairs in snippet parameters.
+
+
+  Setting this key to `true` will allow keys to be specified without values,
+  which will be interpreted as `true`.
+
+
+  By default, this key is `false` (i.e., keys without values are not allowed).
+examples:
+  - description: >-
+      In this example, we have configured snippet format to allow implied values
+      for keys without values.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[param]]>>"
+          params:
+            param:
+              parser: argument
+              options:
+                format:
+                  allow_implied_values: true
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

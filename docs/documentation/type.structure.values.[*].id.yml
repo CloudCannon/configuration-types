@@ -1,7 +1,20 @@
 gid: type.structure.values.[*].id
-url: /types/structure/values/[*]/id/
+url: /configuration-file/types/structure/values/[*]/id/
 title: ''
 description: >-
-  A unique reference value used when referring to this structure value from the
-  Object input's assigned_structures option.
-examples: []
+  This key defines the string used to identify a given Structure value when
+  refering to it from other input configuration.
+examples:
+  - description: >-
+      In this example, we have configured the `blog_post` ID for the entry
+      labeled `Blog` in the `article_information` Structure.
+    language: yaml
+    code: |-
+      _structures:
+        article_information:
+          values:
+            - label: Blog
+              id: blog_post
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

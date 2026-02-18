@@ -1,5 +1,49 @@
 gid: type.snippet.params.*.(content-parser-config).options.raw
-url: /types/snippet/params/*/(content-parser-config)/options/raw/
+url: >-
+  /configuration-file/types/snippet/params/*/(content-parser-config)/options/raw/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key toggles whether the parser performs no parsing of the inner text.
+
+
+  Setting this key to `true` will perform no parsing of the inner text. This is
+  a stricter version of `allow_nested: false`. Useful to improve the performance
+  of the content parser, but can misbehave.
+
+
+  By default, this key is `false` (i.e., inner text is parsed).
+examples:
+  - description: ''
+    language: yaml
+    code: |-
+      parser: "content"
+      options:
+        editor_key: highlighted_text
+        raw: true
+    annotations: []
+    source: /cloudcannon.config.yml
+  - description: 'Example usage:'
+    language: markdown
+    code: |-
+      ## My blog post
+
+      <<highlight>>
+        My highlighted <<highlight>>content!<</highlight>>   <!--1-->
+      <</highlight>>
+
+      Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+    annotations:
+      - number: 1
+        content: >-
+          With `raw` turned on, the content parser will perform no parsing on
+          the text it is capturing.
+
+          This means that the nested `<<highlight>>` will not be detected as a
+          snippet and the first
+
+          `<</highlight>>` tag found will end the content parser, giving you the
+          parsed content
+
+          `My highlighted <<highlight>>content!`.
+    source: /page.md
+show_in_navigation: false

@@ -1,5 +1,22 @@
 gid: markdown.options.code_block_fences
-url: /markdown/options/code_block_fences/
+url: /configuration-file/markdown/options/code_block_fences/
 title: ''
-description: Determines which style of code block fences to use.
-examples: []
+description: >-
+  This key defines which style of code block fences CloudCannon will use when
+  converting HTML to Markdown.
+
+
+  The value can be `\`\`\`` (three backticks) or `~~~` (three tildes).
+examples:
+  - description: >-
+      In this example, we have configured Markdown to use tildes for code block
+      fences.
+    language: yaml
+    code: |-
+      markdown:
+        engine: commonmark
+        options:
+          code_block_fences: '~~~'
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

@@ -1,0 +1,34 @@
+gid: type._inputs.*.(color-input).options.hide_picker
+url: /configuration-file/types/_inputs/*/(color-input)/options/hide_picker/
+title: ''
+description: >-
+  This key toggles whether CloudCannon hides the color picker UI in *Color
+  Inputs*.
+
+
+  Setting this key to `true` will hide the color picker interface, requiring
+  users to enter color values manually or select from a palette if one is
+  configured.
+
+
+  By default, this key is `false` (i.e., the color picker is displayed).
+examples:
+  - description: >-
+      In this example, we have configured a color input to hide the picker UI,
+      requiring users to select from the predefined palette or enter values
+      manually.
+    language: yaml
+    code: |-
+      _inputs:
+        brand_color:
+          type: color
+          label: Brand Color
+          options:
+            palette:
+              - '#ff0000'
+              - '#00ff00'
+              - '#0000ff'
+            hide_picker: true
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

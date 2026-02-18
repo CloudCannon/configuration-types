@@ -1,5 +1,27 @@
 gid: type.snippet.params.*.(optional-parser-config).parser
-url: /types/snippet/params/*/(optional-parser-config)/parser/
+url: /configuration-file/types/snippet/params/*/(optional-parser-config)/parser/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key defines the parser type for optional parser configurations.
+
+
+  The value must be `optional`. This specifies that the parameter uses the
+  optional parser, which wraps another snippet configuration and makes it
+  optional.
+examples:
+  - description: >-
+      In this example, we have configured an optional parser for a snippet
+      parameter.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[optional_content]]>>"
+          params:
+            optional_content:
+              parser: optional
+              options:
+                snippet: 'content'
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

@@ -1,7 +1,0 @@
-gid: >-
-  type._inputs.*.(text-input).options.icon_background_color.(array).[*].(raw-text)
-url: >-
-  /types/_inputs/*/(text-input)/options/icon_background_color/(array)/[*]/(raw-text)/
-title: Raw Text
-description: ''
-examples: []

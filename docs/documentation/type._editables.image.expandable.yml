@@ -1,7 +1,0 @@
-gid: type._editables.image.expandable
-url: /types/_editables/image/expandable/
-title: Expandable
-description: >-
-  Controls whether or not images can be upscaled to fit the bounding box during
-  resize prior to upload. Has no effect if files are not resized.
-examples: []

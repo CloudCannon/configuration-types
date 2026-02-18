@@ -1,5 +1,27 @@
 gid: type.snippet.params.*.(repeating-parser-config).parser
-url: /types/snippet/params/*/(repeating-parser-config)/parser/
+url: /configuration-file/types/snippet/params/*/(repeating-parser-config)/parser/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key defines the parser type for repeating parser configurations.
+
+
+  The value must be `repeating`. This specifies that the parameter uses the
+  repeating parser, which allows a snippet configuration to appear multiple
+  times.
+examples:
+  - description: >-
+      In this example, we have configured a repeating parser for a snippet
+      parameter.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[repeating_content]]>>"
+          params:
+            repeating_content:
+              parser: repeating
+              options:
+                snippet: 'content'
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

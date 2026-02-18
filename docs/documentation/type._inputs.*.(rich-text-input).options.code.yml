@@ -1,5 +1,0 @@
-gid: type._inputs.*.(rich-text-input).options.code
-url: /types/_inputs/*/(rich-text-input)/options/code/
-title: ''
-description: 'Enables both block and inline code controls: `code_block` and `code_inline`.'
-examples: []

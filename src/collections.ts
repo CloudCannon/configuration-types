@@ -94,7 +94,7 @@ export const CreateSchema = z
 		...ReducedCascadeSchema.shape,
 	})
 	.meta({
-		id: 'create',
+		id: 'type.create',
 		title: 'Create',
 		description: 'Controls where new files are saved.',
 	});
@@ -110,7 +110,7 @@ export const SchemaSchema = z
 		}),
 		icon: IconSchema.default('notes').optional().meta({
 			description:
-				'Displayed in the add menu when creating new files; also used as the icon for collection files if no other preview is found. Defaults to notes.',
+				'Displayed in the add menu when creating new files; also used as the icon for collection files if no other preview is found.',
 		}),
 		create: CreateSchema.optional(),
 		new_preview_url: z.string().optional().meta({
@@ -119,7 +119,7 @@ export const SchemaSchema = z
 		}),
 		reorder_inputs: z.boolean().default(true).optional().meta({
 			description:
-				'If true, inputs are sorted to match when editing. Extra inputs are ordered after expected inputs, unless `remove_extra_inputs` is true. Defaults to true.',
+				'If true, inputs are sorted to match when editing. Extra inputs are ordered after expected inputs, unless `remove_extra_inputs` is true.',
 		}),
 		hide_extra_inputs: z.boolean().default(false).optional().meta({
 			description:
@@ -127,10 +127,10 @@ export const SchemaSchema = z
 		}),
 		remove_empty_inputs: z.boolean().default(false).optional().meta({
 			description:
-				'If checked, empty inputs are removed from the source file on save. Removed inputs will be available for editing again, provided they are in the matching schema/structure. Defaults to false.',
+				'If checked, empty inputs are removed from the source file on save. Removed inputs will be available for editing again, provided they are in the matching schema/structure.',
 		}),
 		remove_extra_inputs: z.boolean().default(true).optional().meta({
-			description: 'If checked, extra inputs are removed when editing. Defaults to true.',
+			description: 'If checked, extra inputs are removed when editing.',
 		}),
 		preview: PreviewSchema.optional(),
 		...CascadeSchema.shape,
@@ -211,15 +211,15 @@ export const CollectionConfigSchema = z
 					'This key defines the options available in the _+ Add_ button dropdown at the top right of your _Collection browser_.',
 			}),
 		create: CreateSchema.optional(),
-		disable_add: z.boolean().optional().meta({
+		disable_add: z.boolean().default(false).optional().meta({
 			description:
 				'This key toggles whether team members can use the _+ Add_ button in the top right of the _Collection browser_ to add files to a Collection.',
 		}),
-		disable_add_folder: z.boolean().optional().meta({
+		disable_add_folder: z.boolean().default(false).optional().meta({
 			description:
 				'This key toggles whether team members can use the _+ Add_ button in the top right of the _Collection browser_ to add subfolders to a Collection.',
 		}),
-		disable_file_actions: z.boolean().optional().meta({
+		disable_file_actions: z.boolean().default(false).optional().meta({
 			description:
 				'This key toggles whether team members can use the _+ Add_ button in the top right of the _Collection browser_ to add files to a Collection.',
 		}),
@@ -231,7 +231,7 @@ export const CollectionConfigSchema = z
 			description:
 				'This key defines which Schemas are available to populate files in this Collection.',
 		}),
-		schemas_config_from_glob: z.array(z.string()).optional(),
+		schemas_from_glob: z.array(z.string()).optional(),
 		schema_key: z.string().optional().meta({
 			description:
 				'This key defines the name for the structured data key that references the Schema a file uses.',
@@ -239,7 +239,7 @@ export const CollectionConfigSchema = z
 		preview: PreviewSchema.optional(),
 		...CascadeSchema.shape,
 	})
-	.meta({ id: 'CollectionConfig', title: 'Collection Config' });
+	.meta({ id: 'collections_config.*', title: 'Collection Config' });
 
 export const CollectionGroupSchema = z
 	.object({
@@ -253,10 +253,16 @@ export const CollectionGroupSchema = z
 	})
 	.meta({ id: 'CollectionGroup', title: 'Collection Group' });
 
+export const CollectionsConfigSchema = z
+	.record(z.string(), CollectionConfigSchema)
+	.optional()
+	.meta({ id: 'collections_config' });
+
 export type HrefAddOption = z.infer<typeof HrefAddOptionSchema>;
 export type AddOption = z.infer<typeof AddOptionSchema>;
 export type SortOption = z.infer<typeof SortOptionSchema>;
 export type Create = z.infer<typeof CreateSchema>;
 export type Schema = z.infer<typeof SchemaSchema>;
 export type CollectionConfig = z.infer<typeof CollectionConfigSchema>;
+export type CollectionsConfig = NonNullable<z.infer<typeof CollectionsConfigSchema>>;
 export type CollectionGroup = z.infer<typeof CollectionGroupSchema>;

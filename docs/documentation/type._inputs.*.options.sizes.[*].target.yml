@@ -1,0 +1,8 @@
+gid: type._inputs.*.options.sizes.[*].target
+url: /configuration-file/types/_inputs/*/options/sizes/[*]/target/
+title: ''
+description: >-
+  This key defines a reference to another input that is given the path to this
+  additional image file.
+examples: []
+show_in_navigation: false

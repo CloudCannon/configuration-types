@@ -1,5 +1,32 @@
 gid: type.preview.icon_color
-url: /types/preview/icon_color/
+url: /configuration-file/types/preview/icon_color/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key defines the color of the icon displayed on *Cards* in the *Collection
+  browser*, *Structures*, and *Snippets*.
+
+
+  The value can be an array or a single value, and reference a key, template, or
+  text string. When multiple entries are provided, CloudCannon will use them in
+  order as fallback options.
+
+
+  Color values can be hex codes (e.g., `#ff0000`), CSS color names, or reference
+  a data key that contains a color value.
+examples:
+  - description: >-
+      In this example, we have configured the icon color for *Cards* in the
+      `blog` Collection with an array of values to provide fallback options.
+      CloudCannon will use the value of `color` first, then fall back to the
+      static hex color value.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          preview:
+            icon_color:
+              - key: color
+              - text: '#ff0000'
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

@@ -1,0 +1,8 @@
+gid: type.snippet-definition-select-value
+url: /configuration-file/types/snippet-definition-select-value/
+title: Snippet Definition Select Value
+description: >-
+  A value option for select inputs, typically used in language lists. Contains a
+  display name and the actual value to use.
+examples: []
+show_in_navigation: true

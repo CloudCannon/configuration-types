@@ -1,7 +1,0 @@
-gid: collections_config.*.documentation
-url: /collections_config/*/documentation/
-title: Documentation
-description: >-
-  This key defines the documentation link at the top of a _Collection browser_.
-  Collection documentation is useful for assisting your team members.
-examples: []

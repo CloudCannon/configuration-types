@@ -1,0 +1,32 @@
+gid: type._inputs.*.options.required_message
+url: /configuration-file/types/_inputs/*/options/required_message/
+title: ''
+description: >-
+  This key defines a custom error message that explains why a value has failed
+  the validation criteria from `options.required`.
+
+
+  This key requires you to define `options.required`.
+
+
+  This key has no default.
+
+
+  This key is available for Array, Code, Color, Date and Time, File, Number,
+  Object, Select and Multiselect, Text, Rich Text, and URL Inputs.
+examples:
+  - description: >-
+      In this example, we prompt our team to use enter an Input value using a
+      required message.
+    language: yaml
+    code: |-
+      _inputs:
+        author:
+          type: text
+          comment: Enter the name of the author for this blog post.
+          options:
+            required: true
+            required_message: You are not allowed to leave this blank.
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

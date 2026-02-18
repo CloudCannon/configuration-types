@@ -5,6 +5,7 @@
 		<title>{% if page_title %}{{ page_title }} - {% endif %} Autodocs</title>
 		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⌨️</text></svg>">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/themes/prism-okaidia.min.css">
 		<style>
 			:root {
 				--icon-width: 18px;
@@ -51,10 +52,6 @@
 				margin-top: -2px;
 			}
 
-			body:not(.cms-editor-active) .show-in-cms {
-				display: none;
-			}
-
 			nav {
 				padding-top: 60px;
 			}
@@ -84,6 +81,32 @@
 
 			.flip-x {
 				transform: scaleX(-1);
+			}
+
+			pre[class*="language-"]:has(> code) {
+				border-radius: 6px;
+				padding: 0;
+				margin-top: 0;
+				font-size: 13px;
+				border: 2px solid var(--background);
+			}
+
+			pre[class*="language-"]:has(> code):not(:last-child) {
+				margin-bottom: 1rem;
+			}
+
+			.code-block-label {
+				margin-bottom: 0;
+			}
+
+			.code-block-label code {
+				border-radius: 6px 6px 0 0;
+				display: block;
+				box-sizing: border-box;
+			}
+
+			.code-block-label + pre[class*="language-"]:has(> code) {
+				border-radius: 0 0 6px 6px;
 			}
 		</style>
 	</head>

@@ -1,16 +1,19 @@
-import fs from 'node:fs';
+import fs from 'node:fs/promises';
 import path from 'node:path';
 import * as z from 'zod';
+import { redocumentSchema } from './redocument-schemas';
 import {
 	EleventyConfigurationSchema,
 	HugoConfigurationSchema,
 	JekyllConfigurationSchema,
 	ReaderConfigurationSchema,
 } from './src/build-coupled';
-import { CollectionConfigSchema } from './src/collections';
+import { CollectionConfigSchema, CollectionsConfigSchema } from './src/collections';
 import { ConfigurationSchema } from './src/configuration';
 import { EditablesSchema } from './src/editables';
+import { InitialSiteSettingsSchema } from './src/initial-site-settings';
 import { InputsSchema } from './src/inputs';
+import { RoutingSchema } from './src/routing';
 import { SnippetsImportsSchema } from './src/snippets';
 import { StructuresSchema, StructureValueSchema } from './src/structures';
 
@@ -31,6 +34,7 @@ const schemas = [
 		convertSchemaAnys: true,
 		addMarkdownDescription: true,
 		stripId: true,
+		redocument: true,
 	},
 	{
 		schema: JekyllConfigurationSchema.meta({
@@ -78,6 +82,7 @@ const schemas = [
 		convertSchemaAnys: true,
 		addMarkdownDescription: true,
 		stripId: true,
+		redocument: true,
 	},
 	{
 		// keys: _inputs_from_glob
@@ -89,6 +94,7 @@ const schemas = [
 		convertSchemaAnys: true,
 		addMarkdownDescription: true,
 		stripId: true,
+		redocument: true,
 	},
 	{
 		// keys: values_from_glob
@@ -100,6 +106,7 @@ const schemas = [
 		convertSchemaAnys: true,
 		addMarkdownDescription: true,
 		stripId: true,
+		redocument: true,
 	},
 	{
 		// keys: _snippets_from_glob, _snippets_templates_from_glob
@@ -111,6 +118,7 @@ const schemas = [
 		convertSchemaAnys: true,
 		addMarkdownDescription: true,
 		stripId: true,
+		redocument: true,
 	},
 	{
 		// keys: _snippets_imports_from_glob
@@ -122,6 +130,7 @@ const schemas = [
 		convertSchemaAnys: true,
 		addMarkdownDescription: true,
 		stripId: true,
+		redocument: true,
 	},
 	{
 		// keys: _snippets_definitions_from_glob
@@ -144,37 +153,79 @@ const schemas = [
 		convertSchemaAnys: true,
 		addMarkdownDescription: true,
 		stripId: true,
+		redocument: true,
 	},
 	{
 		// keys: collections_config_from_glob
 		// files: *.cloudcannon.collections.(yml|yaml|json)
-		schema: ConfigurationSchema.shape.collections_config.unwrap().meta({
+		schema: CollectionsConfigSchema.meta({
 			$id: 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-collections.schema.json',
 		}),
 		filename: 'cloudcannon-collections.schema.json',
 		convertSchemaAnys: true,
 		addMarkdownDescription: true,
 		stripId: true,
+		redocument: true,
 	},
 	{
 		// keys: schemas_from_glob
 		// files: *.cloudcannon.schemas.(yml|yaml|json)
 		schema: CollectionConfigSchema.shape.schemas.unwrap().meta({
+			id: 'collections_config.*.schemas',
 			$id: 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-schemas.schema.json',
 		}),
 		filename: 'cloudcannon-schemas.schema.json',
 		convertSchemaAnys: true,
 		addMarkdownDescription: true,
 		stripId: true,
+		redocument: true,
+	},
+	{
+		schema: RoutingSchema.meta({
+			id: 'type.Routing',
+		}),
+		keepDocumentationType: true,
+		target: 'draft-2020-12' as const,
+		filename: 'cloudcannon-routing.documentation.schema.json',
+	},
+	{
+		schema: RoutingSchema.meta({
+			$id: 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-routing.schema.json',
+		}),
+		filename: 'cloudcannon-routing.schema.json',
+		convertSchemaAnys: true,
+		addMarkdownDescription: true,
+		stripId: true,
+		redocument: true,
+		docsFolder: 'docs/routing',
+	},
+	{
+		schema: InitialSiteSettingsSchema.meta({
+			id: 'type.InitialSiteSettings',
+		}),
+		keepDocumentationType: true,
+		target: 'draft-2020-12' as const,
+		filename: 'cloudcannon-initial-site-settings.documentation.schema.json',
+	},
+	{
+		schema: InitialSiteSettingsSchema.meta({
+			$id: 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-initial-site-settings.schema.json',
+		}),
+		filename: 'cloudcannon-initial-site-settings.schema.json',
+		convertSchemaAnys: true,
+		addMarkdownDescription: true,
+		stripId: true,
+		redocument: true,
+		docsFolder: 'docs/initial-site-settings',
 	},
 ];
 
-for (const schema of schemas) {
-	const jsonSchema = z.toJSONSchema(schema.schema, {
-		target: schema.target || 'draft-7',
+for (const schemaConfig of schemas) {
+	const jsonSchema = z.toJSONSchema(schemaConfig.schema, {
+		target: schemaConfig.target || 'draft-7',
 		override: (ctx) => {
 			if (
-				schema.convertSchemaAnys &&
+				schemaConfig.convertSchemaAnys &&
 				ctx.zodSchema instanceof z.ZodString &&
 				ctx.zodSchema.meta()?.isJsonSchemaAny
 			) {
@@ -185,26 +236,39 @@ for (const schema of schemas) {
 
 			delete ctx.jsonSchema.isJsonSchemaAny;
 
-			if (!schema.keepDocumentationType) {
+			if (!schemaConfig.keepDocumentationType) {
 				delete ctx.jsonSchema.documentationType;
 			}
 
-			if (schema.stripId && ctx.jsonSchema.id) {
+			if (schemaConfig.stripId && ctx.jsonSchema.id && !schemaConfig.redocument) {
 				// AJV (Node JSONSchema library) errors when 'id' is present in non draft-04 schemas.
+				// redocumentSchema() needs this id, and strips it after using it.
 				delete ctx.jsonSchema.id;
 			}
 
-			if (schema.addMarkdownDescription && ctx.jsonSchema.description) {
+			if (
+				schemaConfig.addMarkdownDescription &&
+				ctx.jsonSchema.description &&
+				!schemaConfig.redocument
+			) {
 				// YAML/JSON LSP integrations won't format descriptions unless set in markdownDescription.
+				// redocumentSchema() adds this as well.
 				ctx.jsonSchema.markdownDescription = ctx.jsonSchema.description;
 			}
 		},
 	});
 
-	fs.writeFileSync(
-		path.join(process.cwd(), 'dist', schema.filename),
-		JSON.stringify(jsonSchema, null, '  ')
-	);
+	const fullSchemaPath = path.join(process.cwd(), 'dist', schemaConfig.filename);
+	await fs.writeFile(fullSchemaPath, JSON.stringify(jsonSchema, null, '  '));
 
-	console.log(`✅ ${schema.filename}`);
+	if (schemaConfig.redocument) {
+		const docsFolder =
+			'docsFolder' in schemaConfig ? schemaConfig.docsFolder : 'docs/documentation';
+		await redocumentSchema(fullSchemaPath, docsFolder, {
+			stripId: schemaConfig.stripId,
+			addMarkdownDescription: schemaConfig.addMarkdownDescription,
+		});
+	}
+
+	console.log(`✅ ${schemaConfig.filename}`);
 }

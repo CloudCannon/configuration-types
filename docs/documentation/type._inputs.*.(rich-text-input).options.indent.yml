@@ -1,5 +1,0 @@
-gid: type._inputs.*.(rich-text-input).options.indent
-url: /types/_inputs/*/(rich-text-input)/options/indent/
-title: ''
-description: Enables a control to increase indentation for numbered and unordered lists.
-examples: []

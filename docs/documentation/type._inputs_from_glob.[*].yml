@@ -1,0 +1,30 @@
+gid: type._inputs_from_glob.[*]
+url: /configuration-file/types/_inputs_from_glob/[*]/
+title: ''
+description: >-
+  This key represents an individual glob pattern string in the
+  `_inputs_from_glob` array.
+
+
+  The value is a string that specifies a file path pattern relative to the root
+  of your repository. The path must end in the file extension
+  `.cloudcannon.inputs.yml`.
+examples:
+  - description: >-
+      In this example, we have several *Input Configuration Files* in the
+      `.cloudcannon/inputs/` folder, with each file containing multiple *Input*
+      definitions. The value of the `_inputs_from_glob` key tells CloudCannon to
+      only use the `seo.cloudcannon.inputs.yml` and
+      `blog-details.cloudcannon.inputs.yml` files in that folder.
+    language: yaml
+    code: |-
+      collections_config:
+        posts:
+          path: content/posts
+          icon: event
+          inputs_from_glob:
+            - '/.cloudcannon/inputs/seo.cloudcannon.inputs.yml'
+            - '/.cloudcannon/inputs/blog-details.cloudcannon.inputs.yml'
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

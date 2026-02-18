@@ -1,0 +1,11 @@
+gid: type.create.publish_to
+url: /configuration-file/types/create/publish_to/
+title: ''
+description: >-
+  This key defines a target collection when publishing.
+
+
+  When a file is published, the target collection's create definition is used
+  instead.
+examples: []
+show_in_navigation: false

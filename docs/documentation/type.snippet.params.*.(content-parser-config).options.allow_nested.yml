@@ -1,5 +1,63 @@
 gid: type.snippet.params.*.(content-parser-config).options.allow_nested
-url: /types/snippet/params/*/(content-parser-config)/options/allow_nested/
+url: >-
+  /configuration-file/types/snippet/params/*/(content-parser-config)/options/allow_nested/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key toggles whether nested snippets will be parsed and returned.
+
+
+  Setting this key to `true` will parse and return nested snippets.
+
+
+  By default, this key is `false` (i.e., nested snippets are not parsed and
+  returned).
+examples:
+  - description: ''
+    language: yaml
+    code: |-
+      parser: "content"
+      options:
+        editor_key: highlighted_text
+        allow_nested: true
+    annotations: []
+    source: /cloudcannon.config.yml
+  - description: 'Example usage:'
+    language: markdown
+    code: |-
+      ## My blog post
+
+      <<highlight>>
+        My highlighted <<highlight>>content!<</highlight>>   <!--1-->
+      <</highlight>>
+
+      Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+    annotations:
+      - number: 1
+        content: >-
+          With `allow_nested` turned on, the content parser will detect and
+          parse the nested
+
+          `<<highlight>>` tags as another snippet, rather than plaintext.
+
+
+          This doesn't have to be the same snippet, any configured snippet will
+          be parsed inside
+
+          the content parser.
+
+
+          If `allow_nested` is set to false, inner snippets will still be
+          parsed, but will not be returned.
+
+          This means that in the above example, `My highlighted
+          <<highlight>>content!<</highlight>>` would
+
+          be the raw text with `allow_nested: false`. If inner snippets were not
+          parsed, the content parser
+
+          would end parsing at the first `<</highlight>>`, giving you the text:
+
+          `My highlighted <<highlight>>content!`. This is the behavior of the
+          `raw` option.
+    source: /page.md
+show_in_navigation: false

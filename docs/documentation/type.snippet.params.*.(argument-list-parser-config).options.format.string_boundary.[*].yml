@@ -1,7 +1,0 @@
-gid: >-
-  type.snippet.params.*.(argument-list-parser-config).options.format.string_boundary.[*]
-url: >-
-  /types/snippet/params/*/(argument-list-parser-config)/options/format/string_boundary/[*]/
-title: ''
-description: ''
-examples: []

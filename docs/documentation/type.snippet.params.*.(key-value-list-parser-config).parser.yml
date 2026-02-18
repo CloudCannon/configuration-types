@@ -1,5 +1,31 @@
 gid: type.snippet.params.*.(key-value-list-parser-config).parser
-url: /types/snippet/params/*/(key-value-list-parser-config)/parser/
+url: >-
+  /configuration-file/types/snippet/params/*/(key-value-list-parser-config)/parser/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key defines the parser type for key-value list parser configurations.
+
+
+  The value must be `key_values`. This specifies that the parameter uses the
+  key-value list parser, which parses multiple key-value pairs.
+examples:
+  - description: >-
+      In this example, we have configured a key-value list parser for a snippet
+      parameter.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example key1=value1 key2=value2>>"
+          params:
+            params:
+              parser: key_values
+              options:
+                models:
+                  key1:
+                    editor_key: value1_input
+                  key2:
+                    editor_key: value2_input
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

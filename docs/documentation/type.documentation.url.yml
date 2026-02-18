@@ -1,0 +1,27 @@
+gid: type.documentation.url
+url: /configuration-file/types/documentation/url/
+title: ''
+description: >-
+  This key defines the URL for the documentation link at the top of a
+  *Collection browser*.
+
+
+  You must define this key for the
+
+  `documentation` object to function.
+
+
+  This key has no default.
+examples:
+  - description: >-
+      In this example, we have configured the `blog` Collection documentation
+      link to go to `example.com`.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          documentation:
+            url: https://example.com
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

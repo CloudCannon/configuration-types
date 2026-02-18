@@ -1,5 +1,17 @@
 gid: type.snippet.params.*.(optional-parser-config)
-url: /types/snippet/params/*/(optional-parser-config)/
-title: Optional Parser Config
-description: ''
+url: /configuration-file/types/snippet/params/*/(optional-parser-config)/
+title: Optional Parser Configuration
+description: >-
+  This key toggles whether matching zero times is a valid state for this parser.
+
+
+  Setting this key to `true` will allow matching zero times as a valid state. If
+  `false`, this parser requires at least one matching value. Setting this to
+  `true` is preferred to wrapping the `repeating` parser inside an `optional`
+  parser.
+
+
+  By default, this key is `false` (i.e., at least one matching value is
+  required).
 examples: []
+show_in_navigation: false

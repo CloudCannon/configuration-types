@@ -1,5 +1,27 @@
 gid: collection_groups.[*].collections.[*]
-url: /collection_groups/[*]/collections/[*]/
+url: /configuration-file/collection_groups/[*]/collections/[*]/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key represents an individual Collection key name string in the
+  `collection_groups.[*].collections` array.
+
+
+  The value is a string that specifies the key name of a Collection defined in
+  `collections_config` to include in a group in the *Site Navigation*.
+examples:
+  - description: >-
+      In this example, we have configured a Collection group with multiple
+      Collection key names in the collections array.
+    language: yaml
+    code: |-
+      collection_groups:
+        - heading: Content
+          collections:
+            - pages
+            - blog
+        - heading: Data Files
+          collections:
+            - data
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

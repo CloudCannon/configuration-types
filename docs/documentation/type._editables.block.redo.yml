@@ -1,7 +1,0 @@
-gid: type._editables.block.redo
-url: /types/_editables/block/redo/
-title: ''
-description: >-
-  Enables a control to redo recent edits undone with undo. Redo is always
-  enabled through standard OS-specific keyboard shortcuts.
-examples: []

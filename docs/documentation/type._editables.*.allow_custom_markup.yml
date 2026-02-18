@@ -1,0 +1,15 @@
+gid: type._editables.*.allow_custom_markup
+url: /configuration-file/types/_editables/*/allow_custom_markup/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will allow you to edit custom markup in
+  rich text editors and explicitly accept the risk of unintentionally deleting
+  elements that cannot be recreated.
+
+
+  Setting this key to `true` will enable editing of custom markup. When using
+  `allow_custom_markup` outside of editable regions, content that uses
+  JavaScript will not be editable for security reasons. These inputs will appear
+  as uneditable snippets.
+examples: []
+show_in_navigation: false

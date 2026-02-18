@@ -1,0 +1,6 @@
+gid: headers
+url: /routing-file/headers/
+title: ''
+description: An array of header rules to apply custom HTTP headers to responses.
+examples: []
+show_in_navigation: false

@@ -1,5 +1,51 @@
 gid: type.snippet.params.*.(content-parser-config).options.allow_leading
-url: /types/snippet/params/*/(content-parser-config)/options/allow_leading/
+url: >-
+  /configuration-file/types/snippet/params/*/(content-parser-config)/options/allow_leading/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key toggles whether the first line of the content needs to be indented
+  when an `indented_by` value is set.
+
+
+  Setting this key to `true` will allow the first line of the content to not be
+  indented, but subsequent lines must be indented.
+
+
+  By default, this key is `false` (i.e., all lines including the first must be
+  indented).
+examples:
+  - description: ''
+    language: yaml
+    code: |-
+      parser: "content"
+      options:
+        editor_key: highlighted_text
+        indented_by: "  "
+        allow_leading: true
+    annotations: []
+    source: /cloudcannon.config.yml
+  - description: 'Example usage:'
+    language: markdown
+    code: |-
+      ## My blog post
+
+      <<highlight>>
+        My highlighted content!   <!--1-->
+      <</highlight>>
+
+      <<highlight>>Some initial content
+          More highlighted content!   <!--2-->
+      <</highlight>>
+
+      Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+    annotations:
+      - number: 1
+        content: This will parse correctly as `My highlighted content!`
+      - number: 2
+        content: >-
+          This will also parse correctly, as `Some initial content\nMore
+          highlighted content!`,
+
+          despite the first line not being indented.
+    source: /page.md
+show_in_navigation: false

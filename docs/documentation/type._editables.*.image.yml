@@ -1,0 +1,13 @@
+gid: type._editables.*.image
+url: /configuration-file/types/_editables/*/image/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will display a tool in your WYSIWYG
+  toolbar to insert an image and enter alternative text and title text.
+
+
+  Setting this key to `true` will enable a tool in your WYSIWYG toolbar to
+  insert an image. Select an existing image, upload an image, or use an external
+  link.
+examples: []
+show_in_navigation: false

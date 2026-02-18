@@ -1,5 +1,6 @@
 gid: type._inputs.*.(rich-text-input).options
-url: /types/_inputs/*/(rich-text-input)/options/
+url: /configuration-file/types/_inputs/*/(rich-text-input)/options/
 title: ''
-description: Options that are specific to Rich Text Inputs.
+description: This key defines options that are specific to Rich Text Inputs.
 examples: []
+show_in_navigation: false

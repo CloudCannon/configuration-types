@@ -1,0 +1,14 @@
+gid: type._editables.*.format
+url: /configuration-file/types/_editables/*/format/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will display a dropdown menu tool in your
+  WYSIWYG toolbar for structured text.
+
+
+  Setting this key to `true` will enable a dropdown menu tool in your WYSIWYG
+  toolbar for structured text. Valid values include for `p`, `h1`, `h2`, `h3`,
+  `h4`, `h5`, `h6`, `pre`, `address`, and `div`. Include a space between each
+  values, e.g. `format: p h1 h2`.
+examples: []
+show_in_navigation: false

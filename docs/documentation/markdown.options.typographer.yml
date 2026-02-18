@@ -1,5 +1,28 @@
 gid: markdown.options.typographer
-url: /markdown/options/typographer/
+url: /configuration-file/markdown/options/typographer/
 title: ''
-description: Enable some language-neutral replacement, as well as quotes beautification.
-examples: []
+description: >-
+  This key toggles whether CloudCannon will enable typographic replacements and
+  quote beautification when converting Markdown to HTML.
+
+
+  Setting this key to `true` will enable language-neutral replacements (such as
+  dashes and ellipses) and beautify quotes based on the `quotes` configuration.
+
+
+  By default, this key is `false` (i.e., typographic replacements and quote
+  beautification are disabled).
+examples:
+  - description: >-
+      In this example, we have configured Markdown to enable typographic
+      replacements and quote beautification.
+    language: yaml
+    code: |-
+      markdown:
+        engine: commonmark
+        options:
+          typographer: true
+          quotes: '«»„""'
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

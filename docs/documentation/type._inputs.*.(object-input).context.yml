@@ -1,5 +1,0 @@
-gid: type._inputs.*.(object-input).context
-url: /types/_inputs/*/(object-input)/context/
-title: ''
-description: Adds an expandable section of rich text below the input.
-examples: []

@@ -1,0 +1,58 @@
+gid: type._inputs.*.options.accepts_mime_types.(array)
+url: /configuration-file/types/_inputs/*/options/accepts_mime_types/(array)/
+title: Array Accepts Mime Types
+description: >-
+  This key represents an array format for the `accepts_mime_types` key that
+  restricts which file types are available to select or upload in *File Inputs*.
+
+
+  The value is an array of MIME type strings. Each string specifies a file type
+  that CloudCannon will allow for this input.
+
+
+  Available MIME types include image formats (`image/x-icon`, `image/gif`,
+  `image/jpeg`, `image/png`, `image/webp`, `image/bmp`, `image/svg+xml`) and
+  document formats (`application/pdf`, `application/msword`,
+  `application/vnd.openxmlformats-officedocument.wordprocessingml.document`,
+  `application/vnd.ms-excel`,
+  `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`,
+  `application/vnd.ms-powerpoint`,
+  `application/vnd.openxmlformats-officedocument.presentationml.presentation`).
+
+
+  Use the array format when you want to explicitly list multiple MIME types,
+  making it easier to read and maintain in your configuration.
+examples:
+  - description: >-
+      In this example, we have configured a *File Input* to accept only image
+      files using an array of image MIME types.
+    language: yaml
+    code: |-
+      _inputs:
+        hero_image:
+          type: file
+          label: Hero Image
+          options:
+            accepts_mime_types:
+              - image/jpeg
+              - image/png
+              - image/webp
+    annotations: []
+    source: /cloudcannon.config.yml
+  - description: >-
+      In this example, we have configured a *File Input* to accept only document
+      files using an array of document MIME types.
+    language: yaml
+    code: |-
+      _inputs:
+        document:
+          type: file
+          label: Document
+          options:
+            accepts_mime_types:
+              - application/pdf
+              - application/msword
+              - application/vnd.openxmlformats-officedocument.wordprocessingml.document
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

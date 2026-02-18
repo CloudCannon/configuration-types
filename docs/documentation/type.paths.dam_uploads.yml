@@ -1,5 +1,26 @@
 gid: type.paths.dam_uploads
-url: /types/paths/dam_uploads/
+url: /configuration-file/types/paths/dam_uploads/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key defines the path for the default location of newly uploaded
+  [DAM](/documentation/articles/introduction-to-assets-and-dams/)
+
+  files.
+
+
+  You can use [dynamic
+  placeholders](/documentation/articles/configure-your-template-strings/) for
+  `uploads` and `dam_uploads`.
+examples:
+  - description: >-
+      In this example, we have configured the DAM uploads path for the `blog`
+      Collection.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          paths:
+            dam_uploads: /dam/uploads/blog/
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

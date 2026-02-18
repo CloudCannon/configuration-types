@@ -1,9 +1,38 @@
 gid: collections_config.*.add_options.[*].(add-option).schema
-url: /collections_config/*/add_options/[*]/(add-option)/schema/
+url: /configuration-file/collections_config/*/add_options/[*]/(add-option)/schema/
 title: ''
 description: >-
-  The schema that new files are created from with this action. This schema is
-  not restricted to the containing collection, and is instead relative to the
-  collection specified with collection. Defaults to default if schemas are
-  configured for the collection.
-examples: []
+  This key defines which *Schema* CloudCannon should use to populate a file
+  created with a standard add option in the *\+ Add* button dropdown.
+
+
+  The value is a string that specifies the key name of a *Schema* defined in
+  `schemas` to use as the default content for the new file.
+
+
+  Configuring this key will override `add_options.default_content_file`.
+
+
+  By default, this key uses the default *Schema* in the Collection configured in
+  `add_options.collection` (or the containing collection if `collection` is not
+  specified), if *Schemas* are configured for that collection. Otherwise, this
+  key has no default value.
+examples:
+  - description: >-
+      In this example, we have configured a standard add option for the `people`
+      Collection that uses the `employee` *Schema* to populate new files.
+    language: yaml
+    code: |-
+      collections_config:
+        people:
+          add_options:
+            - name: Add Staff Member
+              schema: employee
+              icon: face
+              editor: data
+          schemas:
+            employee:
+              path: /.cloudcannon/schemas/employee.yml
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

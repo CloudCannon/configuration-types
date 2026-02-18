@@ -1,5 +1,41 @@
 gid: type.preview.subtext
-url: /types/preview/subtext/
+url: /configuration-file/types/preview/subtext/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key defines the secondary text displayed below the main text on *Cards*
+  in the *Collection browser*, *Structures*, and *Snippets*.
+
+
+  The value can be an array or a single value, and reference a key, template, or
+  text string. When multiple entries are provided, CloudCannon will use them in
+  order as fallback options.
+examples:
+  - description: >-
+      In this example, we have configured the subtext for *Cards* in the `blog`
+      Collection with an array of values to provide fallback options.
+      CloudCannon will use the value of `author` first, then the `{writer}`
+      template, and finally fall back to the static text value.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          preview:
+            subtext:
+              - key: author
+              - template: '{writer}'
+              - text: 'Unknown author'
+    annotations: []
+    source: /cloudcannon.config.yml
+  - description: >-
+      In this example, we have configured the subtext for *Cards* in the `blog`
+      Collection to display the `author` key.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          preview:
+            subtext:
+              - key: author
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

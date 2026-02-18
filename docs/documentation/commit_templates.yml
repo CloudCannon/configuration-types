@@ -1,5 +1,61 @@
 gid: commit_templates
-url: /commit_templates/
+url: /configuration-file/commit_templates/
 title: ''
-description: Templates for commit messages when saving changes.
-examples: []
+description: >-
+  This key defines commit message templates available when saving changes.
+
+
+  The value is an array of template objects. Each template object can contain
+  optional `label`, `template_path`, `template_string`, `wrap_width`,
+  `extra_data`, and `_inputs` keys.
+
+
+  Commit messages appear on the *Review changes* modal when you save your
+  changes.
+examples:
+  - description: >-
+      In this example, we have configured a commit template with a template
+      string and input configuration.
+    language: yaml
+    code: |-
+      commit_templates:
+        - label: Default
+          template_string: '{commit_type}: {message|trim}'
+          _inputs:
+            commit_type:
+              type: select
+              options:
+                allow_empty: true
+                values:
+                  - feature
+                  - fix
+                  - test
+              cascade: true
+    annotations: []
+    source: /cloudcannon.config.yml
+  - description: >-
+      In this example, we have configured a commit template that uses a file for
+      the template content.
+    language: yaml
+    code: |-
+      commit_templates:
+        - label: Commit message from file
+          template_path: /.git/commit-message.txt
+    annotations: []
+    source: /cloudcannon.config.yml
+  - description: >-
+      In this example, we have configured a commit template with a template
+      string, input configuration, and extra data for nested templates.
+    language: yaml
+    code: |-
+      commit_templates:
+        - label: Breaking change
+          template_string: '{message}{breaking_change|if=breaking_change_message}'
+          _inputs:
+            breaking_change_message:
+              type: text
+          extra_data:
+            breaking_change: '⚠️ {breaking_change_message}'
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

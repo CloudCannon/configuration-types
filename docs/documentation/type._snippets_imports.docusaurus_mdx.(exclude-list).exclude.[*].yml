@@ -1,5 +1,7 @@
 gid: type._snippets_imports.docusaurus_mdx.(exclude-list).exclude.[*]
-url: /types/_snippets_imports/docusaurus_mdx/(exclude-list)/exclude/[*]/
+url: >-
+  /configuration-file/types/_snippets_imports/docusaurus_mdx/(exclude-list)/exclude/[*]/
 title: ''
 description: ''
 examples: []
+show_in_navigation: false

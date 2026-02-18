@@ -1,5 +1,33 @@
 gid: type.structure.values.[*].groups.[*].inputs.[*]
-url: /types/structure/values/[*]/groups/[*]/inputs/[*]/
+url: /configuration-file/types/structure/values/[*]/groups/[*]/inputs/[*]/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key represents an individual input key name string in the
+  `values[*].groups[*].inputs` array.
+
+
+  The value is a string that specifies the key name of an input to include in a
+  group within a structure value.
+examples:
+  - description: In this example, we have configured a group to include the `title` input.
+    language: yaml
+    code: |-
+      _structures:
+        article_information:
+          values:
+            - label: Blog
+              value:
+                title:
+                subtitle:
+                author:
+              groups:
+                - heading: Titles
+                  inputs:
+                    - title
+                    - subtitle
+                - heading: Details
+                  inputs:
+                    - author
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

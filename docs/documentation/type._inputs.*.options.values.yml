@@ -1,0 +1,26 @@
+gid: type._inputs.*.options.values
+url: /configuration-file/types/_inputs/*/options/values/
+title: ''
+description: >-
+  This key defines the values available to choose from.
+
+
+  Optional, defaults to fetching values from the naming convention (e.g.
+  `colors` or `my_colors` for data set `colors`).
+examples:
+  - description: >-
+      In this example, we have configured a *Select Input* with custom values to
+      choose from.
+    language: yaml
+    code: |-
+      _inputs:
+        category:
+          type: select
+          options:
+            values:
+              - Blog
+              - News
+              - Events
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

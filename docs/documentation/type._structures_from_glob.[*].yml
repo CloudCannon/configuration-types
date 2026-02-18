@@ -1,0 +1,24 @@
+gid: type._structures_from_glob.[*]
+url: /configuration-file/types/_structures_from_glob/[*]/
+title: ''
+description: >-
+  This key represents an individual glob pattern string in the
+  `_structures_from_glob` array.
+
+
+  The value is a string that specifies a file path pattern relative to the root
+  of your repository. The path must end in the file extension
+  `.cloudcannon.structures.yml`.
+examples:
+  - description: >-
+      In this example, we have several *Structure Configuration Files* in the
+      `.cloudcannon/structures/` folder. The value of the
+      `_structures_from_glob` key tells CloudCannon to use the
+      `staffMembers.cloudcannon.structures.yml` file in that folder.
+    language: yaml
+    code: |-
+      _structures_from_glob:
+        - '/.cloudcannon/structures/staffMembers.cloudcannon.structures.yml'
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

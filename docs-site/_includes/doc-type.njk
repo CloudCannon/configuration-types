@@ -1,6 +1,6 @@
-{%- if url and not parent -%}
-	<a href="{{ url }}">{{ title | default(key, true) }}</a>
-{%- elif type == "array" -%}
+
+
+{%- if type == "array" -%}
 	Array
 	{%- if items | length -%}
 		{%- set join = joiner(" | ") -%}
@@ -13,19 +13,31 @@
 		<span style="opacity: 0.5;">&gt;</span>
 	{%- endif -%}
 {%- elif type == "object" -%}
-		Object
-		{%- if additionalProperties.length == 1 -%}
-			{%- set additionalPropDoc = additionalProperties[0] | docFromRef -%}
-			<span style="opacity: 0.5;">&lt;</span>
-			{%- renderFile "./_includes/doc-type-nested.njk", additionalPropDoc -%}
-			<span style="opacity: 0.5;">&gt;</span>
-		{%- endif -%}
+	Object
+	{%- if additionalProperties.length == 1 -%}
+		{%- set additionalPropDoc = additionalProperties[0] | docFromRef -%}
+		<span style="opacity: 0.5;">&lt;</span>
+		{%- renderFile "./_includes/doc-type-nested.njk", additionalPropDoc -%}
+		<span style="opacity: 0.5;">&gt;</span>
+	{%- endif -%}
 {%- elif type == "string" -%}
-	{%- if const -%}"{{ const }}"{%- else -%}string{%- endif -%}
+	{%- if const -%}
+		"{{ const }}"
+	{%- else -%}
+		{{ type }}
+	{%- endif -%}
 {%- elif type == "number" or type == "integer" -%}
-	{%- if const or const == 0 -%}{{ const }}{%- else -%}number{%- endif -%}
+	{%- if const or const == 0 -%}
+		{{ const }}
+	{%- else -%}
+		{{ type }}
+	{%- endif -%}
 {%- elif type == "boolean" -%}
-	{%- if const or const == false -%}{{ const }}{%- else -%}boolean{%- endif -%}
+	{%- if const or const == false -%}
+		{{ const }}
+	{%- else -%}
+		{{ type }}
+	{%- endif -%}
 {%- elif anyOf | length -%}
 	{%- set join = joiner(" | ") -%}
 	{%- for anyOfRef in anyOf -%}
@@ -33,12 +45,6 @@
 		{%- set anyOfDoc = anyOfRef | docFromRef -%}
 		{%- renderFile "./_includes/doc-type-nested.njk", anyOfDoc -%}
 	{%- endfor -%}
-{%- elif type == "null" -%}
-	null
-{%- elif type == "date" -%}
-	date
-{%- elif title -%}
-	{{ title }}
 {%- else -%}
-	unknown
+	{{ type | default(title) | default('unknown') }}
 {%- endif -%}

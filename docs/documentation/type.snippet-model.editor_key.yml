@@ -1,0 +1,51 @@
+gid: type.snippet-model.editor_key
+url: /configuration-file/types/snippet-model/editor_key/
+title: ''
+description: >-
+  This key defines the key that a user in CloudCannon will see when editing this
+  value.
+
+
+  This key will also be used if you want to specify any input configuration
+  using `_inputs`.
+
+
+  If no `source_key` is set, this key will also be assumed to be the source key.
+examples:
+  - description: ''
+    language: yaml
+    code: |-
+      parser: "key_values"
+      options:
+        models___1___:
+          - editor_key: href
+          - editor_key: class
+          - editor_key: target
+    annotations:
+      - number: 1
+        content: >-
+          Key/value models can be specified in any order, so do not have to
+          match the order
+
+          of they keys in the source code.
+    source: /cloudcannon.config.yml
+  - description: 'Example usage:'
+    language: markdown
+    code: |-
+      ## My blog post
+
+      <a href="#link" target="_blank" class="my_link"> ... </a>
+      Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+    annotations: []
+    source: /page.md
+  - description: |-
+      When edited in CloudCannon, this will edit as the data model:
+
+      {/* TODO: Use screenshot here instead */}
+    language: yaml
+    code: |-
+      href: "#link"
+      target: "_blank"
+      class: "my_link"
+    annotations: []
+show_in_navigation: false

@@ -1,5 +1,27 @@
 gid: markdown.options.sentence_per_line
-url: /markdown/options/sentence_per_line/
+url: /configuration-file/markdown/options/sentence_per_line/
 title: ''
-description: Add linebreaks between sentences in Markdown.
-examples: []
+description: >-
+  This key toggles whether CloudCannon will add line breaks between sentences
+  when converting HTML to Markdown.
+
+
+  Setting this key to `true` will add line breaks between sentences in the
+  output Markdown.
+
+
+  By default, this key is `false` (i.e., line breaks are not added between
+  sentences).
+examples:
+  - description: >-
+      In this example, we have configured Markdown to add line breaks between
+      sentences.
+    language: yaml
+    code: |-
+      markdown:
+        engine: commonmark
+        options:
+          sentence_per_line: true
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

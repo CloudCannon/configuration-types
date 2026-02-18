@@ -1,5 +1,29 @@
 gid: collections_config.*.glob.(glob-array)
-url: /collections_config/*/glob/(glob-array)/
+url: /configuration-file/collections_config/*/glob/(glob-array)/
 title: Glob Array
-description: ''
-examples: []
+description: >-
+  This key represents an array format for the `collections_config.*.glob` key.
+
+
+  The value is an array of glob pattern strings. Each string specifies a file
+  path pattern relative to the Collection path. Globs can be positive (e.g.,
+  `*.yml`) or negative (e.g., `!**/*.json`).
+
+
+  Files are included in a Collection if they match any positive globs and do not
+  match any negative globs.
+examples:
+  - description: >-
+      In this example, the `data` Collection uses an array of glob patterns to
+      show only `.yml` files, except for the `secret.yml` file.
+    language: yaml
+    code: |-
+      collections_config:
+        data:
+          path: data
+          glob:
+            - '**/*.yml'
+            - '!secret.yml'
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

@@ -1,7 +1,27 @@
 gid: type._inputs.*.(select-input)
-url: /types/_inputs/*/(select-input)/
+url: /configuration-file/types/_inputs/*/(select-input)/
 title: Select Input
 description: >-
-  Provides an editing interface for data with multiple predefined options.
+  This key defines an editing interface for data with multiple predefined
+  options.
+
+
   Select inputs only allow one value.
-examples: []
+examples:
+  - description: >-
+      In this example, we have configured the `category` key as a *Select
+      Input*.
+    language: yaml
+    code: |-
+      _inputs:
+        category:
+          type: select
+          label: Category
+          options:
+            values:
+              - Blog
+              - News
+              - Events
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

@@ -1,7 +1,9 @@
 gid: type._inputs.*.(color-input).options.format
-url: /types/_inputs/*/(color-input)/options/format/
+url: /configuration-file/types/_inputs/*/(color-input)/options/format/
 title: ''
-description: >-
-  Sets what format the color value is saved as. Defaults to the naming
-  convention, or HEX if that is unset.
+description: |-
+  This key defines what format the color value is saved as.
+
+  Defaults to the naming convention, or "hex" if that is unset.
 examples: []
+show_in_navigation: false

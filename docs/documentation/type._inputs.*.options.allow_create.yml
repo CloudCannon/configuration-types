@@ -1,0 +1,27 @@
+gid: type._inputs.*.options.allow_create
+url: /configuration-file/types/_inputs/*/options/allow_create/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will allow new text values to be created
+  at edit time.
+
+
+  Setting this key to `true` will allow new text values to be created at edit
+  time.
+examples:
+  - description: >-
+      In this example, CloudCannon will allow users to add new values to a
+      *Select Input*.
+    language: yaml
+    code: |-
+      _inputs:
+        category:
+          type: select
+          options:
+            values:
+              - Blog
+              - News
+            allow_create: true
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

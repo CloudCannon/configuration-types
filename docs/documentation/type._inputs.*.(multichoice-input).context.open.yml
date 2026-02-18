@@ -1,5 +1,0 @@
-gid: type._inputs.*.(multichoice-input).context.open
-url: /types/_inputs/*/(multichoice-input)/context/open/
-title: ''
-description: Makes the content visible initially.
-examples: []

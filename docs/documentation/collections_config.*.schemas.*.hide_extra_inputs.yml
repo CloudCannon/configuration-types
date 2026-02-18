@@ -1,7 +1,31 @@
 gid: collections_config.*.schemas.*.hide_extra_inputs
-url: /collections_config/*/schemas/*/hide_extra_inputs/
+url: /configuration-file/collections_config/*/schemas/*/hide_extra_inputs/
 title: ''
 description: >-
-  Hides unexpected inputs when editing. Has no effect if `remove_extra_inputs`
-  is true. Defaults to false.
-examples: []
+  This key toggles whether CloudCannon will hide inputs that are not present in
+  a Schema from the [Data
+  Editor](/documentation/articles/what-is-the-data-editor/) and the sidebar of
+  the [Visual Editor](/documentation/articles/what-is-the-visual-editor/) and
+  [Content Editor](/documentation/articles/what-is-the-content-editor/).
+
+
+  Setting this key to `true` will hide inputs that are not present in a Schema
+  from the Data Editor and the sidebar of the Visual Editor and Content Editor.
+  Hiding these inputs does not delete the data. You can see non-schema data keys
+  by opening a file in the [Source
+  Editor](/documentation/articles/what-is-the-source-editor/). This key has no
+  effect if `remove_extra_inputs` is `true`.
+examples:
+  - description: >-
+      In this example, CloudCannon will hide non-schema inputs in files using
+      the `article` schema in the `blog` Collection.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          schemas:
+            article:
+              hide_extra_inputs: true
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

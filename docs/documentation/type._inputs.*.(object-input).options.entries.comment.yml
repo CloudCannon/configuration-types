@@ -1,9 +1,30 @@
 gid: type._inputs.*.(object-input).options.entries.comment
-url: /types/_inputs/*/(object-input)/options/entries/comment/
+url: /configuration-file/types/_inputs/*/(object-input)/options/entries/comment/
 title: ''
 description: >-
-  Used to supply help text above the key input when adding/renaming within a
-  mutable object input. Has no default. Supports a limited set of Markdown:
-  links, bold, italic, subscript, superscript and inline code elements are
-  allowed.
-examples: []
+  This key defines the subtitle text above the key input when adding or renaming
+  entries within a mutable *Object Input*.
+
+
+  The value is a string that supports a limited selection of Markdown
+  formatting: links, bold, italic, subscript, superscript, and inline code
+  elements are allowed.
+
+
+  Available for Mutable Objects only.
+examples:
+  - description: >-
+      In this example, we have configured a comment with Markdown formatting to
+      provide help text above the key input.
+    language: yaml
+    code: |-
+      _inputs:
+        metadata:
+          type: object
+          options:
+            allow_create: true
+            entries:
+              comment: Key names should be **lowercase** and use underscores (e.g., `article_title`)
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

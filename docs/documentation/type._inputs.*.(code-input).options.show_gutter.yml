@@ -1,5 +1,28 @@
 gid: type._inputs.*.(code-input).options.show_gutter
-url: /types/_inputs/*/(code-input)/options/show_gutter/
+url: /configuration-file/types/_inputs/*/(code-input)/options/show_gutter/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key toggles whether CloudCannon displays line numbers in the gutter of
+  *Code Inputs*.
+
+
+  Setting this key to `false` will hide line numbers in the left gutter of the
+  code editor.
+
+
+  By default, this key is `true` (i.e., line numbers are displayed).
+examples:
+  - description: >-
+      In this example, we have configured a code input to hide line numbers by
+      setting `show_gutter` to `false`.
+    language: yaml
+    code: |-
+      _inputs:
+        css_code:
+          type: code
+          label: Custom CSS
+          options:
+            show_gutter: false
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

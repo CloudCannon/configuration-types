@@ -1,0 +1,24 @@
+gid: type._inputs.*.options.values.(object-array)
+url: /configuration-file/types/_inputs/*/options/values/(object-array)/
+title: Object Array Values
+description: >-
+  This key represents an individual object in the `options.values` array for
+  *Select Inputs*.
+examples:
+  - description: >-
+      In this example, we have configured an array of object values for a select
+      input.
+    language: yaml
+    code: |-
+      _inputs:
+        status:
+          type: select
+          options:
+            values:
+              - icon: edit_note
+                value: draft
+              - icon: check_circle
+                value: published
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

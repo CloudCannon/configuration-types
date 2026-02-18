@@ -1,0 +1,6 @@
+gid: type._inputs.*.options.view
+url: /configuration-file/types/_inputs/*/options/view/
+title: ''
+description: This key defines how selected items are rendered.
+examples: []
+show_in_navigation: false

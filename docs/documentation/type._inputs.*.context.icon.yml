@@ -1,0 +1,32 @@
+gid: type._inputs.*.context.icon
+url: /configuration-file/types/_inputs/*/context/icon/
+title: ''
+description: >-
+  This key defines which icon appears next to the context box title.
+
+
+  The value must match an icon name from [Google's Material
+  Symbols](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded)
+  list.
+
+
+  This key has no default.
+examples:
+  - description: >-
+      In this example, we want to use a warning icon to draw attention to
+      important information about our `file_upload` Input.
+    language: yaml
+    code: |-
+      _inputs:
+        file_upload:
+          type: file
+          label: Upload Document
+          context:
+            title: File Requirements
+            icon: warning
+            content: Maximum file size is 10MB.
+          options:
+            max_file_size: 10000
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

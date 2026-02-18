@@ -1,5 +1,0 @@
-gid: type._inputs.*.(boolean-input).disabled
-url: /types/_inputs/*/(boolean-input)/disabled/
-title: ''
-description: Toggles if this input can be edited.
-examples: []

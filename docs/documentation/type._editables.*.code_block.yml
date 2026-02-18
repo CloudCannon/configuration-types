@@ -1,0 +1,16 @@
+gid: type._editables.*.code_block
+url: /configuration-file/types/_editables/*/code_block/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will display a control in your WYSIWYG
+  toolbar to insert a code block in editable regions.
+
+
+  Setting this key to `true` will enable a control in your WYSIWYG toolbar to
+  insert a code block.
+
+
+  By default, this key is `false` (i.e., the code block control is not
+  displayed).
+examples: []
+show_in_navigation: false

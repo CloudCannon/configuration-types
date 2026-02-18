@@ -1,0 +1,7 @@
+# yaml-language-server: $schema=../dist/cloudcannon-snippets-imports.schema.json
+
+jekyll:
+  include:
+    - jekyll_raw
+    - jekyll_link
+    - jekyll_highlight

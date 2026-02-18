@@ -1,5 +1,0 @@
-gid: type._inputs.*.(textarea-input).options.pattern_flags.dot_all
-url: /types/_inputs/*/(textarea-input)/options/pattern_flags/dot_all/
-title: ''
-description: '`s` - `.` matches newline characters.'
-examples: []

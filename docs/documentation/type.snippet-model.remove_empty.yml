@@ -1,0 +1,53 @@
+gid: type.snippet-model.remove_empty
+url: /configuration-file/types/snippet-model/remove_empty/
+title: ''
+description: >-
+  This key toggles whether this key-value pair should be omitted altogether if
+  the value is empty.
+
+
+  Setting this key to `true` will omit the key-value pair if the value is empty.
+  Requires that this key is also set as optional, as otherwise the snippet would
+  not re-parse.
+
+
+  By default, this key is `false` (i.e., empty key-value pairs are not omitted).
+examples:
+  - description: ''
+    language: yaml
+    code: |-
+      parser: "key_values"
+      options:
+        models:
+          - editor_key: href
+          - editor_key: target
+          - editor_key: class
+            optional: true
+            remove_empty: true
+    annotations: []
+    source: /cloudcannon.config.yml
+  - description: 'Example usage:'
+    language: markdown
+    code: |-
+      ## My blog post
+
+      <a href="#link" target="_blank" class=""> ... </a> <!--1-->
+      <a href="#link" target="_blank"> ... </a> <!--1--> <!--2-->
+
+      Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+    annotations:
+      - number: 1
+        content: >-
+          With `remove_empty: true` both of these anchor tags will be output as
+          `<a href="#link" target="_blank"> ... </a>`
+
+          as the `class` key contains no value.
+      - number: 2
+        content: >-
+          If `remove_empty: false` was set, this snippet would be output as `<a
+          href="#link" target="_blank" class=""> ... </a>`.
+
+          The empty `class` key would be written even if it did not originally
+          appear in the parsed source.
+    source: /page.md
+show_in_navigation: false

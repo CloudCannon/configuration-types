@@ -1,0 +1,6 @@
+gid: type._inputs.*.options.pattern_flags.dot_all
+url: /configuration-file/types/_inputs/*/options/pattern_flags/dot_all/
+title: ''
+description: This key defines the `s` flag - `.` matches newline characters.
+examples: []
+show_in_navigation: false

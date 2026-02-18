@@ -1,7 +1,0 @@
-gid: type._inputs.*.(file-input).options.disable_upload_file_in_file_browser
-url: /types/_inputs/*/(file-input)/options/disable_upload_file_in_file_browser/
-title: ''
-description: >-
-  Prevents file uploads inside the "Select existing file/image" file browser
-  modal window.
-examples: []

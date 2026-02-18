@@ -1,5 +1,0 @@
-gid: type._inputs.*.(select-input).disabled.(boolean)
-url: /types/_inputs/*/(select-input)/disabled/(boolean)/
-title: Boolean
-description: ''
-examples: []

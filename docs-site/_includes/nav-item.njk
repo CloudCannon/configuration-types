@@ -3,9 +3,19 @@
 
 <li>
 	{% if isActive %}
-		<span>{{ propDoc.title | default(propDoc.key, true) }}</span>
+		{%- if propDoc.title -%}
+			{{ propDoc.title }}
+		{%- else -%}
+			<code>{{ propDoc.key }}</code>
+		{%- endif -%}
 	{% elif propDoc.url %}
-		<a href="{{ propDoc.url }}">{{ propDoc.title | default(propDoc.key, true) }}</a>
+		<a href="{{ propDoc.url }}">
+			{%- if propDoc.title -%}
+				{{ propDoc.title }}
+			{%- else -%}
+				<code>{{ propDoc.key }}</code>
+			{%- endif -%}
+		</a>
 	{% endif %}
 
 	{% if propDoc.url and (isActive or hasActiveParent) %}

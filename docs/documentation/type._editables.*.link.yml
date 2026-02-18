@@ -1,0 +1,12 @@
+gid: type._editables.*.link
+url: /configuration-file/types/_editables/*/link/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will display a tool in your WYSIWYG
+  toolbar to create a hyperlink around selected text.
+
+
+  Setting this key to `true` will enable a tool in your WYSIWYG toolbar to
+  create a hyperlink around selected text.
+examples: []
+show_in_navigation: false

@@ -1,5 +1,0 @@
-gid: type._inputs.*.(multichoice-input).context
-url: /types/_inputs/*/(multichoice-input)/context/
-title: ''
-description: Adds an expandable section of rich text below the input.
-examples: []

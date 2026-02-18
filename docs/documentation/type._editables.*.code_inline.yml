@@ -1,0 +1,16 @@
+gid: type._editables.*.code_inline
+url: /configuration-file/types/_editables/*/code_inline/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will display a control in your WYSIWYG
+  toolbar to create an inline code element, containing any selected text.
+
+
+  Setting this key to `true` will enable a control in your WYSIWYG toolbar to
+  create an inline code element.
+
+
+  By default, this key is `false` (i.e., the inline code control is not
+  displayed).
+examples: []
+show_in_navigation: false
