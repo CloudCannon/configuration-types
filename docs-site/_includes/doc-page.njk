@@ -1,23 +1,19 @@
 {% set doc = gid | docFromGid %}
 
-<h1
-	data-editable="text"
-	data-prop="@file[/docs/documentation/{{ doc.gid }}.yml].title"
-	data-defer-mount
->{{ doc.title | default(doc.key, true) }}</h1>
+<h1>{% renderFile "./_includes/doc-label.njk", doc %}</h1>
 
 <dl>
 	{% set parent = doc.parent | docFromGid %}
 	{% if appears_in | length or parent %}
 		<dt>Appears in:</dt>
 		{% if parent %}
-			<dd><a href="{{ parent.url }}"><code>{{ parent.url }}</code></a></dd>
+			<dd>{% renderFile "./_includes/doc-link-full.njk", parent %}</dd>
 		{% endif %}
 
 		{% if appears_in | length %}
 			{% for appearsInGid in appears_in %}
 				{% set appearsInDoc = appearsInGid | docFromGid %}
-				<dd><a href="{{ appearsInDoc.url }}"><code>{{ appearsInDoc.url }}</code></a></dd>
+				<dd>{% renderFile "./_includes/doc-link-full.njk", appearsInDoc %}</dd>
 			{% endfor %}
 		{% endif %}
 	{% endif %}
@@ -46,14 +42,12 @@
 		</dd>
 	{% endif %}
 
-	<dt{% if not description %} class="show-in-cms"{% endif %}>Description:</dt>
-	<dd
-		data-editable="text"
-		data-type="block"
-		data-prop="@file[/docs/documentation/{{ gid }}.yml].description"
-	>{% if description %}{{ description | renderContent('md') | safe }}{% endif %}</dd>
+	{% if description %}
+		<dt>Description:</dt>
+		<dd>{{ description | renderContent('md') | safe }}</dd>
+	{% endif %}
 
-	{% if default %}
+	{% if default or default == false or default == 0 %}
 		<dt>Default value:</dt>
 		<dd><code>{{ default }}</code></dd>
 	{% endif %}
@@ -65,14 +59,12 @@
 		{% endfor %}
 	{% endif %}
 
-	<dt{% if not documentation.examples | length %} class="show-in-cms"{% endif %}>Examples:</dt>
-	<editable-array data-prop="@file[/docs/documentation/{{ gid }}.yml].examples">
+	{% if documentation.examples | length %}
+		<dt>Examples:</dt>
 		{% for example in documentation.examples %}
-			<dd data-editable="array-item">
-				<pre><code>{{ example }}</code></pre>
-			</dd>
+			<dd>{% renderFile "./_includes/example.njk", example %}</dd>
 		{% endfor %}
-	</editable-array>
+	{% endif %}
 
 	{% if type == "array" %}
 		{% renderFile "./_includes/pages/array.njk", doc %}

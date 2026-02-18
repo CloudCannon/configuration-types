@@ -1,9 +1,0 @@
-gid: type._editables.block.right
-url: /types/_editables/block/right/
-title: ''
-description: >-
-  Enables a control to right align text by toggling a class name for a block of
-  text. The value is the class name the editor should add to align the text. The
-  styles for this class need to be listed in the `styles` file to take effect
-  outside of the input.
-examples: []

@@ -1,0 +1,27 @@
+gid: type._inputs.*.options.prevent_resize_existing_files
+url: /configuration-file/types/_inputs/*/options/prevent_resize_existing_files/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will skip the image resizing process
+  configured for this input when selecting existing images.
+
+
+  Setting this key to `true` will skip the image resizing process when selecting
+  existing images.
+examples:
+  - description: >-
+      In this example, CloudCannon will skip the image resizing process when
+      selecting existing images for an *Image Input*.
+    language: yaml
+    code: |-
+      _inputs:
+        hero_image:
+          type: image
+          options:
+            width: 1200
+            height: 600
+            resize_style: cover
+            prevent_resize_existing_files: true
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

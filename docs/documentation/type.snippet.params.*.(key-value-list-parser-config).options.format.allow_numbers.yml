@@ -1,7 +1,0 @@
-gid: >-
-  type.snippet.params.*.(key-value-list-parser-config).options.format.allow_numbers
-url: >-
-  /types/snippet/params/*/(key-value-list-parser-config)/options/format/allow_numbers/
-title: ''
-description: ''
-examples: []

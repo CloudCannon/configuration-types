@@ -1,7 +1,17 @@
 gid: type._inputs.*.(url-input).options.hide_link_to_email_address
-url: /types/_inputs/*/(url-input)/options/hide_link_to_email_address/
+url: >-
+  /configuration-file/types/_inputs/*/(url-input)/options/hide_link_to_email_address/
 title: ''
 description: >-
-  Hides the option to link to an email address. This does not prevent typing a
-  `mailto:` link in the input.
+  This key toggles whether CloudCannon will hide the option to link to an email
+  address.
+
+
+  Setting this key to `true` will hide the option to link to an email address.
+  This does not prevent typing a `mailto:` link in the input.
+
+
+  By default, this key is `false` (i.e., the option to link to an email address
+  is shown).
 examples: []
+show_in_navigation: false

@@ -1,0 +1,13 @@
+gid: type._editables.*.snippet
+url: /configuration-file/types/_editables/*/snippet/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will display a tool in your WYSIWYG
+  toolbar to insert a [Snippet](/documentation/articles/what-is-a-snippet/), if
+  any are available.
+
+
+  Setting this key to `true` will enable a tool in your WYSIWYG toolbar to
+  insert a Snippet.
+examples: []
+show_in_navigation: false

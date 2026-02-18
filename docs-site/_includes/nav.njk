@@ -6,12 +6,12 @@
 				{% set parentDoc = parentGid | docFromGid %}
 				<li>
 					<span class="icon">&uarr;</span>
-					<a href="{{ parentDoc.url }}">{{ parentDoc.title | default(parentDoc.key, true) }}</a>
+					{% renderFile "./_includes/doc-link.njk", parentDoc %}
 				</li>
 			{% endfor %}
 			<li>
 				<span class="icon"></span>
-				{{ doc.title | default(doc.key, true) }}
+				{% renderFile "./_includes/doc-label.njk", doc %}
 			</li>
 		</ul>
 
@@ -20,7 +20,7 @@
 
 	<ul>
 		{% for propDoc in docs %}
-			{% if not propDoc.parent %}{% include "nav-item.njk" %}{% endif %}
+			{% if propDoc.documentation.show_in_navigation %}{% include "nav-item.njk" %}{% endif %}
 		{% endfor %}
 	</ul>
 </nav>

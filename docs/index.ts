@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { moveOldDocs, readDocs, writeNewDocs } from './docs.js';
+import { type DocSchemaConfig, docSchemas } from './schema-registry.js';
 import {
 	type DocumentationEntry,
 	type JsonSchema,
@@ -9,23 +10,22 @@ import {
 	slugify,
 } from './util.js';
 
-const schemaRaw: string = await fs.readFile(
-	path.join(process.cwd(), 'dist/cloudcannon-config.documentation.schema.json'),
-	{ encoding: 'utf8' }
-);
-const schema: JsonSchema = JSON.parse(schemaRaw);
-const documentationEntries: Record<string, DocumentationEntry> = await readDocs();
-const attemptedGids: Set<string> = new Set();
-const untitledGids: Set<string> = new Set();
-const pages: Record<string, Page> = {};
+interface ProcessContext {
+	schema: JsonSchema;
+	config: DocSchemaConfig;
+	documentationEntries: Record<string, DocumentationEntry>;
+	attemptedGids: Set<string>;
+	untitledGids: Set<string>;
+	pages: Record<string, Page>;
+}
 
-function deref(doc: JsonSchema): JsonSchema {
+function deref(doc: JsonSchema, schema: JsonSchema): JsonSchema {
 	if (typeof doc !== 'object') {
 		return doc;
 	}
 
 	if (doc?.$ref && schema.$defs) {
-		const refDoc = deref(schema.$defs[doc.$ref.replace('#/$defs/', '')]);
+		const refDoc = deref(schema.$defs[doc.$ref.replace('#/$defs/', '')], schema);
 
 		Object.keys(refDoc).forEach((key) => {
 			if (doc[key] === undefined) {
@@ -40,11 +40,11 @@ function deref(doc: JsonSchema): JsonSchema {
 		delete doc.oneOf;
 	}
 
-	flattenNestedAnyOf(doc);
+	flattenNestedAnyOf(doc, schema);
 	return doc;
 }
 
-function flattenNestedAnyOf(doc: JsonSchema): void {
+function flattenNestedAnyOf(doc: JsonSchema, schema: JsonSchema): void {
 	if (doc?.anyOf) {
 		const anyOf: JsonSchema[] = [];
 
@@ -55,12 +55,12 @@ function flattenNestedAnyOf(doc: JsonSchema): void {
 		};
 
 		for (let i = 0; i < doc.anyOf.length; i++) {
-			deref(doc.anyOf[i]);
+			deref(doc.anyOf[i], schema);
 
 			const docAnyOf = doc.anyOf[i]?.anyOf;
 			if (Array.isArray(docAnyOf)) {
 				for (let j = 0; j < docAnyOf.length; j++) {
-					deref(docAnyOf[j]);
+					deref(docAnyOf[j], schema);
 					add(docAnyOf[j]);
 				}
 			} else {
@@ -78,9 +78,9 @@ function flattenNestedAnyOf(doc: JsonSchema): void {
 	}
 }
 
-function getDocumentationEntry(gid: string): DocumentationEntry {
-	attemptedGids.add(gid);
-	return documentationEntries[gid];
+function getDocumentationEntry(gid: string, ctx: ProcessContext): DocumentationEntry | undefined {
+	ctx.attemptedGids.add(gid);
+	return ctx.documentationEntries[gid];
 }
 
 function getDisplayKey(fullKey: string): string | undefined {
@@ -92,23 +92,37 @@ function getDisplayKey(fullKey: string): string | undefined {
 function docToPage(
 	doc: JsonSchema,
 	{
-		path,
+		path: docPath,
 		key,
 		parent,
 		required,
-	}: { path: string[]; key?: string; parent?: string; required?: boolean }
+	}: { path: string[]; key?: string; parent?: string; required?: boolean },
+	ctx: ProcessContext
 ): Page | undefined {
 	if (!Object.keys(doc).length) {
 		return;
 	}
 
-	const isType = doc.id?.startsWith('type.');
-	let thisPath = isType ? [doc.id || ''] : key ? [...path, key] : [...path];
-	let gid = thisPath.join('.');
+	const { config, pages } = ctx;
 
-	if (doc.id === 'type.Configuration') {
+	const isRootType = doc.id === config.rootTypeId;
+	const isTypeRef = doc.id?.startsWith('type.') && !isRootType;
+
+	let thisPath: string[];
+	let gid: string;
+
+	if (isRootType) {
 		thisPath = [];
-		gid = 'type.Configuration';
+		gid = config.rootTypeId;
+	} else if (isTypeRef && doc.id) {
+		thisPath = [doc.id];
+		gid = doc.id;
+	} else if (key) {
+		thisPath = [...docPath, key];
+		gid = thisPath.join('.');
+	} else {
+		thisPath = [...docPath];
+		gid = thisPath.join('.');
 	}
 
 	const seenPage = pages[gid];
@@ -121,8 +135,13 @@ function docToPage(
 		return seenPage;
 	}
 
-	const full_key = thisPath.join('.').replaceAll('.[', '[').replaceAll('.(', '(');
-	const documentation = getDocumentationEntry(gid);
+	const full_key = thisPath
+		.join('.')
+		.replace(/^type\./, '')
+		.replaceAll('.[', '[')
+		.replaceAll('.(', '(');
+
+	const documentation = getDocumentationEntry(gid, ctx);
 	const developer_documentation = {
 		title: doc.title,
 		description: doc.description,
@@ -131,10 +150,21 @@ function docToPage(
 			.map((code) => ({ code })),
 	};
 
+	let url: string;
+	if (!thisPath.length) {
+		url = config.urlPrefix;
+	} else {
+		url = `${config.urlPrefix}${thisPath
+			.join('/')
+			.replace(/^type\./, 'types/')
+			.replaceAll('.', '/')}/`.replace(/\/+/g, '/');
+	}
+
 	const page: Page = {
 		gid,
-		title: documentation?.title || doc.title,
+		title: documentation?.title,
 		description: documentation?.description || doc.description,
+		deprecated: !!doc.deprecated,
 		examples: documentation?.examples?.length
 			? documentation.examples
 			: developer_documentation?.examples,
@@ -145,12 +175,12 @@ function docToPage(
 		uniqueItems: doc.uniqueItems,
 		documentation,
 		developer_documentation,
-		url: !thisPath.length ? '/' : `/${thisPath.join('/').replace(/^type\./, 'types/')}/`,
+		url,
 		required: !!required,
 		key: getDisplayKey(full_key) || full_key,
 		full_key,
-		parent: isType ? undefined : parent,
-		appears_in: isType && parent ? [parent] : [],
+		parent: isRootType || isTypeRef ? undefined : parent,
+		appears_in: (isRootType || isTypeRef) && parent ? [parent] : [],
 	};
 
 	pages[gid] = page;
@@ -165,7 +195,7 @@ function docToPage(
 				continue;
 			}
 
-			deref(item);
+			deref(item, ctx.schema);
 
 			if (item.excludeFromDocumentation) {
 				continue;
@@ -175,14 +205,18 @@ function docToPage(
 				items.length === 1 ? '[*]' : `(${slugify(item.title || item.id || `item-${i}`)})`;
 
 			if (itemKey.startsWith('(item-')) {
-				untitledGids.add(`${gid}.${itemKey}`);
+				ctx.untitledGids.add(`${gid}.${itemKey}`);
 			}
 
-			const itemPage = docToPage(item, {
-				parent: gid,
-				path: thisPath,
-				key: itemKey,
-			});
+			const itemPage = docToPage(
+				item,
+				{
+					parent: gid,
+					path: thisPath,
+					key: itemKey,
+				},
+				ctx
+			);
 
 			const pageRef: PageRef = itemPage?.gid
 				? { gid: itemPage.gid }
@@ -203,27 +237,26 @@ function docToPage(
 				continue;
 			}
 
-			deref(property);
+			deref(property, ctx.schema);
 
 			if (property.excludeFromDocumentation) {
 				continue;
 			}
 
-			const propPage = docToPage(property, {
-				parent: gid,
-				path: thisPath,
-				key: propKey,
-				required: !!doc.required?.includes(propKey),
-			});
+			const propPage = docToPage(
+				property,
+				{
+					parent: gid,
+					path: thisPath,
+					key: propKey,
+					required: !!doc.required?.includes(propKey),
+				},
+				ctx
+			);
 
 			const pageRef: PageRef = propPage?.gid
 				? { gid: propPage.gid }
 				: { type: property.type || 'unknown' };
-
-			if (property.id?.startsWith('type.')) {
-				const propGid = thisPath.concat([propKey]).join('.');
-				pageRef.documentation = getDocumentationEntry(propGid);
-			}
 
 			page.properties[propKey] = pageRef;
 		}
@@ -237,7 +270,7 @@ function docToPage(
 			: [doc.additionalProperties];
 
 		for (let i = 0; i < additionalProperties.length; i++) {
-			deref(additionalProperties[i]);
+			deref(additionalProperties[i], ctx.schema);
 
 			if (additionalProperties[i].excludeFromDocumentation) {
 				continue;
@@ -249,14 +282,18 @@ function docToPage(
 					: `(${slugify(additionalProperties[i].title || additionalProperties[i].id || `additional-property-${i}`)})`;
 
 			if (additionalPropertyKey.startsWith('(additional-property-')) {
-				untitledGids.add(`${gid}.${additionalPropertyKey}`);
+				ctx.untitledGids.add(`${gid}.${additionalPropertyKey}`);
 			}
 
-			const additionalPropertyPage = docToPage(additionalProperties[i], {
-				parent: gid,
-				path: thisPath,
-				key: additionalPropertyKey,
-			});
+			const additionalPropertyPage = docToPage(
+				additionalProperties[i],
+				{
+					parent: gid,
+					path: thisPath,
+					key: additionalPropertyKey,
+				},
+				ctx
+			);
 
 			const pageRef: PageRef = additionalPropertyPage?.gid
 				? { gid: additionalPropertyPage.gid }
@@ -270,19 +307,23 @@ function docToPage(
 		page.anyOf = [];
 
 		for (let i = 0; i < doc.anyOf.length; i++) {
-			deref(doc.anyOf[i]);
+			deref(doc.anyOf[i], ctx.schema);
 
 			const anyOfKey = `(${slugify(doc.anyOf[i].title || doc.anyOf[i].id || `any-of-${i}`)})`;
 
 			if (anyOfKey.startsWith('(any-of-')) {
-				untitledGids.add(`${gid}.${anyOfKey}`);
+				ctx.untitledGids.add(`${gid}.${anyOfKey}`);
 			}
 
-			const anyOfPage = docToPage(doc.anyOf[i], {
-				parent: gid,
-				path: thisPath,
-				key: anyOfKey,
-			});
+			const anyOfPage = docToPage(
+				doc.anyOf[i],
+				{
+					parent: gid,
+					path: thisPath,
+					key: anyOfKey,
+				},
+				ctx
+			);
 
 			const pageRef: PageRef = anyOfPage?.gid
 				? { gid: anyOfPage.gid }
@@ -297,23 +338,58 @@ function docToPage(
 	return page;
 }
 
-docToPage(schema, { path: [] });
+async function processSchema(config: DocSchemaConfig): Promise<{
+	pages: Record<string, Page>;
+	attemptedGids: Set<string>;
+	untitledGids: Set<string>;
+}> {
+	console.log(`\n📖 Processing ${config.name}`);
 
-console.log('📝 Write to dist/documentation.json');
+	const schemaPath = path.join(process.cwd(), 'dist', config.schemaFile);
+	const schemaRaw = await fs.readFile(schemaPath, { encoding: 'utf8' });
+	const schema: JsonSchema = JSON.parse(schemaRaw);
 
-await fs.writeFile(
-	path.join(process.cwd(), 'dist/documentation.json'),
-	JSON.stringify(pages, null, '  ')
-);
+	const documentationEntries = await readDocs(config.docsFolder);
 
-if (untitledGids.size) {
-	console.error(
-		[
-			`🔠 \x1b[31mNeeds developer title (${untitledGids.size})\x1b[0m`, // Red text
-			...untitledGids.values(),
-		].join('\n     ')
-	);
+	const ctx: ProcessContext = {
+		schema,
+		config,
+		documentationEntries,
+		attemptedGids: new Set(),
+		untitledGids: new Set(),
+		pages: {},
+	};
+
+	docToPage(schema, { path: [] }, ctx);
+
+	if (ctx.untitledGids.size) {
+		console.error(
+			[
+				`🔠 \x1b[31mNeeds developer title (${ctx.untitledGids.size})\x1b[0m`,
+				...ctx.untitledGids.values(),
+			].join('\n     ')
+		);
+	}
+
+	await moveOldDocs(config.docsFolder, ctx.attemptedGids);
+	await writeNewDocs(config.docsFolder, ctx.attemptedGids, ctx.pages);
+
+	return {
+		pages: ctx.pages,
+		attemptedGids: ctx.attemptedGids,
+		untitledGids: ctx.untitledGids,
+	};
 }
 
-await moveOldDocs(attemptedGids);
-await writeNewDocs(attemptedGids, pages);
+const allPages: Record<string, Record<string, Page>> = {};
+
+for (const config of docSchemas) {
+	const result = await processSchema(config);
+	allPages[config.rootTypeId] = result.pages;
+}
+
+console.log('\n📝 Write to dist/documentation.json');
+await fs.writeFile(
+	path.join(process.cwd(), 'dist/documentation.json'),
+	JSON.stringify(allPages, null, '  ')
+);

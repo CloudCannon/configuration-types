@@ -1,0 +1,31 @@
+gid: type.snippet-format.root_value_boundary
+url: /configuration-file/types/snippet-format/root_value_boundary/
+title: ''
+description: >-
+  This key defines the boundary tokens required for arguments and values when
+  parsing snippet parameters.
+
+
+  The value is an object that contains `start` and `end` properties, each
+  specifying a string token. For example, MDX specifies `{ start: "{", end: "}"
+  }`, which allows syntax such as `<Component flag={true} />`.
+examples:
+  - description: >-
+      In this example, we have configured root value boundaries to use curly
+      braces.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[param]]>>"
+          params:
+            param:
+              parser: argument
+              options:
+                format:
+                  root_value_boundary:
+                    start: '{'
+                    end: '}'
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

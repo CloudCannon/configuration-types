@@ -1,7 +1,69 @@
 gid: type._inputs
-url: /types/_inputs/
-title: Inputs
+url: /configuration-file/types/_inputs/
+title: ''
 description: >-
-  Controls the behavior and appearance of your inputs in all data editing
-  interfaces.
-examples: []
+  This key defines which inputs are available at a given level of the
+  configuration cascade.
+
+
+  This key has no default.
+
+
+  If undefined at higher levels of the [configuration
+  cascade](/documentation/articles/using-the-configuration-cascade/), `_inputs`
+  will default to any
+
+  values configured in the [CloudCannon configuration
+  file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
+examples:
+  - description: >-
+      In this example, we have configured the `date_created` key as a *Date and
+      Time Input*, which will automatically populate when you create a file
+      using this input. Editors cannot alter this input as the interface is
+      disabled.
+    language: yaml
+    code: |-
+      _inputs:
+        date_created:
+          type: datetime
+          label: Date of article creation
+          comment: UTC +0 timezone
+          context:
+            open: false
+            title: Help
+            icon: help
+            content: This date field will automatically populate when you create an article.
+          hidden: false
+          disabled: true
+          instance_value: NOW
+          cascade: true
+          options:
+            timezone: Etc/UTC
+    annotations: []
+    source: /cloudcannon.config.yml
+  - description: >-
+      In this example, we have configured the `blog_tags` key as a *Multiselect
+      Input* in the `blog` Collection.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          _inputs:
+            blog_tags:
+              type: multiselect
+              label: Blog type
+              comment: Select a blog type
+              context:
+                open: false
+                title: Help
+                icon: help
+                content: |
+                  Blog tags help our users filter articles by topic.
+              options:
+                values:
+                  - Opinion
+                  - Feature
+                  - Resource
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: true

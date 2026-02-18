@@ -1,0 +1,47 @@
+gid: type._inputs.*.options.min_items
+url: /configuration-file/types/_inputs/*/options/min_items/
+title: ''
+description: >-
+  This key defines the minimum number of items CloudCannon will allow in an
+  Input.
+
+
+  When configured, CloudCannon will prevent you from removing items from this
+  Input below this value.
+
+
+  If the Input already contains fewer items, CloudCannon will require you to add
+  items until the Input contains a valid number to save your changes, or
+
+  discard your unsaved changes.
+
+
+  Value can be any positive integer.
+
+
+  If `options.min_items` is also configured, this key cannot be a greater
+  number.
+
+
+  This key has no default.
+
+
+  This key is available for Array and Multiselect or Multichoice Inputs.
+examples:
+  - description: >-
+      In this example, we want to add an array of filepaths to our homepage's
+      `featured_posts` Input. This Input limits you to a maximum of two array
+      items.
+    language: yaml
+    code: |-
+      _inputs:
+        featured_posts:
+          type: array
+          options:
+            max_items: 5
+            max_items_message: Cannot be more than 5
+            min_items: 2
+            min_items_message: Cannot be less than 2
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

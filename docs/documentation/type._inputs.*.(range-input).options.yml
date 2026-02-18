@@ -1,5 +1,6 @@
 gid: type._inputs.*.(range-input).options
-url: /types/_inputs/*/(range-input)/options/
+url: /configuration-file/types/_inputs/*/(range-input)/options/
 title: ''
-description: Options that are specific to Range Inputs.
+description: This key defines options that are specific to Range Inputs.
 examples: []
+show_in_navigation: false

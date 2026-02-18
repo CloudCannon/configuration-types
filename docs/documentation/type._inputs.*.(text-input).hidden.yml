@@ -1,5 +1,0 @@
-gid: type._inputs.*.(text-input).hidden
-url: /types/_inputs/*/(text-input)/hidden/
-title: ''
-description: Toggles the visibility of this input.
-examples: []

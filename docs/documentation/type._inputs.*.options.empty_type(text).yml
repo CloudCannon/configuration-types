@@ -1,0 +1,8 @@
+gid: type._inputs.*.options.empty_type(text)
+url: /configuration-file/types/_inputs/*/options/empty_type(text)/
+title: Text Empty Type
+description: >-
+  This key defines how an 'empty' value will be saved. Does not apply to
+  existing empty values.
+examples: []
+show_in_navigation: false

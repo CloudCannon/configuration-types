@@ -1,7 +1,9 @@
 gid: type._snippets_imports.mdx.(exclude-list).exclude
-url: /types/_snippets_imports/mdx/(exclude-list)/exclude/
+url: /configuration-file/types/_snippets_imports/mdx/(exclude-list)/exclude/
 title: ''
-description: >-
-  The list of excluded snippets. If unset, all snippets are excluded unless
-  defined in `include`.
+description: |-
+  This key defines the list of excluded snippets.
+
+  If unset, all snippets are excluded unless defined in `include`.
 examples: []
+show_in_navigation: false

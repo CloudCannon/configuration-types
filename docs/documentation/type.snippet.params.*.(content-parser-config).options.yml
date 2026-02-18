@@ -1,5 +1,31 @@
 gid: type.snippet.params.*.(content-parser-config).options
-url: /types/snippet/params/*/(content-parser-config)/options/
+url: /configuration-file/types/snippet/params/*/(content-parser-config)/options/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key defines configuration options for content parser configurations.
+
+
+  The value is an object that can contain `editor_key`, `indented_by`,
+  `default`, `trim_text`, `allow_nested`, `raw`, `forbidden_tokens`, `optional`,
+  `allow_leading`, `escape_indented_blocks`, `parse_newline_character`,
+  `ignore_unpaired_backticks`, `escape_fenced_blocks`, and `style` properties.
+  These options control how content between snippet boundaries is parsed.
+examples:
+  - description: >-
+      In this example, we have configured content parser options with an editor
+      key and forbidden tokens.
+    language: yaml
+    code: |-
+      _snippets:
+        highlight:
+          snippet: "<<highlight>> [[content]] <</highlight>>"
+          params:
+            content:
+              parser: content
+              options:
+                editor_key: highlighted_text
+                forbidden_tokens:
+                  - '<'
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

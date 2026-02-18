@@ -1,7 +1,124 @@
 gid: collections_config
-url: /collections_config/
+url: /configuration-file/collections_config/
 title: ''
-description: >-
-  Definitions for your collections, which are the sets of content files for your
-  site grouped by folder.
-examples: []
+description: This key defines your Collections.
+examples:
+  - description: >-
+      In this example, we have configured a `blog` Collection. Key settings
+      include two Schemas to populate files with different content, a Blog Tags
+      input populated by a fixed data set, and a custom Create Path to generate
+      file names from structured data.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          path: content/blog
+          glob:
+            - '!_index.md'
+          name: Blog
+          icon: post_add
+          url: /blog/[full_slug]/
+          documentation:
+            url: https://example.com/travel-blog-style-guide
+            text: Documentation
+            icon: auto_stories
+          description: |-
+            This Collection is for *Travel blogs* and *Customer stories*.
+
+            If your have any questions, please contact Heather.
+          _editables:
+          _enabled_editors:
+            - content
+          _inputs:
+            blog_tags:
+              type: multiselect
+              label: Blog type
+              comment: Select a blog type
+              context:
+                open: false
+                title: Help
+                icon: help
+                content: |
+                  Blog tags help our users filter articles by topic.
+              options:
+                values: _select_data.blog_topics
+          _select_data:
+            blog_topics:
+              - Opinion
+              - Feature
+              - Resource
+          create:
+            extra_data:
+              filename: '{date|year}-{date|month}-{date|day}-{title}'
+            path: '[relative_base_path]/{filename|slugify}.[ext]'
+          disable_add: false
+          disable_add_folder: false
+          disable_file_actions: false
+          schemas:
+            blog:
+              path: schemas/travel_blog.md
+              name: Blog Post
+              icon: post_add
+            customer_story:
+              path: schemas/customer_story.md
+              name: Customer Story
+              icon: post_add
+          schema_key: _blog_template
+          include_developer_files: false
+    annotations: []
+    source: /cloudcannon.config.yml
+  - description: >-
+      In this example, we have configured a `team` Collection. Key settings
+      include custom sorting options, add options, and Card previews.
+    language: yaml
+    code: |-
+      collections_config:
+        team:
+          path: _data/team
+          name: Our Team
+          singular_name: Team Member
+          icon: groups
+          disable_url: true
+          description: |-
+            This Collection has a file for every member of our team!
+          preview:
+            text:
+              - key: name
+            subtext:
+              - key: job_title
+            icon:
+              - key: profile_picture
+          sort:
+            key: name
+            order: ascending
+          sort_options:
+            - key: name
+              order: ascending
+              label: Name (A-Z)
+            - key: name
+              order: descending
+              label: Name (Z-A)
+            - key: job_title
+              order: ascending
+              label: Job Title (A-Z)
+            - key: date
+              order: descending
+              label: Job Title (Z-A)
+          _enabled_editors:
+            - data
+          add_options:
+            - name: Office Locations
+              icon: map
+              href: /our-offices
+          schemas:
+            manager:
+              path: schemas/manager.yml
+              name: Manager
+              icon: face
+            employee:
+              path: schemas/employee.yml
+              name: Employee
+              icon: support_agent
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

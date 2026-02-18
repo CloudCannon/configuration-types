@@ -1,0 +1,29 @@
+gid: type.snippet-format.object_pair_delimiter
+url: /configuration-file/types/snippet-format/object_pair_delimiter/
+title: ''
+description: >-
+  This key defines the delimiter that separates each key-value pair from the
+  next within an object when parsing snippet parameters.
+
+
+  The value is a string that specifies the delimiter token. If required, this
+  will usually be `,`.
+examples:
+  - description: In this example, we have configured object pair delimiter to use a comma.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[param]]>>"
+          params:
+            param:
+              parser: argument
+              options:
+                format:
+                  object_boundary:
+                    start: '{'
+                    end: '}'
+                  object_pair_delimiter: ','
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

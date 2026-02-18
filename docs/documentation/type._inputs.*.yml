@@ -1,5 +1,31 @@
 gid: type._inputs.*
-url: /types/_inputs/*/
-title: Input
-description: ''
-examples: []
+url: /configuration-file/types/_inputs/*/
+title: ''
+description: >-
+  This key defines an input configuration at a given level of the configuration
+  cascade.
+
+
+  The value is an object that can contain `type`, `label`, `options`,
+  `disabled`, `hidden`, and other input-specific properties. Each input
+  configuration defines how team members interact with data in the *Data
+  Editor*.
+
+
+  For more information, please read our documentation on
+  [inputs](/documentation/articles/what-are-inputs/).
+examples:
+  - description: >-
+      In this example, we have configured the `title` key as a *Text Input* in
+      the `blog` Collection.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          _inputs:
+            title:
+              type: text
+              label: Title
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

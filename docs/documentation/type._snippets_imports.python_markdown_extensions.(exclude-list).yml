@@ -1,5 +1,7 @@
 gid: type._snippets_imports.python_markdown_extensions.(exclude-list)
-url: /types/_snippets_imports/python_markdown_extensions/(exclude-list)/
-title: Exclude List
+url: >-
+  /configuration-file/types/_snippets_imports/python_markdown_extensions/(exclude-list)/
+title: Snippets Imports Exclude List
 description: ''
 examples: []
+show_in_navigation: false

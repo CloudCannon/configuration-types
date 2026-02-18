@@ -1,0 +1,26 @@
+gid: type.preview-entry.(template)
+url: /configuration-file/types/preview-entry/(template)/
+title: Template Preview Entry
+description: >-
+  This key represents a template preview entry type for displaying formatted
+  text using a template on *Cards* in the *Collection browser*, *Structures*,
+  and *Snippets*.
+
+
+  The value is an object that contains a `template` property with a string
+  value. This displays formatted text using template syntax (e.g., `{name}`) in
+  card previews.
+examples:
+  - description: >-
+      In this example, we have configured a template preview entry to display
+      formatted text.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          preview:
+            text:
+              - template: '{author} - {date}'
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

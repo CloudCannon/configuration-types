@@ -1,8 +1,8 @@
 import * as z from 'zod';
 import { DocumentationSchema } from './documentation.ts';
 import { IconSchema } from './icon.ts';
-import { InputsSchema, ObjectInputGroupSchema } from './inputs.ts';
-import { PreviewSchema } from './preview.ts';
+import { InputsFromGlobSchema, InputsSchema, ObjectInputGroupSchema } from './inputs.ts';
+import { PickerPreviewSchema, PreviewSchema } from './preview.ts';
 import { SelectDataSchema } from './select-values.ts';
 
 export const StructureReferenceSchema = z.string().meta({
@@ -29,20 +29,26 @@ const StructureBaseSchema = z.object({
 	}),
 });
 
+export const StructuresFromGlobSchema = z.array(z.string()).meta({
+	id: 'type._structures_from_glob',
+});
+
 export const StructureValueSchema = StructureBaseSchema.extend({
 	preview: PreviewSchema.optional(),
-	picker_preview: PreviewSchema.optional(),
+	picker_preview: PickerPreviewSchema.optional(),
 
 	// This is the ReducedCascadeSchema - can't seem to reuse it due to Zod's limitations.
 	get _inputs() {
 		return InputsSchema.optional();
 	},
-	_inputs_from_glob: z.array(z.string()).optional(),
+	get _inputs_from_glob() {
+		return InputsFromGlobSchema.optional();
+	},
 	_select_data: SelectDataSchema.optional(),
 	get _structures() {
 		return StructuresSchema.optional();
 	},
-	_structures_from_glob: z.array(z.string()).optional(),
+	_structures_from_glob: StructuresFromGlobSchema.optional(),
 
 	id: z.string().optional().meta({
 		description:
@@ -81,7 +87,7 @@ export const StructureValueSchema = StructureBaseSchema.extend({
 	value: z.unknown().meta({
 		description: 'The actual value used when items are added after selection.',
 	}),
-	comment: z.string().optional().meta({
+	description: z.string().optional().meta({
 		description:
 			'Provides short descriptive text for editors shown in the Data Editor for expanded values matching this Structure value. Has no default. Supports a limited set of Markdown: links, bold, italic, subscript, superscript, and inline code elements are allowed.',
 	}),
@@ -90,6 +96,8 @@ export const StructureValueSchema = StructureBaseSchema.extend({
 			'Provides a custom link for documentation for editors shown in the Data Editor for expanded values matching this Structure value. Has no default.',
 	}),
 }).meta({
+	// Need to override id to what would be generated here to force the structure-value JSON schema to redocument.
+	id: 'type.structure.values.[*]',
 	title: 'Structure Value',
 	description:
 		'A single value option within a structure, defining the data format and appearance for content editors.',

@@ -1,5 +1,6 @@
 gid: type._editables.image
-url: /types/_editables/image/
-title: Image Editable
-description: Contains input options for image Editable Regions.
+url: /configuration-file/types/_editables/image/
+title: ''
+description: This key defines input options for image Editable Regions.
 examples: []
+show_in_navigation: false

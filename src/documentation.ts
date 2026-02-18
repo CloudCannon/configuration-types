@@ -14,7 +14,7 @@ export const DocumentationSchema = z
 		}),
 	})
 	.meta({
-		id: 'documentation',
+		id: 'type.documentation',
 		title: 'Documentation',
 		description: 'Configuration for documentation links displayed in the CloudCannon interface.',
 	});

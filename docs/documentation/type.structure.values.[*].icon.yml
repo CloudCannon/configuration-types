@@ -1,7 +1,20 @@
 gid: type.structure.values.[*].icon
-url: /types/structure/values/[*]/icon/
-title: Icon
+url: /configuration-file/types/structure/values/[*]/icon/
+title: ''
 description: >-
-  An icon used when displaying the structure (defaults to either
-  format_list_bulleted for items in arrays, or notes otherwise).
-examples: []
+  This key defines an icon used when displaying the structure (defaults to
+  either `format_list_bulleted` for items in arrays, or `notes` otherwise).
+examples:
+  - description: >-
+      In this example, CloudCannon will display the `article` icon for the entry
+      labeled `Blog` in the `article_information` Structure.
+    language: yaml
+    code: |-
+      _structures:
+        article_information:
+          values:
+            - label: Blog
+              icon: article
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

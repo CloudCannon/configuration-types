@@ -1,5 +1,30 @@
 gid: type._snippets_imports
-url: /types/_snippets_imports/
-title: Snippets Imports
-description: ''
-examples: []
+url: /configuration-file/types/_snippets_imports/
+title: ''
+description: >-
+  This key defines snippet templates or libraries for your Site.
+
+
+  Some libraries are SSG specific while others work for most SSGs.
+
+
+  For more information, please read our documentation on [Docusaurus
+  Components](/documentation/articles/snippets-using-docusaurus-components/),
+
+  [Eleventy
+  Shortcodes](/documentation/articles/snippets-using-eleventy-shortcodes/),
+  [Hugo Shortcodes](/documentation/articles/snippets-using-hugo-shortcodes/),
+  [MDX Components](/documentation/articles/snippets-using-mdx-components/), or
+  [Python Markdown](/documentation/articles/snippets-using-python-markdown/).
+examples:
+  - description: In this example, we have configured Hugo shortcode imports for the Site.
+    language: yaml
+    code: |-
+      _snippets_imports:
+        hugo:
+          include:
+            - figure
+            - youtube
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: true

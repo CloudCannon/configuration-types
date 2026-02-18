@@ -1,0 +1,12 @@
+gid: type._editables.*.strike
+url: /configuration-file/types/_editables/*/strike/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will display a tool in your WYSIWYG
+  toolbar to strike through selected text.
+
+
+  Setting this key to `true` will enable a tool in your WYSIWYG toolbar to
+  strike through selected text.
+examples: []
+show_in_navigation: false

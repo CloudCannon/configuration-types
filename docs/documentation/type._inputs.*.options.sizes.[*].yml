@@ -1,0 +1,25 @@
+gid: type._inputs.*.options.sizes.[*]
+url: /configuration-file/types/_inputs/*/options/sizes/[*]/
+title: ''
+description: >-
+  This key represents an individual size definition in the `options.sizes` array
+  for *Image Inputs*.
+
+
+  The value is an object that can contain `size` and `target` properties.
+examples:
+  - description: >-
+      In this example, we have configured a size definition for an *Image
+      Input*.
+    language: yaml
+    code: |-
+      _inputs:
+        hero_image:
+          type: image
+          options:
+            sizes:
+              - size: 2x
+                target: hero_image_2x
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

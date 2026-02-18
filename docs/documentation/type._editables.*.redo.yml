@@ -1,0 +1,13 @@
+gid: type._editables.*.redo
+url: /configuration-file/types/_editables/*/redo/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will display a tool in your WYSIWYG
+  toolbar to redo recent edits undone with `undo`.
+
+
+  Setting this key to `true` will enable a tool in your WYSIWYG toolbar to redo
+  recent edits. Undo is always enabled through standard OS-specific keyboard
+  shortcuts.
+examples: []
+show_in_navigation: false

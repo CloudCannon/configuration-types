@@ -1,5 +1,6 @@
 gid: file_config.[*].glob.(glob-array)
-url: /file_config/[*]/glob/(glob-array)/
+url: /configuration-file/file_config/[*]/glob/(glob-array)/
 title: Glob Array
 description: ''
 examples: []
+show_in_navigation: false

@@ -1,7 +1,28 @@
 gid: collections_config.*.new_preview_url
-url: /collections_config/*/new_preview_url/
+url: /configuration-file/collections_config/*/new_preview_url/
 title: ''
 description: >-
-  This key defines a new URL for previewing your unbuilt pages in the Visual
-  Editor.
-examples: []
+  This key defines a new URL for previewing your unbuilt pages in the [Visual
+  Editor](/documentation/articles/what-is-the-visual-editor/).
+
+
+  The Visual Editor will load the new preview URL and use Editable Regions, or
+  Data Bindings and Previews, to render your page without saving or building.
+
+
+  This key does not affect the URL for your [Testing
+  Domain](/documentation/articles/what-is-a-testing-domain/) or [Custom
+
+  Domain](/documentation/articles/what-is-a-custom-domain/).
+examples:
+  - description: >-
+      In this example, the Visual Editor will open the `/about/` page when you
+      open an unbuilt page from the `blog` Collection.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          new_preview_url: /about/
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

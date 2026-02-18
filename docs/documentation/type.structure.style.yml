@@ -1,7 +1,32 @@
 gid: type.structure.style
-url: /types/structure/style/
+url: /configuration-file/types/structure/style/
 title: ''
 description: >-
-  Defines whether options are shown to your editors in a select menu (select,
-  default) or a modal pop up window (modal) when adding a new item.
-examples: []
+  This key defines how CloudCannon shows Structure options to populate an Object
+  or Array input.
+
+
+  This can be using a select-style search bar or a pop-up modal.
+
+
+  Modals are useful when you have several value options for your Structure.
+
+
+  Values can be one of the following: `select`, or `modal`.
+examples:
+  - description: >-
+      In this example, the `related_articles` Structure only has one option so a
+      `select` searchbar is appropriate.
+    language: yaml
+    code: |-
+      _structures:
+        related_articles:
+          style: select
+          values:
+            - value:
+              name:
+              description:
+              url:
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

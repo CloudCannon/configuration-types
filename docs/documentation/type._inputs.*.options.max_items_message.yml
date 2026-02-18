@@ -1,0 +1,32 @@
+gid: type._inputs.*.options.max_items_message
+url: /configuration-file/types/_inputs/*/options/max_items_message/
+title: ''
+description: >-
+  This key defines a custom error message that explains why a value has failed
+  the validation criteria from `options.max_items`.
+
+
+  This key requires you to define `options.max_items`.
+
+
+  This key has no default.
+
+
+  This key is available for Array and Multiselect or Multichoice Inputs.
+examples:
+  - description: >-
+      In this example, we prompt our team to enter a valid number of items using
+      a custom message.
+    language: yaml
+    code: |-
+      _inputs:
+        featured_posts:
+          type: array
+          options:
+            max_items: 5
+            max_items_message: Cannot be more than 5
+            min_items: 2
+            min_items_message: Cannot be less than 2
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

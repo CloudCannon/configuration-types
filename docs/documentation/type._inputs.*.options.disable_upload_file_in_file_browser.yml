@@ -1,0 +1,25 @@
+gid: type._inputs.*.options.disable_upload_file_in_file_browser
+url: >-
+  /configuration-file/types/_inputs/*/options/disable_upload_file_in_file_browser/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will prevent file uploads inside the
+  "Select existing file/image" file browser modal window.
+
+
+  Setting this key to `true` will prevent file uploads inside the file browser
+  modal window.
+examples:
+  - description: >-
+      In this example, CloudCannon will disable the option to upload files
+      inside the file browser modal window.
+    language: yaml
+    code: |-
+      _inputs:
+        image:
+          type: file
+          options:
+            disable_upload_file_in_file_browser: true
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

@@ -1,5 +1,24 @@
 gid: type.paths.uploads
-url: /types/paths/uploads/
+url: /configuration-file/types/paths/uploads/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key defines the paths for the default location of newly uploaded site
+  files.
+
+
+  You can use [dynamic
+  placeholders](/documentation/articles/configure-your-template-strings/) for
+  `uploads` and `dam_uploads`.
+examples:
+  - description: >-
+      In this example, we have configured the uploads path for the `blog`
+      Collection.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          paths:
+            uploads: /uploads/blog/
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

@@ -1,0 +1,18 @@
+gid: type._inputs.*.label
+url: /configuration-file/types/_inputs/*/label/
+title: ''
+description: This key defines the bold title text above an Input.
+examples:
+  - description: >-
+      In this example, we want to customize the label for our `page_title` Input
+      to be more descriptive.
+    language: yaml
+    code: |-
+      _inputs:
+        page_title:
+          type: text
+          label: Article Title
+          comment: Enter the main title for this article
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

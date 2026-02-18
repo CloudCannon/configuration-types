@@ -1,7 +1,54 @@
 gid: collections_config.*.add_options
-url: /collections_config/*/add_options/
+url: /configuration-file/collections_config/*/add_options/
 title: ''
 description: >-
-  This key defines the options available in the _+ Add_ button dropdown at the
-  top right of your _Collection browser_.
-examples: []
+  This key defines the options available in the *\+ Add* button dropdown at the
+  top right of your *Collection browser*.
+
+
+  Configuring add options for a Collection will remove CloudCannon's default
+  "Add a file" option from the *\+ Add* button dropdown.
+
+
+  Additionally, any Schemas you have configured for a Collection will also
+  appear in the *\+ Add* dropdown.
+examples:
+  - description: >-
+      In this example, we have configured two standard add options for the
+      `people` Collection. The first option uses the `employee` Schema, and the
+      second option uses the `contractor` Schema and opens files in the [Data
+      Editor](/documentation/articles/what-is-the-data-editor/).
+    language: yaml
+    code: |-
+      collections_config:
+        people:
+          add_options:
+            - name: Add Staff Member
+              schema: employee
+              icon: face
+              editor: data
+            - name: Add Contractor
+              icon: support_agent
+              schema: contractor
+              editor: data
+          schemas:
+            employee:
+              path: /.cloudcannon/schemas/employee.yml
+            contractor:
+              path: /.cloudcannon/schemas/contractor.yml
+    annotations: []
+    source: /cloudcannon.config.yml
+  - description: >-
+      In this example, the *\+ Add* button dropdown in the `team` *Collection
+      browser* has a link to the Office Locations page on our live website.
+    language: yaml
+    code: |-
+      collections_config:
+        team:
+          add_options:
+            - name: Office Locations
+              icon: map
+              href: /our-offices
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

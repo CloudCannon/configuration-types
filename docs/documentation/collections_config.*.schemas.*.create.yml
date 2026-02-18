@@ -1,5 +1,0 @@
-gid: collections_config.*.schemas.*.create
-url: /collections_config/*/schemas/*/create/
-title: Create
-description: Controls where new files are saved.
-examples: []

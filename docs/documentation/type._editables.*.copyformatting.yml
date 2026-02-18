@@ -1,0 +1,14 @@
+gid: type._editables.*.copyformatting
+url: /configuration-file/types/_editables/*/copyformatting/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will display a tool in your WYSIWYG
+  toolbar to copy formatting from selected text.
+
+
+  Setting this key to `true` will enable a tool in your WYSIWYG toolbar to copy
+  formatting from selected text. Applies to `bold`, `italic`, `underline`,
+  `strike`, `subscript`, and `superscript` formatting. Does not copy other
+  styles or formatting.
+examples: []
+show_in_navigation: false

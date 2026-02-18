@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../dist/cloudcannon-snippets.schema.json
+
+cloud_space_cannon:
+  snippet: "Cloud [[args]] Cannon"
+  params:
+    args:
+      parser: "key_values"
+      options:
+        models:
+          - source_key: "🥸"
+            editor_key: "color"
+        format:
+          root_pair_delimiter: [" "]
+          root_value_delimiter: "→"
+          string_boundary: ['"']
+hugo_tint:
+  template: hugo_paired_shortcode_positional_args
+  definitions:
+    shortcode_name: tint
+    content_key: inner_text
+    positional_args:
+      - editor_key: tint_color
+        type: string
+hugo_callout:
+  template: hugo_shortcode_named_args
+  definitions:
+    shortcode_name: callout
+    named_args:
+      - source_key: type
+        editor_key: callout_label
+        type: string
+      - editor_key: message
+        type: string
+hugo_world:
+  template: hugo_shortcode_positional_args
+  definitions:
+    shortcode_name: world
+brand_name:
+  snippet: "CloudCannon"
+section:
+  template: hugo_paired_shortcode_named_args
+  definitions:
+    shortcode_name: section
+    content_key: section_contents
+    named_args:
+      - editor_key: label
+        type: string

@@ -1,0 +1,8 @@
+gid: routes
+url: /routing-file/routes/
+title: ''
+description: >-
+  An array of route rules for redirects and rewrites. Rules are processed in
+  order; the first matching rule is applied.
+examples: []
+show_in_navigation: false

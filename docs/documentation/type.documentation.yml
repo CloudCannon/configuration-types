@@ -1,0 +1,22 @@
+gid: type.documentation
+url: /configuration-file/types/documentation/
+title: ''
+description: |-
+  This key defines the documentation link at the top of a *Collection browser*.
+
+  Collection documentation is useful for assisting your team members.
+examples:
+  - description: >-
+      In this example, the documentation link for the `data` Collection goes to
+      [CloudCannon Documentation](/documentation/).
+    language: yaml
+    code: |-
+      collections_config:
+        data:
+          documentation:
+            url: https://cloudcannon.com/documentation/
+            text: CloudCannon Documentation
+            icon: star
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: true

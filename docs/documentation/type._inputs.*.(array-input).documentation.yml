@@ -1,5 +1,0 @@
-gid: type._inputs.*.(array-input).documentation
-url: /types/_inputs/*/(array-input)/documentation/
-title: Documentation
-description: Provides a custom link for documentation for editors shown above input.
-examples: []

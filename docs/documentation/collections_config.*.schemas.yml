@@ -1,7 +1,69 @@
 gid: collections_config.*.schemas
-url: /collections_config/*/schemas/
+url: /configuration-file/collections_config/*/schemas/
 title: ''
 description: >-
   This key defines which Schemas are available to populate files in this
   Collection.
-examples: []
+
+
+  Defining a Schema for a collection will add it to the *\+ Add* button dropdown
+  at the top right of the *Collection browser*.
+
+
+  If undefined, clicking the *\+ Add* button to add a new file to a Collection
+  will clone the last file in the Collection and clear any markup content
+
+  and the values of any structured data keys.
+examples:
+  - description: >-
+      In this example, the *\+ Add* button in the *Collection browser* has an
+      option for `Customer Story` which will populate a new file in the `blog`
+      Collection with the contents of the `customer_story.mdx` file. If the
+      Schema file is updated, CloudCannon will preserve the old inputs to
+      prevent you from losing structured data in older files.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          schemas:
+            customer_story:
+              path: /schemas/customer_story.mdx
+              reorder_inputs: true
+              hide_extra_inputs: false
+              remove_empty_inputs: false
+              remove_extra_inputs: false
+              name: Customer Story
+              icon: notes
+    annotations: []
+    source: /cloudcannon.config.yml
+  - description: >-
+      In this example, the *\+ Add* button in the *Collection browser* has an
+      option for `Term Definition` which will populate a new file in the
+      `glossary` Collection with the contents of the `glossary_term.yml` file.
+      The `term_description` input is configured specifically for files created
+      with this Schema.
+    language: yaml
+    code: |-
+      collections_config:
+        glossary:
+          schemas:
+            term_definition:
+              path: /schemas/glossary_term.yml
+              name: Term Definition
+              icon: abc
+              _enabled_editors:
+                - data
+              _inputs:
+                term_description:
+                  type: textarea
+                  comment: Keep this as short as possible (i.e., 125 characters).
+                  context:
+                    open: false
+                    title: Help
+                    icon: help
+                    content: Try not to use the term name in the description.
+                  options:
+                    show_count: true
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

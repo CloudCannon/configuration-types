@@ -1,5 +1,0 @@
-gid: type._inputs.*.(range-input).context.content
-url: /types/_inputs/*/(range-input)/context/content/
-title: ''
-description: The rich text content shown when opened. Supports a limited set of Markdown.
-examples: []

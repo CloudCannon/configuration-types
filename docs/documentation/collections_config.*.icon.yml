@@ -1,8 +1,33 @@
 gid: collections_config.*.icon
-url: /collections_config/*/icon/
-title: Icon
+url: /configuration-file/collections_config/*/icon/
+title: ''
 description: >-
-  This key defines the icon for a Collection. Collection icons appear in the
-  _Site Navigation_ and are the default icon for Collection file Cards if you
-  have not defined `preview.icon`.
-examples: []
+  This key defines the icon for a Collection.
+
+
+  Collection icons appear in the *Site Navigation* and are the default icon for
+  Collection file [Cards](/documentation/articles/configure-your-card-previews/)
+  if you have not defined `preview.icon`.
+
+
+  For more information about the preview icon, please read our documentation on
+  the [preview](/documentation/articles/configure-your-card-previews/)
+
+  key.
+
+
+  Values can be from [Google's Material
+  Symbols](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded)
+  library.
+examples:
+  - description: >-
+      In this example, we have configured the `post_add` icon for the `blog`
+      Collection.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          icon: post_add
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

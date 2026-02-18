@@ -1,0 +1,40 @@
+gid: type._inputs.*.options.unique_on_message
+url: /configuration-file/types/_inputs/*/options/unique_on_message/
+title: ''
+description: >-
+  This key defines a custom error message that explains why a value has failed
+  the validation criteria from `options.unique_on`.
+
+  This key requires you to define `options.unique_on`.
+
+
+  This key has no default.
+
+
+  This key is available for Array inputs.
+examples:
+  - description: >-
+      In this example, we want our team to add article filepaths to the
+      `related_articles` Input. This Input requires all the filepaths to be
+      unique.
+    language: yaml
+    code: |-
+      _inputs:
+        related_articles:
+          type: array
+          options:
+            unique_on: '$.path'
+            unique_on_message: The value for path must be different for all items.
+    annotations: []
+    source: /cloudcannon.config.yml
+  - description: ''
+    language: yaml
+    code: |-
+      related_articles:
+        - path: /articles/first-article.md
+          featured: true
+        - path: /articles/first-article.md
+          featured: false
+    annotations: []
+    source: /blog-article.yml
+show_in_navigation: false

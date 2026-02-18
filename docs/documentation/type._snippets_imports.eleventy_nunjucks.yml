@@ -1,5 +1,6 @@
 gid: type._snippets_imports.eleventy_nunjucks
-url: /types/_snippets_imports/eleventy_nunjucks/
+url: /configuration-file/types/_snippets_imports/eleventy_nunjucks/
 title: ''
 description: ''
 examples: []
+show_in_navigation: false

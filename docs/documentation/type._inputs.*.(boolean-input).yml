@@ -1,5 +1,17 @@
 gid: type._inputs.*.(boolean-input)
-url: /types/_inputs/*/(boolean-input)/
+url: /configuration-file/types/_inputs/*/(boolean-input)/
 title: Boolean Input
-description: Provides an editing interface for true or false values.
-examples: []
+description: This key defines an editing interface for true or false values.
+examples:
+  - description: >-
+      In this example, we have configured the `featured` key as a *Boolean
+      Input*.
+    language: yaml
+    code: |-
+      _inputs:
+        featured:
+          type: switch
+          label: Featured
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

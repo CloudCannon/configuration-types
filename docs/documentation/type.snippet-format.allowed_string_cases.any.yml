@@ -1,0 +1,33 @@
+gid: type.snippet-format.allowed_string_cases.any
+url: /configuration-file/types/snippet-format/allowed_string_cases/any/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will allow any string case type when
+  parsing snippet parameters.
+
+
+  Setting this key to `true` will allow any case type (uppercase, lowercase,
+  mixed case) in snippet parameter parsing.
+
+
+  By default, this key is `false` (i.e., case restrictions apply based on other
+  `allowed_string_cases` settings).
+examples:
+  - description: >-
+      In this example, we have configured snippet format to allow any string
+      case type.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[param]]>>"
+          params:
+            param:
+              parser: argument
+              options:
+                format:
+                  allowed_string_cases:
+                    any: true
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

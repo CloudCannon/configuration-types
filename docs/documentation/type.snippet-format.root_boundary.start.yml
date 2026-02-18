@@ -1,0 +1,30 @@
+gid: type.snippet-format.root_boundary.start
+url: /configuration-file/types/snippet-format/root_boundary/start/
+title: ''
+description: >-
+  This key defines the start token for root-level boundaries when parsing
+  snippet parameters.
+
+
+  The value is a string that specifies the token that marks the start of the
+  root-level structure in snippet parameter parsing. This works together with
+  `root_boundary.end` to define paired tokens that enclose the root parameter
+  structure.
+examples:
+  - description: In this example, we have configured root boundaries to use angle brackets.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[param]]>>"
+          params:
+            param:
+              parser: argument
+              options:
+                format:
+                  root_boundary:
+                    start: '<<'
+                    end: '>>'
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

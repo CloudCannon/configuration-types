@@ -1,0 +1,12 @@
+gid: type._editables.*.subscript
+url: /configuration-file/types/_editables/*/subscript/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will display a tool in your WYSIWYG
+  toolbar to subscript selected text.
+
+
+  Setting this key to `true` will enable a tool in your WYSIWYG toolbar to
+  subscript selected text.
+examples: []
+show_in_navigation: false

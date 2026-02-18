@@ -1,5 +1,0 @@
-gid: type._inputs.*.(text-input).documentation.url
-url: /types/_inputs/*/(text-input)/documentation/url/
-title: ''
-description: The "href" value of the link.
-examples: []

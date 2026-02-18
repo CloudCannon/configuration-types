@@ -1,7 +1,26 @@
 gid: commit_templates.[*].template_path
-url: /commit_templates/[*]/template_path/
+url: /configuration-file/commit_templates/[*]/template_path/
 title: ''
 description: >-
-  Sets the path for a file containing your commit template. The file path should
-  be relative to the root directory.
-examples: []
+  This key defines the path to a file containing your commit template.
+
+
+  The value is a string that specifies a file path relative to the root
+  directory. CloudCannon will use the contents of this file as the commit
+  template.
+
+
+  CloudCannon will not use this file if `template_string` is also defined for
+  the commit template.
+examples:
+  - description: >-
+      In this example, we have configured a commit template to use a file at
+      `/.git/commit-message.txt`.
+    language: yaml
+    code: |-
+      commit_templates:
+        - label: Commit message from file
+          template_path: /.git/commit-message.txt
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

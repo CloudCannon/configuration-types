@@ -1,5 +1,0 @@
-gid: type._inputs.*.(file-input).disabled
-url: /types/_inputs/*/(file-input)/disabled/
-title: ''
-description: Toggles if this input can be edited.
-examples: []

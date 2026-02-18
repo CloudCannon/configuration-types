@@ -1,0 +1,10 @@
+gid: type.snippet-definition-value.(select-values-array)
+url: /configuration-file/types/snippet-definition-value/(select-values-array)/
+title: Select Values Array
+description: >-
+  An array of select option values. Commonly used for language lists in code
+  highlighting snippets, where each option has a display name and a value. For
+  example: `[{ name: "JavaScript", value: "js" }, { name: "Python", value:
+  "python" }]`.
+examples: []
+show_in_navigation: false

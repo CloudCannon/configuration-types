@@ -1,8 +1,11 @@
 gid: type._inputs.*.(object-input).options.structures
-url: /types/_inputs/*/(object-input)/options/structures/
+url: /configuration-file/types/_inputs/*/(object-input)/options/structures/
 title: ''
 description: >-
-  Provides data formats for value of this object. When choosing an item, team
-  members are prompted to choose from a number of values you have defined.
-  `structures` applies to the object itself.
+  This key defines data formats for value of this object.
+
+
+  When choosing an item, team members are prompted to choose from a number of
+  values you have defined. `structures` applies to the object itself.
 examples: []
+show_in_navigation: false

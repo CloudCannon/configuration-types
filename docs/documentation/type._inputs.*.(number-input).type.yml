@@ -1,5 +1,18 @@
 gid: type._inputs.*.(number-input).type
-url: /types/_inputs/*/(number-input)/type/
-title: Type
-description: Sets an input type, which controls how this input appears and behaves.
-examples: []
+url: /configuration-file/types/_inputs/*/(number-input)/type/
+title: ''
+description: >-
+  This key defines the input type, which controls how this input appears and
+  behaves.
+examples:
+  - description: >-
+      In this example, we have configured the `quantity` key as a *Number Input*
+      type.
+    language: yaml
+    code: |-
+      _inputs:
+        quantity:
+          type: number
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

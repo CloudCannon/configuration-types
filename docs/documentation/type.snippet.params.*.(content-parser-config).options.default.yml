@@ -1,5 +1,9 @@
 gid: type.snippet.params.*.(content-parser-config).options.default
-url: /types/snippet/params/*/(content-parser-config)/options/default/
+url: >-
+  /configuration-file/types/snippet/params/*/(content-parser-config)/options/default/
 title: ''
-description: ''
+description: >-
+  This key defines the default number of literals, which is used when adding a
+  new snippet to a page in CloudCannon.
 examples: []
+show_in_navigation: false

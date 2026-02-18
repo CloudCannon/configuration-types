@@ -1,7 +1,16 @@
 gid: type._inputs.*.(array-input).options.disable_add
-url: /types/_inputs/*/(array-input)/options/disable_add/
+url: /configuration-file/types/_inputs/*/(array-input)/options/disable_add/
 title: ''
 description: >-
-  Hides the add button, and context menu actions on each item for adding new
-  items to this Input.
+  This key toggles whether CloudCannon will hide the add button, and context
+  menu actions on each item for adding new items to this Input.
+
+
+  Setting this key to `true` will hide the add button and context menu actions
+  for adding new items.
+
+
+  By default, this key is `false` (i.e., the add button and context menu actions
+  are displayed).
 examples: []
+show_in_navigation: false

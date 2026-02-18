@@ -1,0 +1,29 @@
+gid: type.snippet-format.string_boundary.[*]
+url: /configuration-file/types/snippet-format/string_boundary/[*]/
+title: ''
+description: >-
+  This key represents an individual string boundary token in the
+  `string_boundary` array.
+
+
+  The value is a string that specifies a valid boundary token for strings. The
+  parser will ensure the matched end token is the same as the start token.
+examples:
+  - description: >-
+      In this example, we have configured a string boundary to use double
+      quotes.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[param]]>>"
+          params:
+            param:
+              parser: argument
+              options:
+                format:
+                  string_boundary:
+                    - '"'
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

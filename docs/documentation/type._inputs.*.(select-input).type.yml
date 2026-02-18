@@ -1,5 +1,23 @@
 gid: type._inputs.*.(select-input).type
-url: /types/_inputs/*/(select-input)/type/
-title: Type
-description: Sets an input type, which controls how this input appears and behaves.
-examples: []
+url: /configuration-file/types/_inputs/*/(select-input)/type/
+title: ''
+description: >-
+  This key defines the input type, which controls how this input appears and
+  behaves.
+examples:
+  - description: >-
+      In this example, we have configured the `category` key as a *Select Input*
+      type.
+    language: yaml
+    code: |-
+      _inputs:
+        category:
+          type: select
+          options:
+            values:
+              - Blog
+              - News
+              - Events
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

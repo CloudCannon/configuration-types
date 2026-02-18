@@ -1,5 +1,8 @@
 gid: type._inputs.*.(url-input).type
-url: /types/_inputs/*/(url-input)/type/
-title: Type
-description: Sets an input type, which controls how this input appears and behaves.
+url: /configuration-file/types/_inputs/*/(url-input)/type/
+title: ''
+description: >-
+  This key defines the input type, which controls how this input appears and
+  behaves.
 examples: []
+show_in_navigation: false

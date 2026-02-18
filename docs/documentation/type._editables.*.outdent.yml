@@ -1,0 +1,13 @@
+gid: type._editables.*.outdent
+url: /configuration-file/types/_editables/*/outdent/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will display a tool in your WYSIWYG
+  toolbar to decrease the indentation of a list item in an ordered or unordered
+  list.
+
+
+  Setting this key to `true` will enable a tool in your WYSIWYG toolbar to
+  decrease the indentation of a list item.
+examples: []
+show_in_navigation: false

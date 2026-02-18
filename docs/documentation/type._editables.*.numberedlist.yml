@@ -1,0 +1,12 @@
+gid: type._editables.*.numberedlist
+url: /configuration-file/types/_editables/*/numberedlist/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will display a tool in your WYSIWYG
+  toolbar to insert an ordered list or convert selected text to an ordered list.
+
+
+  Setting this key to `true` will enable a tool in your WYSIWYG toolbar to
+  insert an ordered list or convert selected text to an ordered list.
+examples: []
+show_in_navigation: false

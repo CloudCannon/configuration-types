@@ -1,8 +1,37 @@
 gid: collections_config.*.add_options.[*].(add-option).editor
-url: /collections_config/*/add_options/[*]/(add-option)/editor/
-title: Editor Key
+url: /configuration-file/collections_config/*/add_options/[*]/(add-option)/editor/
+title: ''
 description: >-
-  The editor to open the new file in. Defaults to an appropriate editor for new
-  file's type if possible. If no default editor can be calculated, or the editor
-  does not support the new file type, a warning is shown in place of the editor.
-examples: []
+  This key defines which editing interface CloudCannon will use when you select
+  an option from the *\+ Add* button dropdown.
+
+
+  Values can be one of the following: `visual`, `content`, or `data`.
+
+
+  By default, CloudCannon will open the new file in an appropriate editing
+  interface for that file type.
+
+
+  If CloudCannon cannot determine an appropriate editing interface, it will show
+  a warning.
+examples:
+  - description: >-
+      In this example, we have configured a standard add option for the `people`
+      Collection that opens new files in the [Data
+      Editor](/documentation/articles/what-is-the-data-editor/).
+    language: yaml
+    code: |-
+      collections_config:
+        people:
+          add_options:
+            - name: Add Staff Member
+              schema: employee
+              icon: face
+              editor: data
+          schemas:
+            employee:
+              path: /.cloudcannon/schemas/employee.yml
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

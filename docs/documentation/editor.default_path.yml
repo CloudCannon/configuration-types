@@ -1,7 +1,15 @@
 gid: editor.default_path
-url: /editor/default_path/
+url: /configuration-file/editor/default_path/
 title: ''
-description: >-
-  The URL used for the dashboard screenshot, and where the editor opens to when
-  clicking the dashboard "Edit Home" button.
-examples: []
+description: This key defines the link for the *Home* button on the *Dashboard* page.
+examples:
+  - description: >-
+      In this example, we have configured the Home button to link to `/blog/`
+      instead of the default `/`.
+    language: yaml
+    code: |-
+      editor:
+        default_path: /blog/
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

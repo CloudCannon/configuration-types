@@ -1,5 +1,23 @@
 gid: type.structure.values.[*].tags.[*]
-url: /types/structure/values/[*]/tags/[*]/
+url: /configuration-file/types/structure/values/[*]/tags/[*]/
 title: ''
-description: ''
-examples: []
+description: |-
+  This key represents an individual tag string in the `values[*].tags` array.
+
+  The value is a string that specifies a tag associated with a structure value.
+examples:
+  - description: >-
+      In this example, we have configured the `featured` and `news` tags for the
+      entry labeled `Blog` in the `article_information` Structure.
+    language: yaml
+    code: |-
+      _structures:
+        article_information:
+          values:
+            - label: Blog
+              tags:
+                - featured
+                - news
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

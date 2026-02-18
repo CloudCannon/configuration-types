@@ -1,5 +1,28 @@
 gid: collections_config.*.glob.(glob)
-url: /collections_config/*/glob/(glob)/
+url: /configuration-file/collections_config/*/glob/(glob)/
 title: Glob
-description: ''
-examples: []
+description: >-
+  This key represents a single glob pattern string format for the
+  `collections_config.*.glob` key.
+
+
+  The value is a string that specifies a file path pattern relative to the
+  Collection path. Globs can be positive (e.g., `*.yml`) or negative (e.g.,
+  `!**/*.json`).
+
+
+  Files are included in a Collection if they match any positive globs and do not
+  match any negative globs.
+examples:
+  - description: >-
+      In this example, the `data` Collection uses a single glob pattern to show
+      only `.yml` files in the `data` folder or any nested folders.
+    language: yaml
+    code: |-
+      collections_config:
+        data:
+          path: data
+          glob: '**/*.yml'
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

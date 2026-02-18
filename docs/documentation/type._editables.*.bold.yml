@@ -1,0 +1,12 @@
+gid: type._editables.*.bold
+url: /configuration-file/types/_editables/*/bold/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will display a tool in your WYSIWYG
+  toolbar to bold selected text.
+
+
+  Setting this key to `true` will enable a tool in your WYSIWYG toolbar to bold
+  selected text.
+examples: []
+show_in_navigation: false

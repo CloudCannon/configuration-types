@@ -1,5 +1,6 @@
 gid: type._select_data.*.(text-array)
-url: /types/_select_data/*/(text-array)/
-title: Text Array
+url: /configuration-file/types/_select_data/*/(text-array)/
+title: Text Array Select Data
 description: ''
 examples: []
+show_in_navigation: false

@@ -1,5 +1,27 @@
 gid: commit_templates.[*].extra_data
-url: /commit_templates/[*]/extra_data/
+url: /configuration-file/commit_templates/[*]/extra_data/
 title: ''
-description: Define additional template strings, for building nested templates.
-examples: []
+description: >-
+  This key defines additional template strings for building nested templates.
+
+
+  The value is an object that can contain any properties. Each property value
+  can be any data type and specifies additional data to include in commit
+  message templates.
+examples:
+  - description: >-
+      In this example, we have configured a commit template with extra data to
+      include a breaking change message.
+    language: yaml
+    code: |-
+      commit_templates:
+        - label: Breaking change
+          template_string: '{message}{breaking_change|if=breaking_change_message}'
+          _inputs:
+            breaking_change_message:
+              type: text
+          extra_data:
+            breaking_change: '⚠️ {breaking_change_message}'
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

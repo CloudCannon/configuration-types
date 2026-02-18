@@ -1,9 +1,28 @@
 gid: markdown.options.quotes
-url: /markdown/options/quotes/
+url: /configuration-file/markdown/options/quotes/
 title: ''
 description: >-
-  Double + single quotes replacement pairs, when typographer enabled and
-  smartquotes on. For example, you can use "«»„"" for Russian, ""„"‚"" for
-  German, and ["«\xA0", "\xA0»", "‹\xA0", "\xA0›"] for French (including
-  `nbsp`).
-examples: []
+  This key defines double and single quotes replacement pairs for quote
+  beautification when `typographer` is enabled.
+
+
+  The value is a string that specifies quote pairs. For example, you can use
+  `"«»„""` for Russian, `""„"‚""` for German, and `["«\xA0", "\xA0»", "‹\xA0",
+  "\xA0›"]` for French (including `nbsp`).
+
+
+  This key only takes effect when `typographer` is enabled.
+examples:
+  - description: >-
+      In this example, we have configured quote replacement pairs for Russian
+      typography.
+    language: yaml
+    code: |-
+      markdown:
+        engine: commonmark
+        options:
+          typographer: true
+          quotes: '«»„""'
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

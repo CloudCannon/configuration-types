@@ -1,7 +1,33 @@
 gid: collections_config.*.add_options.[*].(add-option).icon
-url: /collections_config/*/add_options/[*]/(add-option)/icon/
-title: Icon
+url: /configuration-file/collections_config/*/add_options/[*]/(add-option)/icon/
+title: ''
 description: >-
-  The icon next to the text in the menu item. Defaults to using icon from the
-  matching schema if set, then falls back to add.
-examples: []
+  This key defines the icon displayed next to the text for a standard add option
+  in the *\+ Add* button dropdown.
+
+
+  The value is a string that specifies an icon name from [Google's Material
+  Symbols](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded).
+
+
+  By default, this key uses the icon of the matching Schema if
+  `add_options.schema` is configured. Otherwise, this key defaults to `add`.
+examples:
+  - description: >-
+      In this example, we have configured a standard add option for the `people`
+      Collection with the custom icon `support_agent`.
+    language: yaml
+    code: |-
+      collections_config:
+        people:
+          add_options:
+            - name: Add Contractor
+              icon: support_agent
+              schema: contractor
+              editor: data
+          schemas:
+            contractor:
+              path: /.cloudcannon/schemas/contractor.yml
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

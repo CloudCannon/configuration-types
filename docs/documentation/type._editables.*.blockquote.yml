@@ -1,0 +1,12 @@
+gid: type._editables.*.blockquote
+url: /configuration-file/types/_editables/*/blockquote/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will display a tool in your WYSIWYG
+  toolbar to wrap selected blocks of text in a block quote.
+
+
+  Setting this key to `true` will enable a tool in your WYSIWYG toolbar to wrap
+  selected blocks of text in a block quote.
+examples: []
+show_in_navigation: false

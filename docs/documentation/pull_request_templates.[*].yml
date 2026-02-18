@@ -1,5 +1,35 @@
 gid: pull_request_templates.[*]
-url: /pull_request_templates/[*]/
+url: /configuration-file/pull_request_templates/[*]/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key represents an individual pull request template object in the
+  `pull_request_templates` array.
+
+
+  The value is an object that defines a template for pull requests. Each
+  template can contain `label`, `title`, `body`, `template_path`, and `_inputs`
+  keys.
+examples:
+  - description: >-
+      In this example, we have configured a Pull Request template with a label,
+      title, body, and input configuration.
+    language: yaml
+    code: |-
+      pull_request_templates:
+        - label: General changes
+          title: Updates to...
+          body: In this update, I have made the following changes...
+          _inputs:
+            title:
+              options:
+                required: true
+            body:
+              type: markdown
+              options:
+                bold: true
+                italic: true
+                link: true
+                format: p h1 h2 h3
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

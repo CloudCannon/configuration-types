@@ -1,5 +1,0 @@
-gid: type._inputs.*.(rich-text-input).context.icon
-url: /types/_inputs/*/(rich-text-input)/context/icon/
-title: Icon
-description: The icon shown when not open. Defaults to "auto_stories" if unset.
-examples: []

@@ -1,0 +1,28 @@
+gid: type._inputs.*.options.allowed_sources
+url: /configuration-file/types/_inputs/*/options/allowed_sources/
+title: ''
+description: >-
+  This key defines which sources and DAMs you are allowed to upload to and
+  browse.
+
+
+  The value can be an array of strings. Valid values include `site-files` and
+  the reference key for any DAM connected to your site.
+
+
+  If `site-files` is omitted from the array, site files will not be available as
+  an asset source for this input.
+examples:
+  - description: In this example, we have configured allowed sources for an *Image Input*.
+    language: yaml
+    code: |-
+      _inputs:
+        image:
+          type: image
+          options:
+            allowed_sources:
+              - site-files
+              - my-cloudinary-dam
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

@@ -1,5 +1,15 @@
 gid: source_editor.theme
-url: /source_editor/theme/
+url: /configuration-file/source_editor/theme/
 title: ''
 description: This key defines the color theme for syntax highlighting.
-examples: []
+examples:
+  - description: >-
+      In this example, we have configured the Source Editor to use the `dark`
+      theme for syntax highlighting.
+    language: yaml
+    code: |-
+      source_editor:
+        theme: dark
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

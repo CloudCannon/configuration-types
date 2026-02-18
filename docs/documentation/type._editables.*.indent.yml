@@ -1,0 +1,13 @@
+gid: type._editables.*.indent
+url: /configuration-file/types/_editables/*/indent/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will display a tool in your WYSIWYG
+  toolbar to increase the indentation of a list item in an ordered or unordered
+  list.
+
+
+  Setting this key to `true` will enable a tool in your WYSIWYG toolbar to
+  increase the indentation of a list item.
+examples: []
+show_in_navigation: false

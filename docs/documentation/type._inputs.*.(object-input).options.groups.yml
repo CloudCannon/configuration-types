@@ -1,7 +1,8 @@
 gid: type._inputs.*.(object-input).options.groups
-url: /types/_inputs/*/(object-input)/options/groups/
+url: /configuration-file/types/_inputs/*/(object-input)/options/groups/
 title: ''
 description: >-
-  Allows you to group the inputs inside this object together without changing
-  the data structure.
+  This key defines how you can group the inputs inside this object together
+  without changing the data structure.
 examples: []
+show_in_navigation: false

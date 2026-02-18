@@ -1,0 +1,28 @@
+gid: type._inputs.*.options.accepts_mime_types
+url: /configuration-file/types/_inputs/*/options/accepts_mime_types/
+title: ''
+description: >-
+  This key defines which file types are available to select or upload to this
+  input.
+
+
+  Accepted format is an array or comma-separated string of MIME types.
+
+
+  The special value "*" means any type is accepted.
+examples:
+  - description: >-
+      In this example, we have configured a *Image Input* to accept only JPEG or
+      PNG files.
+    language: yaml
+    code: |-
+      _inputs:
+        featured_image:
+          type: image
+          options:
+            accepts_mime_types:
+              - image/jpeg
+              - image/png
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

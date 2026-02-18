@@ -1,5 +1,6 @@
 gid: type._inputs.*.(object-input).options.subtype
-url: /types/_inputs/*/(object-input)/options/subtype/
+url: /configuration-file/types/_inputs/*/(object-input)/options/subtype/
 title: ''
-description: Changes the appearance and behavior of the input.
+description: This key defines the appearance and behavior of the input.
 examples: []
+show_in_navigation: false

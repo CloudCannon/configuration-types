@@ -1,8 +1,30 @@
 gid: type._inputs.*.(object-input).options.entries.structures
-url: /types/_inputs/*/(object-input)/options/entries/structures/
+url: /configuration-file/types/_inputs/*/(object-input)/options/entries/structures/
 title: ''
 description: >-
-  Provides data formats for value of this object. When choosing an item, team
-  members are prompted to choose from a number of values you have defined.
-  `structures` applies to the object itself.
+  This key defines which predefined templates to use for populating entries
+  nested in the *Object Input*.
+
+
+  The value can be a string or an object. When configured, team members can
+  select a [structure](/documentation/developer-articles/what-is-a-structure/)
+  to populate the Object with input/input groups.
+
+
+  If configured as an object, CloudCannon will use the values directly. If
+  configured as a string, CloudCannon will use the matching structures value
+  defined under `_structures` in the [configuration
+  cascade](/documentation/developer-articles/using-the-configuration-cascade/).
+
+
+  Available for Mutable Objects only.
+
+
+  > **Note:** This key looks similar to `structures`. However, the `structures`
+  key applies to the Object input itself, while `entries.structures` applies to
+  the entries within the object.
+
+
+  This key has no default.
 examples: []
+show_in_navigation: false

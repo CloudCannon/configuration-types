@@ -1,7 +1,25 @@
 gid: collections_config.*.schemas.*.icon
-url: /collections_config/*/schemas/*/icon/
-title: Icon
+url: /configuration-file/collections_config/*/schemas/*/icon/
+title: ''
 description: >-
-  Displayed in the add menu when creating new files; also used as the icon for
-  collection files if no other preview is found. Defaults to notes.
-examples: []
+  This key defines the icon displayed in the add menu when creating new files,
+  also used as the icon for collection files if no other preview is found.
+
+
+  Must be a [Material
+  Symbols](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded)
+  name.
+examples:
+  - description: >-
+      In this example, we have configured a custom icon for the `article` schema
+      in the `blog` Collection.
+    language: yaml
+    code: |-
+      collections_config:
+        blog:
+          schemas:
+            article:
+              icon: article
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false
