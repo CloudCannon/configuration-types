@@ -1,7 +1,8 @@
-gid: type._inputs.*.(url-input).options.max_graphemes_message
-url: /types/_inputs/*/(url-input)/options/max_graphemes_message/
+gid: type._inputs.*.options.max_graphemes_message
+url: /configuration-file/types/_inputs/*/options/max_graphemes_message/
 title: ''
 description: >-
   This key defines the message that explains which maximum string length an
   Input will accept. This key requires you to define `options.max_graphemes.
 examples: []
+show_in_navigation: false

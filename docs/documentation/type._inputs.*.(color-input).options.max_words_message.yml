@@ -1,7 +1,0 @@
-gid: type._inputs.*.(color-input).options.max_words_message
-url: /types/_inputs/*/(color-input)/options/max_words_message/
-title: ''
-description: >-
-  This key defines the message that explains which maximum string length an
-  Input will accept. This key requires you to define `options.max_words.
-examples: []

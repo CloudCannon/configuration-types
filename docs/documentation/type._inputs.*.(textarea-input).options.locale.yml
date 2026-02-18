@@ -1,8 +1,0 @@
-gid: type._inputs.*.(textarea-input).options.locale
-url: /types/_inputs/*/(textarea-input)/options/locale/
-title: ''
-description: >-
-  This key defines the locale that CloudCannon uses to determine the number of
-  words or graphemes in this Input, if you have `max_words`, `min_words`,
-  `max_graphemes`, or `min_graphemes` configured.
-examples: []
