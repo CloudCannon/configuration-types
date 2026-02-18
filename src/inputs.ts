@@ -743,8 +743,9 @@ export const SharedSelectInputOptionsSchema = z.object({
 		id: 'type._inputs.*.options.allow_create',
 		description: 'Allows new text values to be created at edit time.',
 	}),
-	allow_empty: z.boolean().default(true).optional().meta({
+	allow_empty: z.boolean().optional().meta({
 		id: 'type._inputs.*.options.allow_empty',
+		deprecated: true,
 		description: 'Provides an empty option alongside the options provided by values.',
 	}),
 	values: z
