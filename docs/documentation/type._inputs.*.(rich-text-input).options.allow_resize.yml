@@ -1,7 +1,10 @@
 gid: type._inputs.*.(rich-text-input).options.allow_resize
 url: /configuration-file/types/_inputs/*/(rich-text-input)/options/allow_resize/
 title: ''
+deprecated: true
 description: >-
+  **⚠️ DEPRECATED:** This key is deprecated. Use `preview_resize` instead.
+
   This key toggles whether CloudCannon will show the resize handler to
   vertically resize the input.
 
