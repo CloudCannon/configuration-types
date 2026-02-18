@@ -34,6 +34,7 @@ export interface Page {
 	title?: DocumentationEntry['title'];
 	description?: DocumentationEntry['description'];
 	examples?: Example[];
+	deprecated: boolean;
 	documentation?: DocumentationEntry;
 	developer_documentation?: DocumentationEntry;
 	url: string;

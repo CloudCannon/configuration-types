@@ -263,7 +263,10 @@ for (const schemaConfig of schemas) {
 
 	if (schemaConfig.redocument) {
 		const docsFolder =
-			'docsFolder' in schemaConfig ? schemaConfig.docsFolder : 'docs/documentation';
+			'docsFolder' in schemaConfig && schemaConfig.docsFolder
+				? schemaConfig.docsFolder
+				: 'docs/documentation';
+
 		await redocumentSchema(fullSchemaPath, docsFolder, {
 			stripId: schemaConfig.stripId,
 			addMarkdownDescription: schemaConfig.addMarkdownDescription,

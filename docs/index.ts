@@ -164,6 +164,7 @@ function docToPage(
 		gid,
 		title: documentation?.title,
 		description: documentation?.description || doc.description,
+		deprecated: !!doc.deprecated,
 		examples: documentation?.examples?.length
 			? documentation.examples
 			: developer_documentation?.examples,
