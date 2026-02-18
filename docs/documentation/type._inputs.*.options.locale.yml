@@ -1,0 +1,9 @@
+gid: type._inputs.*.options.locale
+url: /configuration-file/types/_inputs/*/options/locale/
+title: ''
+description: >-
+  This key defines the locale that CloudCannon uses to determine the number of
+  words or graphemes in this Input, if you have `max_words`, `min_words`,
+  `max_graphemes`, or `min_graphemes` configured.
+examples: []
+show_in_navigation: false
