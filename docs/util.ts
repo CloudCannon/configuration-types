@@ -13,6 +13,8 @@ export interface Example {
 
 export interface DocumentationEntry {
 	title?: string;
+	deprecated?: boolean;
+	deprecated_description?: string;
 	description?: string;
 	examples?: Example[];
 	show_in_navigation?: boolean;
@@ -35,6 +37,7 @@ export interface Page {
 	description?: DocumentationEntry['description'];
 	examples?: Example[];
 	deprecated: boolean;
+	deprecated_description?: string;
 	documentation?: DocumentationEntry;
 	developer_documentation?: DocumentationEntry;
 	url: string;

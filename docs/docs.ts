@@ -108,6 +108,7 @@ export async function writeNewDocs(
 			url: pages[gid]?.url,
 			title: pages[gid]?.title || '',
 			deprecated: pages[gid]?.deprecated || undefined,
+			deprecated_description: pages[gid]?.deprecated_description || undefined,
 			description: pages[gid]?.description || '',
 			examples: pages[gid]?.examples || [],
 			show_in_navigation:

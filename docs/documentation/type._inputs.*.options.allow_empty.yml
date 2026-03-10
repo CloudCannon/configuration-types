@@ -1,11 +1,11 @@
 gid: type._inputs.*.options.allow_empty
 url: /configuration-file/types/_inputs/*/options/allow_empty/
 title: ''
+deprecated: true
+deprecated_description: >-
+  This key is deprecated. If you want to prevent empty values, we recommend
+  setting `_inputs.*.options.required` to `true` instead.
 description: >-
-  **⚠️ DEPRECATED:** This key is deprecated. If you want to prevent empty
-  values, we recommend setting `_inputs.*.options.required` to `true` instead.
-
-
   This key toggles whether CloudCannon will accept empty values, and pre-select
   the first option if opened with an empty value.
 

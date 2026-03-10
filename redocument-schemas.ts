@@ -80,6 +80,18 @@ export async function redocumentSchema(
 			doc.description = documentation.description;
 		}
 
+		if (documentation?.deprecated) {
+			const deprecatedDescription =
+				documentation.deprecated_description ||
+				'This key is deprecated: it is still supported, but no longer recommended.';
+
+			if (doc.description) {
+				doc.description = `${deprecatedDescription}\n\n${doc.description}`;
+			} else {
+				doc.description = deprecatedDescription;
+			}
+		}
+
 		if (documentation?.examples?.length) {
 			// This adds examples to the description rather than the examples field, since that can't handle
 			// descriptions or language, and stringifies YAML formatting into the visible text.
@@ -94,12 +106,12 @@ export async function redocumentSchema(
 			for (let i = 0; i < documentation.examples.length; i++) {
 				const example = documentation.examples[i];
 
-				if (example.description) {
+				if (example?.description) {
 					doc.description += '\n\n';
 					doc.description += example.description?.trim();
 				}
 
-				if (example.code) {
+				if (example?.code) {
 					doc.description += '\n\n';
 					doc.description += `\`\`\`${example.language?.trim() || ''}\n${example.code?.trim()}\n\`\`\``;
 				}

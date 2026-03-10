@@ -165,6 +165,7 @@ function docToPage(
 		title: documentation?.title,
 		description: documentation?.description || doc.description,
 		deprecated: !!doc.deprecated,
+		deprecated_description: documentation?.deprecated_description,
 		examples: documentation?.examples?.length
 			? documentation.examples
 			: developer_documentation?.examples,

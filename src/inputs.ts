@@ -538,10 +538,7 @@ export const RichTextInputOptionsSchema = z
 		...TextValidationSchema.shape,
 		...RequiredValidationSchema.shape,
 		empty_type: EmptyTypeTextSchema.optional(),
-		allow_resize: z.boolean().optional().meta({
-			deprecated: true,
-			description: '**⚠️ DEPRECATED:** This key is deprecated. Use `preview_resize` instead.',
-		}),
+		allow_resize: z.boolean().optional().meta({ deprecated: true }),
 		prevent_resize: z.boolean().default(false).optional().meta({
 			description: 'Hides the resize handler to vertically resize the input.',
 		}),
