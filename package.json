@@ -45,12 +45,12 @@
 		"dist/**/*"
 	],
 	"dependencies": {
-		"zod": "^4.1.13"
+		"zod": "^4.3.6"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.3.8",
+		"@biomejs/biome": "2.4.6",
 		"@types/js-yaml": "^4.0.9",
-		"@types/node": "^24.10.1",
+		"@types/node": "^25.4.0",
 		"http-server": "^14.1.1",
 		"js-yaml": "^4.1.1",
 		"tsx": "^4.21.0",
