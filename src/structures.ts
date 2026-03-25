@@ -106,9 +106,7 @@ export const StructureValueSchema = StructureBaseSchema.extend({
 export const StructureSchema = z
 	.object({
 		...StructureBaseSchema.shape,
-		values: z.array(StructureValueSchema).meta({
-			description: 'Defines what values are available to add when using this structure.',
-		}),
+		values: z.array(StructureValueSchema).optional(),
 		values_from_glob: z.array(z.string()).optional(),
 		id_key: z.string().default('_type').optional().meta({
 			description:
