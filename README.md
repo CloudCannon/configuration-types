@@ -21,44 +21,7 @@ npm i -D @cloudcannon/configuration-types
 
 ## Usage
 
-We plan to add the configuration schema to [JSON Schema Store](https://www.schemastore.org/json/), which would automatically enable in-editor validation, autocomplete and tooltips with the YAML or JSON LSP enabled.
-
-Alternatively, you can add a comment to the top of your file to use a specific schema for YAML files:
-
-```yaml
-# yaml-language-server: $schema=https://raw.githubusercontent.com/CloudCannon/configuration-types/main/dist/cloudcannon-config.schema.json
-
-collections_config:
-  posts:
-    path: content/posts
-    name: Blog
-    icon: event
-```
-
-Or the top-level `$schema` entry for JSON files:
-
-```json
-{
-  "$schema": "https://raw.githubusercontent.com/CloudCannon/configuration-types/main/dist/cloudcannon-config.schema.json",
-
-  "collections_config": {
-    "posts": {
-      "path": "content/posts",
-      "name": "Blog",
-      "icon": "event"
-    }
-  }
-}
-```
-
-You could also/alternatively validate the file on the command line with something like [ajv-cli](https://github.com/ajv-validator/ajv-cli):
-
-```sh
-npm i @cloudcannon/configuration-types ajv-cli
-npm run ajv validate -s node_modules/@cloudcannon/configuration-types/schema/cloudcannon-config.schema.json -d cloudcannon.config.yml
-```
-
-***
+The configuration schemas are available at [JSON Schema Store](https://www.schemastore.org/json/), which automatically enables in-editor validation, autocomplete and tooltips with the YAML or JSON LSP enabled.
 
 ## Development
 
