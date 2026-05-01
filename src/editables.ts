@@ -1,7 +1,7 @@
 import * as z from 'zod';
 import { ImageOptionsSchema } from './image-options.ts';
 import { PathsSchema } from './paths.ts';
-import { BooleanInputSchema, SelectInputSchema, TextInputSchema, UrlInputSchema } from './inputs.ts';
+import { BooleanInputSchema } from './base-inputs.ts';
 
 export const TextEditableSchema = z.object({
 	paths: PathsSchema.optional(),

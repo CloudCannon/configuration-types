@@ -11,6 +11,9 @@ import { SourceEditorSchema } from './source-editor.ts';
 import { StructureReferenceSchema, StructureSchema } from './structures.ts';
 import { SyntaxSchema } from './syntax.ts';
 import { TimezoneSchema } from './timezone.ts';
+import { typeMeta, ContextSchema, BaseInputSchema, BooleanInputSchema } from './base-inputs.ts';
+
+export { ContextSchema, BaseInputSchema, BooleanInputSchema } from './base-inputs.ts';
 
 export const InputTypeSchema = z
 	.enum([
@@ -50,11 +53,6 @@ export const InputTypeSchema = z
 		title: 'Input Type',
 		description: 'The available input types.',
 	});
-
-const typeMeta = {
-	title: 'Type',
-	description: 'Sets an input type, which controls how this input appears and behaves.',
-};
 
 const RequiredValidationSchema = z.object({
 	required: z.boolean().default(false).optional().meta({
@@ -244,74 +242,6 @@ const EmptyTypeArraySchema = z.enum(['null', 'array']).default('null').meta({
 	description: 'Set how an ‘empty’ value will be saved. Does not apply to existing empty values.',
 });
 
-export const ContextSchema = z
-	.object({
-		content: z.string().optional().meta({
-			description: 'The rich text content shown when opened. Supports a limited set of Markdown.',
-		}),
-		open: z.boolean().default(false).optional().meta({
-			description: 'Makes the content visible initially.',
-		}),
-		title: z.string().optional().meta({
-			description: 'The text shown when not open. Defaults to "Context" if unset.',
-		}),
-		icon: IconSchema.optional().meta({
-			description: 'The icon shown when not open. Defaults to "auto_stories" if unset.',
-		}),
-	})
-	.meta({
-		id: 'type._inputs.*.context',
-		description: 'Adds an expandable section of rich text below the input.',
-	});
-
-export const BaseInputSchema = z.object({
-	comment: z.string().optional().meta({
-		id: 'type._inputs.*.comment',
-		description:
-			'Changes the subtext below the _Label_. Has no default. Supports a limited set of Markdown: links, bold, italic, subscript, superscript, and inline code elements are allowed.',
-	}),
-	context: ContextSchema.optional(),
-	documentation: DocumentationSchema.optional().meta({
-		description: 'Provides a custom link for documentation for editors shown above input.',
-	}),
-	label: z.string().optional().meta({
-		id: 'type._inputs.*.label',
-		description: 'Optionally changes the text above this input.',
-	}),
-	hidden: z
-		.union([z.boolean().meta({ title: 'Boolean' }), z.string().meta({ title: 'Query String' })])
-		.default(false)
-		.optional()
-		.meta({
-			id: 'type._inputs.*.hidden',
-			description: 'Toggles the visibility of this input.',
-		}),
-	disabled: z
-		.union([z.boolean().meta({ title: 'Boolean' }), z.string().meta({ title: 'Query String' })])
-		.default(false)
-		.optional()
-		.meta({
-			id: 'type._inputs.*.disabled',
-			description: 'Toggles if this input can be edited.',
-		}),
-	instance_value: z.enum(['UUID', 'NOW']).optional().meta({
-		id: 'type._inputs.*.instance_value',
-		title: 'Instance Value',
-		description:
-			'Controls if and how the value of this input is instantiated when created. This occurs when creating files, or adding array items containing the configured input.',
-	}),
-	disable_instance_value_rehydration: z.boolean().default(false).optional().meta({
-		id: 'type._inputs.*.disable_instance_value_rehydration',
-		description:
-			'Prevents the default where inputs configured with an `instance_value` are rehydrated with a new value when duplicated in the CMS.',
-	}),
-	cascade: z.boolean().default(true).optional().meta({
-		id: 'type._inputs.*.cascade',
-		description:
-			'Specifies whether or not this input configuration should be merged with any matching, less specific configuration.',
-	}),
-});
-
 export const TextInputOptionsSchema = z
 	.object({
 		...TextValidationSchema.shape,
@@ -446,17 +376,6 @@ export const ColorInputSchema = z
 		id: 'ColorInput',
 		title: 'Color Input',
 		description: 'Provides an editing interface for color values.',
-	});
-
-export const BooleanInputSchema = z
-	.object({
-		...BaseInputSchema.shape,
-		type: z.enum(['checkbox', 'switch']).meta(typeMeta),
-	})
-	.meta({
-		id: 'BooleanInput',
-		title: 'Boolean Input',
-		description: 'Provides an editing interface for true or false values.',
 	});
 
 const MinSchema = z.number().meta({

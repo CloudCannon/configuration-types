@@ -1,0 +1,6 @@
+gid: type._editables.*.image_options.loading.type
+url: /configuration-file/types/_editables/*/image_options/loading/type/
+title: ''
+description: Sets an input type, which controls how this input appears and behaves.
+examples: []
+show_in_navigation: false

@@ -1,0 +1,6 @@
+gid: type._editables.*.image_options.loading
+url: /configuration-file/types/_editables/*/image_options/loading/
+title: ''
+description: Provides an editing interface for true or false values.
+examples: []
+show_in_navigation: false

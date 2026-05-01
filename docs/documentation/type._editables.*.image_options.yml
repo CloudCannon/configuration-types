@@ -1,0 +1,6 @@
+gid: type._editables.*.image_options
+url: /configuration-file/types/_editables/*/image_options/
+title: ''
+description: Configure the controls to edit an image.
+examples: []
+show_in_navigation: false
