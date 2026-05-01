@@ -1,6 +1,7 @@
 import * as z from 'zod';
 import { ImageOptionsSchema } from './image-options.ts';
 import { PathsSchema } from './paths.ts';
+import { BooleanInputSchema, SelectInputSchema, TextInputSchema, UrlInputSchema } from './inputs.ts';
 
 export const TextEditableSchema = z.object({
 	paths: PathsSchema.optional(),
@@ -25,6 +26,17 @@ export const TextEditableSchema = z.object({
 		id: 'type._editables.*.link',
 		description: 'Enables a control to create hyperlinks around selected text.',
 	}),
+
+	// link_options: z.object({
+	// 	get href() { return UrlInputSchema.optional() },
+	// 	get title() { return TextInputSchema.optional() },
+	// 	get is_target_blank() { return BooleanInputSchema.optional() },
+	// 	get rel_nofollow() { return BooleanInputSchema.optional() },
+	// 	get rel_noreferrer() { return BooleanInputSchema.optional() }
+	// }).optional().meta({
+	// 	id: 'type._editables.*.link_options',
+	// 	description: 'Configure the controls to edit hyperlinks around selected text.',
+	// }),
 
 	redo: z.boolean().default(false).optional().meta({
 		id: 'type._editables.*.redo',
@@ -108,6 +120,13 @@ export const ToolbarOptionsSchema = z.object({
 		description: 'Enables a control to insert a code block.',
 	}),
 
+	// code_block_options: z.object({
+	// 	get language() { return SelectInputSchema.optional() },
+	// }).optional().meta({
+	// 	id: 'type._editables.*.code_block_options',
+	// 	description: 'Configure the controls to edit a code block.',
+	// }),
+
 	code: z.boolean().default(false).optional().meta({
 		id: 'type._editables.*.code',
 		description: 'Enables both block and inline code controls: `code_block` and `code_inline`.',
@@ -135,6 +154,22 @@ export const ToolbarOptionsSchema = z.object({
 		description:
 			'Enables a control to insert an image. The image can be uploaded, existing or an external link.',
 	}),
+
+	get image_options() {
+		return (
+			z.object({
+				// src: UrlInputSchema.optional(),
+				// alt: TextInputSchema.optional(),
+				// title: TextInputSchema.optional(),
+				loading: BooleanInputSchema.optional(),
+				test: z.string(),
+			}).optional().meta({
+				id: 'type._editables.*.image_options',
+				description: 'Configure the controls to edit an image.',
+			})
+		)
+	},
+
 
 	indent: z.boolean().default(false).optional().meta({
 		id: 'type._editables.*.indent',

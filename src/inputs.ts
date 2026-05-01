@@ -534,7 +534,7 @@ export const RangeInputSchema = z
 export const RichTextInputOptionsSchema = z
 	.object({
 		...ImageOptionsSchema.shape,
-		...BlockEditableSchema.shape,
+		...BlockEditableSchema.shape, // 🔥
 		...TextValidationSchema.shape,
 		...RequiredValidationSchema.shape,
 		empty_type: EmptyTypeTextSchema.optional(),
