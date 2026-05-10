@@ -1,0 +1,9 @@
+gid: type._editables.*.image_options.src.options.hide_link_to_telephone
+url: >-
+  /configuration-file/types/_editables/*/image_options/src/options/hide_link_to_telephone/
+title: ''
+description: >-
+  Hides the option to link to a telephone number. This does not prevent typing a
+  `tel:` link in the input.
+examples: []
+show_in_navigation: false

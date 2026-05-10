@@ -1,0 +1,6 @@
+gid: type._editables.*.code_block_options.language.options
+url: /configuration-file/types/_editables/*/code_block_options/language/options/
+title: ''
+description: Options that are specific to Select Inputs.
+examples: []
+show_in_navigation: false

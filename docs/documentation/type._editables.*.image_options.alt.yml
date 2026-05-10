@@ -1,0 +1,6 @@
+gid: type._editables.*.image_options.alt
+url: /configuration-file/types/_editables/*/image_options/alt/
+title: ''
+description: Provides a simple editing interface for plain text.
+examples: []
+show_in_navigation: false

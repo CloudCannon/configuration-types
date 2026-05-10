@@ -1,0 +1,6 @@
+gid: type._editables.*.link_options.title
+url: /configuration-file/types/_editables/*/link_options/title/
+title: ''
+description: Provides a simple editing interface for plain text.
+examples: []
+show_in_navigation: false
