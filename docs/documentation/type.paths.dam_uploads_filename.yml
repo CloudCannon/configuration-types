@@ -4,6 +4,7 @@ title: ''
 description: >-
   This key defines the path for the name of the uploaded file, when uploading
   [DAM](/documentation/articles/introduction-to-assets-and-dams/) files.
+default: '[asset_filename]'
 examples:
   - description: >-
       In this example, we have configured the DAM uploads filename path for the

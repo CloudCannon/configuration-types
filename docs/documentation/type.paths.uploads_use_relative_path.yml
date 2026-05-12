@@ -9,6 +9,7 @@ description: >-
   Setting this key to `true` will make CloudCannon use relative paths for
   uploaded files, which are relative to the file being edited rather than the
   repository root.
+default: false
 examples:
   - description: >-
       In this example, we have configured uploads to use relative paths for

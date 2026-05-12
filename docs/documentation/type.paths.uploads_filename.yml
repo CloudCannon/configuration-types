@@ -2,6 +2,7 @@ gid: type.paths.uploads_filename
 url: /configuration-file/types/paths/uploads_filename/
 title: ''
 description: This key defines the path for the name of the uploaded file.
+default: '[asset_filename_without_ext|slugify|deburr][count].[asset_ext|lowercase]'
 examples:
   - description: >-
       In this example, we have configured the uploads filename path for the

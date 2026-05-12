@@ -38,6 +38,10 @@ description: >-
   Editor](/documentation/articles/what-is-the-data-editor/), and [Source
 
   Editor](/documentation/articles/what-is-the-source-editor/).
+enum:
+  - visual
+  - content
+  - data
 examples:
   - description: >-
       In this example, we have enabled only the [Content

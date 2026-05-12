@@ -6,7 +6,7 @@ description: >-
   of a *Card*.
 
 
-  Valid values are `padded` (default), `contain`, `cover`, or `cover-top`.
+  Valid values are `padded`, `contain`, `cover`, or `cover-top`.
 
 
   * The `padded` value adds padding around images to maintain aspect ratio.
@@ -25,6 +25,12 @@ description: >-
 
 
   This key defaults to `contain`.
+default: contain
+enum:
+  - padded
+  - contain
+  - cover
+  - cover-top
 examples:
   - description: >-
       In this example, we have configured the gallery fit to use `cover` so
