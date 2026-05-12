@@ -16,6 +16,9 @@ description: >-
 
   By default, this key is the current Collection open in the *Collection
   browser*.
+
+
+  This key is only available for standard Add options (without `href`).
 examples:
   - description: >-
       In this example, we want team members in the articles Collection to create

@@ -17,6 +17,9 @@ description: >-
   `add_options.collection` (or the containing collection if `collection` is not
   specified), if *Schemas* are configured for that collection. Otherwise, this
   key has no default value.
+
+
+  This key is only available for standard Add options (without `href`).
 examples:
   - description: >-
       In this example, we have configured a standard add option for the `people`

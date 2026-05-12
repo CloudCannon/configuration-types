@@ -13,6 +13,9 @@ description: >-
 
   This key is useful if you need to specify a specific subfolder within a
   Collection.
+
+
+  This key is only available for standard Add options (without `href`).
 examples:
   - description: >-
       In this example, we want team members in the `_posts` Collection to create
