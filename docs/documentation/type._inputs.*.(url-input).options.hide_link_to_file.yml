@@ -12,5 +12,8 @@ description: >-
 
   By default, this key is `false` (i.e., the options to link to an existing file
   and upload a new file are shown).
+
+
+  This key is only available for URL inputs.
 examples: []
 show_in_navigation: false

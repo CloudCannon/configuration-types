@@ -13,5 +13,8 @@ description: >-
 
   By default, this key is `false` (i.e., the option to link to a telephone
   number is shown).
+
+
+  This key is only available for URL inputs.
 examples: []
 show_in_navigation: false
