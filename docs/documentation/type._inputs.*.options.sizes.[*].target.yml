@@ -4,5 +4,8 @@ title: ''
 description: >-
   This key defines a reference to another input that is given the path to this
   additional image file.
+
+
+  This key is only available for Image Inputs.
 examples: []
 show_in_navigation: false

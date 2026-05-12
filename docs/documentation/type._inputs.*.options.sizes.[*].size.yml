@@ -4,6 +4,9 @@ title: ''
 description: >-
   This key defines a number suffixed with "x" (relative size) or "w" (fixed
   width) for setting the dimensions of the image (e.g. 2x, 3x, 100w, 360w).
+
+
+  This key is only available for Image Inputs.
 examples:
   - description: >-
       In this example, we have configured a size definition for an *Image Input*

@@ -8,6 +8,9 @@ description: >-
 
   Setting this key to `true` will disable the context menu option and prevent
   uploading file through drag-and-drop in a *File Input*.
+
+
+  This key is only available for File and URL Inputs.
 examples:
   - description: >-
       In this example, CloudCannon will disable the option to upload a file in

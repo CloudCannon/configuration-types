@@ -4,6 +4,9 @@ title: ''
 description: >-
   This key defines the height of the bounding box used in the resizing method
   defined by `resize_style`.
+
+
+  This key is only available for Image Inputs.
 examples:
   - description: >-
       In this example, we have configured the height of the bounding box for an

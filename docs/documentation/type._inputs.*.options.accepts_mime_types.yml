@@ -10,6 +10,9 @@ description: >-
 
 
   The special value "*" means any type is accepted.
+
+
+  This key is only available for File Inputs.
 examples:
   - description: >-
       In this example, we have configured a *Image Input* to accept only JPEG or

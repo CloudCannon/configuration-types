@@ -8,6 +8,10 @@ description: >-
 
   Setting this key to `true` will skip the image resizing process when selecting
   existing images.
+
+
+  This key is only available for Image Inputs.
+default: false
 examples:
   - description: >-
       In this example, CloudCannon will skip the image resizing process when

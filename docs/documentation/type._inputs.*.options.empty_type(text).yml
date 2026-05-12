@@ -4,5 +4,12 @@ title: Text Empty Type
 description: >-
   This key defines how an 'empty' value will be saved. Does not apply to
   existing empty values.
+
+
+  This key is only available for Text, URL, Color, File, and Social inputs.
+default: 'null'
+enum:
+  - string
+  - 'null'
 examples: []
 show_in_navigation: false

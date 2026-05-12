@@ -4,5 +4,8 @@ title: ''
 description: >-
   This key defines the width of the bounding box used in the resizing method
   defined by `resize_style`.
+
+
+  This key is only available for Image Inputs.
 examples: []
 show_in_navigation: false
