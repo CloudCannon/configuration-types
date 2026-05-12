@@ -6,8 +6,10 @@ description: >-
   Inputs*.
 
 
-
   By default, this key is `basic_dark`.
+
+
+  This key is only available for Code inputs.
 examples:
   - description: >-
       In this example, we have configured a code input to use the `dracula`

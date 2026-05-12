@@ -11,6 +11,9 @@ description: >-
 
 
   By default, this key is `true` (i.e., line numbers are displayed).
+
+
+  This key is only available for Code inputs.
 examples:
   - description: >-
       In this example, we have configured a code input to hide line numbers by

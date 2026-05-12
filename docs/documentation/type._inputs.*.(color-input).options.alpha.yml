@@ -12,5 +12,8 @@ description: >-
 
   By default, this key uses the naming convention (i.e., enabled if the input
   key ends with "a").
+
+
+  This key is only available for Color inputs.
 examples: []
 show_in_navigation: false
