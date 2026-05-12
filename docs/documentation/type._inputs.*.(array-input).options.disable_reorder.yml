@@ -11,5 +11,8 @@ description: >-
 
   By default, this key is `false` (i.e., the controls for moving items are
   displayed).
+
+
+  This key is only available for Array inputs.
 examples: []
 show_in_navigation: false

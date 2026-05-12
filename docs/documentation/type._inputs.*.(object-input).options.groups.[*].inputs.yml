@@ -1,6 +1,10 @@
 gid: type._inputs.*.(object-input).options.groups.[*].inputs
 url: /configuration-file/types/_inputs/*/(object-input)/options/groups/[*]/inputs/
 title: ''
-description: This key defines the keys of each input in this group.
+description: >-
+  This key defines the keys of each input in this group.
+
+
+  This key is only available for Object inputs.
 examples: []
 show_in_navigation: false

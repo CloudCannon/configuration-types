@@ -1,6 +1,10 @@
 gid: type._inputs.*.(object-input).options.groups.[*].heading
 url: /configuration-file/types/_inputs/*/(object-input)/options/groups/[*]/heading/
 title: ''
-description: This key defines the main text for the group shown when collapsed or expanded.
+description: >-
+  This key defines the main text for the group shown when collapsed or expanded.
+
+
+  This key is only available for Object inputs.
 examples: []
 show_in_navigation: false
