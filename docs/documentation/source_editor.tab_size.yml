@@ -4,6 +4,7 @@ title: ''
 description: >-
   This key defines the auto-indentation of each line and how many spaces a tab
   indentation counts as.
+default: 2
 examples:
   - description: >-
       In this example, we have configured the Source Editor to use 2 spaces for

@@ -2,6 +2,33 @@ gid: source_editor.theme
 url: /configuration-file/source_editor/theme/
 title: ''
 description: This key defines the color theme for syntax highlighting.
+default: basic_dark
+enum:
+  - atomone
+  - basic_dark
+  - basic_light
+  - darcula
+  - dracula
+  - duotone_dark
+  - duotone_light
+  - eclipse
+  - github_dark
+  - github_light
+  - gruvbox_dark
+  - gruvbox_light
+  - material_dark
+  - material_light
+  - solarized_dark
+  - solarized_light
+  - sublime
+  - tokyo_night
+  - tokyo_night_day
+  - tokyo_night_storm
+  - tomorrow_night_blue
+  - vscode_dark
+  - vscode_light
+  - xcode_dark
+  - xcode_light
 examples:
   - description: >-
       In this example, we have configured the Source Editor to use the `dark`

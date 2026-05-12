@@ -4,6 +4,7 @@ title: ''
 description: >-
   This key toggles the gutter on the left of the editing interface, displaying
   line numbers and code folding controls.
+default: true
 examples:
   - description: >-
       In this example, CloudCannon will show the gutter with line numbers in the
