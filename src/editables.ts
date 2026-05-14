@@ -141,10 +141,9 @@ export const ToolbarOptionsSchema = z.object({
 	code_block_options: z
 		.object({
 			get language() {
-				return SelectInputSchema;
+				return SelectInputSchema.optional();
 			},
 		})
-		.partial()
 		.optional()
 		.meta({
 			id: 'type._editables.*.code_block_options',

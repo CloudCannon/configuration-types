@@ -1,8 +1,0 @@
-gid: type._editables.*.code_block_options.language
-url: /configuration-file/types/_editables/*/code_block_options/language/
-title: ''
-description: >-
-  Provides an editing interface for data with multiple predefined options.
-  Select inputs only allow one value.
-examples: []
-show_in_navigation: false

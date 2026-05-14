@@ -395,7 +395,7 @@ export const SelectInputSchema = z
 		options: SelectInputOptionsSchema.optional(),
 	})
 	.meta({
-		id: 'SelectInput',
+		id: 'type._inputs.*.(select-input)',
 		title: 'Select Input',
 		description:
 			'Provides an editing interface for data with multiple predefined options. Select inputs only allow one value.',
