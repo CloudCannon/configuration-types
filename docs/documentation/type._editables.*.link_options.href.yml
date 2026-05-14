@@ -1,8 +1,0 @@
-gid: type._editables.*.link_options.href
-url: /configuration-file/types/_editables/*/link_options/href/
-title: ''
-description: >-
-  Provides an editing interface for relative, absolute, and fully qualified
-  URLs.
-examples: []
-show_in_navigation: false

@@ -1,6 +1,0 @@
-gid: type._editables.*.link_options.is_target_blank.type
-url: /configuration-file/types/_editables/*/link_options/is_target_blank/type/
-title: ''
-description: Sets an input type, which controls how this input appears and behaves.
-examples: []
-show_in_navigation: false

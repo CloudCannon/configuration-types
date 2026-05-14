@@ -1,6 +1,0 @@
-gid: type._editables.*.link_options.is_target_blank
-url: /configuration-file/types/_editables/*/link_options/is_target_blank/
-title: ''
-description: Provides an editing interface for true or false values.
-examples: []
-show_in_navigation: false

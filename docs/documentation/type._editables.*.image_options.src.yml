@@ -1,8 +1,0 @@
-gid: type._editables.*.image_options.src
-url: /configuration-file/types/_editables/*/image_options/src/
-title: ''
-description: >-
-  Provides an editing interface for relative, absolute, and fully qualified
-  URLs.
-examples: []
-show_in_navigation: false

@@ -133,7 +133,7 @@ export const TextValidationSchema = z.object({
 
 export const EmptyTypeTextSchema = z.enum(['null', 'string']).default('null').meta({
 	id: 'type._inputs.*.options.empty_type(text)',
-	description: 'Set how an \'empty\' value will be saved. Does not apply to existing empty values.',
+	description: "Set how an 'empty' value will be saved. Does not apply to existing empty values.",
 });
 
 export const ContextSchema = z
@@ -210,7 +210,7 @@ export const BooleanInputSchema = z
 		type: z.enum(['checkbox', 'switch']).meta(typeMeta),
 	})
 	.meta({
-		id: 'BooleanInput',
+		id: 'type._inputs.*.(boolean-input)',
 		title: 'Boolean Input',
 		description: 'Provides an editing interface for true or false values.',
 	});
@@ -251,7 +251,7 @@ export const TextInputSchema = z
 		options: TextInputOptionsSchema.optional(),
 	})
 	.meta({
-		id: 'TextInput',
+		id: 'type._inputs.*.(text-input)',
 		title: 'Text Input',
 		description: 'Provides a simple editing interface for plain text.',
 	});
@@ -334,7 +334,7 @@ export const UrlInputSchema = z
 		options: UrlInputOptionsSchema.optional(),
 	})
 	.meta({
-		id: 'UrlInput',
+		id: 'type._inputs.*.(url-input)',
 		title: 'URL Input',
 		description: 'Provides an editing interface for relative, absolute, and fully qualified URLs.',
 	});

@@ -1,6 +1,0 @@
-gid: type._editables.*.link_options.title.options.placeholder
-url: /configuration-file/types/_editables/*/link_options/title/options/placeholder/
-title: ''
-description: Text shown when this input has no value.
-examples: []
-show_in_navigation: false
