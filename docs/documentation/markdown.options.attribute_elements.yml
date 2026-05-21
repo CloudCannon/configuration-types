@@ -8,8 +8,7 @@ description: >-
 
   The value is an object that can contain `inline`, `block`, or element-specific
   properties. Each property value specifies where attribute lists should be
-  positioned for that element type. Valid values are `none`, `right`, `space
-  right`, `below`, `newline below`, or `right-of-prefix`.
+  positioned for that element type.
 
 
   This key only takes effect when `attributes` is enabled.

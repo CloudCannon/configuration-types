@@ -6,21 +6,9 @@ description: >-
   This key defines how to format the output for parsers such as the content and
   repeating parsers.
 
-
-  Valid values are either `inline` or `block`.
-
-
-  When set to `block`, values will always be output with leading and trailing
-  newlines.
-
-
-  When set to `inline`, values will always be output on a single line, with
-  newlines inserted as `\n`.
-
-
-  If unspecified, `inline` will be chosen when the value is a single line,
-  otherwise `block`
-
-  formatting will be used.
+  Setting this key to `block` outputs values with leading and trailing newlines,
+  and `inline` outputs values on a single line with newlines inserted as `\n`.
+  If unspecified, `inline` is used when the value is a single line, otherwise
+  `block` formatting is used.
 examples: []
 show_in_navigation: false
