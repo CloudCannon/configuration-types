@@ -11,7 +11,6 @@ description: >-
 
 
   This key is only available for Image Inputs.
-default: false
 examples:
   - description: >-
       In this example, CloudCannon will skip the image resizing process when

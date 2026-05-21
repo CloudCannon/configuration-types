@@ -12,10 +12,5 @@ description: >-
 
 
   This key is only available for Object inputs.
-default: object
-enum:
-  - object
-  - mutable
-  - tabbed
 examples: []
 show_in_navigation: false

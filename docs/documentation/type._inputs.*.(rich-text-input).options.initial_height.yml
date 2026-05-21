@@ -7,6 +7,5 @@ description: >-
 
 
   This key is only available for Rich Text inputs.
-default: 320
 examples: []
 show_in_navigation: false

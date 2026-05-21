@@ -5,10 +5,6 @@ description: |-
   This key defines what format an image is converted to prior to upload.
 
   This key is only available for Image Inputs.
-enum:
-  - image/jpeg
-  - image/png
-  - image/webp
 examples:
   - description: >-
       In this example, we have configured an *Image Input* to convert images to

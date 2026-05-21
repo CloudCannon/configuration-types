@@ -18,10 +18,6 @@ description: >-
 
 
   This key is only available for standard Add options (without `href`).
-enum:
-  - visual
-  - content
-  - data
 examples:
   - description: >-
       In this example, we have configured a standard add option for the `people`

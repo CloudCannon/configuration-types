@@ -7,10 +7,5 @@ description: |-
   Defaults to the naming convention, or "hex" if that is unset.
 
   This key is only available for Color inputs.
-enum:
-  - rgb
-  - hex
-  - hsl
-  - hsv
 examples: []
 show_in_navigation: false
