@@ -18,6 +18,9 @@ export async function redocumentSchema(
 		return key === '*' ? `${parts.pop()}.*` : key;
 	}
 
+	const traversing = new Set<JsonSchema>();
+	const documented = new Set<JsonSchema>();
+
 	function deref(doc: JsonSchema, ignoreCircular: boolean = false): JsonSchema | undefined {
 		// JSON Schema versions after draft 7
 		while (doc?.$ref && schema.$defs) {
@@ -31,8 +34,8 @@ export async function redocumentSchema(
 			doc = (schema as any).definitions[ref];
 		}
 
-		// Prevents some circular references
-		if (!ignoreCircular && Object.hasOwn(doc, 'documented')) {
+		// Prevents circular references during active traversal
+		if (!ignoreCircular && traversing.has(doc)) {
 			return;
 		}
 
@@ -40,9 +43,11 @@ export async function redocumentSchema(
 	}
 
 	function walk(doc: JsonSchema | undefined, parent: { path: string[]; key?: string }): void {
-		if (!doc || !Object.keys(doc).length || doc.documented) {
+		if (!doc || !Object.keys(doc).length || documented.has(doc)) {
 			return;
 		}
+
+		traversing.add(doc);
 
 		let path = doc.id?.startsWith('type.')
 			? [doc.id || '']
@@ -62,7 +67,9 @@ export async function redocumentSchema(
 		}
 
 		const documentation = documentationEntries[gid];
-		doc.documented = !!documentation;
+		if (documentation) {
+			documented.add(doc);
+		}
 
 		if (documentation?.title) {
 			doc.title = documentation.title;
@@ -208,6 +215,8 @@ export async function redocumentSchema(
 				walk(derefDoc, { path, key });
 			}
 		}
+
+		traversing.delete(doc);
 	}
 
 	walk(schema, { path: [], key: schema.id });

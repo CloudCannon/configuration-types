@@ -9,6 +9,9 @@ content:
   copyformatting: false
   italic: true
   link: true
+  link_options:
+    title:
+      type: 'text'
   redo: false
   removeformat: true
   strike: false
@@ -19,12 +22,20 @@ content:
   blockquote: true
   bulletedlist: true
   code_inline: false
-  code_block: false
+  code_block: true
+  code_block_options:
+    language:
+      type: 'select'
   code: false
   embed: false
   format: p h1 h2 h3 h4 h5 h6
   horizontalrule: false
   image: true
+  image_options:
+    src:
+      type: 'url'
+      options:
+        required: true
   indent: false
   numberedlist: true
   outdent: false
