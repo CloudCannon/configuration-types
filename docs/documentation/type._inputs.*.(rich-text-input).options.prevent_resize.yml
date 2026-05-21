@@ -7,8 +7,5 @@ description: >-
 
 
   Setting this key to `true` will hide the resize handler.
-
-
-  By default, this key is `false` (i.e., the resize handler is shown).
 examples: []
 show_in_navigation: false
