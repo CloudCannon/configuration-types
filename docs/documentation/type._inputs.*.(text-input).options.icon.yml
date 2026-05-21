@@ -7,9 +7,6 @@ description: >-
 
   The value must be an icon name from [Google's Material
   Symbols](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded).
-
-
-  This key is only available for Text inputs.
 examples:
   - description: In this example, we have configured an icon for the *Text Input* `title`.
     language: yaml

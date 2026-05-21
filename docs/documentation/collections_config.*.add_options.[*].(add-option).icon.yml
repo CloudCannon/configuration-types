@@ -12,9 +12,6 @@ description: >-
 
   By default, this key uses the icon of the matching Schema if
   `add_options.schema` is configured. Otherwise, this key defaults to `add`.
-
-
-  This key is only available for standard Add options (without `href`).
 examples:
   - description: >-
       In this example, we have configured a standard add option for the `people`

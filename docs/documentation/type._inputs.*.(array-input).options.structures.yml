@@ -4,8 +4,5 @@ title: ''
 description: >-
   This key defines the data formats for items in this array. When adding an
   item, team members are prompted to choose from the values you have defined.
-
-
-  This key is only available for Array inputs.
 examples: []
 show_in_navigation: false

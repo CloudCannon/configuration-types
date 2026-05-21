@@ -12,8 +12,5 @@ description: >-
 
   By default, this key is `false` (i.e., the add button and context menu actions
   are displayed).
-
-
-  This key is only available for Array inputs.
 examples: []
 show_in_navigation: false

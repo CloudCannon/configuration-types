@@ -892,7 +892,7 @@ export const ObjectInputOptionsSchema = z
 		...RequiredValidationSchema.shape,
 		empty_type: EmptyTypeObjectSchema.optional(),
 		preview: PreviewSchema.optional(),
-		subtype: z.enum(['object', 'mutable', 'tabbed']).optional().meta({
+		subtype: z.enum(['object', 'mutable', 'tabbed']).default('object').optional().meta({
 			description: 'Changes the appearance and behavior of the input.',
 		}),
 		entries: z

@@ -8,8 +8,5 @@ description: |-
   Setting this key to `true` will format labels on mutable object entries.
 
   By default, this key is `false` (i.e., labels are not formatted).
-
-
-  This key is only available for Object inputs.
 examples: []
 show_in_navigation: false

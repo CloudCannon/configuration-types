@@ -7,9 +7,5 @@ description: >-
 
 
   When the containing text exceeds this number, the input becomes a scroll area.
-
-
-  This key is only available for Code inputs.
-default: 30
 examples: []
 show_in_navigation: false

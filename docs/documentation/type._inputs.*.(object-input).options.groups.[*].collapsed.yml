@@ -8,12 +8,5 @@ description: >-
 
 
   Setting this key to `true` will collapse this group when first viewed.
-
-
-  By default, this key is `false` (i.e., the group is expanded when first
-  viewed).
-
-
-  This key is only available for Object inputs.
 examples: []
 show_in_navigation: false

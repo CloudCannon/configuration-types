@@ -4,8 +4,5 @@ title: ''
 description: >-
   This key defines how you can group the inputs inside this object together
   without changing the data structure.
-
-
-  This key is only available for Object inputs.
 examples: []
 show_in_navigation: false

@@ -15,9 +15,6 @@ description: >-
 
   The `add_options.schema` key will override `default_content_file` if
   configured.
-
-
-  This key is only available for standard Add options (without `href`).
 examples:
   - description: >-
       In this example, we want CloudCannon to populate the initial contents of

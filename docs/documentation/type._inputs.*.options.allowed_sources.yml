@@ -12,9 +12,6 @@ description: >-
 
   If `site-files` is omitted from the array, site files will not be available as
   an asset source for this input.
-
-
-  This key is only available for File Inputs.
 examples:
   - description: In this example, we have configured allowed sources for an *Image Input*.
     language: yaml

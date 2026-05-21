@@ -10,9 +10,5 @@ description: >-
 
 
   By default, this key is `false` (i.e., the resize handler is shown).
-
-
-  This key is only available for Rich Text inputs.
-default: false
 examples: []
 show_in_navigation: false

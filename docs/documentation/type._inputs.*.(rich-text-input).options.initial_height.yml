@@ -4,9 +4,5 @@ title: ''
 description: >-
   This key defines the initial height of this input in pixels (px). Supports
   values between 135 and 1200.
-
-
-  This key is only available for Rich Text inputs.
-default: 320
 examples: []
 show_in_navigation: false

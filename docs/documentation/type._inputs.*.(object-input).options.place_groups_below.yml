@@ -1,17 +1,9 @@
 gid: type._inputs.*.(object-input).options.place_groups_below
 url: /configuration-file/types/_inputs/*/(object-input)/options/place_groups_below/
 title: ''
-description: >-
+description: |-
   This key defines which order input groups and ungrouped inputs appear in.
 
-
   Setting this key to `true` will place input groups below ungrouped inputs.
-
-
-  By default, this key is `false` (i.e., groups appear above ungrouped inputs).
-
-
-  This key is only available for Object inputs.
-default: false
 examples: []
 show_in_navigation: false

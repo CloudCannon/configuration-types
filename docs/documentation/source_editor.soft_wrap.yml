@@ -8,7 +8,6 @@ description: >-
 
   Setting this key to `true` will enable soft wrapping of code, allowing long
   lines to wrap to the next line without horizontal scrolling.
-default: true
 examples:
   - description: >-
       In this example, CloudCannon will enable soft wrapping of code in the

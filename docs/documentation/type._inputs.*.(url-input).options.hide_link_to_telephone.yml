@@ -9,12 +9,5 @@ description: >-
 
   Setting this key to `true` will hide the option to link to a telephone number.
   This does not prevent typing a `tel:` link in the input.
-
-
-  By default, this key is `false` (i.e., the option to link to a telephone
-  number is shown).
-
-
-  This key is only available for URL inputs.
 examples: []
 show_in_navigation: false

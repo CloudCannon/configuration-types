@@ -8,9 +8,5 @@ description: >-
 
   When the containing text exceeds this number, the input grows line by line to
   the lines defined by `max_visible_lines`.
-
-
-  This key is only available for Code inputs.
-default: 10
 examples: []
 show_in_navigation: false
