@@ -3,15 +3,15 @@ url: /configuration-file/types/_inputs/*/options/resize_style/
 title: ''
 description: >-
   This key defines how image files are resized prior to upload, using a bounding
-  box defined by `width` and `height` options. This key does not apply to existing
-  images, and does not work if `width` and `height` options are not defined.
+  box defined by `width` and `height` options. This key does not apply to
+  existing images, and does not work if `width` and `height` options are not
+  defined.
 
   Setting this key to `cover` keeps aspect ratio and ensures the image covers
   the bounding box, `contain` keeps aspect ratio and ensures the image fits
   inside the bounding box, `crop` prompts the user with an interface to select
   an aspect-ratio-respecting area, and `stretch` ignores aspect ratio and
   resizes the image to the bounding box.
-
 examples:
   - description: >-
       In this example, we have configured an *Image Input* to resize images
