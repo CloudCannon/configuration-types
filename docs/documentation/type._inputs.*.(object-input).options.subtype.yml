@@ -1,9 +1,6 @@
 gid: type._inputs.*.(object-input).options.subtype
 url: /configuration-file/types/_inputs/*/(object-input)/options/subtype/
 title: ''
-description: |-
-  This key defines the appearance and behavior of the input.
-
-  Value must be one of `object`, `mutable`, or `tabbed`.
+description: This key defines the appearance and behavior of the input.
 examples: []
 show_in_navigation: false

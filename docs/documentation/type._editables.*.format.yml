@@ -7,7 +7,7 @@ description: >-
 
 
   Setting this key to `true` will enable a dropdown menu tool in your WYSIWYG
-  toolbar for structured text. Include a space between each
-  values, e.g. `format: p h1 h2`.
+  toolbar for structured text. Include a space between each values, e.g.
+  `format: p h1 h2`.
 examples: []
 show_in_navigation: false

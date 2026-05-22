@@ -1,0 +1,6 @@
+gid: type._editables.*.code_block_options
+url: /configuration-file/types/_editables/*/code_block_options/
+title: ''
+description: Configure the controls to edit a code block.
+examples: []
+show_in_navigation: false

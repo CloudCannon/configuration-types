@@ -1,0 +1,6 @@
+gid: type._editables.*.link_options
+url: /configuration-file/types/_editables/*/link_options/
+title: ''
+description: Configure the controls to edit hyperlinks around selected text.
+examples: []
+show_in_navigation: false

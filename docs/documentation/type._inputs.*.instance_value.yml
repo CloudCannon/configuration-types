@@ -2,16 +2,15 @@ gid: type._inputs.*.instance_value
 url: /configuration-file/types/_inputs/*/instance_value/
 title: ''
 description: >-
-  This key defines whether an *Input* is automatically populated with a value when
-  the creating a new file, or adding array items containing this
-  *Input*.
+  This key defines whether an *Input* is automatically populated with a value
+  when the creating a new file, or adding array items containing this *Input*.
 
-  Setting this key to `UUID` populates the *Input* with a uuidv4 key
-  (e.g. `6ec0bd7f-11c0-43da-975e-2a8ad9ebae0b`) for
-  identifying unique items (<a
+  Setting this key to `UUID` populates the *Input* with a uuidv4 key (e.g.
+  `6ec0bd7f-11c0-43da-975e-2a8ad9ebae0b`) for identifying unique items (<a
   href="https://softwareengineering.stackexchange.com/a/130298" target="_blank"
-  rel="noopener">extremely unlikely to generate duplicates)</a>, and to
-  `NOW` populates the *Input* with the current datetime in the *Site's* configured timezone.
+  rel="noopener">extremely unlikely to generate duplicates)</a>, and to `NOW`
+  populates the *Input* with the current datetime in the *Site's* configured
+  timezone.
 examples:
   - description: >-
       In this example, we have configured an input to automatically populate
