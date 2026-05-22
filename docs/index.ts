@@ -105,8 +105,9 @@ function docToPage(
 
 	const { config, pages } = ctx;
 
-	const isRootType = doc.id === config.rootTypeId;
-	const isTypeRef = doc.id?.startsWith('type.') && !isRootType;
+	const id = doc.id ?? doc.$ref?.replace('#/$defs/', '');
+	const isRootType = id === config.rootTypeId;
+	const isTypeRef = id?.startsWith('type.') && !isRootType;
 
 	let thisPath: string[];
 	let gid: string;
@@ -114,9 +115,9 @@ function docToPage(
 	if (isRootType) {
 		thisPath = [];
 		gid = config.rootTypeId;
-	} else if (isTypeRef && doc.id) {
-		thisPath = [doc.id];
-		gid = doc.id;
+	} else if (isTypeRef && id) {
+		thisPath = [id];
+		gid = id;
 	} else if (key) {
 		thisPath = [...docPath, key];
 		gid = thisPath.join('.');
@@ -361,6 +362,7 @@ async function processSchema(config: DocSchemaConfig): Promise<{
 		pages: {},
 	};
 
+	schema.id ??= config.rootTypeId;
 	docToPage(schema, { path: [] }, ctx);
 
 	if (ctx.untitledGids.size) {

@@ -314,7 +314,7 @@ export const RichTextInputOptionsSchema = z
 export const RichTextInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
-		type: z.literal(['html', 'markdown']).meta(typeMeta),
+		type: z.enum(['html', 'markdown']).meta(typeMeta),
 		options: RichTextInputOptionsSchema.optional(),
 	})
 	.meta({
@@ -367,7 +367,7 @@ export const DateInputOptionsSchema = z
 export const DateInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
-		type: z.literal(['date', 'datetime']).meta(typeMeta),
+		type: z.enum(['date', 'datetime']).meta(typeMeta),
 		options: DateInputOptionsSchema.optional(),
 	})
 	.meta({
@@ -400,7 +400,7 @@ export const TimeInputSchema = z
 export const FileInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
-		type: z.literal(['file', 'document', 'image']).meta(typeMeta),
+		type: z.enum(['file', 'document', 'image']).meta(typeMeta),
 		options: FileInputOptionsSchema.optional(),
 	})
 	.meta({
@@ -508,7 +508,7 @@ export const ObjectInputOptionsSchema = z
 		...RequiredValidationSchema.shape,
 		empty_type: EmptyTypeObjectSchema.optional(),
 		preview: PreviewSchema.optional(),
-		subtype: z.enum(['object', 'mutable', 'tabbed']).optional().meta({
+		subtype: z.enum(['object', 'mutable', 'tabbed']).default('object').optional().meta({
 			description: 'Changes the appearance and behavior of the input.',
 		}),
 		entries: z
@@ -636,7 +636,7 @@ export const UnknownInputSchema = z
 	});
 
 export const KnownInputSchema = z
-	.discriminatedUnion('type', [
+	.union([
 		TextInputSchema,
 		TextareaInputSchema,
 		CodeInputSchema,

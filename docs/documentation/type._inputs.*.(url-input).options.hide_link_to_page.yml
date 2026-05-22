@@ -7,8 +7,5 @@ description: >-
 
   Setting this key to `true` will hide the option to link to a page. This does
   not prevent typing a file's output URL in the input.
-
-
-  By default, this key is `false` (i.e., the option to link to a page is shown).
 examples: []
 show_in_navigation: false

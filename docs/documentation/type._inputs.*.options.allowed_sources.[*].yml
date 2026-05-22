@@ -6,8 +6,8 @@ description: >-
   browse.
 
 
-  The value can be an array of strings. Valid values include `site-files` and
-  the reference key for any DAM connected to your site.
+  Valid values include `site-files` and the reference key for any DAM connected
+  to your site.
 
 
   If `site-files` is omitted from the array, site files will not be available as

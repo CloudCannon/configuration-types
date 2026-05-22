@@ -6,7 +6,6 @@ description: >-
   Inputs*.
 
 
-
   By default, this key is `basic_dark`.
 examples:
   - description: >-

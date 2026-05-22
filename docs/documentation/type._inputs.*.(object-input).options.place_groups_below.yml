@@ -1,6 +1,9 @@
 gid: type._inputs.*.(object-input).options.place_groups_below
 url: /configuration-file/types/_inputs/*/(object-input)/options/place_groups_below/
 title: ''
-description: This key defines which order input groups and ungrouped inputs appear in.
+description: |-
+  This key defines which order input groups and ungrouped inputs appear in.
+
+  Setting this key to `true` will place input groups below ungrouped inputs.
 examples: []
 show_in_navigation: false

@@ -1,7 +1,12 @@
 gid: type._inputs.*.(text-input).options.icon
 url: /configuration-file/types/_inputs/*/(text-input)/options/icon/
 title: ''
-description: This key defines the icon shown beside the input.
+description: >-
+  This key defines the icon shown beside the input.
+
+
+  The value must be an icon name from [Google's Material
+  Symbols](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded).
 examples:
   - description: In this example, we have configured an icon for the *Text Input* `title`.
     language: yaml

@@ -9,9 +9,6 @@ description: >-
   Setting this key to `true` will hide the color picker interface, requiring
   users to enter color values manually or select from a palette if one is
   configured.
-
-
-  By default, this key is `false` (i.e., the color picker is displayed).
 examples:
   - description: >-
       In this example, we have configured a color input to hide the picker UI,

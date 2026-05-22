@@ -3,7 +3,7 @@ url: /configuration-file/_snippets_imports_from_glob/
 title: ''
 description: >-
   This key defines globs that filter which files CloudCannon should use for
-  *Collection* configuration.
+  Snippet imports configuration.
 
 
   Values in this array are relative to the root of your repository (i.e., `/`,
