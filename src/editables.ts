@@ -161,11 +161,15 @@ export const ToolbarOptionsSchema = z.object({
 			'Enables a control to insert a region of raw HTML, including YouTube, Vimeo, Tweets, and other media. Embedded content is sanitized to mitigate XSS risks, which includes removing style tags. Embeds containing script tags are not loaded in the editor.',
 	}),
 
-	format: z.string().default('p h1 h2 h3 h4 h5 h6').optional().meta({
-		id: 'type._editables.*.format',
-		description:
-			'Enables a drop down menu for structured text. Has options for "p", "h1", "h2", "h3", "h4", "h5", "h6". Set as space separated options (e.g. "p h1 h2").',
-	}),
+	format: z
+		.union([z.string(), z.boolean()])
+		.default('p h1 h2 h3 h4 h5 h6')
+		.optional()
+		.meta({
+			id: 'type._editables.*.format',
+			description:
+				'Enables a drop down menu for structured text. Has options for "p", "h1", "h2", "h3", "h4", "h5", "h6". Set as space separated options (e.g. "p h1 h2"), or `true` to enable with the default options.',
+		}),
 
 	horizontalrule: z.boolean().default(false).optional().meta({
 		id: 'type._editables.*.horizontalrule',

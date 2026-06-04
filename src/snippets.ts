@@ -28,7 +28,8 @@ export const PairedTokenSchema = z
 
 export const SnippetStyleSchema = z
 	.object({
-		output: z.enum(['legacy', 'inline', 'block']),
+		output: z.enum(['legacy', 'inline', 'block']).optional(),
+		between: z.string().optional(),
 		inline: z
 			.object({
 				leading: z.string().optional(),
@@ -85,11 +86,26 @@ export const ParserFormatSchema = z
 		title: 'Snippet Format',
 	});
 
+export const ReferenceSchema = z
+	.object({
+		ref: z.string(),
+	})
+	.meta({
+		id: 'type.snippet-reference',
+		title: 'Reference',
+		description:
+			'References a reusable value defined in `_snippets_definitions` by key, resolved at runtime.',
+	});
+
+export const ParserFormatConfigSchema = z
+	.union([ParserFormatSchema, ReferenceSchema])
+	.optional();
+
 export const ArgumentListParserConfigSchema = z.object({
 	parser: z.literal('argument_list'),
 	options: z.object({
 		models: z.array(ParserModelSchema).optional(),
-		format: ParserFormatSchema,
+		format: ParserFormatConfigSchema,
 	}),
 });
 
@@ -97,7 +113,7 @@ export const ArgumentParserConfigSchema = z.object({
 	parser: z.literal('argument'),
 	options: z.object({
 		model: ParserModelSchema,
-		format: ParserFormatSchema,
+		format: ParserFormatConfigSchema,
 	}),
 });
 
@@ -126,7 +142,7 @@ export const KeyValueListParserConfigSchema = z.object({
 	options: z
 		.object({
 			models: z.array(ParserModelSchema),
-			format: ParserFormatSchema,
+			format: ParserFormatConfigSchema,
 			style: SnippetStyleSchema,
 		})
 		.optional(),
@@ -194,7 +210,13 @@ export const ParserConfigSchema = z.union([
 export const SnippetConfigSchema = z
 	.object({
 		...ReducedCascadeSchema.shape,
-		preview: PreviewSchema.optional(),
+		preview: PreviewSchema.extend({
+			view: z.enum(['card', 'inline', 'gallery']).optional().meta({
+				deprecated: true,
+				description:
+					'Legacy location for the snippet `view` option. Prefer setting `view` at the top level of the snippet config.',
+			}),
+		}).optional(),
 		picker_preview: PickerPreviewSchema.optional(),
 	})
 	.extend({
@@ -216,6 +238,10 @@ export const SnippetConfigSchema = z
 		}),
 		strict_whitespace: z.boolean().optional().meta({
 			description: 'Whether this snippet treats whitespace as-is or not.',
+		}),
+		hidden: z.boolean().default(false).optional().meta({
+			description:
+				'Whether to hide this snippet from the editor interface. Hidden snippets are still parsed, but cannot be inserted by team members.',
 		}),
 		definitions: z.record(z.string(), z.unknown()).optional().meta({
 			description: 'The variables required for the selected template.',

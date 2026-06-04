@@ -2,6 +2,11 @@ import * as z from 'zod';
 
 export const SelectDataValuesSchema = z
 	.union([
+		z.string().meta({
+			title: 'Data Reference',
+			description:
+				'References another dataset by key, in the form `source.key` (e.g. `ssg_data.ssgs`).',
+		}),
 		z.array(z.string()).meta({ title: 'Text Array' }),
 		z.record(z.string(), z.string()).meta({ title: 'Text Object' }),
 		z.array(z.record(z.string(), z.unknown())).meta({ title: 'Object Array' }),
