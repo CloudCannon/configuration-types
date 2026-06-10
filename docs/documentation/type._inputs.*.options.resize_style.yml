@@ -4,7 +4,8 @@ title: ''
 description: >-
   This key defines how image files are resized prior to upload, using a bounding
   box defined by `width` and `height` options (these optionas are required). 
-  This key applies to existing images unless `prevent_resize_existing_files` is set.
+  This key applies to existing images unless `prevent_resize_existing_files` is
+  set.
 
   Setting this key to `cover` keeps aspect ratio and ensures the image covers
   the bounding box, `contain` keeps aspect ratio and ensures the image fits

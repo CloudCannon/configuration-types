@@ -1,0 +1,18 @@
+gid: type._editables.*.image_options.loading
+url: /configuration-file/types/_editables/*/image_options/loading/
+title: ''
+description: ''
+examples:
+  - description: >-
+      In this example, we add a comment to the *loading* control, which toggles
+      lazy loading for the image.
+    language: yaml
+    code: |-
+      _editables:
+        content:
+          image_options:
+            loading:
+              comment: Toggle lazy loading for this image
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

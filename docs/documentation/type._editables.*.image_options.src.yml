@@ -1,0 +1,18 @@
+gid: type._editables.*.image_options.src
+url: /configuration-file/types/_editables/*/image_options/src/
+title: ''
+description: ''
+examples:
+  - description: >-
+      In this example, we add a comment to the *src* control, which sets the
+      image file displayed by the image.
+    language: yaml
+    code: |-
+      _editables:
+        content:
+          image_options:
+            src:
+              comment: The image file to display
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

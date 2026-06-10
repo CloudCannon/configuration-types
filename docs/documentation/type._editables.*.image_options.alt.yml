@@ -1,0 +1,18 @@
+gid: type._editables.*.image_options.alt
+url: /configuration-file/types/_editables/*/image_options/alt/
+title: ''
+description: ''
+examples:
+  - description: >-
+      In this example, we add a comment to the *alt* control, which sets the
+      alternative text describing the image.
+    language: yaml
+    code: |-
+      _editables:
+        content:
+          image_options:
+            alt:
+              comment: Describes the image for screen readers
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

@@ -78,7 +78,8 @@ export async function moveOldDocs(folder: string, gidsInUse: Set<string>): Promi
 export async function writeNewDocs(
 	folder: string,
 	gids: Set<string>,
-	pages: Record<string, Page>
+	pages: Record<string, Page>,
+	documentationEntries: Record<string, DocumentationEntry> = {}
 ): Promise<void> {
 	const folderPath = path.join(process.cwd(), folder);
 	const pageFiles: any[] = [];
@@ -103,16 +104,41 @@ export async function writeNewDocs(
 			newCount++;
 		}
 
+		const page = pages[gid];
+
+		// Override-only doc entries (per-reference example overrides that resolve
+		// to a shared type page) have no page of their own. Round-trip the
+		// authored file as-is so its examples aren't clobbered on rebuild.
+		if (!page) {
+			const entry = documentationEntries[gid] as
+				| (DocumentationEntry & { url?: string })
+				| undefined;
+
+			if (entry) {
+				pageFiles.push({
+					gid,
+					url: entry.url,
+					title: entry.title || '',
+					deprecated: entry.deprecated || undefined,
+					deprecated_description: entry.deprecated_description || undefined,
+					description: entry.description || '',
+					examples: entry.examples || [],
+					show_in_navigation: entry.show_in_navigation ?? false,
+				});
+				return;
+			}
+		}
+
 		pageFiles.push({
 			gid,
-			url: pages[gid]?.url,
-			title: pages[gid]?.title || '',
-			deprecated: pages[gid]?.deprecated || undefined,
-			deprecated_description: pages[gid]?.deprecated_description || undefined,
-			description: pages[gid]?.description || '',
-			examples: pages[gid]?.examples || [],
+			url: page?.url,
+			title: page?.title || '',
+			deprecated: page?.deprecated || undefined,
+			deprecated_description: page?.deprecated_description || undefined,
+			description: page?.description || '',
+			examples: page?.examples || [],
 			show_in_navigation:
-				pages[gid]?.documentation?.show_in_navigation ??
+				page?.documentation?.show_in_navigation ??
 				(gid.startsWith('type.') && gid.split('.').length === 2),
 		});
 	});
