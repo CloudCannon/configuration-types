@@ -1,0 +1,12 @@
+gid: type._editables.*.format.(format-boolean)
+url: /configuration-file/types/_editables/*/format/(format-boolean)/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will display a dropdown menu tool in your
+  WYSIWYG toolbar for structured text.
+
+
+  Setting this key to `true` will enable a dropdown menu tool in your WYSIWYG
+  toolbar for structured text with the default formats.
+examples: []
+show_in_navigation: false

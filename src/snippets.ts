@@ -92,14 +92,13 @@ export const ReferenceSchema = z
 	})
 	.meta({
 		id: 'type.snippet-reference',
-		title: 'Reference',
-		description:
-			'References a reusable value defined in `_snippets_definitions` by key, resolved at runtime.',
+		title: 'Snippet Reference',
 	});
 
 export const ParserFormatConfigSchema = z
 	.union([ParserFormatSchema, ReferenceSchema])
-	.optional();
+	.optional()
+	.meta({ id: 'type.snippet.params.*.options.format' });
 
 export const ArgumentListParserConfigSchema = z.object({
 	parser: z.literal('argument_list'),
@@ -211,11 +210,7 @@ export const SnippetConfigSchema = z
 	.object({
 		...ReducedCascadeSchema.shape,
 		preview: PreviewSchema.extend({
-			view: z.enum(['card', 'inline', 'gallery']).optional().meta({
-				deprecated: true,
-				description:
-					'Legacy location for the snippet `view` option. Prefer setting `view` at the top level of the snippet config.',
-			}),
+			view: z.enum(['card', 'inline', 'gallery']).optional().meta({ deprecated: true }),
 		}).optional(),
 		picker_preview: PickerPreviewSchema.optional(),
 	})
@@ -239,10 +234,7 @@ export const SnippetConfigSchema = z
 		strict_whitespace: z.boolean().optional().meta({
 			description: 'Whether this snippet treats whitespace as-is or not.',
 		}),
-		hidden: z.boolean().default(false).optional().meta({
-			description:
-				'Whether to hide this snippet from the editor interface. Hidden snippets are still parsed, but cannot be inserted by team members.',
-		}),
+		hidden: z.boolean().default(false).optional(),
 		definitions: z.record(z.string(), z.unknown()).optional().meta({
 			description: 'The variables required for the selected template.',
 		}),

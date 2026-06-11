@@ -350,7 +350,6 @@ export const SharedSelectInputOptionsSchema = z.object({
 	allow_empty: z.boolean().optional().meta({
 		id: 'type._inputs.*.options.allow_empty',
 		deprecated: true,
-		description: 'Provides an empty option alongside the options provided by values.',
 	}),
 	values: z
 		.union([

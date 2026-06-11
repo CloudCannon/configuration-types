@@ -162,7 +162,10 @@ export const ToolbarOptionsSchema = z.object({
 	}),
 
 	format: z
-		.union([z.string(), z.boolean()])
+		.union([
+			z.string().meta({ title: 'Format String' }),
+			z.boolean().meta({ title: 'Format Boolean' }),
+		])
 		.default('p h1 h2 h3 h4 h5 h6')
 		.optional()
 		.meta({

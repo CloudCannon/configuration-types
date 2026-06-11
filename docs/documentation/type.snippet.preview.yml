@@ -1,0 +1,29 @@
+gid: type.snippet.preview
+url: /configuration-file/types/snippet/preview/
+title: ""
+description: >-
+  This key defines the appearance of a Card.
+
+
+  You can configure Card preview for [Snippets](/documentation/articles/what-is-a-snippet/), and the Snippet modal.
+
+
+  For more information about previews, please read our documentation on
+  [configuring card
+  previews](/documentation/articles/configure-your-card-previews/).
+examples:
+  - description: >-
+      In this example, we have configured the appearance of the example Snippet's text and subtext.
+    language: yaml
+    code: |-
+      _snippets:
+        example:
+          snippet: "<<example [[param]]>>"
+          preview:
+            text:
+              - text: Example
+            subtext:
+              - key: param
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false
