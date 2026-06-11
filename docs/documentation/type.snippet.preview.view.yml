@@ -1,0 +1,10 @@
+gid: type.snippet.preview.view
+url: /configuration-file/types/snippet/preview/view/
+title: ''
+deprecated: true
+deprecated_description: >-
+  This key is deprecated. Set `view` at the top level of the snippet
+  configuration instead.
+description: This key defines how snippets are rendered inside the editor.
+examples: []
+show_in_navigation: false

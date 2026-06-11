@@ -46,8 +46,7 @@ export const PreviewEntriesSchema = z
 			id: 'type.preview-entry.(array)',
 			title: 'Array',
 		}),
-		PreviewRawTextEntrySchema,
-		PreviewFalseEntrySchema,
+		PreviewEntrySchema,
 	])
 	.meta({ id: 'PreviewEntries' });
 

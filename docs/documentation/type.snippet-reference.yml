@@ -1,0 +1,8 @@
+gid: type.snippet-reference
+url: /configuration-file/types/snippet-reference/
+title: Snippet Reference
+description: >-
+  References a reusable value defined in `_snippets_definitions` by key,
+  resolved at runtime.
+examples: []
+show_in_navigation: true

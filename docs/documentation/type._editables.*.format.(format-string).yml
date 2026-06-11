@@ -1,5 +1,5 @@
-gid: type._editables.*.format
-url: /configuration-file/types/_editables/*/format/
+gid: type._editables.*.format.(format-string)
+url: /configuration-file/types/_editables/*/format/(format-string)/
 title: ''
 description: >-
   This key toggles whether CloudCannon will display a dropdown menu tool in your
@@ -7,7 +7,7 @@ description: >-
 
 
   Setting this key enables a dropdown menu tool in your WYSIWYG toolbar for
-  structured text. Setting this to `true` uses the default formats, restrict
-  these formats with a space-separated string (e.g. `format: p h1 h2`).
+  structured text. Choose the available formats with a space-separated string
+  (e.g. `format: p h1 h2`).
 examples: []
 show_in_navigation: false
