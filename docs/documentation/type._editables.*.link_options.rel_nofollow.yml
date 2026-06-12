@@ -1,0 +1,18 @@
+gid: type._editables.*.link_options.rel_nofollow
+url: /configuration-file/types/_editables/*/link_options/rel_nofollow/
+title: ''
+description: ''
+examples:
+  - description: >-
+      In this example, we add a comment to the *rel_nofollow* control, which
+      toggles whether `rel="nofollow"` is added to the hyperlink.
+    language: yaml
+    code: |-
+      _editables:
+        content:
+          link_options:
+            rel_nofollow:
+              comment: Add rel="nofollow" to this link
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

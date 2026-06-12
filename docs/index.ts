@@ -83,6 +83,34 @@ function getDocumentationEntry(gid: string, ctx: ProcessContext): DocumentationE
 	return ctx.documentationEntries[gid];
 }
 
+function buildPageRef(
+	resolvedPage: Page | undefined,
+	fallbackType: string,
+	contextualGid: string,
+	ctx: ProcessContext
+): PageRef {
+	const pageRef: PageRef = resolvedPage?.gid
+		? { gid: resolvedPage.gid }
+		: { type: fallbackType };
+
+	// When a reference resolves (dedupes) to a shared type page — e.g.
+	// `is_target_blank` resolving to `type._inputs.*.(boolean-input)` — it
+	// inherits that type's documentation, including its examples. Authoring a
+	// YAML file at the contextual path gid (e.g.
+	// `type._editables.*.link_options.is_target_blank`) lets us override the
+	// examples/title/description for just this reference, without removing or
+	// duplicating the shared type.
+	if ('gid' in pageRef && pageRef.gid !== contextualGid) {
+		const override = ctx.documentationEntries[contextualGid];
+		if (override) {
+			ctx.attemptedGids.add(contextualGid);
+			pageRef.documentation = override;
+		}
+	}
+
+	return pageRef;
+}
+
 function getDisplayKey(fullKey: string): string | undefined {
 	const parts = fullKey.split('.');
 	const key = parts.pop();
@@ -220,11 +248,9 @@ function docToPage(
 				ctx
 			);
 
-			const pageRef: PageRef = itemPage?.gid
-				? { gid: itemPage.gid }
-				: { type: item.type || 'unknown' };
-
-			page.items.push(pageRef);
+			page.items.push(
+				buildPageRef(itemPage, item.type || 'unknown', [...thisPath, itemKey].join('.'), ctx)
+			);
 		}
 	}
 
@@ -256,11 +282,12 @@ function docToPage(
 				ctx
 			);
 
-			const pageRef: PageRef = propPage?.gid
-				? { gid: propPage.gid }
-				: { type: property.type || 'unknown' };
-
-			page.properties[propKey] = pageRef;
+			page.properties[propKey] = buildPageRef(
+				propPage,
+				property.type || 'unknown',
+				[...thisPath, propKey].join('.'),
+				ctx
+			);
 		}
 	}
 
@@ -297,11 +324,14 @@ function docToPage(
 				ctx
 			);
 
-			const pageRef: PageRef = additionalPropertyPage?.gid
-				? { gid: additionalPropertyPage.gid }
-				: { type: additionalProperties[i].type || 'unknown' };
-
-			page.additionalProperties.push(pageRef);
+			page.additionalProperties.push(
+				buildPageRef(
+					additionalPropertyPage,
+					additionalProperties[i].type || 'unknown',
+					[...thisPath, additionalPropertyKey].join('.'),
+					ctx
+				)
+			);
 		}
 	}
 
@@ -327,11 +357,14 @@ function docToPage(
 				ctx
 			);
 
-			const pageRef: PageRef = anyOfPage?.gid
-				? { gid: anyOfPage.gid }
-				: { type: doc.anyOf[i].type || 'unknown' };
-
-			page.anyOf.push(pageRef);
+			page.anyOf.push(
+				buildPageRef(
+					anyOfPage,
+					doc.anyOf[i].type || 'unknown',
+					[...thisPath, anyOfKey].join('.'),
+					ctx
+				)
+			);
 		}
 	}
 
@@ -375,7 +408,7 @@ async function processSchema(config: DocSchemaConfig): Promise<{
 	}
 
 	await moveOldDocs(config.docsFolder, ctx.attemptedGids);
-	await writeNewDocs(config.docsFolder, ctx.attemptedGids, ctx.pages);
+	await writeNewDocs(config.docsFolder, ctx.attemptedGids, ctx.pages, ctx.documentationEntries);
 
 	return {
 		pages: ctx.pages,

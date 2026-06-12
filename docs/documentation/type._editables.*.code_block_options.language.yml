@@ -1,0 +1,18 @@
+gid: type._editables.*.code_block_options.language
+url: /configuration-file/types/_editables/*/code_block_options/language/
+title: ''
+description: ''
+examples:
+  - description: >-
+      In this example, we add a comment to the *language* control, which sets
+      the syntax highlighting language for a code block.
+    language: yaml
+    code: |-
+      _editables:
+        content:
+          code_block_options:
+            language:
+              comment: Choose the syntax highlighting language
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

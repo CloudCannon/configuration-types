@@ -1,0 +1,18 @@
+gid: type._editables.*.image_options.title
+url: /configuration-file/types/_editables/*/image_options/title/
+title: ''
+description: ''
+examples:
+  - description: >-
+      In this example, we add a comment to the *title* control, which sets the
+      tooltip text shown when hovering over the image.
+    language: yaml
+    code: |-
+      _editables:
+        content:
+          image_options:
+            title:
+              comment: Tooltip text shown when hovering the image
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

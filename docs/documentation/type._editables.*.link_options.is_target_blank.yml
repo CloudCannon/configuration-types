@@ -1,0 +1,18 @@
+gid: type._editables.*.link_options.is_target_blank
+url: /configuration-file/types/_editables/*/link_options/is_target_blank/
+title: ''
+description: ''
+examples:
+  - description: >-
+      In this example, we add a comment to the *is_target_blank* control, which
+      toggles whether the hyperlink opens in a new browser tab.
+    language: yaml
+    code: |-
+      _editables:
+        content:
+          link_options:
+            is_target_blank:
+              comment: Open this link in a new browser tab
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

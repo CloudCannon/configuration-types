@@ -1,0 +1,18 @@
+gid: type._editables.*.link_options.href
+url: /configuration-file/types/_editables/*/link_options/href/
+title: ''
+description: ''
+examples:
+  - description: >-
+      In this example, we add a comment to the *href* control, which sets the
+      destination URL of the hyperlink.
+    language: yaml
+    code: |-
+      _editables:
+        content:
+          link_options:
+            href:
+              comment: The destination this link points to
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false
