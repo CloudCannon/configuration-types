@@ -1,0 +1,18 @@
+gid: type._inputs.*.options.encode_url
+url: /configuration-file/types/_inputs/*/options/encode_url/
+title: ''
+description: This key defines whether the value is URL encoded on change.
+examples:
+  - description: >-
+      In this example, we have configured a *File Input* to encode URLs to
+      prepare for filenames that may contain spaces.
+    language: yaml
+    code: |-
+      _inputs:
+        file_path:
+          type: file
+          options:
+            encode_url: true
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false
