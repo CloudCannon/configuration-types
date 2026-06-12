@@ -298,6 +298,9 @@ export const FileInputOptionsSchema = z
 			description:
 				'Prevents file uploads inside the "Select existing file/image" file browser modal window.',
 		}),
+		encode_url: z.boolean().default(false).optional().meta({
+			id: 'type._inputs.*.options.encode_url',
+		}),
 	})
 	.meta({
 		description: 'Options that are specific to File Inputs.',
