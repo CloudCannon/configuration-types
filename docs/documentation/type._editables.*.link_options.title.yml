@@ -1,18 +1,22 @@
 gid: type._editables.*.link_options.title
 url: /configuration-file/types/_editables/*/link_options/title/
 title: ''
-description: ''
+description: This key defines the input for a hyperlink's title text.
 examples:
   - description: >-
-      In this example, we add a comment to the *title* control, which sets the
-      tooltip text shown when hovering over the hyperlink.
+      In this example, we have configured the `title` input with a custom label,
+      comment, and placeholder.
     language: yaml
     code: |-
       _editables:
         content:
           link_options:
             title:
+              type: text
+              label: Title
               comment: Tooltip text shown when hovering the link
+              options:
+                placeholder: Add a tooltip for this link
     annotations: []
     source: /cloudcannon.config.yml
 show_in_navigation: false

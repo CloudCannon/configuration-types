@@ -1,17 +1,21 @@
 gid: type._editables.*.link_options.rel_noreferrer
 url: /configuration-file/types/_editables/*/link_options/rel_noreferrer/
 title: ''
-description: ''
+description: >-
+  This key defines the input for toggling whether `rel="noreferrer"` is added to
+  a hyperlink.
 examples:
   - description: >-
-      In this example, we add a comment to the *rel_noreferrer* control, which
-      toggles whether `rel="noreferrer"` is added to the hyperlink.
+      In this example, we have configured the `rel_noreferrer` input with a
+      custom label and comment.
     language: yaml
     code: |-
       _editables:
         content:
           link_options:
             rel_noreferrer:
+              type: switch
+              label: Add noreferrer
               comment: Add rel="noreferrer" to this link
     annotations: []
     source: /cloudcannon.config.yml
