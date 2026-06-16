@@ -49,7 +49,7 @@ Descriptions originate in `src/*.ts` zod schemas, via `.meta({ description })`. 
 
 Some `docs/documentation/*.yml` files are hand-authored overrides for keys whose reference resolves (dedupes) to a shared type page. For example, the `_editables` `*_options` sub-keys resolve to a shared input type. The override mechanism is `buildPageRef` in `docs/index.ts` plus the round-trip in `docs/docs.ts` (`writeNewDocs`), which preserves these files on rebuild.
 
-The same writing conventions apply wherever the text is authored, so a `.meta` string and a YAML `description` are governed identically by this guide. Note that much of the existing `src/.meta` still uses a terser legacy voice; see the alignment note in [Section 3](#3-description).
+The same writing conventions apply wherever the text is authored, so a `.meta` string and a YAML `description` are governed identically by this guide. Note that much of the existing `src/.meta` still uses a terser legacy voice; see the note on legacy voice in [Section 3](#3-description).
 
 ### Where descriptions surface
 
@@ -128,7 +128,7 @@ description: >-
   The base URL will prefix the output URL of each file.
 ```
 
-The keys in the configuration cascade (`_inputs`, `_select_data`, `_structures`) hold a map of things at a given level of the cascade. Use the cascade boilerplate, and add the optional article trailer when a relevant article exists:
+The keys in the configuration cascade (`_inputs`, `_select_data`, `_structures`) hold a map of things at a given level of the cascade. Use the cascade boilerplate (and optionally close with a "Further reading" trailer, as above, when a relevant article exists):
 
 ```
 This key defines which [things] are available at a given level of the configuration cascade.
@@ -136,8 +136,6 @@ This key defines which [things] are available at a given level of the configurat
 This key has no default.
 
 If undefined at higher levels of the [configuration cascade](/documentation/articles/using-the-configuration-cascade/), `X` will default to any values configured in the [CloudCannon configuration file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
-
-For more information, please read our documentation on [topic](link).
 ```
 
 Here is an example from `type._inputs.yml`:
@@ -178,7 +176,7 @@ description: >-
   options.
 
 
-  Select inputs only allow one value.
+  *Select Inputs* only allow one value.
 examples:
   - description: >-
       In this example, we have configured the `category` key as a *Select
@@ -270,7 +268,7 @@ Each example has these fields:
 
 - **`description`.** Phrase this as "In this example, we have configured … to …".
 - **`language`.** This is usually `yaml`, and is sometimes `markdown`, `liquid`, or `css`.
-- **`code`.** Write the snippet as a YAML literal block (`|-`).
+- **`code`.** Write a multi-line snippet as a YAML literal block (`|-`); a single-line value may be inline, as in the `base_url` example below.
 - **`source`.** Give the path where the snippet belongs, usually `/cloudcannon.config.yml`, and sometimes `/page.md` or a per-file config path.
 - **`annotations`.** Leave this as `[]` in most cases. When you need callouts, provide a list of `{number, content}` entries, each tied to a code line by a `___N___` suffix on the keyed line. This suffix notation assumes a YAML keyed line, so it does not apply cleanly to other example languages. The web reference renders these as numbered badges on the code, while the IDE lists the callout content as plain numbered text below the code (with the markers stripped), so write each callout to read on its own.
 
@@ -349,7 +347,7 @@ Because you may not have the docs repo checked out, the minimal local subset you
 - **Avoid em dashes.** Rephrase the sentence, or use a period or parentheses instead.
 - **Describe, do not evaluate.** Avoid words like "powerful", "simply", "easily", and "just".
 - **Italicize product and UI nouns** with `*asterisks*` in description prose, such as `*Collection*`, `*Collection Browser*`, `*Visual Editor*`, `*Schema*`, and `*Input*`, along with named input types like `*Object Input*`, `*Select Input*`, `*Multiselect Input*`, and `*Text Input*`.
-- **Capitalize the B in "Collection Browser"** (per the docs repo). The current corpus mostly uses lowercase "Collection browser", so prefer the capitalized form in new writing; aligning the corpus is a separate task.
+- **Capitalize the B in "Collection Browser"** (per the docs repo). The current corpus mostly uses lowercase "Collection browser", so prefer the capitalized form in new writing.
 - **Write "WYSIWYG" as plain text**, not italicized, as in "WYSIWYG toolbar".
 
 Some formatting is specific to this repo and is not covered by the docs guide:
@@ -399,6 +397,7 @@ Never edit on `main`. Propose commits rather than committing automatically.
 - [ ] The `title` is left `''`, unless the page is a named type page.
 - [ ] The description opens with `defines`, `toggles`, or `represents`, and never with availability, status, or a prerequisite.
 - [ ] The description is self-contained, with no "as above" or "the following".
+- [ ] The description does not restate what the reference auto-generates: the default value, allowed values, the "Required" pill, or the object's child keys (the properties table).
 - [ ] Boolean-value keys use the two-sentence pattern and call out the non-default value, while Boolean-input keys do not.
 - [ ] Terminology, capitalization, and spelling match the docs repo, using US English, no em dashes, italics on UI nouns, and backticks on keys and values.
 - [ ] The `url` is not hand-edited.
@@ -409,5 +408,5 @@ Never edit on `main`. Propose commits rather than committing automatically.
 
 | Date | Version | Change |
 | --- | --- | --- |
-| June 16, 2026 | 1.1 | Added "Required" (the auto-rendered pill) and the object's child keys (the auto-rendered properties table) to the "do not restate" list; dropped the child-key enumeration sentence from the input-definition template; enriched the input-type-page format in the agents file to match §3 (opener, distinguishing context, required example); added the "Default behavior" rule for keys with no schema default but a runtime-derived default (describe it as behavior, not a value); trimmed the legacy-voice note down to the rule, moving the alignment-pass tracking out of the guide; lifted the optional "Further reading" trailer out of the cascade template into the general follow-ups, marked explicitly optional; changed the example rule to require at least one self-contained example per key (up to three for distinct common configurations), since readers land on a page directly from search; clarified that `___N___` annotations assume a YAML keyed line and render as badges on the web but as plain numbered text in the IDE. |
+| June 16, 2026 | 1.1 | Added "Required" (the auto-rendered pill) and the object's child keys (the auto-rendered properties table) to the "do not restate" list; dropped the child-key enumeration sentence from the input-definition template; enriched the input-type-page format in the agents file to match §3 (opener, distinguishing context, required example); added the "Default behavior" rule for keys with no schema default but a runtime-derived default (describe it as behavior, not a value); trimmed the legacy-voice note down to the rule, moving the alignment-pass tracking out of the guide; lifted the optional "Further reading" trailer out of the cascade template into the general follow-ups, marked explicitly optional; changed the example rule to require at least one self-contained example per key (up to three for distinct common configurations), since readers land on a page directly from search; clarified that `___N___` annotations assume a YAML keyed line and render as badges on the web but as plain numbered text in the IDE; review pass: italicized the named input types in the select/multiselect/choice/multichoice model descriptions, removed the trailer from the cascade boilerplate (covered by "Further reading"), moved the "Collection Browser" corpus-alignment note out of the guide, softened the `code` literal-block rule for single-line values, and added a "do not restate" checklist item. |
 | June 12, 2026 | 1.0 | Initial guide: organized by doc-file field (title, description, examples); description voice unified on "This key …" across both surfaces (`src/.meta` and docs YAML) with the terser legacy voice noted as an alignment target; terminology deferral to the docs repo; doc-file fields; build and verification. |

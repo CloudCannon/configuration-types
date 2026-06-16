@@ -6,7 +6,7 @@ description: >-
   options.
 
 
-  Multichoice inputs allow several values.
+  *Multichoice Inputs* allow several values.
 examples:
   - description: >-
       In this example, we have configured the `categories` key as a *Multichoice

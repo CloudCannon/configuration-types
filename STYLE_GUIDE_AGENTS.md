@@ -45,7 +45,7 @@ description_opening_patterns:
     default: "This key defines ..."
     boolean_value: "This key toggles whether ..."        # see key_category_templates.boolean_value
     array_item_or_entry: "This key represents ..."        # also for noun-ish type/value entries (not bare noun phrases)
-  option_group_parent: "This key defines the controls/options ..."  # a 'defines' variant; value is a group of sub-keys (e.g. link_options); not "Configure the ..."
+  option_group_parent: "This key defines the controls for ..."  # a 'defines' variant; value is a group of sub-keys (e.g. link_options); not "Configure the ..."
   after_the_opener:               # cover these in following sentences as the key warrants; never as the opening sentence
     interactions_and_prerequisites: "how it relates to / requires / overrides other keys, e.g. 'This key requires you to define `options.required`.'"
     availability: "which narrower set of input types a key applies to when its schema location is broader. For options in the shared _inputs.*.options bag that apply to only some input types (e.g. options.required lists the input types it supports). Redundant (skip) if the key is already nested under a type-specific parent (e.g. show_count under (textarea-input).options), since Appears in shows it."
@@ -90,7 +90,7 @@ key_category_templates:
       This key has no default.
 
       If undefined at higher levels of the [configuration cascade](/documentation/articles/using-the-configuration-cascade/), `X` will default to any values configured in the [CloudCannon configuration file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
-    optional_trailer: "For more information, please read our documentation on [topic](link)."
+    # Optional "Further reading" trailer (see after_the_opener.further_reading) may follow when a relevant article exists.
   object_input:                # type._inputs.*, editables *_options sub-keys (value is an input definition)
     template: "This key defines the input for [purpose]."
     note: "Do not enumerate the object's child keys; the reference auto-renders a properties table of every child key it can contain (see do_not_restate.properties_table)."
@@ -158,7 +158,7 @@ examples_rules:
     ISO8601 string), show that branch's specific value shape.
   description: "Phrase as 'In this example, we have configured ... to ...'."
   language: "Mostly yaml; also markdown, liquid, css."
-  code: "YAML literal block (|-)."
+  code: "Multi-line snippet as a YAML literal block (|-); a single-line value may be inline."
   source: "Where the snippet belongs, mostly /cloudcannon.config.yml; also /page.md and per-file config paths."
   annotations:
     default: "[]"

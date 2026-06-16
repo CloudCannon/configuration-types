@@ -6,7 +6,7 @@ description: >-
   options.
 
 
-  Select inputs only allow one value.
+  *Select Inputs* only allow one value.
 examples:
   - description: >-
       In this example, we have configured the `category` key as a *Select

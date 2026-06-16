@@ -6,7 +6,7 @@ description: >-
   options.
 
 
-  Choice inputs only allow one value.
+  *Choice Inputs* only allow one value.
 examples:
   - description: In this example, we have configured the `status` key as a *Choice Input*.
     language: yaml

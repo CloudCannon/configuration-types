@@ -6,7 +6,7 @@ description: >-
   options.
 
 
-  Multiselect inputs allow several values.
+  *Multiselect Inputs* allow several values.
 examples:
   - description: >-
       In this example, we have configured the `tags` key as a *Multiselect
