@@ -89,9 +89,7 @@ function buildPageRef(
 	contextualGid: string,
 	ctx: ProcessContext
 ): PageRef {
-	const pageRef: PageRef = resolvedPage?.gid
-		? { gid: resolvedPage.gid }
-		: { type: fallbackType };
+	const pageRef: PageRef = resolvedPage?.gid ? { gid: resolvedPage.gid } : { type: fallbackType };
 
 	// When a reference resolves (dedupes) to a shared type page — e.g.
 	// `is_target_blank` resolving to `type._inputs.*.(boolean-input)` — it
