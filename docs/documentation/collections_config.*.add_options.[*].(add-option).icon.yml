@@ -10,12 +10,12 @@ description: >-
   Symbols](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded).
 
 
-  By default, this key uses the icon of the matching Schema if
-  `add_options.schema` is configured. Otherwise, this key defaults to `add`.
+  If you do not set this key, CloudCannon uses the icon of the matching *Schema*
+  when `add_options.schema` is configured, and `add` otherwise.
 examples:
   - description: >-
       In this example, we have configured a standard add option for the `people`
-      Collection with the custom icon `support_agent`.
+      *Collection* with the custom icon `support_agent`.
     language: yaml
     code: |-
       collections_config:

@@ -3,11 +3,11 @@ url: /configuration-file/collections_config/*/schemas/*/remove_extra_inputs/
 title: ''
 description: >-
   This key toggles whether CloudCannon will remove inputs that are not present
-  in a Schema from a file before loading it in an Editing Interface.
+  in a *Schema* from a file before loading it in an Editing Interface.
 
 
   Setting this key to `false` will preserve inputs that are not present in a
-  Schema, making them visible in the [Visual
+  *Schema*, making them visible in the [Visual
   Editor](/documentation/articles/what-is-the-visual-editor/), [Content
 
   Editor](/documentation/articles/what-is-the-content-editor/), and [Data
@@ -16,7 +16,7 @@ description: >-
 examples:
   - description: >-
       In this example, CloudCannon will preserve extra inputs in files using the
-      `article` schema in the `blog` Collection.
+      `article` schema in the `blog` *Collection*.
     language: yaml
     code: |-
       collections_config:

@@ -2,22 +2,22 @@ gid: collections_config.*.name
 url: /configuration-file/collections_config/*/name/
 title: ''
 description: >-
-  This key defines the display name for a Collection.
+  This key defines the display name for a *Collection*.
 
 
   The name appears in the *Site Navigation* and at the top of the *Collection
-  browser*.
+  Browser*.
 
 
-  Changing the display name does not affect the Collection key name.
+  Changing the display name does not affect the *Collection* key name.
 
 
-  By default, CloudCannon uses the Collection key name in title case (i.e.,
-  `blog_files` becomes "Blog Files").
+  If you do not set this key, CloudCannon uses the *Collection* key name in
+  title case (for example, `blog_files` becomes "Blog Files").
 examples:
   - description: >-
-      In this example, CloudCannon will call the `blog` Collection "Travel Blog"
-      in the *Site Navigation* and the *Collection browser*.
+      In this example, CloudCannon will call the `blog` *Collection* "Travel
+      Blog" in the *Site Navigation* and the *Collection Browser*.
     language: yaml
     code: |-
       collections_config:

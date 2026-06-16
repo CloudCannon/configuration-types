@@ -9,10 +9,10 @@ description: >-
   source](/documentation/developer-reference/configuration-file/source/).
 
 
-  Each Collection must have a unique path.
+  Each *Collection* must have a unique path.
 examples:
   - description: >-
-      In this example, the files for the `blog` Collection are located in the
+      In this example, the files for the `blog` *Collection* are located in the
       `content/blog` folder.
     language: yaml
     code: |-

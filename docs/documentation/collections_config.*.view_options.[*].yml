@@ -7,11 +7,11 @@ description: >-
 
 
   The value is a string that specifies a view option for the View dropdown in
-  the *Collection browser*. The first option listed is used as the default view.
+  the *Collection Browser*. The first option listed is used as the default view.
 examples:
   - description: >-
       In this example, we have configured a view option for the
-      `developer_articles` Collection.
+      `developer_articles` *Collection*.
     language: yaml
     code: |-
       collections_config:

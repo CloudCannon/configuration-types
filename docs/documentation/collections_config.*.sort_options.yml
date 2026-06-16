@@ -3,22 +3,23 @@ url: /configuration-file/collections_config/*/sort_options/
 title: ''
 description: >-
   This key defines the options for the *Sort* dropdown in a *Collection
-  browser*.
+  Browser*.
 
 
-  Configuring sort options for a Collection will remove CloudCannon's default
+  Configuring sort options for a *Collection* will remove CloudCannon's default
   sorting options from the *Sort* dropdown.
 
 
-  By default, CloudCannon provides sorting options for path, file size, file
-  creation time, and last modified, in ascending and descending order.
+  If you do not set this key, CloudCannon provides sorting options for path,
+  file size, file creation time, and last modified, in ascending and descending
+  order.
 
 
-  CloudCannon will also read data keys from your early Collection files and
+  CloudCannon will also read data keys from your early *Collection* files and
   provide options to sort by those key values.
 examples:
   - description: >-
-      In this example, the *Sort* dropdown in the `blog` *Collection browser*
+      In this example, the *Sort* dropdown in the `blog` *Collection Browser*
       only contains options for sorting by `author` and `date` in ascending and
       descending order.
     language: yaml

@@ -3,22 +3,22 @@ url: /configuration-file/collections_config/*/disable_add/
 title: ''
 description: >-
   This key toggles whether team members can use the *+ Add* button in the top
-  right of the *Collection browser* to add files to a Collection.
+  right of the *Collection Browser* to add files to a *Collection*.
 
 
   Setting this key to `true` will prevent team members from adding new files
-  through the *Collection browser*. This key does not affect your ability to add
+  through the *Collection Browser*. This key does not affect your ability to add
   files using the *File browser*.
 
 
   If both `disable_add` and `disable_add_folder` are set to `true`, the *\+ Add*
   button will not
 
-  appear in the top right of the *Collection browser*.
+  appear in the top right of the *Collection Browser*.
 examples:
   - description: >-
       In this example, we want to prevent team members from adding new files to
-      the `data` Collection through the *Collection browser*.
+      the `data` *Collection* through the *Collection Browser*.
     language: yaml
     code: |-
       collections_config:

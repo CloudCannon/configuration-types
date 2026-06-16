@@ -6,15 +6,15 @@ description: >-
 
 
   The value is an array of glob pattern strings. Each string specifies a file
-  path pattern relative to the Collection path. Globs can be positive (e.g.,
+  path pattern relative to the *Collection* path. Globs can be positive (e.g.,
   `*.yml`) or negative (e.g., `!**/*.json`).
 
 
-  Files are included in a Collection if they match any positive globs and do not
-  match any negative globs.
+  Files are included in a *Collection* if they match any positive globs and do
+  not match any negative globs.
 examples:
   - description: >-
-      In this example, the `data` Collection uses an array of glob patterns to
+      In this example, the `data` *Collection* uses an array of glob patterns to
       show only `.yml` files, except for the `secret.yml` file.
     language: yaml
     code: |-

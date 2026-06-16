@@ -8,7 +8,7 @@ description: >-
 examples:
   - description: >-
       In this example, the *\+ Add* button dropdown in the `team` *Collection
-      browser* uses a link option with the text "Office Locations" to navigate
+      Browser* uses a link option with the text "Office Locations" to navigate
       to the Office Locations page on our live website.
     language: yaml
     code: |-

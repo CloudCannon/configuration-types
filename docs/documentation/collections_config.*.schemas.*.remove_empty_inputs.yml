@@ -3,13 +3,13 @@ url: /configuration-file/collections_config/*/schemas/*/remove_empty_inputs/
 title: ''
 description: >-
   This key toggles whether CloudCannon will remove empty inputs from a file
-  using a given Schema before persisting them to your file.
+  using a given *Schema* before persisting them to your file.
 
 
   Setting this key to `true` will remove empty inputs from a file using a given
-  Schema before persisting them to your file. CloudCannon considers an input to
-  be empty when its value is `null`, `' '`, or undefined. If this key is true,
-  empty inputs will be visible in the [Data
+  *Schema* before persisting them to your file. CloudCannon considers an input
+  to be empty when its value is `null`, `' '`, or undefined. If this key is
+  true, empty inputs will be visible in the [Data
   Editor](/documentation/articles/what-is-the-data-editor/) and the sidebar of
   the
 
@@ -21,7 +21,7 @@ description: >-
 examples:
   - description: >-
       In this example, CloudCannon will remove empty inputs in files using the
-      `article` schema in the `blog` Collection.
+      `article` schema in the `blog` *Collection*.
     language: yaml
     code: |-
       collections_config:

@@ -6,7 +6,7 @@ description: >-
   Editor](/documentation/articles/what-is-the-visual-editor/).
 
 
-  The Visual Editor will load the new preview URL and use Editable Regions, or
+  The *Visual Editor* will load the new preview URL and use Editable Regions, or
   Data Bindings and Previews, to render your page without saving or building.
 
 
@@ -16,8 +16,8 @@ description: >-
   Domain](/documentation/articles/what-is-a-custom-domain/).
 examples:
   - description: >-
-      In this example, the Visual Editor will open the `/about/` page when you
-      open an unbuilt page from the `blog` Collection.
+      In this example, the *Visual Editor* will open the `/about/` page when you
+      open an unbuilt page from the `blog` *Collection*.
     language: yaml
     code: |-
       collections_config:

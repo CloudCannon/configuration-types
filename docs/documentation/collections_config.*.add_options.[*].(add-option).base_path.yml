@@ -7,20 +7,20 @@ description: >-
   button dropdown.
 
 
-  This path overrides the path for the current Collection and subfolder open in
-  the *Collection browser*.
+  This path overrides the path for the current *Collection* and subfolder open
+  in the *Collection Browser*.
 
 
   This key is useful if you need to specify a specific subfolder within a
-  Collection.
+  *Collection*.
 examples:
   - description: >-
-      In this example, we want team members in the `_posts` Collection to create
-      new files in the`blog` subfolder of the `_drafts` Collection rather than
-      the current *Collection browser* they have open. By configuring the
-      `base_path` value to `/../_drafts/blog`, new files will be created in a
-      different Collection subfolder (i.e., `_drafts`) when a team member
-      selects this option from the *\+ Add* button dropdown.
+      In this example, we want team members in the `_posts` *Collection* to
+      create new files in the`blog` subfolder of the `_drafts` *Collection*
+      rather than the current *Collection Browser* they have open. By
+      configuring the `base_path` value to `/../_drafts/blog`, new files will be
+      created in a different *Collection* subfolder (i.e., `_drafts`) when a
+      team member selects this option from the *\+ Add* button dropdown.
     language: yaml
     code: |-
       collections_config:

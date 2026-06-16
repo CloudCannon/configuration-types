@@ -3,10 +3,10 @@ url: /configuration-file/collections_config/*/schemas/*/reorder_inputs/
 title: ''
 description: >-
   This key toggles whether CloudCannon will reorder inputs in a file to match
-  the order defined in a given Schema.
+  the order defined in a given *Schema*.
 
 
   Setting this key to `false` will preserve the existing order of inputs in a
-  file, regardless of the order defined in the Schema.
+  file, regardless of the order defined in the *Schema*.
 examples: []
 show_in_navigation: false

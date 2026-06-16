@@ -3,8 +3,8 @@ url: /configuration-file/collections_config/*/include_developer_files/
 title: ''
 description: >-
   This key toggles whether CloudCannon removes developer files from your
-  *Collection browser*. CloudCannon excludes files that probably shouldn't be
-  edited in a CMS from your *Collection browser*, for example files like
+  *Collection Browser*. CloudCannon excludes files that probably shouldn't be
+  edited in a CMS from your *Collection Browser*, for example files like
   `README.md` or
 
   `package.json`. CloudCannon excludes these files even if you have configured
@@ -19,7 +19,7 @@ description: >-
 examples:
   - description: >-
       In this example, we want to see developer files in the *Collection
-      browser* for the `data` Collection.
+      Browser* for the `data` *Collection*.
     language: yaml
     code: |-
       collections_config:

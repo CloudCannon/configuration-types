@@ -7,15 +7,11 @@ description: >-
 
 
   The value is a string that specifies a URL. Values can be an external URL or
-  an internal URL relative to the current Site.
-
-
-  This key is required for URL add options in the
-  `collections_config.*.add_options` array.
+  an internal URL relative to the current *Site*.
 examples:
   - description: >-
       In this example, the *\+ Add* button dropdown in the `team` *Collection
-      browser* uses a link option with the URL `https://forms.gle/xxxxxxx`.
+      Browser* uses a link option with the URL `https://forms.gle/xxxxxxx`.
     language: yaml
     code: |-
       collections_config:

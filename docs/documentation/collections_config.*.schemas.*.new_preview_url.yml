@@ -6,11 +6,11 @@ description: >-
   page's output URL.
 
 
-  The Visual Editor will load that set preview URL and use Editable Regions, or
-  Data Bindings and Previews, to render your new page without saving.
+  The *Visual Editor* will load that set preview URL and use Editable Regions,
+  or Data Bindings and Previews, to render your new page without saving.
 
 
   For example `new_preview_url: /about/` will load the `/about/` URL on new or
-  unbuilt pages in the Visual Editor.
+  unbuilt pages in the *Visual Editor*.
 examples: []
 show_in_navigation: false

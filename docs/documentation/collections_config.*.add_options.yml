@@ -3,21 +3,21 @@ url: /configuration-file/collections_config/*/add_options/
 title: ''
 description: >-
   This key defines the options available in the *\+ Add* button dropdown at the
-  top right of your *Collection browser*.
+  top right of your *Collection Browser*.
 
 
-  Configuring add options for a Collection will remove CloudCannon's default
+  Configuring add options for a *Collection* will remove CloudCannon's default
   "Add a file" option from the *\+ Add* button dropdown.
 
 
-  Additionally, any Schemas you have configured for a Collection will also
+  Additionally, any *Schemas* you have configured for a *Collection* will also
   appear in the *\+ Add* dropdown.
 examples:
   - description: >-
       In this example, we have configured two standard add options for the
-      `people` Collection. The first option uses the `employee` Schema, and the
-      second option uses the `contractor` Schema and opens files in the [Data
-      Editor](/documentation/articles/what-is-the-data-editor/).
+      `people` *Collection*. The first option uses the `employee` *Schema*, and
+      the second option uses the `contractor` *Schema* and opens files in the
+      [Data Editor](/documentation/articles/what-is-the-data-editor/).
     language: yaml
     code: |-
       collections_config:
@@ -40,7 +40,7 @@ examples:
     source: /cloudcannon.config.yml
   - description: >-
       In this example, the *\+ Add* button dropdown in the `team` *Collection
-      browser* has a link to the Office Locations page on our live website.
+      Browser* has a link to the Office Locations page on our live website.
     language: yaml
     code: |-
       collections_config:
