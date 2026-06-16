@@ -6,8 +6,8 @@ description: >-
   WYSIWYG toolbar for structured text.
 
 
-  Setting this key enables a dropdown menu tool in your WYSIWYG toolbar for
-  structured text. Setting this to `true` uses the default formats, restrict
-  these formats with a space-separated string (e.g. `format: p h1 h2`).
+  Setting this key to `true` displays the dropdown menu with the default
+  formats. To restrict which formats appear, set this key to a space-separated
+  string instead, for example `p h1 h2`.
 examples: []
 show_in_navigation: false

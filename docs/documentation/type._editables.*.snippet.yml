@@ -8,6 +8,6 @@ description: >-
 
 
   Setting this key to `true` will enable a tool in your WYSIWYG toolbar to
-  insert a Snippet.
+  insert a *Snippet*.
 examples: []
 show_in_navigation: false

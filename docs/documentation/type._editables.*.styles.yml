@@ -2,8 +2,12 @@ gid: type._editables.*.styles
 url: /configuration-file/types/_editables/*/styles/
 title: ''
 description: >-
-  This key toggles whether CloudCannon will display a dropdown menu in your
-  WYSIWYG toolbar to apply a style to selected text.
+  This key defines the path to the CSS file containing the styles CloudCannon
+  offers in a dropdown menu in your WYSIWYG toolbar.
+
+
+  Each style is the combination of an element and a class name. The value can be
+  the path to the source or the build-output CSS file.
 examples:
   - description: >-
       In this example, we have enabled a dropdown menu in our WYSIWYG toolbar to

@@ -6,11 +6,7 @@ description: >-
   toolbar to create an inline code element, containing any selected text.
 
 
-  Setting this key to `true` will enable a control in your WYSIWYG toolbar to
-  create an inline code element.
-
-
-  By default, this key is `false` (i.e., the inline code control is not
-  displayed).
+  Setting this key to `true` will display the inline code control in your
+  WYSIWYG toolbar.
 examples: []
 show_in_navigation: false
