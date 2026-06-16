@@ -7,10 +7,6 @@ description: >-
 
 
   Setting this key to `true` will output subscript text as `~sub~` in Markdown.
-
-
-  By default, this key is `false` (i.e., subscript text is not output in tildes
-  format).
 examples:
   - description: >-
       In this example, we have configured Markdown to output subscript text

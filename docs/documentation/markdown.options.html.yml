@@ -8,10 +8,6 @@ description: >-
 
   Setting this key to `true` will allow HTML tags in the Markdown source to be
   output in the resulting HTML.
-
-
-  By default, this key is `false` (i.e., HTML tags in Markdown source are not
-  output).
 examples:
   - description: >-
       In this example, we have configured Markdown to output HTML tags from

@@ -7,10 +7,6 @@ description: >-
 
 
   Setting this key to `true` will convert HTML tables to Markdown table format.
-
-
-  By default, this key is `false` (i.e., tables are not output in Markdown
-  format).
 examples:
   - description: >-
       In this example, we have configured Markdown to output tables in Markdown

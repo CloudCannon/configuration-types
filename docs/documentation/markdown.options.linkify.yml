@@ -8,10 +8,6 @@ description: >-
 
   Setting this key to `true` will automatically convert text that looks like
   URLs into clickable links.
-
-
-  By default, this key is `false` (i.e., URL-like text is not automatically
-  converted to links).
 examples:
   - description: >-
       In this example, we have configured Markdown to automatically convert

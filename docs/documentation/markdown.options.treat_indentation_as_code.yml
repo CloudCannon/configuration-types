@@ -8,10 +8,6 @@ description: >-
 
   Setting this key to `true` will read indented blocks (4 spaces) as code
   blocks.
-
-
-  By default, this key is `false` (i.e., indented blocks are not treated as code
-  blocks).
 examples:
   - description: >-
       In this example, we have configured Markdown to treat 4 spaces of

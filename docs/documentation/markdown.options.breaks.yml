@@ -8,10 +8,6 @@ description: >-
 
   Setting this key to `true` will convert line breaks within paragraphs into
   `<br>` tags.
-
-
-  By default, this key is `false` (i.e., line breaks in paragraphs are not
-  converted to `<br>` tags).
 examples:
   - description: >-
       In this example, we have configured Markdown to convert line breaks in
