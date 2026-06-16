@@ -2,13 +2,13 @@ gid: type._inputs.*.context
 url: /configuration-file/types/_inputs/*/context/
 title: ''
 description: |-
-  This key defines a context box for extra information about an Input.
+  This key defines a context box for extra information about an *Input*.
 
   This key has no default.
 examples:
   - description: >-
-      In this example, we want to add a context box to our `date_created` Input
-      to explain its purpose.
+      In this example, we want to add a context box to our `date_created`
+      *Input* to explain its purpose.
     language: yaml
     code: |-
       _inputs:

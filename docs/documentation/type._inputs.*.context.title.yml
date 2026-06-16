@@ -5,7 +5,7 @@ description: This key defines the title of the context box.
 examples:
   - description: >-
       In this example, we want to customize the context box title to be more
-      descriptive for our `author_bio` Input.
+      descriptive for our `author_bio` *Input*.
     language: yaml
     code: |-
       _inputs:

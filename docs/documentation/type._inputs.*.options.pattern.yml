@@ -3,14 +3,14 @@ url: /configuration-file/types/_inputs/*/options/pattern/
 title: ''
 description: >-
   This key defines a [regular expression](https://re2js.leopard.in.ua/) that the
-  Input value must match.
+  *Input* value must match.
 
 
   When configured, CloudCannon will require you to enter a value that matches
   the REGEX pattern.
 
 
-  If the Input already contains an invalid value, CloudCannon will require you
+  If the *Input* already contains an invalid value, CloudCannon will require you
   to enter a valid string to save your changes, or discard your unsaved
 
   changes.
@@ -28,15 +28,15 @@ description: >-
   This key has no default.
 
 
-  This key is available for Code, Color, File, Select, Text, Rich Text, and URL
-  Inputs.
+  This key is available for Code, Color, File, Select, Text, Rich Text, and *URL
+  Inputs*.
 
 
-  To use this key in a Select Input, `allow_create` must be set to `true`.
+  To use this key in a *Select Input*, `allow_create` must be set to `true`.
 examples:
   - description: >-
       In this example, we want our team to add an email address to the
-      `contact_email` Input using the correct email format.
+      `contact_email` *Input* using the correct email format.
     language: yaml
     code: |-
       _inputs:

@@ -13,10 +13,10 @@ description: >-
 
 
   This key is available for Array, Code, Color, Date and Time, File, Number,
-  Object, Select and Multiselect, Text, Rich Text, and URL Inputs.
+  Object, Select and Multiselect, Text, Rich Text, and *URL Inputs*.
 examples:
   - description: >-
-      In this example, we prompt our team to enter an Input value using a
+      In this example, we prompt our team to enter an *Input* value using a
       required message.
     language: yaml
     code: |-

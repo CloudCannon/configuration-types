@@ -15,10 +15,7 @@ description: >-
   enabled. Has no effect if `allow_create` is not enabled.
 
 
-  Available for Mutable Objects only.
-
-
-  By default, this key is `[]`.
+  This key is available for mutable *Object Inputs* only.
 examples:
   - description: >-
       In this example, we have configured an allowed key name for entries in a

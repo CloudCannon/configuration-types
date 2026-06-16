@@ -3,16 +3,17 @@ url: /configuration-file/types/_inputs/*/options/value_key/
 title: ''
 description: >-
   This key defines the key used for mapping between saved values and objects in
-  values.
+  `values`.
 
 
-  This changes how the input saves selected values to match.
+  This changes how the *Input* saves selected values to match.
 
 
-  Defaults to checking for "id", "uuid", "path", "title", then "name".
+  If you do not set this key, CloudCannon checks for `id`, `uuid`, `path`,
+  `title`, then `name`.
 
 
-  Has no effect unless values is an array of objects, the key is used instead
-  for objects, and the value itself is used for primitive types.
+  This key has no effect unless `values` is an array of objects. For objects,
+  CloudCannon uses this key; for primitive types, it uses the value itself.
 examples: []
 show_in_navigation: false

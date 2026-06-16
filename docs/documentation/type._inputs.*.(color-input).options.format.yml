@@ -1,9 +1,11 @@
 gid: type._inputs.*.(color-input).options.format
 url: /configuration-file/types/_inputs/*/(color-input)/options/format/
 title: ''
-description: |-
+description: >-
   This key defines what format the color value is saved as.
 
-  Defaults to the naming convention, or "hex" if that is unset.
+
+  If you do not set this key, CloudCannon follows the naming convention, or uses
+  `hex` when the convention is unset.
 examples: []
 show_in_navigation: false

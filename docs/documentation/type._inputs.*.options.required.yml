@@ -2,7 +2,7 @@ gid: type._inputs.*.options.required
 url: /configuration-file/types/_inputs/*/options/required/
 title: ''
 description: >-
-  This key toggles whether CloudCannon requires this Input to have a value.
+  This key toggles whether CloudCannon requires this *Input* to have a value.
 
 
   Setting this key to `true` will require you to enter a value to save your
@@ -14,7 +14,7 @@ description: >-
 examples:
   - description: >-
       In this example, we want to require our team to enter an `author` value
-      for markup files with this Input.
+      for markup files with this *Input*.
     language: yaml
     code: |-
       _inputs:

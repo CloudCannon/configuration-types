@@ -11,7 +11,7 @@ description: >-
   This key has no default.
 
 
-  This key is available for Date and Time Inputs.
+  This key is available for *Date* and *Time Inputs*.
 examples:
   - description: >-
       In this example, we prompt our team to enter a valid date using a custom

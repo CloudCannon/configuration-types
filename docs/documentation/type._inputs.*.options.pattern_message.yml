@@ -12,12 +12,12 @@ description: >-
   This key has no default.
 
 
-  This key is available for Code, Color, File, Select, Text, Rich Text, and URL
-  Inputs.
+  This key is available for Code, Color, File, Select, Text, Rich Text, and *URL
+  Inputs*.
 examples:
   - description: >-
       In this example, we prompt our team to use the correct email format in the
-      `contact_email` Input using a pattern message.
+      `contact_email` *Input* using a pattern message.
     language: yaml
     code: |-
       _inputs:

@@ -1,6 +1,6 @@
 gid: type._inputs.*.(array-input).options
 url: /configuration-file/types/_inputs/*/(array-input)/options/
 title: ''
-description: This key defines options that are specific to Array Inputs.
+description: This key defines the controls for *Array Inputs*.
 examples: []
 show_in_navigation: false

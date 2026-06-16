@@ -1,6 +1,11 @@
 gid: type._inputs.*.(array-input)
 url: /configuration-file/types/_inputs/*/(array-input)/
 title: Array Input
-description: This key defines a user interface for lists of inputs or input groups.
+description: >-
+  This key defines an editing interface for a list of inputs or input groups.
+
+
+  *Array Inputs* use the `array` type and store a list of values, where each
+  item can be a nested input or input group.
 examples: []
 show_in_navigation: false

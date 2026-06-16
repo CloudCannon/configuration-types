@@ -1,6 +1,9 @@
 gid: type._inputs.*.(object-input)
 url: /configuration-file/types/_inputs/*/(object-input)/
 title: Object Input
-description: This key defines a user interface for a group of inputs.
+description: |-
+  This key defines an editing interface for a group of nested inputs.
+
+  *Object Inputs* use the `object` type and store a set of keyed values.
 examples: []
 show_in_navigation: false

@@ -15,7 +15,7 @@ description: >-
 examples:
   - description: >-
       In this example, we want our team to add article filepaths to the
-      `related_articles` Input. This Input requires all the filepaths to be
+      `related_articles` *Input*. This *Input* requires all the filepaths to be
       unique.
     language: yaml
     code: |-

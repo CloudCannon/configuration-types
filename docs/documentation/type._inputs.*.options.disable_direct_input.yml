@@ -3,8 +3,8 @@ url: /configuration-file/types/_inputs/*/options/disable_direct_input/
 title: ''
 description: >-
   This key toggles whether CloudCannon will prevent typing into the text field
-  of a File or URL Input, while still allowing context menu options to change
-  the value.
+  of a *File* or *URL Input*, while still allowing context menu options to
+  change the value.
 
 
   Setting this key to `true` will prevent typing into the input text field.

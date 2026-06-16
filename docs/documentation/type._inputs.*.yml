@@ -17,7 +17,7 @@ description: >-
 examples:
   - description: >-
       In this example, we have configured the `title` key as a *Text Input* in
-      the `blog` Collection.
+      the `blog` *Collection*.
     language: yaml
     code: |-
       collections_config:
