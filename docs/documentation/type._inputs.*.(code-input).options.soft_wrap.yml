@@ -6,11 +6,8 @@ description: >-
 
 
   Setting this key to `true` will wrap lines that exceed the width of the code
-  area to the next line without adding a line break character.
-
-
-  By default, this key is `false` (i.e., long lines extend horizontally and
-  require horizontal scrolling).
+  area to the next line without adding a line break character, rather than
+  extending them horizontally with a scrollbar.
 examples:
   - description: >-
       In this example, we have configured a code input to enable soft line

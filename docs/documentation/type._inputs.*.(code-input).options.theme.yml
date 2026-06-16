@@ -4,9 +4,6 @@ title: ''
 description: >-
   This key defines the color theme used for syntax highlighting in *Code
   Inputs*.
-
-
-  By default, this key is `basic_dark`.
 examples:
   - description: >-
       In this example, we have configured a code input to use the `dracula`

@@ -8,9 +8,7 @@ description: >-
   vertically resize the input.
 
 
-  Setting this key to `false` will hide the resize handler.
-
-
-  By default, this key is `true` (i.e., the resize handler is shown).
+  Setting this key to `false` will hide the resize handler, which is shown by
+  default.
 examples: []
 show_in_navigation: false

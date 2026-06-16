@@ -8,9 +8,5 @@ description: >-
 
   Setting this key to `true` will hide the context menu actions for removing
   items.
-
-
-  By default, this key is `false` (i.e., the context menu actions for removing
-  items are displayed).
 examples: []
 show_in_navigation: false

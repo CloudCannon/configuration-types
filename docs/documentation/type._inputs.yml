@@ -11,9 +11,7 @@ description: >-
 
   If undefined at higher levels of the [configuration
   cascade](/documentation/articles/using-the-configuration-cascade/), `_inputs`
-  will default to any
-
-  values configured in the [CloudCannon configuration
+  will default to any values configured in the [CloudCannon configuration
   file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
 examples:
   - description: >-

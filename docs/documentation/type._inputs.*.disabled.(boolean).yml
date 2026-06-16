@@ -13,9 +13,6 @@ description: >-
 
 
   When set to `false`, team members can edit the input value normally.
-
-
-  By default, this key is `false` (i.e., team members can edit input values).
 examples:
   - description: >-
       In this example, we have configured a datetime input to be disabled using

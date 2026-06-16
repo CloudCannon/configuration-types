@@ -6,11 +6,7 @@ description: >-
   toolbar to insert a code block in editable regions.
 
 
-  Setting this key to `true` will enable a control in your WYSIWYG toolbar to
-  insert a code block.
-
-
-  By default, this key is `false` (i.e., the code block control is not
-  displayed).
+  Setting this key to `true` will display the code block control in your WYSIWYG
+  toolbar.
 examples: []
 show_in_navigation: false

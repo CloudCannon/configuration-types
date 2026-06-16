@@ -10,7 +10,7 @@ description: >-
   of the selected color.
 
 
-  By default, this key uses the naming convention (i.e., enabled if the input
-  key ends with "a").
+  If you do not set this key, CloudCannon shows the transparency control when
+  the input key ends with "a", following the naming convention.
 examples: []
 show_in_navigation: false

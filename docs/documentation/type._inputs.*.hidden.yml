@@ -7,7 +7,7 @@ description: >-
 
 
   Hidden inputs are useful when you want an input to exist, but not be visible
-  or editable outside of the Source Editor.
+  or editable outside of the *Source Editor*.
 
 
   Value can be a boolean or a string. A boolean value of `true` will hide the
@@ -29,7 +29,7 @@ description: >-
   quotation marks.
 
 
-  By default, this key follows the input naming convention where key names
-  beginning with an underscore are hidden `true`.
+  If you do not set this key, CloudCannon hides inputs whose key names begin
+  with an underscore, following the naming convention.
 examples: []
 show_in_navigation: false

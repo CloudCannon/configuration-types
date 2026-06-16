@@ -7,9 +7,8 @@ description: >-
 
 
   Disabled inputs are useful if you want CloudCannon to display the input value,
-  but prevent team members from editing the value outside of the Source
-
-  Editor.
+  but prevent team members from editing the value outside of the *Source
+  Editor*.
 
 
   The value of this key can be a boolean or a string. A boolean value of `true`
@@ -30,9 +29,6 @@ description: >-
 
   For reverse values in `YAML` files, the string should be in `'` or `"`
   quotation marks.
-
-
-  By default, this key is `false` (i.e., team members can edit input values).
 examples:
   - description: >-
       In this example, we have configured the `date_created` Date input, which

@@ -14,9 +14,8 @@ description: >-
   When set to `false`, CloudCannon displays the input normally.
 
 
-  By default, this key follows the input naming convention where key names
-  beginning with an underscore are hidden (`true`). Otherwise, this key defaults
-  to `false` (i.e., the input is visible).
+  If you do not set this key, CloudCannon hides inputs whose key names begin
+  with an underscore, following the naming convention.
 examples:
   - description: >-
       In this example, we have configured an input to be hidden using a boolean

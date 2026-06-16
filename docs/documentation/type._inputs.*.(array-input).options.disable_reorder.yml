@@ -7,9 +7,5 @@ description: >-
 
 
   Setting this key to `true` will hide the controls for moving items.
-
-
-  By default, this key is `false` (i.e., the controls for moving items are
-  displayed).
 examples: []
 show_in_navigation: false
