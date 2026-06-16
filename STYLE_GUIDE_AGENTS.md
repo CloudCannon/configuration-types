@@ -47,12 +47,14 @@ description_opening_patterns:
     array_item_or_entry: "This key represents ..."        # also for noun-ish type/value entries (not bare noun phrases)
   option_group_parent: "This key defines the controls/options ..."  # a 'defines' variant; value is a group of sub-keys (e.g. link_options); not "Configure the ..."
   after_the_opener:               # cover these in following sentences as the key warrants; never as the opening sentence
-    no_default: "State 'This key has no default.' when the key has none; the reference renders nothing otherwise, and the silence can read as a doc gap."
     interactions_and_prerequisites: "how it relates to / requires / overrides other keys, e.g. 'This key requires you to define `options.required`.'"
-    availability: "which narrower context a key applies to when its schema location is broader, e.g. 'This key is available for Date and Time Inputs.' For options in the shared _inputs.*.options bag that apply to only one input type. Redundant (skip) if the key is already nested under a type-specific parent, since Appears in shows it."
+    availability: "which narrower set of input types a key applies to when its schema location is broader. For options in the shared _inputs.*.options bag that apply to only some input types (e.g. options.required lists the input types it supports). Redundant (skip) if the key is already nested under a type-specific parent (e.g. show_count under (textarea-input).options), since Appears in shows it."
+    no_default: "State 'This key has no default.' when the key has neither a schema default nor a derived default behavior (see default_behavior); the reference renders nothing otherwise, and the silence can read as a doc gap."
+    default_behavior: "When a key has NO schema default but CloudCannon derives one at runtime (naming convention, site flag, value of another key), the reference shows nothing, so describe that behavior. Phrase as behavior ('If you do not set this key, CloudCannon ...'), NOT as a value ('By default, this key is `X`'). For a boolean, can fold into the non-default sentence."
     non_obvious_behavior: "edge cases, side effects, or recommendations the type alone doesn't convey"
+    further_reading: "OPTIONAL and uncommon trailer, only when a genuinely relevant article exists: 'For more information, please read our documentation on [topic](link).' Never add as a default. Applies to any key, not just cascade keys."
   do_not_restate:                 # the reference + IDE auto-render these from the schema; keep them OUT of the prose
-    defaults_to: "an actual default VALUE (from `default`); but DO state 'This key has no default.' when there is none (see after_the_opener.no_default)"
+    defaults_to: "an actual default VALUE (from a schema `default`); but DO state 'This key has no default.' when there is none (see after_the_opener.no_default), and describe a derived default as behavior when there is no schema default (see after_the_opener.default_behavior)"
     allowed_values: "an enum's options (from `enum`)"
     appears_in: "the structural parent location(s) where the key sits; but add an availability sentence (see after_the_opener.availability) when a shared key applies to only a narrower context this can't show"
     required: "the red 'Required' pill (auto-derived from the schema `required` array); never write 'this key is required'"
@@ -63,11 +65,10 @@ description_opening_patterns:
     - "Descriptions must be self-contained; they render in isolation. No 'as above' / 'the following'."
   legacy_voice:
     note: >-
-      Many existing src/*.ts .meta strings use a terser legacy voice: imperative
+      Some existing src/*.ts .meta strings use a terser legacy voice: imperative
       openings (Enables/Sets/Hides/Controls/Provides/Changes...) and bare noun
-      phrases (A single..., An array of...). These surface in IDE hovers for keys
-      with no docs/documentation/*.yml page.
-    rule: "Write new/edited descriptions in the 'This key ...' voice. Converting remaining legacy strings is a separate alignment pass."
+      phrases (A single..., An array of...). Do not mirror that voice.
+    rule: "Write new/edited descriptions in the 'This key ...' voice, even when revising a legacy string."
 
 key_category_templates:
   boolean_value:               # value is a literal true/false (e.g. code_block, disable_add)
@@ -148,7 +149,13 @@ doc_file_fields:               # docs/documentation/*.yml
     - "url"
 
 examples_rules:
-  max_examples: 1              # 0 or 1 per entry, never 2+
+  min_examples: 1              # EVERY key has at least one example
+  max_examples: 3              # up to 3 when each shows a distinct, common configuration option
+  standalone: >-
+    Each page must stand on its own; readers land via search without seeing the parent. Write a small but
+    COMPLETE snippet showing the key in context. Repeating parent context is fine and often necessary. A
+    trivial example (e.g. a single boolean set to `true`) still counts. For a union-branch key (e.g. date vs
+    ISO8601 string), show that branch's specific value shape.
   description: "Phrase as 'In this example, we have configured ... to ...'."
   language: "Mostly yaml; also markdown, liquid, css."
   code: "YAML literal block (|-)."
@@ -158,7 +165,9 @@ examples_rules:
     when_used: >-
       Numbered callouts [{number, content}] linked to code lines via a `___N___`
       suffix on the keyed line (e.g. `data_config___1___:` ties to annotation
-      number 1).
+      number 1). Suffix assumes a YAML keyed line; does not apply cleanly to other
+      languages. Web renders badges on the code; IDE lists callout content as plain
+      numbered text below the code (markers stripped). Write each callout standalone.
   fictional_names: "Use 'Jetstream' for fictional company / team / URL examples."
 
 build:

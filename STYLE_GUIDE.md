@@ -84,16 +84,18 @@ Every description uses the "This key …" voice, wherever it is authored, in `sr
 
 [Templates by key kind](#templates-by-key-kind) gives the exact template and a real example for each.
 
-The opening sentence says what the key does, and you should cover everything else in following sentences. Add whatever the reader needs that the reference does not already show:
+The opening sentence says what the key does, and you should cover everything else in following sentences. Add whatever the reader needs that the reference does not already show, in roughly the order below:
 
-- **No default.** State `This key has no default.` when the key has none, because the reference renders nothing in that case and the silence can read as a documentation gap.
 - **Interactions and prerequisites.** Explain how the key relates to, requires, or overrides others, as in "This key requires you to define `options.required`."
-- **Availability.** Name the narrower context a key applies to when its schema location is broader, as in "This key is available for Date and Time Inputs." Use this for options that sit in the shared `_inputs.*.options` bag but apply to only one input type, because "Appears in" shows only the shared parent. When the key is already nested under a type-specific parent, "Appears in" conveys this and the sentence is redundant.
+- **Availability.** Name the narrower set of input types a key applies to when its schema location is broader. Use this for options that sit in the shared `_inputs.*.options` bag but apply to only some input types, because "Appears in" shows only the shared parent. The `options.required` key does this, listing the input types it supports. When the key is already nested under a type-specific parent, as `show_count` is under `(textarea-input).options`, "Appears in" conveys this and the sentence is redundant.
+- **No default.** State `This key has no default.` when the key has neither a default nor a derived default behavior (see below), because the reference renders nothing in that case and the silence can read as a documentation gap.
+- **Default behavior.** When a key has no schema default but CloudCannon still derives one at runtime (for example from a naming convention, a site flag, or the value of another key), the reference shows nothing, so describe that behavior in a following sentence. Phrase it as behavior, as in "If you do not set this key, CloudCannon shows the transparency control when the input key ends with `a`", rather than as a value like "By default, this key is `true`". For a boolean, you can fold this into the non-default sentence instead.
 - **Non-obvious behavior.** Note any edge cases, side effects, or recommendations that the type alone does not convey.
+- **Further reading.** When a genuinely relevant article exists, you may close with a trailer that links to it, in the form "For more information, please read our documentation on [topic](link)." This is optional and uncommon, so add it only when there is a real article to point to, never as a default.
 
 Do not restate what the reference auto-generates from the schema. When a default or allowed values exist, the published reference and IDE render them as their own fields, so leave them out of the prose:
 
-- **Defaults to.** The reference shows the default value from `default`. State `This key has no default.` when there is none, as above, but never restate an actual default value.
+- **Defaults to.** The reference shows the default value from a schema `default`, so never restate an actual default value. State `This key has no default.` when there is none, as above, and describe a derived default as behavior when there is no schema default, as in "Default behavior" above.
 - **Allowed values.** The reference lists an enum's options from `enum`.
 - **Appears in.** The reference shows the structural parent locations where the key sits. When a shared key applies to only a narrower context, add an availability sentence as above, because "Appears in" can only show the shared parent.
 - **Required.** The reference shows a red "Required" pill, derived from the schema's `required` array, so never write that a key is required.
@@ -101,7 +103,7 @@ Do not restate what the reference auto-generates from the schema. When a default
 
 These additions are follow-ups, not openers, because the opening sentence always leads with what the key does.
 
-The existing `src/*.ts` `.meta` strings are a known alignment target. Many of them still use a terser legacy voice: imperative openings such as "Enables a control to…", "Sets…", "Hides…", and "Controls…", along with bare noun phrases. These predate this guide and surface in IDE hovers for keys that have no `docs/documentation/*.yml` page. Write new and edited descriptions in the "This key …" voice. Converting the remaining legacy strings so that IDE hovers match the web reference is a separate alignment pass, much like the terminology alignment in [Section 5](#5-terminology-capitalization-spelling).
+Some existing `src/*.ts` `.meta` strings still use a terser legacy voice, with imperative openings such as "Enables…", "Sets…", "Hides…", and "Controls…", or bare noun phrases. Do not mirror that voice. Write new and edited descriptions in the "This key …" voice, even when you are revising a legacy string.
 
 Descriptions must be self-contained. Each one renders in isolation in the reference and may be quoted out of context, so never write "as described above" or "the following keys".
 
@@ -196,8 +198,6 @@ examples:
     source: /cloudcannon.config.yml
 ```
 
-Most input-type pages do not yet meet this bar, since many are one-liners with no example, and bringing them up is part of the alignment pass.
-
 The option-group and parent keys have a value that is a group of related sub-keys, for example `link_options`:
 
 ```
@@ -262,7 +262,9 @@ description: >-
 
 ## 4. Examples
 
-An entry has zero or one example, never two or more. For complex configuration, use a single well-annotated example.
+Every key has at least one example, and up to three when separate examples show different common configuration options. Readers can land on a single reference page through search without seeing its parent, so each page must stand on its own.
+
+Write each example as a small but complete snippet that shows the key in context. Repeating context from a parent key is fine, and often necessary, so the page makes sense on its own. A trivial example, such as a single boolean set to `true`, is still worth including. When a key's value is one branch of a union (for example a date versus an ISO8601 string), show the specific value shape that branch accepts, since a reader who lands on the branch page sees only that form.
 
 Each example has these fields:
 
@@ -270,7 +272,7 @@ Each example has these fields:
 - **`language`.** This is usually `yaml`, and is sometimes `markdown`, `liquid`, or `css`.
 - **`code`.** Write the snippet as a YAML literal block (`|-`).
 - **`source`.** Give the path where the snippet belongs, usually `/cloudcannon.config.yml`, and sometimes `/page.md` or a per-file config path.
-- **`annotations`.** Leave this as `[]` in most cases. When you need callouts, provide a list of `{number, content}` entries, each tied to a code line by a `___N___` suffix on the keyed line.
+- **`annotations`.** Leave this as `[]` in most cases. When you need callouts, provide a list of `{number, content}` entries, each tied to a code line by a `___N___` suffix on the keyed line. This suffix notation assumes a YAML keyed line, so it does not apply cleanly to other example languages. The web reference renders these as numbered badges on the code, while the IDE lists the callout content as plain numbered text below the code (with the markers stripped), so write each callout to read on its own.
 
 Use "Jetstream" for any fictional company, team, or URL in examples.
 
@@ -287,29 +289,54 @@ examples:
     source: /cloudcannon.config.yml
 ```
 
-Here is an annotated example from `data_config.yml`. Note that the `___1___` markers in `code` are matched by `number: 1` in `annotations`:
+Here is an annotated example from `type.structure.id_key.yml`. Note that the `___1___`, `___2___`, and `___3___` markers in `code` are matched by `number: 1`, `2`, and `3` in `annotations`:
 
 ```yaml
     code: |-
-      data_config___1___:
-        authors:
-          path___2___: data/authors.csv
-        offices:
-          path___3___: data/offices
+      _inputs:
+        content_blocks___1___:
+          type: array
+          options:
+            structures: _structures.page_components
+      _structures:
+        page_components:
+          id_key___2___: component
+          values:
+            - label: Hero Component
+              value:
+                component___3___: hero
+                title:
+                description:
+                image_path:
+                link:
+                  text:
+                  url:
+            - label: Feature Component
+              value:
+                component: feature
+                image_path:
+                title:
+                description:
+                button:
+                  link:
+                  text:
+                reversed_layout: false
+            - label: Video Component
+              value:
+                component: video
+                image_path:
+                videoUrl:
     annotations:
       - number: 1
         content: >-
-          Configure all data files or folders under the `data_config` key in
-          your [CloudCannon configuration
-          file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
+          We have configured the Array input `content_blocks` to use the
+          `page_components` Structures.
       - number: 2
-        content: >-
-          *Select Inputs* and *Multiselect Inputs* which use the `authors` key
-          are populated by the contents of the `authors.csv` file.
+        content: The `id_key` for `page_components` is `component`.
       - number: 3
         content: >-
-          *Select Inputs* and *Multiselect Inputs* which use the `offices` key
-          are populated by the contents of each file in the `offices` folder.
+          Each option in the `values` array has the `component` key with a
+          different value to identify that option.
 ```
 
 ## 5. Terminology, capitalization, spelling
@@ -375,12 +402,12 @@ Never edit on `main`. Propose commits rather than committing automatically.
 - [ ] Boolean-value keys use the two-sentence pattern and call out the non-default value, while Boolean-input keys do not.
 - [ ] Terminology, capitalization, and spelling match the docs repo, using US English, no em dashes, italics on UI nouns, and backticks on keys and values.
 - [ ] The `url` is not hand-edited.
-- [ ] The entry has at most one example, and the example description reads "In this example, we have configured …".
+- [ ] Every key has at least one example (up to three), each a self-contained snippet that stands on its own (repeating parent context is fine), and every example description reads "In this example, we have configured …".
 - [ ] `npm run build` runs clean, producing no `documentation-unused/` directory and only the changes you intended.
 
 ## 9. Revision history
 
 | Date | Version | Change |
 | --- | --- | --- |
-| June 16, 2026 | 1.1 | Added "Required" (the auto-rendered pill) and the object's child keys (the auto-rendered properties table) to the "do not restate" list; dropped the child-key enumeration sentence from the input-definition template; enriched the input-type-page format in the agents file to match §3 (opener, distinguishing context, required example). |
+| June 16, 2026 | 1.1 | Added "Required" (the auto-rendered pill) and the object's child keys (the auto-rendered properties table) to the "do not restate" list; dropped the child-key enumeration sentence from the input-definition template; enriched the input-type-page format in the agents file to match §3 (opener, distinguishing context, required example); added the "Default behavior" rule for keys with no schema default but a runtime-derived default (describe it as behavior, not a value); trimmed the legacy-voice note down to the rule, moving the alignment-pass tracking out of the guide; lifted the optional "Further reading" trailer out of the cascade template into the general follow-ups, marked explicitly optional; changed the example rule to require at least one self-contained example per key (up to three for distinct common configurations), since readers land on a page directly from search; clarified that `___N___` annotations assume a YAML keyed line and render as badges on the web but as plain numbered text in the IDE. |
 | June 12, 2026 | 1.0 | Initial guide: organized by doc-file field (title, description, examples); description voice unified on "This key …" across both surfaces (`src/.meta` and docs YAML) with the terser legacy voice noted as an alignment target; terminology deferral to the docs repo; doc-file fields; build and verification. |

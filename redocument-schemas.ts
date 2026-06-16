@@ -119,8 +119,23 @@ export async function redocumentSchema(
 				}
 
 				if (example?.code) {
+					// `___N___` annotation markers are a web-reference rendering device that the IDE
+					// (markdownDescription) does not process, so strip them before embedding the code.
+					const code = example.code.trim().replace(/___\d+___/g, '');
 					doc.description += '\n\n';
-					doc.description += `\`\`\`${example.language?.trim() || ''}\n${example.code?.trim()}\n\`\`\``;
+					doc.description += `\`\`\`${example.language?.trim() || ''}\n${code}\n\`\`\``;
+				}
+
+				if (example?.annotations?.length) {
+					// The web reference renders annotations as numbered callouts on the code; the IDE
+					// cannot, so list their content here to keep the explanation.
+					for (let j = 0; j < example.annotations.length; j++) {
+						const annotation = example.annotations[j];
+						if (annotation?.content) {
+							doc.description += '\n\n';
+							doc.description += `${annotation.number}. ${annotation.content.trim()}`;
+						}
+					}
 				}
 			}
 		}
