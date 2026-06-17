@@ -1,7 +1,7 @@
 # configuration-types Documentation Style Guide
 
-**Last Updated:** June 16, 2026
-**Version:** 1.1
+**Last Updated:** June 18, 2026
+**Version:** 1.2
 
 This guide sets the writing standards for the documentation in this repo: the `title`, `description`, and `examples` that generate CloudCannon's published configuration-file reference. It applies to descriptions wherever they are authored, whether in `src/*.ts` zod `.meta({ description })` strings or in `docs/documentation/*.yml` files.
 
@@ -354,6 +354,7 @@ Some formatting is specific to this repo and is not covered by the docs guide:
 
 - **Use backticks** for schema key names, config paths, dotted key paths, and literal values, such as `` `_inputs` ``, `` `options.required` ``, `` `true` ``, and `` `/cloudcannon.config.yml` ``.
 - **Cross-reference another key** with its backticked dot-path, as in "This key requires you to define `options.required`."
+- **Name a key's folder, path, file, or value with the backticked key.** When prose refers to the thing a key defines, backtick the key name, as in "the files in your `source` folder" or "the `uploads` path". This applies even when the word reads like a plain noun, because it names the configured key.
 - **Write links** as markdown to `/documentation/articles/…`, `/documentation/developer-articles/…`, or `/documentation/developer-reference/…`.
 
 ## 6. Doc-file fields
@@ -408,5 +409,6 @@ Never edit on `main`. Propose commits rather than committing automatically.
 
 | Date | Version | Change |
 | --- | --- | --- |
+| June 18, 2026 | 1.2 | Added a backtick rule: when prose names the folder, path, file, or value a key defines, backtick the key (the `source` folder, the `uploads` path), even when it reads like a plain noun. |
 | June 16, 2026 | 1.1 | Added "Required" (the auto-rendered pill) and the object's child keys (the auto-rendered properties table) to the "do not restate" list; dropped the child-key enumeration sentence from the input-definition template; enriched the input-type-page format in the agents file to match §3 (opener, distinguishing context, required example); added the "Default behavior" rule for keys with no schema default but a runtime-derived default (describe it as behavior, not a value); trimmed the legacy-voice note down to the rule, moving the alignment-pass tracking out of the guide; lifted the optional "Further reading" trailer out of the cascade template into the general follow-ups, marked explicitly optional; changed the example rule to require at least one self-contained example per key (up to three for distinct common configurations), since readers land on a page directly from search; clarified that `___N___` annotations assume a YAML keyed line and render as badges on the web but as plain numbered text in the IDE; review pass: italicized the named input types in the select/multiselect/choice/multichoice model descriptions, removed the trailer from the cascade boilerplate (covered by "Further reading"), moved the "Collection Browser" corpus-alignment note out of the guide, softened the `code` literal-block rule for single-line values, and added a "do not restate" checklist item. |
 | June 12, 2026 | 1.0 | Initial guide: organized by doc-file field (title, description, examples); description voice unified on "This key …" across both surfaces (`src/.meta` and docs YAML) with the terser legacy voice noted as an alignment target; terminology deferral to the docs repo; doc-file fields; build and verification. |

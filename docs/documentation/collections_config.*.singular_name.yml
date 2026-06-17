@@ -9,12 +9,12 @@ description: >-
   the *Collection Browser* when you select the option to add a new file.
 
 
-  This is useful if your *Collection* name is an irregular plural (e.g.,
+  Use this key when your *Collection* name is an irregular plural (e.g.,
   "syllabi" or "syllabuses" to "syllabus").
 examples:
   - description: >-
       In this example, the *\+ Add* button option to add a *Collection* file
-      will read "Add Team Member" rather that "Add Team".
+      will read "Add Team Member" rather than "Add Team".
     language: yaml
     code: |-
       collections_config:

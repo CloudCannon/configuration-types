@@ -1,7 +1,10 @@
 gid: type._inputs.*.(text-input)
 url: /configuration-file/types/_inputs/*/(text-input)/
 title: Text Input
-description: This key defines a simple editing interface for plain text.
+description: |-
+  This key defines an editing interface for plain text.
+
+  *Text Inputs* use the `text` type and store a single line of text.
 examples:
   - description: In this example, we have configured the `title` key as a *Text Input*.
     language: yaml

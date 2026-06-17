@@ -11,7 +11,7 @@ description: >-
   `uploads` and `dam_uploads`.
 examples:
   - description: >-
-      In this example, we have configured the uploads path for the `blog`
+      In this example, we have configured the `uploads` path for the `blog`
       *Collection*.
     language: yaml
     code: |-

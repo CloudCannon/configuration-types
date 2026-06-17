@@ -2,8 +2,8 @@ gid: type.structure.values.[*].image
 url: /configuration-file/types/structure/values/[*]/image/
 title: ''
 description: >-
-  This key defines the path to an image in your source files used when
-  displaying the structure value.
+  This key defines the path to an image in your `source` folder used when
+  displaying the *Structure* value.
 
 
   Can be either a source (has priority) or output path.

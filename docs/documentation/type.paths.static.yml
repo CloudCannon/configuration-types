@@ -4,7 +4,7 @@ title: ''
 description: This key defines the path for the location of statically copied assets.
 examples:
   - description: >-
-      In this example, we have configured the static path for the `blog`
+      In this example, we have configured the `static` path for the `blog`
       *Collection*.
     language: yaml
     code: |-

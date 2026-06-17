@@ -2,8 +2,8 @@ gid: type.snippet-definition-value.(string-array)
 url: /configuration-file/types/snippet-definition-value/(string-array)/
 title: String Array
 description: >-
-  This key represents an array of string values. It is useful for defining lists
-  of allowed values, delimiters, or other string collections that can be
-  referenced in snippet templates.
+  This key represents an array of string values. Use it for lists of allowed
+  values, delimiters, or other string collections that can be referenced in
+  snippet templates.
 examples: []
 show_in_navigation: false

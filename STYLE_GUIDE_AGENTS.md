@@ -7,8 +7,8 @@ Machine-readable rules for writing documentation descriptions and examples in th
 **For agents updating this file:** also update the matching prose in `STYLE_GUIDE.md`, and bump the revision history in both: the `last_updated` / `style_guide_version` fields in the YAML block below, and the `Last Updated` / `Version` fields plus the revision-history table in `STYLE_GUIDE.md`.
 
 ```yaml
-style_guide_version: "1.1"
-last_updated: "2026-06-16"
+style_guide_version: "1.2"
+last_updated: "2026-06-18"
 
 # Terminology, capitalization, and spelling are governed by the docs repo.
 # What follows is a MINIMAL local subset so this repo functions without the
@@ -111,6 +111,7 @@ schema_formatting:
     - "config paths and dotted key paths (`options.required`, `_inputs.*.options.max_items`)"
     - "literal values (`true`, `false`, `select`)"
     - "file paths (`/cloudcannon.config.yml`)"
+    - "the folder/path/file/value a key defines, named by its backticked key (the `source` folder, the `uploads` path); even when the word reads like a plain noun"
   cross_reference: >-
     Reference another key by its backticked dot-path, e.g. 'This key requires
     you to define `options.required`.'
