@@ -2,8 +2,11 @@ gid: type.structure.values.[*].icon
 url: /configuration-file/types/structure/values/[*]/icon/
 title: ''
 description: >-
-  This key defines an icon used when displaying the structure (defaults to
-  either `format_list_bulleted` for items in arrays, or `notes` otherwise).
+  This key defines an icon used when displaying the *Structure*.
+
+
+  If you do not set this key, CloudCannon uses `format_list_bulleted` for items
+  in arrays, or `notes` otherwise.
 examples:
   - description: >-
       In this example, CloudCannon will display the `article` icon for the entry

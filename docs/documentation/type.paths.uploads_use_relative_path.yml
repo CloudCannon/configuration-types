@@ -12,7 +12,7 @@ description: >-
 examples:
   - description: >-
       In this example, we have configured uploads to use relative paths for
-      files uploaded in the Content Editor.
+      files uploaded in the *Content Editor*.
     language: yaml
     code: |-
       _editables:

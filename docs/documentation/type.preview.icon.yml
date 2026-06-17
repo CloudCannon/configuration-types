@@ -2,7 +2,7 @@ gid: type.preview.icon
 url: /configuration-file/types/preview/icon/
 title: ''
 description: >-
-  This key defines the icon displayed on *Cards* in the *Collection browser*,
+  This key defines the icon displayed on *Cards* in the *Collection Browser*,
   *Structures*, and *Snippets*.
 
 
@@ -13,12 +13,13 @@ description: >-
   fallback options.
 
 
-  For *Cards* in the *Collection Browser*, this key defaults to the value of
-  `collections_config.*.icon`. Otherwise, this key has no default.
+  For *Cards* in the *Collection Browser*, CloudCannon uses the value of
+  `collections_config.*.icon` when you do not set this key. Otherwise, this key
+  has no default.
 examples:
   - description: >-
       In this example, we have configured the icon for *Cards* in the `blog`
-      Collection to use the `edit_note` icon.
+      *Collection* to use the `edit_note` icon.
     language: yaml
     code: |-
       collections_config:
@@ -29,7 +30,7 @@ examples:
     source: /cloudcannon.config.yml
   - description: >-
       In this example, we have configured the icon for *Cards* in the `blog`
-      Collection with an array of values to provide fallback options.
+      *Collection* with an array of values to provide fallback options.
       CloudCannon will use the value of `logo` first, then fall back to the
       `edit_note` icon.
     language: yaml

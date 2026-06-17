@@ -5,7 +5,7 @@ description: This key defines the path for the location of statically copied ass
 examples:
   - description: >-
       In this example, we have configured the static path for the `blog`
-      Collection.
+      *Collection*.
     language: yaml
     code: |-
       collections_config:

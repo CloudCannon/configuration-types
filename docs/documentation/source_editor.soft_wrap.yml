@@ -3,7 +3,7 @@ url: /configuration-file/source_editor/soft_wrap/
 title: ''
 description: >-
   This key toggles whether CloudCannon will enable soft wrapping of code in the
-  Source Editor.
+  *Source Editor*.
 
 
   Setting this key to `true` will enable soft wrapping of code, allowing long
@@ -11,7 +11,7 @@ description: >-
 examples:
   - description: >-
       In this example, CloudCannon will enable soft wrapping of code in the
-      Source Editor.
+      *Source Editor*.
     language: yaml
     code: |-
       source_editor:

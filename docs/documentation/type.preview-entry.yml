@@ -3,7 +3,7 @@ url: /configuration-file/types/preview-entry/
 title: Preview Entry
 description: >-
   This key defines a preview entry configuration for displaying data on *Cards*
-  in the *Collection browser*, *Structures*, and *Snippets*.
+  in the *Collection Browser*, *Structures*, and *Snippets*.
 
 
   The value can be an object with a `key`, `template`, or `text` property, a raw

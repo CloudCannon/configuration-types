@@ -3,7 +3,7 @@ url: /configuration-file/types/preview/gallery/background_color/
 title: ''
 description: >-
   This key defines the background color of the gallery area on *Cards* in the
-  *Collection browser*, *Structures*, and *Snippets*.
+  *Collection Browser*, *Structures*, and *Snippets*.
 
 
   The value can be an array or a single value, and reference a key, template, or

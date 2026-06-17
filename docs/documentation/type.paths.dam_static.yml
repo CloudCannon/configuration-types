@@ -7,7 +7,7 @@ description: >-
 examples:
   - description: >-
       In this example, we have configured the DAM static path for the `blog`
-      Collection.
+      *Collection*.
     language: yaml
     code: |-
       collections_config:

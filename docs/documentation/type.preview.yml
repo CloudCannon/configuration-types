@@ -2,10 +2,10 @@ gid: type.preview
 url: /configuration-file/types/preview/
 title: ''
 description: >-
-  This key defines the appearance of a Card.
+  This key defines the appearance of a *Card*.
 
 
-  You can configure Card preview for
+  You can configure *Card* preview for
   [Collections](/documentation/articles/what-is-a-collection/),
   [Schemas](/documentation/articles/what-is-a-schema/),
 
@@ -13,10 +13,11 @@ description: >-
   inputs](/documentation/articles/what-is-an-array-input/), [Select
 
   inputs](/documentation/articles/what-is-a-select-input/),
-  [Structures](/documentation/articles/what-is-a-structure/), the Structure
+  [Structures](/documentation/articles/what-is-a-structure/), the *Structure*
   modal,
 
-  [Snippets](/documentation/articles/what-is-a-snippet/), and the Snippet modal.
+  [Snippets](/documentation/articles/what-is-a-snippet/), and the *Snippet*
+  modal.
 
 
   For more information about previews, please read our documentation on
@@ -24,8 +25,8 @@ description: >-
   previews](/documentation/articles/configure-your-card-previews/).
 examples:
   - description: >-
-      In this example, we have configured the appearance of file Cards in the
-      *Collection browser*.
+      In this example, we have configured the appearance of file *Cards* in the
+      *Collection Browser*.
     language: yaml
     code: |-
       collections_config:
@@ -51,8 +52,8 @@ examples:
     annotations: []
     source: /cloudcannon.config.yml
   - description: >-
-      In this example, we have configured the appearance of Cards in inputs
-      using the Structure `staff`.
+      In this example, we have configured the appearance of *Cards* in inputs
+      using the *Structure* `staff`.
     language: yaml
     code: |-
       _structures:

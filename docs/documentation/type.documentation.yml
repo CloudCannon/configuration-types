@@ -2,13 +2,13 @@ gid: type.documentation
 url: /configuration-file/types/documentation/
 title: ''
 description: |-
-  This key defines the documentation link at the top of a *Collection browser*.
+  This key defines the documentation link at the top of a *Collection Browser*.
 
-  Collection documentation is useful for assisting your team members.
+  *Collection* documentation is useful for assisting your team members.
 examples:
   - description: >-
-      In this example, the documentation link for the `data` Collection goes to
-      [CloudCannon Documentation](/documentation/).
+      In this example, the documentation link for the `data` *Collection* goes
+      to [CloudCannon Documentation](/documentation/).
     language: yaml
     code: |-
       collections_config:

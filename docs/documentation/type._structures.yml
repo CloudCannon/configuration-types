@@ -25,8 +25,8 @@ description: >-
 examples:
   - description: >-
       In this example, we want to populate an Array input in the `blog`
-      Collection with Related Articles, including the `name`, `description`, and
-      `url` fields.
+      *Collection* with Related Articles, including the `name`, `description`,
+      and `url` fields.
     language: yaml
     code: |-
       collections_config:

@@ -2,7 +2,7 @@ gid: type.preview.image
 url: /configuration-file/types/preview/image/
 title: ''
 description: >-
-  This key defines the image displayed on *Cards* in the *Collection browser*,
+  This key defines the image displayed on *Cards* in the *Collection Browser*,
   *Structures*, and *Snippets*.
 
 
@@ -12,7 +12,7 @@ description: >-
 examples:
   - description: >-
       In this example, we have configured the image for *Cards* in the `blog`
-      Collection with an array of values to provide fallback options.
+      *Collection* with an array of values to provide fallback options.
       CloudCannon will use the value of `featured_image` first, then the
       `{thumbnail}` template, and finally fall back to the static text value.
     language: yaml

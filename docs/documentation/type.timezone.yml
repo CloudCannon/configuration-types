@@ -2,7 +2,7 @@ gid: type.timezone
 url: /configuration-file/types/timezone/
 title: ''
 description: >-
-  This key defines the timezone for your Site.
+  This key defines the timezone for your *Site*.
 
 
   Value must be in IANA timezone format.

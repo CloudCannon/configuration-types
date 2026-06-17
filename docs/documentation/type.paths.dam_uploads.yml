@@ -14,7 +14,7 @@ description: >-
 examples:
   - description: >-
       In this example, we have configured the DAM uploads path for the `blog`
-      Collection.
+      *Collection*.
     language: yaml
     code: |-
       collections_config:

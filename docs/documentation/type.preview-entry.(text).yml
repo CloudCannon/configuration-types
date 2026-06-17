@@ -3,7 +3,7 @@ url: /configuration-file/types/preview-entry/(text)/
 title: Text Preview Entry
 description: >-
   This key represents a text preview entry type for displaying static text on
-  *Cards* in the *Collection browser*, *Structures*, and *Snippets*.
+  *Cards* in the *Collection Browser*, *Structures*, and *Snippets*.
 
 
   The value is an object that contains a `text` property with a string value.

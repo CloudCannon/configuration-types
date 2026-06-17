@@ -3,7 +3,7 @@ url: /configuration-file/types/preview-entry/(raw-text)/
 title: Raw Text Preview Entry
 description: >-
   This key represents a raw text preview entry type for displaying static text
-  on *Cards* in the *Collection browser*, *Structures*, and *Snippets*.
+  on *Cards* in the *Collection Browser*, *Structures*, and *Snippets*.
 
 
   The value is a string that specifies static text to display in card previews.

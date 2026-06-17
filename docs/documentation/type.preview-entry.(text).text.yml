@@ -6,7 +6,7 @@ description: >-
 
 
   The value is a string that specifies static text to display on *Cards* in the
-  *Collection browser*, *Structures*, and *Snippets*.
+  *Collection Browser*, *Structures*, and *Snippets*.
 examples:
   - description: >-
       In this example, we have configured the text value to display a static

@@ -1,9 +1,11 @@
 gid: type.snippet.view
 url: /configuration-file/types/snippet/view/
 title: ''
-description: |-
+description: >-
   This key defines how selected items are rendered.
 
-  Defaults to 'card', or 'inline' if `inline` is true.
+
+  If you do not set this key, CloudCannon renders selected items as `card`, or
+  as `inline` when `inline` is `true`.
 examples: []
 show_in_navigation: false

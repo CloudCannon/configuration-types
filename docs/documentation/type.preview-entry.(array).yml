@@ -3,7 +3,7 @@ url: /configuration-file/types/preview-entry/(array)/
 title: Array Preview Entry
 description: >-
   This key represents an array of preview entries for displaying data on *Cards*
-  in the *Collection browser*, *Structures*, and *Snippets*.
+  in the *Collection Browser*, *Structures*, and *Snippets*.
 
 
   The value is an array of preview entry objects, strings, or `false` values.

@@ -5,7 +5,7 @@ description: This key defines the path for the name of the uploaded file.
 examples:
   - description: >-
       In this example, we have configured the uploads filename path for the
-      `blog` Collection.
+      `blog` *Collection*.
     language: yaml
     code: |-
       collections_config:

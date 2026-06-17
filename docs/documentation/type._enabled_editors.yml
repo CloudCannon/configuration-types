@@ -10,24 +10,20 @@ description: >-
   other factors.
 
 
-  Values can be one of the following: `visual`, `content`, or `data`.
-
-
   Specifying one or more editing interfaces will disable all unspecified editing
   interfaces.
 
 
-  You cannot disable the Source Editor with this key.
+  You cannot disable the *Source Editor* with this key.
 
 
-  By default, this key is set to `visual`, `content`, and `data`.
+  If you do not set this key, all editing interfaces are available.
 
 
   If undefined at higher levels of the [configuration
   cascade](/documentation/articles/using-the-configuration-cascade/),
-  `_enabled_editables` will
-
-  default to any values configured in the [CloudCannon configuration
+  `_enabled_editors` will default to any values configured in the [CloudCannon
+  configuration
   file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
 
 
@@ -42,7 +38,7 @@ examples:
   - description: >-
       In this example, we have enabled only the [Content
       Editor](/documentation/articles/what-is-the-content-editor/) in the `blog`
-      Collection.
+      *Collection*.
     language: yaml
     code: |-
       collections_config:

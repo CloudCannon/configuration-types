@@ -2,14 +2,14 @@ gid: source_editor
 url: /configuration-file/source_editor/
 title: ''
 description: >-
-  This key defines the appearance and behavior of the Source Editor.
+  This key defines the appearance and behavior of the *Source Editor*.
 
 
   For more information, please read our documentation on the [Source
   Editor](/documentation/articles/what-is-the-source-editor/).
 examples:
   - description: >-
-      In this example, we have configured the Source Editor with custom theme,
+      In this example, we have configured the *Source Editor* with custom theme,
       tab size, and gutter settings.
     language: yaml
     code: |-

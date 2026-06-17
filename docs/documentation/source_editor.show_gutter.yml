@@ -7,7 +7,7 @@ description: >-
 examples:
   - description: >-
       In this example, CloudCannon will show the gutter with line numbers in the
-      Source Editor.
+      *Source Editor*.
     language: yaml
     code: |-
       source_editor:

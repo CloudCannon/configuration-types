@@ -3,7 +3,7 @@ url: /configuration-file/types/preview/subtext/
 title: ''
 description: >-
   This key defines the secondary text displayed below the main text on *Cards*
-  in the *Collection browser*, *Structures*, and *Snippets*.
+  in the *Collection Browser*, *Structures*, and *Snippets*.
 
 
   The value can be an array or a single value, and reference a key, template, or
@@ -12,7 +12,7 @@ description: >-
 examples:
   - description: >-
       In this example, we have configured the subtext for *Cards* in the `blog`
-      Collection with an array of values to provide fallback options.
+      *Collection* with an array of values to provide fallback options.
       CloudCannon will use the value of `author` first, then the `{writer}`
       template, and finally fall back to the static text value.
     language: yaml
@@ -28,7 +28,7 @@ examples:
     source: /cloudcannon.config.yml
   - description: >-
       In this example, we have configured the subtext for *Cards* in the `blog`
-      Collection to display the `author` key.
+      *Collection* to display the `author` key.
     language: yaml
     code: |-
       collections_config:
