@@ -2,15 +2,11 @@ gid: type.structure.values.[*].groups.[*].collapsed
 url: /configuration-file/types/structure/values/[*]/groups/[*]/collapsed/
 title: ''
 description: >-
-  This key defines whether a group is collapsed or expanded when first viewed.
+  This key toggles whether a group is collapsed when first viewed.
 
 
-  The value is a boolean. When `true`, CloudCannon displays the group in a
-  collapsed state. When `false`, CloudCannon displays the group in an expanded
-  state.
-
-
-  By default, CloudCannon displays groups in an expanded state.
+  Setting this key to `true` will display the group collapsed; otherwise
+  CloudCannon displays it expanded.
 examples:
   - description: >-
       In this example, we have configured the "Details" group to be collapsed by

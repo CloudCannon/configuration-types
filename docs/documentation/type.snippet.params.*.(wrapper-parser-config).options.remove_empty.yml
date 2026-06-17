@@ -9,9 +9,6 @@ description: >-
 
   Setting this key to `true` will remove empty values from the wrapped snippet
   configuration.
-
-
-  By default, this key is `false` (i.e., empty values are not removed).
 examples:
   - description: In this example, we have configured wrapper parser to remove empty values.
     language: yaml

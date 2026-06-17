@@ -8,10 +8,6 @@ description: >-
 
   Setting this key to `true` will allow unquoted boolean values in snippet
   parameter parsing.
-
-
-  By default, this key is `false` (i.e., unquoted boolean values are not
-  allowed).
 examples:
   - description: >-
       In this example, we have configured snippet format to allow unquoted

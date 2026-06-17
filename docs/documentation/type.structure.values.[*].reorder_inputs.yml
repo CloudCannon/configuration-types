@@ -10,10 +10,6 @@ description: >-
   file, regardless of the order defined in the Structure value.
 
 
-  By default, this key is `true` (i.e., inputs are reordered to match the
-  Structure value).
-
-
   You can also configure this behavior for all values of a Structure using
   `reorder_inputs` inside `_structures.*`.
 examples: []

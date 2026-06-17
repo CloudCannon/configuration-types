@@ -2,7 +2,7 @@ gid: type._snippets
 url: /configuration-file/types/_snippets/
 title: ''
 description: |-
-  This key defines custom snippets for your Site.
+  This key defines custom snippets for your *Site*.
 
   This key has no default.
 examples: []

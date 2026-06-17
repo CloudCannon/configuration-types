@@ -10,10 +10,6 @@ description: >-
 
   Setting this key to `true` will trim all whitespace and newlines from the
   start and end of the content.
-
-
-  By default, this key is `false` (i.e., whitespace and newlines are not
-  trimmed).
 examples:
   - description: ''
     language: yaml

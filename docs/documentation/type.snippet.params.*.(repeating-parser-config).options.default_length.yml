@@ -4,6 +4,6 @@ url: >-
 title: ''
 description: >-
   This key defines how many repetitions should be created in the initial data
-  when initializing a new Snippet.
+  when initializing a new *Snippet*.
 examples: []
 show_in_navigation: false

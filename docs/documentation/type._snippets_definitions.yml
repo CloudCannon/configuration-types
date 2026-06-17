@@ -2,11 +2,11 @@ gid: type._snippets_definitions
 url: /configuration-file/types/_snippets_definitions/
 title: ''
 description: >-
-  A record of reusable values that can be referenced in snippet templates.
-  Values are substituted using `{ ref: "key" }` for direct replacement or `{
-  spread_ref: "key" }` for spreading arrays/objects. Common definition types
-  include parser formats, argument models, select option lists, and simple
-  string values like shortcode names.
+  This key defines a record of reusable values that can be referenced in snippet
+  templates. Values are substituted using `{ ref: "key" }` for direct
+  replacement or `{ spread_ref: "key" }` for spreading arrays or objects. Common
+  definition types include parser formats, argument models, select option lists,
+  and string values like shortcode names.
 examples:
   - description: >-
       Define reusable values like shortcode names, argument models, and parser

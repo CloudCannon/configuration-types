@@ -24,6 +24,10 @@ The guide (§5) specifies the capital B in "Collection Browser", but the current
 
 The canonical `(x-input).yml` pages should meet the higher bar in §3: opener + distinguishing context (the `type` token(s), what it stores, how it differs from related inputs) + a usage example. As of this branch, 10 still have no example (`array`, `code`, `color`, `date`, `file`, `object`, `range`, `rich-text`, `time`, `url`) and several lack distinguishing context. `select-input` is the model.
 
+## 7. Empty descriptions in the snippets area
+
+47 keys in the snippets cluster have `description: ''` (no description at all) and need authoring from scratch — 41 in `type._snippets_imports.*` (the SSG import presets: `eleventy_liquid`, `hugo`, `jekyll`, `markdoc`, `mdx`, etc., each with `(include-list)`, `(exclude-list)`, their `.[*]` items, and `(full-import)`), plus 6 others (e.g. `type.snippet-reference.ref`). This is content authoring (like the missing examples), deferred from the descriptions+terminology pass. The repetitive `_snippets_imports` presets can be templated once the feature's behavior is confirmed.
+
 ## 6. Annotation notation for non-YAML examples
 
 The `___N___` annotation marker is a suffix on a *keyed* line, so it only works for YAML examples. Example languages such as `markdown`, `liquid`, and `css` have no keyed line to suffix, so callouts can't be tied to code the same way. Consider a notation that works across languages (for example a line/column reference, or an inline comment marker) if annotated non-YAML examples are needed.

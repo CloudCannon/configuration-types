@@ -8,10 +8,6 @@ description: >-
 
   Setting this key to `true` will require all characters to be uppercase in
   snippet parameter parsing.
-
-
-  By default, this key is `false` (i.e., uppercase-only strings are not required
-  unless `any` is enabled).
 examples:
   - description: >-
       In this example, we have configured snippet format to allow only uppercase

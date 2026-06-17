@@ -9,9 +9,5 @@ description: >-
   `false`, this parser requires at least one matching value. Setting this to
   `true` is preferred to wrapping the `repeating` parser inside an `optional`
   parser.
-
-
-  By default, this key is `false` (i.e., at least one matching value is
-  required).
 examples: []
 show_in_navigation: false

@@ -8,9 +8,6 @@ description: >-
 
   Setting this key to `true` will cause any value in this argument to alias to
   `true`, and an empty value to alias to `false`.
-
-
-  By default, this key is `false` (i.e., values are not aliased to boolean).
 examples:
   - description: >-
       In this example, we have configured implied boolean so any value in this

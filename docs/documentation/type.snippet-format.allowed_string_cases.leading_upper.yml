@@ -8,10 +8,6 @@ description: >-
 
   Setting this key to `true` will allow strings that begin with an uppercase
   letter in snippet parameter parsing.
-
-
-  By default, this key is `false` (i.e., strings starting with uppercase are not
-  allowed unless `any` is enabled).
 examples:
   - description: >-
       In this example, we have configured snippet format to allow strings

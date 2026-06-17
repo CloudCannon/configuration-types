@@ -10,7 +10,7 @@ description: >-
   Used when a snippet continues for as long as content is indented.
 
 
-  This option should only be used if required, since it prevents your Snippet
+  This option should only be used if required, since it prevents your *Snippet*
   from parsing if the whitespace does not match.
 
 

@@ -9,9 +9,6 @@ description: >-
 
   Setting this key to `true` will escape fenced code blocks in the content,
   preventing them from being interpreted as code blocks.
-
-
-  By default, this key is `false` (i.e., fenced code blocks are not escaped).
 examples:
   - description: >-
       In this example, we have configured content parser to escape fenced code

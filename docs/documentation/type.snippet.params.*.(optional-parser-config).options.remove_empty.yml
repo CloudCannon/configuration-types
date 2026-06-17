@@ -9,8 +9,5 @@ description: >-
   Setting this key to `true` will output no value at all instead of an empty
   string. This will bubble up to any outer parsers, so may control whether they
   return output.
-
-
-  By default, this key is `false` (i.e., an empty string is output).
 examples: []
 show_in_navigation: false

@@ -6,7 +6,8 @@ description: >-
 
 
   You can configure Card preview for
-  [Snippets](/documentation/articles/what-is-a-snippet/), and the Snippet modal.
+  [Snippets](/documentation/articles/what-is-a-snippet/), and the *Snippet*
+  modal.
 
 
   For more information about previews, please read our documentation on
@@ -15,7 +16,7 @@ description: >-
 examples:
   - description: >-
       In this example, we have configured the appearance of the example
-      Snippet's text and subtext.
+      *Snippet's* text and subtext.
     language: yaml
     code: |-
       _snippets:

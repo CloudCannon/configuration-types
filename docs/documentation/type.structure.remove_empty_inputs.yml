@@ -21,10 +21,6 @@ description: >-
   inputs prevents CloudCannon from comparing Structure values.
 
 
-  By default, this key is `false` (i.e., CloudCannon does not remove empty
-  inputs).
-
-
   You can also configure this behavior for specific values of a Structure using
   structure.values.[*].remove_empty_inputs.
 examples:

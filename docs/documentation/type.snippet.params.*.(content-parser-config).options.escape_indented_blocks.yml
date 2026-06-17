@@ -9,9 +9,6 @@ description: >-
 
   Setting this key to `true` will escape indented code blocks in the content,
   preventing them from being interpreted as code blocks.
-
-
-  By default, this key is `false` (i.e., indented code blocks are not escaped).
 examples:
   - description: >-
       In this example, we have configured content parser to escape indented code

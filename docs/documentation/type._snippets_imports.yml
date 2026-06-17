@@ -2,7 +2,7 @@ gid: type._snippets_imports
 url: /configuration-file/types/_snippets_imports/
 title: ''
 description: >-
-  This key defines snippet templates or libraries for your Site.
+  This key defines snippet templates or libraries for your *Site*.
 
 
   Some libraries are SSG specific while others work for most SSGs.
@@ -17,7 +17,7 @@ description: >-
   [MDX Components](/documentation/articles/snippets-using-mdx-components/), or
   [Python Markdown](/documentation/articles/snippets-using-python-markdown/).
 examples:
-  - description: In this example, we have configured Hugo shortcode imports for the Site.
+  - description: In this example, we have configured Hugo shortcode imports for the *Site*.
     language: yaml
     code: |-
       _snippets_imports:

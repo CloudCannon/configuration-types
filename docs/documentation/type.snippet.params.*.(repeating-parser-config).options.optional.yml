@@ -9,9 +9,6 @@ description: >-
 
   Setting this key to `true` will make the repeating snippet instances optional,
   allowing snippets to match even when no instances are present.
-
-
-  By default, this key is `false` (i.e., at least one instance is required).
 examples:
   - description: >-
       In this example, we have configured repeating parser to treat instances as

@@ -8,9 +8,6 @@ description: >-
 
   Setting this key to `true` will allow keys to be specified without values,
   which will be interpreted as `true`.
-
-
-  By default, this key is `false` (i.e., keys without values are not allowed).
 examples:
   - description: >-
       In this example, we have configured snippet format to allow implied values

@@ -10,9 +10,6 @@ description: >-
 
   Setting this key to `false` will cause CloudCannon to treat unpaired backticks
   as parsing errors.
-
-
-  By default, this key is `true` (i.e., unpaired backticks are ignored).
 examples:
   - description: >-
       In this example, we have configured content parser to ignore unpaired

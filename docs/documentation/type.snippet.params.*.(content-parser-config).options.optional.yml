@@ -9,9 +9,6 @@ description: >-
 
   Setting this key to `true` will make the content parameter optional, allowing
   snippets to match even when the content is missing.
-
-
-  By default, this key is `false` (i.e., content is required).
 examples:
   - description: >-
       In this example, we have configured content parser to treat content as

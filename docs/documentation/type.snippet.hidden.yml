@@ -2,7 +2,11 @@ gid: type.snippet.hidden
 url: /configuration-file/types/snippet/hidden/
 title: ''
 description: >-
-  Whether to hide this snippet from the editor interface. Hidden snippets are
-  still parsed, but cannot be inserted by team members.
+  This key toggles whether CloudCannon hides this snippet from the editor
+  interface.
+
+
+  Setting this key to `true` will prevent team members from inserting the
+  snippet, although CloudCannon still parses existing instances.
 examples: []
 show_in_navigation: false

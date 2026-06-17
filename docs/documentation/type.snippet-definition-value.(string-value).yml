@@ -2,8 +2,8 @@ gid: type.snippet-definition-value.(string-value)
 url: /configuration-file/types/snippet-definition-value/(string-value)/
 title: String Value
 description: >-
-  A string value definition. Commonly used for `shortcode_name`, `tag_name`,
-  `content_key`, `include_name`, and similar definitions that identify snippet
-  components by name.
+  This key represents a string value definition. It is commonly used for
+  `shortcode_name`, `tag_name`, `content_key`, `include_name`, and similar
+  definitions that identify snippet components by name.
 examples: []
 show_in_navigation: false

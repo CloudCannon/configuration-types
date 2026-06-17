@@ -2,7 +2,7 @@ gid: type.snippet-reference
 url: /configuration-file/types/snippet-reference/
 title: Snippet Reference
 description: >-
-  References a reusable value defined in `_snippets_definitions` by key,
-  resolved at runtime.
+  This key represents a reference to a reusable value defined in
+  `_snippets_definitions`, resolved by its key at runtime.
 examples: []
 show_in_navigation: true

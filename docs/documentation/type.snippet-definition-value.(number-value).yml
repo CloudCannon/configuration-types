@@ -2,7 +2,7 @@ gid: type.snippet-definition-value.(number-value)
 url: /configuration-file/types/snippet-definition-value/(number-value)/
 title: Number Value
 description: >-
-  A numeric value definition. Use for counts, sizes, or other numeric values
-  that can be referenced in snippet templates.
+  This key represents a numeric value definition. Use it for counts, sizes, or
+  other numeric values that can be referenced in snippet templates.
 examples: []
 show_in_navigation: false

@@ -7,9 +7,6 @@ description: >-
 
   Setting this key to `true` will make the value optional for this parser.
   Useful for long sets of key-value pairs that are not all required.
-
-
-  By default, this key is `false` (i.e., a value must exist for this parser).
 examples:
   - description: ''
     language: yaml
