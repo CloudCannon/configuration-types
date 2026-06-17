@@ -10,7 +10,7 @@ description: >-
 examples:
   - description: >-
       In this example, we have configured the `/images/blog-icon.png` image for
-      the entry labeled `Blog` in the `article_information` Structure.
+      the entry labeled `Blog` in the `article_information` *Structure*.
     language: yaml
     code: |-
       _structures:

@@ -2,17 +2,17 @@ gid: type.structure.values.[*].tabbed
 url: /configuration-file/types/structure/values/[*]/tabbed/
 title: ''
 description: >-
-  This key toggles whether CloudCannon should create tabs in the Data Editor if
-  you have two layers of nested object within your Structure.
+  This key toggles whether CloudCannon should create tabs in the *Data Editor*
+  if you have two layers of nested object within your *Structure*.
 
 
-  Setting this key to `true` will create tabs in the Data Editor for two layers
-  of nested objects within your Structure.
+  Setting this key to `true` will create tabs in the *Data Editor* for two
+  layers of nested objects within your *Structure*.
 examples:
   - description: >-
-      In this example, we want the `content` and `style` keys in our Structure
-      to be tabs at the top of the Data Editor, with the `title` and `text`, and
-      `color` and `font` keys nested within those tabs respectively.
+      In this example, we want the `content` and `style` keys in our *Structure*
+      to be tabs at the top of the *Data Editor*, with the `title` and `text`,
+      and `color` and `font` keys nested within those tabs respectively.
     language: yaml
     code: |-
       _structures:

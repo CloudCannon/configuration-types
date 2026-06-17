@@ -2,11 +2,11 @@ gid: type.structure.values.[*].label
 url: /configuration-file/types/structure/values/[*]/label/
 title: ''
 description: >-
-  This key defines the display name for a given value in a Structure.
+  This key defines the display name for a given value in a *Structure*.
 
 
-  The name will appear in the *+ Add* button dropdown below an Object or Array
-  input or in the Structures modal (if configured).
+  The name will appear in the *+ Add* button dropdown below an *Object* or
+  *Array* input or in the *Structures* modal (if configured).
 
 
   If you do not set this key, CloudCannon falls back to `unknown`.

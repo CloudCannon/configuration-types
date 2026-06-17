@@ -7,7 +7,7 @@ description: >-
 examples:
   - description: >-
       In this example, CloudCannon will display the `article` icon for the entry
-      labeled `Blog` in the `article_information` Structure.
+      labeled `Blog` in the `article_information` *Structure*.
     language: yaml
     code: |-
       _structures:

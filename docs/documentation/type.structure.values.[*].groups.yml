@@ -2,7 +2,8 @@ gid: type.structure.values.[*].groups
 url: /configuration-file/types/structure/values/[*]/groups/
 title: ''
 description: >-
-  This key defines the order and custom grouping for inputs within a Structure.
+  This key defines the order and custom grouping for inputs within a
+  *Structure*.
 
 
   The value is an array of group objects. Each group object can contain a

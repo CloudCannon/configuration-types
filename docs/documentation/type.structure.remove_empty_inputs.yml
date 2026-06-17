@@ -3,13 +3,13 @@ url: /configuration-file/types/structure/remove_empty_inputs/
 title: ''
 description: >-
   This key toggles whether CloudCannon will remove empty nested inputs from an
-  Object Input or Array Input using a given Structure before persisting
+  *Object Input* or *Array Input* using a given *Structure* before persisting
 
   them to your file.
 
 
-  Setting this key to `true` will remove empty nested inputs from an Object
-  Input or Array Input using a given Structure before persisting
+  Setting this key to `true` will remove empty nested inputs from an *Object
+  Input* or *Array Input* using a given *Structure* before persisting
 
   them to your file. CloudCannon considers an input to be empty when its value
   is `null`, `' '`, or undefined. If this key is true, empty inputs will be
@@ -17,17 +17,17 @@ description: >-
   but not the [Source
 
   Editor](/documentation/articles/what-is-the-source-editor/). For this key to
-  function, you must also configure `id_key` for the Structure, as removing
-  inputs prevents CloudCannon from comparing Structure values.
+  function, you must also configure `id_key` for the *Structure*, as removing
+  inputs prevents CloudCannon from comparing *Structure* values.
 
 
-  You can also configure this behavior for specific values of a Structure using
-  structure.values.[*].remove_empty_inputs.
+  You can also configure this behavior for specific values of a *Structure*
+  using structure.values.[*].remove_empty_inputs.
 examples:
   - description: >-
       In this example, we want to delete any unnecessary nested inputs (i.e.,
-      input we choose not to provide a value for) from Object or Array inputs
-      referenceing the `event_details` Structure.
+      input we choose not to provide a value for) from *Object* or *Array*
+      inputs referenceing the `event_details` *Structure*.
     language: yaml
     code: |-
       _structures:

@@ -8,7 +8,7 @@ description: |-
 examples:
   - description: >-
       In this example, we have configured the `featured` and `news` tags for the
-      entry labeled `Blog` in the `article_information` Structure.
+      entry labeled `Blog` in the `article_information` *Structure*.
     language: yaml
     code: |-
       _structures:

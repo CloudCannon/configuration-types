@@ -2,15 +2,15 @@ gid: type.structure.values.[*].value
 url: /configuration-file/types/structure/values/[*]/value/
 title: ''
 description: >-
-  This key defines which nested inputs the Structure value should add to an
-  Object or Array input.
+  This key defines which nested inputs the *Structure* value should add to an
+  *Object* or *Array* input.
 
 
-  You must define this key for the Structure value to function.
+  You must define this key for the *Structure* value to function.
 
 
   Nested keys can be any [input](/documentation/articles/what-are-inputs/) you
-  require in your Object or Array.
+  require in your *Object* or *Array*.
 
 
   For more information, please read our documentation on [configuring an Object
@@ -20,7 +20,7 @@ description: >-
   input](/documentation/articles/configure-an-array-input/).
 examples:
   - description: >-
-      In this example we want to populate the `details` Object input with the
+      In this example we want to populate the `details` *Object* input with the
       nested keys `title`, `subtitle`, and `author` we have defined under the
       `values.value` key.
     language: yaml

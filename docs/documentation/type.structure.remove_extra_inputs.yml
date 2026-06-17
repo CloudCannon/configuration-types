@@ -3,12 +3,12 @@ url: /configuration-file/types/structure/remove_extra_inputs/
 title: ''
 description: >-
   This key toggles whether CloudCannon will remove inputs that are not present
-  in a Structure from a file before loading it in an Editing Interface.
+  in a *Structure* from a file before loading it in an Editing Interface.
 
 
   Setting this key to `true` will remove inputs that are not present in a
-  Structure from a file before loading it in an Editing Interface. Non-Structure
-  inputs will not be visible in the [Visual
+  *Structure* from a file before loading it in an Editing Interface.
+  Non-*Structure* inputs will not be visible in the [Visual
   Editor](/documentation/articles/what-is-the-visual-editor/), [Content
 
   Editor](/documentation/articles/what-is-the-content-editor/), or [Data
@@ -18,12 +18,12 @@ description: >-
   repository.
 
 
-  You can also configure this behavior for specific values of a Structure using
-  `values[*].remove_extra_inputs`.
+  You can also configure this behavior for specific values of a *Structure*
+  using `values[*].remove_extra_inputs`.
 examples:
   - description: >-
       In this example, we want to delete old inputs that are not in the
-      Structure from the associated file.
+      *Structure* from the associated file.
     language: yaml
     code: |-
       _structures:

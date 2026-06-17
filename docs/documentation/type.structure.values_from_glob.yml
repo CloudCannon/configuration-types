@@ -25,7 +25,7 @@ description: >-
   This key has no default.
 examples:
   - description: >-
-      In this example, the `staff` Array Input uses inline *Structure* values
+      In this example, the `staff` *Array Input* uses inline *Structure* values
       from the main *Configuration File* and also references another value from
       the `boardMember.cloudcannon.structure_value.yml` in the
       `/.cloudcannon/structures/` folder.

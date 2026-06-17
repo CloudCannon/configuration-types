@@ -2,20 +2,21 @@ gid: type.structure.values.[*].tags
 url: /configuration-file/types/structure/values/[*]/tags/
 title: ''
 description: >-
-  This key defines which tags are associated with a given value in a Structure.
+  This key defines which tags are associated with a given value in a
+  *Structure*.
 
 
-  You can use tags to group and filter Structure options when selecting from a
+  You can use tags to group and filter *Structure* options when selecting from a
   modal.
 
 
   This key has no default.
 examples:
   - description: >-
-      In this example we have three options for the `page_components` Structure:
-      `Hero Component`, `Feature Component`, and `Video Component`. We can
-      search the Structure modal using the `image`, `text`, `button`, and
-      `video` tags to filter Structure values.
+      In this example we have three options for the `page_components`
+      *Structure*: `Hero Component`, `Feature Component`, and `Video Component`.
+      We can search the *Structure* modal using the `image`, `text`, `button`,
+      and `video` tags to filter *Structure* values.
     language: yaml
     code: |-
       _structures:
