@@ -1,0 +1,22 @@
+gid: type._editables.*.image_options.alt
+url: /configuration-file/types/_editables/*/image_options/alt/
+title: ''
+description: This key defines the input for an image's alternative text.
+examples:
+  - description: >-
+      In this example, we have configured the `alt` input with a custom label,
+      comment, and placeholder.
+    language: yaml
+    code: |-
+      _editables:
+        content:
+          image_options:
+            alt:
+              type: text
+              label: Alt text
+              comment: Describes the image for screen readers
+              options:
+                placeholder: A short description of the image
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

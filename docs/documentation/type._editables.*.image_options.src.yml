@@ -1,0 +1,24 @@
+gid: type._editables.*.image_options.src
+url: /configuration-file/types/_editables/*/image_options/src/
+title: ''
+description: This key defines the input for the image file displayed.
+examples:
+  - description: >-
+      In this example, we have configured the `src` input with a custom label,
+      comment, and accepted file types.
+    language: yaml
+    code: |-
+      _editables:
+        content:
+          image_options:
+            src:
+              type: url
+              label: Image file
+              comment: The image file to display
+              options:
+                accepts_mime_types:
+                  - image/png
+                  - image/jpeg
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

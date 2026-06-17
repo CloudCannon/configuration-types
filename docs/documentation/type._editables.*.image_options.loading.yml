@@ -1,0 +1,20 @@
+gid: type._editables.*.image_options.loading
+url: /configuration-file/types/_editables/*/image_options/loading/
+title: ''
+description: This key defines the input for toggling lazy loading on an image.
+examples:
+  - description: >-
+      In this example, we have configured the `loading` input with a custom
+      label and comment.
+    language: yaml
+    code: |-
+      _editables:
+        content:
+          image_options:
+            loading:
+              type: switch
+              label: Lazy load
+              comment: Toggle lazy loading for this image
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

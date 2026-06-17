@@ -1,0 +1,22 @@
+gid: type._editables.*.link_options.href
+url: /configuration-file/types/_editables/*/link_options/href/
+title: ''
+description: This key defines the input for the destination URL of a hyperlink.
+examples:
+  - description: >-
+      In this example, we have configured the `href` input with a custom label,
+      comment, and a hidden link option.
+    language: yaml
+    code: |-
+      _editables:
+        content:
+          link_options:
+            href:
+              type: url
+              label: Link URL
+              comment: The destination this link points to
+              options:
+                hide_link_to_email_address: true
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false
