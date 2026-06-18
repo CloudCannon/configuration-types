@@ -157,7 +157,7 @@ export const CollectionConfigSchema = z
 			.meta({
 				id: 'glob',
 				description:
-					'This key defines globs which filter the files visible in the _Collection browser_ for a given Collection. Values in this array are relative to the Collection `path`.',
+					'This key defines globs which filter the files visible in the _Collection Browser_ for a given Collection. Values in this array are relative to the Collection `path`.',
 			}),
 		url: z.string().optional().meta({
 			description:
@@ -169,15 +169,15 @@ export const CollectionConfigSchema = z
 		}),
 		include_developer_files: z.boolean().default(false).optional().meta({
 			description:
-				'This key toggles whether CloudCannon removes developer files from your _Collection browser_.',
+				'This key toggles whether CloudCannon removes developer files from your _Collection Browser_.',
 		}),
 		name: z.string().optional().meta({
 			description:
-				'This key defines the display name for a Collection. The name appears in the _Site Navigation_ and at the top of the _Collection browser_.',
+				'This key defines the display name for a Collection. The name appears in the _Site Navigation_ and at the top of the _Collection Browser_.',
 		}),
 		description: z.string().optional().meta({
 			description:
-				'This key defines the description text that appears on the _Collection browser_ page. Collection descriptions are useful for adding extra context for your team members.',
+				'This key defines the description text that appears on the _Collection Browser_ page. Collection descriptions are useful for adding extra context for your team members.',
 		}),
 		icon: IconSchema.default('notes').optional().meta({
 			description:
@@ -185,11 +185,11 @@ export const CollectionConfigSchema = z
 		}),
 		documentation: DocumentationSchema.optional().meta({
 			description:
-				'This key defines the documentation link at the top of a _Collection browser_. Collection documentation is useful for assisting your team members.',
+				'This key defines the documentation link at the top of a _Collection Browser_. Collection documentation is useful for assisting your team members.',
 		}),
 		sort_options: z.array(SortOptionSchema).optional().meta({
 			description:
-				'This key defines the options for the Sort dropdown in a _Collection browser_. The first option listed is used as the default sort.',
+				'This key defines the options for the Sort dropdown in a _Collection Browser_. The first option listed is used as the default sort.',
 		}),
 		view_options: z
 			.array(z.enum(['card', 'list', 'gallery']))
@@ -197,31 +197,31 @@ export const CollectionConfigSchema = z
 			.meta({
 				uniqueItems: true,
 				description:
-					'This key defines the options for the View dropdown in a _Collection browser_. The first option listed is used as the default view.',
+					'This key defines the options for the View dropdown in a _Collection Browser_. The first option listed is used as the default view.',
 			}),
 		singular_name: z.string().optional().meta({
 			description:
-				'This key defines the singular noun for your Collection name. CloudCannon uses the singular noun in the _+ Add_ button in the top right of the _Collection browser_.',
+				'This key defines the singular noun for your Collection name. CloudCannon uses the singular noun in the _+ Add_ button in the top right of the _Collection Browser_.',
 		}),
 		add_options: z
 			.array(z.union([AddOptionSchema, HrefAddOptionSchema]))
 			.optional()
 			.meta({
 				description:
-					'This key defines the options available in the _+ Add_ button dropdown at the top right of your _Collection browser_.',
+					'This key defines the options available in the _+ Add_ button dropdown at the top right of your _Collection Browser_.',
 			}),
 		create: CreateSchema.optional(),
 		disable_add: z.boolean().default(false).optional().meta({
 			description:
-				'This key toggles whether team members can use the _+ Add_ button in the top right of the _Collection browser_ to add files to a Collection.',
+				'This key toggles whether team members can use the _+ Add_ button in the top right of the _Collection Browser_ to add files to a Collection.',
 		}),
 		disable_add_folder: z.boolean().default(false).optional().meta({
 			description:
-				'This key toggles whether team members can use the _+ Add_ button in the top right of the _Collection browser_ to add subfolders to a Collection.',
+				'This key toggles whether team members can use the _+ Add_ button in the top right of the _Collection Browser_ to add subfolders to a Collection.',
 		}),
 		disable_file_actions: z.boolean().default(false).optional().meta({
 			description:
-				'This key toggles whether team members can use the _+ Add_ button in the top right of the _Collection browser_ to add files to a Collection.',
+				'This key toggles whether team members can use the _+ Add_ button in the top right of the _Collection Browser_ to add files to a Collection.',
 		}),
 		new_preview_url: z.string().optional().meta({
 			description:
