@@ -123,7 +123,7 @@ export const SchemaSchema = z
 		}),
 		hide_extra_inputs: z.boolean().default(false).optional().meta({
 			description:
-				'Hides unexpected inputs when editing. Has no effect if `remove_extra_inputs` is true. Defaults to false.',
+				'Hides unexpected inputs when editing. Has no effect if `remove_extra_inputs` is true.',
 		}),
 		remove_empty_inputs: z.boolean().default(false).optional().meta({
 			description:

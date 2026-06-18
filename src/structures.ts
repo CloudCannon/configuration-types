@@ -14,18 +14,18 @@ export const StructureReferenceSchema = z.string().meta({
 const StructureBaseSchema = z.object({
 	reorder_inputs: z.boolean().default(true).optional().meta({
 		description:
-			'If true, inputs are sorted to match when editing. Extra inputs are ordered after expected inputs, unless `remove_extra_inputs` is true. Defaults to true.',
+			'If true, inputs are sorted to match when editing. Extra inputs are ordered after expected inputs, unless `remove_extra_inputs` is true.',
 	}),
 	hide_extra_inputs: z.boolean().default(false).optional().meta({
 		description:
-			'Hides unexpected inputs when editing. Has no effect if `remove_extra_inputs` is true. Defaults to false.',
+			'Hides unexpected inputs when editing. Has no effect if `remove_extra_inputs` is true.',
 	}),
 	remove_empty_inputs: z.boolean().default(false).optional().meta({
 		description:
-			'If checked, empty inputs are removed from the source file on save. Removed inputs will be available for editing again, provided they are in the matching schema/structure. Defaults to false.',
+			'If checked, empty inputs are removed from the source file on save. Removed inputs will be available for editing again, provided they are in the matching schema/structure.',
 	}),
 	remove_extra_inputs: z.boolean().default(true).optional().meta({
-		description: 'If checked, extra inputs are removed when editing. Defaults to true.',
+		description: 'If checked, extra inputs are removed when editing.',
 	}),
 });
 
@@ -110,7 +110,7 @@ export const StructureSchema = z
 		values_from_glob: z.array(z.string()).optional(),
 		id_key: z.string().default('_type').optional().meta({
 			description:
-				'Defines what key should be used to detect which structure an item is. If this key is not found in the existing structure, a comparison of key names is used. Defaults to "_type".',
+				'Defines what key should be used to detect which structure an item is. If this key is not found in the existing structure, a comparison of key names is used.',
 		}),
 		style: z.enum(['select', 'modal']).default('select').optional().meta({
 			description:

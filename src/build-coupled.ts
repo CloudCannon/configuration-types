@@ -108,7 +108,7 @@ export const BuildCoupledConfigurationSchema = z.object({
 	collections_config_override: z.boolean().default(false).optional().meta({
 		id: 'collections_config_override',
 		description:
-			'Prevents CloudCannon from automatically discovering collections for supported SSGs if true. Defaults to false.',
+			'Prevents CloudCannon from automatically discovering collections for supported SSGs if true.',
 	}),
 	version: z
 		.enum(['legacy-hugo', 'legacy-jekyll', 'legacy-eleventy', 'legacy-reader'])

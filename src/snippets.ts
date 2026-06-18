@@ -225,7 +225,7 @@ export const SnippetConfigSchema = z
 		}),
 		inline: z.boolean().default(false).optional().meta({
 			description:
-				'Whether this snippet can appear inline (within a sentence). Defaults to false, which will treat this snippet as a block-level element in the content editor.',
+				'Whether this snippet can appear inline (within a sentence). Otherwise, this snippet is treated as a block-level element in the content editor.',
 		}),
 		view: z.enum(['card', 'inline', 'gallery']).optional().meta({
 			description:
