@@ -22,21 +22,31 @@ export async function redocumentSchema(
 	const documented = new Set<JsonSchema>();
 
 	function deref(doc: JsonSchema, ignoreCircular: boolean = false): JsonSchema | undefined {
+		let refName: string | undefined;
+
 		// JSON Schema versions after draft 7
 		while (doc?.$ref && schema.$defs) {
 			const ref = doc.$ref.replace('#/$defs/', '');
+			refName = ref;
 			doc = schema.$defs[ref];
 		}
 
 		// JSON Schema draft 7
 		while (doc?.$ref && schema.definitions) {
 			const ref = doc.$ref.replace('#/definitions/', '');
+			refName = ref;
 			doc = (schema as any).definitions[ref];
 		}
 
 		// Prevents circular references during active traversal
 		if (!ignoreCircular && traversing.has(doc)) {
 			return;
+		}
+
+		// A `$def` carries its gid in its name, not as an `id` field. Restore it so `walk` can
+		// resolve the canonical gid (and overlay the documentation) for keys reached via `$ref`.
+		if (doc && refName && !doc.id) {
+			doc.id = refName;
 		}
 
 		return doc;
