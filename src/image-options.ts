@@ -31,7 +31,7 @@ export const ImageOptionsSchema = z.object({
 		description:
 			'Controls whether or not images can be upscaled to fit the bounding box during resize prior to upload. Has no effect if files are not resized.',
 	}),
-	image_size_attributes: z.boolean().default(true).optional().meta({
+	image_size_attributes: z.boolean().optional().meta({
 		id: 'type._inputs.*.options.image_size_attributes',
 		title: 'Image Size Attributes',
 		description:

@@ -14,7 +14,7 @@ description: >-
   If you do not set this key, CloudCannon saves these attributes only when the
   [Image Size Attributes site
   flag](/documentation/articles/legacy-option-flags/#image-size-attributes-default-behaviour)
-  is enabled. This flag is enabled for sites created before June 23 2023, to
+  is enabled. This flag is enabled for sites created before June 20 2023, to
   keep those sites working.
 examples:
   - description: >-
