@@ -1,0 +1,31 @@
+gid: type._inputs.*.(date-input).options.timezone
+url: /configuration-file/types/_inputs/*/(date-input)/options/timezone/
+title: ''
+description: >-
+  This key defines the timezone that a *Date Input* uses to display and edit its
+  value, and determines the UTC offset saved with the date in your file.
+
+
+  Value must be in IANA timezone format.
+
+
+  If you do not set this key, CloudCannon uses the *Site*'s
+  [`timezone`](/configuration-file/types/timezone/).
+
+
+  For more information, please read our documentation on [Date and Time
+  inputs](/documentation/articles/what-are-date-and-time-inputs/).
+examples:
+  - description: >-
+      In this example, the `published_date` input displays and edits dates in
+      the `Pacific/Auckland` timezone.
+    language: yaml
+    code: |-
+      _inputs:
+        published_date:
+          type: date
+          options:
+            timezone: Pacific/Auckland
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false
