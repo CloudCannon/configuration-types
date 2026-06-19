@@ -1,6 +1,23 @@
 gid: type._inputs.*.(date-input)
 url: /configuration-file/types/_inputs/*/(date-input)/
 title: Date/Datetime Input
-description: This key defines an editing interface for date and/or time values.
-examples: []
+description: >-
+  This key defines an editing interface for date and/or time values.
+
+
+  *Date Inputs* store a date, or a date and time. To store a time of day on its
+  own, use a *Time Input*.
+examples:
+  - description: >-
+      In this example, we have configured the `published_date` key as a *Date
+      Input* that cannot be set earlier than the start of 2020.
+    language: yaml
+    code: |-
+      _inputs:
+        published_date:
+          type: date
+          options:
+            start_from: '2020-01-01'
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -1,6 +1,19 @@
 gid: type._inputs.*.(time-input)
 url: /configuration-file/types/_inputs/*/(time-input)/
 title: Time Input
-description: This key defines an editing interface for time values only.
-examples: []
+description: |-
+  This key defines an editing interface for time values only.
+
+  *Time Inputs* store a time of day. To include the date, use a *Date Input*.
+examples:
+  - description: >-
+      In this example, we have configured the `opening_time` key as a *Time
+      Input*.
+    language: yaml
+    code: |-
+      _inputs:
+        opening_time:
+          type: time
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

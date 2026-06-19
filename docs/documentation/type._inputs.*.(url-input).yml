@@ -4,5 +4,16 @@ title: URL Input
 description: >-
   This key defines an editing interface for relative, absolute, and fully
   qualified URLs.
-examples: []
+
+
+  *URL Inputs* use the `url` type and store the link as a string.
+examples:
+  - description: In this example, we have configured the `cta_link` key as a *URL Input*.
+    language: yaml
+    code: |-
+      _inputs:
+        cta_link:
+          type: url
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

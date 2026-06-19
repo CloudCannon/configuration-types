@@ -1,9 +1,23 @@
 gid: type._inputs.*.(object-input)
 url: /configuration-file/types/_inputs/*/(object-input)/
 title: Object Input
-description: |-
+description: >-
   This key defines an editing interface for a group of nested inputs.
 
-  *Object Inputs* use the `object` type and store a set of keyed values.
-examples: []
+
+  *Object Inputs* use the `object` type and store a set of keyed values. For a
+  repeatable list of items, use an *Array Input* instead.
+examples:
+  - description: >-
+      In this example, we have configured the `seo` key as an *Object Input*
+      that groups its nested inputs into tabs.
+    language: yaml
+    code: |-
+      _inputs:
+        seo:
+          type: object
+          options:
+            subtype: tabbed
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

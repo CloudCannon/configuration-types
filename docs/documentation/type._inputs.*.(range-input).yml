@@ -8,5 +8,19 @@ description: >-
 
   *Range Inputs* use the `range` type and store a number, like *Number Inputs*,
   but present a slider control instead of a numeric field.
-examples: []
+examples:
+  - description: >-
+      In this example, we have configured the `opacity` key as a *Range Input*
+      that steps from 0 to 1 in increments of 0.1.
+    language: yaml
+    code: |-
+      _inputs:
+        opacity:
+          type: range
+          options:
+            min: 0
+            max: 1
+            step: 0.1
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

@@ -1,6 +1,24 @@
 gid: type._inputs.*.(color-input)
 url: /configuration-file/types/_inputs/*/(color-input)/
 title: Color Input
-description: This key defines an editing interface for color values.
-examples: []
+description: >-
+  This key defines an editing interface for color values.
+
+
+  *Color Inputs* provide a visual color picker and save the chosen value in the
+  format set by `options.format` (HEX, RGB, HSL, or HSV).
+examples:
+  - description: >-
+      In this example, we have configured the `brand_color` key as a *Color
+      Input* that saves HEX values with an alpha channel.
+    language: yaml
+    code: |-
+      _inputs:
+        brand_color:
+          type: color
+          options:
+            format: hex
+            alpha: true
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

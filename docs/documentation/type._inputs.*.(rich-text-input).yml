@@ -1,6 +1,26 @@
 gid: type._inputs.*.(rich-text-input)
 url: /configuration-file/types/_inputs/*/(rich-text-input)/
 title: Rich Text Input
-description: This key defines an editing interface for HTML markup content.
-examples: []
+description: >-
+  This key defines an editing interface for HTML markup content.
+
+
+  *Rich Text Inputs* provide a WYSIWYG editor for formatted content; set `type`
+  to `html` or `markdown`. For plain text, use a *Text Input* or *Textarea
+  Input*.
+examples:
+  - description: >-
+      In this example, we have configured the `body` key as a *Rich Text Input*
+      with bold, italic, and bulleted list controls.
+    language: yaml
+    code: |-
+      _inputs:
+        body:
+          type: markdown
+          options:
+            bold: true
+            italic: true
+            bulletedlist: true
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

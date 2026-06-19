@@ -4,5 +4,21 @@ title: Code Input
 description: >-
   This key defines an editing interface for code or mono-spaced plain text
   content.
-examples: []
+
+
+  *Code Inputs* use the `code` type and provide a syntax-highlighted code
+  editor, with the language set by `options.syntax`.
+examples:
+  - description: >-
+      In this example, we have configured the `custom_styles` key as a *Code
+      Input* with CSS syntax highlighting.
+    language: yaml
+    code: |-
+      _inputs:
+        custom_styles:
+          type: code
+          options:
+            syntax: css
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

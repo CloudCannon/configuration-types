@@ -6,6 +6,19 @@ description: >-
 
 
   *Array Inputs* use the `array` type and store a list of values, where each
-  item can be a nested input or input group.
-examples: []
+  item can be a nested input or input group. For a single fixed group of inputs,
+  use an *Object Input* instead.
+examples:
+  - description: >-
+      In this example, we have configured the `staff` key as an *Array Input*
+      whose items are created from the `staff` *Structure*.
+    language: yaml
+    code: |-
+      _inputs:
+        staff:
+          type: array
+          options:
+            structures: _structures.staff
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

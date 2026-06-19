@@ -4,5 +4,22 @@ title: File Input
 description: >-
   This key defines an editing interface for uploading files to your repository
   or DAM and browsing existing assets.
-examples: []
+
+
+  *File Inputs* store the path to the selected file. Set `type` to `image` or
+  `document` for media-specific variants.
+examples:
+  - description: >-
+      In this example, we have configured the `brochure` key as a *File Input*
+      that only accepts PDFs.
+    language: yaml
+    code: |-
+      _inputs:
+        brochure:
+          type: file
+          options:
+            accepts_mime_types:
+              - application/pdf
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false
