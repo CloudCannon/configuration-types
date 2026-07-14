@@ -49,7 +49,9 @@ function flattenNestedAnyOf(doc: JsonSchema, schema: JsonSchema): void {
 		const anyOf: JsonSchema[] = [];
 
 		const add = (item: JsonSchema): void => {
-			if (!item.excludeFromDocumentation) {
+			// `.nullable()` properties emit as `anyOf: [X, {type: 'null'}]`; the null branch is a
+			// validation detail, not something to document.
+			if (!item.excludeFromDocumentation && item.type !== 'null') {
 				anyOf.push(item);
 			}
 		};
@@ -71,7 +73,15 @@ function flattenNestedAnyOf(doc: JsonSchema, schema: JsonSchema): void {
 		if (anyOf.length === 0) {
 			delete doc.anyOf;
 		} else if (anyOf.length === 1) {
-			Object.assign(doc, anyOf[0]);
+			// Collapse the wrapper: hoist the surviving branch (keeping the wrapper's own
+			// description etc.) so the node reads as that branch directly.
+			delete doc.anyOf;
+			const branch = anyOf[0];
+			Object.keys(branch).forEach((key) => {
+				if (doc[key] === undefined) {
+					doc[key] = branch[key];
+				}
+			});
 		} else {
 			doc.anyOf = anyOf;
 		}

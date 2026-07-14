@@ -6,17 +6,17 @@ import { PathsSchema } from './paths.ts';
 export const BuildCoupledPathsSchema = z
 	.object({
 		...PathsSchema.shape,
-		collections: z.string().optional().meta({
+		collections: z.string().nullable().optional().meta({
 			description: 'Parent folder of all collections.',
 		}),
-		data: z.string().optional().meta({
+		data: z.string().nullable().optional().meta({
 			description: 'Parent folder of all site data files.',
 		}),
-		layouts: z.string().optional().meta({
+		layouts: z.string().nullable().optional().meta({
 			description:
 				'Parent folder of all site layout files. Only applies to Jekyll, Hugo, and Eleventy sites.',
 		}),
-		includes: z.string().optional().meta({
+		includes: z.string().nullable().optional().meta({
 			description:
 				'Parent folder of all includes, partials, or shortcode files. Only applies to Jekyll, Hugo, and Eleventy sites.',
 		}),
@@ -30,15 +30,15 @@ export const BuildCoupledPathsSchema = z
 export const FilterBaseSchema = z.enum(['none', 'all', 'strict']);
 
 export const FilterValueSchema = z.object({
-	base: FilterBaseSchema.optional().meta({
+	base: FilterBaseSchema.nullable().optional().meta({
 		description:
 			'Defines the initial set of visible files in the collection file list. Defaults to "all", or "strict" for the auto-discovered `pages` collection in Jekyll, Hugo, and Eleventy.',
 	}),
-	include: z.array(z.string()).optional().meta({
+	include: z.array(z.string()).nullable().optional().meta({
 		description:
 			'Add to the visible files set with `base`. Paths must be relative to the containing collection `path`.',
 	}),
-	exclude: z.array(z.string()).optional().meta({
+	exclude: z.array(z.string()).nullable().optional().meta({
 		description:
 			'Remove from the visible files set with `base`. Paths must be relative to the containing collection `path`.',
 	}),
@@ -82,17 +82,17 @@ const OutputSchema = z.boolean().meta({
 export const BuildCoupledCollectionConfigSchema = z.object({
 	...CollectionConfigSchema.omit({ url: true, disable_url: true }).shape,
 	path: CollectionConfigSchema.shape.path.optional(),
-	filter: FilterSchema.optional(),
-	singular_key: SingularKeySchema.optional(),
-	output: OutputSchema.optional(),
+	filter: FilterSchema.nullable().optional(),
+	singular_key: SingularKeySchema.nullable().optional(),
+	output: OutputSchema.nullable().optional(),
 });
 
 export const ReaderCollectionConfigSchema = z.object({
 	...CollectionConfigSchema.shape,
-	parser: ParserSchema.optional(),
-	filter: FilterSchema.optional(),
-	singular_key: SingularKeySchema.optional(),
-	output: OutputSchema.optional(),
+	parser: ParserSchema.nullable().optional(),
+	filter: FilterSchema.nullable().optional(),
+	singular_key: SingularKeySchema.nullable().optional(),
+	output: OutputSchema.nullable().optional(),
 });
 
 export const HugoCollectionConfigSchema = z.object({
@@ -112,17 +112,19 @@ export const BuildCoupledConfigurationSchema = z.object({
 	}),
 	version: z
 		.enum(['legacy-hugo', 'legacy-jekyll', 'legacy-eleventy', 'legacy-reader'])
+		.nullable()
 		.optional()
 		.meta(versionMeta),
-	paths: BuildCoupledPathsSchema.optional(),
+	paths: BuildCoupledPathsSchema.nullable().optional(),
 	collections_config: z
 		.record(z.string(), BuildCoupledCollectionConfigSchema)
+		.nullable()
 		.optional()
 		.meta({
 			...collectionsConfigMeta,
 			id: 'collections_config:BuildCoupled',
 		}),
-	data_config: z.record(z.string(), z.boolean()).optional().meta({
+	data_config: z.record(z.string(), z.boolean()).nullable().optional().meta({
 		description: 'Controls what data sets are available to populate select and multiselect inputs.',
 	}),
 });
@@ -133,8 +135,9 @@ export const ReaderConfigurationSchema = z.object({
 	data_config: z
 		.record(
 			z.string(),
-			z.object({ ...DataConfigEntrySchema.shape, parser: ParserSchema.optional() })
+			z.object({ ...DataConfigEntrySchema.shape, parser: ParserSchema.nullable().optional() })
 		)
+		.nullable()
 		.optional()
 		.meta({
 			description:
@@ -142,9 +145,10 @@ export const ReaderConfigurationSchema = z.object({
 		}),
 	collections_config: z
 		.record(z.string(), ReaderCollectionConfigSchema)
+		.nullable()
 		.optional()
 		.meta(collectionsConfigMeta),
-	output: z.string().optional().meta({
+	output: z.string().nullable().optional().meta({
 		description:
 			'Generates the integration file in another folder. Not applicable to Jekyll, Hugo, and Eleventy. Defaults to the root folder.',
 	}),
@@ -155,6 +159,7 @@ export const HugoConfigurationSchema = z.object({
 	version: z.literal('legacy-hugo').meta(versionMeta),
 	collections_config: z
 		.record(z.string(), HugoCollectionConfigSchema)
+		.nullable()
 		.optional()
 		.meta(collectionsConfigMeta),
 });

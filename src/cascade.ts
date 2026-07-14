@@ -11,16 +11,16 @@ export const EditorKeySchema = z.enum(['visual', 'content', 'data']).meta({
 });
 
 export const ReducedCascadeSchema = z.object({
-	_inputs: InputsSchema.optional(),
-	_inputs_from_glob: InputsFromGlobSchema.optional(),
-	_select_data: SelectDataSchema.optional(),
-	_structures: StructuresSchema.optional(),
-	_structures_from_glob: StructuresFromGlobSchema.optional(),
+	_inputs: InputsSchema.nullable().optional(),
+	_inputs_from_glob: InputsFromGlobSchema.nullable().optional(),
+	_select_data: SelectDataSchema.nullable().optional(),
+	_structures: StructuresSchema.nullable().optional(),
+	_structures_from_glob: StructuresFromGlobSchema.nullable().optional(),
 });
 
 export const CascadeSchema = z.object({
 	...ReducedCascadeSchema.shape,
-	_enabled_editors: z.array(EditorKeySchema).optional().meta({
+	_enabled_editors: z.array(EditorKeySchema).nullable().optional().meta({
 		id: 'type._enabled_editors',
 		title: 'Enabled Editors',
 		description:
@@ -28,7 +28,7 @@ export const CascadeSchema = z.object({
 		uniqueItems: true,
 	}),
 	_editables: EditablesSchema,
-	_editables_from_glob: EditablesFromGlobSchema.optional(),
+	_editables_from_glob: EditablesFromGlobSchema.nullable().optional(),
 });
 
 export type EditorKey = z.infer<typeof EditorKeySchema>;

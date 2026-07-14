@@ -62,32 +62,32 @@ export const InputTypeSchema = z
 	});
 
 const ArrayValidationSchema = z.object({
-	max_items: z.number().optional().meta({
+	max_items: z.number().nullable().optional().meta({
 		id: 'type._inputs.*.options.max_items',
 		description:
 			'This key defines the maximum number of items CloudCannon will allow in an Input. When configured, CloudCannon will prevent you from adding more items to this Input. If the Input already contains more items, CloudCannon will require you to remove items until the Input contains a valid number to save your changes, or discard your unsaved changes.',
 	}),
-	max_items_message: z.string().optional().meta({
+	max_items_message: z.string().nullable().optional().meta({
 		id: 'type._inputs.*.options.max_items_message',
 		description:
 			'This key defines the message that explains why an Input needs to have a maximum number of items. This key requires you to define `options.max_items`.',
 	}),
-	min_items: z.number().optional().meta({
+	min_items: z.number().nullable().optional().meta({
 		id: 'type._inputs.*.options.min_items',
 		description:
 			'This key defines the minimum number of items CloudCannon will allow in an Input. When configured, CloudCannon will prevent you from removing items from this Input below this value. If the Input already contains fewer items, CloudCannon will require you to add items until the Input contains a valid number to save your changes, or discard your unsaved changes.',
 	}),
-	min_items_message: z.string().optional().meta({
+	min_items_message: z.string().nullable().optional().meta({
 		id: 'type._inputs.*.options.min_items_message',
 		description:
 			'This key defines the message that explains why an Input needs to have a minimum number of items. This key requires you to define `options.min_items`.',
 	}),
-	unique_on: z.string().optional().meta({
+	unique_on: z.string().nullable().optional().meta({
 		id: 'type._inputs.*.options.unique_on',
 		description:
 			'This key defines the JSON Path selector that CloudCannon should use to determine if the value of an Input is unique. When configured, CloudCannon will require the value of the Input to be unique compared to the value defined on the JSON Path. If the Input already contains a non-unique value, CloudCannon will require you to change it to a valid value to save your changes, or discard your unsaved changes.',
 	}),
-	unique_on_message: z.string().optional().meta({
+	unique_on_message: z.string().nullable().optional().meta({
 		id: 'type._inputs.*.options.unique_on_message',
 		description:
 			'This key defines the message that explains why an Input needs to be unique. This key requires you to define `options.unique_on`.',
@@ -129,8 +129,8 @@ export const TextareaInputOptionsSchema = z
 	.object({
 		...TextValidationSchema.shape,
 		...RequiredValidationSchema.shape,
-		empty_type: EmptyTypeTextSchema.optional(),
-		placeholder: z.string().optional().meta({
+		empty_type: EmptyTypeTextSchema.nullable().optional(),
+		placeholder: z.string().nullable().optional().meta({
 			description: 'Text shown when this input has no value.',
 		}),
 		show_count: z.boolean().default(false).optional().meta({
@@ -145,7 +145,7 @@ export const TextareaInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.literal('textarea').meta(typeMeta),
-		options: TextareaInputOptionsSchema.optional(),
+		options: TextareaInputOptionsSchema.nullable().optional(),
 	})
 	.meta({
 		id: 'TextareaInput',
@@ -158,16 +158,16 @@ export const CodeInputOptionsSchema = z
 		...SourceEditorSchema.shape,
 		...TextValidationSchema.shape,
 		...RequiredValidationSchema.shape,
-		empty_type: EmptyTypeTextSchema.optional(),
-		max_visible_lines: z.number().optional().meta({
+		empty_type: EmptyTypeTextSchema.nullable().optional(),
+		max_visible_lines: z.number().nullable().optional().meta({
 			description:
 				'Sets the maximum number of visible lines for this input, effectively controlling maximum height. When the containing text exceeds this number, the input becomes a scroll area.',
 		}),
-		min_visible_lines: z.number().optional().meta({
+		min_visible_lines: z.number().nullable().optional().meta({
 			description:
 				'Sets the minimum number of visible lines for this input, effectively controlling initial height. When the containing text exceeds this number, the input grows line by line to the lines defined by `max_visible_lines`.',
 		}),
-		syntax: SyntaxSchema.optional().meta({
+		syntax: SyntaxSchema.nullable().optional().meta({
 			description:
 				'Changes how the editor parses your content for syntax highlighting. Should be set to the language of the code going into the input.',
 		}),
@@ -180,7 +180,7 @@ export const CodeInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.literal('code').meta(typeMeta),
-		options: CodeInputOptionsSchema.optional(),
+		options: CodeInputOptionsSchema.nullable().optional(),
 	})
 	.meta({
 		id: 'CodeInput',
@@ -192,16 +192,16 @@ export const ColorInputOptionsSchema = z
 	.object({
 		...TextValidationSchema.shape,
 		...RequiredValidationSchema.shape,
-		empty_type: EmptyTypeTextSchema.optional(),
-		format: z.enum(['rgb', 'hex', 'hsl', 'hsv']).optional().meta({
+		empty_type: EmptyTypeTextSchema.nullable().optional(),
+		format: z.enum(['rgb', 'hex', 'hsl', 'hsv']).nullable().optional().meta({
 			description:
 				'Sets what format the color value is saved as. Defaults to the naming convention, or HEX if that is unset.',
 		}),
-		alpha: z.boolean().optional().meta({
+		alpha: z.boolean().nullable().optional().meta({
 			description:
 				'Toggles showing a control for adjusting the transparency of the selected color. Defaults to using the naming convention, enabled if the input key ends with "a".',
 		}),
-		palette: z.array(z.string()).optional(),
+		palette: z.array(z.string()).nullable().optional(),
 		hide_picker: z.boolean().default(false).optional(),
 	})
 	.meta({
@@ -212,7 +212,7 @@ export const ColorInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.literal('color').meta(typeMeta),
-		options: ColorInputOptionsSchema.optional(),
+		options: ColorInputOptionsSchema.nullable().optional(),
 	})
 	.meta({
 		id: 'ColorInput',
@@ -235,20 +235,20 @@ const MaxSchema = z.number().meta({
 export const NumberInputOptionsSchema = z
 	.object({
 		...RequiredValidationSchema.shape,
-		empty_type: EmptyTypeNumberSchema.optional(),
-		min: MinSchema.optional(),
-		max: MaxSchema.optional(),
-		step: z.number().optional().meta({
+		empty_type: EmptyTypeNumberSchema.nullable().optional(),
+		min: MinSchema.nullable().optional(),
+		max: MaxSchema.nullable().optional(),
+		step: z.number().nullable().optional().meta({
 			id: 'type._inputs.*.options.step',
 			description:
 				'A number that specifies the granularity that the value must adhere to, or the special value any, which allows any decimal value between `max` and `min`.',
 		}),
-		min_message: z.string().optional().meta({
+		min_message: z.string().nullable().optional().meta({
 			id: 'type._inputs.*.options.min_message',
 			description:
 				'This key defines the message that explains why an Input needs to have a minimum numerical value. This key requires you to define `options.min`.',
 		}),
-		max_message: z.string().optional().meta({
+		max_message: z.string().nullable().optional().meta({
 			id: 'type._inputs.*.options.max_message',
 			description:
 				'This key defines the message that explains why an Input needs to have a maximum numerical value. This key requires you to define `options.max`.',
@@ -262,7 +262,7 @@ export const NumberInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.literal('number').meta(typeMeta),
-		options: NumberInputOptionsSchema.optional(),
+		options: NumberInputOptionsSchema.nullable().optional(),
 	})
 	.meta({
 		id: 'NumberInput',
@@ -284,7 +284,7 @@ export const RangeInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.literal('range').meta(typeMeta),
-		options: RangeInputOptionsSchema.optional(),
+		options: RangeInputOptionsSchema.nullable().optional(),
 	})
 	.meta({
 		id: 'RangeInput',
@@ -298,12 +298,12 @@ export const RichTextInputOptionsSchema = z
 		...BlockEditableSchema.shape,
 		...TextValidationSchema.shape,
 		...RequiredValidationSchema.shape,
-		empty_type: EmptyTypeTextSchema.optional(),
-		allow_resize: z.boolean().optional().meta({ deprecated: true }),
+		empty_type: EmptyTypeTextSchema.nullable().optional(),
+		allow_resize: z.boolean().nullable().optional().meta({ deprecated: true }),
 		prevent_resize: z.boolean().default(false).optional().meta({
 			description: 'Hides the resize handler to vertically resize the input.',
 		}),
-		initial_height: z.number().optional().meta({
+		initial_height: z.number().nullable().optional().meta({
 			description: 'Defines the initial height of this input in pixels (px).',
 		}),
 	})
@@ -315,7 +315,7 @@ export const RichTextInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.enum(['html', 'markdown']).meta(typeMeta),
-		options: RichTextInputOptionsSchema.optional(),
+		options: RichTextInputOptionsSchema.nullable().optional(),
 	})
 	.meta({
 		id: 'RichTextInput',
@@ -326,8 +326,8 @@ export const RichTextInputSchema = z
 export const DateInputOptionsSchema = z
 	.object({
 		...RequiredValidationSchema.shape,
-		empty_type: EmptyTypeTextSchema.optional(),
-		timezone: TimezoneSchema.optional().meta({
+		empty_type: EmptyTypeTextSchema.nullable().optional(),
+		timezone: TimezoneSchema.nullable().optional().meta({
 			description:
 				'Specifies the time zone that dates are displayed and edited in. Also changes the suffix the date is persisted to the file with. Defaults to the global `timezone`.',
 		}),
@@ -336,12 +336,13 @@ export const DateInputOptionsSchema = z
 				z.iso.datetime({ offset: true, local: true }).meta({ title: 'ISO8601 String' }),
 				z.coerce.string().meta({ isJsonSchemaAny: true, documentationType: 'date', title: 'Date' }),
 			])
+			.nullable()
 			.optional()
 			.meta({
 				description:
 					'This key defines the earliest date and time, inclusive, that CloudCannon will allow in an Input. When configured, CloudCannon will prevent you from selecting an earlier date and time. If the Input already contains an earlier date and time, CloudCannon will require you to change it to a valid value to save your changes, or discard your unsaved changes. Value must be in ISO8601 format. If `options.end_before` is also configured, this key cannot be a later date and time.',
 			}),
-		start_from_message: z.string().optional().meta({
+		start_from_message: z.string().nullable().optional().meta({
 			description:
 				'This key defines the message that explains why an Input needs to have a start date. This key requires you to define `options.start_from`.',
 		}),
@@ -350,12 +351,13 @@ export const DateInputOptionsSchema = z
 				z.iso.datetime({ offset: true, local: true }).meta({ title: 'ISO8601 String' }),
 				z.coerce.string().meta({ isJsonSchemaAny: true, documentationType: 'date', title: 'Date' }),
 			])
+			.nullable()
 			.optional()
 			.meta({
 				description:
 					'This key defines the date and time, exclusive, that CloudCannon will allow in an Input. When configured, CloudCannon will prevent you from selecting a later date and time. If the Input already contains a later date and time, CloudCannon will require you to change it to a valid value to save your changes, or discard your unsaved changes. Value must be in ISO8601 format. If options.start_from is also configured, this key cannot be an earlier date and time. This key has no default.',
 			}),
-		end_before_message: z.string().optional().meta({
+		end_before_message: z.string().nullable().optional().meta({
 			description:
 				'This key defines the message that explains why an Input needs to have an end date. This key requires you to define `options.end_before`. This key has no default.',
 		}),
@@ -368,7 +370,7 @@ export const DateInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.enum(['date', 'datetime']).meta(typeMeta),
-		options: DateInputOptionsSchema.optional(),
+		options: DateInputOptionsSchema.nullable().optional(),
 	})
 	.meta({
 		id: 'DateInput',
@@ -379,7 +381,7 @@ export const DateInputSchema = z
 export const TimeInputOptionsSchema = z
 	.object({
 		...RequiredValidationSchema.shape,
-		empty_type: EmptyTypeTextSchema.optional(),
+		empty_type: EmptyTypeTextSchema.nullable().optional(),
 	})
 	.meta({
 		description: 'Options that are specific to Time Inputs.',
@@ -389,7 +391,7 @@ export const TimeInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.literal('time').meta(typeMeta),
-		options: TimeInputOptionsSchema.optional(),
+		options: TimeInputOptionsSchema.nullable().optional(),
 	})
 	.meta({
 		id: 'TimeInput',
@@ -401,7 +403,7 @@ export const FileInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.enum(['file', 'document', 'image']).meta(typeMeta),
-		options: FileInputOptionsSchema.optional(),
+		options: FileInputOptionsSchema.nullable().optional(),
 	})
 	.meta({
 		id: 'FileInput',
@@ -414,7 +416,7 @@ export const MultiselectInputOptionsSchema = z
 	.object({
 		...SharedSelectInputOptionsSchema.shape,
 		...ArrayValidationSchema.shape,
-		empty_type: EmptyTypeArraySchema.optional(),
+		empty_type: EmptyTypeArraySchema.nullable().optional(),
 	})
 	.meta({
 		description: 'Options that are specific to Multiselect Inputs.',
@@ -424,7 +426,7 @@ export const MultiselectInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.literal('multiselect').meta(typeMeta),
-		options: MultiselectInputOptionsSchema.optional(),
+		options: MultiselectInputOptionsSchema.nullable().optional(),
 	})
 	.meta({
 		id: 'MultiselectInput',
@@ -441,7 +443,7 @@ export const ChoiceInputOptionsSchema = z
 	.object({
 		...SharedChoiceInputOptionsSchema.shape,
 		...TextValidationSchema.shape,
-		empty_type: EmptyTypeTextSchema.optional(),
+		empty_type: EmptyTypeTextSchema.nullable().optional(),
 	})
 	.meta({
 		description: 'Options that are specific to Choice Inputs.',
@@ -451,7 +453,7 @@ export const ChoiceInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.literal('choice').meta(typeMeta),
-		options: ChoiceInputOptionsSchema.optional(),
+		options: ChoiceInputOptionsSchema.nullable().optional(),
 	})
 	.meta({
 		id: 'ChoiceInput',
@@ -464,7 +466,7 @@ export const MultichoiceInputOptionsSchema = z
 	.object({
 		...SharedChoiceInputOptionsSchema.shape,
 		...ArrayValidationSchema.shape,
-		empty_type: EmptyTypeArraySchema.optional(),
+		empty_type: EmptyTypeArraySchema.nullable().optional(),
 	})
 	.meta({
 		description: 'Options that are specific to Multichoice Inputs.',
@@ -474,7 +476,7 @@ export const MultichoiceInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.literal('multichoice').meta(typeMeta),
-		options: MultichoiceInputOptionsSchema.optional(),
+		options: MultichoiceInputOptionsSchema.nullable().optional(),
 	})
 	.meta({
 		id: 'MultichoiceInput',
@@ -484,20 +486,20 @@ export const MultichoiceInputSchema = z
 	});
 
 export const ObjectInputGroupSchema = z.object({
-	heading: z.string().optional().meta({
+	heading: z.string().nullable().optional().meta({
 		description: 'The main text for the group shown when collapsed or expanded.',
 	}),
-	comment: z.string().optional().meta({
+	comment: z.string().nullable().optional().meta({
 		description:
 			'Changes the subtext below the `heading`. Has no default. Supports a limited set of Markdown: links, bold, italic, subscript, superscript, and inline code elements are allowed.',
 	}),
 	collapsed: z.boolean().default(false).optional().meta({
 		description: 'Controls if this group is collapsed or expanded when first viewed.',
 	}),
-	inputs: z.array(z.string()).optional().meta({
+	inputs: z.array(z.string()).nullable().optional().meta({
 		description: 'The keys of each input in this group.',
 	}),
-	documentation: DocumentationSchema.optional().meta({
+	documentation: DocumentationSchema.nullable().optional().meta({
 		description:
 			'Provides a custom link for documentation for editors shown above the collection file list.',
 	}),
@@ -506,48 +508,49 @@ export const ObjectInputGroupSchema = z.object({
 export const ObjectInputOptionsSchema = z
 	.object({
 		...RequiredValidationSchema.shape,
-		empty_type: EmptyTypeObjectSchema.optional(),
-		preview: PreviewSchema.optional(),
-		subtype: z.enum(['object', 'mutable', 'tabbed']).default('object').optional().meta({
+		empty_type: EmptyTypeObjectSchema.nullable().optional(),
+		preview: PreviewSchema.nullable().optional(),
+		subtype: z.enum(['object', 'mutable', 'tabbed']).nullable().default('object').optional().meta({
 			description: 'Changes the appearance and behavior of the input.',
 		}),
 		entries: z
 			.object({
-				allowed_keys: z.array(z.string()).optional().meta({
+				allowed_keys: z.array(z.string()).nullable().optional().meta({
 					description:
 						'Defines a limited set of keys that can exist on the data within an object input. This set is used when entries are added and renamed with `allow_create` enabled. Has no effect if `allow_create` is not enabled.',
 				}),
-				assigned_structures: z.record(z.string(), z.array(z.string())).optional().meta({
+				assigned_structures: z.record(z.string(), z.array(z.string())).nullable().optional().meta({
 					description:
 						'Provides data formats when adding entries to the data within this object input. When adding an entry, team members are prompted to choose from a number of values you have defined. Has no effect if `allow_create` is false. `entries.structures` applies to the entries within the object.',
 				}),
 				get structures() {
-					return z.union([StructureReferenceSchema, StructureSchema]).optional().meta({
+					return z.union([StructureReferenceSchema, StructureSchema]).nullable().optional().meta({
 						description:
 							'Provides data formats for value of this object. When choosing an item, team members are prompted to choose from a number of values you have defined. `structures` applies to the object itself.',
 					});
 				},
-				comment: z.string().optional().meta({
+				comment: z.string().nullable().optional().meta({
 					id: 'entries_comment',
 					description:
 						'Used to supply help text above the key input when adding/renaming within a mutable object input. Has no default. Supports a limited set of Markdown: links, bold, italic, subscript, superscript and inline code elements are allowed.',
 				}),
-				documentation: DocumentationSchema.optional().meta({
+				documentation: DocumentationSchema.nullable().optional().meta({
 					description:
 						'Provides a custom link for documentation for editors shown above the key input when adding/renaming within a mutable object input.',
 				}),
 			})
+			.nullable()
 			.optional()
 			.meta({
 				description: 'Contains options for the "mutable" subtype.',
 			}),
 		get structures() {
-			return z.union([StructureReferenceSchema, StructureSchema]).optional().meta({
+			return z.union([StructureReferenceSchema, StructureSchema]).nullable().optional().meta({
 				description:
 					'Provides data formats for value of this object. When choosing an item, team members are prompted to choose from a number of values you have defined. `structures` applies to the object itself.',
 			});
 		},
-		groups: z.array(ObjectInputGroupSchema).optional().meta({
+		groups: z.array(ObjectInputGroupSchema).nullable().optional().meta({
 			description:
 				'Allows you to group the inputs inside this object together without changing the data structure.',
 		}),
@@ -557,7 +560,7 @@ export const ObjectInputOptionsSchema = z
 		allow_label_formatting: z.boolean().default(false).optional().meta({
 			description: 'Controls whether or not labels on mutable object entries are formatted.',
 		}),
-		view: z.enum(['card', 'gallery', 'gallery-left']).optional().meta({
+		view: z.enum(['card', 'gallery', 'gallery-left']).nullable().optional().meta({
 			description: 'Controls how object previews are rendered.',
 		}),
 	})
@@ -569,7 +572,7 @@ export const ObjectInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.literal('object').meta(typeMeta),
-		options: ObjectInputOptionsSchema.optional(),
+		options: ObjectInputOptionsSchema.nullable().optional(),
 	})
 	.meta({
 		id: 'ObjectInput',
@@ -582,9 +585,9 @@ export const ArrayInputOptionsSchema = z
 		...RequiredValidationSchema.shape,
 		...ArrayValidationSchema.shape,
 		...ArrayControlOptionsSchema.shape,
-		empty_type: EmptyTypeArraySchema.optional(),
+		empty_type: EmptyTypeArraySchema.nullable().optional(),
 		get structures() {
-			return z.union([StructureReferenceSchema, StructureSchema]).optional().meta({
+			return z.union([StructureReferenceSchema, StructureSchema]).nullable().optional().meta({
 				description:
 					'Provides data formats for value of this object. When choosing an item, team members are prompted to choose from a number of values you have defined.',
 			});
@@ -598,7 +601,7 @@ export const ArrayInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.literal('array').meta(typeMeta),
-		options: ArrayInputOptionsSchema.optional(),
+		options: ArrayInputOptionsSchema.nullable().optional(),
 	})
 	.meta({
 		id: 'ArrayInput',

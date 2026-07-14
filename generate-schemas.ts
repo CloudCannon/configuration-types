@@ -111,7 +111,7 @@ const schemas = [
 	{
 		// keys: _snippets_from_glob, _snippets_templates_from_glob
 		// files: *.cloudcannon.snippets.(yml|yaml|json)
-		schema: ConfigurationSchema.shape._snippets.unwrap().meta({
+		schema: ConfigurationSchema.shape._snippets.unwrap().unwrap().meta({
 			$id: 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-snippets.schema.json',
 		}),
 		filename: 'cloudcannon-snippets.schema.json',
@@ -135,7 +135,7 @@ const schemas = [
 	{
 		// keys: _snippets_definitions_from_glob
 		// files: *.cloudcannon.snippets-definitions.(yml|yaml|json)
-		schema: ConfigurationSchema.shape._snippets_definitions.unwrap().meta({
+		schema: ConfigurationSchema.shape._snippets_definitions.unwrap().unwrap().meta({
 			$id: 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-snippets-definitions.schema.json',
 		}),
 		filename: 'cloudcannon-snippets-definitions.schema.json',
@@ -170,7 +170,7 @@ const schemas = [
 	{
 		// keys: schemas_from_glob
 		// files: *.cloudcannon.schemas.(yml|yaml|json)
-		schema: CollectionConfigSchema.shape.schemas.unwrap().meta({
+		schema: CollectionConfigSchema.shape.schemas.unwrap().unwrap().meta({
 			id: 'collections_config.*.schemas',
 			$id: 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-schemas.schema.json',
 		}),

@@ -50,21 +50,29 @@ export const PreviewEntriesSchema = z
 	])
 	.meta({ id: 'PreviewEntries' });
 
-const PreviewTextSchema = PreviewEntriesSchema.optional().meta({ id: 'type.preview.text' });
-const PreviewSubtextSchema = PreviewEntriesSchema.optional().meta({
+const PreviewTextSchema = PreviewEntriesSchema.nullable()
+	.optional()
+	.meta({ id: 'type.preview.text' });
+const PreviewSubtextSchema = PreviewEntriesSchema.nullable().optional().meta({
 	id: 'type.preview.subtext',
 });
-const PreviewImageSchema = PreviewEntriesSchema.optional().meta({
+const PreviewImageSchema = PreviewEntriesSchema.nullable().optional().meta({
 	id: 'type.preview.image',
 });
-const PreviewIconSchema = PreviewEntriesSchema.optional().meta({ id: 'type.preview.icon' });
-const PreviewIconColorSchema = PreviewEntriesSchema.optional().meta({
+const PreviewIconSchema = PreviewEntriesSchema.nullable()
+	.optional()
+	.meta({ id: 'type.preview.icon' });
+const PreviewIconColorSchema = PreviewEntriesSchema.nullable().optional().meta({
 	id: 'type.preview.icon_color',
 });
-const PreviewIconBackgroundColorSchema = PreviewEntriesSchema.optional().meta({
+const PreviewIconBackgroundColorSchema = PreviewEntriesSchema.nullable().optional().meta({
 	id: 'type.preview.icon_background_color',
 });
-const TagsPreviewEntriesSchema = z.array(z.string()).optional().meta({ id: 'type.preview.tags' });
+const TagsPreviewEntriesSchema = z
+	.array(z.string())
+	.nullable()
+	.optional()
+	.meta({ id: 'type.preview.tags' });
 
 export const PreviewGallerySchema = z
 	.object({
@@ -75,13 +83,15 @@ export const PreviewGallerySchema = z
 		icon_background_color: PreviewIconBackgroundColorSchema,
 		fit: z
 			.enum(['padded', 'cover', 'contain', 'cover-top'])
+			.nullable()
 			.default('padded')
 			.optional()
 			.meta({ id: 'preview.gallery.fit' }),
-		background_color: PreviewEntriesSchema.optional().meta({
+		background_color: PreviewEntriesSchema.nullable().optional().meta({
 			id: 'type.preview.gallery.background_color',
 		}),
 	})
+	.nullable()
 	.optional()
 	.meta({ id: 'type.preview.gallery' });
 
@@ -97,6 +107,7 @@ const MetadataPreviewEntrySchema = z
 
 const PreviewMetadataSchema = z
 	.array(MetadataPreviewEntrySchema)
+	.nullable()
 	.optional()
 	.meta({ id: 'type.preview.metadata' });
 

@@ -6,10 +6,10 @@ export const DocumentationSchema = z
 		url: z.string().meta({
 			description: 'The "href" value of the link.',
 		}),
-		text: z.string().optional().meta({
+		text: z.string().nullable().optional().meta({
 			description: 'The visible text used in the link.',
 		}),
-		icon: IconSchema.default('auto_stories').optional().meta({
+		icon: IconSchema.nullable().default('auto_stories').optional().meta({
 			description: 'The icon displayed next to the link.',
 		}),
 	})

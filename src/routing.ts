@@ -30,7 +30,7 @@ export const RouteSchema = z
 			description:
 				'The destination path or URL for this route. Can be a relative path on the same site or an absolute URL for external redirects.',
 		}),
-		status: RouteStatusSchema.optional(),
+		status: RouteStatusSchema.nullable().optional(),
 		forced: z.boolean().default(false).optional().meta({
 			description:
 				'When true, the redirect will be applied even if a file exists at the `from` path.',
@@ -73,11 +73,11 @@ export const HeaderRuleSchema = z
 
 export const RoutingSchema = z
 	.object({
-		routes: z.array(RouteSchema).optional().meta({
+		routes: z.array(RouteSchema).nullable().optional().meta({
 			description:
 				'An array of route rules for redirects and rewrites. Rules are processed in order; the first matching rule is applied.',
 		}),
-		headers: z.array(HeaderRuleSchema).optional().meta({
+		headers: z.array(HeaderRuleSchema).nullable().optional().meta({
 			description: 'An array of header rules to apply custom HTTP headers to responses.',
 		}),
 	})

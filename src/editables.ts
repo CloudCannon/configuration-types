@@ -9,7 +9,7 @@ import {
 import { PathsSchema } from './paths.ts';
 
 export const TextEditableSchema = z.object({
-	paths: PathsSchema.optional(),
+	paths: PathsSchema.nullable().optional(),
 
 	bold: z.boolean().default(true).optional().meta({
 		id: 'type._editables.*.bold',
@@ -35,21 +35,22 @@ export const TextEditableSchema = z.object({
 	link_options: z
 		.object({
 			get href() {
-				return UrlInputSchema.optional();
+				return UrlInputSchema.nullable().optional();
 			},
 			get title() {
-				return TextInputSchema.optional();
+				return TextInputSchema.nullable().optional();
 			},
 			get is_target_blank() {
-				return BooleanInputSchema.optional();
+				return BooleanInputSchema.nullable().optional();
 			},
 			get rel_nofollow() {
-				return BooleanInputSchema.optional();
+				return BooleanInputSchema.nullable().optional();
 			},
 			get rel_noreferrer() {
-				return BooleanInputSchema.optional();
+				return BooleanInputSchema.nullable().optional();
 			},
 		})
+		.nullable()
 		.optional()
 		.meta({
 			id: 'type._editables.*.link_options',
@@ -94,13 +95,13 @@ export const TextEditableSchema = z.object({
 			'Enables a control to undo recent edits. Undo is always enabled through standard OS-specific keyboard shortcuts.',
 	}),
 
-	remove_custom_markup: z.boolean().optional().meta({
+	remove_custom_markup: z.boolean().nullable().optional().meta({
 		id: 'type._editables.*.remove_custom_markup',
 		description:
 			'Defines if the content should be stripped of "custom markup". It is recommended to have this option turned on once you have all of your rich text options configured. Having `allow_custom_markup` turned on disables this option. Defaults to false.',
 	}),
 
-	allow_custom_markup: z.boolean().optional().meta({
+	allow_custom_markup: z.boolean().nullable().optional().meta({
 		id: 'type._editables.*.allow_custom_markup',
 		description:
 			'Defines if the content can contain "custom markup". It is not recommended to have this option turned on. Defaults to true for non-content editable regions, false otherwise.',
@@ -121,7 +122,7 @@ export const ToolbarOptionsSchema = z.object({
 			'Enables a control to insert an unordered list, or to convert selected blocks of text into a unordered list.',
 	}),
 
-	center: z.string().optional().meta({
+	center: z.string().nullable().optional().meta({
 		id: 'type._editables.*.center',
 		description:
 			'Enables a control to center align text by toggling a class name for a block of text. The value is the class name the editor should add to align the text. The styles for this class need to be listed in the `styles` file to take effect outside of the input.',
@@ -141,9 +142,10 @@ export const ToolbarOptionsSchema = z.object({
 	code_block_options: z
 		.object({
 			get language() {
-				return SelectInputSchema.optional();
+				return SelectInputSchema.nullable().optional();
 			},
 		})
+		.nullable()
 		.optional()
 		.meta({
 			id: 'type._editables.*.code_block_options',
@@ -166,6 +168,7 @@ export const ToolbarOptionsSchema = z.object({
 			z.string().meta({ title: 'Format String' }),
 			z.boolean().meta({ title: 'Format Boolean' }),
 		])
+		.nullable()
 		.default('p h1 h2 h3 h4 h5 h6')
 		.optional()
 		.meta({
@@ -188,11 +191,12 @@ export const ToolbarOptionsSchema = z.object({
 	get image_options() {
 		return z
 			.object({
-				src: UrlInputSchema.optional(),
-				alt: TextInputSchema.optional(),
-				title: TextInputSchema.optional(),
-				loading: BooleanInputSchema.optional(),
+				src: UrlInputSchema.nullable().optional(),
+				alt: TextInputSchema.nullable().optional(),
+				title: TextInputSchema.nullable().optional(),
+				loading: BooleanInputSchema.nullable().optional(),
 			})
+			.nullable()
 			.optional()
 			.meta({
 				id: 'type._editables.*.image_options',
@@ -205,13 +209,13 @@ export const ToolbarOptionsSchema = z.object({
 		description: 'Enables a control to increase indentation for numbered and unordered lists.',
 	}),
 
-	justify: z.string().optional().meta({
+	justify: z.string().nullable().optional().meta({
 		id: 'type._editables.*.justify',
 		description:
 			'Enables a control to justify text by toggling a class name for a block of text. The value is the class name the editor should add to justify the text. The styles for this class need to be listed in the `styles` file to take effect outside of the input.',
 	}),
 
-	left: z.string().optional().meta({
+	left: z.string().nullable().optional().meta({
 		id: 'type._editables.*.left',
 		description:
 			'Enables a control to left align text by toggling a class name for a block of text. The value is the class name the editor should add to align the text. The styles for this class need to be listed in the `styles` file to take effect outside of the input.',
@@ -228,7 +232,7 @@ export const ToolbarOptionsSchema = z.object({
 		description: 'Enables a control to reduce indentation for numbered and unordered lists.',
 	}),
 
-	right: z.string().optional().meta({
+	right: z.string().nullable().optional().meta({
 		id: 'type._editables.*.right',
 		description:
 			'Enables a control to right align text by toggling a class name for a block of text. The value is the class name the editor should add to align the text. The styles for this class need to be listed in the `styles` file to take effect outside of the input.',
@@ -239,7 +243,7 @@ export const ToolbarOptionsSchema = z.object({
 		description: 'Enables a control to insert snippets, if any are available.',
 	}),
 
-	styles: z.string().optional().meta({
+	styles: z.string().nullable().optional().meta({
 		id: 'type._editables.*.styles',
 		description:
 			'Enables a drop down menu for editors to style selected text or blocks or text. Styles are the combination of an element and class name. The value for this option is the path (either source or build output) to the CSS file containing the styles.',
@@ -270,45 +274,46 @@ export const BlockEditableSchema = z.object({
 
 export const ImageEditableSchema = z.object({
 	...ImageOptionsSchema.shape,
-	paths: PathsSchema.optional(),
+	paths: PathsSchema.nullable().optional(),
 });
 
 export const LinkEditableSchema = z.object({
-	paths: PathsSchema.optional(),
+	paths: PathsSchema.nullable().optional(),
 });
 
 export const EditablesSchema = z
 	.object({
-		content: BlockEditableSchema.optional().meta({
+		content: BlockEditableSchema.nullable().optional().meta({
 			id: 'ContentEditable',
 			title: 'Content Editable',
 			description: 'Contains input options for the Content Editor.',
 		}),
 
-		block: BlockEditableSchema.optional().meta({
+		block: BlockEditableSchema.nullable().optional().meta({
 			id: 'BlockEditable',
 			title: 'Block Editable',
 			description: 'Contains input options for block Editable Regions.',
 		}),
 
-		link: LinkEditableSchema.optional().meta({
+		link: LinkEditableSchema.nullable().optional().meta({
 			id: 'LinkEditable',
 			title: 'Link Editable',
 			description: 'Contains input options for link Editable Regions.',
 		}),
 
-		image: ImageEditableSchema.optional().meta({
+		image: ImageEditableSchema.nullable().optional().meta({
 			id: 'ImageEditable',
 			title: 'Image Editable',
 			description: 'Contains input options for image Editable Regions.',
 		}),
 
-		text: TextEditableSchema.optional().meta({
+		text: TextEditableSchema.nullable().optional().meta({
 			id: 'TextEditable',
 			title: 'Text Editable',
 			description: 'Contains input options for text Editable Regions.',
 		}),
 	})
+	.nullable()
 	.optional()
 	.meta({
 		id: 'type._editables',
