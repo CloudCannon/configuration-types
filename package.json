@@ -54,6 +54,6 @@
 		"http-server": "14.1.1",
 		"js-yaml": "5.2.1",
 		"tsx": "4.23.0",
-		"typescript": "6.0.3"
+		"typescript": "7.0.2"
 	}
 }
