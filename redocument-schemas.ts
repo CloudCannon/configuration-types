@@ -249,5 +249,35 @@ export async function redocumentSchema(
 
 	walk(schema, { path: [], key: schema.id });
 
+	if (options?.stripId) {
+		stripIds(schema);
+	}
+
 	await fs.writeFile(fullSchemaPath, JSON.stringify(schema, null, '  '));
+}
+
+const VALUE_KEYWORDS = new Set(['default', 'const', 'examples', 'enum']);
+
+function stripIds(node: unknown): void {
+	if (Array.isArray(node)) {
+		for (const item of node) {
+			stripIds(item);
+		}
+		return;
+	}
+
+	if (!node || typeof node !== 'object') {
+		return;
+	}
+
+	const record = node as Record<string, unknown>;
+	if (typeof record.id === 'string') {
+		delete record.id;
+	}
+
+	for (const key of Object.keys(record)) {
+		if (!VALUE_KEYWORDS.has(key)) {
+			stripIds(record[key]);
+		}
+	}
 }

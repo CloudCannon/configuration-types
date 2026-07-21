@@ -13,13 +13,13 @@ export const ImageOptionsSchema = z.object({
 		description:
 			'Sets how uploaded image files are resized with a bounding box defined by width and height prior to upload. Has no effect when selecting existing images, or if width and height are unset.',
 	}),
-	width: z.number().nullable().optional().meta({
+	width: z.number().min(1).nullable().optional().meta({
 		id: 'type._inputs.*.options.width',
 		title: 'Width',
 		description:
 			'Defines the width of the bounding box used in the image resizing process defined with resize_style.',
 	}),
-	height: z.number().nullable().optional().meta({
+	height: z.number().min(1).nullable().optional().meta({
 		id: 'type._inputs.*.options.height',
 		title: 'Height',
 		description:
@@ -31,7 +31,7 @@ export const ImageOptionsSchema = z.object({
 		description:
 			'Controls whether or not images can be upscaled to fit the bounding box during resize prior to upload. Has no effect if files are not resized.',
 	}),
-	image_size_attributes: z.boolean().default(true).optional().meta({
+	image_size_attributes: z.boolean().default(false).optional().meta({
 		id: 'type._inputs.*.options.image_size_attributes',
 		title: 'Image Size Attributes',
 		description:

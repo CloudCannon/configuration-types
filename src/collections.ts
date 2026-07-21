@@ -150,8 +150,8 @@ export const CollectionConfigSchema = z
 		}),
 		glob: z
 			.union([
-				z.array(z.string()).meta({ title: 'Glob Array' }),
-				z.string().meta({ title: 'Glob' }),
+				z.array(z.string().nullable()).meta({ title: 'Glob Array' }),
+				z.string().nullable().meta({ title: 'Glob' }),
 			])
 			.nullable()
 			.optional()
@@ -246,10 +246,10 @@ export const CollectionConfigSchema = z
 
 export const CollectionGroupSchema = z
 	.object({
-		heading: z.string().meta({
+		heading: z.string().nullable().meta({
 			description: 'Short, descriptive label for this group of Collections.',
 		}),
-		collections: z.array(z.string()).meta({
+		collections: z.array(z.string()).nullable().meta({
 			description:
 				'The collections shown in the sidebar for this group. Collections here are referenced by their key within `collections_config`.',
 		}),

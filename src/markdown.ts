@@ -2,7 +2,8 @@ import * as z from 'zod';
 
 export const AttributeListPositionSchema = z
 	.enum(['none', 'right', 'space right', 'below', 'newline below', 'right-of-prefix'])
-	.nullable().optional()
+	.nullable()
+	.optional()
 	.meta({
 		id: 'AttributeListPosition',
 		title: 'Attribute List Position',

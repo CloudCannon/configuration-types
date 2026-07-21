@@ -201,7 +201,8 @@ function suppressNonMatchingBranchErrors(
 		unions.sort((a, b) => b.schemaPath.length - a.schemaPath.length);
 
 		for (const union of unions) {
-			const branchErrors = matchedBranchErrors(union, rootSchema);
+			const branchErrors =
+				matchedBranchErrors(union, rootSchema) ?? nullableWrapperErrors(union, rootSchema);
 			if (!branchErrors) {
 				continue;
 			}
@@ -297,6 +298,32 @@ function matchedBranchErrors(
 		result.push(...branchErrors);
 	}
 	return result;
+}
+
+// `.nullable()` emits as `anyOf: [X, {type: 'null'}]`, where null only exists to silence the key.
+// When non-null data fails such a wrapper, X is the only branch that can apply: re-validates
+// against X so its errors are presented instead of the wrapper's "must be null" noise.
+function nullableWrapperErrors(
+	union: ErrorObject,
+	rootSchema: AnySchemaObject
+): ErrorObject[] | undefined {
+	if (union.keyword !== 'anyOf' || union.data === null) {
+		return;
+	}
+
+	const branches = union.parentSchema?.anyOf;
+	if (!Array.isArray(branches)) {
+		return;
+	}
+
+	const nonNullBranches = branches.filter(
+		(branch) => resolveRef(branch, rootSchema)?.type !== 'null'
+	);
+	if (nonNullBranches.length !== 1 || nonNullBranches.length === branches.length) {
+		return;
+	}
+
+	return revalidateBranch(union.data, nonNullBranches[0], rootSchema);
 }
 
 function branchDiscriminatorValues(
@@ -398,6 +425,12 @@ function aggregateBranchExpectations(errors: ErrorObject[]): ErrorObject[] {
 					? error
 					: { ...error, keyword: 'enum', params: { allowedValues } }
 			);
+		} else if (error.keyword === 'required') {
+			// Every branch of a union can demand the same property; report each missing property once.
+			if (!addNew(seen, `required|${error.instancePath}|${error.params.missingProperty}`)) {
+				continue;
+			}
+			result.push(error);
 		} else if (error.keyword === 'type') {
 			if (!addNew(seen, `type|${error.instancePath}`)) {
 				continue;
@@ -496,6 +529,13 @@ function addTo<T>(map: Map<string, Set<T>>, key: string, values: Iterable<T>): v
 	}
 }
 
+const comparisons: Record<string, string> = {
+	'>=': 'at least',
+	'<=': 'at most',
+	'>': 'greater than',
+	'<': 'less than',
+};
+
 function formatError(error: ErrorObject, highlight: (value: unknown) => string): string {
 	switch (error.keyword) {
 		case 'const':
@@ -552,18 +592,18 @@ function formatError(error: ErrorObject, highlight: (value: unknown) => string):
 			return 'must not contain duplicate items';
 		case 'not':
 			return 'must not match the disallowed format';
+		case 'minLength':
+		case 'maxLength': {
+			const limit: number = error.params.limit;
+			const bound = error.keyword === 'minLength' ? 'at least' : 'at most';
+			return `must be ${bound} ${limit} character${limit === 1 ? '' : 's'}`;
+		}
 		case 'minimum':
 		case 'maximum':
 		case 'exclusiveMinimum':
 		case 'exclusiveMaximum': {
-			const comparisons: Record<string, string> = {
-				'>=': 'at least',
-				'<=': 'at most',
-				'>': 'greater than',
-				'<': 'less than',
-			};
 			const comparison = comparisons[error.params.comparison] ?? error.params.comparison;
-			return `must be ${comparison} ${highlight(error.params.limit)}`;
+			return `must be ${comparison} ${error.params.limit}`;
 		}
 		default:
 			return error.message ?? 'unknown error';

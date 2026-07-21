@@ -3,7 +3,7 @@ import { IconSchema } from './icon.ts';
 
 export const DocumentationSchema = z
 	.object({
-		url: z.string().meta({
+		url: z.string().min(1).meta({
 			description: 'The "href" value of the link.',
 		}),
 		text: z.string().nullable().optional().meta({

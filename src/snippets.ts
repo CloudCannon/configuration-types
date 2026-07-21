@@ -274,7 +274,7 @@ const SnippetImportSchema = z
 		z.boolean().meta({ id: 'type._snippets_imports.*.(full-import)', title: 'Full Import' }),
 		z
 			.object({
-				exclude: z.array(z.string()).meta({
+				exclude: z.array(z.string()).nullable().meta({
 					id: 'SnippetImportExclude',
 					description:
 						'The list of excluded snippets. If unset, all snippets are excluded unless defined in `include`.',
@@ -283,7 +283,7 @@ const SnippetImportSchema = z
 			.meta({ title: 'Exclude List' }),
 		z
 			.object({
-				include: z.array(z.string()).meta({
+				include: z.array(z.string()).nullable().meta({
 					id: 'SnippetImportInclude',
 					description:
 						'The list of included snippets. If unset, all snippets are included unless defined in `exclude`.',
