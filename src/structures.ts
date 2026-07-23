@@ -34,23 +34,23 @@ export const StructuresFromGlobSchema = z.array(z.string()).meta({
 });
 
 export const StructureValueSchema = StructureBaseSchema.extend({
-	preview: PreviewSchema.optional(),
-	picker_preview: PickerPreviewSchema.optional(),
+	preview: PreviewSchema.nullable().optional(),
+	picker_preview: PickerPreviewSchema.nullable().optional(),
 
 	// This is the ReducedCascadeSchema - can't seem to reuse it due to Zod's limitations.
 	get _inputs() {
-		return InputsSchema.optional();
+		return InputsSchema.nullable().optional();
 	},
 	get _inputs_from_glob() {
-		return InputsFromGlobSchema.optional();
+		return InputsFromGlobSchema.nullable().optional();
 	},
-	_select_data: SelectDataSchema.optional(),
+	_select_data: SelectDataSchema.nullable().optional(),
 	get _structures() {
-		return StructuresSchema.optional();
+		return StructuresSchema.nullable().optional();
 	},
-	_structures_from_glob: StructuresFromGlobSchema.optional(),
+	_structures_from_glob: StructuresFromGlobSchema.nullable().optional(),
 
-	id: z.string().optional().meta({
+	id: z.string().nullable().optional().meta({
 		description:
 			"A unique reference value used when referring to this structure value from the Object input's assigned_structures option.",
 	}),
@@ -58,22 +58,22 @@ export const StructureValueSchema = StructureBaseSchema.extend({
 		description:
 			'If set to true, this item will be considered the default type for this structure. If the type of a value within a structure cannot be inferred based on its id_key or matching fields, then it will fall back to this item. If multiple items have default set to true, only the first item will be used.',
 	}),
-	icon: IconSchema.optional().meta({
+	icon: IconSchema.nullable().optional().meta({
 		description:
 			'An icon used when displaying the structure (defaults to either format_list_bulleted for items in arrays, or notes otherwise).',
 	}),
-	image: z.string().optional().meta({
+	image: z.string().nullable().optional().meta({
 		description:
 			'Path to an image in your source files used when displaying the structure. Can be either a source (has priority) or output path.',
 	}),
-	label: z.string().optional().meta({
+	label: z.string().nullable().optional().meta({
 		description: 'Used as the main text in the interface for this value.',
 	}),
-	tags: z.array(z.string()).optional().meta({
+	tags: z.array(z.string()).nullable().optional().meta({
 		description: 'Used to group and filter items when selecting from a modal.',
 	}),
 	get groups() {
-		return z.array(ObjectInputGroupSchema).optional().meta({
+		return z.array(ObjectInputGroupSchema).nullable().optional().meta({
 			description:
 				'Allows you to group the inputs inside this object together without changing the data structure.',
 		});
@@ -87,11 +87,11 @@ export const StructureValueSchema = StructureBaseSchema.extend({
 	value: z.unknown().meta({
 		description: 'The actual value used when items are added after selection.',
 	}),
-	description: z.string().optional().meta({
+	description: z.string().nullable().optional().meta({
 		description:
 			'Provides short descriptive text for editors shown in the Data Editor for expanded values matching this Structure value. Has no default. Supports a limited set of Markdown: links, bold, italic, subscript, superscript, and inline code elements are allowed.',
 	}),
-	documentation: DocumentationSchema.optional().meta({
+	documentation: DocumentationSchema.nullable().optional().meta({
 		description:
 			'Provides a custom link for documentation for editors shown in the Data Editor for expanded values matching this Structure value. Has no default.',
 	}),
@@ -106,13 +106,13 @@ export const StructureValueSchema = StructureBaseSchema.extend({
 export const StructureSchema = z
 	.object({
 		...StructureBaseSchema.shape,
-		values: z.array(StructureValueSchema).optional(),
-		values_from_glob: z.array(z.string()).optional(),
-		id_key: z.string().default('_type').optional().meta({
+		values: z.array(StructureValueSchema).nullable().optional(),
+		values_from_glob: z.array(z.string()).nullable().optional(),
+		id_key: z.string().nullable().default('_type').optional().meta({
 			description:
 				'Defines what key should be used to detect which structure an item is. If this key is not found in the existing structure, a comparison of key names is used. Defaults to "_type".',
 		}),
-		style: z.enum(['select', 'modal']).default('select').optional().meta({
+		style: z.enum(['select', 'modal']).nullable().default('select').optional().meta({
 			description:
 				'Defines whether options are shown to your editors in a select menu (select, default) or a modal pop up window (modal) when adding a new item.',
 		}),

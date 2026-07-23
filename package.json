@@ -20,10 +20,12 @@
 	},
 	"scripts": {
 		"prebuild": "rm -rf dist && mkdir -p dist",
-		"build": "npm run build:schemas && npm run build:combined && npm run build:docs",
+		"build": "npm run build:schemas && npm run build:combined && npm run build:docs && npm run build:schema-modules && npm run build:validate",
 		"build:combined": "cp cloudcannon-config.schema.json dist/cloudcannon-config.schema.json",
 		"build:schemas": "tsx generate-schemas.ts",
+		"build:schema-modules": "tsx build-schema-modules.ts",
 		"build:docs": "tsx docs/index.ts",
+		"build:validate": "tsc -p tsconfig.validate.json",
 		"lint": "npm run lint:tsc && npm run lint:format",
 		"lint:tsc": "tsc --noEmit",
 		"lint:format": "biome check --fix",
@@ -45,6 +47,8 @@
 		"dist/**/*"
 	],
 	"dependencies": {
+		"ajv": "8.20.0",
+		"fastest-levenshtein": "1.0.16",
 		"zod": "4.4.3"
 	},
 	"devDependencies": {

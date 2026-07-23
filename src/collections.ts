@@ -6,10 +6,10 @@ import { PreviewSchema } from './preview.ts';
 
 export const HrefAddOptionSchema = z
 	.object({
-		name: z.string().optional().meta({
+		name: z.string().nullable().optional().meta({
 			description: 'The text displayed for the menu item.',
 		}),
-		icon: IconSchema.default('add').optional().meta({
+		icon: IconSchema.nullable().default('add').optional().meta({
 			description: 'The icon next to the text in the menu item.',
 		}),
 		href: z.string().meta({
@@ -24,31 +24,31 @@ export const HrefAddOptionSchema = z
 
 export const AddOptionSchema = z
 	.object({
-		name: z.string().optional().meta({
+		name: z.string().nullable().optional().meta({
 			description:
 				'The text displayed for the menu item. Defaults to using name from the matching schema if set.',
 		}),
-		icon: IconSchema.optional().meta({
+		icon: IconSchema.nullable().optional().meta({
 			description:
 				'The icon next to the text in the menu item. Defaults to using icon from the matching schema if set, then falls back to add.',
 		}),
-		editor: EditorKeySchema.optional().meta({
+		editor: EditorKeySchema.nullable().optional().meta({
 			description:
 				"The editor to open the new file in. Defaults to an appropriate editor for new file's type if possible. If no default editor can be calculated, or the editor does not support the new file type, a warning is shown in place of the editor.",
 		}),
-		base_path: z.string().optional().meta({
+		base_path: z.string().nullable().optional().meta({
 			description:
 				'Enforces a path for new files to be created in, regardless of path the user is currently navigated to within the collection file list. Relative to the path of the collection defined in collection. Defaults to the path within the collection the user is currently navigated to.',
 		}),
-		collection: z.string().optional().meta({
+		collection: z.string().nullable().optional().meta({
 			description:
 				'Sets which collection this action is creating a file in. This is used when matching the value for schema. Defaults to the containing collection these `add_options` are configured in.',
 		}),
-		schema: z.string().optional().meta({
+		schema: z.string().nullable().optional().meta({
 			description:
 				'The schema that new files are created from with this action. This schema is not restricted to the containing collection, and is instead relative to the collection specified with collection. Defaults to default if schemas are configured for the collection.',
 		}),
-		default_content_file: z.string().optional().meta({
+		default_content_file: z.string().nullable().optional().meta({
 			description:
 				'The path to a file used to populate the initial contents of a new file if no schemas are configured. We recommend using schemas, and this is ignored if a schema is available.',
 		}),
@@ -60,7 +60,7 @@ export const AddOptionSchema = z
 
 export const SortOptionSchema = z
 	.object({
-		label: z.string().optional().meta({
+		label: z.string().nullable().optional().meta({
 			description:
 				'The text to display in the sort option list. Defaults to a generated label from key and order.',
 		}),
@@ -79,15 +79,15 @@ export const SortOptionSchema = z
 
 export const CreateSchema = z
 	.object({
-		path: z.string().optional().meta({
+		path: z.string().nullable().optional().meta({
 			description:
 				"The raw template to be processed when creating files. Relative to the containing collection's path.",
 		}),
-		extra_data: z.record(z.string(), z.string()).optional().meta({
+		extra_data: z.record(z.string(), z.string()).nullable().optional().meta({
 			description:
 				'Adds to the available data placeholders coming from the file. Entry values follow the same format as path, and are processed sequentially before path. These values are not saved back to your file.',
 		}),
-		publish_to: z.string().optional().meta({
+		publish_to: z.string().nullable().optional().meta({
 			description:
 				"Defines a target collection when publishing. When a file is published, the target collection's create definition is used instead.",
 		}),
@@ -104,16 +104,16 @@ export const SchemaSchema = z
 		path: z.string().meta({
 			description: 'The path to the schema file. Relative to the root folder of the site.',
 		}),
-		name: z.string().optional().meta({
+		name: z.string().nullable().optional().meta({
 			description:
 				'Displayed in the add menu when creating new files. Defaults to a formatted version of the key.',
 		}),
-		icon: IconSchema.default('notes').optional().meta({
+		icon: IconSchema.nullable().default('notes').optional().meta({
 			description:
 				'Displayed in the add menu when creating new files; also used as the icon for collection files if no other preview is found.',
 		}),
-		create: CreateSchema.optional(),
-		new_preview_url: z.string().optional().meta({
+		create: CreateSchema.nullable().optional(),
+		new_preview_url: z.string().nullable().optional().meta({
 			description:
 				"Preview your unbuilt pages (e.g. drafts) to another page's output URL. The Visual Editor will load that URL, where Data Bindings and Previews are available to render your new page without saving.",
 		}),
@@ -132,7 +132,7 @@ export const SchemaSchema = z
 		remove_extra_inputs: z.boolean().default(true).optional().meta({
 			description: 'If checked, extra inputs are removed when editing.',
 		}),
-		preview: PreviewSchema.optional(),
+		preview: PreviewSchema.nullable().optional(),
 		...CascadeSchema.shape,
 	})
 	.meta({
@@ -150,16 +150,17 @@ export const CollectionConfigSchema = z
 		}),
 		glob: z
 			.union([
-				z.array(z.string()).meta({ title: 'Glob Array' }),
-				z.string().meta({ title: 'Glob' }),
+				z.array(z.string().nullable()).meta({ title: 'Glob Array' }),
+				z.string().nullable().meta({ title: 'Glob' }),
 			])
+			.nullable()
 			.optional()
 			.meta({
 				id: 'glob',
 				description:
 					'This key defines globs which filter the files visible in the _Collection browser_ for a given Collection. Values in this array are relative to the Collection `path`.',
 			}),
-		url: z.string().optional().meta({
+		url: z.string().nullable().optional().meta({
 			description:
 				'This key defines the output URL for files in a given Collection. CloudCannon uses the output URL in the Visual Editor, and when linking to your Testing Domain and Custom Domain.',
 		}),
@@ -171,46 +172,48 @@ export const CollectionConfigSchema = z
 			description:
 				'This key toggles whether CloudCannon removes developer files from your _Collection browser_.',
 		}),
-		name: z.string().optional().meta({
+		name: z.string().nullable().optional().meta({
 			description:
 				'This key defines the display name for a Collection. The name appears in the _Site Navigation_ and at the top of the _Collection browser_.',
 		}),
-		description: z.string().optional().meta({
+		description: z.string().nullable().optional().meta({
 			description:
 				'This key defines the description text that appears on the _Collection browser_ page. Collection descriptions are useful for adding extra context for your team members.',
 		}),
-		icon: IconSchema.default('notes').optional().meta({
+		icon: IconSchema.nullable().default('notes').optional().meta({
 			description:
 				'This key defines the icon for a Collection. Collection icons appear in the _Site Navigation_ and are the default icon for Collection file Cards if you have not defined `preview.icon`.',
 		}),
-		documentation: DocumentationSchema.optional().meta({
+		documentation: DocumentationSchema.nullable().optional().meta({
 			description:
 				'This key defines the documentation link at the top of a _Collection browser_. Collection documentation is useful for assisting your team members.',
 		}),
-		sort_options: z.array(SortOptionSchema).optional().meta({
+		sort_options: z.array(SortOptionSchema).nullable().optional().meta({
 			description:
 				'This key defines the options for the Sort dropdown in a _Collection browser_. The first option listed is used as the default sort.',
 		}),
 		view_options: z
 			.array(z.enum(['card', 'list', 'gallery']))
+			.nullable()
 			.optional()
 			.meta({
 				uniqueItems: true,
 				description:
 					'This key defines the options for the View dropdown in a _Collection browser_. The first option listed is used as the default view.',
 			}),
-		singular_name: z.string().optional().meta({
+		singular_name: z.string().nullable().optional().meta({
 			description:
 				'This key defines the singular noun for your Collection name. CloudCannon uses the singular noun in the _+ Add_ button in the top right of the _Collection browser_.',
 		}),
 		add_options: z
 			.array(z.union([AddOptionSchema, HrefAddOptionSchema]))
+			.nullable()
 			.optional()
 			.meta({
 				description:
 					'This key defines the options available in the _+ Add_ button dropdown at the top right of your _Collection browser_.',
 			}),
-		create: CreateSchema.optional(),
+		create: CreateSchema.nullable().optional(),
 		disable_add: z.boolean().default(false).optional().meta({
 			description:
 				'This key toggles whether team members can use the _+ Add_ button in the top right of the _Collection browser_ to add files to a Collection.',
@@ -223,30 +226,30 @@ export const CollectionConfigSchema = z
 			description:
 				'This key toggles whether team members can use the _+ Add_ button in the top right of the _Collection browser_ to add files to a Collection.',
 		}),
-		new_preview_url: z.string().optional().meta({
+		new_preview_url: z.string().nullable().optional().meta({
 			description:
 				'This key defines a new URL for previewing your unbuilt pages in the Visual Editor.',
 		}),
-		schemas: z.record(z.string(), SchemaSchema).optional().meta({
+		schemas: z.record(z.string(), SchemaSchema).nullable().optional().meta({
 			description:
 				'This key defines which Schemas are available to populate files in this Collection.',
 		}),
-		schemas_from_glob: z.array(z.string()).optional(),
-		schema_key: z.string().optional().meta({
+		schemas_from_glob: z.array(z.string()).nullable().optional(),
+		schema_key: z.string().nullable().optional().meta({
 			description:
 				'This key defines the name for the structured data key that references the Schema a file uses.',
 		}),
-		preview: PreviewSchema.optional(),
+		preview: PreviewSchema.nullable().optional(),
 		...CascadeSchema.shape,
 	})
 	.meta({ id: 'collections_config.*', title: 'Collection Config' });
 
 export const CollectionGroupSchema = z
 	.object({
-		heading: z.string().meta({
+		heading: z.string().nullable().meta({
 			description: 'Short, descriptive label for this group of Collections.',
 		}),
-		collections: z.array(z.string()).meta({
+		collections: z.array(z.string()).nullable().meta({
 			description:
 				'The collections shown in the sidebar for this group. Collections here are referenced by their key within `collections_config`.',
 		}),
@@ -255,6 +258,7 @@ export const CollectionGroupSchema = z
 
 export const CollectionsConfigSchema = z
 	.record(z.string(), CollectionConfigSchema)
+	.nullable()
 	.optional()
 	.meta({ id: 'collections_config' });
 

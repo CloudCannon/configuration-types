@@ -1,6 +1,7 @@
 {
 	"compilerOptions": {
 		"strict": true,
+		"types": ["node"],
 		"esModuleInterop": true,
 		"noEmit": true,
 		"noUnusedLocals": true,
@@ -8,6 +9,6 @@
 		"noFallthroughCasesInSwitch": true,
 		"allowImportingTsExtensions": true
 	},
-	"include": ["src/**/*.ts"],
+	"include": ["*.ts", "src/**/*.ts", "tests/**/*.ts"],
 	"exclude": ["node_modules", "dist"]
 }

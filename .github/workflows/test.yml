@@ -20,10 +20,10 @@ jobs:
           node-version-file: .nvmrc
       - name: Install
         run: npm ci
-      - name: Lint
-        run: npm run lint
       - name: Build
         run: npm run build
+      - name: Lint
+        run: npm run lint
       - name: Check documentation
         run: |
           if [ -n "$(git status --porcelain docs)" ]; then

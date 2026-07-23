@@ -4,15 +4,16 @@ import { PickerPreviewSchema, PreviewSchema } from './preview.ts';
 
 export const ParserModelSchema = z
 	.object({
-		source_key: z.string().optional(),
-		editor_key: z.string().optional(),
+		source_key: z.string().nullable().optional(),
+		editor_key: z.string().nullable().optional(),
 		remove_empty: z.boolean().default(false).optional(),
 		optional: z.boolean().default(false).optional(),
-		type: z.enum(['array', 'object', 'string', 'boolean', 'number']).optional(),
-		allowed_values: z.array(z.any()).optional(),
+		type: z.enum(['array', 'object', 'string', 'boolean', 'number']).nullable().optional(),
+		allowed_values: z.array(z.any()).nullable().optional(),
 		implied_boolean: z.boolean().default(false).optional(),
 		default: z.any().optional(),
 	})
+	.nullable()
 	.optional()
 	.meta({
 		id: 'type.snippet-model',
@@ -21,29 +22,33 @@ export const ParserModelSchema = z
 
 export const PairedTokenSchema = z
 	.object({
-		start: z.string().default('').optional(),
-		end: z.string().default('').optional(),
+		start: z.string().nullable().default('').optional(),
+		end: z.string().nullable().default('').optional(),
 	})
+	.nullable()
 	.optional();
 
 export const SnippetStyleSchema = z
 	.object({
-		output: z.enum(['legacy', 'inline', 'block']).optional(),
-		between: z.string().optional(),
+		output: z.enum(['legacy', 'inline', 'block']).nullable().optional(),
+		between: z.string().nullable().optional(),
 		inline: z
 			.object({
-				leading: z.string().optional(),
-				trailing: z.string().optional(),
+				leading: z.string().nullable().optional(),
+				trailing: z.string().nullable().optional(),
 			})
+			.nullable()
 			.optional(),
 		block: z
 			.object({
-				leading: z.string().optional(),
-				trailing: z.string().optional(),
-				indent: z.string().optional(),
+				leading: z.string().nullable().optional(),
+				trailing: z.string().nullable().optional(),
+				indent: z.string().nullable().optional(),
 			})
+			.nullable()
 			.optional(),
 	})
+	.nullable()
 	.optional()
 	.meta({
 		id: 'type.snippet-style',
@@ -54,32 +59,34 @@ export const ParserFormatSchema = z
 	.object({
 		root_boundary: PairedTokenSchema,
 		root_value_boundary: PairedTokenSchema,
-		root_value_boundary_optional: z.record(z.string(), z.boolean()).optional(),
-		root_value_delimiter: z.string().optional().optional(),
-		root_pair_delimiter: z.array(z.string()).optional(),
-		remove_empty_root_boundary: z.boolean().optional(),
+		root_value_boundary_optional: z.record(z.string(), z.boolean()).nullable().optional(),
+		root_value_delimiter: z.string().nullable().optional().nullable().optional(),
+		root_pair_delimiter: z.array(z.string()).nullable().optional(),
+		remove_empty_root_boundary: z.boolean().nullable().optional(),
 		object_boundary: PairedTokenSchema,
-		object_value_delimiter: z.string().optional(),
-		object_pair_delimiter: z.string().optional(),
+		object_value_delimiter: z.string().nullable().optional(),
+		object_pair_delimiter: z.string().nullable().optional(),
 		array_boundary: PairedTokenSchema,
-		array_delimiter: z.string().optional(),
-		string_boundary: z.array(z.string()).optional(),
-		string_escape_character: z.string().optional(),
-		allow_booleans: z.boolean().optional(),
-		allow_numbers: z.boolean().optional(),
-		allow_implied_values: z.boolean().optional(),
-		allow_null: z.boolean().optional(),
-		forbidden_tokens: z.array(z.string()).optional(),
+		array_delimiter: z.string().nullable().optional(),
+		string_boundary: z.array(z.string()).nullable().optional(),
+		string_escape_character: z.string().nullable().optional(),
+		allow_booleans: z.boolean().nullable().optional(),
+		allow_numbers: z.boolean().nullable().optional(),
+		allow_implied_values: z.boolean().nullable().optional(),
+		allow_null: z.boolean().nullable().optional(),
+		forbidden_tokens: z.array(z.string()).nullable().optional(),
 		allowed_string_cases: z
 			.object({
-				any: z.boolean().optional(),
-				leading_upper: z.boolean().optional(),
-				leading_lower: z.boolean().optional(),
-				lower: z.boolean().optional(),
-				upper: z.boolean().optional(),
+				any: z.boolean().nullable().optional(),
+				leading_upper: z.boolean().nullable().optional(),
+				leading_lower: z.boolean().nullable().optional(),
+				lower: z.boolean().nullable().optional(),
+				upper: z.boolean().nullable().optional(),
 			})
+			.nullable()
 			.optional(),
 	})
+	.nullable()
 	.optional()
 	.meta({
 		id: 'type.snippet-format',
@@ -97,13 +104,14 @@ export const ReferenceSchema = z
 
 export const ParserFormatConfigSchema = z
 	.union([ParserFormatSchema, ReferenceSchema])
+	.nullable()
 	.optional()
 	.meta({ id: 'type.snippet.params.*.options.format' });
 
 export const ArgumentListParserConfigSchema = z.object({
 	parser: z.literal('argument_list'),
 	options: z.object({
-		models: z.array(ParserModelSchema).optional(),
+		models: z.array(ParserModelSchema).nullable().optional(),
 		format: ParserFormatConfigSchema,
 	}),
 });
@@ -119,15 +127,15 @@ export const ArgumentParserConfigSchema = z.object({
 export const ContentParserConfigSchema = z.object({
 	parser: z.literal('content'),
 	options: z.object({
-		editor_key: z.string().optional(),
-		indented_by: z.string().optional(),
-		default: z.string().optional(),
-		trim_text: z.boolean().optional(),
-		allow_nested: z.boolean().optional(),
-		raw: z.boolean().optional(),
-		forbidden_tokens: z.array(z.string()).optional(),
-		optional: z.boolean().optional(),
-		allow_leading: z.boolean().optional(),
+		editor_key: z.string().nullable().optional(),
+		indented_by: z.string().nullable().optional(),
+		default: z.string().nullable().optional(),
+		trim_text: z.boolean().nullable().optional(),
+		allow_nested: z.boolean().nullable().optional(),
+		raw: z.boolean().nullable().optional(),
+		forbidden_tokens: z.array(z.string()).nullable().optional(),
+		optional: z.boolean().nullable().optional(),
+		allow_leading: z.boolean().nullable().optional(),
 		escape_indented_blocks: z.boolean().default(false).optional(),
 		parse_newline_character: z.boolean().default(false).optional(),
 		ignore_unpaired_backticks: z.boolean().default(true).optional(),
@@ -144,6 +152,7 @@ export const KeyValueListParserConfigSchema = z.object({
 			format: ParserFormatConfigSchema,
 			style: SnippetStyleSchema,
 		})
+		.nullable()
 		.optional(),
 });
 
@@ -151,7 +160,10 @@ export const LiteralParserConfigSchema = z.object({
 	parser: z.literal('literal'),
 	options: z.object({
 		literal: z.string(),
-		format: z.object({ string_boundary: z.array(z.string()).optional() }).optional(),
+		format: z
+			.object({ string_boundary: z.array(z.string()).nullable().optional() })
+			.nullable()
+			.optional(),
 	}),
 });
 
@@ -159,7 +171,7 @@ export const OptionalParserConfigSchema = z.object({
 	parser: z.literal('optional'),
 	options: z.object({
 		snippet: z.string(),
-		remove_empty: z.boolean().optional(),
+		remove_empty: z.boolean().nullable().optional(),
 	}),
 });
 
@@ -167,9 +179,9 @@ export const RepeatingLiteralParserConfigSchema = z.object({
 	parser: z.literal('repeating_literal'),
 	options: z.object({
 		literal: z.string(),
-		default: z.number().optional(),
-		minimum: z.number().optional(),
-		editor_key: z.string().optional(),
+		default: z.number().nullable().optional(),
+		minimum: z.number().nullable().optional(),
+		editor_key: z.string().nullable().optional(),
 	}),
 });
 
@@ -177,11 +189,11 @@ export const RepeatingParserConfigSchema = z.object({
 	parser: z.literal('repeating'),
 	options: z.object({
 		snippet: z.string(),
-		editor_key: z.string().optional(),
-		output_delimiter: z.string().optional(),
-		default_length: z.number().optional(),
+		editor_key: z.string().nullable().optional(),
+		output_delimiter: z.string().nullable().optional(),
+		default_length: z.number().nullable().optional(),
 		style: SnippetStyleSchema,
-		optional: z.boolean().optional(),
+		optional: z.boolean().nullable().optional(),
 	}),
 });
 
@@ -189,7 +201,7 @@ export const WrapperParserConfigSchema = z.object({
 	parser: z.literal('wrapper'),
 	options: z.object({
 		snippet: z.string(),
-		remove_empty: z.boolean().optional(),
+		remove_empty: z.boolean().nullable().optional(),
 		style: SnippetStyleSchema,
 	}),
 });
@@ -210,16 +222,18 @@ export const SnippetConfigSchema = z
 	.object({
 		...ReducedCascadeSchema.shape,
 		preview: PreviewSchema.extend({
-			view: z.enum(['card', 'inline', 'gallery']).optional().meta({ deprecated: true }),
-		}).optional(),
-		picker_preview: PickerPreviewSchema.optional(),
+			view: z.enum(['card', 'inline', 'gallery']).nullable().optional().meta({ deprecated: true }),
+		})
+			.nullable()
+			.optional(),
+		picker_preview: PickerPreviewSchema.nullable().optional(),
 	})
 	.extend({
-		snippet: z.string().optional().meta({
+		snippet: z.string().nullable().optional().meta({
 			description:
 				'The snippet string contains the text to match for your snippet, with any dynamic sections represented using a placeholder in double square brackets.',
 		}),
-		template: z.string().optional().meta({
+		template: z.string().nullable().optional().meta({
 			description:
 				'The template that this snippet should inherit, out of the available Snippet Templates.',
 		}),
@@ -227,24 +241,24 @@ export const SnippetConfigSchema = z
 			description:
 				'Whether this snippet can appear inline (within a sentence). Defaults to false, which will treat this snippet as a block-level element in the content editor.',
 		}),
-		view: z.enum(['card', 'inline', 'gallery']).optional().meta({
+		view: z.enum(['card', 'inline', 'gallery']).nullable().optional().meta({
 			description:
 				"Controls how selected items are rendered. Defaults to 'card', or 'inline' if `inline` is true.",
 		}),
-		strict_whitespace: z.boolean().optional().meta({
+		strict_whitespace: z.boolean().nullable().optional().meta({
 			description: 'Whether this snippet treats whitespace as-is or not.',
 		}),
 		hidden: z.boolean().default(false).optional(),
-		definitions: z.record(z.string(), z.unknown()).optional().meta({
+		definitions: z.record(z.string(), z.unknown()).nullable().optional().meta({
 			description: 'The variables required for the selected template.',
 		}),
 		get alternate_formats() {
-			return z.array(SnippetConfigSchema).optional().meta({
+			return z.array(SnippetConfigSchema).nullable().optional().meta({
 				id: 'SnippetAlternateFormats',
 				description: 'Alternate configurations for this snippet.',
 			});
 		},
-		params: z.record(z.string(), ParserConfigSchema).optional().meta({
+		params: z.record(z.string(), ParserConfigSchema).nullable().optional().meta({
 			title: 'Parser Config',
 			description: 'The parameters of this snippet.',
 		}),
@@ -260,7 +274,7 @@ const SnippetImportSchema = z
 		z.boolean().meta({ id: 'type._snippets_imports.*.(full-import)', title: 'Full Import' }),
 		z
 			.object({
-				exclude: z.array(z.string()).meta({
+				exclude: z.array(z.string()).nullable().meta({
 					id: 'SnippetImportExclude',
 					description:
 						'The list of excluded snippets. If unset, all snippets are excluded unless defined in `include`.',
@@ -269,7 +283,7 @@ const SnippetImportSchema = z
 			.meta({ title: 'Exclude List' }),
 		z
 			.object({
-				include: z.array(z.string()).meta({
+				include: z.array(z.string()).nullable().meta({
 					id: 'SnippetImportInclude',
 					description:
 						'The list of included snippets. If unset, all snippets are included unless defined in `exclude`.',
@@ -277,6 +291,7 @@ const SnippetImportSchema = z
 			})
 			.meta({ title: 'Include List' }),
 	])
+	.nullable()
 	.optional();
 
 export const SnippetsImportsSchema = z
@@ -321,7 +336,11 @@ export const SnippetsImportsSchema = z
 
 export const SnippetDefinitionSelectValueSchema = z
 	.object({
-		name: z.string().optional().meta({ description: 'The display name for this option.' }),
+		name: z
+			.string()
+			.nullable()
+			.optional()
+			.meta({ description: 'The display name for this option.' }),
 		value: z
 			.union([
 				z.string().meta({ title: 'String' }),
@@ -386,6 +405,7 @@ export const SnippetDefinitionValueSchema = z
 
 export const SnippetDefinitionsSchema = z
 	.record(z.string(), SnippetDefinitionValueSchema)
+	.nullable()
 	.optional()
 	.meta({
 		id: 'type._snippets_definitions',

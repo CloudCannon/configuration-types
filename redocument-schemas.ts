@@ -20,23 +20,34 @@ export async function redocumentSchema(
 
 	const traversing = new Set<JsonSchema>();
 	const documented = new Set<JsonSchema>();
+	const appliedGids = new Set<string>();
 
 	function deref(doc: JsonSchema, ignoreCircular: boolean = false): JsonSchema | undefined {
+		let refName: string | undefined;
+
 		// JSON Schema versions after draft 7
 		while (doc?.$ref && schema.$defs) {
 			const ref = doc.$ref.replace('#/$defs/', '');
+			refName = ref;
 			doc = schema.$defs[ref];
 		}
 
 		// JSON Schema draft 7
 		while (doc?.$ref && schema.definitions) {
 			const ref = doc.$ref.replace('#/definitions/', '');
+			refName = ref;
 			doc = (schema as any).definitions[ref];
 		}
 
 		// Prevents circular references during active traversal
 		if (!ignoreCircular && traversing.has(doc)) {
 			return;
+		}
+
+		// A `$def` carries its gid in its name, not as an `id` field. Restore it so `walk` can
+		// resolve the canonical gid (and overlay the documentation) for keys reached via `$ref`.
+		if (doc && refName && !doc.id) {
+			doc.id = refName;
 		}
 
 		return doc;
@@ -66,9 +77,12 @@ export async function redocumentSchema(
 			delete doc.id;
 		}
 
-		const documentation = documentationEntries[gid];
+		// Nullable wrappers walk their inner schema at the same gid; only attach the documentation
+		// once so long descriptions aren't duplicated into both the wrapper and the inner schema.
+		const documentation = appliedGids.has(gid) ? undefined : documentationEntries[gid];
 		if (documentation) {
 			documented.add(doc);
+			appliedGids.add(gid);
 		}
 
 		if (documentation?.title) {
@@ -184,13 +198,27 @@ export async function redocumentSchema(
 		}
 
 		if (doc.anyOf) {
-			for (let i = 0; i < doc.anyOf.length; i++) {
-				const derefDoc = deref(doc.anyOf[i]);
-				const key =
-					!path.length && derefDoc?.id
-						? derefDoc.id
-						: `(${slugify(derefDoc?.title || derefDoc?.id || `any-of-${i}`)})`;
-				walk(derefDoc, { path, key });
+			// `.nullable()` emits as `anyOf: [X, {type: 'null'}]`. Treat that wrapper as transparent:
+			// walk X at this same location so documentation gids don't gain an `(any-of-N)` segment,
+			// and never walk (or title) the null branch itself.
+			const nonNullBranches = doc.anyOf.filter(
+				(branch: JsonSchema) => deref(branch, true)?.type !== 'null'
+			);
+
+			if (nonNullBranches.length === 1 && nonNullBranches.length < doc.anyOf.length) {
+				walk(deref(nonNullBranches[0]), parent);
+			} else {
+				for (let i = 0; i < doc.anyOf.length; i++) {
+					const derefDoc = deref(doc.anyOf[i]);
+					if (derefDoc?.type === 'null') {
+						continue;
+					}
+					const key =
+						!path.length && derefDoc?.id
+							? derefDoc.id
+							: `(${slugify(derefDoc?.title || derefDoc?.id || `any-of-${i}`)})`;
+					walk(derefDoc, { path, key });
+				}
 			}
 		}
 
@@ -221,5 +249,35 @@ export async function redocumentSchema(
 
 	walk(schema, { path: [], key: schema.id });
 
+	if (options?.stripId) {
+		stripIds(schema);
+	}
+
 	await fs.writeFile(fullSchemaPath, JSON.stringify(schema, null, '  '));
+}
+
+const VALUE_KEYWORDS = new Set(['default', 'const', 'examples', 'enum']);
+
+function stripIds(node: unknown): void {
+	if (Array.isArray(node)) {
+		for (const item of node) {
+			stripIds(item);
+		}
+		return;
+	}
+
+	if (!node || typeof node !== 'object') {
+		return;
+	}
+
+	const record = node as Record<string, unknown>;
+	if (typeof record.id === 'string') {
+		delete record.id;
+	}
+
+	for (const key of Object.keys(record)) {
+		if (!VALUE_KEYWORDS.has(key)) {
+			stripIds(record[key]);
+		}
+	}
 }

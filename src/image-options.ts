@@ -1,7 +1,7 @@
 import * as z from 'zod';
 
 export const ImageOptionsSchema = z.object({
-	mime_type: z.enum(['image/jpeg', 'image/png', 'image/webp']).optional().meta({
+	mime_type: z.enum(['image/jpeg', 'image/png', 'image/webp']).nullable().optional().meta({
 		id: 'type._inputs.*.options.mime_type',
 		title: 'Mime Type',
 		description:
@@ -13,13 +13,13 @@ export const ImageOptionsSchema = z.object({
 		description:
 			'Sets how uploaded image files are resized with a bounding box defined by width and height prior to upload. Has no effect when selecting existing images, or if width and height are unset.',
 	}),
-	width: z.number().optional().meta({
+	width: z.number().min(1).nullable().optional().meta({
 		id: 'type._inputs.*.options.width',
 		title: 'Width',
 		description:
 			'Defines the width of the bounding box used in the image resizing process defined with resize_style.',
 	}),
-	height: z.number().optional().meta({
+	height: z.number().min(1).nullable().optional().meta({
 		id: 'type._inputs.*.options.height',
 		title: 'Height',
 		description:
@@ -31,13 +31,13 @@ export const ImageOptionsSchema = z.object({
 		description:
 			'Controls whether or not images can be upscaled to fit the bounding box during resize prior to upload. Has no effect if files are not resized.',
 	}),
-	image_size_attributes: z.boolean().default(true).optional().meta({
+	image_size_attributes: z.boolean().default(false).optional().meta({
 		id: 'type._inputs.*.options.image_size_attributes',
 		title: 'Image Size Attributes',
 		description:
 			'Instructs the editor to save `width` and `height` attributes on the image elements. This can prevent pop-in as a page loads.',
 	}),
-	allowed_sources: z.array(z.string()).optional().meta({
+	allowed_sources: z.array(z.string()).nullable().optional().meta({
 		id: 'type._inputs.*.options.allowed_sources',
 		title: 'Allowed Sources',
 		description:
@@ -56,12 +56,13 @@ export const ImageOptionsSchema = z.object({
 					description:
 						'A number suffixed with "x" (relative size) or "w" (fixed width) for setting the dimensions of the image (e.g. 2x, 3x, 100w, 360w).',
 				}),
-				target: z.string().optional().meta({
+				target: z.string().nullable().optional().meta({
 					description:
 						'A reference to another input that is given the path to this additional image file.',
 				}),
 			})
 		)
+		.nullable()
 		.optional()
 		.meta({
 			id: 'type._inputs.*.options.sizes',
