@@ -54,10 +54,10 @@
 	"devDependencies": {
 		"@biomejs/biome": "2.5.7",
 		"@types/js-yaml": "4.0.9",
-		"@types/node": "26.1.2",
+		"@types/node": "26.2.0",
 		"http-server": "14.1.1",
 		"js-yaml": "5.2.3",
-		"tsx": "4.23.9",
+		"tsx": "4.23.11",
 		"typescript": "7.0.2"
 	}
 }
