@@ -6,7 +6,7 @@ description: >-
   converting HTML to Markdown.
 
 
-  The value can be `\`\`\`` (three backticks) or `~~~` (three tildes).
+  The value can be `` ``` `` (three backticks) or `~~~` (three tildes).
 examples:
   - description: >-
       In this example, we have configured Markdown to use tildes for code block
