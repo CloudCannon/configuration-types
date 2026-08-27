@@ -4,12 +4,12 @@ title: ''
 description: This key defines the color theme for syntax highlighting.
 examples:
   - description: >-
-      In this example, we have configured the Source Editor to use the `dark`
+      In this example, we have configured the Source Editor to use the `basic_dark`
       theme for syntax highlighting.
     language: yaml
     code: |-
       source_editor:
-        theme: dark
+        theme: basic_dark
     annotations: []
     source: /cloudcannon.config.yml
 show_in_navigation: false
