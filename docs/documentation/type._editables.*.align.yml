@@ -1,0 +1,8 @@
+gid: type._editables.*.align
+url: /configuration-file/types/_editables/*/align/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will display tools in your WYSIWYG
+  toolbar to align selected text.
+examples: []
+show_in_navigation: false

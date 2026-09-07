@@ -1,0 +1,10 @@
+gid: type._editables.*.align.default
+url: /configuration-file/types/_editables/*/align/default/
+title: ''
+description: >-
+  This key defines the default alignment. The default alignment toggles off
+  other align styles and class names, rather than toggling one. If your text is
+  left aligned in your CSS, setting this to `left` would avoid `<p
+  style="text-align: left">` alongside `<p>` tags.
+examples: []
+show_in_navigation: false

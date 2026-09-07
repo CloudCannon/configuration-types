@@ -111,6 +111,23 @@ export const TextEditableSchema = z.object({
 export const ToolbarOptionsSchema = z.object({
 	...TextEditableSchema.shape,
 
+	align: z
+		.object({
+			default: z.enum(['left', 'center', 'right', 'justify']).optional(),
+			left: z.boolean().optional(),
+			center: z.boolean().optional(),
+			right: z.boolean().optional(),
+			justify: z.boolean().optional(),
+			classes: z.object({
+				left: z.string().optional(),
+				center: z.string().optional(),
+				right: z.string().optional(),
+				justify: z.string().optional(),
+			}).optional(),
+		})
+		.optional()
+		.meta({ id: 'type._editables.*.align' }),
+
 	blockquote: z.boolean().default(true).optional().meta({
 		id: 'type._editables.*.blockquote',
 		description: 'Enables a control to wrap blocks of text in block quotes.',
@@ -124,6 +141,7 @@ export const ToolbarOptionsSchema = z.object({
 
 	center: z.string().nullable().optional().meta({
 		id: 'type._editables.*.center',
+		deprecated: true,
 		description:
 			'Enables a control to center align text by toggling a class name for a block of text. The value is the class name the editor should add to align the text. The styles for this class need to be listed in the `styles` file to take effect outside of the input.',
 	}),
@@ -211,12 +229,14 @@ export const ToolbarOptionsSchema = z.object({
 
 	justify: z.string().nullable().optional().meta({
 		id: 'type._editables.*.justify',
+		deprecated: true,
 		description:
 			'Enables a control to justify text by toggling a class name for a block of text. The value is the class name the editor should add to justify the text. The styles for this class need to be listed in the `styles` file to take effect outside of the input.',
 	}),
 
 	left: z.string().nullable().optional().meta({
 		id: 'type._editables.*.left',
+		deprecated: true,
 		description:
 			'Enables a control to left align text by toggling a class name for a block of text. The value is the class name the editor should add to align the text. The styles for this class need to be listed in the `styles` file to take effect outside of the input.',
 	}),
@@ -234,6 +254,7 @@ export const ToolbarOptionsSchema = z.object({
 
 	right: z.string().nullable().optional().meta({
 		id: 'type._editables.*.right',
+		deprecated: true,
 		description:
 			'Enables a control to right align text by toggling a class name for a block of text. The value is the class name the editor should add to align the text. The styles for this class need to be listed in the `styles` file to take effect outside of the input.',
 	}),

@@ -1,6 +1,8 @@
 gid: type._editables.*.left
 url: /configuration-file/types/_editables/*/left/
 title: ''
+deprecated: true
+deprecated_description: This key is deprecated. Use `align` instead.
 description: >-
   This key toggles whether CloudCannon will display a tool in your WYSIWYG
   toolbar to left align selected text by toggling a class name for that text

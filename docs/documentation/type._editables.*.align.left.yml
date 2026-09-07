@@ -1,0 +1,9 @@
+gid: type._editables.*.align.left
+url: /configuration-file/types/_editables/*/align/left/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will display a tool in your WYSIWYG
+  toolbar to left align selected text. This will toggle `style="text-align:
+  left;"`, or toggle a class name set in `classes.left` for that text block.
+examples: []
+show_in_navigation: false

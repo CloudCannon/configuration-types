@@ -1,0 +1,9 @@
+gid: type._editables.*.align.right
+url: /configuration-file/types/_editables/*/align/right/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will display a tool in your WYSIWYG
+  toolbar to right align selected text. This will toggle `style="text-align:
+  right;"`, or toggle a class name set in `classes.right` for that text block.
+examples: []
+show_in_navigation: false

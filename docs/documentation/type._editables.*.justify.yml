@@ -1,6 +1,8 @@
 gid: type._editables.*.justify
 url: /configuration-file/types/_editables/*/justify/
 title: ''
+deprecated: true
+deprecated_description: This key is deprecated. Use `align` instead.
 description: >-
   This key toggles whether CloudCannon will display a tool in your WYSIWYG
   toolbar to justify selected text by toggling a class name for that text block.
