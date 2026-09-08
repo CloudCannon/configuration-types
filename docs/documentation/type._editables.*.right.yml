@@ -1,9 +1,11 @@
 gid: type._editables.*.right
 url: /configuration-file/types/_editables/*/right/
 title: ''
+deprecated: true
+deprecated_description: This key is deprecated. Use `align` instead.
 description: >-
   This key toggles whether CloudCannon will display a tool in your WYSIWYG
-  toolbar to right align selected text by toggling a class name for that text
+  toolbar to right-align selected text by toggling a class name for that text
   block.
 
 

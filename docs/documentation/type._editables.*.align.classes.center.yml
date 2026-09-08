@@ -1,0 +1,9 @@
+gid: type._editables.*.align.classes.center
+url: /configuration-file/types/_editables/*/align/classes/center/
+title: ''
+description: >-
+  This key defines the class name CloudCannon will toggle to center selected
+  text. The value is the class name to align the text. The styles for this class
+  must be defined in the `styles` file.
+examples: []
+show_in_navigation: false

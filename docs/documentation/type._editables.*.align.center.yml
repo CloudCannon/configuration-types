@@ -1,0 +1,9 @@
+gid: type._editables.*.align.center
+url: /configuration-file/types/_editables/*/align/center/
+title: ''
+description: >-
+  This key toggles whether CloudCannon will display a tool in your WYSIWYG
+  toolbar to center selected text. This will toggle `style="text-align:
+  center;"`, or toggle a class name set in `classes.center` for that text block.
+examples: []
+show_in_navigation: false
