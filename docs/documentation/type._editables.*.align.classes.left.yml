@@ -2,7 +2,7 @@ gid: type._editables.*.align.classes.left
 url: /configuration-file/types/_editables/*/align/classes/left/
 title: ''
 description: >-
-  This key defines the class name CloudCannon will toggle to left align selected
+  This key defines the class name CloudCannon will toggle to left-align selected
   text. The value is the class name to align the text. The styles for this class
   must be defined in the `styles` file.
 examples: []
