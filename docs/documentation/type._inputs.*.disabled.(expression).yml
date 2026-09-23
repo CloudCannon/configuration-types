@@ -1,0 +1,58 @@
+gid: type._inputs.*.disabled.(expression)
+url: /configuration-file/types/_inputs/*/disabled/(expression)/
+title: Expression Disabled
+description: >-
+  This key represents an expression value for the `disabled` key, which makes an
+  input read-only based on other values in the same file.
+
+
+  CloudCannon re-evaluates the expression whenever a value it reads changes, and
+  makes the input read-only whenever the result is truthy.
+
+
+  A bare name refers to a sibling input. You can also read the input's own value
+  with `this`, the object containing the input with `this.$parent`, one level
+  above that with `$parent`, and the top of the file or the nearest enclosing
+  structure value with `$`.
+
+
+  Expressions support the comparison, logical, and arithmetic operators, along
+  with the functions `length`, `includes`, `starts_with`, `ends_with`,
+  `lowercase`, `uppercase`, `trim`, `number`, and `string`.
+
+
+  A value that is a single key name, optionally negated with `!`, is read as a
+  key rather than an expression, so a key name containing a hyphen still works
+  on its own.
+
+
+  For an expression beginning with a character YAML reserves, such as `!`, the
+  string should be wrapped in single or double quotation marks.
+examples:
+  - description: >-
+      In this example, we have configured an input to be read-only when the
+      `published` input is truthy.
+    language: yaml
+    code: |-
+      _inputs:
+        published:
+          type: checkbox
+          label: Published
+        edit_url:
+          type: url
+          label: Edit URL
+          disabled: published
+    annotations: []
+    source: /cloudcannon.config.yml
+  - description: >-
+      In this example, we have configured an input to lock itself once it holds
+      a value, using `this` to read its own value.
+    language: yaml
+    code: |-
+      _inputs:
+        permalink:
+          type: url
+          disabled: 'length(this ?? "") > 0'
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

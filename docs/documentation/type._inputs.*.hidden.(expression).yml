@@ -1,0 +1,80 @@
+gid: type._inputs.*.hidden.(expression)
+url: /configuration-file/types/_inputs/*/hidden/(expression)/
+title: Expression Hidden
+description: >-
+  This key represents an expression value for the `hidden` key, which hides an
+  input based on other values in the same file.
+
+
+  CloudCannon re-evaluates the expression whenever a value it reads changes, and
+  hides the input whenever the result is truthy.
+
+
+  A bare name refers to a sibling input. You can also read the input's own value
+  with `this`, the object containing the input with `this.$parent`, one level
+  above that with `$parent`, and the top of the file or the nearest enclosing
+  structure value with `$`.
+
+
+  Expressions support the comparison, logical, and arithmetic operators, along
+  with the functions `length`, `includes`, `starts_with`, `ends_with`,
+  `lowercase`, `uppercase`, `trim`, `number`, and `string`.
+
+
+  A value that is a single key name, optionally negated with `!`, is read as a
+  key rather than an expression, so a key name containing a hyphen still works
+  on its own.
+
+
+  For an expression beginning with a character YAML reserves, such as `!`, the
+  string should be wrapped in single or double quotation marks.
+examples:
+  - description: >-
+      In this example, we have configured an input to be hidden when the
+      `published` input is falsy using the `!` prefix.
+    language: yaml
+    code: |-
+      _inputs:
+        published:
+          type: checkbox
+          label: Published
+        publish_date:
+          type: datetime
+          label: Publish date
+          hidden: '!published'
+    annotations: []
+    source: /cloudcannon.config.yml
+  - description: >-
+      In this example, we have configured each path input to be hidden unless
+      the `type` input holds the matching value.
+    language: yaml
+    code: |-
+      _inputs:
+        type:
+          type: select
+          options:
+            values:
+              - video
+              - image
+        video_path:
+          type: url
+          hidden: 'type != "video"'
+        image_path:
+          type: url
+          hidden: 'type != "image"'
+    annotations: []
+    source: /cloudcannon.config.yml
+  - description: >-
+      In this example, we have configured an input to be hidden until the `body`
+      input holds at least 200 characters. The `??` operator substitutes an
+      empty string when `body` is empty, because `length` returns null for an
+      empty input.
+    language: yaml
+    code: |-
+      _inputs:
+        summary:
+          type: textarea
+          hidden: 'length(body ?? "") < 200'
+    annotations: []
+    source: /cloudcannon.config.yml
+show_in_navigation: false

@@ -172,22 +172,23 @@ export const BaseInputSchema = z.object({
 		description: 'Optionally changes the text above this input.',
 	}),
 	hidden: z
-		.union([z.boolean().meta({ title: 'Boolean' }), z.string().meta({ title: 'Query String' })])
+		.union([z.boolean().meta({ title: 'Boolean' }), z.string().meta({ title: 'Expression' })])
 		.nullable()
 		.default(false)
 		.optional()
 		.meta({
 			id: 'type._inputs.*.hidden',
-			description: 'Toggles the visibility of this input.',
+			description: 'Toggles the visibility of this input, either outright or with an expression.',
 		}),
 	disabled: z
-		.union([z.boolean().meta({ title: 'Boolean' }), z.string().meta({ title: 'Query String' })])
+		.union([z.boolean().meta({ title: 'Boolean' }), z.string().meta({ title: 'Expression' })])
 		.nullable()
 		.default(false)
 		.optional()
 		.meta({
 			id: 'type._inputs.*.disabled',
-			description: 'Toggles if this input can be edited.',
+			description:
+				'Toggles if this input can be edited, either outright or with an expression.',
 		}),
 	instance_value: z.enum(['UUID', 'NOW']).nullable().optional().meta({
 		id: 'type._inputs.*.instance_value',

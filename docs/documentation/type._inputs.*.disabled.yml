@@ -16,28 +16,34 @@ description: >-
   will prevent team members from editing the value.
 
 
-  A string value can prevent team members from editing an input based on the
-  value of another input.
+  A string value is an expression. CloudCannon re-evaluates the expression
+  whenever a value it reads changes, and makes the input read-only whenever the
+  result is truthy.
 
 
-  You can reverse the value with a `!` character at the beginning.
+  * `published` disables an input when the sibling input `published` is truthy
+
+  * `!published` disables an input when the sibling input `published` is falsy
+
+  * `length(slug) > 0` disables an input once the sibling input `slug` holds a
+  value
 
 
-  * `published` hides an input when the sibling input `published` is truthy
+  Expressions can compare values, call functions such as `length` and
+  `starts_with`, and read values elsewhere in the file with `$`, `$parent`, and
+  `this`.
 
-  * `!published` hides an input when the sibling input `published` is falsy
 
-
-  For reverse values in `YAML` files, the string should be in `'` or `"`
-  quotation marks.
+  For an expression beginning with a character `YAML` reserves, such as `!`, the
+  string should be in `'` or `"` quotation marks.
 
 
   By default, this key is `false` (i.e., team members can edit input values).
 examples:
   - description: >-
       In this example, we have configured the `date_created` Date input, which
-      will automatically populate when you create a file using this input.
-      Editors cannot alter this input as the interface is disabled.
+      will automatically populate when you create a file using this input. Team
+      members cannot alter this input as the interface is disabled.
     language: yaml
     code: |-
       _inputs:

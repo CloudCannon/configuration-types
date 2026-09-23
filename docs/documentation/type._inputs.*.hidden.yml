@@ -14,19 +14,26 @@ description: >-
   input.
 
 
-  A string value can hide an input based on the value of another input.
+  A string value is an expression. CloudCannon re-evaluates the expression
+  whenever a value it reads changes, and hides the input whenever the result is
+  truthy.
 
-
-  You can reverse the value with a `!` character at the beginning.
-
-
-  * `published` hides an input when the sibling input `published` is truthy
 
   * `!published` hides an input when the sibling input `published` is falsy
 
+  * `type != "video"` hides an input unless the sibling input `type` holds
+  `video`
 
-  For reverse values in `YAML` files, the string should be in `'` or `"`
-  quotation marks.
+  * `$.draft` hides an input when the top-level `draft` value is truthy
+
+
+  Expressions can compare values, call functions such as `length` and
+  `starts_with`, and read values elsewhere in the file with `$`, `$parent`, and
+  `this`.
+
+
+  For an expression beginning with a character `YAML` reserves, such as `!`, the
+  string should be in `'` or `"` quotation marks.
 
 
   By default, this key follows the input naming convention where key names
