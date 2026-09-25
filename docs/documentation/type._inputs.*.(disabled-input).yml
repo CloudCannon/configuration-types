@@ -1,0 +1,17 @@
+gid: type._inputs.*.(disabled-input)
+url: /configuration-file/types/_inputs/*/(disabled-input)/
+title: Disabled Input
+deprecated: true
+deprecated_description: >-
+  This input type is deprecated. Use another input type with `disabled` set to
+  `true` instead.
+description: >-
+  This key defines a read-only editing interface for plain text.
+
+
+  This input type is deprecated. It is still supported, but you should use the
+  input type that matches your data and set `disabled: true` instead. This gives
+  you the same read-only behavior with the appropriate interface for your value,
+  and works with `disabled_if` for conditional read-only inputs.
+examples: []
+show_in_navigation: false

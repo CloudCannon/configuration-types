@@ -5,6 +5,7 @@ import { ImageOptionsSchema } from './image-options.ts';
 import {
 	BaseInputSchema,
 	BooleanInputSchema,
+	DisabledInputSchema,
 	EmptyTypeTextSchema,
 	FileInputOptionsSchema,
 	RequiredValidationSchema,
@@ -641,6 +642,7 @@ export const UnknownInputSchema = z
 export const KnownInputSchema = z
 	.union([
 		TextInputSchema,
+		DisabledInputSchema,
 		TextareaInputSchema,
 		CodeInputSchema,
 		ColorInputSchema,
@@ -726,6 +728,8 @@ export {
 	BooleanInputSchema,
 	type Context,
 	ContextSchema,
+	type DisabledInput,
+	DisabledInputSchema,
 	type FileInputOptions,
 	FileInputOptionsSchema,
 	type SelectInput,

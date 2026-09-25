@@ -1,0 +1,115 @@
+gid: type._inputs.*.hidden_if
+url: /configuration-file/types/_inputs/*/hidden_if/
+title: ''
+description: >-
+  This key defines the visibility of an input in the *Data Editor* or the
+  sidebar of the *Visual Editor* or *Content Editor* using an expression.
+
+
+  CloudCannon hides the input when the expression is truthy, and re-evaluates it
+  whenever an input it references changes.
+
+
+  Expressions reference other inputs by key and support comparisons (`==`, `!=`,
+  `===`, `!==`, `<`, `<=`, `>`, `>=`), logic (`&&`, `||`, `!`, `??`), and
+  arithmetic. Two names are reserved:
+
+
+  * `this` is the input being configured.
+
+  * `$` is the root of the file, or the closest structure value when the input
+  is inside a structure.
+
+
+  Functions:
+
+
+  * `parent(input, levels)` is the object or array `levels` above `input`. Both
+  are optional: `input` defaults to `this` and `levels` to 1, so `parent()` is
+  the object or array containing the input, `parent(2)` is the one above that,
+  and `parent($)` is the one containing the structure value.
+
+  * `get(input, ...keys)` follows a path of keys or array indexes starting at
+  `input`. `input` is optional and defaults to the object containing the input,
+  so `get("my key")` reads a sibling with any key, `get("seo", "title")` reads a
+  nested value, and `get(parent(2), "my key")` reads from elsewhere.
+
+  * `length`, `includes`, `starts_with`, `ends_with`, `lowercase`, `uppercase`,
+  `trim`, `number`, and `string` operate on values.
+
+
+  Configuration on an array item, such as `items[*]`, uses `parent(2)` to reach
+  the inputs beside the array.
+
+
+  An expression that fails to parse shows an error in place of the input, which
+  remains visible.
+
+
+  If both `hidden_if` and `hidden` are set, the input is hidden when either is
+  truthy.
+examples:
+  - description: >-
+      In this example, `type` is `video`, so the `video_path` input is shown and
+      the `image_path` input is hidden. Changing `type` swaps them.
+    language: yaml
+    code: |-
+      type: video
+      image_path:
+      video_path: /uploads/launch.mp4
+      _inputs:
+        type:
+          type: select
+          options:
+            values:
+              - image
+              - video
+        image_path:
+          type: image
+          hidden_if: type != "image"
+        video_path:
+          type: file
+          hidden_if: type != "video"
+    annotations: []
+    source: /hero.yml
+  - description: >-
+      In this example, `forced_theme` is set at the root of the file, so the
+      `use_dark_mode` input inside `hero` is hidden. It is shown again when
+      `forced_theme` is cleared.
+    language: yaml
+    code: |-
+      forced_theme: dark
+      hero:
+        title: Welcome
+        use_dark_mode: false
+      _inputs:
+        forced_theme:
+          type: select
+          options:
+            values:
+              - light
+              - dark
+        hero.use_dark_mode:
+          type: checkbox
+          hidden_if: $.forced_theme != null
+    annotations: []
+    source: /page.yml
+  - description: >-
+      In this example, there is no stock on hand but some on order, so the
+      `out_of_stock_reason` input stays hidden until both counts reach zero.
+    language: yaml
+    code: |-
+      stock_count: 0
+      ordered_stock_count: 12
+      out_of_stock_reason:
+      _inputs:
+        stock_count:
+          type: number
+        ordered_stock_count:
+          type: number
+        out_of_stock_reason:
+          type: textarea
+          hidden_if: (stock_count + ordered_stock_count) > 0
+    annotations: []
+    source: /product.yml
+show_in_navigation: false
