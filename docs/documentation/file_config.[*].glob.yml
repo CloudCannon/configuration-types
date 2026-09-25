@@ -3,8 +3,7 @@ url: /configuration-file/file_config/[*]/glob/
 title: ''
 description: This key defines the glob pattern(s) targeting a path to one or more files.
 examples:
-  - description: >-
-      In this example, we have configured a file config to target the
+  - description: In this example, we have configured a file config to target the
       `data/tabs.yml` file with object input configuration.
     language: yaml
     code: |-

@@ -12,9 +12,8 @@ description: >-
 
   By default, this key is `false` (i.e., `null` values are not allowed).
 examples:
-  - description: >-
-      In this example, we have configured snippet format to allow null values in
-      parameter parsing.
+  - description: In this example, we have configured snippet format to allow null
+      values in parameter parsing.
     language: yaml
     code: |-
       _snippets:

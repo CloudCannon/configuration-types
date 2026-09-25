@@ -8,9 +8,8 @@ description: >-
 
   Multichoice inputs allow several values.
 examples:
-  - description: >-
-      In this example, we have configured the `categories` key as a *Multichoice
-      Input*.
+  - description: In this example, we have configured the `categories` key as a
+      *Multichoice Input*.
     language: yaml
     code: |-
       _inputs:

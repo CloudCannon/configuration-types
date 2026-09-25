@@ -16,9 +16,8 @@ description: >-
   If CloudCannon cannot determine an appropriate editing interface, it will show
   a warning.
 examples:
-  - description: >-
-      In this example, we have configured a standard add option for the `people`
-      Collection that opens new files in the [Data
+  - description: In this example, we have configured a standard add option for the
+      `people` Collection that opens new files in the [Data
       Editor](/documentation/articles/what-is-the-data-editor/).
     language: yaml
     code: |-

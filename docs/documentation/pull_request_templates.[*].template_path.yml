@@ -14,8 +14,7 @@ description: >-
 
   This key has no default.
 examples:
-  - description: >-
-      In this example, the `body` field of our Pull Request template is
+  - description: In this example, the `body` field of our Pull Request template is
       populated by the contents of `.github/templates/delete-content.md` by
       default.
     language: yaml

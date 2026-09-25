@@ -28,10 +28,9 @@ description: >-
 
   This key is available for Array and Multiselect or Multichoice Inputs.
 examples:
-  - description: >-
-      In this example, we want to add an array of filepaths to our homepage's
-      `featured_posts` Input. This Input limits you to a maximum of two array
-      items.
+  - description: In this example, we want to add an array of filepaths to our
+      homepage's `featured_posts` Input. This Input limits you to a maximum of
+      two array items.
     language: yaml
     code: |-
       _inputs:

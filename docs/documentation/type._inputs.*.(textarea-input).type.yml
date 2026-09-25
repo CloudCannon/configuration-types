@@ -1,13 +1,11 @@
 gid: type._inputs.*.(textarea-input).type
 url: /configuration-file/types/_inputs/*/(textarea-input)/type/
 title: ''
-description: >-
-  This key defines the input type, which controls how this input appears and
-  behaves.
+description: This key defines the input type, which controls how this input
+  appears and behaves.
 examples:
-  - description: >-
-      In this example, we have configured the `description` key as a *Textarea
-      Input* type.
+  - description: In this example, we have configured the `description` key as a
+      *Textarea Input* type.
     language: yaml
     code: |-
       _inputs:

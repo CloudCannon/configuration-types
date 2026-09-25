@@ -1,6 +1,5 @@
 gid: type.snippet.params.*.(key-value-list-parser-config).options
-url: >-
-  /configuration-file/types/snippet/params/*/(key-value-list-parser-config)/options/
+url: /configuration-file/types/snippet/params/*/(key-value-list-parser-config)/options/
 title: ''
 description: >-
   This key defines configuration options for key-value list parser
@@ -11,9 +10,8 @@ description: >-
   properties. These options control how multiple key-value pairs are parsed and
   validated.
 examples:
-  - description: >-
-      In this example, we have configured key-value list parser options with
-      models.
+  - description: In this example, we have configured key-value list parser options
+      with models.
     language: yaml
     code: |-
       _snippets:

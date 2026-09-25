@@ -19,10 +19,9 @@ description: >-
   [configuring and Array
   input](/documentation/articles/configure-an-array-input/).
 examples:
-  - description: >-
-      In this example we want to populate the `details` Object input with the
-      nested keys `title`, `subtitle`, and `author` we have defined under the
-      `values.value` key.
+  - description: In this example we want to populate the `details` Object input with
+      the nested keys `title`, `subtitle`, and `author` we have defined under
+      the `values.value` key.
     language: yaml
     code: |-
       _structures:

@@ -12,9 +12,8 @@ description: >-
   populates the *Input* with the current datetime in the *Site's* configured
   timezone.
 examples:
-  - description: >-
-      In this example, we have configured an input to automatically populate
-      with a UUID when created.
+  - description: In this example, we have configured an input to automatically
+      populate with a UUID when created.
     language: yaml
     code: |-
       _inputs:

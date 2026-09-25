@@ -13,9 +13,8 @@ description: >-
   By default, this key is `false` (i.e., URL-like text is not automatically
   converted to links).
 examples:
-  - description: >-
-      In this example, we have configured Markdown to automatically convert
-      URL-like text to links.
+  - description: In this example, we have configured Markdown to automatically
+      convert URL-like text to links.
     language: yaml
     code: |-
       markdown:

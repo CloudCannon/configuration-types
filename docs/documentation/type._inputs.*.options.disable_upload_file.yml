@@ -9,10 +9,9 @@ description: >-
   Setting this key to `true` will disable the context menu option and prevent
   uploading file through drag-and-drop in a *File Input*.
 examples:
-  - description: >-
-      In this example, CloudCannon will disable the option to upload a file in
-      the context menu and prevent uploading file through drag-and-drop in a
-      *File Input*.
+  - description: In this example, CloudCannon will disable the option to upload a
+      file in the context menu and prevent uploading file through drag-and-drop
+      in a *File Input*.
     language: yaml
     code: |-
       _inputs:

@@ -13,8 +13,7 @@ description: >-
   If undefined, CloudCannon will sort your Collections in the order they are
   defined under the `collections_config` key.
 examples:
-  - description: >-
-      In this example, we have configured Collection groups to organize
+  - description: In this example, we have configured Collection groups to organize
       Collections into "Content" and "Data Files" sections in the *Site
       Navigation*.
     language: yaml

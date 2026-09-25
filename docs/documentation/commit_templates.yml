@@ -13,9 +13,8 @@ description: >-
   Commit messages appear on the *Review changes* modal when you save your
   changes.
 examples:
-  - description: >-
-      In this example, we have configured a commit template with a template
-      string and input configuration.
+  - description: In this example, we have configured a commit template with a
+      template string and input configuration.
     language: yaml
     code: |-
       commit_templates:
@@ -33,9 +32,8 @@ examples:
               cascade: true
     annotations: []
     source: /cloudcannon.config.yml
-  - description: >-
-      In this example, we have configured a commit template that uses a file for
-      the template content.
+  - description: In this example, we have configured a commit template that uses a
+      file for the template content.
     language: yaml
     code: |-
       commit_templates:
@@ -43,11 +41,10 @@ examples:
           template_path: /.git/commit-message.txt
     annotations: []
     source: /cloudcannon.config.yml
-  - description: >-
-      In this example, we have configured a commit template with a template
-      string, input configuration, and extra data for nested templates.
+  - description: In this example, we have configured a commit template with a
+      template string, input configuration, and extra data for nested templates.
     language: yaml
-    code: |-
+    code: >-
       commit_templates:
         - label: Breaking change
           template_string: '{message}{breaking_change|if=breaking_change_message}'

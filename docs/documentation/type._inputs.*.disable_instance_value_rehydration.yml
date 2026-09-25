@@ -9,9 +9,8 @@ description: >-
   Setting this key to `true` will prevent rehydration of instance values when
   inputs are duplicated.
 examples:
-  - description: >-
-      In this example, CloudCannon will prevent rehydration of instance values
-      when inputs are duplicated.
+  - description: In this example, CloudCannon will prevent rehydration of instance
+      values when inputs are duplicated.
     language: yaml
     code: |-
       _inputs:

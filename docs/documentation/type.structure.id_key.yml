@@ -12,10 +12,9 @@ description: >-
 
   By default, this key is `_type`.
 examples:
-  - description: >-
-      In this example, we have change the `id_key` from the default `_type` to
-      `component` to match our existing configuration in the `content_blocks`
-      Array input.
+  - description: In this example, we have change the `id_key` from the default
+      `_type` to `component` to match our existing configuration in the
+      `content_blocks` Array input.
     language: yaml
     code: |-
       _inputs:
@@ -53,14 +52,12 @@ examples:
                 videoUrl:
     annotations:
       - number: 1
-        content: >-
-          We have configured the Array input `content_blocks` to use the
+        content: We have configured the Array input `content_blocks` to use the
           `page_components` Structures.
       - number: 2
         content: The `id_key` for `page_components` is `component`.
       - number: 3
-        content: >-
-          Each option in the `values` array has the `component` key with a
+        content: Each option in the `values` array has the `component` key with a
           different value to identify that option.
     source: /cloudcannon.config.yml
 show_in_navigation: false

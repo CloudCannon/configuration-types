@@ -13,9 +13,8 @@ description: >-
   By default, this key is `false` (i.e., case restrictions apply based on other
   `allowed_string_cases` settings).
 examples:
-  - description: >-
-      In this example, we have configured snippet format to allow any string
-      case type.
+  - description: In this example, we have configured snippet format to allow any
+      string case type.
     language: yaml
     code: |-
       _snippets:

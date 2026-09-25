@@ -2,9 +2,8 @@ gid: type._inputs.*.(disabled-input)
 url: /configuration-file/types/_inputs/*/(disabled-input)/
 title: Disabled Input
 deprecated: true
-deprecated_description: >-
-  This input type is deprecated. Use another input type with `disabled` set to
-  `true` instead.
+deprecated_description: This input type is deprecated. Use another input type
+  with `disabled` set to `true` instead.
 description: >-
   This key defines a read-only editing interface for plain text.
 

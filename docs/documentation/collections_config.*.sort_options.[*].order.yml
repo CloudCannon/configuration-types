@@ -9,9 +9,8 @@ description: >-
   CloudCannon will sort files according to the value of `sort_options[*].key`
   for each option in the *Sort* dropdown.
 examples:
-  - description: >-
-      In this example, the "Author (A-Z)" option in the *Sort* dropdown will
-      sort files in the `blog` *Collection browser* in ascending order.
+  - description: In this example, the "Author (A-Z)" option in the *Sort* dropdown
+      will sort files in the `blog` *Collection browser* in ascending order.
     language: yaml
     code: |-
       collections_config:

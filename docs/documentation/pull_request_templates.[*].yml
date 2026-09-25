@@ -10,9 +10,8 @@ description: >-
   template can contain `label`, `title`, `body`, `template_path`, and `_inputs`
   keys.
 examples:
-  - description: >-
-      In this example, we have configured a Pull Request template with a label,
-      title, body, and input configuration.
+  - description: In this example, we have configured a Pull Request template with a
+      label, title, body, and input configuration.
     language: yaml
     code: |-
       pull_request_templates:

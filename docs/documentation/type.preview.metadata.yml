@@ -14,9 +14,8 @@ description: >-
   Metadata entries are typically used to display additional information about a
   card, such as publication dates, URLs, or other contextual data.
 examples:
-  - description: >-
-      In this example, we have configured two metadata entries for *Cards* in
-      the `blog` Collection to display the URL and publication date.
+  - description: In this example, we have configured two metadata entries for
+      *Cards* in the `blog` Collection to display the URL and publication date.
     language: yaml
     code: |-
       collections_config:

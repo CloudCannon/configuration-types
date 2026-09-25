@@ -3,11 +3,10 @@ url: /configuration-file/types/_inputs/*/context/title/
 title: ''
 description: This key defines the title of the context box.
 examples:
-  - description: >-
-      In this example, we want to customize the context box title to be more
-      descriptive for our `author_bio` Input.
+  - description: In this example, we want to customize the context box title to be
+      more descriptive for our `author_bio` Input.
     language: yaml
-    code: |-
+    code: >-
       _inputs:
         author_bio:
           type: textarea

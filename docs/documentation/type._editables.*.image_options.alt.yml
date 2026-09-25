@@ -3,9 +3,8 @@ url: /configuration-file/types/_editables/*/image_options/alt/
 title: ''
 description: This key defines the input for an image's alternative text.
 examples:
-  - description: >-
-      In this example, we have configured the `alt` input with a custom label,
-      comment, and placeholder.
+  - description: In this example, we have configured the `alt` input with a custom
+      label, comment, and placeholder.
     language: yaml
     code: |-
       _editables:

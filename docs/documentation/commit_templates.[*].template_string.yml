@@ -12,9 +12,8 @@ description: >-
   CloudCannon will only use this template string if `template_path` is not set
   for the commit template.
 examples:
-  - description: >-
-      In this example, we have configured a commit template with a template
-      string that includes template variables.
+  - description: In this example, we have configured a commit template with a
+      template string that includes template variables.
     language: yaml
     code: |-
       commit_templates:

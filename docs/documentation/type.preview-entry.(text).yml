@@ -9,9 +9,8 @@ description: >-
   The value is an object that contains a `text` property with a string value.
   This displays static text in card previews.
 examples:
-  - description: >-
-      In this example, we have configured a text preview entry to display static
-      text.
+  - description: In this example, we have configured a text preview entry to display
+      static text.
     language: yaml
     code: |-
       collections_config:

@@ -11,9 +11,8 @@ description: >-
   `root_value_boundary.start` to define paired tokens that enclose root-level
   values.
 examples:
-  - description: >-
-      In this example, we have configured root value boundaries to use double
-      square brackets.
+  - description: In this example, we have configured root value boundaries to use
+      double square brackets.
     language: yaml
     code: |-
       _snippets:

@@ -13,10 +13,10 @@ description: >-
   Color values can be hex codes (e.g., `#ff0000`), CSS color names, or reference
   a data key that contains a color value.
 examples:
-  - description: >-
-      In this example, we have configured the icon color for a text input with
-      an array of values to provide fallback options. CloudCannon will use the
-      value of `icon_color` first, then fall back to the static hex color value.
+  - description: In this example, we have configured the icon color for a text input
+      with an array of values to provide fallback options. CloudCannon will use
+      the value of `icon_color` first, then fall back to the static hex color
+      value.
     language: yaml
     code: |-
       _inputs:
@@ -30,9 +30,8 @@ examples:
               - text: '#2196F3'
     annotations: []
     source: /cloudcannon.config.yml
-  - description: >-
-      In this example, we have configured the icon color to use a static CSS
-      color value.
+  - description: In this example, we have configured the icon color to use a static
+      CSS color value.
     language: yaml
     code: |-
       _inputs:

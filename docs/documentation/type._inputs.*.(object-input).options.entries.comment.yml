@@ -13,11 +13,10 @@ description: >-
 
   Available for Mutable Objects only.
 examples:
-  - description: >-
-      In this example, we have configured a comment with Markdown formatting to
-      provide help text above the key input.
+  - description: In this example, we have configured a comment with Markdown
+      formatting to provide help text above the key input.
     language: yaml
-    code: |-
+    code: >-
       _inputs:
         metadata:
           type: object

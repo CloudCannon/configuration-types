@@ -1,6 +1,5 @@
 gid: collections_config.*.add_options.[*].(add-option).base_path
-url: >-
-  /configuration-file/collections_config/*/add_options/[*]/(add-option)/base_path/
+url: /configuration-file/collections_config/*/add_options/[*]/(add-option)/base_path/
 title: ''
 description: >-
   This key defines a path for files created using an option in the *\+ Add*
@@ -14,10 +13,9 @@ description: >-
   This key is useful if you need to specify a specific subfolder within a
   Collection.
 examples:
-  - description: >-
-      In this example, we want team members in the `_posts` Collection to create
-      new files in the`blog` subfolder of the `_drafts` Collection rather than
-      the current *Collection browser* they have open. By configuring the
+  - description: In this example, we want team members in the `_posts` Collection to
+      create new files in the`blog` subfolder of the `_drafts` Collection rather
+      than the current *Collection browser* they have open. By configuring the
       `base_path` value to `/../_drafts/blog`, new files will be created in a
       different Collection subfolder (i.e., `_drafts`) when a team member
       selects this option from the *\+ Add* button dropdown.

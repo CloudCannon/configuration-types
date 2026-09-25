@@ -10,9 +10,8 @@ description: >-
   templates. Entry values follow the same format as `path`, and are processed
   sequentially before `path`. These values are not saved back to your file.
 examples:
-  - description: >-
-      In this example, we have configured an extra data property `filename` that
-      combines date and title fields for use in the create path.
+  - description: In this example, we have configured an extra data property
+      `filename` that combines date and title fields for use in the create path.
     language: yaml
     code: |-
       collections_config:

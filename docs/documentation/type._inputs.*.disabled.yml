@@ -34,9 +34,8 @@ description: >-
 
   By default, this key is `false` (i.e., team members can edit input values).
 examples:
-  - description: >-
-      In this example, we have configured the `date_created` Date input, which
-      will automatically populate when you create a file using this input.
+  - description: In this example, we have configured the `date_created` Date input,
+      which will automatically populate when you create a file using this input.
       Editors cannot alter this input as the interface is disabled.
     language: yaml
     code: |-

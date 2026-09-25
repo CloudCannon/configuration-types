@@ -14,9 +14,8 @@ description: >-
   in the *Collection browser*.  This key does not affect file actions in the
   *File browser*.
 examples:
-  - description: >-
-      In this example, we want to prevent team members from using file actions
-      in the `data` Collection through the *Collection browser*.
+  - description: In this example, we want to prevent team members from using file
+      actions in the `data` Collection through the *Collection browser*.
     language: yaml
     code: |-
       collections_config:

@@ -18,9 +18,8 @@ description: >-
   beginning with an underscore are hidden (`true`). Otherwise, this key defaults
   to `false` (i.e., the input is visible).
 examples:
-  - description: >-
-      In this example, we have configured an input to be hidden using a boolean
-      value, making it only editable in the *Source Editor*.
+  - description: In this example, we have configured an input to be hidden using a
+      boolean value, making it only editable in the *Source Editor*.
     language: yaml
     code: |-
       _inputs:

@@ -8,8 +8,7 @@ description: >-
   The value must be `content`. This specifies that the parameter uses the
   content parser, which parses content between snippet boundaries.
 examples:
-  - description: >-
-      In this example, we have configured a content parser for a snippet
+  - description: In this example, we have configured a content parser for a snippet
       parameter.
     language: yaml
     code: |-

@@ -21,8 +21,7 @@ description: >-
   You can also configure this behavior for specific values of a Structure using
   `values[*].remove_extra_inputs`.
 examples:
-  - description: >-
-      In this example, we want to delete old inputs that are not in the
+  - description: In this example, we want to delete old inputs that are not in the
       Structure from the associated file.
     language: yaml
     code: |-

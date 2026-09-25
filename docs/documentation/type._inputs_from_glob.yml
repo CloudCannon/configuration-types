@@ -18,8 +18,7 @@ description: >-
 
   This key has no default.
 examples:
-  - description: >-
-      In this example, we have several *Input Configuration Files* in the
+  - description: In this example, we have several *Input Configuration Files* in the
       `.cloudcannon/inputs/` folder, with each file containing multiple *Input*
       definitions. The value of the `_inputs_from_glob` key tells CloudCannon to
       only use the `seo.cloudcannon.inputs.yml` and

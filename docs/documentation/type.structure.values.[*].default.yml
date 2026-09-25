@@ -14,9 +14,9 @@ description: >-
 
   it will fall back to the default entry.
 examples:
-  - description: >-
-      In this example, we want the entry labelled `Employee` to be our default
-      option for populating inputs configured with the `staff` Structure.
+  - description: In this example, we want the entry labelled `Employee` to be our
+      default option for populating inputs configured with the `staff`
+      Structure.
     language: yaml
     code: |-
       _structures:

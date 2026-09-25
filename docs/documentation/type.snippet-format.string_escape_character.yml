@@ -9,9 +9,8 @@ description: >-
   The value is a string that specifies the escape character. If required, this
   will usually be `\`.
 examples:
-  - description: >-
-      In this example, we have configured string escape character to use a
-      backslash.
+  - description: In this example, we have configured string escape character to use
+      a backslash.
     language: yaml
     code: |-
       _snippets:

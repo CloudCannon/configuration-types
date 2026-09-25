@@ -14,9 +14,8 @@ description: >-
 
   This key is available for Array and Multiselect or Multichoice Inputs.
 examples:
-  - description: >-
-      In this example, we prompt our team to enter a valid number of items using
-      a custom message.
+  - description: In this example, we prompt our team to enter a valid number of
+      items using a custom message.
     language: yaml
     code: |-
       _inputs:

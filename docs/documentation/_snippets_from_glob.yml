@@ -18,9 +18,8 @@ description: >-
 
   This key has no default.
 examples:
-  - description: >-
-      In this example, each Custom Snippet has its own *Configuration File* in
-      the `.cloudcannon/snippets/` folder. The value of the
+  - description: In this example, each Custom Snippet has its own *Configuration
+      File* in the `.cloudcannon/snippets/` folder. The value of the
       `_snippets_from_glob` key tells CloudCannon to use the
       `callout.cloudcannon.snippets.yml` file in that folder.
     language: yaml

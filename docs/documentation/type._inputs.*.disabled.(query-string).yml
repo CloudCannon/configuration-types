@@ -21,9 +21,8 @@ description: >-
   For reverse values in YAML files, the string should be wrapped in single or
   double quotation marks.
 examples:
-  - description: >-
-      In this example, we have configured an input to be disabled when the
-      `published` input is truthy.
+  - description: In this example, we have configured an input to be disabled when
+      the `published` input is truthy.
     language: yaml
     code: |-
       _inputs:
@@ -36,9 +35,8 @@ examples:
           disabled: published
     annotations: []
     source: /cloudcannon.config.yml
-  - description: >-
-      In this example, we have configured an input to be disabled when the
-      `published` input is falsy using the `!` prefix.
+  - description: In this example, we have configured an input to be disabled when
+      the `published` input is falsy using the `!` prefix.
     language: yaml
     code: |-
       _inputs:

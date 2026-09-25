@@ -6,9 +6,8 @@ description: |-
 
   The value is a string that specifies a tag associated with a structure value.
 examples:
-  - description: >-
-      In this example, we have configured the `featured` and `news` tags for the
-      entry labeled `Blog` in the `article_information` Structure.
+  - description: In this example, we have configured the `featured` and `news` tags
+      for the entry labeled `Blog` in the `article_information` Structure.
     language: yaml
     code: |-
       _structures:

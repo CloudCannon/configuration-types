@@ -50,9 +50,8 @@ description: >-
   If both `disabled_if` and `disabled` are set, the input is disabled when
   either is truthy.
 examples:
-  - description: >-
-      In this example, `published` is unchecked, so the `publish_date` input is
-      read-only until it is checked.
+  - description: In this example, `published` is unchecked, so the `publish_date`
+      input is read-only until it is checked.
     language: yaml
     code: |-
       published: false
@@ -65,9 +64,9 @@ examples:
           disabled_if: '!published'
     annotations: []
     source: /post.yml
-  - description: >-
-      In this example, there is stock on hand, so the `emergency_stock_count`
-      input is read-only until `stock_count` reaches zero.
+  - description: In this example, there is stock on hand, so the
+      `emergency_stock_count` input is read-only until `stock_count` reaches
+      zero.
     language: yaml
     code: |-
       stock_count: 3
@@ -80,8 +79,7 @@ examples:
           disabled_if: stock_count > 0
     annotations: []
     source: /product.yml
-  - description: >-
-      In this example, `locked` is checked, so every item in `items` is
+  - description: In this example, `locked` is checked, so every item in `items` is
       read-only. Each item is inside the array, so `parent(2)` reaches the
       `locked` input beside it.
     language: yaml

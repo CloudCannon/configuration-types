@@ -13,9 +13,8 @@ description: >-
   By default, this key is `false` (i.e., root boundary tokens are not removed
   when segments are empty).
 examples:
-  - description: >-
-      In this example, we have configured snippet format to remove empty root
-      boundaries from source code.
+  - description: In this example, we have configured snippet format to remove empty
+      root boundaries from source code.
     language: yaml
     code: |-
       _snippets:

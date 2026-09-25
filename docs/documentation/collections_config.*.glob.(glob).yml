@@ -14,9 +14,8 @@ description: >-
   Files are included in a Collection if they match any positive globs and do not
   match any negative globs.
 examples:
-  - description: >-
-      In this example, the `data` Collection uses a single glob pattern to show
-      only `.yml` files in the `data` folder or any nested folders.
+  - description: In this example, the `data` Collection uses a single glob pattern
+      to show only `.yml` files in the `data` folder or any nested folders.
     language: yaml
     code: |-
       collections_config:

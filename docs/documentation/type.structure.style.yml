@@ -14,9 +14,8 @@ description: >-
 
   Values can be one of the following: `select`, or `modal`.
 examples:
-  - description: >-
-      In this example, the `related_articles` Structure only has one option so a
-      `select` searchbar is appropriate.
+  - description: In this example, the `related_articles` Structure only has one
+      option so a `select` searchbar is appropriate.
     language: yaml
     code: |-
       _structures:

@@ -1,6 +1,5 @@
 gid: type.snippet.params.*.(content-parser-config).options.escape_indented_blocks
-url: >-
-  /configuration-file/types/snippet/params/*/(content-parser-config)/options/escape_indented_blocks/
+url: /configuration-file/types/snippet/params/*/(content-parser-config)/options/escape_indented_blocks/
 title: ''
 description: >-
   This key toggles whether CloudCannon will escape indented code blocks (4
@@ -13,9 +12,8 @@ description: >-
 
   By default, this key is `false` (i.e., indented code blocks are not escaped).
 examples:
-  - description: >-
-      In this example, we have configured content parser to escape indented code
-      blocks.
+  - description: In this example, we have configured content parser to escape
+      indented code blocks.
     language: yaml
     code: |-
       _snippets:

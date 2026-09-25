@@ -10,13 +10,12 @@ description: >-
   of your repository. The path must end in the file extension
   `.cloudcannon.structure-value.yml` (note the singular form of "value").
 examples:
-  - description: >-
-      In this example, the `staff` Array Input uses inline *Structure* values
-      from the main *Configuration File* and also references another value from
-      the `boardMember.cloudcannon.structure-value.yml` in the
+  - description: In this example, the `staff` Array Input uses inline *Structure*
+      values from the main *Configuration File* and also references another
+      value from the `boardMember.cloudcannon.structure-value.yml` in the
       `/.cloudcannon/structures/` folder.
     language: yaml
-    code: |-
+    code: >-
       _inputs:
         staff:
           type: array

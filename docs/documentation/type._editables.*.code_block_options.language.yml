@@ -3,9 +3,8 @@ url: /configuration-file/types/_editables/*/code_block_options/language/
 title: ''
 description: This key defines the input for a code block's syntax highlighting language.
 examples:
-  - description: >-
-      In this example, we have configured the `language` input with a custom
-      label, comment, and a limited set of selectable languages.
+  - description: In this example, we have configured the `language` input with a
+      custom label, comment, and a limited set of selectable languages.
     language: yaml
     code: |-
       _editables:

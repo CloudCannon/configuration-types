@@ -9,9 +9,8 @@ description: >-
   optional parser, which wraps another snippet configuration and makes it
   optional.
 examples:
-  - description: >-
-      In this example, we have configured an optional parser for a snippet
-      parameter.
+  - description: In this example, we have configured an optional parser for a
+      snippet parameter.
     language: yaml
     code: |-
       _snippets:

@@ -13,11 +13,10 @@ description: >-
   Additionally, any Schemas you have configured for a Collection will also
   appear in the *\+ Add* dropdown.
 examples:
-  - description: >-
-      In this example, we have configured two standard add options for the
-      `people` Collection. The first option uses the `employee` Schema, and the
-      second option uses the `contractor` Schema and opens files in the [Data
-      Editor](/documentation/articles/what-is-the-data-editor/).
+  - description: In this example, we have configured two standard add options for
+      the `people` Collection. The first option uses the `employee` Schema, and
+      the second option uses the `contractor` Schema and opens files in the
+      [Data Editor](/documentation/articles/what-is-the-data-editor/).
     language: yaml
     code: |-
       collections_config:
@@ -38,9 +37,9 @@ examples:
               path: /.cloudcannon/schemas/contractor.yml
     annotations: []
     source: /cloudcannon.config.yml
-  - description: >-
-      In this example, the *\+ Add* button dropdown in the `team` *Collection
-      browser* has a link to the Office Locations page on our live website.
+  - description: In this example, the *\+ Add* button dropdown in the `team`
+      *Collection browser* has a link to the Office Locations page on our live
+      website.
     language: yaml
     code: |-
       collections_config:

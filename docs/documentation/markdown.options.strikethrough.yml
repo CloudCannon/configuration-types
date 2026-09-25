@@ -13,9 +13,8 @@ description: >-
   By default, this key is `false` (i.e., strikethrough text is not output in
   double tildes format).
 examples:
-  - description: >-
-      In this example, we have configured Markdown to output strikethrough text
-      wrapped in double tildes.
+  - description: In this example, we have configured Markdown to output
+      strikethrough text wrapped in double tildes.
     language: yaml
     code: |-
       markdown:

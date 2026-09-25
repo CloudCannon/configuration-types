@@ -1,16 +1,14 @@
 gid: type._snippets_definitions
 url: /configuration-file/types/_snippets_definitions/
 title: ''
-description: >-
-  A record of reusable values that can be referenced in snippet templates.
-  Values are substituted using `{ ref: "key" }` for direct replacement or `{
-  spread_ref: "key" }` for spreading arrays/objects. Common definition types
-  include parser formats, argument models, select option lists, and simple
-  string values like shortcode names.
+description: 'A record of reusable values that can be referenced in snippet
+  templates. Values are substituted using `{ ref: "key" }` for direct
+  replacement or `{ spread_ref: "key" }` for spreading arrays/objects. Common
+  definition types include parser formats, argument models, select option lists,
+  and simple string values like shortcode names.'
 examples:
-  - description: >-
-      Define reusable values like shortcode names, argument models, and parser
-      formats that can be referenced in snippet templates.
+  - description: Define reusable values like shortcode names, argument models, and
+      parser formats that can be referenced in snippet templates.
     language: yaml
     code: |-
       _snippets_definitions:
@@ -40,9 +38,9 @@ examples:
           allow_numbers: true
     annotations: []
     source: /cloudcannon.config.yml
-  - description: >-
-      Reference definitions in snippet templates using `{ ref: "key" }` syntax.
-      This allows you to reuse common configurations across multiple snippets.
+  - description: 'Reference definitions in snippet templates using `{ ref: "key" }`
+      syntax. This allows you to reuse common configurations across multiple
+      snippets.'
     language: yaml
     code: |-
       _snippets_definitions:
@@ -81,9 +79,8 @@ examples:
                 type: "string"
     annotations: []
     source: /cloudcannon.config.yml
-  - description: >-
-      Define a list of select options for use in snippet inputs, such as a list
-      of programming languages for a code highlighting snippet.
+  - description: Define a list of select options for use in snippet inputs, such as
+      a list of programming languages for a code highlighting snippet.
     language: yaml
     code: |-
       _snippets_definitions:

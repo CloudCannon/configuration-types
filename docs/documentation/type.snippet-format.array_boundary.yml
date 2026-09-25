@@ -10,8 +10,7 @@ description: >-
   specifying a string token. For arrays, this will usually be `{ start: "[",
   end: "]" }`.
 examples:
-  - description: >-
-      In this example, we have configured array boundaries to use square
+  - description: In this example, we have configured array boundaries to use square
       brackets.
     language: yaml
     code: |-

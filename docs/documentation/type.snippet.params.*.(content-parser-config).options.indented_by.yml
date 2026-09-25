@@ -1,6 +1,5 @@
 gid: type.snippet.params.*.(content-parser-config).options.indented_by
-url: >-
-  /configuration-file/types/snippet/params/*/(content-parser-config)/options/indented_by/
+url: /configuration-file/types/snippet/params/*/(content-parser-config)/options/indented_by/
 title: ''
 description: >-
   This key defines the whitespace indentation required when parsing content.
@@ -53,8 +52,7 @@ examples:
       - number: 1
         content: This will parse correctly as `My highlighted content!`
       - number: 2
-        content: >-
-          This will strip only the indentation that matches, and return `  My
+        content: This will strip only the indentation that matches, and return `  My
           highlighted content!`
       - number: 2
         content: |-

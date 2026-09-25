@@ -3,9 +3,8 @@ url: /configuration-file/types/_editables/*/image_options/src/
 title: ''
 description: This key defines the input for the image file displayed.
 examples:
-  - description: >-
-      In this example, we have configured the `src` input with a custom label,
-      comment, and accepted file types.
+  - description: In this example, we have configured the `src` input with a custom
+      label, comment, and accepted file types.
     language: yaml
     code: |-
       _editables:

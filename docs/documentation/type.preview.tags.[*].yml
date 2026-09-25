@@ -8,8 +8,7 @@ description: >-
   The value is a string that specifies a tag to display on *Cards* in the
   *Collection browser*, *Structures*, and *Snippets*.
 examples:
-  - description: >-
-      In this example, we have configured a tag for *Cards* in the `blog`
+  - description: In this example, we have configured a tag for *Cards* in the `blog`
       Collection.
     language: yaml
     code: |-

@@ -14,11 +14,10 @@ description: >-
   Color values can be hex codes (e.g., `#ff0000`), CSS color names, or reference
   a data key that contains a color value.
 examples:
-  - description: >-
-      In this example, we have configured the icon background color for *Cards*
-      in the `blog` Collection with an array of values to provide fallback
-      options. CloudCannon will use the value of `bg_color` first, then fall
-      back to the static hex color value.
+  - description: In this example, we have configured the icon background color for
+      *Cards* in the `blog` Collection with an array of values to provide
+      fallback options. CloudCannon will use the value of `bg_color` first, then
+      fall back to the static hex color value.
     language: yaml
     code: |-
       collections_config:

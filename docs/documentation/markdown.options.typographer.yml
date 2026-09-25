@@ -13,8 +13,7 @@ description: >-
   By default, this key is `false` (i.e., typographic replacements and quote
   beautification are disabled).
 examples:
-  - description: >-
-      In this example, we have configured Markdown to enable typographic
+  - description: In this example, we have configured Markdown to enable typographic
       replacements and quote beautification.
     language: yaml
     code: |-

@@ -10,10 +10,9 @@ description: >-
   users to enter color values manually or select from a palette if one is
   configured.
 examples:
-  - description: >-
-      In this example, we have configured a color input to hide the picker UI,
-      requiring users to select from the predefined palette or enter values
-      manually.
+  - description: In this example, we have configured a color input to hide the
+      picker UI, requiring users to select from the predefined palette or enter
+      values manually.
     language: yaml
     code: |-
       _inputs:

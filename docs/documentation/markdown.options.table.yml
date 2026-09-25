@@ -12,9 +12,8 @@ description: >-
   By default, this key is `false` (i.e., tables are not output in Markdown
   format).
 examples:
-  - description: >-
-      In this example, we have configured Markdown to output tables in Markdown
-      format.
+  - description: In this example, we have configured Markdown to output tables in
+      Markdown format.
     language: yaml
     code: |-
       markdown:

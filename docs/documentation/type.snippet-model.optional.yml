@@ -44,8 +44,7 @@ examples:
 
           keys from the arguments, and both are marked as `optional`.
       - number: 2
-        content: >-
-          This anchor tag will not be parsed, as the `href` key is absent and is
+        content: This anchor tag will not be parsed, as the `href` key is absent and is
           not marked as `optional`.
     source: /page.md
 show_in_navigation: false

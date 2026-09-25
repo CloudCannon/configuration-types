@@ -12,9 +12,8 @@ description: >-
   This is useful if your Collection name is an irregular plural (e.g., "syllabi"
   or "syllabuses" to "syllabus").
 examples:
-  - description: >-
-      In this example, the *\+ Add* button option to add a Collection file will
-      read "Add Team Member" rather that "Add Team".
+  - description: In this example, the *\+ Add* button option to add a Collection
+      file will read "Add Team Member" rather that "Add Team".
     language: yaml
     code: |-
       collections_config:

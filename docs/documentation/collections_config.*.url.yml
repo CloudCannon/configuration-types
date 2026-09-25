@@ -28,9 +28,8 @@ description: >-
 
   strings](/documentation/articles/configure-your-template-strings/).
 examples:
-  - description: >-
-      In this example, the output URL for files in this Collection will be
-      `/travel/` rather than the default `/blog/`.
+  - description: In this example, the output URL for files in this Collection will
+      be `/travel/` rather than the default `/blog/`.
     language: yaml
     code: |-
       collections_config:

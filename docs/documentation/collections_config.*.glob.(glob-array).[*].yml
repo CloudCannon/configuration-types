@@ -10,9 +10,8 @@ description: >-
   Collection path. Globs can be positive (e.g., `*.yml`) or negative (e.g.,
   `!**/*.json`).
 examples:
-  - description: >-
-      In this example, the `data` Collection uses a negative glob pattern to
-      exclude the `secret.yml` file from the *Collection browser*.
+  - description: In this example, the `data` Collection uses a negative glob pattern
+      to exclude the `secret.yml` file from the *Collection browser*.
     language: yaml
     code: |-
       collections_config:

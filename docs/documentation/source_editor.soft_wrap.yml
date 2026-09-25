@@ -9,9 +9,8 @@ description: >-
   Setting this key to `true` will enable soft wrapping of code, allowing long
   lines to wrap to the next line without horizontal scrolling.
 examples:
-  - description: >-
-      In this example, CloudCannon will enable soft wrapping of code in the
-      Source Editor.
+  - description: In this example, CloudCannon will enable soft wrapping of code in
+      the Source Editor.
     language: yaml
     code: |-
       source_editor:

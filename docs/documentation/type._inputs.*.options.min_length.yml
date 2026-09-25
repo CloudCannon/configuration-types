@@ -31,9 +31,8 @@ description: >-
 
   To use this key in a Select Input, `allow_create` must be set to `true`.
 examples:
-  - description: >-
-      In this example, we want our team to enter a blog description using the
-      Rich Text `seo_description` Input. This Input requires a minimum of 25
+  - description: In this example, we want our team to enter a blog description using
+      the Rich Text `seo_description` Input. This Input requires a minimum of 25
       characters.
     language: yaml
     code: |-

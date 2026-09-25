@@ -14,9 +14,8 @@ description: >-
   Editor](/documentation/articles/what-is-the-data-editor/), and they will be
   saved to your Git repository.
 examples:
-  - description: >-
-      In this example, CloudCannon will preserve extra inputs in files using the
-      `article` schema in the `blog` Collection.
+  - description: In this example, CloudCannon will preserve extra inputs in files
+      using the `article` schema in the `blog` Collection.
     language: yaml
     code: |-
       collections_config:

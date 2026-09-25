@@ -1,13 +1,12 @@
 gid: type.paths.dam_uploads_filename
 url: /configuration-file/types/paths/dam_uploads_filename/
 title: ''
-description: >-
-  This key defines the path for the name of the uploaded file, when uploading
-  [DAM](/documentation/articles/introduction-to-assets-and-dams/) files.
+description: This key defines the path for the name of the uploaded file, when
+  uploading [DAM](/documentation/articles/introduction-to-assets-and-dams/)
+  files.
 examples:
-  - description: >-
-      In this example, we have configured the DAM uploads filename path for the
-      `blog` Collection.
+  - description: In this example, we have configured the DAM uploads filename path
+      for the `blog` Collection.
     language: yaml
     code: |-
       collections_config:
