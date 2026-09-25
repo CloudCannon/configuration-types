@@ -118,12 +118,14 @@ export const ToolbarOptionsSchema = z.object({
 			center: z.boolean().optional(),
 			right: z.boolean().optional(),
 			justify: z.boolean().optional(),
-			classes: z.object({
-				left: z.string().optional(),
-				center: z.string().optional(),
-				right: z.string().optional(),
-				justify: z.string().optional(),
-			}).optional(),
+			classes: z
+				.object({
+					left: z.string().optional(),
+					center: z.string().optional(),
+					right: z.string().optional(),
+					justify: z.string().optional(),
+				})
+				.optional(),
 		})
 		.optional()
 		.meta({ id: 'type._editables.*.align' }),

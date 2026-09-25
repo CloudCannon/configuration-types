@@ -1,0 +1,35 @@
+gid: type._inputs.*.disabled_message
+url: /configuration-file/types/_inputs/*/disabled_message/
+title: ''
+description: >-
+  This key defines a message shown above an input while it is disabled, to
+  explain why the value cannot be edited.
+
+
+  The message is shown when `disabled` is `true` or `disabled_if` is truthy, and
+  hidden otherwise.
+
+
+  CloudCannon supports a limited selection of Markdown formatting for the value
+  of this key: links, bold, italic, subscript, superscript, and inline code.
+
+
+  This key has no default.
+examples:
+  - description: >-
+      In this example, `published` is checked, so the `slug` input is read-only
+      and shows the message explaining why.
+    language: yaml
+    code: |-
+      published: true
+      slug: launch-week
+      _inputs:
+        published:
+          type: checkbox
+        slug:
+          type: text
+          disabled_if: published
+          disabled_message: Unpublish this post to change its URL.
+    annotations: []
+    source: /post.yml
+show_in_navigation: false

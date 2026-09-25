@@ -1,6 +1,8 @@
 gid: type._inputs.*.hidden.(query-string)
 url: /configuration-file/types/_inputs/*/hidden/(query-string)/
 title: Query String Hidden
+deprecated: true
+deprecated_description: String values for this key are deprecated. Use `hidden_if` instead.
 description: >-
   This key represents a query string value for the `hidden` key that
   conditionally hides an input based on another input's value.

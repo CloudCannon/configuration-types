@@ -1,0 +1,103 @@
+gid: type._inputs.*.disabled_if
+url: /configuration-file/types/_inputs/*/disabled_if/
+title: ''
+description: >-
+  This key defines whether the value of an input is editable in the *Data
+  Editor* or the sidebar of the *Visual Editor* or *Content Editor* using an
+  expression.
+
+
+  CloudCannon prevents editing the input when the expression is truthy, and
+  re-evaluates it whenever an input it references changes.
+
+
+  Expressions reference other inputs by key and support comparisons (`==`, `!=`,
+  `===`, `!==`, `<`, `<=`, `>`, `>=`), logic (`&&`, `||`, `!`, `??`), and
+  arithmetic. Two names are reserved:
+
+
+  * `this` is the input being configured.
+
+  * `$` is the root of the file, or the closest structure value when the input
+  is inside a structure.
+
+
+  Functions:
+
+
+  * `parent(input, levels)` is the object or array `levels` above `input`. Both
+  are optional: `input` defaults to `this` and `levels` to 1, so `parent()` is
+  the object or array containing the input, `parent(2)` is the one above that,
+  and `parent($)` is the one containing the structure value.
+
+  * `get(input, ...keys)` follows a path of keys or array indexes starting at
+  `input`. `input` is optional and defaults to the object containing the input,
+  so `get("my key")` reads a sibling with any key, `get("seo", "title")` reads a
+  nested value, and `get(parent(2), "my key")` reads from elsewhere.
+
+  * `length`, `includes`, `starts_with`, `ends_with`, `lowercase`, `uppercase`,
+  `trim`, `number`, and `string` operate on values.
+
+
+  Configuration on an array item, such as `items[*]`, uses `parent(2)` to reach
+  the inputs beside the array.
+
+
+  An expression that fails to parse shows an error in place of the input, which
+  is not editable.
+
+
+  If both `disabled_if` and `disabled` are set, the input is disabled when
+  either is truthy.
+examples:
+  - description: >-
+      In this example, `published` is unchecked, so the `publish_date` input is
+      read-only until it is checked.
+    language: yaml
+    code: |-
+      published: false
+      publish_date:
+      _inputs:
+        published:
+          type: checkbox
+        publish_date:
+          type: datetime
+          disabled_if: '!published'
+    annotations: []
+    source: /post.yml
+  - description: >-
+      In this example, there is stock on hand, so the `emergency_stock_count`
+      input is read-only until `stock_count` reaches zero.
+    language: yaml
+    code: |-
+      stock_count: 3
+      emergency_stock_count: 0
+      _inputs:
+        stock_count:
+          type: number
+        emergency_stock_count:
+          type: number
+          disabled_if: stock_count > 0
+    annotations: []
+    source: /product.yml
+  - description: >-
+      In this example, `locked` is checked, so every item in `items` is
+      read-only. Each item is inside the array, so `parent(2)` reaches the
+      `locked` input beside it.
+    language: yaml
+    code: |-
+      locked: true
+      items:
+        - Apples
+        - Pears
+      _inputs:
+        locked:
+          type: checkbox
+        items:
+          type: array
+        items[*]:
+          type: text
+          disabled_if: parent(2).locked
+    annotations: []
+    source: /shopping-list.yml
+show_in_navigation: false

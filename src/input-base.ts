@@ -172,23 +172,30 @@ export const BaseInputSchema = z.object({
 		description: 'Optionally changes the text above this input.',
 	}),
 	hidden: z
-		.union([z.boolean().meta({ title: 'Boolean' }), z.string().meta({ title: 'Query String' })])
+		.union([
+			z.boolean().meta({ title: 'Boolean' }),
+			z.string().meta({ title: 'Query String', deprecated: true }),
+		])
 		.nullable()
 		.default(false)
 		.optional()
-		.meta({
-			id: 'type._inputs.*.hidden',
-			description: 'Toggles the visibility of this input.',
-		}),
+		.meta({ id: 'type._inputs.*.hidden' }),
+	hidden_if: z.string().nullable().optional().meta({ id: 'type._inputs.*.hidden_if' }),
 	disabled: z
-		.union([z.boolean().meta({ title: 'Boolean' }), z.string().meta({ title: 'Query String' })])
+		.union([
+			z.boolean().meta({ title: 'Boolean' }),
+			z.string().meta({ title: 'Query String', deprecated: true }),
+		])
 		.nullable()
 		.default(false)
 		.optional()
-		.meta({
-			id: 'type._inputs.*.disabled',
-			description: 'Toggles if this input can be edited.',
-		}),
+		.meta({ id: 'type._inputs.*.disabled' }),
+	disabled_if: z.string().nullable().optional().meta({ id: 'type._inputs.*.disabled_if' }),
+	disabled_message: z
+		.string()
+		.nullable()
+		.optional()
+		.meta({ id: 'type._inputs.*.disabled_message' }),
 	instance_value: z.enum(['UUID', 'NOW']).nullable().optional().meta({
 		id: 'type._inputs.*.instance_value',
 		title: 'Instance Value',
@@ -233,6 +240,7 @@ export const TextInputOptionsSchema = z
 		icon_background_color: PreviewEntriesSchema.nullable().optional(),
 	})
 	.meta({
+		id: 'type._inputs.*.(text-input).options',
 		description: 'Options that are specific to Text Inputs.',
 	});
 
@@ -240,16 +248,7 @@ export const TextInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z
-			.literal([
-				'text',
-				'email',
-				'disabled',
-				'pinterest',
-				'facebook',
-				'twitter',
-				'github',
-				'instagram',
-			])
+			.literal(['text', 'email', 'pinterest', 'facebook', 'twitter', 'github', 'instagram'])
 			.meta(typeMeta),
 		options: TextInputOptionsSchema.nullable().optional(),
 	})
@@ -257,6 +256,18 @@ export const TextInputSchema = z
 		id: 'type._inputs.*.(text-input)',
 		title: 'Text Input',
 		description: 'Provides a simple editing interface for plain text.',
+	});
+
+export const DisabledInputSchema = z
+	.object({
+		...BaseInputSchema.shape,
+		type: z.literal('disabled').meta(typeMeta),
+		options: TextInputOptionsSchema.nullable().optional(),
+	})
+	.meta({
+		id: 'type._inputs.*.(disabled-input)',
+		title: 'Disabled Input',
+		deprecated: true,
 	});
 
 export const FileInputOptionsSchema = z
@@ -412,6 +423,7 @@ export type BaseInput = z.infer<typeof BaseInputSchema>;
 export type BooleanInput = z.infer<typeof BooleanInputSchema>;
 export type TextInputOptions = z.infer<typeof TextInputOptionsSchema>;
 export type TextInput = z.infer<typeof TextInputSchema>;
+export type DisabledInput = z.infer<typeof DisabledInputSchema>;
 export type FileInputOptions = z.infer<typeof FileInputOptionsSchema>;
 export type UrlInputOptions = z.infer<typeof UrlInputOptionsSchema>;
 export type UrlInput = z.infer<typeof UrlInputSchema>;

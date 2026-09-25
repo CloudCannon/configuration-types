@@ -1,0 +1,6 @@
+gid: type._inputs.*.(disabled-input).type
+url: /configuration-file/types/_inputs/*/(disabled-input)/type/
+title: ''
+description: Sets an input type, which controls how this input appears and behaves.
+examples: []
+show_in_navigation: false
