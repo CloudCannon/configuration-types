@@ -34,6 +34,17 @@ function deref(doc: JsonSchema, schema: JsonSchema): JsonSchema {
 		});
 	}
 
+	// Removes the null part `.nullable()` emits as `type: ['string', 'null']`
+	if (Array.isArray(doc.type)) {
+		const types = doc.type.filter((type) => type !== 'null');
+		if (types.length === 1) {
+			doc.type = types[0];
+		} else if (types.length > 1 && !doc.anyOf) {
+			doc.anyOf = types.map((type) => ({ type }));
+			delete doc.type;
+		}
+	}
+
 	// A workaround, but these are essentially the same for the docs.
 	if (doc.oneOf && !doc.anyOf) {
 		doc.anyOf = doc.oneOf;
@@ -403,6 +414,8 @@ async function processSchema(config: DocSchemaConfig): Promise<{
 		pages: {},
 	};
 
+	// Zod has started outputting the root schema with an id as a ref so we need to dereference it.
+	deref(schema, schema);
 	schema.id ??= config.rootTypeId;
 	docToPage(schema, { path: [] }, ctx);
 

@@ -400,8 +400,13 @@ function aggregateBranchExpectations(errors: ErrorObject[]): ErrorObject[] {
 		} else if (error.keyword === 'enum') {
 			addTo(valuesByPath, error.instancePath, error.params.allowedValues);
 		} else if (error.keyword === 'type') {
-			const type = error.params.type;
-			addTo(typesByPath, error.instancePath, Array.isArray(type) ? type : [type]);
+			const type: string[] = Array.isArray(error.params.type)
+				? error.params.type
+				: [error.params.type];
+
+			// `.nullable()` emits as `type: [X, 'null']`, but X is the only type worth reporting.
+			const reported = error.data === null ? type : type.filter((name) => name !== 'null');
+			addTo(typesByPath, error.instancePath, reported.length > 0 ? reported : type);
 		}
 	}
 

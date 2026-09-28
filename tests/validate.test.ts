@@ -22,6 +22,16 @@ test('should report the non-null branch error instead of the nullable fallback',
 	assert.deepEqual(rendered, ['$._inputs.title: unexpected property wat']);
 });
 
+test('should not list null as an allowed type for a nullable key given the wrong type', async () => {
+	const validator = await loadValidator('global');
+	const data = { collection_groups: [{ heading: 5, collections: [] }] };
+	const rendered = messages(data, validator.validate(data));
+
+	assert.deepEqual(rendered, [
+		'$.collection_groups[0].heading: unexpected type number, allowed types: string',
+	]);
+});
+
 test('should report errors nested inside a nullable options object', async () => {
 	const validator = await loadValidator('global');
 	const data = { _inputs: { tags: { type: 'array', options: { disable_add: null } } } };
