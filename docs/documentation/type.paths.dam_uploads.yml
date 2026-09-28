@@ -12,9 +12,8 @@ description: >-
   placeholders](/documentation/articles/configure-your-template-strings/) for
   `uploads` and `dam_uploads`.
 examples:
-  - description: >-
-      In this example, we have configured the DAM uploads path for the `blog`
-      Collection.
+  - description: In this example, we have configured the DAM uploads path for the
+      `blog` Collection.
     language: yaml
     code: |-
       collections_config:

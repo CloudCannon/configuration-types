@@ -10,8 +10,7 @@ description: >-
   in snippet parameter parsing. This works together with `array_boundary.start`
   to define paired tokens that enclose arrays.
 examples:
-  - description: >-
-      In this example, we have configured array boundaries to use square
+  - description: In this example, we have configured array boundaries to use square
       brackets.
     language: yaml
     code: |-

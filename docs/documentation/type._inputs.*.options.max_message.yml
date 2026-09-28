@@ -13,9 +13,8 @@ description: >-
 
   This key is available for Number Inputs.
 examples:
-  - description: >-
-      In this example, we prompt our team to enter a valid number using a custom
-      message.
+  - description: In this example, we prompt our team to enter a valid number using a
+      custom message.
     language: yaml
     code: |-
       _inputs:

@@ -3,9 +3,8 @@ url: /configuration-file/types/_editables/*/link_options/href/
 title: ''
 description: This key defines the input for the destination URL of a hyperlink.
 examples:
-  - description: >-
-      In this example, we have configured the `href` input with a custom label,
-      comment, and a hidden link option.
+  - description: In this example, we have configured the `href` input with a custom
+      label, comment, and a hidden link option.
     language: yaml
     code: |-
       _editables:

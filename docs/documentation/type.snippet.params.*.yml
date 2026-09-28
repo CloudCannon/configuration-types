@@ -10,9 +10,8 @@ description: >-
   parameter. Each parameter can use different parser types (argument, content,
   literal, etc.) with their specific options.
 examples:
-  - description: >-
-      In this example, we have configured a snippet parameter using an argument
-      parser.
+  - description: In this example, we have configured a snippet parameter using an
+      argument parser.
     language: yaml
     code: |-
       _snippets:

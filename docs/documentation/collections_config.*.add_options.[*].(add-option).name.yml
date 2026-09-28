@@ -12,9 +12,8 @@ description: >-
   By default, this key uses the name of the matching Schema if
   `add_options.schema` is configured. Otherwise, this key has no default value.
 examples:
-  - description: >-
-      In this example, we have configured a standard add option for the `people`
-      Collection with the custom name "Add Staff Member".
+  - description: In this example, we have configured a standard add option for the
+      `people` Collection with the custom name "Add Staff Member".
     language: yaml
     code: |-
       collections_config:

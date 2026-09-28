@@ -8,11 +8,10 @@ description: >-
 
   By default, this key is `false` (i.e., closed).
 examples:
-  - description: >-
-      In this example, we want the context box to be open by default so users
-      can immediately see the help information.
+  - description: In this example, we want the context box to be open by default so
+      users can immediately see the help information.
     language: yaml
-    code: |-
+    code: >-
       _inputs:
         seo_description:
           type: text

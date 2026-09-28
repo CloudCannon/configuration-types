@@ -9,11 +9,10 @@ description: >-
   The value can be any data type and specifies additional data to include in
   commit message templates.
 examples:
-  - description: >-
-      In this example, we have configured an extra data property
+  - description: In this example, we have configured an extra data property
       `breaking_change` with a template string.
     language: yaml
-    code: |-
+    code: >-
       commit_templates:
         - label: Breaking change
           template_string: '{message}{breaking_change|if=breaking_change_message}'

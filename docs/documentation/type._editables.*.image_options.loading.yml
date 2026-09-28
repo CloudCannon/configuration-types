@@ -3,9 +3,8 @@ url: /configuration-file/types/_editables/*/image_options/loading/
 title: ''
 description: This key defines the input for toggling lazy loading on an image.
 examples:
-  - description: >-
-      In this example, we have configured the `loading` input with a custom
-      label and comment.
+  - description: In this example, we have configured the `loading` input with a
+      custom label and comment.
     language: yaml
     code: |-
       _editables:

@@ -14,10 +14,9 @@ description: >-
   entire container while maintaining aspect ratio with the top of the image
   aligned with the top of the container.
 examples:
-  - description: >-
-      In this example, we have configured the gallery fit to use `cover` so
-      images cover the entire container while maintaining aspect ratio, aligning
-      the center of the image with the center of the container.
+  - description: In this example, we have configured the gallery fit to use `cover`
+      so images cover the entire container while maintaining aspect ratio,
+      aligning the center of the image with the center of the container.
     language: yaml
     code: |-
       collections_config:

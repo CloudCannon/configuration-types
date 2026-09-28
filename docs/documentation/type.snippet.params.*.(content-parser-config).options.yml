@@ -11,9 +11,8 @@ description: >-
   `ignore_unpaired_backticks`, `escape_fenced_blocks`, and `style` properties.
   These options control how content between snippet boundaries is parsed.
 examples:
-  - description: >-
-      In this example, we have configured content parser options with an editor
-      key and forbidden tokens.
+  - description: In this example, we have configured content parser options with an
+      editor key and forbidden tokens.
     language: yaml
     code: |-
       _snippets:

@@ -12,9 +12,8 @@ description: >-
   By default, this key is `false` (i.e., long lines extend horizontally and
   require horizontal scrolling).
 examples:
-  - description: >-
-      In this example, we have configured a code input to enable soft line
-      wrapping for better readability of long lines.
+  - description: In this example, we have configured a code input to enable soft
+      line wrapping for better readability of long lines.
     language: yaml
     code: |-
       _inputs:

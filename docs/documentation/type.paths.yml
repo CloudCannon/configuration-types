@@ -12,9 +12,8 @@ description: >-
   values configured in the [CloudCannon configuration
   file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
 examples:
-  - description: >-
-      In this example, we have configured paths for the `blog` Collection to set
-      custom upload and static paths.
+  - description: In this example, we have configured paths for the `blog` Collection
+      to set custom upload and static paths.
     language: yaml
     code: |-
       collections_config:

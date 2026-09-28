@@ -13,9 +13,8 @@ description: >-
 
   This key only takes effect when `typographer` is enabled.
 examples:
-  - description: >-
-      In this example, we have configured quote replacement pairs for Russian
-      typography.
+  - description: In this example, we have configured quote replacement pairs for
+      Russian typography.
     language: yaml
     code: |-
       markdown:

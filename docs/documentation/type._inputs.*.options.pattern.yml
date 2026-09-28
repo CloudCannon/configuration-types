@@ -34,8 +34,7 @@ description: >-
 
   To use this key in a Select Input, `allow_create` must be set to `true`.
 examples:
-  - description: >-
-      In this example, we want our team to add an email address to the
+  - description: In this example, we want our team to add an email address to the
       `contact_email` Input using the correct email format.
     language: yaml
     code: |-

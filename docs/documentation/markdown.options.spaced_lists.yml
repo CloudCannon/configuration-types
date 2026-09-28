@@ -13,9 +13,8 @@ description: >-
   By default, this key is `false` (i.e., lists are output without an extra
   space).
 examples:
-  - description: >-
-      In this example, we have configured Markdown to output lists with an extra
-      space.
+  - description: In this example, we have configured Markdown to output lists with
+      an extra space.
     language: yaml
     code: |-
       markdown:

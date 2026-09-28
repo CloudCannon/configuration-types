@@ -13,9 +13,8 @@ description: >-
   CloudCannon will not use this file if `template_string` is also defined for
   the commit template.
 examples:
-  - description: >-
-      In this example, we have configured a commit template to use a file at
-      `/.git/commit-message.txt`.
+  - description: In this example, we have configured a commit template to use a file
+      at `/.git/commit-message.txt`.
     language: yaml
     code: |-
       commit_templates:

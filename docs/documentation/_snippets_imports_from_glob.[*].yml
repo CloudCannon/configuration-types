@@ -10,9 +10,8 @@ description: >-
   of your repository. The path must end in the file extension
   `.cloudcannon.snippets-imports.yml`.
 examples:
-  - description: >-
-      In this example, we have several Snippet *Configuration Files* in the
-      `.cloudcannon/snippets/` folder. The value of the
+  - description: In this example, we have several Snippet *Configuration Files* in
+      the `.cloudcannon/snippets/` folder. The value of the
       `_snippets_import_from_glob` key tells CloudCannon all files in that
       folder that match the glob `*.cloudcannon.snippets-import.yml`.
     language: yaml

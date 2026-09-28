@@ -8,9 +8,7 @@ description: >-
 
   The value is an object that can contain `size` and `target` properties.
 examples:
-  - description: >-
-      In this example, we have configured a size definition for an *Image
-      Input*.
+  - description: In this example, we have configured a size definition for an *Image Input*.
     language: yaml
     code: |-
       _inputs:

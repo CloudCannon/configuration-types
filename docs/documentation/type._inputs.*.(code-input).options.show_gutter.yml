@@ -12,9 +12,8 @@ description: >-
 
   By default, this key is `true` (i.e., line numbers are displayed).
 examples:
-  - description: >-
-      In this example, we have configured a code input to hide line numbers by
-      setting `show_gutter` to `false`.
+  - description: In this example, we have configured a code input to hide line
+      numbers by setting `show_gutter` to `false`.
     language: yaml
     code: |-
       _inputs:

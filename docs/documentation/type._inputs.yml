@@ -16,13 +16,12 @@ description: >-
   values configured in the [CloudCannon configuration
   file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
 examples:
-  - description: >-
-      In this example, we have configured the `date_created` key as a *Date and
-      Time Input*, which will automatically populate when you create a file
-      using this input. Editors cannot alter this input as the interface is
+  - description: In this example, we have configured the `date_created` key as a
+      *Date and Time Input*, which will automatically populate when you create a
+      file using this input. Editors cannot alter this input as the interface is
       disabled.
     language: yaml
-    code: |-
+    code: >-
       _inputs:
         date_created:
           type: datetime
@@ -41,9 +40,8 @@ examples:
             timezone: Etc/UTC
     annotations: []
     source: /cloudcannon.config.yml
-  - description: >-
-      In this example, we have configured the `blog_tags` key as a *Multiselect
-      Input* in the `blog` Collection.
+  - description: In this example, we have configured the `blog_tags` key as a
+      *Multiselect Input* in the `blog` Collection.
     language: yaml
     code: |-
       collections_config:

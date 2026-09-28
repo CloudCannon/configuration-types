@@ -6,11 +6,10 @@ description: |-
 
   This key has no default.
 examples:
-  - description: >-
-      In this example, we want to add a context box to our `date_created` Input
-      to explain its purpose.
+  - description: In this example, we want to add a context box to our `date_created`
+      Input to explain its purpose.
     language: yaml
-    code: |-
+    code: >-
       _inputs:
         date_created:
           type: datetime

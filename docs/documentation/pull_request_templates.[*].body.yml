@@ -6,8 +6,7 @@ description: |-
 
   This key has no default.
 examples:
-  - description: >-
-      In this example, the `body` field of our Pull Request template is
+  - description: In this example, the `body` field of our Pull Request template is
       populated by the string "In this update, I have made the following
       changes..." by default.
     language: yaml

@@ -22,13 +22,11 @@ description: >-
   * `[date]` — the date of the upstream merge in the format "Tue Nov 28 2023
   21:46:17 GMT+0000".
 examples:
-  - description: >-
-      In this example, we have configured a commit template with placeholders
-      for upstream pulls.
+  - description: In this example, we have configured a commit template with
+      placeholders for upstream pulls.
     language: yaml
-    code: >-
-      upstream_commit_template: "Merge branch [publish_branch] into develop of
-      [branch] by [author] at [date]"
+    code: 'upstream_commit_template: "Merge branch [publish_branch] into develop of
+      [branch] by [author] at [date]"'
     annotations: []
     source: /cloudcannon.config.yml
 show_in_navigation: false

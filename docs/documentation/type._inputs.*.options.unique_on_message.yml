@@ -13,12 +13,11 @@ description: >-
 
   This key is available for Array inputs.
 examples:
-  - description: >-
-      In this example, we want our team to add article filepaths to the
+  - description: In this example, we want our team to add article filepaths to the
       `related_articles` Input. This Input requires all the filepaths to be
       unique.
     language: yaml
-    code: |-
+    code: >-
       _inputs:
         related_articles:
           type: array

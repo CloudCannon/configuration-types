@@ -15,9 +15,8 @@ description: >-
 
   Domain](/documentation/articles/what-is-a-custom-domain/).
 examples:
-  - description: >-
-      In this example, the Visual Editor will open the `/about/` page when you
-      open an unbuilt page from the `blog` Collection.
+  - description: In this example, the Visual Editor will open the `/about/` page
+      when you open an unbuilt page from the `blog` Collection.
     language: yaml
     code: |-
       collections_config:

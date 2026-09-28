@@ -9,9 +9,8 @@ description: >-
   properties. These options control how snippet content is parsed and formatted
   to produce cleaner source code.
 examples:
-  - description: >-
-      In this example, we have configured snippet style with inline and block
-      formatting options.
+  - description: In this example, we have configured snippet style with inline and
+      block formatting options.
     language: yaml
     code: |-
       _snippets:

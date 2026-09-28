@@ -11,9 +11,8 @@ description: >-
 
   Each Collection must have a unique path.
 examples:
-  - description: >-
-      In this example, the files for the `blog` Collection are located in the
-      `content/blog` folder.
+  - description: In this example, the files for the `blog` Collection are located in
+      the `content/blog` folder.
     language: yaml
     code: |-
       collections_config:

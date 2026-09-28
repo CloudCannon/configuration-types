@@ -17,10 +17,9 @@ description: >-
   You can also configure this behavior for specific values of a Structure using
   `values[*].hide_extra_inputs`.
 examples:
-  - description: >-
-      In this example, we don't want inputs outside of those listed in the
-      Structure (e.g., old inputs from deprecated versions of this Structure) to
-      appear in the Data Editor.
+  - description: In this example, we don't want inputs outside of those listed in
+      the Structure (e.g., old inputs from deprecated versions of this
+      Structure) to appear in the Data Editor.
     language: yaml
     code: |-
       _structures:

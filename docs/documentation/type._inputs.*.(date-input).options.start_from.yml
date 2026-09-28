@@ -32,10 +32,9 @@ description: >-
 
   This key is available for Date and Time Inputs.
 examples:
-  - description: >-
-      In this example, we want our team to enter the date and time of an event
-      in the `2022_event` Input. This Input will only allow dates on or after
-      January 1st, 2022.
+  - description: In this example, we want our team to enter the date and time of an
+      event in the `2022_event` Input. This Input will only allow dates on or
+      after January 1st, 2022.
     language: yaml
     code: |-
       _inputs:

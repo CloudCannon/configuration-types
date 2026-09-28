@@ -1,6 +1,5 @@
 gid: type.snippet.params.*.(key-value-list-parser-config).parser
-url: >-
-  /configuration-file/types/snippet/params/*/(key-value-list-parser-config)/parser/
+url: /configuration-file/types/snippet/params/*/(key-value-list-parser-config)/parser/
 title: ''
 description: >-
   This key defines the parser type for key-value list parser configurations.
@@ -9,9 +8,8 @@ description: >-
   The value must be `key_values`. This specifies that the parameter uses the
   key-value list parser, which parses multiple key-value pairs.
 examples:
-  - description: >-
-      In this example, we have configured a key-value list parser for a snippet
-      parameter.
+  - description: In this example, we have configured a key-value list parser for a
+      snippet parameter.
     language: yaml
     code: |-
       _snippets:

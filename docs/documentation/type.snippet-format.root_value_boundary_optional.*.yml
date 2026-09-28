@@ -10,9 +10,8 @@ description: >-
   optional for a specific parameter name. When set to `true`, the boundary
   tokens are optional for that parameter.
 examples:
-  - description: >-
-      In this example, we have configured root value boundaries to be optional
-      for the `title` parameter.
+  - description: In this example, we have configured root value boundaries to be
+      optional for the `title` parameter.
     language: yaml
     code: |-
       _snippets:

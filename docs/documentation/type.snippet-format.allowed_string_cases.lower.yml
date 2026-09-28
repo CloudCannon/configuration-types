@@ -13,9 +13,8 @@ description: >-
   By default, this key is `false` (i.e., lowercase-only strings are not required
   unless `any` is enabled).
 examples:
-  - description: >-
-      In this example, we have configured snippet format to allow only lowercase
-      strings.
+  - description: In this example, we have configured snippet format to allow only
+      lowercase strings.
     language: yaml
     code: |-
       _snippets:

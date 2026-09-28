@@ -9,8 +9,7 @@ description: >-
   properties. These options control whitespace and indentation for multi-line
   snippet content.
 examples:
-  - description: >-
-      In this example, we have configured block formatting with leading,
+  - description: In this example, we have configured block formatting with leading,
       trailing, and indent options.
     language: yaml
     code: |-

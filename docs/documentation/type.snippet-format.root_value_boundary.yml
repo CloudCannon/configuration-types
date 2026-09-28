@@ -10,9 +10,8 @@ description: >-
   specifying a string token. For example, MDX specifies `{ start: "{", end: "}"
   }`, which allows syntax such as `<Component flag={true} />`.
 examples:
-  - description: >-
-      In this example, we have configured root value boundaries to use curly
-      braces.
+  - description: In this example, we have configured root value boundaries to use
+      curly braces.
     language: yaml
     code: |-
       _snippets:

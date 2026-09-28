@@ -10,9 +10,8 @@ description: >-
   of your repository. The path must end in the file extension
   `.cloudcannon.structures.yml`.
 examples:
-  - description: >-
-      In this example, we have several *Structure Configuration Files* in the
-      `.cloudcannon/structures/` folder. The value of the
+  - description: In this example, we have several *Structure Configuration Files* in
+      the `.cloudcannon/structures/` folder. The value of the
       `_structures_from_glob` key tells CloudCannon to use the
       `staffMembers.cloudcannon.structures.yml` file in that folder.
     language: yaml

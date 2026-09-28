@@ -11,9 +11,8 @@ description: >-
   provided, CloudCannon will use them in order as fallback options. Preview
   entries are used to configure how data is displayed in card previews.
 examples:
-  - description: >-
-      In this example, we have configured a preview entry with an array of
-      values to provide fallback options. CloudCannon will use the value of
+  - description: In this example, we have configured a preview entry with an array
+      of values to provide fallback options. CloudCannon will use the value of
       `title` first, then the `{name}` template, and finally fall back to the
       static text value.
     language: yaml
@@ -27,9 +26,8 @@ examples:
               - text: 'Untitled'
     annotations: []
     source: /cloudcannon.config.yml
-  - description: >-
-      In this example, we have configured a preview entry to display the `title`
-      key.
+  - description: In this example, we have configured a preview entry to display the
+      `title` key.
     language: yaml
     code: |-
       collections_config:

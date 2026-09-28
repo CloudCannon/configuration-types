@@ -8,9 +8,8 @@ description: >-
   Optional, defaults to fetching values from the naming convention (e.g.
   `colors` or `my_colors` for data set `colors`).
 examples:
-  - description: >-
-      In this example, we have configured a *Select Input* with custom values to
-      choose from.
+  - description: In this example, we have configured a *Select Input* with custom
+      values to choose from.
     language: yaml
     code: |-
       _inputs:

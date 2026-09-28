@@ -12,8 +12,7 @@ description: >-
 
   Available for Mutable Objects only.
 examples:
-  - description: >-
-      In this example, we have configured entries options with assigned
+  - description: In this example, we have configured entries options with assigned
       structures for specific allowed keys.
     language: yaml
     code: |-

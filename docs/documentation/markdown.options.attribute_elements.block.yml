@@ -13,8 +13,7 @@ description: >-
 
   This key only takes effect when `attributes` is enabled.
 examples:
-  - description: >-
-      In this example, we have configured block-level elements to place
+  - description: In this example, we have configured block-level elements to place
       attributes below the element.
     language: yaml
     code: |-

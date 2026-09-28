@@ -11,9 +11,8 @@ description: >-
 
   `.cloudcannon.collections.yml`.
 examples:
-  - description: >-
-      In this example, each *Collection* has its own *Configuration File* in the
-      `.cloudcannon/collections/` folder. The value of the
+  - description: In this example, each *Collection* has its own *Configuration File*
+      in the `.cloudcannon/collections/` folder. The value of the
       `collections_config_from_glob` key tells CloudCannon to use all files in
       that folder that match the glob `*.cloudcannon.collections.yml`.
     language: yaml

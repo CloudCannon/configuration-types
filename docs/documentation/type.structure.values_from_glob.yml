@@ -1,36 +1,25 @@
 gid: type.structure.values_from_glob
 url: /configuration-file/types/structure/values_from_glob/
 title: ''
-description: >-
-  This key defines globs that filter which files CloudCannon should use for
-  *Structure* value configuration.
+description: |-
+  This key defines globs that filter which files CloudCannon should use for *Structure* value configuration.
 
-
-  Values in this array are relative to the root of your repository (i.e., `/`,
-  not the value of `source`) and must end in the file extension
-
+  Values in this array are relative to the root of your repository (i.e., `/`, not the value of `source`) and must end in the file extension
   `.cloudcannon.structure-value.yml` (note the singular form of "value").
-
 
   You can use this key anywhere you would use the `_structures.*.values` key.
 
-
-  Please see our documentation on
-  [structures_from_glob](/documentation/developer-reference/configuration-file/types/_structures_from_glob/)
-  for defining a
-
+  Please see our documentation on [structures_from_glob](/documentation/developer-reference/configuration-file/types/_structures_from_glob/) for defining a
   *Structure* in a split *Configuration File*.
-
 
   This key has no default.
 examples:
-  - description: >-
-      In this example, the `staff` Array Input uses inline *Structure* values
-      from the main *Configuration File* and also references another value from
-      the `boardMember.cloudcannon.structure_value.yml` in the
+  - description: In this example, the `staff` Array Input uses inline *Structure*
+      values from the main *Configuration File* and also references another
+      value from the `boardMember.cloudcannon.structure_value.yml` in the
       `/.cloudcannon/structures/` folder.
     language: yaml
-    code: |-
+    code: >-
       _inputs:
         staff:
           type: array

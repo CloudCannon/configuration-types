@@ -16,9 +16,8 @@ description: >-
 
   This key has no default.
 examples:
-  - description: >-
-      In this example, `published` is checked, so the `slug` input is read-only
-      and shows the message explaining why.
+  - description: In this example, `published` is checked, so the `slug` input is
+      read-only and shows the message explaining why.
     language: yaml
     code: |-
       published: true

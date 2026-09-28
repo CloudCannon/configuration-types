@@ -9,9 +9,8 @@ description: >-
 
   Setting this key to `true` will prevent typing into the input text field.
 examples:
-  - description: >-
-      In this example, CloudCannon will prevent typing into the *URL Input*
-      `url`.
+  - description: In this example, CloudCannon will prevent typing into the *URL
+      Input* `url`.
     language: yaml
     code: |-
       _inputs:

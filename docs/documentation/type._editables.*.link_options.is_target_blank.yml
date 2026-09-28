@@ -1,13 +1,11 @@
 gid: type._editables.*.link_options.is_target_blank
 url: /configuration-file/types/_editables/*/link_options/is_target_blank/
 title: ''
-description: >-
-  This key defines the input for toggling whether a hyperlink opens in a new
-  browser tab.
+description: This key defines the input for toggling whether a hyperlink opens
+  in a new browser tab.
 examples:
-  - description: >-
-      In this example, we have configured the `is_target_blank` input with a
-      custom label and comment.
+  - description: In this example, we have configured the `is_target_blank` input
+      with a custom label and comment.
     language: yaml
     code: |-
       _editables:

@@ -1,13 +1,11 @@
 gid: type._editables.*.link_options.rel_noreferrer
 url: /configuration-file/types/_editables/*/link_options/rel_noreferrer/
 title: ''
-description: >-
-  This key defines the input for toggling whether `rel="noreferrer"` is added to
-  a hyperlink.
+description: This key defines the input for toggling whether `rel="noreferrer"`
+  is added to a hyperlink.
 examples:
-  - description: >-
-      In this example, we have configured the `rel_noreferrer` input with a
-      custom label and comment.
+  - description: In this example, we have configured the `rel_noreferrer` input with
+      a custom label and comment.
     language: yaml
     code: |-
       _editables:

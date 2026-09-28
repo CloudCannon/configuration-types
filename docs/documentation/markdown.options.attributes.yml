@@ -13,9 +13,8 @@ description: >-
   By default, this key is `false` (i.e., element attributes are converted to
   HTML).
 examples:
-  - description: >-
-      In this example, we have configured Markdown to save element attributes in
-      Markdown format.
+  - description: In this example, we have configured Markdown to save element
+      attributes in Markdown format.
     language: yaml
     code: |-
       markdown:

@@ -1,6 +1,5 @@
 gid: type._inputs.*.(object-input).options.entries.allowed_keys.[*]
-url: >-
-  /configuration-file/types/_inputs/*/(object-input)/options/entries/allowed_keys/[*]/
+url: /configuration-file/types/_inputs/*/(object-input)/options/entries/allowed_keys/[*]/
 title: ''
 description: >-
   This key represents an individual allowed key string in the
@@ -11,9 +10,8 @@ description: >-
   within an *Object Input*. This set is used when entries are added and renamed
   with `allow_create` enabled.
 examples:
-  - description: >-
-      In this example, we have configured an allowed key name for entries in a
-      mutable *Object Input*.
+  - description: In this example, we have configured an allowed key name for entries
+      in a mutable *Object Input*.
     language: yaml
     code: |-
       _inputs:

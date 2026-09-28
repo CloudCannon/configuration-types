@@ -8,9 +8,8 @@ description: >-
   The value is a string that specifies whitespace tokens (typically spaces)
   inserted after inline snippet content.
 examples:
-  - description: >-
-      In this example, we have configured inline trailing whitespace to use a
-      space.
+  - description: In this example, we have configured inline trailing whitespace to
+      use a space.
     language: yaml
     code: |-
       _snippets:

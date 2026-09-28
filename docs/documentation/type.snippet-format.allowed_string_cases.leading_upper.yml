@@ -13,8 +13,7 @@ description: >-
   By default, this key is `false` (i.e., strings starting with uppercase are not
   allowed unless `any` is enabled).
 examples:
-  - description: >-
-      In this example, we have configured snippet format to allow strings
+  - description: In this example, we have configured snippet format to allow strings
       starting with an uppercase letter.
     language: yaml
     code: |-

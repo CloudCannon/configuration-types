@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { dump, load } from 'js-yaml';
+import { parse, stringify } from 'yaml';
 import { type DocumentationEntry, type Page, verbose } from './util';
 
 export async function readDocs(folder: string): Promise<Record<string, DocumentationEntry>> {
@@ -28,7 +28,7 @@ export async function readDocs(folder: string): Promise<Record<string, Documenta
 				encoding: 'utf8',
 			});
 
-			const parsed = load(content) as DocumentationEntry & { gid: string };
+			const parsed = parse(content) as DocumentationEntry & { gid: string };
 			if (parsed.gid in docs) {
 				throw new Error(`Duplicate doc GID: ${parsed.gid}`);
 			}
@@ -151,7 +151,10 @@ export async function writeNewDocs(
 			console.log(`     ${filename}`);
 		}
 
-		await fs.writeFile(path.join(folderPath, filename), dump(pageFile, { noRefs: true }));
+		await fs.writeFile(
+			path.join(folderPath, filename),
+			stringify(pageFile, { aliasDuplicateObjects: false, singleQuote: true })
+		);
 	}
 
 	console.log(`     🆕 New (${newCount})`);

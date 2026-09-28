@@ -13,9 +13,8 @@ description: >-
   By default, this key is `false` (i.e., line breaks are not added between
   sentences).
 examples:
-  - description: >-
-      In this example, we have configured Markdown to add line breaks between
-      sentences.
+  - description: In this example, we have configured Markdown to add line breaks
+      between sentences.
     language: yaml
     code: |-
       markdown:

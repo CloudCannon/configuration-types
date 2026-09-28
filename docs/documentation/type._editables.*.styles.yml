@@ -1,13 +1,11 @@
 gid: type._editables.*.styles
 url: /configuration-file/types/_editables/*/styles/
 title: ''
-description: >-
-  This key toggles whether CloudCannon will display a dropdown menu in your
-  WYSIWYG toolbar to apply a style to selected text.
+description: This key toggles whether CloudCannon will display a dropdown menu
+  in your WYSIWYG toolbar to apply a style to selected text.
 examples:
-  - description: >-
-      In this example, we have enabled a dropdown menu in our WYSIWYG toolbar to
-      apply a style to selected text. The styles are defined in the
+  - description: In this example, we have enabled a dropdown menu in our WYSIWYG
+      toolbar to apply a style to selected text. The styles are defined in the
       `/css/styles.css` file.
     language: yaml
     code: |-
@@ -16,9 +14,8 @@ examples:
           styles: /css/styles.css
     annotations: []
     source: /cloudcannon.config.yml
-  - description: >-
-      This example file defines the styles that CloudCannon can add to your
-      WYSIWYG toolbar.
+  - description: This example file defines the styles that CloudCannon can add to
+      your WYSIWYG toolbar.
     language: css
     code: |-
       /* Can be applied to blocks of content */

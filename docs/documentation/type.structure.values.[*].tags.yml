@@ -11,11 +11,10 @@ description: >-
 
   This key has no default.
 examples:
-  - description: >-
-      In this example we have three options for the `page_components` Structure:
-      `Hero Component`, `Feature Component`, and `Video Component`. We can
-      search the Structure modal using the `image`, `text`, `button`, and
-      `video` tags to filter Structure values.
+  - description: 'In this example we have three options for the `page_components`
+      Structure: `Hero Component`, `Feature Component`, and `Video Component`.
+      We can search the Structure modal using the `image`, `text`, `button`, and
+      `video` tags to filter Structure values.'
     language: yaml
     code: |-
       _structures:

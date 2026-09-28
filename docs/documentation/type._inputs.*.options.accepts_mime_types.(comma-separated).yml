@@ -1,6 +1,5 @@
 gid: type._inputs.*.options.accepts_mime_types.(comma-separated)
-url: >-
-  /configuration-file/types/_inputs/*/options/accepts_mime_types/(comma-separated)/
+url: /configuration-file/types/_inputs/*/options/accepts_mime_types/(comma-separated)/
 title: Comma Separated Accepts Mime Types
 description: >-
   This key represents a comma-separated string format for the
@@ -28,9 +27,8 @@ description: >-
 
   The special value `"*"` means any file type is accepted.
 examples:
-  - description: >-
-      In this example, we have configured a *File Input* to accept only image
-      files using a comma-separated string of image MIME types.
+  - description: In this example, we have configured a *File Input* to accept only
+      image files using a comma-separated string of image MIME types.
     language: yaml
     code: |-
       _inputs:
@@ -41,9 +39,8 @@ examples:
             accepts_mime_types: 'image/jpeg,image/png,image/webp'
     annotations: []
     source: /cloudcannon.config.yml
-  - description: >-
-      In this example, we have configured a *File Input* to accept only document
-      files using a comma-separated string of document MIME types.
+  - description: In this example, we have configured a *File Input* to accept only
+      document files using a comma-separated string of document MIME types.
     language: yaml
     code: |-
       _inputs:
@@ -54,9 +51,8 @@ examples:
             accepts_mime_types: 'application/pdf,application/msword'
     annotations: []
     source: /cloudcannon.config.yml
-  - description: >-
-      In this example, we have configured a *File Input* to accept any file type
-      using the special `"*"` value.
+  - description: In this example, we have configured a *File Input* to accept any
+      file type using the special `"*"` value.
     language: yaml
     code: |-
       _inputs:

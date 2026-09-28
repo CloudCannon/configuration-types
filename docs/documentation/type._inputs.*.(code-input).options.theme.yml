@@ -8,9 +8,8 @@ description: >-
 
   By default, this key is `basic_dark`.
 examples:
-  - description: >-
-      In this example, we have configured a code input to use the `dracula`
-      theme for a dark-colored editing experience.
+  - description: In this example, we have configured a code input to use the
+      `dracula` theme for a dark-colored editing experience.
     language: yaml
     code: |-
       _inputs:

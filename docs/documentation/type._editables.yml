@@ -9,9 +9,8 @@ description: >-
   For more information, please read our documentation on [Rich Text
   editors](/documentation/articles/what-are-rich-text-editors/).
 examples:
-  - description: >-
-      In this example, we have configured the Snippet tool for WYSIWYG toolbars
-      in the `blog` Collection.
+  - description: In this example, we have configured the Snippet tool for WYSIWYG
+      toolbars in the `blog` Collection.
     language: yaml
     code: |-
       collections_config:

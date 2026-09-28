@@ -13,10 +13,9 @@ description: >-
   By default, this key is `false` (i.e., Object and Array inputs using this
   Structure option are not tabbed).
 examples:
-  - description: >-
-      In this example, we want the `content` and `style` keys in our Structure
-      to be tabs at the top of the Data Editor, with the `title` and `text`, and
-      `color` and `font` keys nested within those tabs respectively.
+  - description: In this example, we want the `content` and `style` keys in our
+      Structure to be tabs at the top of the Data Editor, with the `title` and
+      `text`, and `color` and `font` keys nested within those tabs respectively.
     language: yaml
     code: |-
       _structures:

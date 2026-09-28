@@ -39,8 +39,7 @@ description: >-
 
   Editor](/documentation/articles/what-is-the-source-editor/).
 examples:
-  - description: >-
-      In this example, we have enabled only the [Content
+  - description: In this example, we have enabled only the [Content
       Editor](/documentation/articles/what-is-the-content-editor/) in the `blog`
       Collection.
     language: yaml

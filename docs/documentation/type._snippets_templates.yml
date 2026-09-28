@@ -1,8 +1,7 @@
 gid: type._snippets_templates
 url: /configuration-file/types/_snippets_templates/
 title: ''
-description: >-
-  This key defines extended options used when creating more complex custom
-  snippets.
+description: This key defines extended options used when creating more complex
+  custom snippets.
 examples: []
 show_in_navigation: true

@@ -12,9 +12,9 @@ description: >-
 
   By default, this key is `false` (i.e., values are not aliased to boolean).
 examples:
-  - description: >-
-      In this example, we have configured implied boolean so any value in this
-      argument will alias to `true`, and an empty value will alias to `false`.
+  - description: In this example, we have configured implied boolean so any value in
+      this argument will alias to `true`, and an empty value will alias to
+      `false`.
     language: yaml
     code: |-
       parser: "argument"

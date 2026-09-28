@@ -49,9 +49,8 @@ description: >-
   If both `hidden_if` and `hidden` are set, the input is hidden when either is
   truthy.
 examples:
-  - description: >-
-      In this example, `type` is `video`, so the `video_path` input is shown and
-      the `image_path` input is hidden. Changing `type` swaps them.
+  - description: In this example, `type` is `video`, so the `video_path` input is
+      shown and the `image_path` input is hidden. Changing `type` swaps them.
     language: yaml
     code: |-
       type: video
@@ -72,9 +71,8 @@ examples:
           hidden_if: type != "video"
     annotations: []
     source: /hero.yml
-  - description: >-
-      In this example, `forced_theme` is set at the root of the file, so the
-      `use_dark_mode` input inside `hero` is hidden. It is shown again when
+  - description: In this example, `forced_theme` is set at the root of the file, so
+      the `use_dark_mode` input inside `hero` is hidden. It is shown again when
       `forced_theme` is cleared.
     language: yaml
     code: |-
@@ -94,9 +92,8 @@ examples:
           hidden_if: $.forced_theme != null
     annotations: []
     source: /page.yml
-  - description: >-
-      In this example, there is no stock on hand but some on order, so the
-      `out_of_stock_reason` input stays hidden until both counts reach zero.
+  - description: In this example, there is no stock on hand but some on order, so
+      the `out_of_stock_reason` input stays hidden until both counts reach zero.
     language: yaml
     code: |-
       stock_count: 0

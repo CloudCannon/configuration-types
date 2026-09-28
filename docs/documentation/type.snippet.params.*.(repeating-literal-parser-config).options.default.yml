@@ -1,6 +1,5 @@
 gid: type.snippet.params.*.(repeating-literal-parser-config).options.default
-url: >-
-  /configuration-file/types/snippet/params/*/(repeating-literal-parser-config)/options/default/
+url: /configuration-file/types/snippet/params/*/(repeating-literal-parser-config)/options/default/
 title: ''
 description: >-
   This key defines the default count for repeating literal parser
@@ -10,9 +9,8 @@ description: >-
   The value is a number that specifies how many times the literal should appear
   by default.
 examples:
-  - description: >-
-      In this example, we have configured a default count for repeating literal
-      parser.
+  - description: In this example, we have configured a default count for repeating
+      literal parser.
     language: yaml
     code: |-
       _snippets:

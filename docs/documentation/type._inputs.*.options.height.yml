@@ -1,13 +1,11 @@
 gid: type._inputs.*.options.height
 url: /configuration-file/types/_inputs/*/options/height/
 title: ''
-description: >-
-  This key defines the height of the bounding box used in the resizing method
-  defined by `resize_style`.
+description: This key defines the height of the bounding box used in the
+  resizing method defined by `resize_style`.
 examples:
-  - description: >-
-      In this example, we have configured the height of the bounding box for an
-      *Image Input*.
+  - description: In this example, we have configured the height of the bounding box
+      for an *Image Input*.
     language: yaml
     code: |-
       _inputs:

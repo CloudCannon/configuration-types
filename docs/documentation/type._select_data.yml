@@ -20,9 +20,8 @@ description: >-
   For more information, please read our documentation on [Select and Multiselect
   inputs](/documentation/articles/what-is-a-select-input/#fixed-data-sets).
 examples:
-  - description: >-
-      In this example, we have configured the `blog_tags` Multiselect input for
-      the `blog` Collection.
+  - description: In this example, we have configured the `blog_tags` Multiselect
+      input for the `blog` Collection.
     language: yaml
     code: |-
       collections_config:

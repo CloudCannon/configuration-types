@@ -13,9 +13,8 @@ description: >-
   By default, this key is `false` (i.e., line breaks in paragraphs are not
   converted to `<br>` tags).
 examples:
-  - description: >-
-      In this example, we have configured Markdown to convert line breaks in
-      paragraphs into `<br>` tags.
+  - description: In this example, we have configured Markdown to convert line breaks
+      in paragraphs into `<br>` tags.
     language: yaml
     code: |-
       markdown:

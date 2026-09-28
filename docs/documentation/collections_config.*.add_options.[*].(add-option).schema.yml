@@ -18,9 +18,9 @@ description: >-
   specified), if *Schemas* are configured for that collection. Otherwise, this
   key has no default value.
 examples:
-  - description: >-
-      In this example, we have configured a standard add option for the `people`
-      Collection that uses the `employee` *Schema* to populate new files.
+  - description: In this example, we have configured a standard add option for the
+      `people` Collection that uses the `employee` *Schema* to populate new
+      files.
     language: yaml
     code: |-
       collections_config:

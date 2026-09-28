@@ -1,33 +1,21 @@
 gid: type._structures_from_glob
 url: /configuration-file/types/_structures_from_glob/
 title: ''
-description: >-
-  This key defines globs that filter which files CloudCannon should use for
-  *Structure* configuration.
+description: |-
+  This key defines globs that filter which files CloudCannon should use for *Structure* configuration.
 
-
-  Values in this array are relative to the root of your repository (i.e., `/`,
-  not the value of `source`) and must end in the file extension
-
+  Values in this array are relative to the root of your repository (i.e., `/`, not the value of `source`) and must end in the file extension
   `.cloudcannon.structures.yml`.
 
+  You can use this key anywhere you would use the `_structures` key in the configuration cascade.
 
-  You can use this key anywhere you would use the `_structures` key in the
-  configuration cascade.
-
-
-  Please see our documentation on
-  [values_from_glob](/documentation/developer-reference/configuration-file/types/structure/values_from_glob/)
-  for defining individual
-
+  Please see our documentation on [values_from_glob](/documentation/developer-reference/configuration-file/types/structure/values_from_glob/) for defining individual
   *Structure* values in a split *Configuration File*.
-
 
   This key has no default.
 examples:
-  - description: >-
-      In this example, we have several *Structure Configuration Files* in the
-      `.cloudcannon/structures/` folder. The value of the
+  - description: In this example, we have several *Structure Configuration Files* in
+      the `.cloudcannon/structures/` folder. The value of the
       `_structures_from_glob` key tells CloudCannon to use the
       `staffMembers.cloudcannon.structures.yml` file in that folder.
     language: yaml

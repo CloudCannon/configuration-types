@@ -17,10 +17,9 @@ description: >-
   CloudCannon will also read data keys from your early Collection files and
   provide options to sort by those key values.
 examples:
-  - description: >-
-      In this example, the *Sort* dropdown in the `blog` *Collection browser*
-      only contains options for sorting by `author` and `date` in ascending and
-      descending order.
+  - description: In this example, the *Sort* dropdown in the `blog` *Collection
+      browser* only contains options for sorting by `author` and `date` in
+      ascending and descending order.
     language: yaml
     code: |-
       collections_config:

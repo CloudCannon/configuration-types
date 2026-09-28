@@ -13,8 +13,7 @@ description: >-
 
   This key has no default.
 examples:
-  - description: >-
-      In this example, we want to add helpful guidance for our
+  - description: In this example, we want to add helpful guidance for our
       `page_description` Input.
     language: yaml
     code: |-

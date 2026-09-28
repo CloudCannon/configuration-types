@@ -15,11 +15,10 @@ description: >-
 
   and the values of any structured data keys.
 examples:
-  - description: >-
-      In this example, the *\+ Add* button in the *Collection browser* has an
-      option for `Customer Story` which will populate a new file in the `blog`
-      Collection with the contents of the `customer_story.mdx` file. If the
-      Schema file is updated, CloudCannon will preserve the old inputs to
+  - description: In this example, the *\+ Add* button in the *Collection browser*
+      has an option for `Customer Story` which will populate a new file in the
+      `blog` Collection with the contents of the `customer_story.mdx` file. If
+      the Schema file is updated, CloudCannon will preserve the old inputs to
       prevent you from losing structured data in older files.
     language: yaml
     code: |-
@@ -36,14 +35,13 @@ examples:
               icon: notes
     annotations: []
     source: /cloudcannon.config.yml
-  - description: >-
-      In this example, the *\+ Add* button in the *Collection browser* has an
-      option for `Term Definition` which will populate a new file in the
+  - description: In this example, the *\+ Add* button in the *Collection browser*
+      has an option for `Term Definition` which will populate a new file in the
       `glossary` Collection with the contents of the `glossary_term.yml` file.
       The `term_description` input is configured specifically for files created
       with this Schema.
     language: yaml
-    code: |-
+    code: >-
       collections_config:
         glossary:
           schemas:

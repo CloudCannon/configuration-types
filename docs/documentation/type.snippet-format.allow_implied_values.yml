@@ -12,9 +12,8 @@ description: >-
 
   By default, this key is `false` (i.e., keys without values are not allowed).
 examples:
-  - description: >-
-      In this example, we have configured snippet format to allow implied values
-      for keys without values.
+  - description: In this example, we have configured snippet format to allow implied
+      values for keys without values.
     language: yaml
     code: |-
       _snippets:

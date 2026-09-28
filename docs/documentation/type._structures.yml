@@ -23,8 +23,7 @@ description: >-
   For more information, please read our documentation on
   [structures](/documentation/articles/what-is-a-structure/).
 examples:
-  - description: >-
-      In this example, we want to populate an Array input in the `blog`
+  - description: In this example, we want to populate an Array input in the `blog`
       Collection with Related Articles, including the `name`, `description`, and
       `url` fields.
     language: yaml
@@ -46,10 +45,9 @@ examples:
                     url:
     annotations: []
     source: /cloudcannon.config.yml
-  - description: >-
-      In this example, we want to populate an Array input with Staff members,
-      including the `name`, `job_description`, and `profile_picture` fields for
-      all staff types, and the `url` field for Managers only.
+  - description: In this example, we want to populate an Array input with Staff
+      members, including the `name`, `job_description`, and `profile_picture`
+      fields for all staff types, and the `url` field for Managers only.
     language: yaml
     code: |-
       _structures:

@@ -10,9 +10,8 @@ description: >-
   `leading_lower`, `lower`, or `upper` properties. Each property is a boolean
   that enables or disables that case type.
 examples:
-  - description: >-
-      In this example, we have configured snippet format to allow only lowercase
-      strings.
+  - description: In this example, we have configured snippet format to allow only
+      lowercase strings.
     language: yaml
     code: |-
       _snippets:

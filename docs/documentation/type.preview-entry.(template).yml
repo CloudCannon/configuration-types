@@ -11,9 +11,8 @@ description: >-
   value. This displays formatted text using template syntax (e.g., `{name}`) in
   card previews.
 examples:
-  - description: >-
-      In this example, we have configured a template preview entry to display
-      formatted text.
+  - description: In this example, we have configured a template preview entry to
+      display formatted text.
     language: yaml
     code: |-
       collections_config:

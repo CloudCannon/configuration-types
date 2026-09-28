@@ -23,9 +23,8 @@ description: >-
   Use the array format when you want to explicitly list multiple MIME types,
   making it easier to read and maintain in your configuration.
 examples:
-  - description: >-
-      In this example, we have configured a *File Input* to accept only image
-      files using an array of image MIME types.
+  - description: In this example, we have configured a *File Input* to accept only
+      image files using an array of image MIME types.
     language: yaml
     code: |-
       _inputs:
@@ -39,11 +38,10 @@ examples:
               - image/webp
     annotations: []
     source: /cloudcannon.config.yml
-  - description: >-
-      In this example, we have configured a *File Input* to accept only document
-      files using an array of document MIME types.
+  - description: In this example, we have configured a *File Input* to accept only
+      document files using an array of document MIME types.
     language: yaml
-    code: |-
+    code: >-
       _inputs:
         document:
           type: file

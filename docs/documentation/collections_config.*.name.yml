@@ -15,9 +15,8 @@ description: >-
   By default, CloudCannon uses the Collection key name in title case (i.e.,
   `blog_files` becomes "Blog Files").
 examples:
-  - description: >-
-      In this example, CloudCannon will call the `blog` Collection "Travel Blog"
-      in the *Site Navigation* and the *Collection browser*.
+  - description: In this example, CloudCannon will call the `blog` Collection
+      "Travel Blog" in the *Site Navigation* and the *Collection browser*.
     language: yaml
     code: |-
       collections_config:

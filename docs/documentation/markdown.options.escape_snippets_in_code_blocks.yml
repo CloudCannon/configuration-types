@@ -13,9 +13,8 @@ description: >-
   By default, this key is `false` (i.e., snippets within code blocks may be
   processed).
 examples:
-  - description: >-
-      In this example, we have configured Markdown to render snippets as plain
-      text within code blocks.
+  - description: In this example, we have configured Markdown to render snippets as
+      plain text within code blocks.
     language: yaml
     code: |-
       markdown:

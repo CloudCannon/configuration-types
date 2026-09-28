@@ -17,9 +17,8 @@ description: >-
 
   By default, this key is `false` (i.e., team members can edit input values).
 examples:
-  - description: >-
-      In this example, we have configured a datetime input to be disabled using
-      a boolean value, preventing editors from modifying the automatically
+  - description: In this example, we have configured a datetime input to be disabled
+      using a boolean value, preventing editors from modifying the automatically
       generated date.
     language: yaml
     code: |-

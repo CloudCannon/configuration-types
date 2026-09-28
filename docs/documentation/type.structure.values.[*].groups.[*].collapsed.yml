@@ -12,9 +12,8 @@ description: >-
 
   By default, CloudCannon displays groups in an expanded state.
 examples:
-  - description: >-
-      In this example, we have configured the "Details" group to be collapsed by
-      default.
+  - description: In this example, we have configured the "Details" group to be
+      collapsed by default.
     language: yaml
     code: |-
       _structures:

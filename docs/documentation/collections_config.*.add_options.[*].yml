@@ -10,10 +10,9 @@ description: >-
   dropdown at the top right of the *Collection browser*. Each add option can be
   a standard entry or a URL entry, each with their own properties.
 examples:
-  - description: >-
-      In this example, we have configured a standard add option for the `people`
-      Collection that uses the `employee` Schema and opens files in the [Data
-      Editor](/documentation/articles/what-is-the-data-editor/).
+  - description: In this example, we have configured a standard add option for the
+      `people` Collection that uses the `employee` Schema and opens files in the
+      [Data Editor](/documentation/articles/what-is-the-data-editor/).
     language: yaml
     code: |-
       collections_config:
@@ -28,9 +27,9 @@ examples:
               path: /.cloudcannon/schemas/employee.yml
     annotations: []
     source: /cloudcannon.config.yml
-  - description: >-
-      In this example, the *\+ Add* button dropdown in the `team` *Collection
-      browser* has a link to the Office Locations page on our live website.
+  - description: In this example, the *\+ Add* button dropdown in the `team`
+      *Collection browser* has a link to the Office Locations page on our live
+      website.
     language: yaml
     code: |-
       collections_config:

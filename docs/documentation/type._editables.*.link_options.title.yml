@@ -3,9 +3,8 @@ url: /configuration-file/types/_editables/*/link_options/title/
 title: ''
 description: This key defines the input for a hyperlink's title text.
 examples:
-  - description: >-
-      In this example, we have configured the `title` input with a custom label,
-      comment, and placeholder.
+  - description: In this example, we have configured the `title` input with a custom
+      label, comment, and placeholder.
     language: yaml
     code: |-
       _editables:

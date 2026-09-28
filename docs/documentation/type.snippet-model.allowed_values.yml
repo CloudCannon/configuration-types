@@ -39,8 +39,7 @@ examples:
       Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
     annotations:
       - number: 1
-        content: >-
-          These IDs match a value in `allowed_values`, thus will be shown as a
+        content: These IDs match a value in `allowed_values`, thus will be shown as a
           `video` snippet
       - number: 2
         content: >-

@@ -13,9 +13,8 @@ description: >-
 
   This key has no default.
 examples:
-  - description: >-
-      In this example, we have configured the `blog` Collection documentation
-      link to go to `example.com`.
+  - description: In this example, we have configured the `blog` Collection
+      documentation link to go to `example.com`.
     language: yaml
     code: |-
       collections_config:

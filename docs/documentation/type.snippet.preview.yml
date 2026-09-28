@@ -13,8 +13,7 @@ description: >-
   [configuring card
   previews](/documentation/articles/configure-your-card-previews/).
 examples:
-  - description: >-
-      In this example, we have configured the appearance of the example
+  - description: In this example, we have configured the appearance of the example
       Snippet's text and subtext.
     language: yaml
     code: |-

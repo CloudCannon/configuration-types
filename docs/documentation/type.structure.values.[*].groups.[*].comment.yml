@@ -8,8 +8,7 @@ description: >-
   The value is a string that supports a limited set of Markdown: links, bold,
   italic, subscript, superscript, and inline code elements are allowed.
 examples:
-  - description: >-
-      In this example, we have configured a group comment with Markdown
+  - description: In this example, we have configured a group comment with Markdown
       formatting to provide additional context below the heading.
     language: yaml
     code: |-

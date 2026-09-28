@@ -11,9 +11,8 @@ description: >-
 
   By default, this key falls back to `unknown`.
 examples:
-  - description: >-
-      In this example, we want two value options for our `staff` structure: one
-      called `Manager` and one called `Employee`.
+  - description: 'In this example, we want two value options for our `staff`
+      structure: one called `Manager` and one called `Employee`.'
     language: yaml
     code: |-
       _structures:

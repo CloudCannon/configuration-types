@@ -1,6 +1,5 @@
 gid: type.snippet.params.*.(literal-parser-config).options.format.string_boundary
-url: >-
-  /configuration-file/types/snippet/params/*/(literal-parser-config)/options/format/string_boundary/
+url: /configuration-file/types/snippet/params/*/(literal-parser-config)/options/format/string_boundary/
 title: ''
 description: >-
   This key defines the valid tokens that can bound a string when parsing literal
@@ -12,9 +11,8 @@ description: >-
   token. To handle common strings with either single or double quotes, this
   would usually be `["'", "\""]`.
 examples:
-  - description: >-
-      In this example, we have configured string boundaries to allow single and
-      double quotes for literal parser.
+  - description: In this example, we have configured string boundaries to allow
+      single and double quotes for literal parser.
     language: yaml
     code: |-
       _snippets:

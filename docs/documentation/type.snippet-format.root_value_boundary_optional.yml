@@ -12,9 +12,8 @@ description: >-
   which allows strings to exist as `<Component arg="true" />` rather than
   `<Component arg={"true"} />`.
 examples:
-  - description: >-
-      In this example, we have configured root value boundaries to be optional
-      for strings.
+  - description: In this example, we have configured root value boundaries to be
+      optional for strings.
     language: yaml
     code: |-
       _snippets:

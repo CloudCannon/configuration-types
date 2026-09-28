@@ -10,8 +10,7 @@ description: >-
   These options control which snippet configuration is repeated and how
   repetitions are handled.
 examples:
-  - description: >-
-      In this example, we have configured repeating parser options with a
+  - description: In this example, we have configured repeating parser options with a
       snippet reference.
     language: yaml
     code: |-

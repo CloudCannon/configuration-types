@@ -1,13 +1,11 @@
 gid: type._inputs.*.(multiselect-input).type
 url: /configuration-file/types/_inputs/*/(multiselect-input)/type/
 title: ''
-description: >-
-  This key defines the input type, which controls how this input appears and
-  behaves.
+description: This key defines the input type, which controls how this input
+  appears and behaves.
 examples:
-  - description: >-
-      In this example, we have configured the `tags` key as a *Multiselect
-      Input* type.
+  - description: In this example, we have configured the `tags` key as a
+      *Multiselect Input* type.
     language: yaml
     code: |-
       _inputs:

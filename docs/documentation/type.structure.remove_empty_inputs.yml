@@ -28,10 +28,9 @@ description: >-
   You can also configure this behavior for specific values of a Structure using
   structure.values.[*].remove_empty_inputs.
 examples:
-  - description: >-
-      In this example, we want to delete any unnecessary nested inputs (i.e.,
-      input we choose not to provide a value for) from Object or Array inputs
-      referenceing the `event_details` Structure.
+  - description: In this example, we want to delete any unnecessary nested inputs
+      (i.e., input we choose not to provide a value for) from Object or Array
+      inputs referenceing the `event_details` Structure.
     language: yaml
     code: |-
       _structures:

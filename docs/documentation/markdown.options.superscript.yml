@@ -13,9 +13,8 @@ description: >-
   By default, this key is `false` (i.e., superscript text is not output in
   carets format).
 examples:
-  - description: >-
-      In this example, we have configured Markdown to output superscript text
-      wrapped in carets.
+  - description: In this example, we have configured Markdown to output superscript
+      text wrapped in carets.
     language: yaml
     code: |-
       markdown:

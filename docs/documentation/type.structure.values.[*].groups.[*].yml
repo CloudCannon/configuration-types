@@ -10,9 +10,8 @@ description: >-
   without changing the data structure. Each group typically contains a `heading`
   and `inputs` array.
 examples:
-  - description: >-
-      In this example, we have configured a group with a heading and inputs
-      array to organize structure inputs.
+  - description: In this example, we have configured a group with a heading and
+      inputs array to organize structure inputs.
     language: yaml
     code: |-
       _structures:

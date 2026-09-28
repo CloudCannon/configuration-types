@@ -24,9 +24,8 @@ description: >-
   [configuring card
   previews](/documentation/articles/configure-your-card-previews/).
 examples:
-  - description: >-
-      In this example, we have configured the appearance of Cards in inputs
-      using the Structure `staff` when adding items.
+  - description: In this example, we have configured the appearance of Cards in
+      inputs using the Structure `staff` when adding items.
     language: yaml
     code: |-
       _structures:

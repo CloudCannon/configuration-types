@@ -12,9 +12,8 @@ description: >-
 
   By default, this key is `false` (i.e., unquoted numbers are not allowed).
 examples:
-  - description: >-
-      In this example, we have configured snippet format to allow unquoted
-      numbers.
+  - description: In this example, we have configured snippet format to allow
+      unquoted numbers.
     language: yaml
     code: |-
       _snippets:

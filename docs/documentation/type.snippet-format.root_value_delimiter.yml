@@ -10,9 +10,8 @@ description: >-
   `key="value"`, this would be `=`. For pairs such as `key: "value"`, this would
   be `: `.
 examples:
-  - description: >-
-      In this example, we have configured root value delimiter to use an equals
-      sign.
+  - description: In this example, we have configured root value delimiter to use an
+      equals sign.
     language: yaml
     code: |-
       _snippets:
