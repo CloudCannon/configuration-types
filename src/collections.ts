@@ -230,10 +230,11 @@ export const CollectionConfigSchema = z
 			description:
 				'This key defines a new URL for previewing your unbuilt pages in the Visual Editor.',
 		}),
-		schemas: z.record(z.string(), SchemaSchema).nullable().optional().meta({
-			description:
-				'This key defines which Schemas are available to populate files in this Collection.',
-		}),
+		schemas: z
+			.record(z.string(), SchemaSchema)
+			.meta({ id: 'collections_config.*.schemas' })
+			.nullable()
+			.optional(),
 		schemas_from_glob: z.array(z.string()).nullable().optional(),
 		schema_key: z.string().nullable().optional().meta({
 			description:

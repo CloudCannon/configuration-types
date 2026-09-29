@@ -1,6 +1,6 @@
 import assert from 'node:assert';
 import { test } from 'node:test';
-import { formatInstancePath, loadValidator } from '../src/validate.ts';
+import { formatInstancePath, loadValidator, type SchemaName } from '../src/validate.ts';
 
 function messages(
 	data: unknown,
@@ -49,3 +49,32 @@ test('should report a missing required property once across union branches', asy
 
 	assert.deepEqual(rendered, ['$._inputs.title: must have required property type']);
 });
+
+// Every schema name `loadValidator` accepts. Kept in step with `SchemaName` by the type annotation.
+const SCHEMA_NAMES: SchemaName[] = [
+	'global',
+	'legacy-jekyll',
+	'legacy-hugo',
+	'legacy-eleventy',
+	'legacy-reader',
+	'settings',
+	'routing',
+	'collections_config_from_glob',
+	'schemas_from_glob',
+	'_editables_from_glob',
+	'_inputs_from_glob',
+	'_snippets_from_glob',
+	'_snippets_definitions_from_glob',
+	'_snippets_imports_from_glob',
+	'_structures_from_glob',
+	'values_from_glob',
+];
+
+for (const name of SCHEMA_NAMES) {
+	test(`should compile and identify the ${name} schema`, async () => {
+		const validator = await loadValidator(name);
+
+		assert.doesNotThrow(() => validator.validate({}));
+		assert.equal(typeof validator.schema.$id, 'string');
+	});
+}

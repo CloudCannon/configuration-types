@@ -171,7 +171,6 @@ const schemas = [
 		// keys: schemas_from_glob
 		// files: *.cloudcannon.schemas.(yml|yaml|json)
 		schema: CollectionConfigSchema.shape.schemas.unwrap().unwrap().meta({
-			id: 'collections_config.*.schemas',
 			$id: 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-schemas.schema.json',
 		}),
 		filename: 'cloudcannon-schemas.schema.json',
