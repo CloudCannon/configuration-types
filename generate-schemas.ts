@@ -1,21 +1,21 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import * as z from 'zod';
-import { redocumentSchema } from './redocument-schemas';
+import { redocumentSchema } from './redocument-schemas.js';
 import {
 	EleventyConfigurationSchema,
 	HugoConfigurationSchema,
 	JekyllConfigurationSchema,
 	ReaderConfigurationSchema,
-} from './src/build-coupled';
-import { CollectionConfigSchema, CollectionsConfigSchema } from './src/collections';
-import { ConfigurationSchema } from './src/configuration';
-import { EditablesSchema } from './src/editables';
-import { InitialSiteSettingsSchema } from './src/initial-site-settings';
-import { InputsSchema } from './src/inputs';
-import { RoutingSchema } from './src/routing';
-import { SnippetsImportsSchema } from './src/snippets';
-import { StructuresSchema, StructureValueSchema } from './src/structures';
+} from './src/build-coupled.js';
+import { _CollectionConfigSchema, CollectionsConfigSchema } from './src/collections.js';
+import { _ConfigurationSchema, ConfigurationSchema } from './src/configuration.js';
+import { EditablesSchema } from './src/editables.js';
+import { InitialSiteSettingsSchema } from './src/initial-site-settings.js';
+import { InputsSchema } from './src/inputs.js';
+import { RoutingSchema } from './src/routing.js';
+import { _SnippetDefinitionsSchema, SnippetsImportsSchema } from './src/snippets.js';
+import { StructuresSchema, StructureValueSchema } from './src/structures.js';
 
 const schemas = [
 	{
@@ -111,7 +111,7 @@ const schemas = [
 	{
 		// keys: _snippets_from_glob, _snippets_templates_from_glob
 		// files: *.cloudcannon.snippets.(yml|yaml|json)
-		schema: ConfigurationSchema.shape._snippets.unwrap().unwrap().meta({
+		schema: _ConfigurationSchema.shape._snippets.unwrap().unwrap().meta({
 			$id: 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-snippets.schema.json',
 		}),
 		filename: 'cloudcannon-snippets.schema.json',
@@ -135,7 +135,7 @@ const schemas = [
 	{
 		// keys: _snippets_definitions_from_glob
 		// files: *.cloudcannon.snippets-definitions.(yml|yaml|json)
-		schema: ConfigurationSchema.shape._snippets_definitions.unwrap().unwrap().meta({
+		schema: _SnippetDefinitionsSchema.unwrap().unwrap().meta({
 			$id: 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-snippets-definitions.schema.json',
 		}),
 		filename: 'cloudcannon-snippets-definitions.schema.json',
@@ -170,7 +170,7 @@ const schemas = [
 	{
 		// keys: schemas_from_glob
 		// files: *.cloudcannon.schemas.(yml|yaml|json)
-		schema: CollectionConfigSchema.shape.schemas.unwrap().unwrap().meta({
+		schema: _CollectionConfigSchema.shape.schemas.unwrap().unwrap().meta({
 			$id: 'https://github.com/cloudcannon/configuration-types/releases/latest/download/cloudcannon-schemas.schema.json',
 		}),
 		filename: 'cloudcannon-schemas.schema.json',

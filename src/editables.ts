@@ -1,14 +1,14 @@
 import * as z from 'zod';
-import { ImageOptionsSchema } from './image-options.ts';
+import { ImageOptionsSchema } from './image-options.js';
 import {
 	BooleanInputSchema,
 	SelectInputSchema,
 	TextInputSchema,
 	UrlInputSchema,
-} from './input-base.ts';
-import { PathsSchema } from './paths.ts';
+} from './input-base.js';
+import { PathsSchema } from './paths.js';
 
-export const TextEditableSchema = z.object({
+const _TextEditableSchema = z.object({
 	paths: PathsSchema.nullable().optional(),
 
 	bold: z.boolean().default(true).optional().meta({
@@ -107,9 +107,11 @@ export const TextEditableSchema = z.object({
 			'Defines if the content can contain "custom markup". It is not recommended to have this option turned on. Defaults to true for non-content editable regions, false otherwise.',
 	}),
 });
+export interface TextEditable extends z.infer<typeof _TextEditableSchema> {}
+export const TextEditableSchema: z.ZodType<TextEditable> = _TextEditableSchema;
 
-export const ToolbarOptionsSchema = z.object({
-	...TextEditableSchema.shape,
+const _ToolbarOptionsSchema = z.object({
+	..._TextEditableSchema.shape,
 
 	align: z
 		.object({
@@ -288,23 +290,29 @@ export const ToolbarOptionsSchema = z.object({
 		description: 'Enables a control to join the selected block with the block below it.',
 	}),
 });
+export interface ToolbarOptions extends z.infer<typeof _ToolbarOptionsSchema> {}
+export const ToolbarOptionsSchema: z.ZodType<ToolbarOptions> = _ToolbarOptionsSchema;
 
 export const BlockEditableSchema = z.object({
 	...ImageOptionsSchema.shape,
-	...TextEditableSchema.shape,
-	...ToolbarOptionsSchema.shape,
+	..._TextEditableSchema.shape,
+	..._ToolbarOptionsSchema.shape,
 });
 
-export const ImageEditableSchema = z.object({
+const _ImageEditableSchema = z.object({
 	...ImageOptionsSchema.shape,
 	paths: PathsSchema.nullable().optional(),
 });
+export interface ImageEditable extends z.infer<typeof _ImageEditableSchema> {}
+export const ImageEditableSchema: z.ZodType<ImageEditable> = _ImageEditableSchema;
 
-export const LinkEditableSchema = z.object({
+const _LinkEditableSchema = z.object({
 	paths: PathsSchema.nullable().optional(),
 });
+export interface LinkEditable extends z.infer<typeof _LinkEditableSchema> {}
+export const LinkEditableSchema: z.ZodType<LinkEditable> = _LinkEditableSchema;
 
-export const EditablesSchema = z
+const _EditablesSchema = z
 	.object({
 		content: BlockEditableSchema.nullable().optional().meta({
 			id: 'ContentEditable',
@@ -344,14 +352,13 @@ export const EditablesSchema = z
 		description:
 			'Configuration for editable regions in the Visual Editor, including content, block, link, image, and text editing options.',
 	});
+export interface Editables extends NonNullable<z.infer<typeof _EditablesSchema>> {}
+export const EditablesSchema: z.ZodType<Editables | null | undefined> = _EditablesSchema;
 
-export const EditablesFromGlobSchema = z.array(z.string()).meta({
+const _EditablesFromGlobSchema = z.array(z.string()).meta({
 	id: 'type._editables_from_glob',
 });
+export const EditablesFromGlobSchema: z.ZodType<z.infer<typeof _EditablesFromGlobSchema>> =
+	_EditablesFromGlobSchema;
 
-export type ToolbarOptions = z.infer<typeof ToolbarOptionsSchema>;
-export type TextEditable = z.infer<typeof TextEditableSchema>;
-export type BlockEditable = z.infer<typeof BlockEditableSchema>;
-export type ImageEditable = z.infer<typeof ImageEditableSchema>;
-export type LinkEditable = z.infer<typeof LinkEditableSchema>;
-export type Editables = NonNullable<z.infer<typeof EditablesSchema>>;
+export interface BlockEditable extends z.infer<typeof BlockEditableSchema> {}

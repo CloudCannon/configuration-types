@@ -1,6 +1,6 @@
 import assert from 'node:assert';
 import { test } from 'node:test';
-import { StructureSchema, StructureValueSchema } from '../src/structures.ts';
+import { StructureSchema, StructureValueSchema } from '../src/structures.js';
 
 test('should accept a basic structure', () => {
 	const structure = {

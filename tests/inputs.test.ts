@@ -1,6 +1,6 @@
 import assert from 'node:assert';
 import { test } from 'node:test';
-import { BaseInputSchema } from '../src/inputs.ts';
+import { BaseInputSchema } from '../src/inputs.js';
 
 test('should accept a text input', () => {
 	const input = {

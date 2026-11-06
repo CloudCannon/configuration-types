@@ -1,7 +1,7 @@
 import assert from 'node:assert';
 import { test } from 'node:test';
-import { HugoConfigurationSchema, JekyllConfigurationSchema } from '../src/build-coupled.ts';
-import { type Configuration, ConfigurationSchema } from '../src/configuration.ts';
+import { HugoConfigurationSchema, JekyllConfigurationSchema } from '../src/build-coupled.js';
+import { type Configuration, ConfigurationSchema } from '../src/configuration.js';
 
 test('should validate a typical Jekyll blog configuration', () => {
 	const config = {

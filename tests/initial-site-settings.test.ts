@@ -4,7 +4,7 @@ import {
 	BuildConfigSchema,
 	InitialSiteSettingsSchema,
 	SiteModeSchema,
-} from '../src/initial-site-settings.ts';
+} from '../src/initial-site-settings.js';
 
 test('should accept an empty initial site settings configuration', () => {
 	const settings = {};
