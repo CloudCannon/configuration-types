@@ -1,6 +1,6 @@
 import * as z from 'zod';
 
-export const PathsSchema = z
+export const _PathsSchema = z
 	.object({
 		static: z.string().nullable().optional().meta({ id: 'paths.static' }),
 		uploads: z.string().nullable().default('uploads').optional().meta({ id: 'paths.uploads' }),
@@ -20,4 +20,5 @@ export const PathsSchema = z
 	})
 	.meta({ id: 'type.paths', title: 'Paths' });
 
-export type Paths = z.infer<typeof PathsSchema>;
+export interface Paths extends z.infer<typeof _PathsSchema> {}
+export const PathsSchema: z.ZodType<Paths> = _PathsSchema;

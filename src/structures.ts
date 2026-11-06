@@ -1,15 +1,17 @@
 import * as z from 'zod';
-import { DocumentationSchema } from './documentation.ts';
-import { IconSchema } from './icon.ts';
-import { InputsFromGlobSchema, InputsSchema, ObjectInputGroupSchema } from './inputs.ts';
-import { PickerPreviewSchema, PreviewSchema } from './preview.ts';
-import { SelectDataSchema } from './select-values.ts';
+import { DocumentationSchema } from './documentation.js';
+import { IconSchema } from './icon.js';
+import { InputsFromGlobSchema, InputsSchema, ObjectInputGroupSchema } from './inputs.js';
+import { PickerPreviewSchema, PreviewSchema } from './preview.js';
+import { SelectDataSchema } from './select-values.js';
 
-export const StructureReferenceSchema = z.string().meta({
+const _StructureReferenceSchema = z.string().meta({
 	id: 'type.structure-reference',
 	title: 'Structure Reference',
 	description: 'A reference to an existing structure.',
 });
+export const StructureReferenceSchema: z.ZodType<z.infer<typeof _StructureReferenceSchema>> =
+	_StructureReferenceSchema;
 
 const StructureBaseSchema = z.object({
 	reorder_inputs: z.boolean().default(true).optional().meta({
@@ -29,11 +31,13 @@ const StructureBaseSchema = z.object({
 	}),
 });
 
-export const StructuresFromGlobSchema = z.array(z.string()).meta({
+const _StructuresFromGlobSchema = z.array(z.string()).meta({
 	id: 'type._structures_from_glob',
 });
+export const StructuresFromGlobSchema: z.ZodType<z.infer<typeof _StructuresFromGlobSchema>> =
+	_StructuresFromGlobSchema;
 
-export const StructureValueSchema = StructureBaseSchema.extend({
+const _StructureValueSchema = StructureBaseSchema.extend({
 	preview: PreviewSchema.nullable().optional(),
 	picker_preview: PickerPreviewSchema.nullable().optional(),
 
@@ -102,8 +106,10 @@ export const StructureValueSchema = StructureBaseSchema.extend({
 	description:
 		'A single value option within a structure, defining the data format and appearance for content editors.',
 });
+export interface StructureValue extends z.infer<typeof _StructureValueSchema> {}
+export const StructureValueSchema: z.ZodType<StructureValue> = _StructureValueSchema;
 
-export const StructureSchema = z
+const _StructureSchema = z
 	.object({
 		...StructureBaseSchema.shape,
 		values: z.array(StructureValueSchema).nullable().optional(),
@@ -123,13 +129,13 @@ export const StructureSchema = z
 		description:
 			'Provides data formats when adding new items to arrays and objects, with options for how editors choose from available values.',
 	});
+export interface Structure extends z.infer<typeof _StructureSchema> {}
+export const StructureSchema: z.ZodType<Structure> = _StructureSchema;
 
-export const StructuresSchema = z.record(z.string(), StructureSchema).meta({
+const _StructuresSchema = z.record(z.string(), StructureSchema).meta({
 	id: 'type._structures',
 	title: 'Structures',
 	description:
 		'Structured values for editors adding new items to arrays and objects. Entries here can be referenced in the configuration for `array` or `object` inputs.',
 });
-
-export type StructureValue = z.infer<typeof StructureValueSchema>;
-export type Structure = z.infer<typeof StructureSchema>;
+export const StructuresSchema: z.ZodType<z.infer<typeof _StructuresSchema>> = _StructuresSchema;

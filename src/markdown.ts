@@ -1,16 +1,23 @@
 import * as z from 'zod';
 
-export const AttributeListPositionSchema = z
-	.enum(['none', 'right', 'space right', 'below', 'newline below', 'right-of-prefix'])
-	.nullable()
-	.optional()
-	.meta({
-		id: 'AttributeListPosition',
-		title: 'Attribute List Position',
-		description: 'Positioning options for Markdown attribute elements.',
-	});
+const ATTRIBUTE_LIST_POSITIONS = [
+	'none',
+	'right',
+	'space right',
+	'below',
+	'newline below',
+	'right-of-prefix',
+] as const;
+const _AttributeListPositionSchema = z.enum(ATTRIBUTE_LIST_POSITIONS).nullable().optional().meta({
+	id: 'AttributeListPosition',
+	title: 'Attribute List Position',
+	description: 'Positioning options for Markdown attribute elements.',
+});
+export type AttributeListPosition = (typeof ATTRIBUTE_LIST_POSITIONS)[number] | null | undefined;
+export const AttributeListPositionSchema: z.ZodType<AttributeListPosition> =
+	_AttributeListPositionSchema;
 
-export const MarkdownAttributeElementOptionsSchema = z
+const _MarkdownAttributeElementOptionsSchema = z
 	.object({
 		inline: AttributeListPositionSchema.nullable().optional(),
 		block: AttributeListPositionSchema.nullable().optional(),
@@ -20,8 +27,12 @@ export const MarkdownAttributeElementOptionsSchema = z
 		title: 'Markdown Attribute Element Options',
 		description: 'Configuration for positioning Markdown attributes on different element types.',
 	});
+export interface MarkdownAttributeElementOptions
+	extends z.infer<typeof _MarkdownAttributeElementOptionsSchema> {}
+export const MarkdownAttributeElementOptionsSchema: z.ZodType<MarkdownAttributeElementOptions> =
+	_MarkdownAttributeElementOptionsSchema;
 
-export const MarkdownSettingsSchema = z
+const _MarkdownSettingsSchema = z
 	.object({
 		engine: z.enum(['commonmark', 'kramdown']).nullable().default('commonmark').optional().meta({
 			description: 'The flavor of Markdown to use to convert between HTML and Markdown.',
@@ -95,7 +106,5 @@ export const MarkdownSettingsSchema = z
 		title: 'Markdown Settings',
 		description: 'Configuration for Markdown processing engines and formatting options.',
 	});
-
-export type AttributeListPosition = z.infer<typeof AttributeListPositionSchema>;
-export type MarkdownAttributeElementOptions = z.infer<typeof MarkdownAttributeElementOptionsSchema>;
-export type MarkdownSettings = z.infer<typeof MarkdownSettingsSchema>;
+export interface MarkdownSettings extends z.infer<typeof _MarkdownSettingsSchema> {}
+export const MarkdownSettingsSchema: z.ZodType<MarkdownSettings> = _MarkdownSettingsSchema;

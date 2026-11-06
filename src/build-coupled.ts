@@ -1,11 +1,15 @@
 import * as z from 'zod';
-import { CollectionConfigSchema } from './collections.ts';
-import { ConfigurationSchema, DataConfigEntrySchema } from './configuration.ts';
-import { PathsSchema } from './paths.ts';
+import { _CollectionConfigSchema } from './collections.js';
+import {
+	_ConfigurationSchema,
+	_DataConfigEntrySchema,
+	ConfigurationSchema,
+} from './configuration.js';
+import { _PathsSchema } from './paths.js';
 
-export const BuildCoupledPathsSchema = z
+const _BuildCoupledPathsSchema = z
 	.object({
-		...PathsSchema.shape,
+		..._PathsSchema.shape,
 		collections: z.string().nullable().optional().meta({
 			description: 'Parent folder of all collections.',
 		}),
@@ -27,9 +31,13 @@ export const BuildCoupledPathsSchema = z
 			'Paths to where new asset files are uploaded to. They also set the default path when choosing existing images, and linking to existing files. Each path is relative to global `source`.',
 	});
 
-export const FilterBaseSchema = z.enum(['none', 'all', 'strict']);
+export interface BuildCoupledPaths extends z.infer<typeof _BuildCoupledPathsSchema> {}
+export const BuildCoupledPathsSchema: z.ZodType<BuildCoupledPaths> = _BuildCoupledPathsSchema;
 
-export const FilterValueSchema = z.object({
+const FILTER_BASES = ['none', 'all', 'strict'] as const;
+export const FilterBaseSchema = z.enum(FILTER_BASES);
+
+const _FilterValueSchema = z.object({
 	base: FilterBaseSchema.nullable().optional().meta({
 		description:
 			'Defines the initial set of visible files in the collection file list. Defaults to "all", or "strict" for the auto-discovered `pages` collection in Jekyll, Hugo, and Eleventy.',
@@ -43,12 +51,16 @@ export const FilterValueSchema = z.object({
 			'Remove from the visible files set with `base`. Paths must be relative to the containing collection `path`.',
 	}),
 });
+export interface FilterValue extends z.infer<typeof _FilterValueSchema> {}
+export const FilterValueSchema: z.ZodType<FilterValue> = _FilterValueSchema;
 
-export const FilterSchema = z.union([FilterValueSchema, FilterBaseSchema]).meta({
+const _FilterSchema = z.union([FilterValueSchema, FilterBaseSchema]).meta({
 	id: 'filter',
 	description:
 		'Controls which files are displayed in the collection list. Does not change which files are assigned to this collection.',
 });
+export type Filter = z.infer<typeof _FilterSchema>;
+export const FilterSchema: z.ZodType<Filter> = _FilterSchema;
 
 const ParserSchema = z.enum(['csv', 'front-matter', 'json', 'properties', 'toml', 'yaml']).meta({
 	id: 'parser',
@@ -79,32 +91,42 @@ const OutputSchema = z.boolean().meta({
 		"Specifies whether this collection's source files build to output files. Defaults to false.",
 });
 
-export const BuildCoupledCollectionConfigSchema = z.object({
-	...CollectionConfigSchema.omit({ url: true, disable_url: true }).shape,
-	path: CollectionConfigSchema.shape.path.optional(),
+const _BuildCoupledCollectionConfigSchema = z.object({
+	..._CollectionConfigSchema.omit({ url: true, disable_url: true }).shape,
+	path: _CollectionConfigSchema.shape.path.optional(),
 	filter: FilterSchema.nullable().optional(),
 	singular_key: SingularKeySchema.nullable().optional(),
 	output: OutputSchema.nullable().optional(),
 });
+export interface BuildCoupledCollectionConfig
+	extends z.infer<typeof _BuildCoupledCollectionConfigSchema> {}
+export const BuildCoupledCollectionConfigSchema: z.ZodType<BuildCoupledCollectionConfig> =
+	_BuildCoupledCollectionConfigSchema;
 
-export const ReaderCollectionConfigSchema = z.object({
-	...CollectionConfigSchema.shape,
+const _ReaderCollectionConfigSchema = z.object({
+	..._CollectionConfigSchema.shape,
 	parser: ParserSchema.nullable().optional(),
 	filter: FilterSchema.nullable().optional(),
 	singular_key: SingularKeySchema.nullable().optional(),
 	output: OutputSchema.nullable().optional(),
 });
+export interface ReaderCollectionConfig extends z.infer<typeof _ReaderCollectionConfigSchema> {}
+export const ReaderCollectionConfigSchema: z.ZodType<ReaderCollectionConfig> =
+	_ReaderCollectionConfigSchema;
 
-export const HugoCollectionConfigSchema = z.object({
-	...BuildCoupledCollectionConfigSchema.shape,
+const _HugoCollectionConfigSchema = z.object({
+	..._BuildCoupledCollectionConfigSchema.shape,
 	parse_branch_index: z.boolean().default(false).optional().meta({
 		description:
 			'Controls whether branch index files (e.g. `_index.md`) are assigned to this collection or not. The "pages" collection defaults this to true, and false otherwise.',
 	}),
 });
+export interface HugoCollectionConfig extends z.infer<typeof _HugoCollectionConfigSchema> {}
+export const HugoCollectionConfigSchema: z.ZodType<HugoCollectionConfig> =
+	_HugoCollectionConfigSchema;
 
-export const BuildCoupledConfigurationSchema = z.object({
-	...ConfigurationSchema.omit({ version: true }).shape,
+const _BuildCoupledConfigurationSchema = z.object({
+	..._ConfigurationSchema.omit({ version: true }).shape,
 	collections_config_override: z.boolean().default(false).optional().meta({
 		id: 'collections_config_override',
 		description:
@@ -128,14 +150,18 @@ export const BuildCoupledConfigurationSchema = z.object({
 		description: 'Controls what data sets are available to populate select and multiselect inputs.',
 	}),
 });
+export interface BuildCoupledConfiguration
+	extends z.infer<typeof _BuildCoupledConfigurationSchema> {}
+export const BuildCoupledConfigurationSchema: z.ZodType<BuildCoupledConfiguration> =
+	_BuildCoupledConfigurationSchema;
 
-export const ReaderConfigurationSchema = z.object({
-	...BuildCoupledConfigurationSchema.omit({ collections_config_override: true }).shape,
+const _ReaderConfigurationSchema = z.object({
+	..._BuildCoupledConfigurationSchema.omit({ collections_config_override: true }).shape,
 	version: z.literal('legacy-reader').meta(versionMeta),
 	data_config: z
 		.record(
 			z.string(),
-			z.object({ ...DataConfigEntrySchema.shape, parser: ParserSchema.nullable().optional() })
+			z.object({ ..._DataConfigEntrySchema.shape, parser: ParserSchema.nullable().optional() })
 		)
 		.nullable()
 		.optional()
@@ -153,9 +179,11 @@ export const ReaderConfigurationSchema = z.object({
 			'Generates the integration file in another folder. Not applicable to Jekyll, Hugo, and Eleventy. Defaults to the root folder.',
 	}),
 });
+export interface ReaderConfiguration extends z.infer<typeof _ReaderConfigurationSchema> {}
+export const ReaderConfigurationSchema: z.ZodType<ReaderConfiguration> = _ReaderConfigurationSchema;
 
-export const HugoConfigurationSchema = z.object({
-	...BuildCoupledConfigurationSchema.shape,
+const _HugoConfigurationSchema = z.object({
+	..._BuildCoupledConfigurationSchema.shape,
 	version: z.literal('legacy-hugo').meta(versionMeta),
 	collections_config: z
 		.record(z.string(), HugoCollectionConfigSchema)
@@ -163,34 +191,48 @@ export const HugoConfigurationSchema = z.object({
 		.optional()
 		.meta(collectionsConfigMeta),
 });
+export interface HugoConfiguration extends z.infer<typeof _HugoConfigurationSchema> {}
+export const HugoConfigurationSchema: z.ZodType<HugoConfiguration> = _HugoConfigurationSchema;
 
-export const JekyllConfigurationSchema = z.object({
-	...BuildCoupledConfigurationSchema.shape,
+const _JekyllConfigurationSchema = z.object({
+	..._BuildCoupledConfigurationSchema.shape,
 	version: z.literal('legacy-jekyll').meta(versionMeta),
 });
+export interface JekyllConfiguration extends z.infer<typeof _JekyllConfigurationSchema> {}
+export const JekyllConfigurationSchema: z.ZodType<JekyllConfiguration> = _JekyllConfigurationSchema;
 
-export const EleventyConfigurationSchema = z.object({
-	...BuildCoupledConfigurationSchema.shape,
+const _EleventyConfigurationSchema = z.object({
+	..._BuildCoupledConfigurationSchema.shape,
 	version: z.literal('legacy-eleventy').meta(versionMeta),
 });
+export interface EleventyConfiguration extends z.infer<typeof _EleventyConfigurationSchema> {}
+export const EleventyConfigurationSchema: z.ZodType<EleventyConfiguration> =
+	_EleventyConfigurationSchema;
 
-export const AnyLegacyConfigurationSchema = z.union([
+const _AnyLegacyConfigurationSchema = z.union([
 	HugoConfigurationSchema,
 	JekyllConfigurationSchema,
 	EleventyConfigurationSchema,
 	ReaderConfigurationSchema,
 ]);
+export type AnyLegacyConfiguration = z.infer<typeof _AnyLegacyConfigurationSchema>;
+export const AnyLegacyConfigurationSchema: z.ZodType<AnyLegacyConfiguration> =
+	_AnyLegacyConfigurationSchema;
 
-export const AnyConfigurationSchema = z.union([ConfigurationSchema, AnyLegacyConfigurationSchema]);
+const _AnyConfigurationSchema = z.union([ConfigurationSchema, AnyLegacyConfigurationSchema]);
+export type AnyConfiguration = z.infer<typeof _AnyConfigurationSchema>;
+export const AnyConfigurationSchema: z.ZodType<AnyConfiguration> = _AnyConfigurationSchema;
 
-export const ParsedDatasetSchema = z.union([
+const _ParsedDatasetSchema = z.union([
 	z.array(z.string()),
 	z.record(z.string(), z.string()),
 	z.record(z.string(), z.record(z.string(), z.unknown())),
 	z.array(z.record(z.string(), z.unknown())),
 ]);
+export type ParsedDataset = z.infer<typeof _ParsedDatasetSchema>;
+export const ParsedDatasetSchema: z.ZodType<ParsedDataset> = _ParsedDatasetSchema;
 
-export const ParsedCollectionItemSchema = z.record(z.string(), z.unknown()).and(
+const _ParsedCollectionItemSchema = z.record(z.string(), z.unknown()).and(
 	z.object({
 		path: z.string().meta({
 			description: 'The path to the file this was parsed from.',
@@ -203,6 +245,9 @@ export const ParsedCollectionItemSchema = z.record(z.string(), z.unknown()).and(
 		}),
 	})
 );
+export type ParsedCollectionItem = z.infer<typeof _ParsedCollectionItemSchema>;
+export const ParsedCollectionItemSchema: z.ZodType<ParsedCollectionItem> =
+	_ParsedCollectionItemSchema;
 
 const WithIntegrationOutputSchema = z.object({
 	error: z
@@ -248,50 +293,45 @@ const WithIntegrationOutputSchema = z.object({
 	}),
 });
 
-export const IntegrationOutputSchema = z.object({
-	...ConfigurationSchema.shape,
+const _IntegrationOutputSchema = z.object({
+	..._ConfigurationSchema.shape,
 	...WithIntegrationOutputSchema.shape,
 });
+export interface IntegrationOutput extends z.infer<typeof _IntegrationOutputSchema> {}
+export const IntegrationOutputSchema: z.ZodType<IntegrationOutput> = _IntegrationOutputSchema;
 
-export const ReaderIntegrationOutputSchema = z.object({
-	...ReaderConfigurationSchema.shape,
+const _ReaderIntegrationOutputSchema = z.object({
+	..._ReaderConfigurationSchema.shape,
 	...WithIntegrationOutputSchema.shape,
 });
+export interface ReaderIntegrationOutput extends z.infer<typeof _ReaderIntegrationOutputSchema> {}
+export const ReaderIntegrationOutputSchema: z.ZodType<ReaderIntegrationOutput> =
+	_ReaderIntegrationOutputSchema;
 
-export const HugoIntegrationOutputSchema = z.object({
-	...HugoConfigurationSchema.shape,
+const _HugoIntegrationOutputSchema = z.object({
+	..._HugoConfigurationSchema.shape,
 	...WithIntegrationOutputSchema.shape,
 });
+export interface HugoIntegrationOutput extends z.infer<typeof _HugoIntegrationOutputSchema> {}
+export const HugoIntegrationOutputSchema: z.ZodType<HugoIntegrationOutput> =
+	_HugoIntegrationOutputSchema;
 
-export const JekyllIntegrationOutputSchema = z.object({
-	...JekyllConfigurationSchema.shape,
+const _JekyllIntegrationOutputSchema = z.object({
+	..._JekyllConfigurationSchema.shape,
 	...WithIntegrationOutputSchema.shape,
 	defaults: z.unknown(),
 });
+export interface JekyllIntegrationOutput extends z.infer<typeof _JekyllIntegrationOutputSchema> {}
+export const JekyllIntegrationOutputSchema: z.ZodType<JekyllIntegrationOutput> =
+	_JekyllIntegrationOutputSchema;
 
-export const EleventyIntegrationOutputSchema = z.object({
-	...EleventyConfigurationSchema.shape,
+const _EleventyIntegrationOutputSchema = z.object({
+	..._EleventyConfigurationSchema.shape,
 	...WithIntegrationOutputSchema.shape,
 });
+export interface EleventyIntegrationOutput
+	extends z.infer<typeof _EleventyIntegrationOutputSchema> {}
+export const EleventyIntegrationOutputSchema: z.ZodType<EleventyIntegrationOutput> =
+	_EleventyIntegrationOutputSchema;
 
-export type BuildCoupledPaths = z.infer<typeof BuildCoupledPathsSchema>;
-export type FilterBase = z.infer<typeof FilterBaseSchema>;
-export type FilterValue = z.infer<typeof FilterValueSchema>;
-export type Filter = z.infer<typeof FilterSchema>;
-export type BuildCoupledCollectionConfig = z.infer<typeof BuildCoupledCollectionConfigSchema>;
-export type ReaderCollectionConfig = z.infer<typeof ReaderCollectionConfigSchema>;
-export type HugoCollectionConfig = z.infer<typeof HugoCollectionConfigSchema>;
-export type BuildCoupledConfiguration = z.infer<typeof BuildCoupledConfigurationSchema>;
-export type ReaderConfiguration = z.infer<typeof ReaderConfigurationSchema>;
-export type HugoConfiguration = z.infer<typeof HugoConfigurationSchema>;
-export type JekyllConfiguration = z.infer<typeof JekyllConfigurationSchema>;
-export type EleventyConfiguration = z.infer<typeof EleventyConfigurationSchema>;
-export type AnyLegacyConfiguration = z.infer<typeof AnyLegacyConfigurationSchema>;
-export type AnyConfiguration = z.infer<typeof AnyConfigurationSchema>;
-export type ParsedDataset = z.infer<typeof ParsedDatasetSchema>;
-export type ParsedCollectionItem = z.infer<typeof ParsedCollectionItemSchema>;
-export type IntegrationOutput = z.infer<typeof IntegrationOutputSchema>;
-export type ReaderIntegrationOutput = z.infer<typeof ReaderIntegrationOutputSchema>;
-export type HugoIntegrationOutput = z.infer<typeof HugoIntegrationOutputSchema>;
-export type JekyllIntegrationOutput = z.infer<typeof JekyllIntegrationOutputSchema>;
-export type EleventyIntegrationOutput = z.infer<typeof EleventyIntegrationOutputSchema>;
+export type FilterBase = (typeof FILTER_BASES)[number];

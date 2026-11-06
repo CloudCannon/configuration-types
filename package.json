@@ -20,30 +20,29 @@
 	},
 	"scripts": {
 		"prebuild": "rm -rf dist && mkdir -p dist",
-		"build": "npm run build:schemas && npm run build:combined && npm run build:docs && npm run build:schema-modules && npm run build:validate",
+		"build": "npm run build:schemas && npm run build:combined && npm run build:docs && npm run build:schema-modules && npm run build:types",
 		"build:combined": "cp cloudcannon-config.schema.json dist/cloudcannon-config.schema.json",
 		"build:schemas": "tsx generate-schemas.ts",
 		"build:schema-modules": "tsx build-schema-modules.ts",
 		"build:docs": "tsx docs/index.ts",
-		"build:validate": "tsc -p tsconfig.validate.json",
+		"build:types": "tsc",
 		"lint": "npm run lint:tsc && npm run lint:format",
-		"lint:tsc": "tsc --noEmit",
+		"lint:tsc": "tsc --noEmit && tsc --noEmit -p tests/tsconfig.json",
 		"lint:format": "biome check --fix",
 		"lint:report": "biome lint --diagnostic-level=error --reporter=junit > lint-results.xml",
 		"lint:staged": "biome check --diagnostic-level=error --staged --no-errors-on-unmatched",
 		"site:dev": "http-server site -p 12345 -c-1",
 		"site:build": "cp dist/*.schema.json site/.",
-		"test": "node --experimental-strip-types --test",
-		"test:watch": "node --experimental-strip-types --test --watch",
-		"test:coverage": "node --test --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=lcov.info"
+		"test": "tsx --test 'tests/**/*.test.ts'",
+		"test:watch": "tsx --test --watch 'tests/**/*.test.ts'",
+		"test:coverage": "node --import tsx --test --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=lcov.info 'tests/**/*.test.ts'"
 	},
-	"main": "./src/index.ts",
-	"types": "./src/index.ts",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
 	"publishConfig": {
 		"access": "public"
 	},
 	"files": [
-		"src/**/*",
 		"dist/**/*"
 	],
 	"dependencies": {

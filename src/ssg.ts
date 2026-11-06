@@ -1,6 +1,6 @@
 import * as z from 'zod';
 
-export const SsgKeySchema = z.enum([
+const SSG_KEYS = [
 	'hugo',
 	'jekyll',
 	'eleventy',
@@ -18,6 +18,8 @@ export const SsgKeySchema = z.enum([
 	'static',
 	'legacy',
 	'other',
-]);
+] as const;
 
-export type SsgKey = z.infer<typeof SsgKeySchema>;
+export const SsgKeySchema = z.enum(SSG_KEYS);
+
+export type SsgKey = (typeof SSG_KEYS)[number];

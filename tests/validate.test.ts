@@ -1,6 +1,6 @@
 import assert from 'node:assert';
 import { test } from 'node:test';
-import { formatInstancePath, loadValidator, type SchemaName } from '../src/validate.ts';
+import { formatInstancePath, loadValidator, type SchemaName } from '../src/validate.js';
 
 function messages(
 	data: unknown,

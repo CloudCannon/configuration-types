@@ -1,6 +1,6 @@
 import assert from 'node:assert';
 import { test } from 'node:test';
-import { HeaderRuleSchema, RouteSchema, RoutingSchema } from '../src/routing.ts';
+import { HeaderRuleSchema, RouteSchema, RoutingSchema } from '../src/routing.js';
 
 test('should accept an empty routing configuration', () => {
 	const routing = {};

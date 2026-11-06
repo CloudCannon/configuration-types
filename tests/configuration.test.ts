@@ -1,6 +1,6 @@
 import assert from 'node:assert';
 import { test } from 'node:test';
-import { ConfigurationSchema } from '../src/configuration.ts';
+import { ConfigurationSchema } from '../src/configuration.js';
 
 test('should accept a minimal valid configuration', () => {
 	const config = {

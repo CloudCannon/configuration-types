@@ -1,7 +1,7 @@
 import * as z from 'zod';
-import { SsgKeySchema } from './ssg.ts';
+import { SsgKeySchema } from './ssg.js';
 
-export const EnvironmentVariableSchema = z
+const _EnvironmentVariableSchema = z
 	.object({
 		key: z.string().meta({
 			description: 'The name of the environment variable.',
@@ -13,8 +13,10 @@ export const EnvironmentVariableSchema = z
 	.meta({
 		description: 'A single environment variable as a key-value pair.',
 	});
+export const EnvironmentVariableSchema: z.ZodType<z.infer<typeof _EnvironmentVariableSchema>> =
+	_EnvironmentVariableSchema;
 
-export const BuildConfigSchema = z
+const _BuildConfigSchema = z
 	.object({
 		install_command: z.string().optional().meta({
 			description: 'Command to install dependencies before building.',
@@ -57,13 +59,17 @@ export const BuildConfigSchema = z
 		title: 'Build',
 		description: 'Build configuration. Ignored when `mode` is `headless`.',
 	});
+export interface BuildConfig extends z.infer<typeof _BuildConfigSchema> {}
+export const BuildConfigSchema: z.ZodType<BuildConfig> = _BuildConfigSchema;
 
-export const SiteModeSchema = z.enum(['hosted', 'headless']).meta({
+const SITE_MODES = ['hosted', 'headless'] as const;
+export const SiteModeSchema = z.enum(SITE_MODES).meta({
 	description:
 		'The mode for this site. `hosted` sites are built and hosted by CloudCannon. `headless` sites are not built or hosted.',
 });
+export type SiteMode = (typeof SITE_MODES)[number];
 
-export const InitialSiteSettingsSchema = z
+const _InitialSiteSettingsSchema = z
 	.object({
 		mode: SiteModeSchema.optional(),
 		ssg: SsgKeySchema.optional().meta({
@@ -76,7 +82,5 @@ export const InitialSiteSettingsSchema = z
 		description:
 			'Configuration for the `.cloudcannon/initial-site-settings.json` file. Defines build settings and site mode for new sites.',
 	});
-
-export type InitialSiteSettings = z.infer<typeof InitialSiteSettingsSchema>;
-export type BuildConfig = z.infer<typeof BuildConfigSchema>;
-export type SiteMode = z.infer<typeof SiteModeSchema>;
+export interface InitialSiteSettings extends z.infer<typeof _InitialSiteSettingsSchema> {}
+export const InitialSiteSettingsSchema: z.ZodType<InitialSiteSettings> = _InitialSiteSettingsSchema;

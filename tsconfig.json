@@ -3,12 +3,16 @@
 		"strict": true,
 		"types": ["node"],
 		"esModuleInterop": true,
-		"noEmit": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"noFallthroughCasesInSwitch": true,
-		"allowImportingTsExtensions": true
+		"declaration": true,
+		"outDir": "dist",
+		"rootDir": "src",
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"target": "ES2022"
 	},
-	"include": ["*.ts", "src/**/*.ts", "tests/**/*.ts"],
+	"include": ["src/**/*.ts"],
 	"exclude": ["node_modules", "dist"]
 }

@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { parse, stringify } from 'yaml';
-import { type DocumentationEntry, type Page, verbose } from './util';
+import { type DocumentationEntry, type Page, verbose } from './util.js';
 
 export async function readDocs(folder: string): Promise<Record<string, DocumentationEntry>> {
 	const docs: Record<string, DocumentationEntry> = {};
