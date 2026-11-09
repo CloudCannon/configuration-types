@@ -1,7 +1,7 @@
 import * as z from 'zod';
-import { DocumentationSchema } from './documentation.ts';
-import { BlockEditableSchema } from './editables.ts';
-import { ImageOptionsSchema } from './image-options.ts';
+import { DocumentationSchema } from './documentation.js';
+import { BlockEditableSchema } from './editables.js';
+import { ImageOptionsSchema } from './image-options.js';
 import {
 	BaseInputSchema,
 	BooleanInputSchema,
@@ -15,52 +15,51 @@ import {
 	TextValidationSchema,
 	typeMeta,
 	UrlInputSchema,
-} from './input-base.ts';
-import type { MimeTypeSchema } from './mimetype.ts';
-import { PreviewSchema } from './preview.ts';
-import { SourceEditorSchema } from './source-editor.ts';
-import { StructureReferenceSchema, StructureSchema } from './structures.ts';
-import { SyntaxSchema } from './syntax.ts';
-import { TimezoneSchema } from './timezone.ts';
+} from './input-base.js';
+import type { MimeTypeSchema } from './mimetype.js';
+import { PreviewSchema } from './preview.js';
+import { SourceEditorSchema } from './source-editor.js';
+import { StructureReferenceSchema, StructureSchema } from './structures.js';
+import { SyntaxSchema } from './syntax.js';
+import { TimezoneSchema } from './timezone.js';
 
-export const InputTypeSchema = z
-	.enum([
-		'text',
-		'textarea',
-		'email',
-		'disabled',
-		'pinterest',
-		'facebook',
-		'twitter',
-		'github',
-		'instagram',
-		'code',
-		'checkbox',
-		'switch',
-		'color',
-		'number',
-		'range',
-		'url',
-		'html',
-		'markdown',
-		'date',
-		'datetime',
-		'time',
-		'file',
-		'image',
-		'document',
-		'select',
-		'multiselect',
-		'choice',
-		'multichoice',
-		'object',
-		'array',
-		'auto',
-	])
-	.meta({
-		title: 'Input Type',
-		description: 'The available input types.',
-	});
+const INPUT_TYPES = [
+	'text',
+	'textarea',
+	'email',
+	'disabled',
+	'pinterest',
+	'facebook',
+	'twitter',
+	'github',
+	'instagram',
+	'code',
+	'checkbox',
+	'switch',
+	'color',
+	'number',
+	'range',
+	'url',
+	'html',
+	'markdown',
+	'date',
+	'datetime',
+	'time',
+	'file',
+	'image',
+	'document',
+	'select',
+	'multiselect',
+	'choice',
+	'multichoice',
+	'object',
+	'array',
+	'auto',
+] as const;
+export const InputTypeSchema = z.enum(INPUT_TYPES).meta({
+	title: 'Input Type',
+	description: 'The available input types.',
+});
 
 const ArrayValidationSchema = z.object({
 	max_items: z.number().nullable().optional().meta({
@@ -126,7 +125,7 @@ const EmptyTypeArraySchema = z.enum(['null', 'array']).default('null').meta({
 	description: 'Set how an ‘empty’ value will be saved. Does not apply to existing empty values.',
 });
 
-export const TextareaInputOptionsSchema = z
+const _TextareaInputOptionsSchema = z
 	.object({
 		...TextValidationSchema.shape,
 		...RequiredValidationSchema.shape,
@@ -141,8 +140,11 @@ export const TextareaInputOptionsSchema = z
 	.meta({
 		description: 'Options that are specific to Textarea Inputs.',
 	});
+export interface TextareaInputOptions extends z.infer<typeof _TextareaInputOptionsSchema> {}
+export const TextareaInputOptionsSchema: z.ZodType<TextareaInputOptions> =
+	_TextareaInputOptionsSchema;
 
-export const TextareaInputSchema = z
+const _TextareaInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.literal('textarea').meta(typeMeta),
@@ -153,8 +155,10 @@ export const TextareaInputSchema = z
 		title: 'Textarea Input',
 		description: 'Provides an editing interface for plain text.',
 	});
+export interface TextareaInput extends z.infer<typeof _TextareaInputSchema> {}
+export const TextareaInputSchema: z.ZodType<TextareaInput> = _TextareaInputSchema;
 
-export const CodeInputOptionsSchema = z
+const _CodeInputOptionsSchema = z
 	.object({
 		...SourceEditorSchema.shape,
 		...TextValidationSchema.shape,
@@ -176,8 +180,10 @@ export const CodeInputOptionsSchema = z
 	.meta({
 		description: 'Options that are specific to Code Inputs.',
 	});
+export interface CodeInputOptions extends z.infer<typeof _CodeInputOptionsSchema> {}
+export const CodeInputOptionsSchema: z.ZodType<CodeInputOptions> = _CodeInputOptionsSchema;
 
-export const CodeInputSchema = z
+const _CodeInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.literal('code').meta(typeMeta),
@@ -188,8 +194,10 @@ export const CodeInputSchema = z
 		title: 'Code Input',
 		description: 'Provides an editing interface for code or mono-spaced plain text content.',
 	});
+export interface CodeInput extends z.infer<typeof _CodeInputSchema> {}
+export const CodeInputSchema: z.ZodType<CodeInput> = _CodeInputSchema;
 
-export const ColorInputOptionsSchema = z
+const _ColorInputOptionsSchema = z
 	.object({
 		...TextValidationSchema.shape,
 		...RequiredValidationSchema.shape,
@@ -208,8 +216,10 @@ export const ColorInputOptionsSchema = z
 	.meta({
 		description: 'Options that are specific to Color Inputs.',
 	});
+export interface ColorInputOptions extends z.infer<typeof _ColorInputOptionsSchema> {}
+export const ColorInputOptionsSchema: z.ZodType<ColorInputOptions> = _ColorInputOptionsSchema;
 
-export const ColorInputSchema = z
+const _ColorInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.literal('color').meta(typeMeta),
@@ -220,6 +230,8 @@ export const ColorInputSchema = z
 		title: 'Color Input',
 		description: 'Provides an editing interface for color values.',
 	});
+export interface ColorInput extends z.infer<typeof _ColorInputSchema> {}
+export const ColorInputSchema: z.ZodType<ColorInput> = _ColorInputSchema;
 
 const MinSchema = z.number().meta({
 	id: 'type._inputs.*.options.min',
@@ -233,7 +245,7 @@ const MaxSchema = z.number().meta({
 		'This key defines the maximum numerical value CloudCannon will allow in an Input. When configured, CloudCannon will prevent you from entering a greater numerical value. If the Input already contains a greater numerical value, CloudCannon will require you to enter a valid value to save your changes, or discard your unsaved changes.',
 });
 
-export const NumberInputOptionsSchema = z
+const _NumberInputOptionsSchema = z
 	.object({
 		...RequiredValidationSchema.shape,
 		empty_type: EmptyTypeNumberSchema.nullable().optional(),
@@ -258,8 +270,10 @@ export const NumberInputOptionsSchema = z
 	.meta({
 		description: 'Options that are specific to Number Inputs.',
 	});
+export interface NumberInputOptions extends z.infer<typeof _NumberInputOptionsSchema> {}
+export const NumberInputOptionsSchema: z.ZodType<NumberInputOptions> = _NumberInputOptionsSchema;
 
-export const NumberInputSchema = z
+const _NumberInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.literal('number').meta(typeMeta),
@@ -270,18 +284,22 @@ export const NumberInputSchema = z
 		title: 'Number Input',
 		description: 'Provides an editing interface for numeric values.',
 	});
+export interface NumberInput extends z.infer<typeof _NumberInputSchema> {}
+export const NumberInputSchema: z.ZodType<NumberInput> = _NumberInputSchema;
 
-export const RangeInputOptionsSchema = z
+const _RangeInputOptionsSchema = z
 	.object({
-		...NumberInputOptionsSchema.shape,
+		..._NumberInputOptionsSchema.shape,
 		min: MinSchema,
 		max: MaxSchema,
 	})
 	.meta({
 		description: 'Options that are specific to Range Inputs.',
 	});
+export interface RangeInputOptions extends z.infer<typeof _RangeInputOptionsSchema> {}
+export const RangeInputOptionsSchema: z.ZodType<RangeInputOptions> = _RangeInputOptionsSchema;
 
-export const RangeInputSchema = z
+const _RangeInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.literal('range').meta(typeMeta),
@@ -292,8 +310,10 @@ export const RangeInputSchema = z
 		title: 'Range Input',
 		description: 'Provides a slider interface for selecting a numeric value.',
 	});
+export interface RangeInput extends z.infer<typeof _RangeInputSchema> {}
+export const RangeInputSchema: z.ZodType<RangeInput> = _RangeInputSchema;
 
-export const RichTextInputOptionsSchema = z
+const _RichTextInputOptionsSchema = z
 	.object({
 		...ImageOptionsSchema.shape,
 		...BlockEditableSchema.shape,
@@ -311,8 +331,11 @@ export const RichTextInputOptionsSchema = z
 	.meta({
 		description: 'Options that are specific to Rich Text Inputs.',
 	});
+export interface RichTextInputOptions extends z.infer<typeof _RichTextInputOptionsSchema> {}
+export const RichTextInputOptionsSchema: z.ZodType<RichTextInputOptions> =
+	_RichTextInputOptionsSchema;
 
-export const RichTextInputSchema = z
+const _RichTextInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.enum(['html', 'markdown']).meta(typeMeta),
@@ -323,8 +346,10 @@ export const RichTextInputSchema = z
 		title: 'Rich Text Input',
 		description: 'Provides an editing interface for HTML markup content.',
 	});
+export interface RichTextInput extends z.infer<typeof _RichTextInputSchema> {}
+export const RichTextInputSchema: z.ZodType<RichTextInput> = _RichTextInputSchema;
 
-export const DateInputOptionsSchema = z
+const _DateInputOptionsSchema = z
 	.object({
 		...RequiredValidationSchema.shape,
 		empty_type: EmptyTypeTextSchema.nullable().optional(),
@@ -366,8 +391,10 @@ export const DateInputOptionsSchema = z
 	.meta({
 		description: 'Options that are specific to Date Inputs.',
 	});
+export interface DateInputOptions extends z.infer<typeof _DateInputOptionsSchema> {}
+export const DateInputOptionsSchema: z.ZodType<DateInputOptions> = _DateInputOptionsSchema;
 
-export const DateInputSchema = z
+const _DateInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.enum(['date', 'datetime']).meta(typeMeta),
@@ -378,8 +405,10 @@ export const DateInputSchema = z
 		title: 'Date Input',
 		description: 'Provides an editing interface for date and/or time values.',
 	});
+export interface DateInput extends z.infer<typeof _DateInputSchema> {}
+export const DateInputSchema: z.ZodType<DateInput> = _DateInputSchema;
 
-export const TimeInputOptionsSchema = z
+const _TimeInputOptionsSchema = z
 	.object({
 		...RequiredValidationSchema.shape,
 		empty_type: EmptyTypeTextSchema.nullable().optional(),
@@ -387,8 +416,10 @@ export const TimeInputOptionsSchema = z
 	.meta({
 		description: 'Options that are specific to Time Inputs.',
 	});
+export const TimeInputOptionsSchema: z.ZodType<z.infer<typeof _TimeInputOptionsSchema>> =
+	_TimeInputOptionsSchema;
 
-export const TimeInputSchema = z
+const _TimeInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.literal('time').meta(typeMeta),
@@ -399,8 +430,10 @@ export const TimeInputSchema = z
 		title: 'Time Input',
 		description: 'Provides an editing interface for time values only.',
 	});
+export interface TimeInput extends z.infer<typeof _TimeInputSchema> {}
+export const TimeInputSchema: z.ZodType<TimeInput> = _TimeInputSchema;
 
-export const FileInputSchema = z
+const _FileInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.enum(['file', 'document', 'image']).meta(typeMeta),
@@ -412,8 +445,10 @@ export const FileInputSchema = z
 		description:
 			'Provides an editing interface for uploading files to your repository or DAM and browsing existing assets.',
 	});
+export interface FileInput extends z.infer<typeof _FileInputSchema> {}
+export const FileInputSchema: z.ZodType<FileInput> = _FileInputSchema;
 
-export const MultiselectInputOptionsSchema = z
+const _MultiselectInputOptionsSchema = z
 	.object({
 		...SharedSelectInputOptionsSchema.shape,
 		...ArrayValidationSchema.shape,
@@ -422,8 +457,11 @@ export const MultiselectInputOptionsSchema = z
 	.meta({
 		description: 'Options that are specific to Multiselect Inputs.',
 	});
+export interface MultiselectInputOptions extends z.infer<typeof _MultiselectInputOptionsSchema> {}
+export const MultiselectInputOptionsSchema: z.ZodType<MultiselectInputOptions> =
+	_MultiselectInputOptionsSchema;
 
-export const MultiselectInputSchema = z
+const _MultiselectInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.literal('multiselect').meta(typeMeta),
@@ -435,22 +473,29 @@ export const MultiselectInputSchema = z
 		description:
 			'Provides an editing interface for data with multiple predefined options. Multiselect inputs allow several values.',
 	});
+export interface MultiselectInput extends z.infer<typeof _MultiselectInputSchema> {}
+export const MultiselectInputSchema: z.ZodType<MultiselectInput> = _MultiselectInputSchema;
 
-export const SharedChoiceInputOptionsSchema = SharedSelectInputOptionsSchema.omit({
+const _SharedChoiceInputOptionsSchema = SharedSelectInputOptionsSchema.omit({
 	allow_create: true,
 });
+export interface SharedChoiceInputOptions extends z.infer<typeof _SharedChoiceInputOptionsSchema> {}
+export const SharedChoiceInputOptionsSchema: z.ZodType<SharedChoiceInputOptions> =
+	_SharedChoiceInputOptionsSchema;
 
-export const ChoiceInputOptionsSchema = z
+const _ChoiceInputOptionsSchema = z
 	.object({
-		...SharedChoiceInputOptionsSchema.shape,
+		..._SharedChoiceInputOptionsSchema.shape,
 		...TextValidationSchema.shape,
 		empty_type: EmptyTypeTextSchema.nullable().optional(),
 	})
 	.meta({
 		description: 'Options that are specific to Choice Inputs.',
 	});
+export interface ChoiceInputOptions extends z.infer<typeof _ChoiceInputOptionsSchema> {}
+export const ChoiceInputOptionsSchema: z.ZodType<ChoiceInputOptions> = _ChoiceInputOptionsSchema;
 
-export const ChoiceInputSchema = z
+const _ChoiceInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.literal('choice').meta(typeMeta),
@@ -462,18 +507,23 @@ export const ChoiceInputSchema = z
 		description:
 			'Provides an editing interface for data with multiple predefined options. Choice inputs only allow one value.',
 	});
+export interface ChoiceInput extends z.infer<typeof _ChoiceInputSchema> {}
+export const ChoiceInputSchema: z.ZodType<ChoiceInput> = _ChoiceInputSchema;
 
-export const MultichoiceInputOptionsSchema = z
+const _MultichoiceInputOptionsSchema = z
 	.object({
-		...SharedChoiceInputOptionsSchema.shape,
+		..._SharedChoiceInputOptionsSchema.shape,
 		...ArrayValidationSchema.shape,
 		empty_type: EmptyTypeArraySchema.nullable().optional(),
 	})
 	.meta({
 		description: 'Options that are specific to Multichoice Inputs.',
 	});
+export interface MultichoiceInputOptions extends z.infer<typeof _MultichoiceInputOptionsSchema> {}
+export const MultichoiceInputOptionsSchema: z.ZodType<MultichoiceInputOptions> =
+	_MultichoiceInputOptionsSchema;
 
-export const MultichoiceInputSchema = z
+const _MultichoiceInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.literal('multichoice').meta(typeMeta),
@@ -485,8 +535,10 @@ export const MultichoiceInputSchema = z
 		description:
 			'Provides an editing interface for data with multiple predefined options. Multichoice inputs allow several values.',
 	});
+export interface MultichoiceInput extends z.infer<typeof _MultichoiceInputSchema> {}
+export const MultichoiceInputSchema: z.ZodType<MultichoiceInput> = _MultichoiceInputSchema;
 
-export const ObjectInputGroupSchema = z.object({
+const _ObjectInputGroupSchema = z.object({
 	heading: z.string().nullable().optional().meta({
 		description: 'The main text for the group shown when collapsed or expanded.',
 	}),
@@ -505,8 +557,10 @@ export const ObjectInputGroupSchema = z.object({
 			'Provides a custom link for documentation for editors shown above the collection file list.',
 	}),
 });
+export interface ObjectInputGroup extends z.infer<typeof _ObjectInputGroupSchema> {}
+export const ObjectInputGroupSchema: z.ZodType<ObjectInputGroup> = _ObjectInputGroupSchema;
 
-export const ObjectInputOptionsSchema = z
+const _ObjectInputOptionsSchema = z
 	.object({
 		...RequiredValidationSchema.shape,
 		empty_type: EmptyTypeObjectSchema.nullable().optional(),
@@ -568,8 +622,10 @@ export const ObjectInputOptionsSchema = z
 	.meta({
 		description: 'Options that are specific to Object Inputs.',
 	});
+export interface ObjectInputOptions extends z.infer<typeof _ObjectInputOptionsSchema> {}
+export const ObjectInputOptionsSchema: z.ZodType<ObjectInputOptions> = _ObjectInputOptionsSchema;
 
-export const ObjectInputSchema = z
+const _ObjectInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.literal('object').meta(typeMeta),
@@ -580,8 +636,10 @@ export const ObjectInputSchema = z
 		title: 'Object Input',
 		description: 'Provides a user interface for a group of inputs.',
 	});
+export interface ObjectInput extends z.infer<typeof _ObjectInputSchema> {}
+export const ObjectInputSchema: z.ZodType<ObjectInput> = _ObjectInputSchema;
 
-export const ArrayInputOptionsSchema = z
+const _ArrayInputOptionsSchema = z
 	.object({
 		...RequiredValidationSchema.shape,
 		...ArrayValidationSchema.shape,
@@ -597,8 +655,10 @@ export const ArrayInputOptionsSchema = z
 	.meta({
 		description: 'Options that are specific to Array Inputs.',
 	});
+export interface ArrayInputOptions extends z.infer<typeof _ArrayInputOptionsSchema> {}
+export const ArrayInputOptionsSchema: z.ZodType<ArrayInputOptions> = _ArrayInputOptionsSchema;
 
-export const ArrayInputSchema = z
+const _ArrayInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.literal('array').meta(typeMeta),
@@ -609,8 +669,10 @@ export const ArrayInputSchema = z
 		title: 'Array Input',
 		description: 'Provides a user interface for lists of inputs or input groups.',
 	});
+export interface ArrayInput extends z.infer<typeof _ArrayInputSchema> {}
+export const ArrayInputSchema: z.ZodType<ArrayInput> = _ArrayInputSchema;
 
-export const AutoInputSchema = z
+const _AutoInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		type: z.literal('auto').meta(typeMeta),
@@ -624,8 +686,10 @@ export const AutoInputSchema = z
 		description: 'Provides a default user interface based on the data contained.',
 		excludeFromDocumentation: true,
 	});
+export interface AutoInput extends z.infer<typeof _AutoInputSchema> {}
+export const AutoInputSchema: z.ZodType<AutoInput> = _AutoInputSchema;
 
-export const UnknownInputSchema = z
+const _UnknownInputSchema = z
 	.object({
 		...BaseInputSchema.shape,
 		options: z.unknown().optional().meta({
@@ -638,8 +702,10 @@ export const UnknownInputSchema = z
 		description: 'Provides a default user interface based on the data contained.',
 		excludeFromDocumentation: true,
 	});
+export interface UnknownInput extends z.infer<typeof _UnknownInputSchema> {}
+export const UnknownInputSchema: z.ZodType<UnknownInput> = _UnknownInputSchema;
 
-export const KnownInputSchema = z
+const _KnownInputSchema = z
 	.union([
 		TextInputSchema,
 		DisabledInputSchema,
@@ -667,60 +733,35 @@ export const KnownInputSchema = z
 		description:
 			'A union of all input types that are known to the CloudCannon configuration schema.',
 	});
+export type KnownInput = z.infer<typeof _KnownInputSchema>;
+export const KnownInputSchema: z.ZodType<KnownInput> = _KnownInputSchema;
 
-export const InputSchema = z.union([KnownInputSchema, UnknownInputSchema]).meta({
+const _InputSchema = z.union([KnownInputSchema, UnknownInputSchema]).meta({
 	id: 'Input',
 	title: 'Input',
 });
+export type Input = z.infer<typeof _InputSchema>;
+export const InputSchema: z.ZodType<Input> = _InputSchema;
 
-export const InputsSchema = z.record(z.string(), InputSchema).meta({
+const _InputsSchema = z.record(z.string(), InputSchema).meta({
 	id: 'type._inputs',
 	title: 'Inputs',
 	description:
 		'Controls the behavior and appearance of your inputs in all data editing interfaces.',
 });
+export interface Inputs extends z.infer<typeof _InputsSchema> {}
+export const InputsSchema: z.ZodType<Inputs> = _InputsSchema;
 
-export const InputsFromGlobSchema = z.array(z.string()).meta({
+const _InputsFromGlobSchema = z.array(z.string()).meta({
 	id: 'type._inputs_from_glob',
 });
+export const InputsFromGlobSchema: z.ZodType<z.infer<typeof _InputsFromGlobSchema>> =
+	_InputsFromGlobSchema;
 
-export type TextareaInputOptions = z.infer<typeof TextareaInputOptionsSchema>;
-export type TextareaInput = z.infer<typeof TextareaInputSchema>;
 export type Syntax = z.infer<typeof SyntaxSchema>;
-export type CodeInputOptions = z.infer<typeof CodeInputOptionsSchema>;
-export type CodeInput = z.infer<typeof CodeInputSchema>;
-export type ColorInputOptions = z.infer<typeof ColorInputOptionsSchema>;
-export type ColorInput = z.infer<typeof ColorInputSchema>;
-export type NumberInputOptions = z.infer<typeof NumberInputOptionsSchema>;
-export type NumberInput = z.infer<typeof NumberInputSchema>;
-export type RangeInputOptions = z.infer<typeof RangeInputOptionsSchema>;
-export type RangeInput = z.infer<typeof RangeInputSchema>;
-export type RichTextInputOptions = z.infer<typeof RichTextInputOptionsSchema>;
-export type RichTextInput = z.infer<typeof RichTextInputSchema>;
-export type DateInputOptions = z.infer<typeof DateInputOptionsSchema>;
-export type DateInput = z.infer<typeof DateInputSchema>;
-export type TimeInput = z.infer<typeof TimeInputSchema>;
 export type MimeType = z.infer<typeof MimeTypeSchema>;
-export type FileInput = z.infer<typeof FileInputSchema>;
 export type SharedSelectInputOptions = z.infer<typeof SharedSelectInputOptionsSchema>;
-export type MultiselectInputOptions = z.infer<typeof MultiselectInputOptionsSchema>;
-export type MultiselectInput = z.infer<typeof MultiselectInputSchema>;
-export type SharedChoiceInputOptions = z.infer<typeof SharedChoiceInputOptionsSchema>;
-export type ChoiceInputOptions = z.infer<typeof ChoiceInputOptionsSchema>;
-export type ChoiceInput = z.infer<typeof ChoiceInputSchema>;
-export type MultichoiceInputOptions = z.infer<typeof MultichoiceInputOptionsSchema>;
-export type MultichoiceInput = z.infer<typeof MultichoiceInputSchema>;
-export type ObjectInputGroup = z.infer<typeof ObjectInputGroupSchema>;
-export type ObjectInputOptions = z.infer<typeof ObjectInputOptionsSchema>;
-export type ObjectInput = z.infer<typeof ObjectInputSchema>;
-export type ArrayInputOptions = z.infer<typeof ArrayInputOptionsSchema>;
-export type ArrayInput = z.infer<typeof ArrayInputSchema>;
-export type AutoInput = z.infer<typeof AutoInputSchema>;
-export type UnknownInput = z.infer<typeof UnknownInputSchema>;
-export type KnownInput = z.infer<typeof KnownInputSchema>;
-export type Input = z.infer<typeof InputSchema>;
-export type Inputs = z.infer<typeof InputsSchema>;
-export type InputType = z.infer<typeof InputTypeSchema>;
+export type InputType = (typeof INPUT_TYPES)[number];
 export {
 	type BaseInput,
 	BaseInputSchema,
@@ -745,4 +786,4 @@ export {
 	type UrlInputOptions,
 	UrlInputOptionsSchema,
 	UrlInputSchema,
-} from './input-base.ts';
+} from './input-base.js';

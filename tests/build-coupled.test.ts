@@ -5,7 +5,7 @@ import {
 	HugoConfigurationSchema,
 	JekyllConfigurationSchema,
 	ReaderConfigurationSchema,
-} from '../src/build-coupled.ts';
+} from '../src/build-coupled.js';
 
 test('should accept a valid Jekyll configuration', () => {
 	const config = {

@@ -1,4 +1,4 @@
-import type { Configuration } from '../src';
+import type { Configuration } from '../src/index.js';
 
 const config: Configuration = {
 	collections_config: {

@@ -20,7 +20,7 @@ export const RouteStatusSchema = z
 			'The HTTP status code for this redirect rule. When using 200, 404, and 410 status codes, `to` must refer to a path on the same Site.',
 	});
 
-export const RouteSchema = z
+const _RouteSchema = z
 	.object({
 		from: z.string().meta({
 			description:
@@ -43,8 +43,10 @@ export const RouteSchema = z
 	.meta({
 		description: 'A single route rule for redirects or rewrites.',
 	});
+export interface Route extends z.infer<typeof _RouteSchema> {}
+export const RouteSchema: z.ZodType<Route> = _RouteSchema;
 
-export const HeaderEntrySchema = z
+const _HeaderEntrySchema = z
 	.object({
 		name: z.string().meta({
 			description: 'The name of the HTTP header to set.',
@@ -56,8 +58,9 @@ export const HeaderEntrySchema = z
 	.meta({
 		description: 'A single HTTP header name-value pair.',
 	});
+export const HeaderEntrySchema: z.ZodType<z.infer<typeof _HeaderEntrySchema>> = _HeaderEntrySchema;
 
-export const HeaderRuleSchema = z
+const _HeaderRuleSchema = z
 	.object({
 		match: z.string().meta({
 			description:
@@ -70,8 +73,10 @@ export const HeaderRuleSchema = z
 	.meta({
 		description: 'A rule for applying custom HTTP headers to matching requests.',
 	});
+export interface HeaderRule extends z.infer<typeof _HeaderRuleSchema> {}
+export const HeaderRuleSchema: z.ZodType<HeaderRule> = _HeaderRuleSchema;
 
-export const RoutingSchema = z
+const _RoutingSchema = z
 	.object({
 		routes: z.array(RouteSchema).nullable().optional().meta({
 			description:
@@ -86,7 +91,5 @@ export const RoutingSchema = z
 		description:
 			'Configuration for the `.cloudcannon/routing.json` file. Defines redirects, rewrites, and custom HTTP headers for your site.',
 	});
-
-export type Routing = z.infer<typeof RoutingSchema>;
-export type Route = z.infer<typeof RouteSchema>;
-export type HeaderRule = z.infer<typeof HeaderRuleSchema>;
+export interface Routing extends z.infer<typeof _RoutingSchema> {}
+export const RoutingSchema: z.ZodType<Routing> = _RoutingSchema;

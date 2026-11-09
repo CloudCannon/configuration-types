@@ -1,6 +1,6 @@
 import assert from 'node:assert';
 import { test } from 'node:test';
-import { SsgKeySchema } from '../src/index.ts';
+import { SsgKeySchema } from '../src/index.js';
 
 test('should accept valid SSG keys', () => {
 	const validKeys = [

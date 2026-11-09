@@ -1,20 +1,24 @@
 import * as z from 'zod';
-import { CascadeSchema } from './cascade.ts';
-import { CollectionGroupSchema, CollectionsConfigSchema } from './collections.ts';
-import { InputsSchema } from './inputs.ts';
-import { MarkdownSettingsSchema } from './markdown.ts';
-import { PathsSchema } from './paths.ts';
+import { _CascadeSchema } from './cascade.js';
+import { CollectionGroupSchema, CollectionsConfigSchema } from './collections.js';
+import { InputsSchema } from './inputs.js';
+import { MarkdownSettingsSchema } from './markdown.js';
+import { PathsSchema } from './paths.js';
 import {
 	SnippetConfigSchema,
 	SnippetDefinitionsSchema,
 	SnippetsImportsSchema,
-} from './snippets.ts';
-import { SourceEditorSchema } from './source-editor.ts';
-import { TimezoneSchema } from './timezone.ts';
+} from './snippets.js';
+import { SourceEditorSchema } from './source-editor.js';
+import { TimezoneSchema } from './timezone.js';
 
-export const DataConfigEntrySchema = z.object({ path: z.string() }).meta({ id: 'DataConfigEntry' });
+export const _DataConfigEntrySchema = z
+	.object({ path: z.string() })
+	.meta({ id: 'DataConfigEntry' });
+export interface DataConfigEntry extends z.infer<typeof _DataConfigEntrySchema> {}
+export const DataConfigEntrySchema: z.ZodType<DataConfigEntry> = _DataConfigEntrySchema;
 
-export const FileConfigEntrySchema = z
+const _FileConfigEntrySchema = z
 	.object({
 		glob: z
 			.union([
@@ -24,15 +28,19 @@ export const FileConfigEntrySchema = z
 			.meta({
 				description: 'The glob pattern(s) targeting a path to one or more files.',
 			}),
-		...CascadeSchema.shape,
+		..._CascadeSchema.shape,
 	})
 	.meta({ id: 'FileConfigEntry' });
+export interface FileConfigEntry extends z.infer<typeof _FileConfigEntrySchema> {}
+export const FileConfigEntrySchema: z.ZodType<FileConfigEntry> = _FileConfigEntrySchema;
 
-export const EditorSchema = z.object({
+const _EditorSchema = z.object({
 	default_path: z.string().default('/').meta({ id: 'editor.default_path' }),
 });
+export interface Editor extends z.infer<typeof _EditorSchema> {}
+export const EditorSchema: z.ZodType<Editor> = _EditorSchema;
 
-export const CommitTemplateSchema = z
+const _CommitTemplateSchema = z
 	.object({
 		label: z.string().nullable().optional().meta({
 			description:
@@ -58,8 +66,10 @@ export const CommitTemplateSchema = z
 		title: 'Commit Template',
 		description: 'A template for commit messages when saving changes.',
 	});
+export interface CommitTemplate extends z.infer<typeof _CommitTemplateSchema> {}
+export const CommitTemplateSchema: z.ZodType<CommitTemplate> = _CommitTemplateSchema;
 
-export const PullRequestTemplateSchema = z.object({
+const _PullRequestTemplateSchema = z.object({
 	label: z.string().nullable().optional().meta({
 		description:
 			'Used to identify a pull request template when multiple pull request templates are available.',
@@ -76,13 +86,15 @@ export const PullRequestTemplateSchema = z.object({
 	}),
 	_inputs: InputsSchema.nullable().optional(),
 });
+export const PullRequestTemplateSchema: z.ZodType<z.infer<typeof _PullRequestTemplateSchema>> =
+	_PullRequestTemplateSchema;
 
-export const ConfigurationSchema = z
+export const _ConfigurationSchema = z
 	.object({
 		paths: PathsSchema.nullable().optional(),
 		version: z.literal('latest').optional().meta({ id: 'version', excludeFromDocumentation: true }),
 		source: z.string().nullable().optional().meta({ id: 'source' }),
-		collections_config: CollectionsConfigSchema,
+		collections_config: CollectionsConfigSchema.optional(),
 		collections_config_from_glob: z.array(z.string()).nullable().optional(),
 		collection_groups: z
 			.array(CollectionGroupSchema)
@@ -113,7 +125,7 @@ export const ConfigurationSchema = z
 			.meta({ id: 'upstream_commit_template' }),
 		markdown: MarkdownSettingsSchema.nullable().optional().meta({ id: 'markdown' }),
 		timezone: TimezoneSchema.nullable().default('Etc/UTC').optional(),
-		...CascadeSchema.shape,
+		..._CascadeSchema.shape,
 		_snippets: z.record(z.string(), SnippetConfigSchema).nullable().optional().meta({
 			id: 'type._snippets',
 			title: 'Snippets',
@@ -128,16 +140,12 @@ export const ConfigurationSchema = z
 			description: 'Extended option used when creating more complex custom snippets.',
 		}),
 		_snippets_templates_from_glob: z.array(z.string()).nullable().optional(),
-		_snippets_definitions: SnippetDefinitionsSchema,
+		_snippets_definitions: SnippetDefinitionsSchema.optional(),
 		_snippets_definitions_from_glob: z.array(z.string()).nullable().optional(),
 	})
 	.meta({
 		title: 'Configuration',
 		description: 'The main CloudCannon configuration.',
 	});
-
-export type DataConfigEntry = z.infer<typeof DataConfigEntrySchema>;
-export type FileConfigEntry = z.infer<typeof FileConfigEntrySchema>;
-export type Editor = z.infer<typeof EditorSchema>;
-export type CommitTemplate = z.infer<typeof CommitTemplateSchema>;
-export type Configuration = z.infer<typeof ConfigurationSchema>;
+export interface Configuration extends z.infer<typeof _ConfigurationSchema> {}
+export const ConfigurationSchema: z.ZodType<Configuration> = _ConfigurationSchema;

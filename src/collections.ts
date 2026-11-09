@@ -1,10 +1,10 @@
 import * as z from 'zod';
-import { CascadeSchema, EditorKeySchema, ReducedCascadeSchema } from './cascade.ts';
-import { DocumentationSchema } from './documentation.ts';
-import { IconSchema } from './icon.ts';
-import { PreviewSchema } from './preview.ts';
+import { _CascadeSchema, _ReducedCascadeSchema, EditorKeySchema } from './cascade.js';
+import { DocumentationSchema } from './documentation.js';
+import { IconSchema } from './icon.js';
+import { PreviewSchema } from './preview.js';
 
-export const HrefAddOptionSchema = z
+const _HrefAddOptionSchema = z
 	.object({
 		name: z.string().nullable().optional().meta({
 			description: 'The text displayed for the menu item.',
@@ -21,8 +21,10 @@ export const HrefAddOptionSchema = z
 		title: 'HREF Add Option',
 		description: 'An option for the add menu that opens a link.',
 	});
+export interface HrefAddOption extends z.infer<typeof _HrefAddOptionSchema> {}
+export const HrefAddOptionSchema: z.ZodType<HrefAddOption> = _HrefAddOptionSchema;
 
-export const AddOptionSchema = z
+const _AddOptionSchema = z
 	.object({
 		name: z.string().nullable().optional().meta({
 			description:
@@ -57,8 +59,10 @@ export const AddOptionSchema = z
 		title: 'Add Option',
 		description: 'An option for the add menu.',
 	});
+export interface AddOption extends z.infer<typeof _AddOptionSchema> {}
+export const AddOptionSchema: z.ZodType<AddOption> = _AddOptionSchema;
 
-export const SortOptionSchema = z
+const _SortOptionSchema = z
 	.object({
 		label: z.string().nullable().optional().meta({
 			description:
@@ -76,8 +80,10 @@ export const SortOptionSchema = z
 		title: 'SortOption',
 		description: 'A sort option for a Collection.',
 	});
+export interface SortOption extends z.infer<typeof _SortOptionSchema> {}
+export const SortOptionSchema: z.ZodType<SortOption> = _SortOptionSchema;
 
-export const CreateSchema = z
+const _CreateSchema = z
 	.object({
 		path: z.string().nullable().optional().meta({
 			description:
@@ -91,15 +97,17 @@ export const CreateSchema = z
 			description:
 				"Defines a target collection when publishing. When a file is published, the target collection's create definition is used instead.",
 		}),
-		...ReducedCascadeSchema.shape,
+		..._ReducedCascadeSchema.shape,
 	})
 	.meta({
 		id: 'type.create',
 		title: 'Create',
 		description: 'Controls where new files are saved.',
 	});
+export interface Create extends z.infer<typeof _CreateSchema> {}
+export const CreateSchema: z.ZodType<Create> = _CreateSchema;
 
-export const SchemaSchema = z
+const _SchemaSchema = z
 	.object({
 		path: z.string().meta({
 			description: 'The path to the schema file. Relative to the root folder of the site.',
@@ -133,15 +141,17 @@ export const SchemaSchema = z
 			description: 'If checked, extra inputs are removed when editing.',
 		}),
 		preview: PreviewSchema.nullable().optional(),
-		...CascadeSchema.shape,
+		..._CascadeSchema.shape,
 	})
 	.meta({
 		title: 'Schema',
 		description:
 			'Definitions for your schemas, which are the structured data formats for your content files.',
 	});
+export interface Schema extends z.infer<typeof _SchemaSchema> {}
+export const SchemaSchema: z.ZodType<Schema> = _SchemaSchema;
 
-export const CollectionConfigSchema = z
+export const _CollectionConfigSchema = z
 	.object({
 		path: z.string().meta({
 			id: 'path',
@@ -241,11 +251,13 @@ export const CollectionConfigSchema = z
 				'This key defines the name for the structured data key that references the Schema a file uses.',
 		}),
 		preview: PreviewSchema.nullable().optional(),
-		...CascadeSchema.shape,
+		..._CascadeSchema.shape,
 	})
 	.meta({ id: 'collections_config.*', title: 'Collection Config' });
+export interface CollectionConfig extends z.infer<typeof _CollectionConfigSchema> {}
+export const CollectionConfigSchema: z.ZodType<CollectionConfig> = _CollectionConfigSchema;
 
-export const CollectionGroupSchema = z
+const _CollectionGroupSchema = z
 	.object({
 		heading: z.string().nullable().meta({
 			description: 'Short, descriptive label for this group of Collections.',
@@ -256,18 +268,14 @@ export const CollectionGroupSchema = z
 		}),
 	})
 	.meta({ id: 'CollectionGroup', title: 'Collection Group' });
+export interface CollectionGroup extends z.infer<typeof _CollectionGroupSchema> {}
+export const CollectionGroupSchema: z.ZodType<CollectionGroup> = _CollectionGroupSchema;
 
-export const CollectionsConfigSchema = z
+const _CollectionsConfigSchema = z
 	.record(z.string(), CollectionConfigSchema)
 	.nullable()
 	.optional()
 	.meta({ id: 'collections_config' });
-
-export type HrefAddOption = z.infer<typeof HrefAddOptionSchema>;
-export type AddOption = z.infer<typeof AddOptionSchema>;
-export type SortOption = z.infer<typeof SortOptionSchema>;
-export type Create = z.infer<typeof CreateSchema>;
-export type Schema = z.infer<typeof SchemaSchema>;
-export type CollectionConfig = z.infer<typeof CollectionConfigSchema>;
-export type CollectionsConfig = NonNullable<z.infer<typeof CollectionsConfigSchema>>;
-export type CollectionGroup = z.infer<typeof CollectionGroupSchema>;
+export interface CollectionsConfig extends NonNullable<z.infer<typeof _CollectionsConfigSchema>> {}
+export const CollectionsConfigSchema: z.ZodType<CollectionsConfig | null | undefined> =
+	_CollectionsConfigSchema;

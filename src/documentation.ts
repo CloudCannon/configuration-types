@@ -1,7 +1,7 @@
 import * as z from 'zod';
-import { IconSchema } from './icon.ts';
+import { IconSchema } from './icon.js';
 
-export const DocumentationSchema = z
+const _DocumentationSchema = z
 	.object({
 		url: z.string().min(1).meta({
 			description: 'The "href" value of the link.',
@@ -19,4 +19,5 @@ export const DocumentationSchema = z
 		description: 'Configuration for documentation links displayed in the CloudCannon interface.',
 	});
 
-export type Documentation = z.infer<typeof DocumentationSchema>;
+export interface Documentation extends z.infer<typeof _DocumentationSchema> {}
+export const DocumentationSchema: z.ZodType<Documentation> = _DocumentationSchema;

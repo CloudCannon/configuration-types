@@ -40,7 +40,7 @@ const PreviewEntrySchema = z
 		title: 'Preview Entry',
 	});
 
-export const PreviewEntriesSchema = z
+const _PreviewEntriesSchema = z
 	.union([
 		z.array(PreviewEntrySchema).meta({
 			id: 'type.preview-entry.(array)',
@@ -49,6 +49,8 @@ export const PreviewEntriesSchema = z
 		PreviewEntrySchema,
 	])
 	.meta({ id: 'PreviewEntries' });
+export type PreviewEntries = z.infer<typeof _PreviewEntriesSchema>;
+export const PreviewEntriesSchema: z.ZodType<PreviewEntries> = _PreviewEntriesSchema;
 
 const PreviewTextSchema = PreviewEntriesSchema.nullable()
 	.optional()
@@ -74,7 +76,7 @@ const TagsPreviewEntriesSchema = z
 	.optional()
 	.meta({ id: 'type.preview.tags' });
 
-export const PreviewGallerySchema = z
+const _PreviewGallerySchema = z
 	.object({
 		text: PreviewTextSchema,
 		image: PreviewImageSchema,
@@ -94,6 +96,9 @@ export const PreviewGallerySchema = z
 	.nullable()
 	.optional()
 	.meta({ id: 'type.preview.gallery' });
+export interface PreviewGallery extends NonNullable<z.infer<typeof _PreviewGallerySchema>> {}
+export const PreviewGallerySchema: z.ZodType<PreviewGallery | null | undefined> =
+	_PreviewGallerySchema;
 
 const MetadataPreviewEntrySchema = z
 	.object({
@@ -111,7 +116,7 @@ const PreviewMetadataSchema = z
 	.optional()
 	.meta({ id: 'type.preview.metadata' });
 
-export const PreviewSchema = z
+export const _PreviewSchema = z
 	.object({
 		text: PreviewTextSchema,
 		subtext: PreviewSubtextSchema,
@@ -121,16 +126,17 @@ export const PreviewSchema = z
 		icon_background_color: PreviewIconBackgroundColorSchema,
 		tags: TagsPreviewEntriesSchema,
 		metadata: PreviewMetadataSchema,
-		gallery: PreviewGallerySchema,
+		gallery: PreviewGallerySchema.optional(),
 	})
 	.meta({ id: 'type.preview', title: 'Preview' });
+export interface Preview extends z.infer<typeof _PreviewSchema> {}
+export const PreviewSchema: z.ZodType<Preview> = _PreviewSchema;
 
-export const PickerPreviewSchema = PreviewSchema.meta({
+const _PickerPreviewSchema = _PreviewSchema.meta({
 	id: 'type.picker_preview',
 	title: 'Picker Preview',
 });
+export const PickerPreviewSchema: z.ZodType<z.infer<typeof _PickerPreviewSchema>> =
+	_PickerPreviewSchema;
 
 export type PreviewEntry = z.infer<typeof PreviewEntrySchema>;
-export type PreviewEntries = z.infer<typeof PreviewEntriesSchema>;
-export type PreviewGallery = NonNullable<z.infer<typeof PreviewGallerySchema>>;
-export type Preview = z.infer<typeof PreviewSchema>;

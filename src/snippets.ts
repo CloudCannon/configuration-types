@@ -1,8 +1,8 @@
 import * as z from 'zod';
-import { ReducedCascadeSchema } from './cascade.ts';
-import { PickerPreviewSchema, PreviewSchema } from './preview.ts';
+import { _ReducedCascadeSchema } from './cascade.js';
+import { _PreviewSchema, PickerPreviewSchema } from './preview.js';
 
-export const ParserModelSchema = z
+const _ParserModelSchema = z
 	.object({
 		source_key: z.string().nullable().optional(),
 		editor_key: z.string().nullable().optional(),
@@ -19,16 +19,18 @@ export const ParserModelSchema = z
 		id: 'type.snippet-model',
 		title: 'Snippet Model',
 	});
+export const ParserModelSchema: z.ZodType<z.infer<typeof _ParserModelSchema>> = _ParserModelSchema;
 
-export const PairedTokenSchema = z
+const _PairedTokenSchema = z
 	.object({
 		start: z.string().nullable().default('').optional(),
 		end: z.string().nullable().default('').optional(),
 	})
 	.nullable()
 	.optional();
+export const PairedTokenSchema: z.ZodType<z.infer<typeof _PairedTokenSchema>> = _PairedTokenSchema;
 
-export const SnippetStyleSchema = z
+const _SnippetStyleSchema = z
 	.object({
 		output: z.enum(['legacy', 'inline', 'block']).nullable().optional(),
 		between: z.string().nullable().optional(),
@@ -54,19 +56,21 @@ export const SnippetStyleSchema = z
 		id: 'type.snippet-style',
 		title: 'Snippet Style',
 	});
+export const SnippetStyleSchema: z.ZodType<z.infer<typeof _SnippetStyleSchema>> =
+	_SnippetStyleSchema;
 
-export const ParserFormatSchema = z
+const _ParserFormatSchema = z
 	.object({
-		root_boundary: PairedTokenSchema,
-		root_value_boundary: PairedTokenSchema,
+		root_boundary: PairedTokenSchema.optional(),
+		root_value_boundary: PairedTokenSchema.optional(),
 		root_value_boundary_optional: z.record(z.string(), z.boolean()).nullable().optional(),
 		root_value_delimiter: z.string().nullable().optional().nullable().optional(),
 		root_pair_delimiter: z.array(z.string()).nullable().optional(),
 		remove_empty_root_boundary: z.boolean().nullable().optional(),
-		object_boundary: PairedTokenSchema,
+		object_boundary: PairedTokenSchema.optional(),
 		object_value_delimiter: z.string().nullable().optional(),
 		object_pair_delimiter: z.string().nullable().optional(),
-		array_boundary: PairedTokenSchema,
+		array_boundary: PairedTokenSchema.optional(),
 		array_delimiter: z.string().nullable().optional(),
 		string_boundary: z.array(z.string()).nullable().optional(),
 		string_escape_character: z.string().nullable().optional(),
@@ -92,8 +96,10 @@ export const ParserFormatSchema = z
 		id: 'type.snippet-format',
 		title: 'Snippet Format',
 	});
+export const ParserFormatSchema: z.ZodType<z.infer<typeof _ParserFormatSchema>> =
+	_ParserFormatSchema;
 
-export const ReferenceSchema = z
+const _ReferenceSchema = z
 	.object({
 		ref: z.string(),
 	})
@@ -101,30 +107,38 @@ export const ReferenceSchema = z
 		id: 'type.snippet-reference',
 		title: 'Snippet Reference',
 	});
+export const ReferenceSchema: z.ZodType<z.infer<typeof _ReferenceSchema>> = _ReferenceSchema;
 
-export const ParserFormatConfigSchema = z
+const _ParserFormatConfigSchema = z
 	.union([ParserFormatSchema, ReferenceSchema])
 	.nullable()
 	.optional()
 	.meta({ id: 'type.snippet.params.*.options.format' });
+export const ParserFormatConfigSchema: z.ZodType<z.infer<typeof _ParserFormatConfigSchema>> =
+	_ParserFormatConfigSchema;
 
-export const ArgumentListParserConfigSchema = z.object({
+const _ArgumentListParserConfigSchema = z.object({
 	parser: z.literal('argument_list'),
 	options: z.object({
 		models: z.array(ParserModelSchema).nullable().optional(),
-		format: ParserFormatConfigSchema,
+		format: ParserFormatConfigSchema.optional(),
 	}),
 });
+export const ArgumentListParserConfigSchema: z.ZodType<
+	z.infer<typeof _ArgumentListParserConfigSchema>
+> = _ArgumentListParserConfigSchema;
 
-export const ArgumentParserConfigSchema = z.object({
+const _ArgumentParserConfigSchema = z.object({
 	parser: z.literal('argument'),
 	options: z.object({
-		model: ParserModelSchema,
-		format: ParserFormatConfigSchema,
+		model: ParserModelSchema.optional(),
+		format: ParserFormatConfigSchema.optional(),
 	}),
 });
+export const ArgumentParserConfigSchema: z.ZodType<z.infer<typeof _ArgumentParserConfigSchema>> =
+	_ArgumentParserConfigSchema;
 
-export const ContentParserConfigSchema = z.object({
+const _ContentParserConfigSchema = z.object({
 	parser: z.literal('content'),
 	options: z.object({
 		editor_key: z.string().nullable().optional(),
@@ -140,23 +154,28 @@ export const ContentParserConfigSchema = z.object({
 		parse_newline_character: z.boolean().default(false).optional(),
 		ignore_unpaired_backticks: z.boolean().default(true).optional(),
 		escape_fenced_blocks: z.boolean().default(false).optional(),
-		style: SnippetStyleSchema,
+		style: SnippetStyleSchema.optional(),
 	}),
 });
+export const ContentParserConfigSchema: z.ZodType<z.infer<typeof _ContentParserConfigSchema>> =
+	_ContentParserConfigSchema;
 
-export const KeyValueListParserConfigSchema = z.object({
+const _KeyValueListParserConfigSchema = z.object({
 	parser: z.literal('key_values'),
 	options: z
 		.object({
 			models: z.array(ParserModelSchema),
-			format: ParserFormatConfigSchema,
-			style: SnippetStyleSchema,
+			format: ParserFormatConfigSchema.optional(),
+			style: SnippetStyleSchema.optional(),
 		})
 		.nullable()
 		.optional(),
 });
+export const KeyValueListParserConfigSchema: z.ZodType<
+	z.infer<typeof _KeyValueListParserConfigSchema>
+> = _KeyValueListParserConfigSchema;
 
-export const LiteralParserConfigSchema = z.object({
+const _LiteralParserConfigSchema = z.object({
 	parser: z.literal('literal'),
 	options: z.object({
 		literal: z.string(),
@@ -166,16 +185,20 @@ export const LiteralParserConfigSchema = z.object({
 			.optional(),
 	}),
 });
+export const LiteralParserConfigSchema: z.ZodType<z.infer<typeof _LiteralParserConfigSchema>> =
+	_LiteralParserConfigSchema;
 
-export const OptionalParserConfigSchema = z.object({
+const _OptionalParserConfigSchema = z.object({
 	parser: z.literal('optional'),
 	options: z.object({
 		snippet: z.string(),
 		remove_empty: z.boolean().nullable().optional(),
 	}),
 });
+export const OptionalParserConfigSchema: z.ZodType<z.infer<typeof _OptionalParserConfigSchema>> =
+	_OptionalParserConfigSchema;
 
-export const RepeatingLiteralParserConfigSchema = z.object({
+const _RepeatingLiteralParserConfigSchema = z.object({
 	parser: z.literal('repeating_literal'),
 	options: z.object({
 		literal: z.string(),
@@ -184,29 +207,36 @@ export const RepeatingLiteralParserConfigSchema = z.object({
 		editor_key: z.string().nullable().optional(),
 	}),
 });
+export const RepeatingLiteralParserConfigSchema: z.ZodType<
+	z.infer<typeof _RepeatingLiteralParserConfigSchema>
+> = _RepeatingLiteralParserConfigSchema;
 
-export const RepeatingParserConfigSchema = z.object({
+const _RepeatingParserConfigSchema = z.object({
 	parser: z.literal('repeating'),
 	options: z.object({
 		snippet: z.string(),
 		editor_key: z.string().nullable().optional(),
 		output_delimiter: z.string().nullable().optional(),
 		default_length: z.number().nullable().optional(),
-		style: SnippetStyleSchema,
+		style: SnippetStyleSchema.optional(),
 		optional: z.boolean().nullable().optional(),
 	}),
 });
+export const RepeatingParserConfigSchema: z.ZodType<z.infer<typeof _RepeatingParserConfigSchema>> =
+	_RepeatingParserConfigSchema;
 
-export const WrapperParserConfigSchema = z.object({
+const _WrapperParserConfigSchema = z.object({
 	parser: z.literal('wrapper'),
 	options: z.object({
 		snippet: z.string(),
 		remove_empty: z.boolean().nullable().optional(),
-		style: SnippetStyleSchema,
+		style: SnippetStyleSchema.optional(),
 	}),
 });
+export const WrapperParserConfigSchema: z.ZodType<z.infer<typeof _WrapperParserConfigSchema>> =
+	_WrapperParserConfigSchema;
 
-export const ParserConfigSchema = z.union([
+const _ParserConfigSchema = z.union([
 	ArgumentListParserConfigSchema.meta({ title: 'Argument List Parser Config' }),
 	ArgumentParserConfigSchema.meta({ title: 'Argument Parser Config' }),
 	ContentParserConfigSchema.meta({ title: 'Content Parser Config' }),
@@ -217,13 +247,20 @@ export const ParserConfigSchema = z.union([
 	RepeatingParserConfigSchema.meta({ title: 'Repeating Parser Config' }),
 	WrapperParserConfigSchema.meta({ title: 'Wrapper Parser Config' }),
 ]);
+export const ParserConfigSchema: z.ZodType<z.infer<typeof _ParserConfigSchema>> =
+	_ParserConfigSchema;
 
-export const SnippetConfigSchema = z
+const _SnippetConfigSchema = z
 	.object({
-		...ReducedCascadeSchema.shape,
-		preview: PreviewSchema.extend({
-			view: z.enum(['card', 'inline', 'gallery']).nullable().optional().meta({ deprecated: true }),
-		})
+		..._ReducedCascadeSchema.shape,
+		preview: _PreviewSchema
+			.extend({
+				view: z
+					.enum(['card', 'inline', 'gallery'])
+					.nullable()
+					.optional()
+					.meta({ deprecated: true }),
+			})
 			.nullable()
 			.optional(),
 		picker_preview: PickerPreviewSchema.nullable().optional(),
@@ -253,7 +290,7 @@ export const SnippetConfigSchema = z
 			description: 'The variables required for the selected template.',
 		}),
 		get alternate_formats() {
-			return z.array(SnippetConfigSchema).nullable().optional().meta({
+			return z.array(_SnippetConfigSchema).nullable().optional().meta({
 				id: 'SnippetAlternateFormats',
 				description: 'Alternate configurations for this snippet.',
 			});
@@ -268,6 +305,8 @@ export const SnippetConfigSchema = z
 		title: 'Snippet',
 		description: 'A snippet configuration.',
 	});
+export interface SnippetConfig extends z.infer<typeof _SnippetConfigSchema> {}
+export const SnippetConfigSchema: z.ZodType<SnippetConfig> = _SnippetConfigSchema;
 
 const SnippetImportSchema = z
 	.union([
@@ -294,7 +333,7 @@ const SnippetImportSchema = z
 	.nullable()
 	.optional();
 
-export const SnippetsImportsSchema = z
+const _SnippetsImportsSchema = z
 	.object({
 		hugo: SnippetImportSchema.meta({
 			id: '_snippets_imports.hugo',
@@ -330,11 +369,13 @@ export const SnippetsImportsSchema = z
 		}),
 	})
 	.meta({ id: 'type._snippets_imports', title: 'Snippets Imports' });
+export interface SnippetsImports extends z.infer<typeof _SnippetsImportsSchema> {}
+export const SnippetsImportsSchema: z.ZodType<SnippetsImports> = _SnippetsImportsSchema;
 
 // Definition values that can be referenced via { ref: "key" } or { spread_ref: "key" }
 // These are reusable values that get substituted into snippet templates at runtime
 
-export const SnippetDefinitionSelectValueSchema = z
+const _SnippetDefinitionSelectValueSchema = z
 	.object({
 		name: z
 			.string()
@@ -356,8 +397,11 @@ export const SnippetDefinitionSelectValueSchema = z
 		title: 'Snippet Definition Select Value',
 		description: 'A value option for select inputs, typically used in language lists.',
 	});
+export const SnippetDefinitionSelectValueSchema: z.ZodType<
+	z.infer<typeof _SnippetDefinitionSelectValueSchema>
+> = _SnippetDefinitionSelectValueSchema;
 
-export const SnippetDefinitionValueSchema = z
+const _SnippetDefinitionValueSchema = z
 	.union([
 		// Parser format - for format definitions like hugo_shortcode_format
 		ParserFormatSchema,
@@ -402,8 +446,11 @@ export const SnippetDefinitionValueSchema = z
 		description:
 			'A reusable value that can be referenced in snippet templates via { ref: "key" } or { spread_ref: "key" }.',
 	});
+export type SnippetDefinitionValue = z.infer<typeof _SnippetDefinitionValueSchema>;
+export const SnippetDefinitionValueSchema: z.ZodType<SnippetDefinitionValue> =
+	_SnippetDefinitionValueSchema;
 
-export const SnippetDefinitionsSchema = z
+export const _SnippetDefinitionsSchema = z
 	.record(z.string(), SnippetDefinitionValueSchema)
 	.nullable()
 	.optional()
@@ -413,8 +460,7 @@ export const SnippetDefinitionsSchema = z
 		description:
 			'A record of reusable values that can be referenced in snippet templates. Values are substituted using { ref: "key" } for direct replacement or { spread_ref: "key" } for spreading arrays/objects.',
 	});
-
-export type SnippetConfig = z.infer<typeof SnippetConfigSchema>;
-export type SnippetsImports = z.infer<typeof SnippetsImportsSchema>;
-export type SnippetDefinitionValue = z.infer<typeof SnippetDefinitionValueSchema>;
-export type SnippetDefinitions = NonNullable<z.infer<typeof SnippetDefinitionsSchema>>;
+export interface SnippetDefinitions
+	extends NonNullable<z.infer<typeof _SnippetDefinitionsSchema>> {}
+export const SnippetDefinitionsSchema: z.ZodType<SnippetDefinitions | null | undefined> =
+	_SnippetDefinitionsSchema;
