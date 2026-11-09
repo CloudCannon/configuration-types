@@ -222,7 +222,12 @@ export async function redocumentSchema(
 			}
 		}
 
-		if (doc.allOf) {
+		if (doc.allOf?.length === 1 && path.length) {
+			// A single-branch `allOf: [{ $ref }]` is how zod emits a wrapped reference (e.g. `.optional()`
+			// around an already-registered schema). Treat it as transparent so documentation gids
+			// don't gain an `(all-of-slug)` segment.
+			walk(deref(doc.allOf[0]), parent);
+		} else if (doc.allOf) {
 			for (let i = 0; i < doc.allOf.length; i++) {
 				const derefDoc = deref(doc.allOf[i]);
 				const key =
