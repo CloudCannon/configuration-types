@@ -1,6 +1,9 @@
 import * as z from 'zod';
 import { _CascadeSchema } from './cascade.js';
 import { CollectionGroupSchema, CollectionsConfigSchema } from './collections.js';
+import { DocumentationSchema } from './documentation.js';
+import { IconSchema } from './icon.js';
+import { _FileInputOptionsSchema } from './input-base.js';
 import { InputsSchema } from './inputs.js';
 import { MarkdownSettingsSchema } from './markdown.js';
 import { PathsSchema } from './paths.js';
@@ -17,6 +20,35 @@ export const _DataConfigEntrySchema = z
 	.meta({ id: 'DataConfigEntry' });
 export interface DataConfigEntry extends z.infer<typeof _DataConfigEntrySchema> {}
 export const DataConfigEntrySchema: z.ZodType<DataConfigEntry> = _DataConfigEntrySchema;
+
+const _AssetConfigSchema = z
+	.object({
+		source: z.string().nullable().optional(),
+		path: z.string().nullable().optional(),
+		name: z.string().nullable().optional(),
+		description: z.string().nullable().optional(),
+		icon: IconSchema.nullable().default('perm_media').optional(),
+		documentation: DocumentationSchema.nullable().optional(),
+		disable_upload_file: z.boolean().default(false).optional(),
+		disable_file_actions: z.boolean().default(false).optional(),
+		options: _FileInputOptionsSchema
+			.pick({
+				paths: true,
+				accepts_mime_types: true,
+				max_file_size: true,
+				max_file_size_message: true,
+				mime_type: true,
+				resize_style: true,
+				width: true,
+				height: true,
+				expandable: true,
+			})
+			.nullable()
+			.optional(),
+	})
+	.meta({ id: 'AssetConfig' });
+export interface AssetConfig extends z.infer<typeof _AssetConfigSchema> {}
+export const AssetConfigSchema: z.ZodType<AssetConfig> = _AssetConfigSchema;
 
 const _FileConfigEntrySchema = z
 	.object({
@@ -107,6 +139,11 @@ export const _ConfigurationSchema = z
 			.nullable()
 			.optional()
 			.meta({ id: 'data_config' }),
+		assets_config: z
+			.record(z.string(), AssetConfigSchema)
+			.nullable()
+			.optional()
+			.meta({ id: 'assets_config' }),
 		file_config: z.array(FileConfigEntrySchema).nullable().optional().meta({ id: 'file_config' }),
 		editor: EditorSchema.nullable().optional().meta({ id: 'editor' }),
 		source_editor: SourceEditorSchema.nullable().optional().meta({ id: 'source_editor' }),

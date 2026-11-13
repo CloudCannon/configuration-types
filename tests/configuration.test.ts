@@ -173,3 +173,47 @@ test('should accept file_config array', () => {
 	const result = ConfigurationSchema.safeParse(config);
 	assert(result.success);
 });
+
+test('should accept assets_config', () => {
+	const config = {
+		assets_config: {
+			price_lists: {
+				name: 'Price lists',
+				icon: 'sell',
+				path: 'assets/price-lists',
+				options: {
+					accepts_mime_types: 'application/pdf',
+					max_file_size: 2048,
+				},
+				disable_file_actions: true,
+			},
+			product_images: {
+				source: 'my-dam',
+				path: 'products',
+				options: {
+					width: 1200,
+					paths: {
+						dam_uploads_filename: '[asset_filename]',
+					},
+				},
+				disable_upload_file: true,
+			},
+		},
+	};
+
+	const result = ConfigurationSchema.safeParse(config);
+	assert(result.success);
+});
+
+test('should reject assets_config with a non-string path', () => {
+	const config = {
+		assets_config: {
+			price_lists: {
+				path: ['assets/price-lists'],
+			},
+		},
+	};
+
+	const result = ConfigurationSchema.safeParse(config);
+	assert(!result.success);
+});

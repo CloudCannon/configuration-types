@@ -1,0 +1,7 @@
+gid: assets_config.*.icon
+url: /configuration-file/assets_config/*/icon/
+title: ''
+description: This key defines the icon for an entry. The icon appears in the
+  _Site Navigation_.
+examples: []
+show_in_navigation: false

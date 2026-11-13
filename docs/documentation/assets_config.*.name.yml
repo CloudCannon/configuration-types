@@ -1,0 +1,7 @@
+gid: assets_config.*.name
+url: /configuration-file/assets_config/*/name/
+title: ''
+description: This key defines the display name for an entry. The name appears in
+  the _Site Navigation_ and at the top of the asset browser.
+examples: []
+show_in_navigation: false

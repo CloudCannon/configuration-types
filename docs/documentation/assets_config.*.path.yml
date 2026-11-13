@@ -1,0 +1,8 @@
+gid: assets_config.*.path
+url: /configuration-file/assets_config/*/path/
+title: ''
+description: This key defines the folder an entry is limited to, relative to the
+  root of the source. Files outside of this folder cannot be browsed, and files
+  are uploaded to this folder by default. Defaults to the root of the source.
+examples: []
+show_in_navigation: false
