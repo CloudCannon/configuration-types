@@ -41,7 +41,7 @@ export const ImageOptionsSchema = z.object({
 		id: 'type._inputs.*.options.allowed_sources',
 		title: 'Allowed Sources',
 		description:
-			'If you have one or more DAMs connected to your site, you can use this key to list which asset sources can be uploaded to and selected from.',
+			'This key lists which asset sources can be uploaded to and selected from. Each item is `site-files`, the reference key of a DAM connected to your Site, or the key of an `assets_config` entry.',
 	}),
 	prevent_resize_existing_files: z.boolean().default(false).optional().meta({
 		id: 'type._inputs.*.options.prevent_resize_existing_files',

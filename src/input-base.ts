@@ -281,7 +281,7 @@ const _DisabledInputSchema = z
 export interface DisabledInput extends z.infer<typeof _DisabledInputSchema> {}
 export const DisabledInputSchema: z.ZodType<DisabledInput> = _DisabledInputSchema;
 
-const _FileInputOptionsSchema = z
+export const _FileInputOptionsSchema = z
 	.object({
 		...ImageOptionsSchema.shape,
 		...TextValidationSchema.shape,
@@ -323,6 +323,9 @@ const _FileInputOptionsSchema = z
 			id: 'type._inputs.*.options.disable_upload_file_in_file_browser',
 			description:
 				'Prevents file uploads inside the "Select existing file/image" file browser modal window.',
+		}),
+		disable_file_actions_in_file_browser: z.boolean().default(false).optional().meta({
+			id: 'type._inputs.*.options.disable_file_actions_in_file_browser',
 		}),
 		encode_url: z.boolean().default(false).optional().meta({
 			id: 'type._inputs.*.options.encode_url',

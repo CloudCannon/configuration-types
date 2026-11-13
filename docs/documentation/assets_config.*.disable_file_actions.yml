@@ -1,0 +1,7 @@
+gid: assets_config.*.disable_file_actions
+url: /configuration-file/assets_config/*/disable_file_actions/
+title: ''
+description: Prevents renaming, moving and deleting files in this entry. This is
+  the default for any Input that lists this entry in `options.allowed_sources`.
+examples: []
+show_in_navigation: false

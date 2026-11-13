@@ -1,6 +1,6 @@
 import assert from 'node:assert';
 import { test } from 'node:test';
-import { BaseInputSchema } from '../src/inputs.js';
+import { BaseInputSchema, FileInputSchema } from '../src/inputs.js';
 
 test('should accept a text input', () => {
 	const input = {
@@ -198,6 +198,19 @@ test('should accept a file input', () => {
 	};
 
 	const result = BaseInputSchema.safeParse(input);
+	assert(result.success);
+});
+
+test('should accept a file input with file actions disabled in the file browser', () => {
+	const input = {
+		type: 'file',
+		options: {
+			allowed_sources: ['price_lists'],
+			disable_file_actions_in_file_browser: true,
+		},
+	};
+
+	const result = FileInputSchema.safeParse(input);
 	assert(result.success);
 });
 

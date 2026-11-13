@@ -1,0 +1,8 @@
+gid: assets_config
+url: /configuration-file/assets_config/
+title: ''
+description: This key defines the entries in the Assets section of the _Site
+  Navigation_. Each entry is a browser for a folder of the files of your Site,
+  or of a DAM connected to your Site.
+examples: []
+show_in_navigation: false

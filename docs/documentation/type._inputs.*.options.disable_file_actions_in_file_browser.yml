@@ -1,0 +1,7 @@
+gid: type._inputs.*.options.disable_file_actions_in_file_browser
+url: /configuration-file/types/_inputs/*/options/disable_file_actions_in_file_browser/
+title: ''
+description: Prevents renaming, moving and deleting files inside the "Select
+  existing file/image" file browser modal window.
+examples: []
+show_in_navigation: false

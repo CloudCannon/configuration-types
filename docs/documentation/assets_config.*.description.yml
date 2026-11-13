@@ -1,0 +1,7 @@
+gid: assets_config.*.description
+url: /configuration-file/assets_config/*/description/
+title: ''
+description: This key defines the description text that appears at the top of
+  the asset browser.
+examples: []
+show_in_navigation: false

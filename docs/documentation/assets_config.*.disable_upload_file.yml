@@ -1,0 +1,8 @@
+gid: assets_config.*.disable_upload_file
+url: /configuration-file/assets_config/*/disable_upload_file/
+title: ''
+description: Prevents uploading files and creating folders in this entry. This
+  is the default for any Input that lists this entry in
+  `options.allowed_sources`.
+examples: []
+show_in_navigation: false

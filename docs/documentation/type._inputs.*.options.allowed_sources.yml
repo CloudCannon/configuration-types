@@ -6,8 +6,8 @@ description: >-
   browse.
 
 
-  Valid values include `site-files` and the reference key for any DAM connected
-  to your site.
+  Valid values include `site-files`, the reference key for any DAM connected to
+  your site, and the key of any `assets_config` entry.
 
 
   If `site-files` is omitted from the array, site files will not be available as

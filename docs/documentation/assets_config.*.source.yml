@@ -1,0 +1,8 @@
+gid: assets_config.*.source
+url: /configuration-file/assets_config/*/source/
+title: ''
+description: This key defines where the files for an entry are stored. Set this
+  to the reference key of a DAM connected to your Site, or to `site-files` for
+  the files of your Site. Defaults to `site-files`.
+examples: []
+show_in_navigation: false

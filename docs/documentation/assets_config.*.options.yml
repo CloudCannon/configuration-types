@@ -1,0 +1,8 @@
+gid: assets_config.*.options
+url: /configuration-file/assets_config/*/options/
+title: ''
+description: This key defines the options for files uploaded to an entry, using
+  the same keys as the `options` of a File Input. An Input that lists this entry
+  in `options.allowed_sources` uses these as defaults.
+examples: []
+show_in_navigation: false
