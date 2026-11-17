@@ -18,7 +18,8 @@ description: >-
 
 
   For more information about fixed data sets, please read our documentation on
-  [populating a Select input](/documentation/developer-articles/populate-a-select-input/).
+  [populating a Select
+  input](/documentation/developer-articles/populate-a-select-input/).
 examples:
   - description: In this example, we have configured the `blog_tags` Multiselect
       input for the `blog` Collection.
