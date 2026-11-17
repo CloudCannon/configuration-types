@@ -1,6 +1,23 @@
 gid: type._snippets_imports.eleventy_liquid
 url: /configuration-file/types/_snippets_imports/eleventy_liquid/
 title: ''
-description: ''
-examples: []
+description: >-
+  This key defines which of CloudCannon's built-in *Snippets* to import for
+  Eleventy's Liquid templating, making its tags editable in the *Content
+  Editor*.
+
+
+  Setting this key to `true` will import every available *Snippet*. To import a
+  subset, provide an `include` or `exclude` list instead. CloudCannon always
+  imports its base *Snippets*.
+examples:
+  - description: >-
+      In this example, we have configured `eleventy_liquid` to import all of the
+      built-in *Snippets*.
+    language: yaml
+    code: |-
+      _snippets_imports:
+        eleventy_liquid: true
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false

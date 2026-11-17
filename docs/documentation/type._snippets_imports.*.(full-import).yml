@@ -1,6 +1,22 @@
 gid: type._snippets_imports.*.(full-import)
 url: /configuration-file/types/_snippets_imports/*/(full-import)/
 title: Snippets Imports Full Import
-description: ''
-examples: []
+description: >-
+  This key toggles whether CloudCannon will import all of its built-in
+  *Snippets* for an SSG.
+
+
+  Setting this key to `true` will import every available *Snippet*. To import
+  only some, use an `include` or `exclude` list instead. CloudCannon always
+  imports its base *Snippets*.
+examples:
+  - description: >-
+      In this example, we have configured `hugo` to import all of the built-in
+      *Snippets*.
+    language: yaml
+    code: |-
+      _snippets_imports:
+        hugo: true
+    annotations: []
+    source: /cloudcannon.config.yml
 show_in_navigation: false
