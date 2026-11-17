@@ -17,8 +17,9 @@ description: >-
   file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
 
 
-  For more information, please read our documentation on [Select and Multiselect
-  inputs](/documentation/articles/what-is-a-select-input/#fixed-data-sets).
+  For more information about fixed data sets, please read our documentation on
+  [populating a Select
+  input](/documentation/developer-articles/populate-a-select-input/).
 examples:
   - description: In this example, we have configured the `blog_tags` Multiselect
       input for the `blog` Collection.
