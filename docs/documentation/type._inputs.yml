@@ -1,20 +1,13 @@
 gid: type._inputs
 url: /configuration-file/types/_inputs/
 title: ''
-description: >-
-  This key defines which inputs are available at a given level of the
-  configuration cascade.
-
+description: |-
+  This key defines which inputs are available at a given level of the configuration cascade.
 
   This key has no default.
 
-
-  If undefined at higher levels of the [configuration
-  cascade](/documentation/articles/using-the-configuration-cascade/), `_inputs`
-  will default to any
-
-  values configured in the [CloudCannon configuration
-  file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
+  If undefined at higher levels of the [configuration cascade](/documentation/developer-articles/using-the-configuration-cascade/), `_inputs` will default to any
+  values configured in the [CloudCannon configuration file](/documentation/developer-articles/what-is-the-cloudcannon-configuration-file/).
 examples:
   - description: In this example, we have configured the `date_created` key as a
       *Date and Time Input*, which will automatically populate when you create a

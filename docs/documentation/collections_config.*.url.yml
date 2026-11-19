@@ -6,11 +6,11 @@ description: >-
 
 
   CloudCannon uses the output URL in the [Visual
-  Editor](/documentation/articles/what-is-the-visual-editor/), and on your
+  Editor](/documentation/user-articles/what-is-the-visual-editor/), and on your
   [Testing
 
-  Domain](/documentation/articles/what-is-a-testing-domain/) and [Custom
-  Domain](/documentation/articles/what-is-a-custom-domain/).
+  Domain](/documentation/user-articles/what-is-a-testing-domain/) and [Custom
+  Domain](/documentation/developer-articles/what-is-a-custom-domain/).
 
 
   Values for this key can be a mix of plain text and template strings, and
@@ -26,7 +26,7 @@ description: >-
   > For more information about data placeholders and fixed placeholders, please
   read our documentation on [configuring your template
 
-  strings](/documentation/articles/configure-your-template-strings/).
+  strings](/documentation/developer-articles/configure-your-template-strings/).
 examples:
   - description: In this example, the output URL for files in this Collection will
       be `/travel/` rather than the default `/blog/`.

@@ -7,22 +7,23 @@ description: >-
 
 
   You can configure Card preview for
-  [Collections](/documentation/articles/what-is-a-collection/),
-  [Schemas](/documentation/articles/what-is-a-schema/),
+  [Collections](/documentation/user-articles/what-is-a-collection/),
+  [Schemas](/documentation/developer-articles/what-is-a-schema/),
 
-  [Object inputs](/documentation/articles/what-is-an-object-input/), [Array
-  inputs](/documentation/articles/what-is-an-array-input/), [Select
+  [Object inputs](/documentation/user-articles/what-is-an-object-input/), [Array
+  inputs](/documentation/user-articles/what-is-an-array-input/), [Select
 
-  inputs](/documentation/articles/what-is-a-select-input/),
-  [Structures](/documentation/articles/what-is-a-structure/), the Structure
-  modal,
+  inputs](/documentation/user-articles/what-is-a-select-input/),
+  [Structures](/documentation/developer-articles/what-is-a-structure/), the
+  Structure modal,
 
-  [Snippets](/documentation/articles/what-is-a-snippet/), and the Snippet modal.
+  [Snippets](/documentation/developer-articles/what-is-a-snippet/), and the
+  Snippet modal.
 
 
   For more information about previews, please read our documentation on
   [configuring card
-  previews](/documentation/articles/configure-your-card-previews/).
+  previews](/documentation/developer-articles/configure-your-card-previews/).
 examples:
   - description: In this example, we have configured the appearance of Cards in
       inputs using the Structure `staff` when adding items.

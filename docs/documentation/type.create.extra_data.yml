@@ -12,7 +12,7 @@ description: >-
 
 
   For more information, please read our documentation on [Create
-  Paths](/documentation/articles/set-the-path-for-new-files/).
+  Paths](/documentation/developer-articles/set-the-path-for-new-files/).
 examples:
   - description: In this example, we have configured extra data placeholders to
       generate a filename from date and title fields for use in the create path.

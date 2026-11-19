@@ -13,7 +13,7 @@ description: >-
 examples:
   - description: In this example, we have configured a standard add option for the
       `people` Collection that uses the `employee` Schema and opens files in the
-      [Data Editor](/documentation/articles/what-is-the-data-editor/).
+      [Data Editor](/documentation/user-articles/what-is-the-data-editor/).
     language: yaml
     code: |-
       collections_config:

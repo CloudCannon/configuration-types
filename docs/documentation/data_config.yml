@@ -3,7 +3,7 @@ url: /configuration-file/data_config/
 title: ''
 description: This key defines which file or folder data in your Site is
   available to populate [Select
-  Inputs](/documentation/articles/what-is-a-select-input/).
+  Inputs](/documentation/user-articles/what-is-a-select-input/).
 examples:
   - description: In this example, we have configured data config to make data files
       available for *Select Inputs* and *Multiselect Inputs*.
@@ -18,7 +18,7 @@ examples:
       - number: 1
         content: Configure all data files or folders under the `data_config` key in your
           [CloudCannon configuration
-          file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
+          file](/documentation/developer-articles/what-is-the-cloudcannon-configuration-file/).
       - number: 2
         content: '*Select Inputs* and *Multiselect Inputs* which use the `authors` key
           are populated by the contents of the `authors.csv` file.'

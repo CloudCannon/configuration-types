@@ -9,8 +9,8 @@ description: >-
 
 
   The [configuration
-  cascade](/documentation/articles/using-the-configuration-cascade/) works by
-  finding the most specific `_inputs` entry.
+  cascade](/documentation/developer-articles/using-the-configuration-cascade/)
+  works by finding the most specific `_inputs` entry.
 
 
   Usually, once an option is found in the cascade, there's no reason to keep

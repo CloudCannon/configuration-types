@@ -10,7 +10,7 @@ description: >-
 
 
   For more information, please read our documentation on [Create
-  Paths](/documentation/articles/set-the-path-for-new-files/).
+  Paths](/documentation/developer-articles/set-the-path-for-new-files/).
 examples:
   - description: In this example, CloudCannon will generate a Create Path for new
       files in the `blog` Collection using the `date` and `title` structured
