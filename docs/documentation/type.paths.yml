@@ -1,16 +1,11 @@
 gid: type.paths
 url: /configuration-file/types/paths/
 title: ''
-description: >-
+description: |-
   This key defines paths for your Rich Text editors or File inputs.
 
-
-  If undefined at higher levels of the [configuration
-  cascade](/documentation/articles/using-the-configuration-cascade/), `paths`
-  will default to any
-
-  values configured in the [CloudCannon configuration
-  file](/documentation/articles/what-is-the-cloudcannon-configuration-file/).
+  If undefined at higher levels of the [configuration cascade](/documentation/developer-articles/using-the-configuration-cascade/), `paths` will default to any
+  values configured in the [CloudCannon configuration file](/documentation/developer-articles/what-is-the-cloudcannon-configuration-file/).
 examples:
   - description: In this example, we have configured paths for the `blog` Collection
       to set custom upload and static paths.
